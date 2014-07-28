@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Ladies Learning Code: Intro to HTML & CSS</title>
+
+		<!-- Don't alter this, CSSS needs it to work -->
+		<link href="slideshow.css" rel="stylesheet">
+
+		<!-- Theme-specific styles -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+		<link href="font-awesome.css" rel="stylesheet">
+		<link href="theme-llc.css" rel="stylesheet">
+		<!-- Workshop-specific styles -->
+		<link href="workshop.css" rel="stylesheet">
+
+		<!-- Take care of prefixes -->
+		<script src="prefixfree.min.js"></script>
+	</head>
+
+	<!-- Timer/progress bar. Define the presentation duration with the attribute data-duration on the body in minutes. If you don't want to use it, remove the attribute. -->
+	<body data-duration="30">
+
+		<!-- First/Intro slide -->
+		<header id="intro" class="slide">
+			<img class="logo" src="img/logo-llc-152x85.png">
+
+			<div class="info">
+				<h1>CSS Fundamentals</h1>
+				<h2><span>with</span> Christina Truong</h2>
+				<img class="instructor-img" src="img/christina-truong.jpg" alt="christina truong">
+				<a href="mailto:hello@christinatruong.com">hello@christinatruong.com
+				<a href="http://christinatruong.com" target="_blank">christinatruong.com</a>
+				<a href="http://twitter.com/christinatruong" target="_blank">@christinatruong</a>
+				</p>
+				<p class="instructions">(Use the left and right arrow keys to navigate.)</p>
+			</div>
+		</header>
+
+		<section>
+			<section class="slide">
+				<h2>Course Outline</h2>
+				<ul>
+					<li class="delayed">Make sure your computer is setup</li>
+					<li class="delayed">Web development breakdown</li>
+					<li class="delayed">Dive into HTML</li>
+					<li class="delayed">CSS fundamentals</li>
+				</ul>
+				<h3>Help along the way</h3>
+				<p class="icon-tip">Tips and hints</p>
+				<p class="icon-note">Extra resources, additional information</p>
+				<p class="icon-warning">Gotchas and warnings</p>
+			</section>
+
+			<header class="slide">
+				<h1>Development Environment</h1>
+				<p>Tools you need to get started</p>
+			</header>
+
+			<section class="slide">
+				<h2>What is HTML?</h2>
+				<p>HTML stands for <i>HyperText Markup Language</i>. It was created for <em>web browsers</em> to easily read.</p>
+				<p>Below are the basic HTML tags required for all web pages. This makes perfect sense to a web browser:</p>
+	<pre class="prettyprint">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+				<p>Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules as well to make sense.</p>
+				<p>This is referred to as <i>syntax</i>.</p>
+			</section>
+
+			<section class="slide">
+				<h2>CSS Snippets demo</h2>
+				<p>The whole slide will get the CSS applied to it.</p>
+				<textarea class="snippet">background-color:red;
+		background-image: linear-gradient(red, #600)</textarea>
+			</section>
+
+			<section class="slide">
+				<h2>CSS Snippets demo</h2>
+				<p>Specific element</p>
+				<textarea class="snippet" data-subject="#test">background-color:red;
+		background-image: linear-gradient(red, #600)</textarea>
+
+				<div id="test">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+				</div>
+			</section>
+		</section>
+
+		<!-- Last slide -->
+		<footer class="slide">
+			<h2>Thank you!</h2>
+			<p>Closing remarks</p>
+			<p class="attribution">Very special thanks to <a href="https://github.com/LeaVerou/csss">Lea Verou</a> for the interactive code slides.</p>
+		</footer>
+
+
+		<!-- <div class="instructions">
+			<p>(Use the left and right arrow keys on your keyboard to navigate.)</p>
+		</div> -->
+
+		<script src="slideshow.js"></script>
+
+		<!-- Uncomment the plugins you need -->
+		<script src="plugins/css-edit.js"></script>
+		<script src="plugins/css-snippets.js"></script>
+		<script src="plugins/css-controls.js"></script>
+		<script src="plugins/code-highlight.js"></script>
+
+		<script>
+			var slideshow = new SlideShow();
+
+			// Grabs all the .snippet elements
+			var snippets = document.querySelectorAll('.snippet');
+			for(var i=0; i<snippets.length; i++) {
+				new CSSSnippet(snippets[i]);
+			}
+		</script>
+	</body>
+</html>
