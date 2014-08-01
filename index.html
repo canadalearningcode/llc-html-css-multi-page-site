@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -9,17 +9,21 @@
 		<link href="slideshow.css" rel="stylesheet">
 
 		<!-- Theme-specific styles -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
-		<link href="font-awesome.css" rel="stylesheet">
-		<link href="theme-llc.css" rel="stylesheet">
-		<!-- Workshop-specific styles -->
-		<link href="workshop.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link href="css/theme-llc.css" rel="stylesheet">
 
-		<!-- Take care of prefixes -->
+		<!-- Workshop-specific styles -->
+		<link href="css/workshop.css" rel="stylesheet">
+
+		<!-- Take care of prefixes! -->
 		<script src="prefixfree.min.js"></script>
 	</head>
 
-	<!-- Timer/progress bar. Define the presentation duration with the attribute data-duration on the body in minutes. If you don't want to use it, remove the attribute. -->
+	<!-- Timer/progress bar -->
+	<!-- Define the presentation using "data-duration" in minutes. -->
 	<body data-duration="30">
 
 		<!-- First/Intro slide -->
@@ -28,13 +32,23 @@
 
 			<div class="info">
 				<h1>CSS Fundamentals</h1>
-				<h2><span>with</span> Christina Truong</h2>
+
 				<img class="instructor-img" src="img/christina-truong.jpg" alt="christina truong">
-				<a href="mailto:hello@christinatruong.com">hello@christinatruong.com
-				<a href="http://christinatruong.com" target="_blank">christinatruong.com</a>
-				<a href="http://twitter.com/christinatruong" target="_blank">@christinatruong</a>
-				</p>
-				<p class="instructions">(Use the left and right arrow keys to navigate.)</p>
+				<h2><span>with</span> Christina Truong</h2>
+				<ul>
+					<li>
+						<i class="fa fa-envelope"></i>
+						<a href="mailto:hello@christinatruong.com"> hello@christinatruong.com
+					</li>
+					<li>
+						<i class="fa fa-desktop"></i>
+						<a href="http://christinatruong.com" target="_blank">christinatruong.com</a>
+					</li>
+					<li>
+						<i class="fa fa-twitter"></i>
+						<a href="http://twitter.com/christinatruong" target="_blank">@christinatruong</a>
+					</li>
+				</ul>
 			</div>
 		</header>
 
@@ -53,33 +67,38 @@
 				<p class="icon-warning">Gotchas and warnings</p>
 			</section>
 
-			<header class="slide">
-				<h1>Development Environment</h1>
-				<p>Tools you need to get started</p>
+			<header class="slide" data-markdown>
+				##Development Environment
+
+				Tools you need to get started:
+
+				* A text editor like [Sublime Text]() or [Atom]()
+				* A modern browser like [Chrome]() or [Firefox]()
+				* Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.
 			</header>
 
 			<section class="slide">
 				<h2>What is HTML?</h2>
-				<p>HTML stands for <i>HyperText Markup Language</i>. It was created for <em>web browsers</em> to easily read.</p>
-				<p>Below are the basic HTML tags required for all web pages. This makes perfect sense to a web browser:</p>
-	<pre class="prettyprint">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+				<p>HTML stands for <i>HyperText Markup Language</i>. It was created for <em>web browsers</em> to easily read. Below are the basic HTML tags required for all web pages. This makes perfect sense to a web browser:</p>
+				<pre><code lang="html">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
 				<p>Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules as well to make sense.</p>
 				<p>This is referred to as <i>syntax</i>.</p>
+				<code lang="javascript">var myName;</code>
 			</section>
 
 			<section class="slide">
 				<h2>CSS Snippets demo</h2>
 				<p>The whole slide will get the CSS applied to it.</p>
 				<textarea class="snippet">background-color:red;
-		background-image: linear-gradient(red, #600)</textarea>
+				</textarea>
 			</section>
 
 			<section class="slide">
 				<h2>CSS Snippets demo</h2>
 				<p>Specific element</p>
 				<textarea class="snippet" data-subject="#test">background-color:red;
-		background-image: linear-gradient(red, #600)</textarea>
-
+				</textarea>
 				<div id="test">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
 				</div>
@@ -102,7 +121,6 @@
 			<p>Closing remarks</p>
 			<p class="attribution">Very special thanks to <a href="https://github.com/LeaVerou/csss">Lea Verou</a> for the interactive code slides.</p>
 		</footer>
-
 
 		<!-- <div class="instructions">
 			<p>(Use the left and right arrow keys on your keyboard to navigate.)</p>

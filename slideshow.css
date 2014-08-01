@@ -13,19 +13,19 @@
 	transition:.5s;
 	transition-property: transform, opacity, left, top, right, bottom, background;
 }
- 
+
 /**
  * Styles
  */
- 
+
  html, body {
  	height: 100%;
  }
- 
+
  body {
  	margin: 0;
  }
- 
+
 .slide {
 	display: none;
 	position:absolute;
@@ -34,11 +34,11 @@
 	bottom:0;
 	left:0;
 	z-index:1;
-	
-	font-size:250%;
-	line-height:1.6;
+
+	/*font-size:250%;
+	line-height:1.6;*/
 }
- 
+
  .slide.previous,
  .slide:target,
  .slide.next {
@@ -46,7 +46,7 @@
 	visibility: hidden;
 	overflow:hidden;
  }
- 
+
  .slide:target {
  	z-index:100;
  	opacity:1;
@@ -56,13 +56,13 @@
 
 /**
 	Slide numbers
- */ 
+ */
 #indicator {
   	position: absolute;
   	top: .05in;
   	right: .5em;
   	z-index: 1010;
-  	
+
   	font-size: .15in;
   	color: white;
   	background: rgba(0,0,0,.25);
@@ -104,7 +104,7 @@
 		margin-top: -1.5em;
 		pointer-events: none;
 	}
-	
+
 	button.onscreen-nav {
 		float: right;
 		padding: .2em .5em;
@@ -116,11 +116,11 @@
 		text-transform: uppercase;
 		cursor: pointer;
 	}
-	
+
 	button.onscreen-nav:hover {
 		background: black;
 	}
-	
+
 	button.onscreen-nav.prev {
 		float: left;
 	}
@@ -158,7 +158,7 @@
 	padding: 0 !important;
 	background: white;
 	text-align: center;
-} 
+}
 
 	.iframe.slide > h1 {
 		position: absolute;
@@ -166,17 +166,17 @@
 		background: rgba(0,0,0,.5);
 		font-size: 100%;
 	}
-	
+
 		.iframe.slide > h1 > a {
 			display: inline-block;
 			padding: .2em .5em;
-			
+
 			color: white;
 			text-align: center;
 			text-decoration: none;
 			text-shadow: 0 -.05em .05em black;
 		}
-	
+
 	.slide > iframe:only-of-type,
 	iframe.csss-import {
 		position: absolute;
@@ -189,7 +189,7 @@
 	}
 
 iframe.csss-import {
-	
+
 }
 
 iframe.csss-import:not(.show) {
@@ -207,22 +207,22 @@ iframe.csss-import.show {
  */
 
 .show-thumbnails {
-	overflow-x: hidden;	
-} 
+	overflow-x: hidden;
+}
 
 .show-thumbnails .slide,
 .presenter .slide.next {
 	width: 1024px;
 	height: 768px;
 	box-sizing: border-box;
-	
+
 	float: left;
 	overflow: hidden;
 	position: static;
 	opacity: 1;
 	margin:-292px -395px;
 	cursor: pointer;
-	
+
 	transform: scale(.2, .2);
 	transition:1s transform;
 }
@@ -245,7 +245,7 @@ iframe.csss-import.show {
 .presenter .slide:target + .slide {
 	outline: 20px solid rgba(255, 255, 255, .6);
 	outline-radius:5px;
-	
+
 	box-shadow: 5px 5px 10px black;
 }
 
