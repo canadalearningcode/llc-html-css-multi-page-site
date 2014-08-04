@@ -27,7 +27,8 @@ body {
   line-height: 1.4;
   color: #222222;
   border-top: 4px solid #b109aa;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  background: #ecf0f1; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Vollkorn", serif;
@@ -69,6 +70,15 @@ code {
 .slide {
   padding: 40px;
   height: 100%; }
+
+/* vertical align */
+section.slide {
+  transform-style: preserve-3d; }
+  section.slide h1 {
+    position: relative;
+    text-align: center;
+    top: 42%;
+    transform: translateY(-42%); }
 
 #timer {
   height: 4px;
