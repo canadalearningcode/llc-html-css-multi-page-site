@@ -12,9 +12,11 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/highlightjs-themes/monokai-sublime.css">
     <link rel="stylesheet" href="css/theme-llc.css">
-    
 
     <!-- Workshop-specific styles -->
     <link href="css/workshop.css" rel="stylesheet">
@@ -22,8 +24,7 @@
     <!-- Takes care of CSS3 prefixes! -->
     <script src="prefixfree.min.js"></script>
   
-    <!-- Syntax highlighting -->
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <!-- highlight.js syntax highlighting -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
@@ -61,28 +62,14 @@
     <main>
       <section class="slide">
         <h2>Course Outline</h2>
+        <p>Example of delayed content</p>
         <ul>
           <li class="delayed">Make sure your computer is setup</li>
           <li class="delayed">Web development breakdown</li>
           <li class="delayed">Dive into HTML</li>
           <li class="delayed">CSS fundamentals</li>
         </ul>
-        <h3>Help along the way</h3>
-        <p class="icon-tip">Tips and hints</p>
-        <p class="icon-note">Extra resources, additional information</p>
-        <p class="icon-warning">Gotchas and warnings</p>
       </section>
-
-      <header class="slide" data-markdown>
-        ##Development Environment
-
-        Tools you need to get started:
-
-        * A text editor like [Sublime Text]() or [Atom]()
-        * A modern browser like [Chrome]() or [Firefox]()
-        * Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </header>
 
       <section class="slide">
         <h2>What is HTML?</h2>
@@ -90,7 +77,6 @@
         <pre><code lang="html">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
         <p>Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules as well to make sense.</p>
         <p>This is referred to as <i>syntax</i>.</p>
-        <code lang="javascript">var myName;</code>
       </section>
 
       <section class="slide">
@@ -111,22 +97,35 @@
       </section>
 
       <section class="slide" data-markdown>
-        ##Markdown example (h2)
+        ##Markdown example
+
+        ###heading 3
+        ###heading 4
 
         paragraph
 
         * list item
         * list item
         * list item
-
-        <div>example</div>
-
-        hello
+        
+        `code block`
       </section>
 
+      <section class="slide">
+        <h2>Dive back in to Sublime Text</h2>
+        <ol>
+          <li>Try changing something, like the text within the <code>&#60;p&#62;</code><code>&#60;/p&#62;</code> tags.</li>
+          <li>Save your file using <strong>File > Save</strong>, or use keyboard shortcuts (<strong>CMD + S</strong> or <strong>CONTROL + S</strong>)</li>
+          <li>Right click and select <strong>Open in Browser</strong>.</li>
+          <li>Change something else and open it in your browser again, just to make sure you've got it!</li>
+          <li>After saving, you can also just refresh your browser to see the changes (rather than opening your file in a new tab every time).</li>
+        </ol>
+        <p class="icon-tip">Find a work flow that works best for you when making frequent changes. I like to use keyboard shortcuts to save my files in the editor (CTRL/CMND + S).  Then I open my file in the browser once and simply refresh it (CTRL/CMND + R) after saving my edits to view the changes in the browser.</p>
+      </section>
 
       <section class="slide">
         <h2>Code highlight example</h2>
+        <h3>JavaScript!</h3>
         <pre><code>// Comment
 document.addEventListener('DOMAttrModified',function(e) {
   var node = e.target, attr = e.attrName;
@@ -137,8 +136,19 @@ document.addEventListener('DOMAttrModified',function(e) {
 }, false);</code></pre>
       </section>
 
+      <section class="slide">
+        <h2>Code highlight example</h2>
+        <h3>jQuery!</h3>
+        <pre><code>$(document).ready(function(){
+  $("p").hide("fast");
+});</code></pre>
+      </section>
+
       <section class="slide"> 
-        <pre class="language-markup"><code>&#60;!doctype html&#62;
+        <h2>Code highlight example</h2>
+        <h3>HTML!</h3>
+        <p>(needs to be escaped)</p>
+        <pre><code>&#60;!doctype html&#62;
 &#60;head&#62;
   &#60;title&#62;Ladies Learning Code HTML and CSS&#60;/title&#62;
   &#60;style&#62;
@@ -149,15 +159,6 @@ document.addEventListener('DOMAttrModified',function(e) {
   &#60;/style&#62;
 &#60;/head&#62;
 &#60;body&#62;
-  &#60;p&#62;This is a paragraph&#60;/p&#62;
-
-   &lt;script>
-var email = "hello";
- &lt;/script>
-&#60;/body&#62;
-&#60;/html&#62;
-
-
 </code></pre>
       </section>
 

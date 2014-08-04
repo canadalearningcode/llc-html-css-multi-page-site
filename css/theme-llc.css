@@ -1,27 +1,24 @@
 /*
 	Slideshow theme for Ladies Learning Code
+	Additional customizations
 	@author Christina Truong
 	@version 1.0
 */
 /* Global styles
 -----------------*/
 /* apply a natural box layout model to all elements */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000313}}
 *, *:before, *:after {
   box-sizing: border-box; }
 
 /* updated clearfix hack: http://css-tricks.com/snippets/css/clear-fix/ */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000317}}
 .group:after, #intro .info:after {
   content: "";
   display: table;
   clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000323}}
 html {
   font-size: 62.5%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000326}}
 body {
   padding: 0;
   margin: 0;
@@ -32,49 +29,45 @@ body {
   border-top: 4px solid #b109aa;
   -webkit-font-smoothing: antialiased; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000337}}
 h1, h2, h3, h4, h5, h6 {
   font-family: "Vollkorn", serif;
   line-height: 1.25;
   font-style: italic;
   font-weight: normal; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000343}}
 h1 {
   font-size: 9rem;
   margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000347}}
 h2 {
   font-size: 4.5rem;
   margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000351}}
 a {
   text-decoration: none;
   color: #222222; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000355}}
   a:hover {
     color: #b109aa; }
 
+code {
+  font-family: "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  color: #444;
+  padding: 1px 4px; }
+
 /* Base styles for slides
 --------------------------*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000362}}
 .slide {
   padding: 40px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000367}}
 #timer {
   height: 4px;
   line-height: 4px;
   background: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000372}}
   #timer:before {
     content: ""; }
 
-/* First/intro slide
+/* First/Intro slide
 ---------------------*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000382}}
 #intro {
   border-top: 4px solid #b109aa;
   background: #222222;
@@ -82,34 +75,36 @@ a {
   background-size: cover;
   color: white;
   padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000390}}
   #intro .logo {
     margin: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000393}}
   #intro .info {
     background: rgba(255, 255, 255, 0.6);
     color: #222222;
     padding: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\0000399}}
     #intro .info ul {
       margin: 0;
       padding: 0;
       list-style-type: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\00003103}}
   #intro h2 {
     vertical-align: bottom; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\00003106}}
     #intro h2 span {
       color: #b109aa;
       font-family: "Pacifico", cursive;
       font-style: normal;
       margin-right: 5px;
       font-size: 3rem; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/christinatruong\/Dropbox\/LLC\/workshops\/llc-slidedeck-template\/sass\/theme-llc\.scss}line{font-family:\00003114}}
   #intro .instructor-img {
     border-radius: 50%;
     width: 160px;
     float: left;
     margin-right: 15px; }
+
+/* highlight.js customizations
+-------------------------------*/
+.hljs {
+  font-family: "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  padding: 20px 25px;
+  border-radius: 2px;
+  font-size: 22px; }
 
 /*# sourceMappingURL=theme-llc.css.map */

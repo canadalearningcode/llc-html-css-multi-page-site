@@ -1,5 +1,6 @@
 /*
 	Slideshow theme for Ladies Learning Code
+	Additional customizations
 	@author Christina Truong
 	@version 1.0
 */
@@ -13,6 +14,7 @@
 *, *:before, *:after {
 	box-sizing: border-box;
 }
+
 /* updated clearfix hack: http://css-tricks.com/snippets/css/clear-fix/ */
 .group:after {
 	content: "";
@@ -57,6 +59,13 @@ a {
 	}
 }
 
+code {
+	// font-family: Monaco, Andale Mono, monospace;
+	font-family: "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+	color: #444;
+	padding: 1px 4px;
+}
+
 /* Base styles for slides
 --------------------------*/
 .slide {
@@ -77,7 +86,7 @@ a {
 	}
 }
 
-/* First/intro slide
+/* First/Intro slide
 ---------------------*/
 #intro {
 	border-top: 4px solid $llc-pink;
@@ -118,3 +127,14 @@ a {
 		margin-right: 15px;
 	}
 }
+
+/* highlight.js customizations
+-------------------------------*/
+.hljs {
+	font-family: "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+	padding: 20px 25px;
+	border-radius: 2px;
+	font-size: 22px;
+}
+
+
