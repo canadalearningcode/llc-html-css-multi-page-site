@@ -22,7 +22,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font: 2rem/1.4 "Montserrat", sans-serif;
+  font: 2.5rem/1.4 "Montserrat", sans-serif;
   color: #222222;
   border-top: 4px solid #b109aa;
   -webkit-font-smoothing: antialiased;
@@ -46,9 +46,9 @@ h2 {
 
 a {
   text-decoration: none;
-  color: #222222; }
+  color: #b109aa; }
   a:hover {
-    color: #b109aa; }
+    color: #222222; }
 
 code {
   font-family: Monaco, Andale Mono, monospace;
@@ -61,13 +61,20 @@ code {
   width: 100%;
   z-index: 100;
   text-align: center;
-  font-size: 16px;
-  background: rgba(255, 255, 255, 0.6); }
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8px;
+  margin: 0; }
 
 /* Base styles for slides
 --------------------------*/
 .slide {
   padding: 40px;
+  height: 96%; }
+  .slide:target {
+    overflow: scroll; }
+
+header.slide {
   height: 100%; }
 
 /* vertical align heading */
@@ -85,6 +92,12 @@ section.slide {
   background: black; }
   #timer:before {
     content: ""; }
+
+textarea.snippet {
+  width: 100%;
+  border: 1px solid #222;
+  padding: 15px 20px;
+  font-family: Monaco, Andale Mono, monospace; }
 
 /* First/Intro slide
 ---------------------*/
@@ -130,9 +143,8 @@ section.slide {
 /* highlight.js customizations
 -------------------------------*/
 .hljs {
-  font-family: "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  font-family: Monaco, Andale Mono, monospace;
   padding: 20px 25px;
-  border-radius: 2px;
-  font-size: 22px; }
+  border-radius: 2px; }
 
 /*# sourceMappingURL=theme-llc.css.map */

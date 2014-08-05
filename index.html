@@ -1,198 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Ladies Learning Code: Intro to HTML & CSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Ladies Learning Code: Intro to HTML & CSS</title>
 
-	<!-- Theme-specific styles -->
-	<link href='http://fonts.googleapis.com/css?family=Quicksand|Montserrat:400,700|Pacifico' rel='stylesheet' type='text/css'>
-	
-	<!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
-	<link rel="stylesheet" href="slideshow.css">
-	<link rel="stylesheet" href="css/font-awesome.css">
-	<link rel="stylesheet" href="css/highlightjs-themes/monokai-sublime.css">
-	<link rel="stylesheet" href="css/theme-llc.css">
-	<!-- Workshop-specific styles -->
-	<link href="css/workshop.css" rel="stylesheet">
+    <!-- Theme-specific styles -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Montserrat:400,700|Pacifico' rel='stylesheet' type='text/css'>
+    
+    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
+    <link rel="stylesheet" href="slideshow.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/highlightjs-themes/monokai-sublime.css">
+    <link rel="stylesheet" href="css/theme-llc.css">
+    <!-- Workshop-specific styles -->
+    <link href="css/workshop.css" rel="stylesheet">
 
-	<!-- Takes care of CSS3 prefixes! -->
-	<script src="prefixfree.min.js"></script>
+    <!-- Takes care of CSS3 prefixes! -->
+    <script src="prefixfree.min.js"></script>
 
-	<!-- highlight.js syntax highlighting -->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+    <!-- highlight.js syntax highlighting -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="30">
 
-	<!-- First/Intro slide -->
-	<header class="intro slide">
-		<img class="logo" src="img/logo-llc-152x85.png">
+    <!-- First/Intro slide -->
+    <header class="intro slide">
+        <img class="logo" src="img/logo-llc-152x85.png">
 
-		<div class="info">
-			<h1>
-				<span class="title-bg">CSS Fundamentals</span><br>
-				<span class="title-bg">for Beginners</span>
-			</h1>
+        <div class="info">
+            <h1>
+                <span class="title-bg">CSS Fundamentals</span><br>
+                <span class="title-bg">for Beginners</span>
+            </h1>
 
-			<img class="instructor-img" src="img/christina-truong.jpg" alt="christina truong">
-			<h2><span>with</span> Christina Truong</h2>
-			<ul>
-				<li><i class="fa fa-envelope"></i><a href="mailto:hello@christinatruong.com">hello@christinatruong.com</li>
-				<li><i class="fa fa-desktop"></i><a href="http://christinatruong.com" target="_blank">christinatruong.com</a></li>
-				<li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong" target="_blank">@christinatruong</a></li>
-			</ul>
-		</div>
-	</header>
+            <img class="instructor-img" src="img/christina-truong.jpg" alt="christina truong">
+            <h2><span>with</span> Christina Truong</h2>
+            <ul>
+                <li><i class="fa fa-envelope"></i><a href="mailto:hello@christinatruong.com">hello@christinatruong.com</li>
+                <li><i class="fa fa-desktop"></i><a href="http://christinatruong.com" target="_blank">christinatruong.com</a></li>
+                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong" target="_blank">@christinatruong</a></li>
+            </ul>
+        </div>
+    </header>
 
-	<section class="main">
-		<section class="slide">
-			<h1>Introduction</h1>
-		</section>
+    <section class="main">
+        <section class="slide">
+            <h1>Introduction:<br>Title Slide Example</h1>
+        </section>
 
-		<section class="slide">
-			<h2>Incremental display of slide contents</h2>
-			<p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
-			<ul>
-				<li class="delayed">Make sure your computer is setup</li>
-				<li class="delayed">Web development breakdown</li>
-				<li class="delayed">Dive into HTML</li>
-				<li class="delayed">CSS fundamentals</li>
-			</ul>
-		</section>
+        <section class="slide">
+            <h2>Just some text and Code</h2>
+            <p>Sample of a slide with basic text and code snippets.</p>
+            <p>For HTML, the <code><</code> needs to be escaped! As long as the code snippet is wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>, the syntax highlighting is taken care of!</p>
+            
+            <h3>HTML</h3>
+            <pre><code>&lt;!DOCTYPE html>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html></code></pre>
 
-	<section class="slide">
-		<h2>What is HTML?</h2>
-		<p>HTML stands for <i>HyperText Markup Language</i>. It was created for <em>web browsers</em> to easily read. Below are the basic HTML tags required for all web pages. This makes perfect sense to a web browser:</p>
-		<pre><code lang="html">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
-		<p>Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules as well to make sense.</p>
-		<p>This is referred to as <i>syntax</i>.</p>
-	</section>
+            <h3>CSS</h3>
+            <pre><code>body {
+    margin: 0;
+    padding: 0;
+}</code></pre>   
+        </section>
 
-	<section class="slide">
-		<h2>CSS Snippets demo</h2>
-		<p>The whole slide will get the CSS applied to it.</p>
-		<textarea class="snippet">background-color:red;
-		</textarea>
-	</section>
-
-	<section class="slide">
-		<h2>CSS Snippets demo</h2>
-		<p>Specific element</p>
-		<textarea class="snippet" data-subject="#test">background-color:red;
-		</textarea>
-		<div id="test">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-		</div>
-	</section>
-
-	<section class="slide" data-markdown>
-		##Markdown example
-
-		###heading 3
-		###heading 4
-
-		paragraph
-
-		* list item
-		* list item
-		* list item
-		
-		`code block`
-	</section>
-
-	<section class="slide">
-		<h2>Dive back in to Sublime Text</h2>
-		<ol>
-			<li>Try changing something, like the text within the <code>&#60;p&#62;</code><code>&#60;/p&#62;</code> tags.</li>
-			<li>Save your file using <strong>File > Save</strong>, or use keyboard shortcuts (<strong>CMD + S</strong> or <strong>CONTROL + S</strong>)</li>
-			<li>Right click and select <strong>Open in Browser</strong>.</li>
-			<li>Change something else and open it in your browser again, just to make sure you've got it!</li>
-			<li>After saving, you can also just refresh your browser to see the changes (rather than opening your file in a new tab every time).</li>
-		</ol>
-		<p class="icon-tip">Find a work flow that works best for you when making frequent changes. I like to use keyboard shortcuts to save my files in the editor (CTRL/CMND + S).  Then I open my file in the browser once and simply refresh it (CTRL/CMND + R) after saving my edits to view the changes in the browser.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Code highlight example</h2>
-		<h3>JavaScript!</h3>
-		<pre><code>// Comment
+        <section class="slide">
+            <h2>JavaScript & jQuery highlight example</h2>
+            <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a>. Visit the site to see the full list of supported languages.</p>
+            <h3>JavaScript!</h3>
+            <pre><code>// Comment
 document.addEventListener('DOMAttrModified',function(e) {
-var node = e.target, attr = e.attrName;
-if(/^input$/i.test(node.nodeName) 
-&amp;&amp; (attr === 'placeholder' || attr === 'value')
-|| foo > 5)
-	Placeholder.update(node);
+    var node = e.target, attr = e.attrName;
+    if(/^input$/i.test(node.nodeName) 
+    &amp;&amp; (attr === 'placeholder' || attr === 'value')
+    || foo > 5)
+        Placeholder.update(node);
 }, false);</code></pre>
-	</section>
 
-	<section class="slide">
-		<h2>Code highlight example</h2>
-		<h3>jQuery!</h3>
-		<pre><code>$(document).ready(function(){
-$("p").hide("fast");
+            <h3>jQuery!</h3>
+            <pre><code>$(document).ready(function(){
+    $("p").hide("fast");
 });</code></pre>
-	</section>
+        </section>
 
-	<section class="slide"> 
-		<h2>Code highlight example</h2>
-		<h3>HTML!</h3>
-		<p>(needs to be escaped)</p>
-		<pre><code>&#60;!doctype html&#62;
-&#60;head&#62;
-&#60;title&#62;Ladies Learning Code HTML and CSS&#60;/title&#62;
-&#60;style&#62;
-p {
-	color: red;
-	text-decoration: underline;
-}
-&#60;/style&#62;
-&#60;/head&#62;
-&#60;body&#62;
-</code></pre>
-	</section>
+        <section class="slide">
+            <h2>Incremental display of content</h2>
+            <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
+            <ul>
+                <li class="delayed">Make sure your computer is setup</li>
+                <li class="delayed">Web development breakdown</li>
+                <li class="delayed">Dive into HTML</li>
+                <li class="delayed">CSS fundamentals</li>
+            </ul>
+        </section>
 
-	<div class="instructions">
-		<p>Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
-	</div>
+        <section class="slide">
+            <h2>CSS Snippets demo</h2>
+            <p>The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
+            <textarea class="snippet">background-color: lightblue;
+font-family: "Times New Roman", serif;
+            </textarea>
+        </section>
 
-	</section><!-- cls main section -->
+        <section class="slide">
+            <h2>CSS Snippets demo</h2>
+            <p>You can also target specific elements</p>
+            <textarea class="snippet" data-subject="#test">background-color: lightblue;
+font-family: "Times New Roman", serif;
+padding: 20px;
+            </textarea>
+            <div id="test">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+            </div>
+        </section>
 
-	<!-- Last slide -->
-	<footer class="slide">
-		<h2>Thank you!</h2>
-		<p>Closing remarks</p>
-		<p class="attribution">Very special thanks to <a href="https://github.com/LeaVerou/csss">Lea Verou</a> for the interactive code slides.</p>
-	</footer>
+        <section class="slide" data-markdown>
+            ##Markdown example
+
+            You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Only text is supported at this time.  Code blocks need to be included in `&lt;pre>&lt;code>&lt;/code>&lt;/pre>` tags. Just tabbing to create a code block won't work in this slide deck. However, using the "`" will work just to create a code tag.  See example below.
+
+            ###heading 3
+            ###heading 4
+
+            Paragraph - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius ex maiores consequuntur officiis facilis possimus dolorum laudantium? Nesciunt non dolorem ducimus id labore, aspernatur natus sequi corporis distinctio quidem.
+
+            * list item
+            * list item
+            * list item
+            
+            `code`
+        </section>
 
 
-	<script src="slideshow.js"></script>
+            <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+      
 
-	<!-- Uncomment the plugins you need -->
-	<script src="plugins/css-edit.js"></script>
-	<script src="plugins/css-snippets.js"></script>
-	<script src="plugins/css-controls.js"></script>
-	<!-- <script src="plugins/code-highlight.js"></script>-->
+    </section><!-- cls main section -->
 
-	<script src="plugins/markdown/marked.js"></script>
-	<script src="plugins/markdown/markdown.js"></script>
-	<!--<script src="plugins/highlight/highlight.js"></script>-->
+    <!-- Last slide -->
+    <footer class="slide">
+        <h2>Thank you!</h2>
+        <p>Closing remarks</p>
+        <p class="attribution">Slidedecks created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </footer>
 
-	<!-- Prettify -->
-	<script src="plugins/prettify.js"></script>
-	<script src="plugins/lang-css.js"></script>
-	<script src="plugins/prism.js"></script>
 
-	<script>
-		var slideshow = new SlideShow();
+    <script src="slideshow.js"></script>
 
-		// Grabs all the .snippet elements
-		var snippets = document.querySelectorAll('.snippet');
-		for(var i=0; i<snippets.length; i++) {
-			new CSSSnippet(snippets[i]);
-		}
-	</script>
+    <!-- Uncomment the plugins you need -->
+    <script src="plugins/css-edit.js"></script>
+    <script src="plugins/css-snippets.js"></script>
+    <script src="plugins/css-controls.js"></script>
+    <!-- <script src="plugins/code-highlight.js"></script>-->
+
+    <script src="plugins/markdown/marked.js"></script>
+    <script src="plugins/markdown/markdown.js"></script>
+    <!--<script src="plugins/highlight/highlight.js"></script>-->
+
+    <!-- Prettify -->
+    <script src="plugins/prettify.js"></script>
+    <script src="plugins/lang-css.js"></script>
+    <script src="plugins/prism.js"></script>
+
+    <script>
+        var slideshow = new SlideShow();
+
+        // Grabs all the .snippet elements
+        var snippets = document.querySelectorAll('.snippet');
+        for(var i=0; i<snippets.length; i++) {
+            new CSSSnippet(snippets[i]);
+        }
+    </script>
 </body>
 </html>
