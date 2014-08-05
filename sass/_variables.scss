@@ -1,0 +1,39 @@
+//-----------
+// VARIABLES
+//-----------
+
+// Colours
+//---------------
+$llc-pink:		#b109aa;
+$black: 			#000000;
+$gray-dark:		#222222;
+$white: 			#ffffff;
+
+
+// Typography
+//---------------
+
+// Font families
+// $vollkorn: 		'Vollkorn', serif;
+// $open-sans: 	'Open Sans', sans-serif;
+// $sans-serif:		$open-sans;
+// $serif: 		  	$vollkorn;
+
+$quicksand: 	'Quicksand', sans-serif;
+$montserrat: 	'Montserrat', sans-serif;
+$pacifico: 		'Pacifico', cursive;
+
+$heading-font: 	$quicksand;
+$base-font:			$montserrat;
+$cursive: 			$pacifico;
+
+// Font weights
+$normal:	400;
+$bold:		700;
+
+
+@mixin list-reset(){
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}

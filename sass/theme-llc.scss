@@ -1,0 +1,194 @@
+/*
+	Slideshow theme for Ladies Learning Code
+	Additional customizations
+	@author Christina Truong
+	@version 1.0
+*/
+
+@import "variables";
+
+
+/* Global styles
+-----------------*/
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+/* updated clearfix hack: http://css-tricks.com/snippets/css/clear-fix/ */
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+html {
+	font-size: 62.5%;
+}
+body {
+	padding: 0;
+	margin: 0;
+	font: 2.5rem/1.4 $base-font;
+	color: $gray-dark;
+	border-top: 4px solid $llc-pink;
+	-webkit-font-smoothing: antialiased;
+	background: #ecf0f1;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: $heading-font;
+	line-height: 1.25;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
+}
+h1, h2 {
+	margin: 0;
+}
+h1 {
+	font-size: 9rem;
+}
+h2 {
+	font-size: 4.5rem;
+}
+
+a {
+	text-decoration: none;
+	color: $llc-pink;
+
+	&:hover {
+		color: $gray-dark;
+	}
+}
+
+code {
+	font-family: Monaco, Andale Mono, monospace;
+	color: #444;
+	padding: 1px 4px;
+}
+
+.instructions {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+	text-align: center;
+	font-size: 14px;
+	background: rgba(white, 0.6);
+	padding: 8px;
+	margin: 0;
+}
+
+
+/* Base styles for slides
+--------------------------*/
+.slide {
+	padding: 40px;
+	height: 96%;
+
+	&:target {
+		overflow: scroll;
+	}
+}
+
+header.slide {
+	height: 100%;
+}
+/* vertical align heading */
+section.slide {
+	transform-style: preserve-3d;
+
+	h1 {
+		position: relative;
+		text-align: center;
+		top: 42%;
+		transform: translateY(-42%);
+	}
+}
+
+// Progress Bar
+#timer {
+	height: 4px;
+	line-height: 4px;
+	background: $black;
+
+	&:before {
+		content: "";
+	}
+	.end {
+
+	}
+}
+
+// Textarea for dynamic CSS demos
+textarea.snippet {
+	width: 100%;
+	border: 1px solid #222;
+	padding: 15px 20px;
+	font-family: Monaco, Andale Mono, monospace;
+}
+
+/* First/Intro slide
+---------------------*/
+.intro {
+	// background: $gray-dark;
+	background: linear-gradient(rgba($black, 0.5),rgba($black, 0.5)), url(../img/banner-home2.jpg) no-repeat;
+	background-size: cover;
+	color: $white;
+	padding: 0;
+	position: relative;
+
+	.logo {
+		margin: 40px;
+	}
+	.info {
+		@extend .group;
+		// background: rgba($white, 0.6);
+		padding: 40px;
+		position: absolute;
+		bottom: 75px;
+		width: 100%;
+
+		ul {
+			@include list-reset();
+		}
+		.fa {
+			padding-right: 5px;
+		}
+		a {
+			color: $white;
+		}
+	}
+	.title-bg {
+		background: rgba($llc-pink, 0.8);
+		border-radius: 5px;
+		padding-right: 6px;
+	}
+	h2 {
+		vertical-align: bottom;
+
+		span {
+			color: $llc-pink;
+			font-family: $cursive;
+			margin-right: 2px;
+			font-size: 3rem;
+			text-transform: lowercase;
+		}
+	}
+	.instructor-img {
+		border-radius: 50%;
+		width: 160px;
+		float: left;
+		margin: 15px;
+	}
+}
+
+/* highlight.js customizations
+-------------------------------*/
+.hljs {
+	font-family: Monaco, Andale Mono, monospace;
+	padding: 20px 25px;
+	border-radius: 2px;
+	// font-size: 22px;
+}
+
+
