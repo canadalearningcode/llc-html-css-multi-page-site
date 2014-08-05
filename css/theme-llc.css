@@ -22,22 +22,21 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
-  font-size: 2.2rem;
-  line-height: 1.4;
+  font: 2rem/1.4 "Montserrat", sans-serif;
   color: #222222;
   border-top: 4px solid #b109aa;
   -webkit-font-smoothing: antialiased;
   background: #ecf0f1; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Vollkorn", serif;
+  font-family: "Quicksand", sans-serif;
   line-height: 1.25;
-  font-weight: normal; }
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: -0.05em; }
 
 h1, h2 {
-  margin: 0;
-  font-style: italic; }
+  margin: 0; }
 
 h1 {
   font-size: 9rem; }
@@ -52,7 +51,7 @@ a {
     color: #b109aa; }
 
 code {
-  font-family: "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  font-family: Monaco, Andale Mono, monospace;
   color: #444;
   padding: 1px 4px; }
 
@@ -71,7 +70,7 @@ code {
   padding: 40px;
   height: 100%; }
 
-/* vertical align */
+/* vertical align heading */
 section.slide {
   transform-style: preserve-3d; }
   section.slide h1 {
@@ -98,29 +97,35 @@ section.slide {
   .intro .logo {
     margin: 40px; }
   .intro .info {
-    background: rgba(255, 255, 255, 0.6);
-    color: #222222;
     padding: 40px;
     position: absolute;
-    bottom: 60px;
+    bottom: 75px;
     width: 100%; }
     .intro .info ul {
       margin: 0;
       padding: 0;
       list-style-type: none; }
+    .intro .info .fa {
+      padding-right: 5px; }
+    .intro .info a {
+      color: white; }
+  .intro .title-bg {
+    background: rgba(177, 9, 170, 0.8);
+    border-radius: 5px;
+    padding-right: 6px; }
   .intro h2 {
     vertical-align: bottom; }
     .intro h2 span {
       color: #b109aa;
       font-family: "Pacifico", cursive;
-      font-style: normal;
-      margin-right: 5px;
-      font-size: 3rem; }
+      margin-right: 2px;
+      font-size: 3rem;
+      text-transform: lowercase; }
   .intro .instructor-img {
     border-radius: 50%;
     width: 160px;
     float: left;
-    margin-right: 15px; }
+    margin: 15px; }
 
 /* highlight.js customizations
 -------------------------------*/

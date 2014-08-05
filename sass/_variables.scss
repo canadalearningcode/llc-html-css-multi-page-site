@@ -5,25 +5,27 @@
 // Colours
 //---------------
 $llc-pink:		#b109aa;
-$black: 		#000000;
+$black: 			#000000;
 $gray-dark:		#222222;
-$white: 		#ffffff;
+$white: 			#ffffff;
 
 
 // Typography
 //---------------
 
 // Font families
-// $roboto: 		'Roboto', sans-serif;
-// $muli: 			'Muli', sans-serif;
-$vollkorn: 		'Vollkorn', serif;
-$open-sans: 	'Open Sans', sans-serif;
-//$playfair: 		'Playfair Display', serif;
+// $vollkorn: 		'Vollkorn', serif;
+// $open-sans: 	'Open Sans', sans-serif;
+// $sans-serif:		$open-sans;
+// $serif: 		  	$vollkorn;
+
+$quicksand: 	'Quicksand', sans-serif;
+$montserrat: 	'Montserrat', sans-serif;
 $pacifico: 		'Pacifico', cursive;
 
-$sans-serif: 	$open-sans;
-$serif: 		  $vollkorn;
-$cursive: 		$pacifico;
+$heading-font: 	$quicksand;
+$base-font:			$montserrat;
+$cursive: 			$pacifico;
 
 // Font weights
 $normal:	400;

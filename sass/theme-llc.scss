@@ -28,23 +28,21 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	font-family: $sans-serif;
-	font-size: 2.2rem;
-	line-height: 1.4;
+	font: 2rem/1.4 $base-font;
 	color: $gray-dark;
 	border-top: 4px solid $llc-pink;
 	-webkit-font-smoothing: antialiased;
 	background: #ecf0f1;
 }
-
 h1, h2, h3, h4, h5, h6 {
-	font-family: $serif;
+	font-family: $heading-font;
 	line-height: 1.25;
 	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
 }
 h1, h2 {
 	margin: 0;
-	font-style: italic;
 }
 h1 {
 	font-size: 9rem;
@@ -52,6 +50,7 @@ h1 {
 h2 {
 	font-size: 4.5rem;
 }
+
 a {
 	text-decoration: none;
 	color: $gray-dark;
@@ -62,8 +61,7 @@ a {
 }
 
 code {
-	// font-family: Monaco, Andale Mono, monospace;
-	font-family: "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+	font-family: Monaco, Andale Mono, monospace;
 	color: #444;
 	padding: 1px 4px;
 }
@@ -85,7 +83,7 @@ code {
 	height: 100%;
 }
 
-/* vertical align */
+/* vertical align heading */
 section.slide {
 	transform-style: preserve-3d;
 
@@ -126,16 +124,26 @@ section.slide {
 	}
 	.info {
 		@extend .group;
-		background: rgba($white, 0.6);
-		color: $gray-dark;
+		// background: rgba($white, 0.6);
 		padding: 40px;
 		position: absolute;
-		bottom: 60px;
+		bottom: 75px;
 		width: 100%;
 
 		ul {
 			@include list-reset();
 		}
+		.fa {
+			padding-right: 5px;
+		}
+		a {
+			color: $white;
+		}
+	}
+	.title-bg {
+		background: rgba($llc-pink, 0.8);
+		border-radius: 5px;
+		padding-right: 6px;
 	}
 	h2 {
 		vertical-align: bottom;
@@ -143,16 +151,16 @@ section.slide {
 		span {
 			color: $llc-pink;
 			font-family: $cursive;
-			font-style: normal;
-			margin-right: 5px;
+			margin-right: 2px;
 			font-size: 3rem;
+			text-transform: lowercase;
 		}
 	}
 	.instructor-img {
 		border-radius: 50%;
 		width: 160px;
 		float: left;
-		margin-right: 15px;
+		margin: 15px;
 	}
 }
 
