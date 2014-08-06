@@ -1,0 +1,66 @@
+/*
+
+Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
+based on dark.css by Ivan Sagalaev
+
+*/
+
+pre code {
+  display: block;
+  padding: 0.5em;
+  background: #272822;
+  color: white;
+}
+
+.tag:nth-child(2) {
+  color: #fff;
+}
+
+/* pink */
+.tag .title,
+.css .tag {
+  color: #F92772;
+}
+
+/* green */
+.tag .attribute,
+.css .class,
+.css .id,
+.css .pseudo,
+.function .title  {
+  color: #A6E22D;
+}
+
+/* yellow */
+.tag .value,
+.string {
+  color: #E6DB74;
+}
+
+/* blue */
+.rule .attribute,
+.tag .value,
+.rule .value,
+.keyword {
+  color: #66D9EF;
+}
+
+/* purple */
+.number,
+.literal,
+.rule .value .hexcolor {
+  color: #AE81FF;
+}
+
+/* orange */
+.value .function,
+.important,
+.function .params {
+  color: #FD9720;
+}
+
+/* grey */
+
+.comment {
+  color: #75715E;
+}

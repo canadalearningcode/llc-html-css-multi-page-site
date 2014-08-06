@@ -11,7 +11,7 @@
     <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
     <link rel="stylesheet" href="slideshow.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/highlightjs-themes/monokai-sublime.css">
+    <link rel="stylesheet" href="css/highlightjs-themes/monokai.css">
     <link rel="stylesheet" href="css/theme-llc.css">
     <!-- Workshop-specific styles -->
     <link href="css/workshop.css" rel="stylesheet">
@@ -19,9 +19,6 @@
     <!-- Takes care of CSS3 prefixes! -->
     <script src="prefixfree.min.js"></script>
 
-    <!-- highlight.js syntax highlighting -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
@@ -125,20 +122,29 @@ padding: 20px;
         </section>
 
         <section class="slide" data-markdown>
-            ##Markdown example
+##Markdown example
 
-            You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Only text is supported at this time.  Code blocks need to be included in `&lt;pre>&lt;code>&lt;/code>&lt;/pre>` tags. Just tabbing to create a code block won't work in this slide deck. However, using the "`" will work just to create a code tag.  See example below.
+You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.  Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.
 
-            ###heading 3
-            ###heading 4
+You can specify the language of the codeblock by following the three backticks immediately by the language name.  View the source to see this in action
 
-            Paragraph - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius ex maiores consequuntur officiis facilis possimus dolorum laudantium? Nesciunt non dolorem ducimus id labore, aspernatur natus sequi corporis distinctio quidem.
+#### Javascript Example
 
-            * list item
-            * list item
-            * list item
-            
-            `code`
+```javascript
+var myJSVariable = "Syntax Highting for Javascript";
+```
+
+#### Css Example
+
+```css
+.css-selector{
+    highlight : syntax;
+}
+```
+#### indented example
+
+    code block that has to guess at the language and likely gets it wrong.  it thinks this is applescript.
+
         </section>
 
 
@@ -165,7 +171,8 @@ padding: 20px;
 
     <script src="plugins/markdown/marked.js"></script>
     <script src="plugins/markdown/markdown.js"></script>
-    <!--<script src="plugins/highlight/highlight.js"></script>-->
+    <script src="plugins/highlight/highlight.js"></script>    
+    <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- Prettify -->
     <script src="plugins/prettify.js"></script>
