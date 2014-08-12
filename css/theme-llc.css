@@ -8,16 +8,19 @@
 -----------------*/
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /* updated clearfix hack: http://css-tricks.com/snippets/css/clear-fix/ */
-.group:after, .intro .info:after {
+.group:after {
   content: "";
   display: table;
-  clear: both; }
+  clear: both;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   padding: 0;
@@ -26,125 +29,156 @@ body {
   color: #222222;
   border-top: 4px solid #b109aa;
   -webkit-font-smoothing: antialiased;
-  background: #ecf0f1; }
+  background: #ecf0f1;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Quicksand", sans-serif;
   line-height: 1.25;
   font-weight: normal;
   text-transform: uppercase;
-  letter-spacing: -0.05em; }
+  letter-spacing: -0.05em;
+}
 
 h1, h2 {
-  margin: 0; }
-
-h1 {
-  font-size: 9rem; }
+  margin: 0;
+}
 
 h2 {
-  font-size: 4.5rem; }
+  font-size: 4rem;
+}
 
 a {
   text-decoration: none;
-  color: #b109aa; }
-  a:hover {
-    color: #222222; }
+  color: #b109aa;
+}
+a:hover {
+  color: #222222;
+}
 
 code {
   font-family: Monaco, Andale Mono, monospace;
   color: #444;
-  padding: 1px 4px; }
+  padding: 1px 4px;
+}
 
-.instructions {
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   z-index: 100;
   text-align: center;
-  font-size: 14px;
   background: rgba(255, 255, 255, 0.6);
-  padding: 8px;
-  margin: 0; }
+  font-size: 12px;
+}
+footer .instructions {
+  float: right;
+  margin-right: 20px;
+}
+footer .license {
+  float: left;
+  margin-left: 20px;
+}
+footer .license img {
+  vertical-align: middle;
+}
 
 /* Base styles for slides
 --------------------------*/
 .slide {
   padding: 40px;
-  height: 96%; }
-  .slide:target {
-    overflow: scroll; }
-
-header.slide {
-  height: 100%; }
+  height: 100%;
+}
+.slide:target {
+  overflow: scroll;
+}
 
 /* vertical align heading */
 section.slide {
-  transform-style: preserve-3d; }
-  section.slide h1 {
-    position: relative;
-    text-align: center;
-    top: 42%;
-    transform: translateY(-42%); }
+  transform-style: preserve-3d;
+}
+section.slide h1 {
+  position: relative;
+  text-align: center;
+  top: 42%;
+  transform: translateY(-42%);
+  font-size: 8rem;
+}
 
 #timer {
   height: 4px;
   line-height: 4px;
-  background: black; }
-  #timer:before {
-    content: ""; }
+  background: black;
+}
+#timer:before {
+  content: "";
+}
 
 textarea.snippet {
   width: 100%;
   border: 1px solid #222;
   padding: 15px 20px;
-  font-family: Monaco, Andale Mono, monospace; }
+  font-family: Monaco, Andale Mono, monospace;
+}
 
 /* First/Intro slide
 ---------------------*/
 .intro {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/banner-home2.jpg) no-repeat;
+  /* background: $gray-dark; */
+  /*uncomment this if you don't want to use a background image */
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(../img/banner-home.jpg) no-repeat;
   background-size: cover;
   color: white;
+  padding: 40px;
+  position: relative;
+}
+.intro .logo {
+  height: 65px;
+}
+.intro h1 {
+  font-size: 7.5rem;
+  margin: 20px 0;
+}
+.intro .info ul {
+  margin: 0;
   padding: 0;
-  position: relative; }
-  .intro .logo {
-    margin: 40px; }
-  .intro .info {
-    padding: 40px;
-    position: absolute;
-    bottom: 75px;
-    width: 100%; }
-    .intro .info ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none; }
-    .intro .info .fa {
-      padding-right: 5px; }
-    .intro .info a {
-      color: white; }
-  .intro .title-bg {
-    background: rgba(177, 9, 170, 0.8);
-    border-radius: 5px;
-    padding-right: 6px; }
-  .intro h2 {
-    vertical-align: bottom; }
-    .intro h2 span {
-      color: #b109aa;
-      font-family: "Pacifico", cursive;
-      margin-right: 2px;
-      font-size: 3rem;
-      text-transform: lowercase; }
-  .intro .instructor-img {
-    border-radius: 50%;
-    width: 160px;
-    float: left;
-    margin: 15px; }
+  list-style-type: none;
+  font-size: 2.2rem;
+}
+.intro .info .fa {
+  padding-right: 10px;
+}
+.intro .info a {
+  color: white;
+}
+.intro .title-bg {
+  background: rgba(177, 9, 170, 0.8);
+  border-radius: 5px;
+  padding: 0 10px 0 6px;
+}
+.intro .instructor-img {
+  border-radius: 50%;
+  width: 100px;
+  float: left;
+  margin-right: 20px;
+}
+.intro h2 {
+  margin-bottom: 20px;
+}
+.intro h2 span {
+  color: #b109aa;
+  font-family: "Pacifico", cursive;
+  margin-right: 4px;
+  font-size: 3rem;
+  text-transform: lowercase;
+}
 
 /* highlight.js customizations
 -------------------------------*/
 .hljs {
   font-family: Monaco, Andale Mono, monospace;
   padding: 20px 25px;
-  border-radius: 2px; }
+  border-radius: 2px;
+}
 
 /*# sourceMappingURL=theme-llc.css.map */

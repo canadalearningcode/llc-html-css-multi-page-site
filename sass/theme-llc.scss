@@ -25,6 +25,7 @@
 html {
 	font-size: 62.5%;
 }
+
 body {
 	padding: 0;
 	margin: 0;
@@ -34,6 +35,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background: #ecf0f1;
 }
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: $heading-font;
 	line-height: 1.25;
@@ -44,11 +46,8 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2 {
 	margin: 0;
 }
-h1 {
-	font-size: 9rem;
-}
 h2 {
-	font-size: 4.5rem;
+	font-size: 4rem;
 }
 
 a {
@@ -66,16 +65,27 @@ code {
 	padding: 1px 4px;
 }
 
-.instructions {
+footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	z-index: 100;
 	text-align: center;
-	font-size: 14px;
 	background: rgba(white, 0.6);
-	padding: 8px;
-	margin: 0;
+	font-size: 12px;
+	
+	.instructions {
+		float: right;
+		margin-right: 20px;
+	}
+	.license {
+		float: left;
+		margin-left: 20px;
+
+		img {
+			vertical-align: middle;
+		}
+	}
 }
 
 
@@ -83,16 +93,14 @@ code {
 --------------------------*/
 .slide {
 	padding: 40px;
-	height: 96%;
+	height: 100%;
 
 	&:target {
 		overflow: scroll;
 	}
 }
 
-header.slide {
-	height: 100%;
-}
+
 /* vertical align heading */
 section.slide {
 	transform-style: preserve-3d;
@@ -102,6 +110,7 @@ section.slide {
 		text-align: center;
 		top: 42%;
 		transform: translateY(-42%);
+		font-size: 8rem;
 	}
 }
 
@@ -130,29 +139,27 @@ textarea.snippet {
 /* First/Intro slide
 ---------------------*/
 .intro {
-	// background: $gray-dark;
-	background: linear-gradient(rgba($black, 0.5),rgba($black, 0.5)), url(../img/banner-home2.jpg) no-repeat;
+	/* background: $gray-dark; */ /*uncomment this if you don't want to use a background image */
+	background: linear-gradient(rgba($black, 0.1),rgba($black, 0.8)), url(../img/banner-home.jpg) no-repeat;
 	background-size: cover;
 	color: $white;
-	padding: 0;
+	padding: 40px;
 	position: relative;
 
 	.logo {
-		margin: 40px;
+		height: 65px;
+	}
+	h1 {
+		font-size: 7.5rem;
+		margin: 20px 0;
 	}
 	.info {
-		@extend .group;
-		// background: rgba($white, 0.6);
-		padding: 40px;
-		position: absolute;
-		bottom: 75px;
-		width: 100%;
-
 		ul {
 			@include list-reset();
+			font-size: 2.2rem;
 		}
 		.fa {
-			padding-right: 5px;
+			padding-right: 10px;
 		}
 		a {
 			color: $white;
@@ -161,24 +168,24 @@ textarea.snippet {
 	.title-bg {
 		background: rgba($llc-pink, 0.8);
 		border-radius: 5px;
-		padding-right: 6px;
+		padding: 0 10px 0 6px;
+	}
+	.instructor-img {
+		border-radius: 50%;
+		width: 100px;
+		float: left;
+		margin-right: 20px;
 	}
 	h2 {
-		vertical-align: bottom;
+		margin-bottom: 20px;
 
 		span {
 			color: $llc-pink;
 			font-family: $cursive;
-			margin-right: 2px;
+			margin-right: 4px;
 			font-size: 3rem;
 			text-transform: lowercase;
 		}
-	}
-	.instructor-img {
-		border-radius: 50%;
-		width: 160px;
-		float: left;
-		margin: 15px;
 	}
 }
 
@@ -188,7 +195,6 @@ textarea.snippet {
 	font-family: Monaco, Andale Mono, monospace;
 	padding: 20px 25px;
 	border-radius: 2px;
-	// font-size: 22px;
 }
 
 
