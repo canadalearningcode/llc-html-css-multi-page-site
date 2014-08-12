@@ -35,13 +35,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Quicksand", sans-serif;
   line-height: 1.25;
-  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: -0.05em;
 }
 
+h1 {
+  font-weight: 400;
+}
+
 h1, h2 {
   margin: 0;
+  color: #b109aa;
 }
 
 h2 {
@@ -49,11 +53,11 @@ h2 {
 }
 
 a {
-  text-decoration: none;
-  color: #b109aa;
+  color: #444444;
 }
 a:hover {
-  color: #222222;
+  text-decoration: none;
+  color: #b109aa;
 }
 
 code {
@@ -86,7 +90,7 @@ footer .license img {
 /* Base styles for slides
 --------------------------*/
 .slide {
-  padding: 40px;
+  padding: 45px 80px;
   height: 100%;
 }
 .slide:target {
@@ -102,7 +106,7 @@ section.slide h1 {
   text-align: center;
   top: 42%;
   transform: translateY(-42%);
-  font-size: 8rem;
+  font-size: 8.5rem;
 }
 
 #timer {
@@ -129,7 +133,6 @@ textarea.snippet {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(../img/banner-home.jpg) no-repeat;
   background-size: cover;
   color: white;
-  padding: 40px;
   position: relative;
 }
 .intro .logo {
@@ -138,6 +141,7 @@ textarea.snippet {
 .intro h1 {
   font-size: 7.5rem;
   margin: 20px 0;
+  color: white;
 }
 .intro .info ul {
   margin: 0;
@@ -164,6 +168,7 @@ textarea.snippet {
 }
 .intro h2 {
   margin-bottom: 20px;
+  color: white;
 }
 .intro h2 span {
   color: #b109aa;
@@ -171,6 +176,7 @@ textarea.snippet {
   margin-right: 4px;
   font-size: 3rem;
   text-transform: lowercase;
+  font-weight: 400;
 }
 
 /* highlight.js customizations
@@ -179,6 +185,12 @@ textarea.snippet {
   font-family: Monaco, Andale Mono, monospace;
   padding: 20px 25px;
   border-radius: 2px;
+}
+
+/* presenter notes overrides */
+.presenter-notes {
+  bottom: 30px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=theme-llc.css.map */

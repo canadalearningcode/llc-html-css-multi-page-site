@@ -35,27 +35,29 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background: #ecf0f1;
 }
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: $heading-font;
 	line-height: 1.25;
-	font-weight: normal;
 	text-transform: uppercase;
 	letter-spacing: -0.05em;
 }
+h1 {
+	font-weight: 400;
+}
 h1, h2 {
 	margin: 0;
+	color: $llc-pink;
 }
 h2 {
 	font-size: 4rem;
 }
 
 a {
-	text-decoration: none;
-	color: $llc-pink;
+	color: $gray;
 
 	&:hover {
-		color: $gray-dark;
+		text-decoration: none;
+		color: $llc-pink;
 	}
 }
 
@@ -92,7 +94,7 @@ footer {
 /* Base styles for slides
 --------------------------*/
 .slide {
-	padding: 40px;
+	padding: 45px 80px;
 	height: 100%;
 
 	&:target {
@@ -110,7 +112,7 @@ section.slide {
 		text-align: center;
 		top: 42%;
 		transform: translateY(-42%);
-		font-size: 8rem;
+		font-size: 8.5rem;
 	}
 }
 
@@ -143,7 +145,6 @@ textarea.snippet {
 	background: linear-gradient(rgba($black, 0.1),rgba($black, 0.8)), url(../img/banner-home.jpg) no-repeat;
 	background-size: cover;
 	color: $white;
-	padding: 40px;
 	position: relative;
 
 	.logo {
@@ -152,6 +153,7 @@ textarea.snippet {
 	h1 {
 		font-size: 7.5rem;
 		margin: 20px 0;
+		color: $white;
 	}
 	.info {
 		ul {
@@ -178,6 +180,7 @@ textarea.snippet {
 	}
 	h2 {
 		margin-bottom: 20px;
+		color: $white;
 
 		span {
 			color: $llc-pink;
@@ -185,6 +188,7 @@ textarea.snippet {
 			margin-right: 4px;
 			font-size: 3rem;
 			text-transform: lowercase;
+			font-weight: $normal;
 		}
 	}
 }
@@ -195,6 +199,12 @@ textarea.snippet {
 	font-family: Monaco, Andale Mono, monospace;
 	padding: 20px 25px;
 	border-radius: 2px;
+}
+
+/* presenter notes overrides */
+.presenter-notes {
+	bottom: 30px;
+	width: 100%;
 }
 
 
