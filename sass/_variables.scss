@@ -16,22 +16,23 @@ $white: 			#ffffff;
 //---------------
 
 // Font families
-// $vollkorn: 		'Vollkorn', serif;
-// $open-sans: 	'Open Sans', sans-serif;
-// $sans-serif:		$open-sans;
-// $serif: 		  	$vollkorn;
+$source-sans-pro: 	'Source Sans Pro', sans-serif;
+$quicksand: 				'Quicksand', sans-serif;
+$pacifico: 					'Pacifico', cursive;
 
-$quicksand: 	'Quicksand', sans-serif;
-$montserrat: 	'Montserrat', sans-serif;
-$pacifico: 		'Pacifico', cursive;
-
-$heading-font: 	$quicksand;
-$base-font:			$montserrat;
-$cursive: 			$pacifico;
+$heading-font: 			$quicksand;
+$base-font:					$source-sans-pro;
+$cursive: 					$pacifico;
 
 // Font weights
 $normal:	400;
 $bold:		700;
+
+// Font sizes
+$font-size-default:	35px;
+$font-size-h1: 			75px;
+$font-size-h2: 			40px;
+$font-size-code:		20px;
 
 
 @mixin list-reset(){
