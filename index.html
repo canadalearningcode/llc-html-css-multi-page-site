@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Ladies Learning Code: Intro to HTML & CSS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
 
-    <!-- Theme-specific styles -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand|Montserrat:400,700|Pacifico' rel='stylesheet' type='text/css'>
-    
-    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
-    <link rel="stylesheet" href="css/slideshow.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/highlightjs-themes/monokai.css">
-    <link rel="stylesheet" href="css/theme-llc.css">
-    <!-- Workshop-specific styles -->
-    <link rel="stylesheet" href="css/workshop.css">
+  <!-- Theme-specific styles -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico' rel='stylesheet' type='text/css'> -->
+  <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Source+Sans+Pro:300,400|Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
-    <!-- Takes care of CSS3 prefixes! -->
-    <script src="scripts/prefixfree.min.js"></script>
+  <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
+  <link rel="stylesheet" href="framework/css/slideshow.css">
+  <link rel="stylesheet" href="framework/css/font-awesome.css">
+  <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css">
+  <link rel="stylesheet" href="framework/css/theme-llc.css">
+  <!-- Workshop-specific styles -->
+  <link rel="stylesheet" href="framework/css/workshop.css">
+
+  <!-- Takes care of CSS3 prefixes! -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
 
 </head>
-
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="30">
 
     <!-- First/Intro slide -->
     <header class="intro slide">
-        <img class="logo" src="img/logo-llc-white.png">
+        <img class="logo" src="framework/img/logo-llc-white.png">
         <div class="info">
             <h1>
                 <span class="title-bg">Title of Workshop</span><br>
@@ -35,7 +35,7 @@
             </h1>
             <h2><span>with</span> Instructor Name</h2>
 
-            <img class="instructor-img" src="img/profile-generic.jpg" alt="instructor name">
+            <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
             <ul>
                 <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
                 <li><i class="fa fa-desktop"></i><a href="#" target="_blank">mywebsite.com</a></li>
@@ -54,7 +54,7 @@
             <h2>Just some text and Code</h2>
             <p>Sample of a slide with basic text and code snippets.</p>
             <p>For HTML, the <code><</code> needs to be escaped! As long as the code snippet is wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>, the syntax highlighting is taken care of!</p>
-            
+
             <h3>HTML</h3>
             <pre><code>&lt;!DOCTYPE html>
 &lt;html&gt;
@@ -69,7 +69,7 @@
             <pre><code>body {
     margin: 0;
     padding: 0;
-}</code></pre>   
+}</code></pre>
         </section>
 
         <section class="slide">
@@ -79,7 +79,7 @@
             <pre><code>// Comment
 document.addEventListener('DOMAttrModified',function(e) {
     var node = e.target, attr = e.attrName;
-    if(/^input$/i.test(node.nodeName) 
+    if(/^input$/i.test(node.nodeName)
     &amp;&amp; (attr === 'placeholder' || attr === 'value')
     || foo > 5)
         Placeholder.update(node);
@@ -154,11 +154,11 @@ var myJSVariable = "Syntax Highting for Javascript";
             <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using <code>.presenter-notes</code>.</p>
 
             <p>Check out the notes in this slide!</p>
-            
+
             <p class="presenter-notes">
                 Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
             </p>
-            
+
         </section>
 
         <!-- Last slide -->
@@ -170,31 +170,30 @@ var myJSVariable = "Syntax Highting for Javascript";
 
     </main><!-- cls main section -->
 
-   
+
     <footer>
         <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
 
         <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
     </footer>
 
-
-    <script src="scripts/slideshow.js"></script>
+    <script src="framework/scripts/slideshow.js"></script>
 
     <!-- Uncomment the plugins you need -->
-    <script src="scripts/plugins/css-edit.js"></script>
-    <script src="scripts/plugins/css-snippets.js"></script>
-    <script src="scripts/plugins/css-controls.js"></script>
+    <script src="framework/scripts/plugins/css-edit.js"></script>
+    <script src="framework/scripts/plugins/css-snippets.js"></script>
+    <script src="framework/scripts/plugins/css-controls.js"></script>
     <!-- <script src="plugins/code-highlight.js"></script>-->
 
-    <script src="scripts/plugins/markdown/marked.js"></script>
-    <script src="scripts/plugins/markdown/markdown.js"></script>
-    <script src="scripts/plugins/highlight/highlight.js"></script>    
+    <script src="framework/scripts/plugins/markdown/marked.js"></script>
+    <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+    <script src="framework/scripts/plugins/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- Prettify -->
-    <script src="scripts/plugins/prettify.js"></script>
-    <script src="scripts/plugins/lang-css.js"></script>
-    <script src="scripts/plugins/prism.js"></script>
+    <script src="framework/scripts/plugins/prettify.js"></script>
+    <script src="framework/scripts/plugins/lang-css.js"></script>
+    <script src="framework/scripts/plugins/prism.js"></script>
 
     <script>
         var slideshow = new SlideShow();
