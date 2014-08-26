@@ -1,7 +1,6 @@
 /*
 	Slideshow theme for Ladies Learning Code
-	Additional customizations
-	@author Christina Truong
+	@author Christina Truong | christinatruong.com
 	@version 1.0
 */
 /* Global styles
@@ -68,6 +67,10 @@ a:hover {
   color: #b109aa;
 }
 
+pre code {
+  overflow-y: auto;
+}
+
 code {
   font-family: Monaco, Andale Mono, monospace;
   color: #444;
@@ -84,12 +87,15 @@ footer {
   background: rgba(255, 255, 255, 0.6);
   font-size: 14px;
 }
+footer i {
+  color: #b109aa;
+}
+footer p {
+  margin: 4px 0;
+}
 footer .instructions {
   float: right;
   margin-right: 20px;
-}
-footer i {
-  color: #b109aa;
 }
 footer .license {
   float: left;
@@ -103,7 +109,7 @@ footer .license img {
 --------------------------*/
 .slide {
   padding: 45px 3%;
-  height: 100%;
+  height: 96%;
 }
 .slide:target {
   overflow: scroll;
@@ -139,9 +145,8 @@ textarea.snippet {
   width: 100%;
   border: 1px solid #222;
   padding: 15px 20px;
+  margin-bottom: 15px;
   font-family: Monaco, Andale Mono, monospace;
-  font-size: 20px !important;
-  /* todo, fix this */
 }
 
 /* First/Intro slide
@@ -208,10 +213,11 @@ textarea.snippet {
 
 /* presenter notes overrides */
 .presenter-notes {
-  bottom: 30px;
+  bottom: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
   font-size: 18px;
+  margin: 0;
 }
 
 /*# sourceMappingURL=theme-llc.css.map */

@@ -127,7 +127,7 @@ padding: 20px;
 
 You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.  Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.
 
-You can specify the language of the codeblock by following the three backticks immediately by the language name.  View the source to see this in action
+You can specify the language of the codeblock by following the three backticks immediately by the language name.  View the source to see this in action.
 
 #### Javascript Example
 
@@ -135,23 +135,40 @@ You can specify the language of the codeblock by following the three backticks i
 var myJSVariable = "Syntax Highting for Javascript";
 ```
 
-#### Css Example
+#### CSS Example
 
 ```css
 .css-selector{
     highlight : syntax;
 }
 ```
+
+#### HTML Example
+For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the left angled bracket of the HTML tag needs to be escaped. Here's a handy tool for creating escaped result with HTML entities: http://www.htmlescape.net/htmlescape_tool.html
+
+```xml
+&lt;header>
+  &lt;h1>I'm an H1!&lt;/h1>
+  &lt;p>This is a paragraph&lt;/p>
+&lt;/header>
+
+```
 #### indented example
 
-    code block that has to guess at the language and likely gets it wrong.  it thinks this is applescript.
+    code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
 
         </section>
 
         <section class="slide">
             <h2>Presentation mode</h2>
 
-            <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using <code>.presenter-notes</code>.</p>
+            <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using the <code>.presenter-notes</code> class like so:</p>
+
+<pre><code>&lt;p class=&quot;presenter-notes&quot;&gt;
+  Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta
+  sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus
+  officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
+&lt;/p&gt;</code></pre>
 
             <p>Check out the notes in this slide!</p>
 
@@ -172,9 +189,8 @@ var myJSVariable = "Syntax Highting for Javascript";
 
 
     <footer>
-        <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
-
-        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+      <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
     </footer>
 
     <script src="framework/scripts/slideshow.js"></script>
