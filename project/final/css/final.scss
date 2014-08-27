@@ -1,0 +1,138 @@
+$sans-serif:  'Open Sans', sans-serif;
+$serif: 'Nixie One', serif;
+// $cursive: 'Codystar', cursive;
+$cursive: 'Pacifico', cursive;
+
+$gray: #D8D8D8;
+$yellow: #D8BF72;
+$brown-light: #BFA980;
+$brown: #726051;
+$orange: #BF6D50;
+
+
+/* border-box fix */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background: url(../images/background-6.jpg) no-repeat;
+  background-size: cover;
+  font-family: $sans-serif;
+  font-size: 20px;
+}
+section {
+  color: #ccc;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  padding: 20px;
+}
+.cursive {
+  font-family: $cursive;
+  margin: 0 2px 0 1px;
+}
+.highlight {
+  color: $orange;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding-top: 100px;
+  // color: white;
+
+  h1, h2 {
+    font-weight: normal;
+    margin: 0;
+  }
+  h1 {
+    font-family: $serif;
+    text-transform: uppercase;
+    font-size: 120px;
+    font-weight: 300;
+  }
+  h2 {
+    font-size: 40px;
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+}
+.profile-image {
+  border-radius: 50%;
+  width: 250px;
+}
+
+/* NAVIGATION MENU */
+nav {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  text-align: right;
+
+  &:hover ul {
+    display: block;
+  }
+  i {
+    cursor: pointer;
+    padding: 20px;
+    font-size: 40px;
+    color: $orange;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+
+    &:hover {
+      color: $orange;
+      background: rgba(255,255,255,0.3);
+    }
+  }
+} 
+
+/* FOOTER */
+/* sticky footer */
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -30px; /* equal to footer height */
+  // background: rgba(0,0,0,.4);
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+footer, 
+.page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 30px; 
+}
+footer {
+  background: rgba(255,255,255,.8);
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+
+
