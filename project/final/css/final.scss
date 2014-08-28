@@ -50,7 +50,9 @@ section {
 	// border-radius: 6px;
 	// padding: 20px;
 }
-
+section {
+	padding-top: 105px;
+}
 h2 {
 	margin-top: 0;
 	font-weight: 300;
@@ -82,7 +84,10 @@ a {
 
 /* HEADER */
 header {
-	background: white;
+	background: rgba(255,255,255,0.8);
+	position: fixed;
+	top: 0;
+	width: 100%;
 
 	h1, h2 {
 		font-weight: 300;
@@ -156,12 +161,16 @@ footer {
 	background: #222;
 	color: #ccc; 
 	font-size: 14px;
-	line-height: 35px;
-	text-align: center;
+	// text-align: center;
 	font-weight: 400;
 
-	p {
+	.copyright {
 		margin: 0;
+		padding-top: 4px;
+		float: left;
+	}
+	.social {
+		float: right;
 	}
 }
 
@@ -180,6 +189,7 @@ footer {
 	}
 	header {
 		background: transparent;
+		position: static;
 	}
 	nav {
 		top: 0;
@@ -259,10 +269,67 @@ footer {
 
 
 /* CONTACT */
+.contact {
+	background: url(../images/background-10.jpg) no-repeat fixed;
+	background-size: cover;
+
+	form {
+		background: white;
+		width: 600px;
+		margin: 20px auto;
+		border-radius: 4px;
+		padding: 20px;
+
+		h2 {
+			text-align: center;
+		}
+		p {
+			margin: 0;
+			text-align: left;
+		}
+		label {
+			display: block;
+			margin: 10px 0 5px;
+		}
+		input {
+			height: 30px;
+		}
+		input, textarea {
+			width: 100%;
+			border: 1px solid $gray;
+			padding: 5px;
+		}
+		textarea {
+			height: 100px;
+		}
+		input[type="submit"]{
+			width: auto;
+			height: auto;
+			margin-top: 10px;
+			padding: 10px 20px;
+		}
+	}
+}
 
 
+// p {
+// 			margin: 0;
+// 			overflow: hidden
 
-
+// 			label {
+// 				width: 30%;
+// 				float: left;
+// 				text-align: right;
+// 				padding-right: 15px;
+// 			}
+// 			input, textarea {
+// 				width: 60%;
+// 				float: left;
+// 			}
+// 		}
+// 		input[type="submit"]{
+// 			clear: both;
+// 		}
 
 
 
