@@ -46,11 +46,17 @@ section {
 section {
 	padding-top: 125px;
 }
-h2 {
-	margin-top: 0;
+h1, h2 {
+	margin: 0;
 	font-weight: 300;
 	text-transform: uppercase;
+	line-height: 1;
+}
+h1 {
 	font-family: $serif;
+}
+h2 {
+	font-family: $sans-serif;
 }
 a {
 	color: $orange;
@@ -63,16 +69,12 @@ a {
 }
 .cursive {
 	font-family: $cursive;
-	margin: 0 2px 0 1px;
+	margin: 0 3px 0 1px;
 }
 .highlight {
 	color: $orange;
 }
-.wrapper {
-	position: relative;
-	max-width: 1400px;
-	margin: 0 auto;
-}
+
 
 /* HEADER */
 header {
@@ -82,18 +84,10 @@ header {
 	top: 0;
 	width: 100%;
 
-	h1, h2 {
-		font-weight: 300;
-		text-transform: uppercase;
-		margin: 0;
-		line-height: 1;
-	}
 	h1 {
-		font-family: $serif;
 		font-size: 36px;  
 	}
 	h2 {
-		font-family: $sans-serif;
 		font-size: 18px;
 	}
 }
@@ -114,20 +108,16 @@ nav {
 		}
 	}
 	a {
-		color: black;
-		text-decoration: none;
 		padding: 5px 15px;
 		border-radius: 4px;
 		text-transform: uppercase;
-		font-weight: 300;
 
 		&:hover {
 			background: rgba(0,0,0,0.1);
-			color: black;
 		}
 	}
 	.current {
-		color: $orange;
+		color: black;
 	}
 }
 
@@ -152,7 +142,6 @@ footer,
 footer {
 	background: #222;
 	color: #ccc; 
-	font-size: 14px;
 	line-height: 35px;
 	padding: 0 15px;
 
@@ -183,10 +172,6 @@ footer {
 	background: url(../images/background-6.jpg) no-repeat;
 	background-size: cover;
 	
-	.wrapper {
-		position: static;
-		max-width: 100%;
-	}
 	header {
 		background: transparent;
 		position: static;
@@ -198,8 +183,8 @@ footer {
 		font-size: 20px;
 
 		&:hover + .wrapper {  
-			background: linear-gradient(rgba($orange,0.25),
-				rgba($orange,0));
+			background: linear-gradient(rgba(white,0.5),
+				rgba(white,0));
 		}
 		&:hover ul {
 			display: block;
@@ -245,10 +230,9 @@ footer {
 /* ABOUT */
 .about {
 	.profile-image {
-		max-width: 50%;
+		width: 50%;
 		float: left;
 		margin-right: 20px;
-		
 	}
 	blockquote {
 		clear: both;
@@ -280,29 +264,21 @@ footer {
 		h2 {
 			text-align: center;
 		}
-		p {
-			margin: 0;
-			text-align: left;
-		}
-		label {
-			display: block;
-			margin: 10px 0 5px;
-		}
-		input {
-			height: 30px;
-		}
 		input, textarea {
 			width: 100%;
 			border: 1px solid $gray;
 			padding: 5px;
+
+			&:focus {
+				outline: none;
+				border: 1px solid $orange;
+			}
 		}
 		textarea {
 			height: 100px;
 		}
 		input[type="submit"]{
 			width: auto;
-			height: auto;
-			margin-top: 10px;
 			padding: 10px 20px;
 			background: $orange;
 			color: white;
