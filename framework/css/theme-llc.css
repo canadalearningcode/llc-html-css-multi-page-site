@@ -1,0 +1,241 @@
+/*
+	Slideshow theme for Ladies Learning Code
+	@author Christina Truong | christinatruong.com
+	@version 1.0
+*/
+/* Global styles
+-----------------*/
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* updated clearfix hack: 
+http://css-tricks.com/snippets/css/clear-fix/ */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font: 25px "Open Sans", sans-serif;
+  color: #222222;
+  border-top: 4px solid #b109aa;
+  -webkit-font-smoothing: antialiased;
+  background: #ecf0f1;
+}
+
+@-moz-document url-prefix() {
+  body {
+    font-weight: 300;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 75px;
+}
+
+h1, h2 {
+  margin: 0;
+  color: #b109aa;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  margin-bottom: 5px;
+  font-size: 28px;
+}
+h3 + p {
+  margin-top: 0;
+}
+
+a {
+  color: #444444;
+}
+a:hover {
+  text-decoration: none;
+  color: #b109aa;
+}
+
+pre code {
+  overflow-y: auto;
+}
+
+code {
+  font-family: Monaco, Andale Mono, monospace;
+  color: #444;
+  padding: 1px 4px;
+  font-size: 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+footer i {
+  color: #b109aa;
+}
+footer p {
+  margin: 4px 0;
+}
+footer .instructions {
+  float: right;
+  margin-right: 20px;
+}
+footer .license {
+  float: left;
+  margin-left: 20px;
+}
+footer .license img {
+  vertical-align: middle;
+}
+
+/* Base styles for slides
+--------------------------*/
+.slide {
+  padding: 45px 3%;
+  height: 96%;
+}
+.slide:target {
+  overflow: scroll;
+}
+.slide.js-fiddle > iframe:only-of-type {
+  position: static;
+  width: 525px;
+  height: 350px;
+}
+.slide.centered {
+  text-align: center;
+}
+
+/* vertical align heading */
+.slide.title {
+  transform-style: preserve-3d;
+}
+.slide.title h1, .slide.title h2 {
+  position: relative;
+  text-align: center;
+  top: 42%;
+  transform: translateY(-42%);
+}
+.slide.title h2 {
+  color: #444444;
+}
+
+#timer {
+  height: 4px;
+  line-height: 4px;
+  background: black;
+}
+#timer:before {
+  content: "";
+}
+
+textarea.snippet {
+  width: 100%;
+  border: 1px solid #222;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  font-family: Monaco, Andale Mono, monospace;
+}
+
+table th {
+  font-weight: 400;
+}
+table img {
+  width: 100%;
+}
+
+/* First/Intro slide
+---------------------*/
+.intro {
+  /*uncomment this if you don't want to use a background image */
+  /* background: $gray-dark; */
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(../img/banner-home.jpg) no-repeat;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+.intro .logo {
+  height: 65px;
+}
+.intro h1 {
+  font-size: 75px;
+  margin: 20px 0;
+  color: white;
+}
+.intro .info ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 2.2rem;
+}
+.intro .info .fa {
+  padding-right: 10px;
+}
+.intro .info a {
+  color: white;
+}
+.intro .title-bg {
+  background: rgba(177, 9, 170, 0.8);
+  border-radius: 5px;
+  padding: 0 10px 0 6px;
+}
+.intro .instructor-img {
+  border-radius: 50%;
+  width: 100px;
+  float: left;
+  margin-right: 20px;
+}
+.intro h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+.intro h2 span {
+  color: #b109aa;
+  font-family: "Pacifico", cursive;
+  margin-right: 4px;
+  font-size: 3rem;
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+/* highlight.js customizations
+-------------------------------*/
+.hljs {
+  font-family: Monaco, Andale Mono, monospace;
+  padding: 20px 25px;
+  border-radius: 2px;
+}
+
+/* presenter notes overrides
+-------------------------------*/
+.presenter-notes {
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  margin: 0;
+}

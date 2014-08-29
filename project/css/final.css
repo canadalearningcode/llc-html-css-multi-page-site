@@ -1,0 +1,263 @@
+/* GLOBAL STYLES
+-----------------------------------------*/
+/* border-box fix */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Clear fix */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #333;
+}
+
+header,
+section {
+  padding: 20px 30px;
+}
+
+section {
+  padding-top: 125px;
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+h1 {
+  font-family: "Nixie One", serif;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: #bf6d50;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+a:hover {
+  color: black;
+}
+
+.cursive {
+  font-family: "Pacifico", cursive;
+  margin: 0 3px 0 1px;
+}
+
+.highlight {
+  color: #bf6d50;
+}
+
+/* HEADER */
+header {
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header h1 {
+  font-size: 36px;
+}
+header h2 {
+  font-size: 18px;
+}
+
+/* NAVIGATION MENU */
+nav {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+}
+nav a {
+  padding: 5px 15px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+nav a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+nav .current {
+  color: black;
+}
+
+/* FOOTER */
+/* sticky footer */
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -35px;
+  /* equal to footer height */
+}
+
+.wrapper:after {
+  content: "";
+  display: block;
+}
+
+footer,
+.wrapper:after {
+  /* must be the same height as footer */
+  height: 35px;
+}
+
+/* General footer styles */
+footer {
+  background: #222;
+  color: #ccc;
+  line-height: 35px;
+  padding: 0 15px;
+}
+footer .copyright {
+  margin: 0;
+  float: left;
+}
+footer .social {
+  float: right;
+}
+footer .social a {
+  display: inline-block;
+  padding: 0 6px;
+}
+footer .social a:hover {
+  color: white;
+}
+
+/* PAGE STYLES
+-----------------------------------------*/
+/* HOMEPAGE */
+.home {
+  background: url(../images/background-6.jpg) no-repeat;
+  background-size: cover;
+}
+.home header {
+  background: transparent;
+  position: static;
+  border-bottom: none;
+}
+.home nav {
+  top: 0;
+  text-align: right;
+  font-size: 20px;
+}
+.home nav:hover + .wrapper {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+.home nav:hover ul {
+  display: block;
+}
+.home nav i {
+  cursor: pointer;
+  padding: 20px;
+  font-size: 40px;
+  color: #bf6d50;
+}
+.home nav ul {
+  display: none;
+}
+.home nav ul li {
+  display: block;
+}
+.home nav a {
+  display: inline-block;
+  padding: 10px 20px;
+}
+.home nav a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+.home header {
+  text-align: center;
+  padding-top: 100px;
+}
+.home header h1 {
+  font-size: 120px;
+}
+.home header h2 {
+  font-size: 40px;
+}
+
+/* ABOUT */
+.about .profile-image {
+  width: 50%;
+  float: left;
+  margin-right: 20px;
+}
+.about blockquote {
+  clear: both;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.about blockquote p {
+  font-family: "Pacifico", cursive;
+  font-size: 32px;
+}
+
+/* CONTACT */
+.contact {
+  background: url(../images/background-8.jpg) no-repeat fixed;
+  background-size: cover;
+}
+.contact form {
+  background: white;
+  width: 600px;
+  margin: 10px auto;
+  border-radius: 4px;
+  padding: 20px;
+}
+.contact form h2 {
+  text-align: center;
+}
+.contact form input, .contact form textarea {
+  width: 100%;
+  border: 1px solid #d8d8d8;
+  padding: 5px;
+}
+.contact form input:focus, .contact form textarea:focus {
+  outline: none;
+  border: 1px solid #bf6d50;
+}
+.contact form textarea {
+  height: 100px;
+}
+.contact form input[type="submit"] {
+  width: auto;
+  padding: 10px 20px;
+  background: #bf6d50;
+  color: white;
+  cursor: pointer;
+}
