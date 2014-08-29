@@ -1,6 +1,6 @@
-//-----------
+//---------------
 // VARIABLES
-//-----------
+//---------------
 
 // Colours
 //---------------
@@ -33,10 +33,3 @@ $font-size-default:		3.5rem;
 $font-size-h1: 			7.5rem;
 $font-size-h2: 			4rem;
 $font-size-code:		2rem;
-
-
-@mixin list-reset(){
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}

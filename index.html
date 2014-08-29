@@ -4,23 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Ladies Learning Code</title>
-
-  <!-- Theme-specific styles -->
-  <!-- <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico' rel='stylesheet' type='text/css'> -->
-  <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Source+Sans+Pro:300,400|Open+Sans:400,300' rel='stylesheet' type='text/css'>
-
   <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
   <link rel="stylesheet" href="framework/css/slideshow.css">
+
+  <!-- Theme-specific styles -->
+  <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Source+Sans+Pro:300,400|Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="framework/css/font-awesome.css">
   <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css">
   <link rel="stylesheet" href="framework/css/theme-llc.css">
+
   <!-- Workshop-specific styles -->
   <link rel="stylesheet" href="framework/css/workshop.css">
 
   <!-- Takes care of CSS3 prefixes! -->
   <script src="framework/scripts/prefixfree.min.js"></script>
-
 </head>
+
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="30">
 
@@ -164,11 +163,15 @@ For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the
 
             <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using the <code>.presenter-notes</code> class like so:</p>
 
-<pre><code>&lt;p class=&quot;presenter-notes&quot;&gt;
-  Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta
+<pre><code>&lt;p&gt;Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta
   sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus
   officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
-&lt;/p&gt;</code></pre>
+&lt;/p&gt;
+
+p {
+  font-size: 16px;
+}
+</code></pre>
 
             <p>Check out the notes in this slide!</p>
 
