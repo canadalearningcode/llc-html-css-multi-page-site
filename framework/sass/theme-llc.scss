@@ -15,7 +15,8 @@
 	box-sizing: border-box;
 }
 
-/* updated clearfix hack: http://css-tricks.com/snippets/css/clear-fix/ */
+/* updated clearfix hack: 
+http://css-tricks.com/snippets/css/clear-fix/ */
 .group:after {
 	content: "";
 	display: table;
@@ -29,7 +30,6 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	// font: 2.5rem/1.4 $base-font;
 	font: $font-size-default/1.4 $base-font;
 	color: $gray-dark;
 	border-top: 4px solid $llc-pink;
@@ -167,7 +167,8 @@ textarea.snippet {
 /* First/Intro slide
 ---------------------*/
 .intro {
-	/* background: $gray-dark; */ /*uncomment this if you don't want to use a background image */
+	/*uncomment this if you don't want to use a background image */
+	/* background: $gray-dark; */ 
 	background: linear-gradient(rgba($black, 0.1),rgba($black, 0.8)), url(../img/banner-home.jpg) no-repeat;
 	background-size: cover;
 	color: $white;

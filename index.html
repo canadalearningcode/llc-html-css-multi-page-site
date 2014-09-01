@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="framework/css/font-awesome.css">
   <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css">
   <link rel="stylesheet" href="framework/css/theme-llc.css">
+  <link rel="shortcut icon" href="framework/img/favicon.ico"> 
 
   <!-- Workshop-specific styles -->
   <link rel="stylesheet" href="framework/css/workshop.css">
@@ -23,105 +24,105 @@
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="30">
 
-    <!-- First/Intro slide -->
-    <header class="intro slide">
-        <img class="logo" src="framework/img/logo-llc-white.png">
-        <div class="info">
-            <h1>
-                <span class="title-bg">Title of Workshop</span><br>
-                <!-- if needed -->
-                <span class="title-bg">Second line</span>
-            </h1>
-            <h2><span>with</span> Instructor Name</h2>
+	<!-- First/Intro slide -->
+	<header class="intro slide">
+		<img class="logo" src="framework/img/logo-llc-white.png">
+		<div class="info">
+			<h1>
+				<span class="title-bg">Title of Workshop</span><br>
+				<!-- if needed -->
+				<span class="title-bg">Second line</span>
+			</h1>
+			<h2><span>with</span> Instructor Name</h2>
 
-            <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
-            <ul>
-                <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
-                <li><i class="fa fa-desktop"></i><a href="#" target="_blank">mywebsite.com</a></li>
-                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/" target="_blank">@twitter_name</a></li>
-            </ul>
-        </div>
-        <!-- <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p> -->
-    </header>
+			<img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
+			<ul>
+				<li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
+				<li><i class="fa fa-desktop"></i><a href="#" target="_blank">mywebsite.com</a></li>
+				<li><i class="fa fa-twitter"></i><a href="http://twitter.com/" target="_blank">@twitter_name</a></li>
+			</ul>
+		</div>
+	</header>
 
-    <main>
-        <section class="slide">
-            <h1>Introduction:<br>Title Slide Example</h1>
-        </section>
+	<main>
+		<section class="slide title">
+			<h1>Title Slide Example (add .class)</h1>
+			<h2>Sub-heading</h2>
+		</section>
 
-        <section class="slide">
-            <h2>Just some text and Code</h2>
-            <p>Sample of a slide with basic text and code snippets.</p>
-            <p>For HTML, the <code><</code> needs to be escaped! As long as the code snippet is wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>, the syntax highlighting is taken care of!</p>
+		<section class="slide">
+			<h2>Just some text and Code</h2>
+			<p>Sample of a slide with basic text and code snippets.</p>
+			<p>For HTML, the <code><</code> needs to be escaped! As long as the code snippet is wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>, the syntax highlighting is taken care of!</p>
 
-            <h3>HTML</h3>
-            <pre><code>&lt;!DOCTYPE html>
+			<h3>HTML</h3>
+			<pre><code>&lt;!DOCTYPE html>
 &lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
+	&lt;head&gt;
+		&lt;title&gt;&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;/body&gt;
 &lt;/html></code></pre>
 
-            <h3>CSS</h3>
-            <pre><code>body {
-    margin: 0;
-    padding: 0;
+			<h3>CSS</h3>
+			<pre><code>body {
+	margin: 0;
+	padding: 0;
 }</code></pre>
-        </section>
+		</section>
 
-        <section class="slide">
-            <h2>JavaScript & jQuery highlight example</h2>
-            <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a>. Visit the site to see the full list of supported languages.</p>
-            <h3>JavaScript!</h3>
-            <pre><code>// Comment
+		<section class="slide">
+			<h2>JavaScript & jQuery highlight example</h2>
+			<p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a>. Visit the site to see the full list of supported languages.</p>
+			<h3>JavaScript!</h3>
+			<pre><code>// Comment
 document.addEventListener('DOMAttrModified',function(e) {
-    var node = e.target, attr = e.attrName;
-    if(/^input$/i.test(node.nodeName)
-    &amp;&amp; (attr === 'placeholder' || attr === 'value')
-    || foo > 5)
-        Placeholder.update(node);
+	var node = e.target, attr = e.attrName;
+	if(/^input$/i.test(node.nodeName)
+	&amp;&amp; (attr === 'placeholder' || attr === 'value')
+	|| foo > 5)
+		Placeholder.update(node);
 }, false);</code></pre>
 
-            <h3>jQuery!</h3>
-            <pre><code>$(document).ready(function(){
-    $("p").hide("fast");
+			<h3>jQuery!</h3>
+			<pre><code>$(document).ready(function(){
+	$("p").hide("fast");
 });</code></pre>
-        </section>
+		</section>
 
-        <section class="slide">
-            <h2>Incremental display of content</h2>
-            <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
-            <ul>
-                <li class="delayed">Make sure your computer is setup</li>
-                <li class="delayed">Web development breakdown</li>
-                <li class="delayed">Dive into HTML</li>
-                <li class="delayed">CSS fundamentals</li>
-            </ul>
-        </section>
+		<section class="slide">
+			<h2>Incremental display of content</h2>
+			<p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
+			<ul>
+				<li class="delayed">Make sure your computer is setup</li>
+				<li class="delayed">Web development breakdown</li>
+				<li class="delayed">Dive into HTML</li>
+				<li class="delayed">CSS fundamentals</li>
+			</ul>
+		</section>
 
-        <section class="slide">
-            <h2>CSS Snippets demo</h2>
-            <p>The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
-            <textarea class="snippet">background-color: lightblue;
+		<section class="slide">
+			<h2>CSS Snippets demo</h2>
+			<p>The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
+			<textarea class="snippet">background-color: lightblue;
 font-family: "Times New Roman", serif;
-            </textarea>
-        </section>
+			</textarea>
+		</section>
 
-        <section class="slide">
-            <h2>CSS Snippets demo</h2>
-            <p>You can also target specific elements</p>
-            <textarea class="snippet" data-subject="#test">background-color: lightblue;
+		<section class="slide">
+			<h2>CSS Snippets demo</h2>
+			<p>You can also target specific elements</p>
+			<textarea class="snippet" data-subject="#test">background-color: lightblue;
 font-family: "Times New Roman", serif;
 padding: 20px;
-            </textarea>
-            <div id="test">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-            </div>
-        </section>
+			</textarea>
+			<div id="test">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+			</div>
+		</section>
 
-        <section class="slide" data-markdown>
+		<section class="slide" data-markdown>
 ##Markdown example
 
 You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.  Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.
@@ -138,7 +139,7 @@ var myJSVariable = "Syntax Highting for Javascript";
 
 ```css
 .css-selector{
-    highlight : syntax;
+	highlight : syntax;
 }
 ```
 
@@ -154,14 +155,14 @@ For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the
 ```
 #### indented example
 
-    code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
+	code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
 
-        </section>
+		</section>
 
-        <section class="slide">
-            <h2>Presentation mode</h2>
+		<section class="slide">
+			<h2>Presentation mode</h2>
 
-            <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using the <code>.presenter-notes</code> class like so:</p>
+			<p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using the <code>.presenter-notes</code> class like so:</p>
 
 <pre><code>&lt;p&gt;Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta
   sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus
@@ -173,55 +174,55 @@ p {
 }
 </code></pre>
 
-            <p>Check out the notes in this slide!</p>
+			<p>Check out the notes in this slide!</p>
 
-            <p class="presenter-notes">
-                Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
-            </p>
+			<p class="presenter-notes">
+				Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
+			</p>
 
-        </section>
+		</section>
 
-        <!-- Last slide -->
-        <section class="slide">
-            <h2>Thank you!</h2>
-            <p>Closing remarks</p>
-            <p class="attribution">Slidedecks created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
-        </section>
+		<!-- Last slide -->
+		<section class="slide">
+			<h2>Thank you!</h2>
+			<p>Closing remarks</p>
+			<p class="attribution">Slidedecks created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+		</section>
 
-    </main><!-- cls main section -->
+	</main><!-- cls main section -->
 
 
-    <footer>
-        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
-      <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
-    </footer>
+	<footer>
+		<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+	  <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+	</footer>
 
-    <script src="framework/scripts/slideshow.js"></script>
+	<script src="framework/scripts/slideshow.js"></script>
 
-    <!-- Uncomment the plugins you need -->
-    <script src="framework/scripts/plugins/css-edit.js"></script>
-    <script src="framework/scripts/plugins/css-snippets.js"></script>
-    <script src="framework/scripts/plugins/css-controls.js"></script>
-    <!-- <script src="plugins/code-highlight.js"></script>-->
+	<!-- Uncomment the plugins you need -->
+	<script src="framework/scripts/plugins/css-edit.js"></script>
+	<script src="framework/scripts/plugins/css-snippets.js"></script>
+	<script src="framework/scripts/plugins/css-controls.js"></script>
+	<!-- <script src="plugins/code-highlight.js"></script>-->
 
-    <script src="framework/scripts/plugins/markdown/marked.js"></script>
-    <script src="framework/scripts/plugins/markdown/markdown.js"></script>
-    <script src="framework/scripts/plugins/highlight/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+	<script src="framework/scripts/plugins/markdown/marked.js"></script>
+	<script src="framework/scripts/plugins/markdown/markdown.js"></script>
+	<script src="framework/scripts/plugins/highlight/highlight.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 
-    <!-- Prettify -->
-    <script src="framework/scripts/plugins/prettify.js"></script>
-    <script src="framework/scripts/plugins/lang-css.js"></script>
-    <script src="framework/scripts/plugins/prism.js"></script>
+	<!-- Prettify -->
+	<script src="framework/scripts/plugins/prettify.js"></script>
+	<script src="framework/scripts/plugins/lang-css.js"></script>
+	<script src="framework/scripts/plugins/prism.js"></script>
 
-    <script>
-        var slideshow = new SlideShow();
+	<script>
+		var slideshow = new SlideShow();
 
-        // Grabs all the .snippet elements
-        var snippets = document.querySelectorAll('.snippet');
-        for(var i=0; i<snippets.length; i++) {
-            new CSSSnippet(snippets[i]);
-        }
-    </script>
+		// Grabs all the .snippet elements
+		var snippets = document.querySelectorAll('.snippet');
+		for(var i=0; i<snippets.length; i++) {
+			new CSSSnippet(snippets[i]);
+		}
+	</script>
 </body>
 </html>
