@@ -46,220 +46,153 @@
   </header>
 
   <main>
-  <section class="slide centered project" data-markdown>
-    ##Today's Project
+    <section class="slide centered project" data-markdown>
+      ##Today's Project
 
-    Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/) to see the whole project!
+      Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/) to see the whole project!
 
-    ![project home page](framework/img/workshop/project1.jpg)
-    ![project about page](framework/img/workshop/project2.jpg)
-    ![project contact page](framework/img/workshop/project3.jpg)
-  </section>
+      ![project home page](framework/img/workshop/project1.jpg)
+      ![project about page](framework/img/workshop/project2.jpg)
+      ![project contact page](framework/img/workshop/project3.jpg)
+    </section>
 
-  <section class="slide" data-markdown>
-    ##Course Outline
-    
-    ###Morning
+    <section class="slide" data-markdown>
+      ##Course Outline
+      
+      ###Morning
 
-    * Intro to HTML
-    * Write the HTML for your project
-    * Intro to CSS
+      * Intro to HTML
+      * Write the HTML for your project
+      * Intro to CSS
 
-    ###Afternoon
+      ###Afternoon
 
-    * More CSS
-    * Final touches
-    * Next steps
+      * More CSS
+      * Final touches
+      * Next steps
+    </section>
 
-  </section>
+    <section class="slide" data-markdown>
+      ##Getting Started: Web Browser 
 
-  <section class="slide" data-markdown>
-    ##Getting Started: Web Browser 
+      **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
 
-    **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+      You can view the source of any web page by right-clicking (or two-finger tap) on any web page! Try visiting http://ladieslearningcode.com and view the source. That's HTML.
 
-    You can view the source of any web page by right-clicking (or two-finger tap) on any web page! Try visiting http://ladieslearningcode.com and view the source. That's HTML.
+      **Developer tools** take it a step further and allows us to *inspect* any web page making it easier to test and debug code. The tools can be accessed in 3 ways:
+      
+      * right-click / two-finger tap on a web page and select **Inspect Element**
+      * select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools**
+      * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
+    </section>
 
-    **Developer tools** take it a step further and allows us to *inspect* any web page making it easier to test and debug code. The tools can be accessed in 3 ways:
-    
-    * right-click / two-finger tap on a web page and select **Inspect Element**
-    * select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools**
-    * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
-  </section>
+    <section class="slide" data-markdown>
+      ##Getting Started: Text editor
 
-  <section class="slide" data-markdown>
-    ##Getting Started: Text editor
+      You can write code using your computer's default text editor, Notepad (Windows) or TextEdit (Apple), but choosing a text editor with colour highlighting and other helpful features will improve your work flow.
 
-    You can write code using your computer's default text editor, Notepad (Windows) or TextEdit (Apple), but choosing a text editor with colour highlighting and other helpful features will improve your work flow.
+      **[Sublime Text](http://www.sublimetext.com/)** is a great option and is the editor we'll be using today. 
 
-    **[Sublime Text](http://www.sublimetext.com/)** is a great option and is the editor we'll be using today. 
+      If you are unable to install Sublime Text, there are many free and paid [options](http://en.wikipedia.org/wiki/List_of_HTML_editors).  
 
-    If you are unable to install Sublime Text, there are many free and paid [options](http://en.wikipedia.org/wiki/List_of_HTML_editors).  
+      Try [Notepad++](http://notepad-plus-plus.org/) (Windows) or [Atom](https://atom.io/) (Mac).
+    </section>
 
-    Try [Notepad++](http://notepad-plus-plus.org/) (Windows) or [Atom](https://atom.io/) (Mac).
-  </section>
+    <section class="slide" data-markdown>
+      ##What exactly *is* a website?
 
-  <section class="slide title" data-markdown>
-    #Organizing your files
-    ##Creating web pages and file structures
-  </section>
+      A website is basically a collection of web pages, aka **HTML documents**, that closely match a file folder structure.
 
-  <section class="slide" data-markdown>
-    ##What exactly *is* a website?
+      ![folder structure](framework/img/workshop/folder-structure.jpg)
 
-    A website is basically a collection of web pages, aka **HTML documents**, that closely match a file folder structure.
+      | mysite.com (index.html) | mysite.com/about.html | mysite.com/contact.html |
+      |------------|------------|--------------|
+      | ![project home page](framework/img/workshop/project1.jpg) | ![project home page](framework/img/workshop/project2.jpg) | ![project home page](framework/img/workshop/project3.jpg) |
+    </section>
 
-    ![folder structure](framework/img/workshop/folder-structure.jpg)
+    <section class="slide" data-markdown>
+      ##What exactly *is* a website?
 
-    | mysite.com (index.html) | mysite.com/about.html | mysite.com/contact.html |
-    |------------|------------|--------------|
-    | ![project home page](framework/img/workshop/project1.jpg) | ![project home page](framework/img/workshop/project2.jpg) | ![project home page](framework/img/workshop/project3.jpg) |
+      To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
 
-  </section>
+      To move web files from your computer to a server, an FTP program must be used (more on this later).
+      
+      ![web request process](framework/img/workshop/web-server.png)
+    </section>
 
-  <section class="slide" data-markdown>
-    ##What exactly *is* a website?
+    <section class="slide basic-web-page">
+      <h2>A Basic Web Page</h2>
 
-    To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
+      <p>Web pages are generally built using 3 web languages:</p>
 
-    To move web files from your computer to a server, an FTP program must be used (more on this later).
-    
-    ![web request process](framework/img/workshop/web-server.png)
-  </section>
+      <p><strong>HTML (Hypertext Markup Language)</strong> is a <em>markup</em> language and is is used to define the content.</p>
+      
+      <div class="example">
+      <p>I'm just a paragraph.</p>
+      </div>
+      
+      <p><strong>CSS (Cascading Style Sheets)</strong> is a <em>stylesheet</em> language and is used to create the presentation and look of a site.</p>
 
-  <section class="slide basic-web-page">
-    <h2>A Basic Web Page</h2>
+      <div class="example css">
+      <p>I'm a paragraph with <span>style</span>.</p>
+      </div>
 
-    <p>Web pages are generally built using 3 web languages:</p>
+      <p><strong>JavaScript</strong> is a <em>programming</em> language and is used to define the behavior and to add functionality to a website.</p>
 
-    <p><strong>HTML (Hypertext Markup Language)</strong> is a <em>markup</em> language and is is used to define the content.</p>
-    
-    <div class="example">
-    <p>I'm just a paragraph.</p>
-    </div>
-    
-    <p><strong>CSS (Cascading Style Sheets)</strong> is a <em>stylesheet</em> language and is used to create the presentation and look of a site.</p>
+      <div class="example">
+      <p onclick="alert('clicked!');">I'm a paragraph that can be clicked. Try it!</p>
+      </div>
+    </section>
 
-    <div class="example css">
-    <p>I'm a paragraph with <span>style</span>.</p>
-    </div>
+    <section class="slide title" data-markdown>
+      #Dive into HTML
+      ##The content layer
+    </section>
 
-    <p><strong>JavaScript</strong> is a <em>programming</em> language and is used to define the behavior and to add functionality to a website.</p>
+    <section class="slide">
+      <h2>Writing HTML</h2>
 
-    <div class="example">
-    <p onclick="alert('clicked!');">I'm a paragraph that can be clicked. Try it!</p>
-    </div>
-  </section>
+      <p>HTML was created for web browsers to read. To display content properly in the browser, use <strong>tags</strong>. Below are the basic HTML tags required for all web pages. This makes perfect sense to a web browser:</p>
 
-  <section class="slide">
-    <h2>Setting Up Our Work Flow</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
 
-<p>Inside of the folder you downloaded today (<strong>llc-html-css-multi-page-site-master</strong>), there are many more folders and files that contain different content.</p>
+      <p>However, for us humans, whitespace through indentation will make your HTML easier to read.</p>
 
-<pre><code>llc-html-css-multi-page-site-master
-  |-- framework // Contains files needed for slide presentation. Do not edit!
-  |-- project // Contains files for today's workshop.
-  |-- css // Only CSS files here.
-      |-- examples // Example HTML/CSS files linked throughout the slides.
-      |-- final // Finished example for you to refer to.
-      |-- images // Add your images here for your project
-      |-- index.html // The first page / homepage of your site.
-  |-- index.html // This is the file you're viewing right now (slides)!
-</code></pre>
-  </section>
-
-  <section class="slide" data-markdown>
-    ##Setting Up Our Work Flow
-
-    Open our project files in the browser and text editor.
-
-    1. Open Sublime Text and go to **File > Open**.
-    1. Navigate to the **Project** folder (inside the folder you downloaded with today's slides). With the entire folder selected, select **Open**.
-    1. The folder will appear in Sublime's side bar. Double click on **index.html** in the sidebar to open it. Basic HTML tags have already been included in this file.
-    1. Right click or two finger tap and select **Open in Browser**. This will open the HTML file in your *default* browser. 
-
-    What do you see? Your page should look like [example 1](project/examples/example1.html).
-  </section>
-
-  <section class="slide" data-markdown>
-    ##Making Changes & Saving
-
-    1. In your text editor, make a change *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>`  
-    Update your name and tagline.
-    1. Save your file using keyboard shortcuts, **COMMAND** + **S** or **CONTROL** + **S**, or **File > Save**.
-    1. Go back to your browser and refresh it to see the changes.  
-    Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **COMMAND/CONTROL** + **R**.
-
-    Every time you make a change to your web page, don't forget to save and refresh your browser!
-
-  </section>
-
-  <section class="slide title" data-markdown>
-    #Dive into HTML
-    ##The content layer
-  </section>
-
-  <section class="slide" data-markdown>
-    ##HTML (HyperText Markup Language)
-
-    HTML was created for web browsers to read and is used to describe the content. To display content properly in the browser, use **tags**. We've seen a few already:
-    
-    ```xml
-    &lt;header>&lt;/header>
-    &lt;h1>&lt;/h1>
-    &lt;p>&lt;/p>
-    ```
-  
-    Just like the different languages that we speak and write, HTML also has to follow proper "grammar" rules to make sense to the browser.
-
-    This is referred to as **syntax**.
-  </section>
-
-  <section class="slide">
-    <h2 id="writing-html">Writing HTML</h2>
-
-    <p>Below are the basic HTML tags required for all web pages. This makes perfect sense to a web browser:</p>
-
-    <pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
-
-    <p>However, for us humans, whitespace through indentation will make your HTML easier to read.</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
+  <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-  </section>
-  
-  <section class="slide" data-markdown>
-    ##HTML tags
-
-    The structure of a web page is defined by HTML tags. Left & right angled brackets (`shift` + `,` and `shift` + `.` ) surround the tag name. Tags usually come in pairs — an opening tag and a closing tag with a forward slash:
+&lt;/html&gt;</code></pre>
+    </section>
     
-    ```xml
-    &lt;tagname>&lt;/tagname>
-    ```
-    The are many different HTML tags used to create structure and add semantics (meaning) to the content.
+    <section class="slide" data-markdown>
+      ##HTML tags
 
-    For example, any content between the `&lt;html>&lt;/html>` tag tells the browser that it is HTML code and content between the `&lt;title>&lt;/title>` tag describes the web page title.
+      The structure of a web page is defined by HTML tags. Left & right angled brackets (`shift` + `,` and `shift` + `.` ) surround the tag name. Tags usually come in pairs — an opening tag and a closing tag with a forward slash:
+      
+      ```xml
+      &lt;tagname>&lt;/tagname>
+      ```
+      The are many different HTML tags used to create structure and add semantics (meaning) to the content. For example, any content between the `&lt;html>&lt;/html>` tag tells the browser that it is HTML code and content between the `&lt;title>&lt;/title>` tag describes the web page title.
 
-    ```xml
-    &lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
-    ```
-    
-    Tags describe the content that is inside of them, **not** what they look like.  That's what CSS is for.
-  </section>
+      ```xml
+      &lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
+      ```
 
-  <section class="slide">
-    <h2>Nesting HTML tags</h2>
+      Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules to make sense to the browser. This is referred to as **syntax**.
 
-    <p>Tags are often nested within other tags. Nested elements make up the <em>document tree</em> &amp; the relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc.</p>
-    
-    <pre><code>&lt;!DOCTYPE html&gt;
+      Tags describe the content that is inside of them, **not** what they look like.  That's what CSS is for.
+    </section>
+
+    <section class="slide">
+      <h2>Nesting HTML tags</h2>
+
+      <p>Tags are often nested within other tags. Nested elements make up the <em>document tree</em> &amp; the relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc.</p>
+      
+      <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;&lt;!-- child of html tag, parent of title tag --&gt;
         &lt;title&gt;&lt;/title&gt;
@@ -268,227 +201,388 @@
     &lt;/body&gt;
 &lt;/html&gt;</code></pre>   
 
-    <ul>
-      <li>
-        <code>&lt;html&gt;</code> is always first and has no parent nodes. <strong>All</strong> other HTML tags are nested within <code>&lt;html&gt;</code>.
-      </li>
-      <li>
-        <code>&lt;head&gt;</code> is the child of <code>&lt;html&gt;</code> and the parent node of the <code>&lt;title&gt;</code> tag.
-      </li>
-      <li>
-        What is the relationship of <code>&lt;title&gt;</code> to the <code>&lt;head&gt;</code> tag? <span class="delayed">child element</span>
-      </li>
-      <li class="delayed">
-        What is the relationship between the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags? <span class="delayed">siblings</span>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          The <code>&lt;html&gt;</code> tag is always first and <strong>all</strong> other tags are nested within <code>&lt;html&gt;</code>.
+        </li>
+        <li>
+          <code>&lt;head&gt;</code> is the child of <code>&lt;html&gt;</code> and the parent of the <code>&lt;title&gt;</code> tag.
+        </li>
+        <li>
+          What is the relationship of <code>&lt;title&gt;</code> to the <code>&lt;head&gt;</code> tag? <span class="delayed">child element</span>
+        </li>
+        <li class="delayed">
+          What is the relationship between the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags? <span class="delayed">siblings</span>
+        </li>
+      </ul>
+    </section>
 
+    <section class="slide">
+      <h2>Basic HTML Document</h2>
 
-  </section>
+      <p>These tags are needed for every webpage. Let's talk about what each tag means.</p>
 
-  <section class="slide" data-markdown>
-    ##Good file naming habits
-
-    To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files).  Here are some best practices:
-
-    * Use lowercase letters.
-    * **about.html** instead of **About.html** or **ABOUT.html**
-    * Avoid s p a c e s. Use underscores (_) or dashes (-). 
-    * Dashes are generally preferred for SEO (search engine optimization).
-    * **business_hours.html** or **business-hours.html** instead of **business hours.html**
-    * The browser will interpret it as **business%20hours.html**
-    * Avoid symbols like # & * in your file name.
-    * Keep your file names concise, yet meaningful.
-    * **about.html**, **contact.html** instead of **page1.html**, **page2.html**
-
-    **Protip!** These file naming tips can be applied to any files such as images, folders, CSS, etc.
-  </section>
-
-  <section class="slide" data-markdown>
-
-  </section>
-  <section class="slide" data-markdown>
-
-  </section>
-
-  <section class="slide" data-markdown>
-
-    Quick exercise: Saving a new file as an HTML file
-
-  In Sublime Text, click File > New File
-  By default, the file type is plain text, not HTML. You have two choices for saving this file as an HTML file.
-    Option 1: On the bottom right corner, you should see the words Plain Text. Click it and select HTML from the list. Save the file using CMD + S or CONTROL + S. Name it anything but be sure it ends with .html. You can save the file anywhere - we won't be using it for anything else.
-    Option 2: From the menu bar, select File > Save As. Give your file a name and add .html at the end. Click save.
-
-
-  </section>
-  
-
-
-  
-
-  <!--  FTP info
-
-  file:///Users/christinatruong/Dropbox/LLC/workshops/LLC-HTML-CSS-montreal-2013/index.html#slide-6 
-
-      /llc-html-css/index.html#slide-118
-
-      -->
-  
-
-
-
-
-
-  <section class="slide">
-    <h1>Introduction:<br>Title Slide Example</h1>
-  </section>
-
-  <section class="slide">
-    <h2>Just some text and Code</h2>
-    <p>Sample of a slide with basic text and code snippets.</p>
-    <p>For HTML, the <code><</code> needs to be escaped! As long as the code snippet is wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>, the syntax highlighting is taken care of!</p>
-
-    <h3>HTML</h3>
-    <pre><code>&lt;!DOCTYPE html>
+  <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-  &lt;head&gt;
-  &lt;title&gt;&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  &lt;/body&gt;
-&lt;/html></code></pre>
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 
-    <h3>CSS</h3>
-    <pre><code>body {
-  margin: 0;
-  padding: 0;
-}</code></pre>
-  </section>
+      <p><code>doctype</code> - Always the first line though not an HTML tag. It tells the browser what <em>version</em> of HTML the document is written in.</p>
 
-  <section class="slide">
-    <h2>JavaScript & jQuery highlight example</h2>
-    <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a>. Visit the site to see the full list of supported languages.</p>
-    <h3>JavaScript!</h3>
-    <pre><code>// Comment
-document.addEventListener('DOMAttrModified',function(e) {
-  var node = e.target, attr = e.attrName;
-  if(/^input$/i.test(node.nodeName)
-  &amp;&amp; (attr === 'placeholder' || attr === 'value')
-  || foo > 5)
-  Placeholder.update(node);
-}, false);</code></pre>
+      <p><code>&lt;html&gt;</code> - It is always first, making it the ancestor of all other elements. It identifies the document as HTML.</p>
 
-    <h3>jQuery!</h3>
-    <pre><code>$(document).ready(function(){
-  $("p").hide("fast");
-});</code></pre>
-  </section>
+      <p><code>&lt;head</code>&gt;  - Contains information about the web page but doesn’t display on the web page itself.  Examples include the page title (<code>&lt;title&gt;&lt;/title&gt;</code>) and links to external CSS files.</p>
 
-  <section class="slide">
-    <h2>Incremental display of content</h2>
-    <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
-    <ul>
-    <li class="delayed">Make sure your computer is setup</li>
-    <li class="delayed">Web development breakdown</li>
-    <li class="delayed">Dive into HTML</li>
-    <li class="delayed">CSS fundamentals</li>
-    </ul>
-  </section>
+      <p><code>&lt;body&gt;</code> - All content to be displayed in the browser window, also known as the viewport, goes between the body tags.</p>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      #Organizing your files
+      ##Creating web pages and file structures
+    </section>
+    
+    <section class="slide">
+      <h2>Setting Up Our Work Flow</h2>
 
-  <section class="slide">
-    <h2>CSS Snippets demo</h2>
-    <p>The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
-    <textarea class="snippet">background-color: lightblue;
-font-family: "Times New Roman", serif;
-    </textarea>
-  </section>
+      <p>Inside of the folder you downloaded today (<strong>llc-html-css-multi-page-site-master</strong>), there are many more folders and files that contain different content.</p>
 
-  <section class="slide">
-    <h2>CSS Snippets demo</h2>
-    <p>You can also target specific elements</p>
-    <textarea class="snippet" data-subject="#test">background-color: lightblue;
-font-family: "Times New Roman", serif;
-padding: 20px;
-    </textarea>
-    <div id="test">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-    </div>
-  </section>
+  <pre><code>llc-html-css-multi-page-site-master
+  |-- framework // Contains files needed for slide presentation. Do not edit!
+  |-- project // Contains files for today's workshop.
+  |-- css // Only CSS files here.
+      |-- examples // Example HTML/CSS files linked throughout the slides.
+      |-- final // Finished example for you to refer to.
+      |-- images // Add your images here for your project
+      |-- index.html // The first page / homepage of your site.
+  |-- index.html // This is the file you're viewing right now (slides)!</code></pre>
+    </section>
 
-  <section class="slide" data-markdown>
-##Markdown example
+    <section class="slide" data-markdown>
+      ##Setting Up Our Work Flow
 
-You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.  Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.
+      To open the project files in the browser and text editor, follow these instructions:
 
-You can specify the language of the codeblock by following the three backticks immediately by the language name.  View the source to see this in action.
+      1. Open Sublime Text and go to **File > Open**.
+      1. Navigate to the **Project** folder (inside the folder you downloaded with today's slides).  
+      With the entire folder selected, select **Open**.
+      1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it.  
+      Basic HTML tags have already been included in this file.
+      1. Right click or two finger tap and select **Open in Browser**. This will open the HTML file in your *default* browser. 
 
-#### Javascript Example
+      What do you see? Your page should look like [example 1](project/examples/example1.html).
+    </section>
 
-```javascript
-var myJSVariable = "Syntax Highting for Javascript";
-```
+    <section class="slide" data-markdown>
+      ##Making Changes & Saving
 
-#### CSS Example
+      1. In your text editor (Sublime Text), update your name and tagline by changing the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags.
+      
+      1. Save your file using keyboard shortcuts, **COMMAND** + **S** or **CONTROL** + **S**, or **File > Save**.
+      1. Go back to your browser and refresh it to see the changes.  
+      Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **COMMAND/CONTROL** + **R**.
+      1. Change the content in the `&lt;title>` tag. Where do you see this change?
 
-```css
-.css-selector{
-  highlight : syntax;
-}
-```
+      **Protip!** Every time you make a change to your web page, don't forget to save and refresh your browser!
+    </section>
 
-#### HTML Example
-For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the left angled bracket of the HTML tag needs to be escaped. Here's a handy tool for creating escaped result with HTML entities: http://www.htmlescape.net/htmlescape_tool.html
+    <section class="slide project" data-markdown>
+      ##Adding content
 
+      Let's take another look at the final version of the site to determine what content and HTML tags to add. 
+
+      ![project home page](framework/img/workshop/project1.jpg)
+      ![project about page](framework/img/workshop/project2.jpg)
+      ![project contact page](framework/img/workshop/project3.jpg)
+
+      All three pages have the same headings, navigation links and footer information.  Though the homepage's header and navigation is styled differently than the other two pages, don't worry about that just yet. Right now we are just concentrating on adding the HTML. 
+
+      It's best to write as much HTML as possible before adding CSS to ensure that the proper tags are being used and to help keep your code organized and semantic.
+    </section>
+
+    <section class="slide" data-markdown>
+      ##HTML5 Sectioning Tags
+      
 ```xml
-&lt;header>
-  &lt;h1>I'm an H1!&lt;/h1>
-  &lt;p>This is a paragraph&lt;/p>
-&lt;/header>
+&lt;div&gt;
+  &lt;h1&gt;Jane Smith&lt;/h1&gt;
+  &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
+  
+  &lt;div&gt;
+    &lt;ul&gt;
+     &lt;li&gt;Home&lt;/li&gt;
+     &lt;li&gt;About&lt;/li&gt;
+     &lt;li&gt;Contact&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
+
+&lt;ul&gt;
+    &lt;li&gt;Home&lt;/li&gt;
+    &lt;li&gt;About&lt;/li&gt;
+    &lt;li&gt;Contact&lt;/li&gt;
+&lt;/ul&gt;
 ```
-#### indented example
+      **Images**: like links, also requires the an additional attribute, `src`, for linking to the image file.
 
-  code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
+      ```
+      &lt;img src=&quot;path/to/image.jpg&quot;&gt;
+      ```
 
-  </section>
+    </section>
+    
+    <section class="slide">
+      <h2>HTML5 Sectioning Tags</h2>
 
-  <section class="slide">
-    <h2>Presentation mode</h2>
+      <p>Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. For example, the heading contains multiple elements inside of them (name and tagline) as well as the navigation on the about and contact page.</p>
 
-    <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using the <code>.presenter-notes</code> class like so:</p>
+      <p>Prior to HTML5, the <code>&lt;div&gt;</code> tag was used for grouping elements together to create page layouts. The header and footer of the page might look something like this:</p>
 
-<pre><code>&lt;p&gt;Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta
-  sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus
-  officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
-&lt;/p&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;div&gt;
+    &lt;h1&gt;Jane Smith&lt;/h1&gt;
+    &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
 
-p {
-  font-size: 16px;
-}
+    &lt;div&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Home&lt;/li&gt;
+            &lt;li&gt;About&lt;/li&gt;
+            &lt;li&gt;Contact&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 
-    <p>Check out the notes in this slide!</p>
+<p>The <code>&lt;div&gt;</code> is still valid but HTML5 introduced a number of semantic tags that better describe blocks of content such as <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>.  So the above example can be changed to this:</p>
 
-    <p class="presenter-notes">
-    Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
-    </p>
+<pre><code>&lt;header&gt;
+    &lt;h1&gt;Jane Smith&lt;/h1&gt;
+    &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
 
-  </section>
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Home&lt;/li&gt;
+            &lt;li&gt;About&lt;/li&gt;
+            &lt;li&gt;Contact&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+</code></pre>
+    </section>
+    
+    <section class="slide" data-markdown>
+      ##Lists & Links
 
-  <!-- Last slide -->
-  <section class="slide">
-    <h2>Thank you!</h2>
-    <p>Closing remarks</p>
-    <p class="attribution">Slidedecks created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
-  </section>
+      
+    </section>
+
+    <section class="slide" data-markdown>
+      ##Good file naming habits
+
+      To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files).  Here are some best practices:
+
+      * Use lowercase letters.
+        * **about.html** instead of **About.html** or **ABOUT.html**
+      * Avoid s p a c e s. Use underscores (_) or dashes (-). 
+        * Dashes are generally preferred for SEO (search engine optimization).
+        * **business_hours.html** or **business-hours.html** instead of **business hours.html**
+        * The browser will interpret it as **business%20hours.html**
+      * Avoid symbols like # & * in your file name.
+      * Keep your file names concise, yet meaningful.
+        * **about.html**, **contact.html** instead of **page1.html**, **page2.html**
+
+      **Protip!** These file naming tips can be applied to any files such as images, folders, CSS, etc.
+    </section>
+
+    <section class="slide" data-markdown>
+
+    </section>
+    <section class="slide" data-markdown>
+
+    </section>
+
+    <section class="slide" data-markdown>
+
+      Quick exercise: Saving a new file as an HTML file
+
+    In Sublime Text, click File > New File
+    By default, the file type is plain text, not HTML. You have two choices for saving this file as an HTML file.
+      Option 1: On the bottom right corner, you should see the words Plain Text. Click it and select HTML from the list. Save the file using CMD + S or CONTROL + S. Name it anything but be sure it ends with .html. You can save the file anywhere - we won't be using it for anything else.
+      Option 2: From the menu bar, select File > Save As. Give your file a name and add .html at the end. Click save.
+
+
+    </section>
+    
+
+
+    
+
+    <!--  FTP info
+
+    file:///Users/christinatruong/Dropbox/LLC/workshops/LLC-HTML-CSS-montreal-2013/index.html#slide-6 
+
+        /llc-html-css/index.html#slide-118
+
+        -->
+    
+
+
+
+
+
+    <section class="slide">
+      <h1>Introduction:<br>Title Slide Example</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Just some text and Code</h2>
+      <p>Sample of a slide with basic text and code snippets.</p>
+      <p>For HTML, the <code><</code> needs to be escaped! As long as the code snippet is wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>, the syntax highlighting is taken care of!</p>
+
+      <h3>HTML</h3>
+      <pre><code>&lt;!DOCTYPE html>
+  &lt;html&gt;
+    &lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+  &lt;/html></code></pre>
+
+      <h3>CSS</h3>
+      <pre><code>body {
+    margin: 0;
+    padding: 0;
+  }</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>JavaScript & jQuery highlight example</h2>
+      <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a>. Visit the site to see the full list of supported languages.</p>
+      <h3>JavaScript!</h3>
+      <pre><code>// Comment
+  document.addEventListener('DOMAttrModified',function(e) {
+    var node = e.target, attr = e.attrName;
+    if(/^input$/i.test(node.nodeName)
+    &amp;&amp; (attr === 'placeholder' || attr === 'value')
+    || foo > 5)
+    Placeholder.update(node);
+  }, false);</code></pre>
+
+      <h3>jQuery!</h3>
+      <pre><code>$(document).ready(function(){
+    $("p").hide("fast");
+  });</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Incremental display of content</h2>
+      <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
+      <ul>
+      <li class="delayed">Make sure your computer is setup</li>
+      <li class="delayed">Web development breakdown</li>
+      <li class="delayed">Dive into HTML</li>
+      <li class="delayed">CSS fundamentals</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>CSS Snippets demo</h2>
+      <p>The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
+      <textarea class="snippet">background-color: lightblue;
+  font-family: "Times New Roman", serif;
+      </textarea>
+    </section>
+
+    <section class="slide">
+      <h2>CSS Snippets demo</h2>
+      <p>You can also target specific elements</p>
+      <textarea class="snippet" data-subject="#test">background-color: lightblue;
+  font-family: "Times New Roman", serif;
+  padding: 20px;
+      </textarea>
+      <div id="test">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-markdown>
+  ##Markdown example
+
+  You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.  Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.
+
+  You can specify the language of the codeblock by following the three backticks immediately by the language name.  View the source to see this in action.
+
+  #### Javascript Example
+
+  ```javascript
+  var myJSVariable = "Syntax Highting for Javascript";
+  ```
+
+  #### CSS Example
+
+  ```css
+  .css-selector{
+    highlight : syntax;
+  }
+  ```
+
+  #### HTML Example
+  For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the left angled bracket of the HTML tag needs to be escaped. Here's a handy tool for creating escaped result with HTML entities: http://www.htmlescape.net/htmlescape_tool.html
+
+  ```xml
+  &lt;header>
+    &lt;h1>I'm an H1!&lt;/h1>
+    &lt;p>This is a paragraph&lt;/p>
+  &lt;/header>
+
+  ```
+  #### indented example
+
+    code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
+
+    </section>
+
+    <section class="slide">
+      <h2>Presentation mode</h2>
+
+      <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using the <code>.presenter-notes</code> class like so:</p>
+
+  <pre><code>&lt;p&gt;Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta
+    sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus
+    officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
+  &lt;/p&gt;
+
+  p {
+    font-size: 16px;
+  }
+  </code></pre>
+
+      <p>Check out the notes in this slide!</p>
+
+      <p class="presenter-notes">
+      Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
+      </p>
+
+    </section>
+
+    <!-- Last slide -->
+    <section class="slide">
+      <h2>Thank you!</h2>
+      <p>Closing remarks</p>
+      <p class="attribution">Slidedecks created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
 
   </main><!-- cls main section -->
 
 
   <footer>
-  <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
-  <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+    <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+    <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
   </footer>
 
   <script src="framework/scripts/slideshow.js"></script>
