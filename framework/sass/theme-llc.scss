@@ -194,6 +194,10 @@ table {
 .example {
 	border: 1px solid $gray-light;
 	padding: 0 15px;
+
+	p {
+		margin: 10px 0;
+	}
 }
 
 /* Incremental slides */

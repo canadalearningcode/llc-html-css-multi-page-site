@@ -23,7 +23,7 @@
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
-<body data-duration="30">
+<body data-duration="360">
 
   <!-- First/Intro slide -->
   <header class="intro slide">
@@ -272,18 +272,23 @@
       Basic HTML tags have already been included in this file.
       1. Right click or two finger tap and select **Open in Browser**. This will open the HTML file in your *default* browser. 
 
-      What do you see? Your page should look like [example 1](project/examples/example1.html).
+      What do you see? Your page should look like [exercise 1](project/examples/exercise1.html).
     </section>
 
     <section class="slide" data-markdown>
-      ##Exercise #1 - Making & Saving Changes (5 mins)
+      ##Exercise #1 - Making & Saving Changes (10 mins)
 
-      1. In your text editor (Sublime Text), update your name and tagline by changing the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags.
-      
+      1. In your text editor (Sublime Text), update your name and tagline
+        * change the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags
       1. Save your file using keyboard shortcuts, **COMMAND** + **S** or **CONTROL** + **S**, or **File > Save**.
       1. Go back to your browser and refresh it to see the changes.  
-      Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **COMMAND/CONTROL** + **R**.
-      1. Change the content in the `&lt;title>` tag. Where do you see this change?
+        * Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **COMMAND/CONTROL** + **R**.
+      1. Change the content in the `&lt;title>&lt;/title>` tag. Where do you see this change?
+      1. Update the footer content in the `&lt;p>&lt;/p>` to include a copyright message.
+        * Try using an HTML code for the copyright symbol. Here are some resources:  
+        http://character-code.com/ascii-table.php, http://unicode-table.com/en/#00A9
+
+      Your page should now look similar to [exercise1-updated.html](project/examples/exercise1-updated.html)
 
       **Protip!** Every time you make a change to your web page, don't forget to save and refresh your browser!
     </section>
@@ -394,6 +399,7 @@ The `&lt;div&gt;` is still valid but HTML5 introduced a number of semantic tags 
     &lt;/nav&gt;
 &lt;/header&gt;
 ```
+More about HTML5 here: http://html5doctor.com
     </section>
   
     <section class="slide" data-markdown>
@@ -419,16 +425,23 @@ The `&lt;div&gt;` is still valid but HTML5 introduced a number of semantic tags 
     <section class="slide" data-markdown>
 ##Exercise #2 - Adding pages and content (20mins)
 
-Follow the instructions below to complete the exercise. Make sure to test the links. Don't worry about how the page looks right now. If you get stuck, you can take a peek in the examples folder: [example2-home.html](project/examples/example2-home.html), [example2-about.html](project/examples/example2-about.html]), [example2-contact.html](project/examples/example2-contact.html])
+Follow the instructions below to complete the exercise. We are still just adding HTML content so don't worry about how to style the page elements just yet. If you get stuck, you can take a peek in the examples folder: [exercise2-home.html](project/examples/exercise2-home.html), [exercise2-about.html](project/examples/exercise2-about.html), [exercise2-contact.html](project/examples/exercise2-contact.html)
+
+**Protip!** Copy and paste repeated content using keyboard shortcuts to speed up your work flow.  
+`ctrl/cmnd + c` to copy  
+`ctrl/cmnd + x` to copy and cut    
+`ctrl/cmnd + v` to paste  
+`ctrl/cmnd + s` to save
 
 1. Create an About page and name it **about.html**
   * Save it in the same folder as **index.html** (project folder)
   * Be sure to include all the basic HTML tags
-  * Add the header markup referenced in [HTML5 Sectioning Tags](index.html#slide22)
+  * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide22)
   * Use **relative** links to navigate between pages
+  * Add the footer content created in **index.html** in the previous exercise.
 1. Create a Contact page and name it **contact.html**
   * Follow the same instructions as the About page
-1. Add the same navigation markup and relative links to **index.html** BUT since the structure and style is different, put the nav HTML **above** the header tag, not inside like About and Contact.
+1. Add the same navigation markup and relative links to **index.html** *BUT* since the structure and style is different, put the nav HTML **above** the header tag, not inside like About and Contact. The order of the HTML will matter when we add CSS to it later.
 
 ```xml
 &lt;nav&gt;
@@ -445,20 +458,111 @@ Follow the instructions below to complete the exercise. Make sure to test the li
 &lt;/header&gt;
 ```
     </section>
-    <section class="slide" data-markdown>
 
+    <section class="slide" data-markdown>
+      ##Leave a Comment
+
+      Sometimes you want to leave notes for yourself (or others) but don't want it to display in the browser. That's when comments can be really helpful. Comments can be used for:
+      
+      * hiding code for later use
+      * leaving notes
+      * organizing the document
+
+      The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
+
+      ```
+      &lt;!-- This is my comment. Comments should always be included between the dashes. -->
+      ```
+    </section>
+
+    <section class="slide">
+      <h2>Void / Self-closing Element</h2>
+
+      <p>Void tags don’t format content — instead, they render or embed objects in the page. These tags <strong>do not</strong> come in pairs since they do not wrap content like the other tags we’ve been using so far. They are the content!</p>
+
+      <p>The syntax is slightly different in the latest version of HTML so you may see it written in two ways. Prior to HTML5, these tags were self-closed with a forward slash (/) immediately before the right angled bracket (&gt;). In HTML5, void tags are not required to self close.</p>
+
+      <p>A common void tag is the <code>&lt;br /&gt;</code> or <code>&lt;br&gt;</code> tag used to create a line break.</p>
+
+<pre><code>&lt;p&gt;This text&lt;br&gt;goes over&lt;br&gt;several&lt;br&gt;lines.&lt;/p&gt;</code></pre>
+      
+      <!-- example -->
+      <p>This text<br>goes over<br>several<br>lines.</p>
+
+      <p>Another example of a void element is the horizontal rule, <code>&lt;hr&gt;</code> or <code>&lt;hr /&gt;</code>.</p>
+
+      <!-- example -->
+      <hr>
+    </section>
+
+    <section class="slide">
+      <h2>Adding images</h2>
+
+      <p>Images are another example of a void element.  Just like links, image tags also requires an attribute to define the file path of the image file. However, it uses the <code>src</code> attribute (not <code>href</code>).  The value can be an absolute or relative path. The below is an example of an absolute path.</p>
+
+      <pre><code>&lt;img src="http://fillmurray.com/200/300"&gt;</code></pre>
+
+      <p><img src="http://fillmurray.com/200/300"></p>
+
+      <p>If you don’t have a picture to use at the moment and need a placeholder, there are many services available such as:</p>
+
+      <ul>
+      <li><a href="http://p-hold.com">http://p-hold.com</a></li>
+      <li><a href="http://placesheen.com/">http://placesheen.com/</a></li>
+      <li><a href="http://placebear.com">http://placebear.com</a></li>
+      <li><a href="http://fillmurray.com/">http://fillmurray.com/</a></li>
+      <li>and <a href="http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx">many more</a>!</li>
+      </ul>
+    </section>
+  
+    <section class="slide" data-markdown>
+      ##Adding your own images
+      
+      Just like links, you can use a **relative** path to link to your own images.  It's common practice to create a folder to organize images separate from HTML files. 
+
+      In your **project** folder, there is already an **images** folder included in your download.  Use the default **profile.jpg** image contained inside or add your own to this folder.
+
+      Remember, relative paths are based on the folder structure.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
+
+      ```
+      &lt;img src="images/profile.jpg">
+      ```
     </section>
 
     <section class="slide" data-markdown>
+      ##Exercise #3 - Update the About page (15 mins)
 
-      Quick exercise: Saving a new file as an HTML file
+      Let's add some more content to your About page. Use the `&lt;section>` tag to create a new sectioning block for the page content and add this under the `&lt;header>` tag like this:
 
-    In Sublime Text, click File > New File
-    By default, the file type is plain text, not HTML. You have two choices for saving this file as an HTML file.
-      Option 1: On the bottom right corner, you should see the words Plain Text. Click it and select HTML from the list. Save the file using CMD + S or CONTROL + S. Name it anything but be sure it ends with .html. You can save the file anywhere - we won't be using it for anything else.
-      Option 2: From the menu bar, select File > Save As. Give your file a name and add .html at the end. Click save.
+```xml
+&lt;header&gt;
+  &lt;h1&gt;Jane Smith&lt;/h1&gt;
+  &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
 
+  &lt;nav&gt;
+    ...
+  &lt;/nav&gt;
+&lt;/header&gt;
 
+&lt;section&gt;
+  page content here
+&lt;/section&gt;
+```
+
+      1. Inside of the `section` tag, add a profile picture.
+      1. After the image tag, add an `h2` for the page title.
+      1. After the `h2`, add a couple of paragraphs about you, or use placholder text.
+
+      Just like images, there are many services available for placeholder text.
+      
+      * http://www.lipsum.com
+      * http://www.rygo-ipsum.com/
+      * http://coffeeipsum.com
+      * http://thewireipsum.com
+      * http://slipsum.com/
+      * and [many more](http://meettheipsums.com/)!
+      
+      For your reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in your **examples** folder but only look if you get stuck! Try asking a mentor first!
     </section>
     
 
