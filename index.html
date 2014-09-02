@@ -57,22 +57,6 @@
     </section>
 
     <section class="slide" data-markdown>
-      ##Course Outline
-      
-      ###Morning
-
-      * Intro to HTML
-      * Write the HTML for your project
-      * Intro to CSS
-
-      ###Afternoon
-
-      * More CSS
-      * Final touches
-      * Next steps
-    </section>
-
-    <section class="slide" data-markdown>
       ##Getting Started: Web Browser 
 
       **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
@@ -84,6 +68,8 @@
       * right-click / two-finger tap on a web page and select **Inspect Element**
       * select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools**
       * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
+
+      Extra resource: http://discover-devtools.codeschool.com
     </section>
 
     <section class="slide" data-markdown>
@@ -436,7 +422,7 @@ Follow the instructions below to complete the exercise. We are still just adding
 1. Create an About page and name it **about.html**
   * Save it in the same folder as **index.html** (project folder)
   * Be sure to include all the basic HTML tags
-  * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide22)
+  * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide21)
   * Use **relative** links to navigate between pages
   * Add the footer content created in **index.html** in the previous exercise.
 1. Create a Contact page and name it **contact.html**
@@ -514,6 +500,20 @@ Follow the instructions below to complete the exercise. We are still just adding
       <li>and <a href="http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx">many more</a>!</li>
       </ul>
     </section>
+
+    <section class="slide" data-markdown>
+##The alt attribute
+
+`alt` is an optional image **attribute** and refers to *alternative text*. Alt text is read by screen reading software used by visually impaired users.
+
+It also displays when there's a broken or missing image due to typos or moved files. It should be a short description of the image.
+
+HTML tags can contain more than one attribute. Here's how you would use the `alt` attribute with the `src` attribute.
+
+```
+&lt;img src="images/profile.jpg" alt="Jane Smith">
+```
+    </section>
   
     <section class="slide" data-markdown>
       ##Adding your own images
@@ -525,14 +525,41 @@ Follow the instructions below to complete the exercise. We are still just adding
       Remember, relative paths are based on the folder structure.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
 
       ```
-      &lt;img src="images/profile.jpg">
+      &lt;img src="images/profile.jpg" alt="description of image">
       ```
+    </section>
+
+    <section class="slide" data-markdown>
+##Image Types
+There are many different file types that can be used for the web. Each type is best suited for specific kinds of images. Use the format that maintains the best quality while reducing the file size.
+
+**jpg** - used for photographs with lots of rich colours or gradients
+
+**png** - used for images with transparent or opaque backgrounds
+
+**gif** - used for images with minimal colour variation and of course, for animated gifs!
+
+**svg** - used for 2D graphics and is very scaleable. Based on XML and can be used as a image file or in the HTML document. When included as HTML, CSS can be used to style the svg!
+
+**More about SVG:** http://css-tricks.com/using-svg
+    </section>
+
+    <section class="slide centered gif-wall" data-markdown>
+##Bonus: gif wall
+
+![](framework/img/workshop/mind-blown.gif)
+![](framework/img/workshop/kid.gif)
+![](framework/img/workshop/raccoon.gif)
+![](framework/img/workshop/bday-cake.gif)
+![](framework/img/workshop/otter.gif)
+
+[image source]()
     </section>
 
     <section class="slide" data-markdown>
       ##Exercise #3 - Update the About page (15 mins)
 
-      Let's add some more content to your About page. Use the `&lt;section>` tag to create a new sectioning block for the page content and add this under the `&lt;header>` tag like this:
+      Let's add some more content to your About page. Use the `&lt;section>` tag to create a new sectioning block for the page content and add it under the `&lt;header>` tag and before the `&lt;footer>` like this:
 
 ```xml
 &lt;header&gt;
@@ -547,6 +574,10 @@ Follow the instructions below to complete the exercise. We are still just adding
 &lt;section&gt;
   page content here
 &lt;/section&gt;
+
+&lt;footer&gt;
+  ...
+&lt;/footer&gt;
 ```
 
       1. Inside of the `section` tag, add a profile picture.
@@ -565,7 +596,9 @@ Follow the instructions below to complete the exercise. We are still just adding
       For your reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in your **examples** folder but only look if you get stuck! Try asking a mentor first!
     </section>
     
-
+    <section class="slide">
+      <h1>Introduction:<br>Title Slide Example</h1>
+    </section>
 
     
 
@@ -582,9 +615,7 @@ Follow the instructions below to complete the exercise. We are still just adding
 
 
 
-    <section class="slide">
-      <h1>Introduction:<br>Title Slide Example</h1>
-    </section>
+    
 
     <section class="slide">
       <h2>Just some text and Code</h2>
