@@ -57,6 +57,22 @@ Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-s
     </section>
 
     <section class="slide" data-markdown>
+##Course Outline
+
+###Morning
+
+* Intro to HTML
+* Write the HTML for your project
+* Intro to CSS
+
+###Afternoon
+
+* More CSS & HTML
+* Final touches
+* Next steps
+    </section>
+
+    <section class="slide" data-markdown>
 ##Getting Started: Web Browser 
 
 **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
@@ -262,6 +278,31 @@ What do you see? Your page should look like [exercise 1](project/examples/exerci
     </section>
 
     <section class="slide" data-markdown>
+##HTML content: adding text
+
+Heading tags are used for headings / page titles. There are six headings tags ranging from `&lt;h1>` to `&lt;h6>` and follow a hierarchy. `&lt;h1>` is the most significant heading on the page.
+
+```xml
+&lt;h1>Name of blog&lt;/h1>
+&lt;h2>Title of blog post&lt;/h2>
+&lt;h3>Sub headings within blog post&lt;/h3>
+```
+
+Paragraphs are represented by the `&lt;p>` tag.
+
+```xml
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+```
+
+Links are represented by the `&lt;a>` (anchor) tag. The `href` *attribute* is needed to specify the link location (more on this later).
+
+```xml
+Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
+```
+    </section>
+
+    <section class="slide" data-markdown>
 ##Exercise #1 - Making & Saving Changes (10 mins)
 
 1. In your text editor (Sublime Text), update your name and tagline
@@ -422,7 +463,7 @@ Follow the instructions below to complete the exercise. We are still just adding
 1. Create an About page and name it **about.html**
   * Save it in the same folder as **index.html** (project folder)
   * Be sure to include all the basic HTML tags
-  * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide21)
+  * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide22)
   * Use **relative** links to navigate between pages
   * Add the footer content created in **index.html** in the previous exercise.
 1. Create a Contact page and name it **contact.html**
@@ -470,7 +511,7 @@ The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
 
       <p>A common void tag is the <code>&lt;br /&gt;</code> or <code>&lt;br&gt;</code> tag used to create a line break.</p>
 
-<pre><code>&lt;p&gt;This text&lt;br&gt;goes over&lt;br&gt;several&lt;br&gt;lines.&lt;/p&gt;</code></pre>
+<pre><code class="xml">&lt;p&gt;This text&lt;br&gt;goes over&lt;br&gt;several&lt;br&gt;lines.&lt;/p&gt;</code></pre>
       
       <!-- example -->
       <p>This text<br>goes over<br>several<br>lines.</p>
@@ -595,80 +636,216 @@ Just like images, there are many services available for placeholder text.
 
 For your reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in your **examples** folder but only look if you get stuck! Try asking a mentor first!
     </section>
-    
+  
     <section class="slide title" data-markdown>
-#Dive into CSS
+#Intro to CSS
 ##The presentation layer
     </section>
+  
+    <section class="slide" data-markdown>
+##CSS & HTML
 
+CSS is its own language and has different syntax rules than HTML but it the two are closely paired. CSS is made up of rules that refer to HTML elements and define what those elements should look like.
+
+CSS separates content (i.e. text) from presentation (i.e. text colour) and helps to reduce redundancy and save time.  
+
+Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no longer be used because CSS takes care of presentation and styles.
+    </section>
+
+    <section class="slide" data-markdown>
+      ##CSS Terminology & Syntax
+  
+      **Selectors:** used to determine which element(s) to apply the styles to. Can target an HTML tag, class or ID.  
+      **Declaration block:** consists of a list of declarations (rules to follow) wrapped in curly braces `{}`.  
+      **Declarations** or rules to follow, are written using `property:value` pairs.
+
+      ```css
+      selector {
+        property: value;
+      }
+      ```
+      **Properties** determine the type of style to be applied to
+      the element (e.g. color).  
+      **Values** are specific to the property. Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
+      
+      ![](framework/img/workshop/css-declaration.png)
+    </section>
+
+    <section class="slide">
+      <h2>CSS Syntax</h2>
+
+      <pre><code>h1 {
+  color: blue;
+  font-size: 12px;
+}</code></pre>
+
+      <p>In the above example:</p>
+
+      <ul>
+        <li>Which one is the selector? <br>
+          <span class="delayed">h1</span>
+        </li>
+        <li class="delayed">Which one is the property? <br>
+          <span class="delayed">color &amp; font-size</span>
+        </li>
+        <li class="delayed">Which one is the value? <br>
+          <span class="delayed">blue &amp; 12px</span>
+        </li>
+      </ul>        
+    </section>
+
+    <section class="slide" data-markdown>
+      ##Comments
+      
+      Comments are written within a slash & asterix (`/* */`) and closes in the opposite order. Comments can be used for the same reasons as HTML comments: leaving notes, hiding code for later and for organization.
+      
+      ```
+      p {
+        color: #cc0066; /* magenta */
+      }
+
+      /* HEADER STYLES */
+      header {
+        width: 80%;
+      }
+
+      /*  Saving this for later
+      .slider {
+        width: 100px;
+        background: red;
+      }
+      */ 
+      ``` 
+    </section>
+
+    <section class="slide" data-markdown>
+##Referencing CSS - Inline & Internal
+
+There are three ways to include (otherwise known as *referencing*) CSS in an HTML page.
+
+**INLINE** - can be added to any HTML element using the `style` *attribute*.
+
+```
+&lt;p style=&quot;color: blue;&quot;&gt;I'm writing CSS!&lt;/p&gt;
+```
+
+This technique should be avoided but it's good to know how it works in case you encounter it "in the wild."
+
+**INTERNAL** - uses `&lt;style&gt;` and is included in the `&lt;head&gt;` element.
+
+```    
+&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;style&gt;
+    h1 {
+      font-size: 16px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;I'm still writing CSS!&lt;/p&gt;
+&lt;/body&gt;
+```
+
+This method is preferred over *inline* css, however it is still inefficient because if you had multiple web pages, the style block and any revision would have to be replicated on every single page.
+    </section>
+
+    <section class="slide" data-markdown>
+##Referencing CSS - External
+
+The external method links to a separate style sheet file and is recommended because it separates the CSS from the HTML document. The style sheet is referenced in the `&lt;head&gt;` of the document. Only the CSS file needs to be updated rather than the CSS block on every single page.
+
+Referenced in the head element with a `&lt;link&gt;` tag and two **attributes**, `rel` (relationship) and `href`. Just like creating links, the value of the `href` points to the location of the style sheet. 
+
+Though it is not required, css files are often saved in a css folder for organization, so make sure the file path points to the appropriate directory.
+
+```
+&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;/head&gt;
+```
+    </section>
+
+    <section class="slide">
+      <h2>Default styles: Reset vs Normalize</h2>
+
+      <p>Every browser has its own default ‘user agent’ stylesheet. (ex. links are blue, h1 are bigger than h2)</p>
+
+      <p>A <strong>CSS Reset</strong> is a set of CSS rules that resets the styling of all HTML elements to a consistent baseline to avoiding cross-browser differences as much as possible.  <strong>Normalize</strong> is slightly different because it "normalizes" the default styling rather than <em>removes</em> the default styles.</p>
+
+      <p>Note that if you add it as a separate stylesheet, it should be included <em>before</em> your custom stylesheet.</p>
+
+      <p>These various stylesheets can be downloaded at <a href="http://www.cssreset.com/">cssreset.com</a> but for today, <strong>normalize.css</strong> already included with your project files. It is located in <strong>projects > css > normalize.css</strong>.</p>
+      
+      <p class="presenter-notes">
+        * look at differences after just adding normalize<br>
+        * explain why normalize has to come before custom css
+      </p> 
+    </section>
     
+    <section class="slide" data-markdown>
+##Mini-exercise
 
-    <!--  FTP info
+Take a moment to create an external CSS file and add the **normalize.css** file to all three pages.
+
+To create a new CSS file, select **File > New File** in Sublime Text or use a shortcut, **CMND/CNTRL + N**. Name the file with a .css extension.  Some commonly used names are global.css, main.css or style.css.
+
+Remember, external stylesheets are added using the `&lt;link>` tag.
+
+```
+&lt;link rel="stylesheet" href="css/normalize.css">
+&lt;link rel="stylesheet" href="css/style.css">
+```
+
+Save and refresh.  See the changes from adding the normalize.css?  We haven't added anything to our custom stylesheet yet but note that it should be added *after* normalize.css.  More on this soon.
+
+**Protip!** Can't remember the syntax?  Sublime Text has a shortcut.  Simply type "link" with no angled brackets and press tab. Voila!
+    </section>
+
+    <section class="slide title" data-markdown>
+      #CSS & TYPOGRAPHY
+    </section>
+
+    <section class="slide" data-markdown>
+      ##Web safe fonts
+
+      Fonts can be changed with the `font-family` **property**. However, not all fonts are installed on all computers so it's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly included on most computers.
+
+      It's best practice to list at least two or three font options to provide a fall-back if the user doesn't have the preferred fonts installed.
+
+      ```
+      font-family: Helvetica, Arial, sans-serif;
+      ```
+
+      Here's a handy resource for referencing web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
+    </section>
+
+    <section class="slide" data-markdown>
+      ##Custom fonts
+
+      For more options than just using the web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) and [Font Squirrel](http://www.fontsquirrel.com/) can make it easier to use a variety of fonts that aren't normally supported by all computers.
+
+      A service like **Font Squirrel** requires you to download the fonts and add it to your project files. The site features a handy [generator](http://www.fontsquirrel.com/tools/webfont-generator) to create different font files to support various browsers as well as include demo files and instructions on how to use it. 
+
+      **Google Fonts** allows you to link directly to their stylesheet and no file downloads are necessary. To use these fonts:
+
+      * Select the fonts you want to use and **Add to Collection**.  
+      * You can **Review** them to take a closer look, then choose **Use** when ready.
+      * Select font weights. The more you choose, the more it will slow down page load time.
+      * The default character set should contain what you need. Only select an option if you need to add additional language support.
+      * Grab the `&lt;link&gt;` code snippet and add it the `&lt;head&gt;` part of your page.
+      * Use the new fonts with the `font-family` property as listed in the example on the Google Fonts page.
+
+      That's it!
+    </section>
+        <!--  FTP info
 
     file:///Users/christinatruong/Dropbox/LLC/workshops/LLC-HTML-CSS-montreal-2013/index.html#slide-6 
 
         /llc-html-css/index.html#slide-118
 
-        -->
-    
-
-
-
-
-
-    
-
-    <section class="slide">
-      <h2>Just some text and Code</h2>
-      <p>Sample of a slide with basic text and code snippets.</p>
-      <p>For HTML, the <code><</code> needs to be escaped! As long as the code snippet is wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>, the syntax highlighting is taken care of!</p>
-
-      <h3>HTML</h3>
-      <pre><code>&lt;!DOCTYPE html>
-  &lt;html&gt;
-    &lt;head&gt;
-    &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-  &lt;/html></code></pre>
-
-      <h3>CSS</h3>
-      <pre><code>body {
-    margin: 0;
-    padding: 0;
-  }</code></pre>
-    </section>
-
-    <section class="slide">
-      <h2>JavaScript & jQuery highlight example</h2>
-      <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a>. Visit the site to see the full list of supported languages.</p>
-      <h3>JavaScript!</h3>
-      <pre><code>// Comment
-  document.addEventListener('DOMAttrModified',function(e) {
-    var node = e.target, attr = e.attrName;
-    if(/^input$/i.test(node.nodeName)
-    &amp;&amp; (attr === 'placeholder' || attr === 'value')
-    || foo > 5)
-    Placeholder.update(node);
-  }, false);</code></pre>
-
-      <h3>jQuery!</h3>
-      <pre><code>$(document).ready(function(){
-    $("p").hide("fast");
-  });</code></pre>
-    </section>
-
-    <section class="slide">
-      <h2>Incremental display of content</h2>
-      <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
-      <ul>
-      <li class="delayed">Make sure your computer is setup</li>
-      <li class="delayed">Web development breakdown</li>
-      <li class="delayed">Dive into HTML</li>
-      <li class="delayed">CSS fundamentals</li>
-      </ul>
-    </section>
+        --> 
 
     <section class="slide">
       <h2>CSS Snippets demo</h2>
@@ -688,43 +865,6 @@ For your reference, [exercise3-about.html](project/examples/exercise3-about.html
       <div id="test">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
       </div>
-    </section>
-
-    <section class="slide" data-markdown>
-  ##Markdown example
-
-  You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.  Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.
-
-  You can specify the language of the codeblock by following the three backticks immediately by the language name.  View the source to see this in action.
-
-  #### Javascript Example
-
-  ```javascript
-  var myJSVariable = "Syntax Highting for Javascript";
-  ```
-
-  #### CSS Example
-
-  ```css
-  .css-selector{
-    highlight : syntax;
-  }
-  ```
-
-  #### HTML Example
-  For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the left angled bracket of the HTML tag needs to be escaped. Here's a handy tool for creating escaped result with HTML entities: http://www.htmlescape.net/htmlescape_tool.html
-
-  ```xml
-  &lt;header>
-    &lt;h1>I'm an H1!&lt;/h1>
-    &lt;p>This is a paragraph&lt;/p>
-  &lt;/header>
-
-  ```
-  #### indented example
-
-    code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
-
     </section>
 
     <section class="slide">
