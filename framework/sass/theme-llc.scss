@@ -120,8 +120,12 @@ footer {
 /* Base styles for slides
 --------------------------*/
 .slide {
-	padding: 45px 3%;
+	padding: 45px 5%;
 	height: 96%;
+
+	img {
+		max-width: 100%;
+	}
 
 	&:target {
 		overflow: scroll;
@@ -144,15 +148,15 @@ footer {
 	h1, h2 {
 		position: relative;
 		text-align: center;
-		top: 42%;
-		transform: translateY(-42%);
+		top: 40%;
+		transform: translateY(-40%);
 	}
 	h2 {
 		color: $gray;
 	}
 }
 
-// Progress Bar
+/* Progress Bar */
 #timer {
 	height: 4px;
 	line-height: 4px;
@@ -166,7 +170,8 @@ footer {
 	}
 }
 
-// textarea for dynamic CSS demos
+
+/* textarea for dynamic CSS demos */
 textarea.snippet {
 	width: 100%;
 	border: 1px solid #222;
@@ -175,8 +180,7 @@ textarea.snippet {
 	font-family: Monaco, Andale Mono, monospace;
 }
 
-// table styles
-
+/* table styles */
 table {
 	th {
 		font-weight: $normal;
@@ -185,6 +189,19 @@ table {
 		width: 100%;
 	}
 }
+
+/* Creates border for slide examples */
+.example {
+	border: 1px solid $gray-light;
+	padding: 0 15px;
+}
+
+/* Incremental slides */
+.delayed.displayed, 
+.delayed-children > .displayed {
+    opacity: 1;
+}
+
 
 /* First/Intro slide
 ---------------------*/

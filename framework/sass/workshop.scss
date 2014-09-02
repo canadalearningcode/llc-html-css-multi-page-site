@@ -1,6 +1,30 @@
 @import "variables";
 
+/* Styles specific to this workshop
+------------------------------------*/
+
+/* Slide specific styles */
+
+/* Today's Project */
 .project img {
 	width: 32%;
 	margin-top: 40px;
 }
+
+/* A Basic Web Page */
+.basic-web-page {
+	.example {
+		p {
+			margin: 10px 0;
+		}
+		&.css {
+			color: #27ae60;
+			font-weight: bold;
+
+			span {
+				font-style: italic;
+			}
+		}
+	}
+}
+
