@@ -158,7 +158,7 @@
 
       <p>However, for us humans, whitespace through indentation will make your HTML easier to read.</p>
 
-  <pre><code>&lt;!DOCTYPE html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;&lt;/title&gt;
@@ -304,8 +304,12 @@
     </section>
 
     <section class="slide" data-markdown>
-      ##HTML5 Sectioning Tags
-      
+##HTML5 Sectioning Tags
+
+Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. For example, the heading contains multiple elements inside of them (name and tagline) as well as the navigation on the about and contact page.
+
+Prior to HTML5, the `&lt;div&gt;` tag was used for grouping elements together to create page layouts. The header and footer of the page might look something like this:
+
 ```xml
 &lt;div&gt;
   &lt;h1&gt;Jane Smith&lt;/h1&gt;
@@ -313,25 +317,31 @@
   
   &lt;div&gt;
     &lt;ul&gt;
-     &lt;li&gt;Home&lt;/li&gt;
-     &lt;li&gt;About&lt;/li&gt;
-     &lt;li&gt;Contact&lt;/li&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Contact&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-
-&lt;ul&gt;
-    &lt;li&gt;Home&lt;/li&gt;
-    &lt;li&gt;About&lt;/li&gt;
-    &lt;li&gt;Contact&lt;/li&gt;
-&lt;/ul&gt;
 ```
-      **Images**: like links, also requires the an additional attribute, `src`, for linking to the image file.
 
-      ```
-      &lt;img src=&quot;path/to/image.jpg&quot;&gt;
-      ```
+The `&lt;div&gt;` is still valid but HTML5 introduced a number of semantic tags that better describe blocks of content such as `&lt;header&gt;`, `&lt;footer&gt;`, `&lt;nav&gt;`, `&lt;section&gt;`.  So the above example can be changed to this:
+
+```xml
+&lt;header&gt;
+  &lt;h1&gt;Jane Smith&lt;/h1&gt;
+  &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
+
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Contact&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+```
 
     </section>
     
