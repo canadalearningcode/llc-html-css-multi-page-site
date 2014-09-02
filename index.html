@@ -47,63 +47,63 @@
 
   <main>
     <section class="slide centered project" data-markdown>
-      ##Today's Project
+##Today's Project
 
-      Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/) to see the whole project!
+Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/) to see the whole project!
 
-      ![project home page](framework/img/workshop/project1.jpg)
-      ![project about page](framework/img/workshop/project2.jpg)
-      ![project contact page](framework/img/workshop/project3.jpg)
+![project home page](framework/img/workshop/project1.jpg)
+![project about page](framework/img/workshop/project2.jpg)
+![project contact page](framework/img/workshop/project3.jpg)
     </section>
 
     <section class="slide" data-markdown>
-      ##Getting Started: Web Browser 
+##Getting Started: Web Browser 
 
-      **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+**[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
 
-      You can view the source of any web page by right-clicking (or two-finger tap) on any web page! Try visiting http://ladieslearningcode.com and view the source. That's HTML.
+You can view the source of any web page by right-clicking (or two-finger tap) on any web page! Try visiting http://ladieslearningcode.com and view the source. That's HTML.
 
-      **Developer tools** take it a step further and allows us to *inspect* any web page making it easier to test and debug code. The tools can be accessed in 3 ways:
-      
-      * right-click / two-finger tap on a web page and select **Inspect Element**
-      * select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools**
-      * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
+**Developer tools** take it a step further and allows us to *inspect* any web page making it easier to test and debug code. The tools can be accessed in 3 ways:
 
-      Extra resource: http://discover-devtools.codeschool.com
+* right-click / two-finger tap on a web page and select **Inspect Element**
+* select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools**
+* keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
+
+Extra resource: http://discover-devtools.codeschool.com
     </section>
 
     <section class="slide" data-markdown>
-      ##Getting Started: Text editor
+##Getting Started: Text editor
 
-      You can write code using your computer's default text editor, Notepad (Windows) or TextEdit (Apple), but choosing a text editor with colour highlighting and other helpful features will improve your work flow.
+You can write code using your computer's default text editor, Notepad (Windows) or TextEdit (Apple), but choosing a text editor with colour highlighting and other helpful features will improve your work flow.
 
-      **[Sublime Text](http://www.sublimetext.com/)** is a great option and is the editor we'll be using today. 
+**[Sublime Text](http://www.sublimetext.com/)** is a great option and is the editor we'll be using today. 
 
-      If you are unable to install Sublime Text, there are many free and paid [options](http://en.wikipedia.org/wiki/List_of_HTML_editors).  
+If you are unable to install Sublime Text, there are many free and paid [options](http://en.wikipedia.org/wiki/List_of_HTML_editors).  
 
-      Try [Notepad++](http://notepad-plus-plus.org/) (Windows) or [Atom](https://atom.io/) (Mac).
+Try [Notepad++](http://notepad-plus-plus.org/) (Windows) or [Atom](https://atom.io/) (Mac).
     </section>
 
     <section class="slide" data-markdown>
-      ##What exactly *is* a website?
+##What exactly *is* a website?
 
-      A website is basically a collection of web pages, aka **HTML documents**, that closely match a file folder structure.
+A website is basically a collection of web pages, aka **HTML documents**, that closely match a file folder structure.
 
-      ![folder structure](framework/img/workshop/folder-structure.jpg)
+![folder structure](framework/img/workshop/folder-structure.jpg)
 
-      | mysite.com (index.html) | mysite.com/about.html | mysite.com/contact.html |
-      |------------|------------|--------------|
-      | ![project home page](framework/img/workshop/project1.jpg) | ![project home page](framework/img/workshop/project2.jpg) | ![project home page](framework/img/workshop/project3.jpg) |
+| mysite.com (index.html) | mysite.com/about.html | mysite.com/contact.html |
+|------------|------------|--------------|
+| ![project home page](framework/img/workshop/project1.jpg) | ![project home page](framework/img/workshop/project2.jpg) | ![project home page](framework/img/workshop/project3.jpg) |
     </section>
 
     <section class="slide" data-markdown>
-      ##What exactly *is* a website?
+##What exactly *is* a website?
 
-      To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
+To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
 
-      To move web files from your computer to a server, an FTP program must be used (more on this later).
-      
-      ![web request process](framework/img/workshop/web-server.png)
+To move web files from your computer to a server, an FTP program must be used (more on this later).
+
+![web request process](framework/img/workshop/web-server.png)
     </section>
 
     <section class="slide basic-web-page">
@@ -155,21 +155,21 @@
     </section>
     
     <section class="slide" data-markdown>
-      ##HTML tags
+##HTML tags
 
-      The structure of a web page is defined by HTML tags. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
-      
-      ```xml
-      &lt;tagname>&lt;/tagname>
-      ```
-      The are many different HTML tags used to create structure and add semantics (meaning) to the content. For example, any content between the `&lt;html>&lt;/html>` tag tells the browser that it is HTML code and content between the `&lt;title>&lt;/title>` tag describes the web page title.
+The structure of a web page is defined by HTML tags. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
 
-      ```xml
-      &lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
-      ```
-      Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules to make sense to the browser. This is referred to as **syntax**.
+```xml
+&lt;tagname>&lt;/tagname>
+```
+The are many different HTML tags used to create structure and add semantics (meaning) to the content. For example, any content between the `&lt;html>&lt;/html>` tag tells the browser that it is HTML code and content between the `&lt;title>&lt;/title>` tag describes the web page title.
 
-      Tags describe the content that is inside of them, **not** what they look like.  That's what CSS is for.
+```xml
+&lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
+```
+Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules to make sense to the browser. This is referred to as **syntax**.
+
+Tags describe the content that is inside of them, **not** what they look like.  That's what CSS is for.
     </section>
 
     <section class="slide">
@@ -247,103 +247,103 @@
     </section>
 
     <section class="slide" data-markdown>
-      ##Setting Up Our Work Flow
+##Setting Up Our Work Flow
 
-      To open the project files in the browser and text editor, follow these instructions:
+To open the project files in the browser and text editor, follow these instructions:
 
-      1. Open Sublime Text and go to **File > Open**.
-      1. Navigate to the **Project** folder (inside the folder you downloaded with today's slides).  
-      With the entire folder selected, select **Open**.
-      1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it.  
-      Basic HTML tags have already been included in this file.
-      1. Right click or two finger tap and select **Open in Browser**. This will open the HTML file in your *default* browser. 
+1. Open Sublime Text and go to **File > Open**.
+1. Navigate to the **Project** folder (inside the folder you downloaded with today's slides).  
+With the entire folder selected, select **Open**.
+1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it.  
+Basic HTML tags have already been included in this file.
+1. Right click or two finger tap and select **Open in Browser**. This will open the HTML file in your *default* browser. 
 
-      What do you see? Your page should look like [exercise 1](project/examples/exercise1.html).
+What do you see? Your page should look like [exercise 1](project/examples/exercise1.html).
     </section>
 
     <section class="slide" data-markdown>
-      ##Exercise #1 - Making & Saving Changes (10 mins)
+##Exercise #1 - Making & Saving Changes (10 mins)
 
-      1. In your text editor (Sublime Text), update your name and tagline
-        * change the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags
-      1. Save your file using keyboard shortcuts, **COMMAND** + **S** or **CONTROL** + **S**, or **File > Save**.
-      1. Go back to your browser and refresh it to see the changes.  
-        * Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **COMMAND/CONTROL** + **R**.
-      1. Change the content in the `&lt;title>&lt;/title>` tag. Where do you see this change?
-      1. Update the footer content in the `&lt;p>&lt;/p>` to include a copyright message.
-        * Try using an HTML code for the copyright symbol. Here are some resources:  
-        http://character-code.com/ascii-table.php, http://unicode-table.com/en/#00A9
+1. In your text editor (Sublime Text), update your name and tagline
+  * change the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags
+1. Save your file using keyboard shortcuts, **COMMAND** + **S** or **CONTROL** + **S**, or **File > Save**.
+1. Go back to your browser and refresh it to see the changes.  
+  * Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **COMMAND/CONTROL** + **R**.
+1. Change the content in the `&lt;title>&lt;/title>` tag. Where do you see this change?
+1. Update the footer content in the `&lt;p>&lt;/p>` to include a copyright message.
+  * Try using an HTML code for the copyright symbol. Here are some resources:  
+  http://character-code.com/ascii-table.php, http://unicode-table.com/en/#00A9
 
-      Your page should now look similar to [exercise1-updated.html](project/examples/exercise1-updated.html)
+Your page should now look similar to [exercise1-updated.html](project/examples/exercise1-updated.html)
 
-      **Protip!** Every time you make a change to your web page, don't forget to save and refresh your browser!
+**Protip!** Every time you make a change to your web page, don't forget to save and refresh your browser!
     </section>
 
     <section class="slide project" data-markdown>
-      ##Adding content
+##Adding content
 
-      Let's take another look at the final version of the site to determine what content and HTML tags to add. 
+Let's take another look at the final version of the site to determine what content and HTML tags to add. 
 
-      ![project home page](framework/img/workshop/project1.jpg)
-      ![project about page](framework/img/workshop/project2.jpg)
-      ![project contact page](framework/img/workshop/project3.jpg)
+![project home page](framework/img/workshop/project1.jpg)
+![project about page](framework/img/workshop/project2.jpg)
+![project contact page](framework/img/workshop/project3.jpg)
 
-      All three pages have the same headings, navigation links and footer information.  Though the homepage's header and navigation is styled differently than the other two pages, don't worry about that just yet. Right now we are just concentrating on adding the HTML. 
+All three pages have the same headings, navigation links and footer information.  Though the homepage's header and navigation is styled differently than the other two pages, don't worry about that just yet. Right now we are just concentrating on adding the HTML. 
 
-      It's best to write as much HTML as possible before adding CSS to ensure that the proper tags are being used and to help keep your code organized and semantic.
+It's best to write as much HTML as possible before adding CSS to ensure that the proper tags are being used and to help keep your code organized and semantic.
     </section>
 
     <section class="slide" data-markdown>
-      ##Navigation menu & Lists
+##Navigation menu & Lists
 
-      There are two kinds of lists in HTML: ordered (`ol`) for numbered lists & undordered (`ul`) for lists with bullets. *Content must be included only within the list item* (`li`).
-      
-      ```xml
-      &lt;ul&gt;
-        &lt;li&gt;Unordered list item&lt;/li&gt;
-        &lt;li&gt;Unordered list item&lt;/li&gt;
-      &lt;/ul&gt;
-      ```
-      ```xml
-      &lt;ol&gt;
-        &lt;li&gt;Ordered list item&lt;/li&gt;
-        &lt;li&gt;Ordered list item&lt;/li&gt;
-      &lt;/ol&gt;
-      ```
+There are two kinds of lists in HTML: ordered (`ol`) for numbered lists & undordered (`ul`) for lists with bullets. *Content must be included only within the list item* (`li`).
 
-      Navigational elements are commonly created using lists. Since the order of the list items doesn't matter for creating nav items, an unordered list can be used.    
+```xml
+&lt;ul&gt;
+  &lt;li&gt;Unordered list item&lt;/li&gt;
+  &lt;li&gt;Unordered list item&lt;/li&gt;
+&lt;/ul&gt;
+```
+```xml
+&lt;ol&gt;
+  &lt;li&gt;Ordered list item&lt;/li&gt;
+  &lt;li&gt;Ordered list item&lt;/li&gt;
+&lt;/ol&gt;
+```
+
+Navigational elements are commonly created using lists. Since the order of the list items doesn't matter for creating nav items, an unordered list can be used.    
     </section>
     
     <section class="slide" data-markdown>
-      ##Links & Attributes
+##Links & Attributes
 
-      The purpose for creating page navigation is to link to other pages.  In addition to creating a list, we'll also need to add links to navigate between the three pages.
+The purpose for creating page navigation is to link to other pages.  In addition to creating a list, we'll also need to add links to navigate between the three pages.
 
-      Links are represented by the `&lt;a>` (anchor) tag. Unlike the tags we've looked at so far, anchor tags need additional information to specify a link location. An **attribute** can provide additional information and is added inside the opening tag. 
+Links are represented by the `&lt;a>` (anchor) tag. Unlike the tags we've looked at so far, anchor tags need additional information to specify a link location. An **attribute** can provide additional information and is added inside the opening tag. 
 
-      ```xml
-      Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
-      ```
-      
-      In the above example, `href` is the *attribute*, `http://ladieslearningcode.com` is the *value* of that attribute. 
-      Also, note that the clickable text goes in between the opening and closing a tags. 
+```xml
+Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
+```
+
+In the above example, `href` is the *attribute*, `http://ladieslearningcode.com` is the *value* of that attribute. 
+Also, note that the clickable text goes in between the opening and closing a tags. 
     </section>
 
     <section class="slide" data-markdown>
-      ##Links: Absolute vs Relative
+##Links: Absolute vs Relative
 
-      This is an example of an **absolute hyperlink**. It's "fully resolved" and starts with `http://` much like typing a url into the browser.
+This is an example of an **absolute hyperlink**. It's "fully resolved" and starts with `http://` much like typing a url into the browser.
 
-      ```xml
-      Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
-      ``` 
-      Hyperlinks can also link to other pages within your own folder structure. The below is an example of a **relative path**. The path is relative to its place within the folder structure. If your HTML pages are within the same folder, they can be linked by using just the file name.
+```xml
+Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
+``` 
+Hyperlinks can also link to other pages within your own folder structure. The below is an example of a **relative path**. The path is relative to its place within the folder structure. If your HTML pages are within the same folder, they can be linked by using just the file name.
 
-      ```xml
-      &lt;a href="about.html">About Me&lt;/a>
-      ```
+```xml
+&lt;a href="about.html">About Me&lt;/a>
+```
 
-      Remember, a website is basically a collection of pages linking to other HTML pages and files such as images and css files.
+Remember, a website is basically a collection of pages linking to other HTML pages and files such as images and css files.
     </section>
 
     <section class="slide" data-markdown>
@@ -389,23 +389,23 @@ More about HTML5 here: http://html5doctor.com
     </section>
   
     <section class="slide" data-markdown>
-      ##Good file naming habits
+##Good file naming habits
 
-      To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files).  
+To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files).  
 
-      Before we start another exercise, lets go over some best practices.
+Before we start another exercise, lets go over some best practices.
 
-      * Use lowercase letters.
-        * **about.html** instead of **About.html** or **ABOUT.html**
-      * Avoid s p a c e s. Use underscores (_) or dashes (-). 
-        * Dashes are generally preferred for SEO (search engine optimization).
-        * **business_hours.html** or **business-hours.html** instead of **business hours.html**
-        * The browser will interpret it as **business%20hours.html**
-      * Avoid symbols like # & * in your file name.
-      * Keep your file names concise, yet meaningful.
-        * **about.html**, **contact.html** instead of **page1.html**, **page2.html**
+* Use lowercase letters.
+  * **about.html** instead of **About.html** or **ABOUT.html**
+* Avoid s p a c e s. Use underscores (_) or dashes (-). 
+  * Dashes are generally preferred for SEO (search engine optimization).
+  * **business_hours.html** or **business-hours.html** instead of **business hours.html**
+  * The browser will interpret it as **business%20hours.html**
+* Avoid symbols like # & * in your file name.
+* Keep your file names concise, yet meaningful.
+  * **about.html**, **contact.html** instead of **page1.html**, **page2.html**
 
-      **Protip!** These file naming tips can be applied to any files such as images, folders, CSS, etc.
+**Protip!** These file naming tips can be applied to any files such as images, folders, CSS, etc.
     </section>
 
     <section class="slide" data-markdown>
@@ -446,19 +446,19 @@ Follow the instructions below to complete the exercise. We are still just adding
     </section>
 
     <section class="slide" data-markdown>
-      ##Leave a Comment
+##Leave a Comment
 
-      Sometimes you want to leave notes for yourself (or others) but don't want it to display in the browser. That's when comments can be really helpful. Comments can be used for:
-      
-      * hiding code for later use
-      * leaving notes
-      * organizing the document
+Sometimes you want to leave notes for yourself (or others) but don't want it to display in the browser. That's when comments can be really helpful. Comments can be used for:
 
-      The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
+* hiding code for later use
+* leaving notes
+* organizing the document
 
-      ```
-      &lt;!-- This is my comment. Comments should always be included between the dashes. -->
-      ```
+The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
+
+```
+&lt;!-- This is my comment. Comments should always be included between the dashes. -->
+```
     </section>
 
     <section class="slide">
@@ -516,17 +516,17 @@ HTML tags can contain more than one attribute. Here's how you would use the `alt
     </section>
   
     <section class="slide" data-markdown>
-      ##Adding your own images
-      
-      Just like links, you can use a **relative** path to link to your own images.  It's common practice to create a folder to organize images separate from HTML files. 
+##Adding your own images
 
-      In your **project** folder, there is already an **images** folder included in your download.  Use the default **profile.jpg** image contained inside or add your own to this folder.
+Just like links, you can use a **relative** path to link to your own images.  It's common practice to create a folder to organize images separate from HTML files. 
 
-      Remember, relative paths are based on the folder structure.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
+In your **project** folder, there is already an **images** folder included in your download.  Use the default **profile.jpg** image contained inside or add your own to this folder.
 
-      ```
-      &lt;img src="images/profile.jpg" alt="description of image">
-      ```
+Remember, relative paths are based on the folder structure.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
+
+```xml
+&lt;img src="images/profile.jpg" alt="description of image">
+```
     </section>
 
     <section class="slide" data-markdown>
@@ -557,9 +557,9 @@ There are many different file types that can be used for the web. Each type is b
     </section>
 
     <section class="slide" data-markdown>
-      ##Exercise #3 - Update the About page (15 mins)
+##Exercise #3 - Update the About page (15 mins)
 
-      Let's add some more content to your About page. Use the `&lt;section>` tag to create a new sectioning block for the page content and add it under the `&lt;header>` tag and before the `&lt;footer>` like this:
+Let's add some more content to your About page. Use the `&lt;section>` tag to create a new sectioning block for the page content and add it under the `&lt;header>` tag and before the `&lt;footer>` like this:
 
 ```xml
 &lt;header&gt;
@@ -580,24 +580,25 @@ There are many different file types that can be used for the web. Each type is b
 &lt;/footer&gt;
 ```
 
-      1. Inside of the `section` tag, add a profile picture.
-      1. After the image tag, add an `h2` for the page title.
-      1. After the `h2`, add a couple of paragraphs about you, or use placholder text.
+1. Inside of the `section` tag, add a profile picture.
+1. After the image tag, add an `h2` for the page title.
+1. After the `h2`, add a couple of paragraphs about you, or use placholder text.
 
-      Just like images, there are many services available for placeholder text.
-      
-      * http://www.lipsum.com
-      * http://www.rygo-ipsum.com/
-      * http://coffeeipsum.com
-      * http://thewireipsum.com
-      * http://slipsum.com/
-      * and [many more](http://meettheipsums.com/)!
-      
-      For your reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in your **examples** folder but only look if you get stuck! Try asking a mentor first!
+Just like images, there are many services available for placeholder text.
+
+* http://www.lipsum.com
+* http://www.rygo-ipsum.com/
+* http://coffeeipsum.com
+* http://thewireipsum.com
+* http://slipsum.com/
+* and [many more](http://meettheipsums.com/)!
+
+For your reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in your **examples** folder but only look if you get stuck! Try asking a mentor first!
     </section>
     
-    <section class="slide">
-      <h1>Introduction:<br>Title Slide Example</h1>
+    <section class="slide title" data-markdown>
+#Dive into CSS
+##The presentation layer
     </section>
 
     
