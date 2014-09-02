@@ -171,7 +171,7 @@
     <section class="slide" data-markdown>
       ##HTML tags
 
-      The structure of a web page is defined by HTML tags. Left & right angled brackets (`shift` + `,` and `shift` + `.` ) surround the tag name. Tags usually come in pairs — an opening tag and a closing tag with a forward slash:
+      The structure of a web page is defined by HTML tags. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
       
       ```xml
       &lt;tagname>&lt;/tagname>
@@ -181,7 +181,6 @@
       ```xml
       &lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
       ```
-
       Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules to make sense to the browser. This is referred to as **syntax**.
 
       Tags describe the content that is inside of them, **not** what they look like.  That's what CSS is for.
@@ -209,10 +208,10 @@
           <code>&lt;head&gt;</code> is the child of <code>&lt;html&gt;</code> and the parent of the <code>&lt;title&gt;</code> tag.
         </li>
         <li>
-          What is the relationship of <code>&lt;title&gt;</code> to the <code>&lt;head&gt;</code> tag? <span class="delayed">child element</span>
+          What is the relationship of <code>&lt;title&gt;</code> to the <code>&lt;head&gt;</code> tag? <span class="delayed"><em>child element</em></span>
         </li>
         <li class="delayed">
-          What is the relationship between the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags? <span class="delayed">siblings</span>
+          What is the relationship between the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags? <span class="delayed"><em>siblings</em></span>
         </li>
       </ul>
     </section>
@@ -312,51 +311,9 @@ Prior to HTML5, the `&lt;div&gt;` tag was used for grouping elements together to
 
 ```xml
 &lt;div&gt;
-  &lt;h1&gt;Jane Smith&lt;/h1&gt;
-  &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-  
-  &lt;div&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-      &lt;li&gt;About&lt;/li&gt;
-      &lt;li&gt;Contact&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-```
-
-The `&lt;div&gt;` is still valid but HTML5 introduced a number of semantic tags that better describe blocks of content such as `&lt;header&gt;`, `&lt;footer&gt;`, `&lt;nav&gt;`, `&lt;section&gt;`.  So the above example can be changed to this:
-
-```xml
-&lt;header&gt;
-  &lt;h1&gt;Jane Smith&lt;/h1&gt;
-  &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-
-  &lt;nav&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-      &lt;li&gt;About&lt;/li&gt;
-      &lt;li&gt;Contact&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/header&gt;
-```
-
-    </section>
-    
-    <section class="slide">
-      <h2>HTML5 Sectioning Tags</h2>
-
-      <p>Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. For example, the heading contains multiple elements inside of them (name and tagline) as well as the navigation on the about and contact page.</p>
-
-      <p>Prior to HTML5, the <code>&lt;div&gt;</code> tag was used for grouping elements together to create page layouts. The header and footer of the page might look something like this:</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;div&gt;
     &lt;h1&gt;Jane Smith&lt;/h1&gt;
     &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-
+    
     &lt;div&gt;
         &lt;ul&gt;
             &lt;li&gt;Home&lt;/li&gt;
@@ -365,11 +322,13 @@ The `&lt;div&gt;` is still valid but HTML5 introduced a number of semantic tags 
         &lt;/ul&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
 
-<p>The <code>&lt;div&gt;</code> is still valid but HTML5 introduced a number of semantic tags that better describe blocks of content such as <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>.  So the above example can be changed to this:</p>
+```
 
-<pre><code>&lt;header&gt;
+The `&lt;div&gt;` is still valid but HTML5 introduced a number of semantic tags that better describe blocks of content such as `&lt;header&gt;`, `&lt;footer&gt;`, `&lt;nav&gt;`, `&lt;section&gt;`.  The above example can be changed to this:
+
+```xml
+&lt;header&gt;
     &lt;h1&gt;Jane Smith&lt;/h1&gt;
     &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
 
@@ -381,7 +340,8 @@ The `&lt;div&gt;` is still valid but HTML5 introduced a number of semantic tags 
         &lt;/ul&gt;
     &lt;/nav&gt;
 &lt;/header&gt;
-</code></pre>
+```
+
     </section>
     
     <section class="slide" data-markdown>
