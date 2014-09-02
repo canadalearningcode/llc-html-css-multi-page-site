@@ -824,11 +824,7 @@ Save and refresh.  See the changes from adding the normalize.css?  We haven't ad
     <section class="slide" data-markdown>
       ##Custom fonts
 
-      For more options than just using the web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) and [Font Squirrel](http://www.fontsquirrel.com/) can make it easier to use a variety of fonts that aren't normally supported by all computers.
-
-      A service like **Font Squirrel** requires you to download the fonts and add it to your project files. The site features a handy [generator](http://www.fontsquirrel.com/tools/webfont-generator) to create different font files to support various browsers as well as include demo files and instructions on how to use it. 
-
-      **Google Fonts** allows you to link directly to their stylesheet and no file downloads are necessary. To use these fonts:
+      For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their hosted stylesheet and fonts and no file downloads are necessary. To use these fonts:
 
       * Select the fonts you want to use and **Add to Collection**.  
       * You can **Review** them to take a closer look, then choose **Use** when ready.
@@ -838,6 +834,132 @@ Save and refresh.  See the changes from adding the normalize.css?  We haven't ad
       * Use the new fonts with the `font-family` property as listed in the example on the Google Fonts page.
 
       That's it!
+    </section>
+      
+    <section class="slide" data-markdown>
+      ##CSS color property
+      There are a few different ways to declare a colour value.
+
+      **colour keywords** - you can use the actual name of the colour for most basic colours (red, green, blue, pink) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".
+
+      **RGB (red-green-blue) / hex value** - the most common way to specify a colour. A hex code is made up of the number sign, #, followed by six hexadecimal characters (0-9, A-F) or three hexadecimal characters (0-9, A-F).
+
+      Not sure how to find these colours? As usual, the internet provides a plethora of resources.  
+
+      **Colour resources:**  
+      http://colours.neilorangepeel.com  
+      http://www.colorpicker.com  
+      http://www.colourlovers.com  
+      http://flatuicolors.com   
+      http://color.hailpixel.com
+    </section>
+
+
+    <section class="slide">
+      <h2>CSS Font Styles</h2>
+      <p>Let's look at a few CSS properties for styling text together and change some values below and see what happens!</p>
+      <textarea class="snippet" data-subject="#css-type">color: slateblue;
+line-height: 1.25;
+font-family: Helvetica, Arial, serif;
+font-size: 16px;
+font-weight: normal;
+text-transform: lowercase;</textarea>
+
+      <div id="css-type" class="example">
+        <p>Just some text to test out the above styles. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni repellat sunt quae fugit illum in aut sed, quis nesciunt totam veritatis, dolores alias modi fuga commodi dicta facilis, consequatur temporibus.</p>
+      </div>
+
+      <p>Resource: <a href="http://reference.sitepoint.com/css/typography">Sitepoint Typographical Properties</a></p>
+    </section>
+
+    <section class="slide" data-markdown>
+      ##Cascading, Inheritance and Specificity
+
+      CSS executes from top to bottom (hence "cascading"), so be careful of the the order of your CSS declarations. The declaration that comes *after* will override the one that came before.
+
+      In this example, what colour will the `&lt;h1&gt;` be?
+
+      ```
+      h1 {
+        color: black;
+      }
+      h1 {
+        color: blue;
+      }
+      ```
+    </section>
+    <section class="slide" data-markdown>
+      ##Cascading, Inheritance and Specificity
+
+      One of the strengths of CSS is styles can be inherited from parent to child elements using the family tree relationship between the elements.
+
+      ```
+      &lt;body&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;&lt;!-- child of body --&gt;
+        &lt;p&gt;This is a paragraph.&lt;/p&gt;&lt;!-- sibling of h1 --&gt;
+      &lt;/body&gt;
+      ```
+      ```
+      body {
+        color: blue;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      h1 {
+        color: black;
+      }
+      ```
+
+      In the above example, the CSS properties in the body selector is inherited by the children and descendants so all the text would be blue and display the Helvetica font. However, when a more specific selector is used (`h1`), it overrides the inherited values because it's more *specific*.
+    </section>
+  
+    <section class="slide" data-markdown>
+##Exercise #4 - Typography
+
+1. Practice using [Google Fonts](https://www.google.com/fonts).  Find 2-3 fonts to be used for the body text, header and highlighted text.  
+
+  Picking fonts is hard. Need some help?  Try Source Sans Pro, Quicksand, Merriweather or Codystar.  The example project uses Open Sans (light), Nixie One and Pacifico. 
+
+1. Add the Google font stylesheet to the `&lt;head>` of all three documents so the font files will load and can be accessed.  Put it *before* your CSS file.
+
+  ```
+  &lt;title&gt;Jane Smith | About Me&lt;/title&gt;
+  &lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+  ```
+
+1. In the sample project, most of site uses the same font and color except for the `h1` and a couple of accented blocks of text.  Let's put the main font styles using the `body` selector.
+
+  ```
+  body {
+      font-family: "Open Sans", sans-serif;
+      color: #333;
+  }
+  ```
+  Remember the family tree?  Since `body` is the ancestor of all the elements nested within, these styles are *inherited* by the child & descendant elements.
+
+1. Let's make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use `h1` as the selector.
+
+  ```
+  h1 {
+      font-family: "Nixie One", serif;
+  }
+  ```
+1. Both `h1` and `h2` share similar styles. They both are styled with uppercase letters and don't use the default bold styles of headings.  When multiple elements share the same styles, we can **combine** selectors to apply the styles in one declaration block.  Combine selectors by separating them with a comma.
+
+  ```
+  h1, h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  ```
+    </section>
+
+    
+
+
+    <section class="slide" data-markdown>
+ 
     </section>
         <!--  FTP info
 

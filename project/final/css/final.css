@@ -27,8 +27,6 @@ body {
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
   color: #333;
 }
 
@@ -50,10 +48,6 @@ h1, h2 {
 
 h1 {
   font-family: "Nixie One", serif;
-}
-
-h2 {
-  font-family: "Open Sans", sans-serif;
 }
 
 a {
