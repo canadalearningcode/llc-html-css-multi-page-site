@@ -95,7 +95,7 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-nav ul li {
+nav li {
   display: inline-block;
 }
 nav a {
@@ -183,7 +183,7 @@ footer .social a:hover {
 .home nav ul {
   display: none;
 }
-.home nav ul li {
+.home nav li {
   display: block;
 }
 .home nav a {
