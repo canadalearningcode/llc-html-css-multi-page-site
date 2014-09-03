@@ -1186,9 +1186,11 @@ margin: 25px;</textarea>
         <section class="slide" data-markdown>
             ##Float, Clear And Clearfix
 
-            First we have to break it, then put it back together. One of the most confusing CSS concepts is when to use `clear: both` or the `.clearfix` class. 
+            First we have to break it, then put it back together. We need to "reset" the float to get the rest of the page to go back to normal.  There are a couple ways to do it.
 
-            Rule of thumb: if there's is an element that follows the floated element, apply clear: both to that element. If all the elements need to be floated, apply the `.clearfix` class to the parent element.
+            One of the most confusing CSS concepts is when to use the different techniques, `clear: both` or the `.clearfix` class. 
+
+            Rule of thumb: if there's is an element that *follows* the floated element, apply `clear: both` to that element. This will clear the float. If all the elements need to be floated, apply the `clearfix` to the parent element to force clear the children.
 
             Let's look at an example here: http://jsfiddle.net/unjcxses/
 
@@ -1196,9 +1198,36 @@ margin: 25px;</textarea>
             http://css-tricks.com/snippets/css/clear-fix/  
             http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/
         </section>
+            
+        <section class="slide" data-markdown>
+            ##Update CSS file
+            Before moving onto the next exercise, let's add that [box-sizing fix](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) as well as the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file.
+
+            Put this at the very top since they are global styles.
+            
+            ```
+            /* apply a natural box layout model to all elements, but allowing components to change */
+            html {
+              box-sizing: border-box;
+            }
+            *, *:before, *:after {
+              box-sizing: inherit;
+            }
+            
+            /* clears floated child elements */
+            .clearfix:before,
+            .clearfix:after {
+              content: " ";
+              display: table;
+            }
+            .clearfix:after {
+              clear: both;
+            }
+            ```
+        </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #5 - Style Header and Nav (15 mins)
+            ##Exercise #5 - Header & Nav (15 mins)
 
             Follow the instructions below as far as you can. Check these changes on either the About or Contact page. The Home page will be styled after since it's different from the other two pages.
 
@@ -1385,9 +1414,48 @@ margin: 25px;</textarea>
         </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #6 - Header & Nav again
-        </section>
+            ##Exercise #6 - Header & Nav, pt 2
 
+            1. Position the nav to the top right of the header element.
+            
+                ```
+                nav {
+                  position: absolute;
+                  right: 20px;
+                  top: 20px;
+                }
+                ```
+
+            2. The entire header itself should be set to fixed positioning so when you scroll the page, it stays fixed at the top.
+                ```
+                header {
+                    position: fixed;
+                }
+                ```
+                Notice that adding this property changes the page. When you position an element, it automatically becomes the width of its content. Set the width to 100% so it becomes as wide as the browser. 
+
+                Also, set the background to white so the content underneath doesn't show through when you scroll the page. Add a border on the bottom to create a separation of the header from the page content.
+
+                ```
+                header {
+                    position: fixed;
+                    width: 100%;
+                    background: white;
+                }
+                ```
+            3. Positioning takes the element out of the natural stacking order.  See how the profile picture "jumped" underneath the header when position: fixed was applied? It's because it doesn't "see" that there's an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the section element to push the content down below the fixed header.
+                ```
+                section {
+                    padding-top: 125px;
+                }
+                ```
+
+            Your page should look like [example 6](project/examples/exercise6-about.html).  Note how the header looks the same on all three pages now... except the home page!  Where did the navigation disappear off to?
+        </section>
+        
+        <section>
+            
+        </section>
 
         
 
