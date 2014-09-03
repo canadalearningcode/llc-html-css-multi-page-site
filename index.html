@@ -254,10 +254,10 @@ Tags describe the content that is inside of them, **not** what they look like.  
     <pre><code>llc-html-css-multi-page-site-master
     |-- framework // Contains files needed for slide presentation. Do not edit!
     |-- project // Contains files for today's workshop.
-    |-- css // Only CSS files here.
-        |-- examples // Example HTML/CSS files linked throughout the slides.
+        |-- css // Only CSS files here.
+        |-- examples // Example HTML/CSS files for each exercise.
         |-- final // Finished example for you to refer to.
-        |-- images // Add your images here for your project
+        |-- images // Images for your project. You can also add your images here.
         |-- index.html // The first page / homepage of your site.
     |-- index.html // This is the file you're viewing right now (slides)!</code></pre>
         </section>
@@ -1201,9 +1201,7 @@ margin: 25px;</textarea>
             
         <section class="slide" data-markdown>
             ##Update CSS file
-            Before moving onto the next exercise, let's add that [box-sizing fix](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) as well as the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file.
-
-            Put this at the very top since they are global styles.
+            Before moving onto the next exercise, let's add that [box-sizing fix](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) as well as the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file. Put this at the very top since they are global styles.
             
             ```
             /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1531,7 +1529,6 @@ First, we need to create a page wrapper around the page content only, not the fo
         &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
     &lt;/header&gt;    
 &lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-
 &lt;footer&gt;
   ...
 &lt;/footer&gt;
@@ -1550,7 +1547,6 @@ The about and contact pages will look like this:
         &lt;/nav&gt;
     &lt;/header&gt;
 &lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-
 &lt;footer&gt;
     ...
 &lt;/footer&gt;
@@ -1581,7 +1577,176 @@ The about and contact pages will look like this:
               color: #ccc;
             }
             ```
+
+            Compare your page with [example 8](project/examples/exercise8-home.html).
         </section>
+
+        <section class="slide" data-markdown>
+            ##Forms: organizing the interface
+            
+            Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
+
+            Today we're going to use http://forms.brace.io/ to submit our form info and the information will be forwarded to your email. Simple!
+
+            All forms begin with the `form` element and requires 
+            two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
+
+            Since we're using a 3rd party service, the `action` value is their url *and* the email you want the form to be submitted to.
+
+            ```xml
+            &lt;form method="POST" action="http://forms.brace.io/hello@email.com">
+                ...
+            &lt;/form>
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Forms (continued)
+
+            `input` elements are used to allow the user to type in their information and is used with a `type` attribute to determine the kind of information it is.
+
+            The `label` tags are used to label the input.
+
+            The `name` attribute is used to label the fields when sending the form data to the server. 
+            
+            The `for` and `id` attributes are used to associate the label to the input and should have matching values.
+
+            A form can contain any HTML markup (paragraphs, lists, etc.) in addition to form specific HTML tags.
+
+            [Each part of a form is considered a paragraph](http://dev.w3.org/html5/spec-LC/forms.html#forms) and can be separated using `&lt;p>` elements. 
+
+            **Example:** [MDN form example](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_structure_an_HTML_form/Example)
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Exercise #9 - Contact Form
+
+            On your contact page, under the header, create a `&lt;section>` tag.  Add the below markup *in between* the `section` element.
+
+            Brace.io requires that you verify your email. The verification email will be sent on the first form submit so make sure you test your form first!
+
+            ```xml
+            &lt;form class="contact-form" action=&quot;http://forms.brace.io/hello@your-email.com&quot; method=&quot;POST&quot;&gt;
+                &lt;h2&gt;Let's meet for coffee!&lt;/h2&gt;
+
+                &lt;p&gt;Send me a message at &lt;a href=&quot;mailto:hello@your-email.com&quot;&gt;hello@your-email.com&lt;/a&gt;, 
+                use the form below or say &quot;hi!&quot; on one of my social networks.&lt;/p&gt;
+                &lt;p&gt;
+                    &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+                    &lt;input id=&quot;name&quot; type=&quot;text&quot; name=&quot;name&quot;&gt;
+                &lt;/p&gt;
+                &lt;p&gt;
+                    &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+                    &lt;input id=&quot;email&quot; type=&quot;email&quot; name=&quot;replyto&quot;&gt;
+                &lt;/p&gt;
+                &lt;p&gt;
+                    &lt;label for=&quot;message&quot;&gt;Message&lt;/label&gt;
+                    &lt;textarea id=&quot;message&quot; name=&quot;message&quot;&gt;&lt;/textarea&gt;
+                &lt;/p&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;SEND&quot;&gt;
+            &lt;/form&gt;
+            ```
+
+            Your contact page and form should look similar to [Example 9](project/examples/exercise9-contact.html).
+        </section>
+        <section class="slide" data-markdown>
+            ##Background Images & Styles
+
+            Before we style the contact form, let's go over how background images work.  We've added images in the HTML using `img` but we can also set images as a background style using CSS.
+            
+            ```
+            background-image: url(path/to/file.jpg); /* longhand */
+            background: url(path/to/file.jpg);/* shorthand */
+            ```
+            Since our CSS file is *inside* a folder, use `../` to go *up and out* of the folder to get to the image files.
+
+            ```
+            background: url(../images/background-1.jpg);
+            ```
+            
+            Note how the images repeat. We can override that with another property, `background-repeat` or just add it to the shorthand `background` property.
+            
+            ```
+            /* shorthand */
+            background: url(../images/background-1.jpg) no-repeat; 
+
+            /* longhand */
+            background-image: url(../images/background-1.jpg); 
+            background-repeat: no-repeat;
+            ```
+
+            Let's try adding a background image to our contact page.
+        </section>
+        <section class="slide" data-markdown>
+            ##Fluid background images
+
+            CSS3 introduced the `background-size` property to make a background images fluid and flexible. The syntax is:
+
+            ```
+            background-size: width height;
+            ```
+
+            The default values for width and height are `auto` and retains the original image dimensions. If only one value is defined, it is assumed to be the `width`. The height will be set to auto and the image will keep its aspect ratio.
+
+            There are several ways to define sizing dimensions using various types of values (px, percentages, keywords, etc).
+
+            `background-size` is the longhand property.  To include it in the shorthand `background` property, it *must* be included after `background-position`, separated with the `/` character.  
+            
+            ```
+            header {
+                background-image: url(../images/background-1.jpg);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-size: 100%;
+            }
+            ```
+            ```
+            header {
+                background: url(../images/background-1.jpg) no-repeat 50% / 100%;
+            }
+            ```
+            If no background position value is being used, background-size won't work in the shorthand property so in this case, it may be less error prone to add it via the longhand property.
+            
+            ```
+            header {
+                background: url(../images/background-1.jpg) no-repeat 50%;
+                background-size: 100%;
+            }
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##More About Background
+
+            `background-size` also accepts keyword values, `contain` and `cover`.
+
+            `contain` scales the image to fit its container. The image will grow or shrink proportionally but the width and height will not exceed the container's dimensions.
+
+            `cover` scales the image to fit the entire container but, if that has a different aspect ratio, the image will be cropped.
+
+            Let's add one more property, `background-attachment`.  Set the value to fixed and see what happens! (This can be added to the shorthand property)
+
+            ```
+            background: url(../images/background-2.jpg) no-repeat fixed 50%;
+            ```
+        </section>
+
+
+        <section class="slide" data-markdown>
+            ##Exercise #11 - Contact Form (continued)
+
+            In the markup in the previous slide, a class of `contact-form` was included in the `form` tag to be used for styling since all the form elements are contained within it.
+
+            1. Set a width for the form and center align it on the page.
+
+            .contact-form {
+                width: 600px;
+                margin: 10px auto;
+                padding: 20px;
+            }
+        </section>
+
+
                 <!--  FTP info
 
         file:///Users/christinatruong/Dropbox/LLC/workshops/LLC-HTML-CSS-montreal-2013/index.html#slide-6 
