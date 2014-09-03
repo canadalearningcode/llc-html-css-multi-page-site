@@ -1453,15 +1453,134 @@ margin: 25px;</textarea>
             Your page should look like [example 6](project/examples/exercise6-about.html).  Note how the header looks the same on all three pages now... except the home page!  Where did the navigation disappear off to?
         </section>
         
-        <section>
-            
+        <section class="slide" data-markdown>
+            ##Class attribute & the Home page styles
+
+            The final design for the home page is different from the other two pages including the order of the HTML. On **index.html**, the nav HTML comes *before* the header.  The nav didn't disappear, it's just *under* the header.  
+
+            If the header wasn't set to be fixed to the top of the page, it would stack underneath the nav.
+
+            For the home page, we can use a **class** attribute to override the styles that are shared between the About and Contact page and apply specific styles needed for the home page.
+
+            Let's add a class to the `body` tag so we can override any styles for any element contained within the page.
+
+            ```
+            &lt;body class=&quot;home&quot;&gt;
+            ```
+        </section>
+        <section class="slide" data-markdown>
+            ##Exercise #7 - Homepage Header & Nav
+
+            Override the header styles not needed for the home page.
+            * remove the fixed positioning
+            * removed the white background colour
+            * remove the border bottom
+            * center align the text
+            * push the heading down from the top of the page
+
+            We'll use the new `home` class we created to override the styles by using a more specific selector.
+
+            ```
+            .home header {
+                position: static;
+                background: transparent;
+                border-bottom: none;
+                text-align: center;
+                padding-top: 100px;
+            }
+            ```
+            Now let's update the heading sizes.  Feel free to use what looks good to you. These are just guidelines.
+                
+            ```
+            .home header h1 {
+              font-size: 120px;
+            }
+            .home header h2 {
+              font-size: 40px;
+            }
+            ```
+
+            Your page should now look something like [example 7](project/examples/exercise7-home.html), located in your examples folder.
         </section>
 
-        
+        <section class="slide" data-markdown>
+            ##Sticky Footer
 
+            Remember the natural stacking order? HTML elements stack on top of each other in the order that they appear in the HTML.  Each element is a tall as their content (unless otherwise specified).  
+
+            On the home page, the footer appears right below the headings. On the about page, it appears on the bottom because the content is long enough to scroll.  And on the contact page, you can't even see it because it's hidden underneath the positioned header!
+
+            To ensure that your footer is always at the bottom of the page, no matter how long the page content is or how big the browser window is, use a "sticky footer".
+
+            We'll be following these instructions: http://css-tricks.com/snippets/css/sticky-footer/
+        </section>
 
         <section class="slide" data-markdown>
- 
+##Exercise #8 - Sticky Footer
+
+First, we need to create a page wrapper around the page content only, not the footer content.  The home page HTML will look like similar to this: 
+
+```
+&lt;div class=&quot;page-wrap&quot;&gt;
+    &lt;nav&gt;
+        ...
+    &lt;/nav&gt;
+
+    &lt;header&gt;
+        &lt;h1&gt;Jane Smith&lt;/h1&gt;
+        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
+    &lt;/header&gt;    
+&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
+
+&lt;footer&gt;
+  ...
+&lt;/footer&gt;
+```
+
+The about and contact pages will look like this:
+
+```
+&lt;div class=&quot;page-wrap&quot;&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Jane Smith&lt;/h1&gt;
+        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
+
+        &lt;nav&gt;
+            ...
+        &lt;/nav&gt;
+    &lt;/header&gt;
+&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
+
+&lt;footer&gt;
+    ...
+&lt;/footer&gt;
+```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Sticky Footer CSS
+
+            ```
+            /* sticky footer */
+            html, body {
+              height: 100%;
+            }
+            .page-wrap {
+              min-height: 100%;
+              margin-bottom: -35px; /* equal to footer height */
+            }
+            .page-wrap:after {
+              content: "";
+              display: block;
+            }
+            footer, .page-wrap:after {
+              height: 35px; /* must be the same height as footer */
+            }
+            footer {
+              background: #222;
+              color: #ccc;
+            }
+            ```
         </section>
                 <!--  FTP info
 
