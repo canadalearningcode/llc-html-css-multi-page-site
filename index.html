@@ -1734,19 +1734,46 @@ The about and contact pages will look like this:
             Your pages should now look similar to [example 10](project/examples/exercise10-home.html).
         </section>
 
+        <section class="slide">
+            <h2>Center aligning with margin</h2>
+            <p>The margin property can also be used to center align block level elements. First, a width needs to be set. Then, setting the left &amp; right values to <code>auto</code> will find the center of the page. The <code>0</code> just refers to the top and bottom value.</p>
+
+            <textarea class="snippet" data-subject="#margin-auto">background-color: lightblue;
+height: 100px;
+width: 600px;
+margin: 0 auto;</textarea>
+            <div id="margin-auto">box</div>
+        </section>
 
         <section class="slide" data-markdown>
             ##Exercise #11 - Contact Form (continued)
 
-            In the markup in the previous slide, a class of `contact-form` was included in the `form` tag to be used for styling since all the form elements are contained within it.
+            In the markup for the form, a class of `contact-form` was included in the `form` tag to be used for styling since all the form elements are contained within it.
 
-            1. Set a width for the form and center align it on the page.
+            1. Set a width for the form and center align it on the page. Also add a background colour to see the text more clearly over the image.
 
-            .contact-form {
-                width: 600px;
-                margin: 10px auto;
-                padding: 20px;
-            }
+                ```
+                .contact-form {
+                    width: 600px;
+                    margin: 10px auto;
+                    background: white;
+                }
+                ```
+            
+            1. All the text is squished.  Add some padding to `contact-form` and also try adding the CSS property `border-radius` to add some rounded corners.
+
+                ```
+                .contact-form {
+                    width: 600px;
+                    margin: 10px auto;
+                    background: white;
+                    padding: 20px;
+                    border-radius: 4px;
+                }
+                ```
+            1. To get the label to sit on top of the input, we can just set the width to 100% so it takes up the entire width of the form.
+
+            
         </section>
 
 
