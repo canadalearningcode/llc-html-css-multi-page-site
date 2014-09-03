@@ -1784,7 +1784,7 @@ margin: 0 auto;</textarea>
                 }
                 ```
             
-            1. All the text is squished.  Add some padding to `contact-form` and also try adding the CSS property `border-radius` to add some rounded corners.
+            1. Add some padding to `contact-form` to keep the text from going right up to the edge. Also try adding the CSS property `border-radius` to add some rounded corners.
 
                 ```
                 .contact-form {
@@ -1795,7 +1795,22 @@ margin: 0 auto;</textarea>
                     border-radius: 4px;
                 }
                 ```
-            1. To get the label to sit on top of the input, we can just set the width to 100% so it takes up the entire width of the form.
+            1. To get the input and textarea to span all the way across the form, we can set the width to 100% so it takes up the entire width of the form. It's also possible to override the default border styles too.  Add height to the textarea just to give more room for the user to type a message.
+
+                ```
+                input, 
+                textarea {
+                  width: 100%;
+                  border: 1px solid #ccc;
+                  padding: 5px;
+                }
+                textarea {
+                  height: 100px;
+                }
+                ```
+            Your form should look similar to [example 11](project/examples/exercise11-contact.html).
+
+            There's so much more you can do with forms. Check out this project's final css file to see what other changes you can add or take a look at this resource: http://code.tiffbits.com/css3-form-styling-cheat-sheet/
 
 
         </section>

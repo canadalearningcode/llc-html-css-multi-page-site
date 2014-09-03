@@ -137,18 +137,6 @@ textarea {
 textarea {
   height: 100px;
 }
-input[type="submit"]{
-  width: auto;
-  padding: 10px 20px;
-  background: #BF6D50;
-  color: white;
-  cursor: pointer;
-}
-input:focus,
-textarea:focus {
-  outline: none;
-  border: 1px solid #BF6D50;
-}
 
 
 /* FOOTER
