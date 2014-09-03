@@ -16,20 +16,32 @@ $white: 			#ffffff;
 //---------------
 
 // Font families
-$source-sans-pro: 	'Source Sans Pro', sans-serif;
-$quicksand: 				'Quicksand', sans-serif;
-$pacifico: 					'Pacifico', cursive;
+$source-sans-pro: 		'Source Sans Pro', sans-serif;
+$quicksand: 					'Quicksand', sans-serif;
+$pacifico: 						'Pacifico', cursive;
+$open-sans: 					'Open Sans', sans-serif;
 
-$heading-font: 			$quicksand;
-$base-font:					$source-sans-pro;
-$cursive: 					$pacifico;
-
-// Font weights
-$normal:	400;
-$bold:		700;
+$heading-font: 				$quicksand;
+$base-font:						$open-sans;
+$cursive: 						$pacifico;
 
 // Font sizes
-$font-size-default:		3.5rem;
-$font-size-h1: 			7.5rem;
-$font-size-h2: 			4rem;
-$font-size-code:		2rem;
+// Scales based on window size
+// $font-size-default:		3.5rem;
+// $font-size-h1: 				7.5rem;
+// $font-size-h2: 				4rem;
+// $font-size-h3: 				2.8rem;
+// $font-size-code:			2rem;
+
+// fixed font sizes
+// overrides the slide scaling based on window size
+$font-size-default:		35px;
+$font-size-h1: 				75px;
+$font-size-h2: 				40px;
+$font-size-h3: 				28px;
+$font-size-code:			20px;
+
+// Font weights
+$light: 	300;
+$normal:	400;
+$bold:		700;

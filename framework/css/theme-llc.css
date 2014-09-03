@@ -10,7 +10,8 @@
   box-sizing: border-box;
 }
 
-/* updated clearfix hack: http://css-tricks.com/snippets/css/clear-fix/ */
+/* updated clearfix hack: 
+http://css-tricks.com/snippets/css/clear-fix/ */
 .group:after {
   content: "";
   display: table;
@@ -24,13 +25,18 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font: 2.5rem "Source Sans Pro", sans-serif;
+  font: 25px "Open Sans", sans-serif;
   color: #222222;
   border-top: 4px solid #b109aa;
   -webkit-font-smoothing: antialiased;
   background: #ecf0f1;
 }
 
+@-moz-document url-prefix() {
+  body {
+    font-weight: 300;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: "Quicksand", sans-serif;
   line-height: 1.25;
@@ -40,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-weight: 400;
+  font-size: 75px;
 }
 
 h1, h2 {
@@ -48,11 +55,11 @@ h1, h2 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 40px;
 }
 
 h3 {
-  margin-bottom: 0;
+  margin-bottom: 5px;
   font-size: 28px;
 }
 h3 + p {
@@ -75,7 +82,7 @@ code {
   font-family: Monaco, Andale Mono, monospace;
   color: #444;
   padding: 1px 4px;
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 footer {
@@ -108,8 +115,11 @@ footer .license img {
 /* Base styles for slides
 --------------------------*/
 .slide {
-  padding: 45px 3%;
+  padding: 45px 5%;
   height: 96%;
+}
+.slide img {
+  max-width: 100%;
 }
 .slide:target {
   overflow: scroll;
@@ -119,19 +129,28 @@ footer .license img {
   width: 525px;
   height: 350px;
 }
+.slide.centered {
+  text-align: center;
+}
+.slide.centered img {
+  width: 60%;
+}
 
 /* vertical align heading */
-section.slide {
+.slide.title {
   transform-style: preserve-3d;
 }
-section.slide h1 {
+.slide.title h1, .slide.title h2 {
   position: relative;
   text-align: center;
-  top: 42%;
-  transform: translateY(-42%);
-  font-size: 8.5rem;
+  top: 40%;
+  transform: translateY(-40%);
+}
+.slide.title h2 {
+  color: #444444;
 }
 
+/* Progress Bar */
 #timer {
   height: 4px;
   line-height: 4px;
@@ -141,6 +160,7 @@ section.slide h1 {
   content: "";
 }
 
+/* textarea for dynamic CSS demos */
 textarea.snippet {
   width: 100%;
   border: 1px solid #222;
@@ -149,11 +169,34 @@ textarea.snippet {
   font-family: Monaco, Andale Mono, monospace;
 }
 
+/* table styles */
+table th {
+  font-weight: 400;
+}
+table img {
+  width: 100%;
+}
+
+/* Creates border for slide examples */
+.example {
+  border: 1px solid #bdc3c7;
+  padding: 0 15px;
+}
+.example p {
+  margin: 10px 0;
+}
+
+/* Incremental slides */
+.delayed.displayed,
+.delayed-children > .displayed {
+  opacity: 1;
+}
+
 /* First/Intro slide
 ---------------------*/
 .intro {
-  /* background: $gray-dark; */
   /*uncomment this if you don't want to use a background image */
+  /* background: $gray-dark; */
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(../img/banner-home.jpg) no-repeat;
   background-size: cover;
   color: white;
@@ -163,7 +206,7 @@ textarea.snippet {
   height: 65px;
 }
 .intro h1 {
-  font-size: 7.5rem;
+  font-size: 75px;
   margin: 20px 0;
   color: white;
 }
@@ -211,7 +254,8 @@ textarea.snippet {
   border-radius: 2px;
 }
 
-/* presenter notes overrides */
+/* presenter notes overrides
+-------------------------------*/
 .presenter-notes {
   bottom: 0;
   width: 100%;
