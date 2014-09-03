@@ -1,0 +1,22 @@
+/* Styles specific to this workshop
+------------------------------------*/
+/* Slide specific styles */
+/* Today's Project */
+.slide.project img {
+  width: 32%;
+}
+
+/* A Basic Web Page */
+.basic-web-page .example.css {
+  color: #27ae60;
+  font-weight: bold;
+}
+.basic-web-page .example.css span {
+  font-style: italic;
+}
+
+/* gif wall */
+.slide.gif-wall img {
+  height: 250px;
+  width: auto;
+}
