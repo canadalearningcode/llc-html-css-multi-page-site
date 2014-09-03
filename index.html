@@ -766,41 +766,38 @@ Though it is not required, css files are often saved in a css folder for organiz
 &lt;/head&gt;
 ```
         </section>
-
-        <section class="slide">
-            <h2>Default styles: Reset vs Normalize</h2>
-
-            <p>Every browser has its own default ‘user agent’ stylesheet. (ex. links are blue, h1 are bigger than h2)</p>
-
-            <p>A <strong>CSS Reset</strong> is a set of CSS rules that resets the styling of all HTML elements to a consistent baseline to avoiding cross-browser differences as much as possible.  <strong>Normalize</strong> is slightly different because it "normalizes" the default styling rather than <em>removes</em> the default styles.</p>
-
-            <p>Note that if you add it as a separate stylesheet, it should be included <em>before</em> your custom stylesheet.</p>
-
-            <p>These various stylesheets can be downloaded at <a href="http://www.cssreset.com/">cssreset.com</a> but for today, <strong>normalize.css</strong> already included with your project files. It is located in <strong>projects > css > normalize.css</strong>.</p>
-            
-            <p class="presenter-notes">
-                * look at differences after just adding normalize<br>
-                * explain why normalize has to come before custom css
-            </p> 
-        </section>
         
         <section class="slide" data-markdown>
 ##Mini-exercise
 
-Take a moment to create an external CSS file and add the **normalize.css** file to all three pages.
-
-To create a new CSS file, select **File > New File** in Sublime Text or use a shortcut, **CMND/CNTRL + N**. Name the file with a .css extension.  Some commonly used names are global.css, main.css or style.css.
+Create a new CSS file by selecting **File > New File** in Sublime Text or use a shortcut, **CMND/CNTRL + N**. Name the file with a .css extension.  Some commonly used names are global.css, main.css or style.css.
 
 Remember, external stylesheets are added using the `&lt;link>` tag.
 
 ```
-&lt;link rel="stylesheet" href="css/normalize.css">
 &lt;link rel="stylesheet" href="css/style.css">
 ```
-
-Save and refresh.  See the changes from adding the normalize.css?  We haven't added anything to our custom stylesheet yet but note that it should be added *after* normalize.css.  More on this soon.
-
 **Protip!** Can't remember the syntax?  Sublime Text has a shortcut.  Simply type "link" with no angled brackets and press tab. Voila!
+
+Let's do a quick check to see if it works and is linked properly by adding a background color on the entire viewport as a test.
+
+```
+body {
+    background: lightblue;
+}
+```
+Notice that the content doesn't quite go to the edge of the page? That's because there's default spacing in the body element. 
+
+![](framework/img/workshop/body-margin.png)
+
+Remove the test background color and replace it with `padding` and `margin` to reset the value. (more on these later)
+
+```
+body {
+    padding: 0;
+    margin: 0;
+}
+```
         </section>
 
         <section class="slide title" data-markdown>
@@ -926,7 +923,6 @@ text-transform: lowercase;</textarea>
     ```
     &lt;title&gt;Jane Smith | About Me&lt;/title&gt;
     &lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
     ```
 
@@ -955,7 +951,216 @@ text-transform: lowercase;</textarea>
         text-transform: uppercase;
     }
     ```
+1. Links by default are blue in colour so it does not inherit the color property declared in the body.  To change the colour of the link, use the specific element selector.  
+
+    Make the color different from the rest of the text to indicate it's a link.  You can also remove the default underline with CSS as well!
+    ```
+    a {
+      color: #bf6d50;
+      text-decoration: none;
+    }
+    ```
+
+Your page should look like [example 4](project/examples/exercise4-about.html).  As long as your CSS file is linked on three pages, notice how the styles are now shared across all three pages.
         </section>
+
+        <section class="slide title" data-markdown>
+            #The Box Model
+        </section>
+            
+        <section class="slide" data-markdown>
+            ##What is The Box Model?
+
+            The browser looks at every HTML element on the page as a rectangular box. The CSS Box Model describes the way CSS styles the size and spacing of HTML elements. Understanding the box model is crucial for understanding how to position elements with CSS to create the desired page layout. This is one of the trickiest part of CSS, so don't worry if it seems confusing!
+
+            CSS uses 5 properties to determine the size and spacing of these boxes:
+
+            * `margin` - adds/removes space *outside* of the element
+            * `padding` - adds/removes space *inside* of the element
+            * `border` - adds a border outside of the element
+            * `width` - can be set to a specific size via CSS
+            * `height` - can be set to a specific size via CSS
+        </section>
+
+        <section class="slide">
+            <h2>Padding and Margin</h2>
+
+            <p>The <code>padding</code> and <code>margin</code> can both be declared using similar syntax of 1 to 4 values. Values can be declared using different measurement units but pixels or percentages are most commonly used. Setting the value to "0" will <strong>remove</strong> any default space on an HTML element. Any positive value will <strong>add</strong> space.</p>
+
+            <ul>
+                <li>4 values means top, right, bottom, left</li>
+                <li>3 values means top, right/left, bottom</li>
+                <li>2 values means top/bottom, right/left</li>
+                <li>1 value means the same amount of padding on all sides</li>
+            </ul>
+            
+            <p>Change some of the margin & padding settings below using 1-4 values and see what happens!</p>
+
+            <textarea class="snippet" data-subject="#padding">background: lightblue;
+width: 500px; 
+padding: 0;
+margin: 0;</textarea>
+            <div id="padding">padding and margin test</div>
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Padding and Margin (continued)
+            Both properties can also be declared by specifying a particular side.
+
+            ```
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            ```
+            ```
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Border
+
+            The `border` property resides between the `margin` and `padding` and creates an outline around the element. It, too, has longhand and shorthand syntax.
+            
+            ```
+            /* longhand */
+            border-width: 2px;
+            border-style: solid;
+            border-color: red;
+
+            /* shorthand */
+            border: 2px solid red;
+            ```
+            Like padding and margin, a specific side of the element can be specified.
+            
+            ```
+            /* longhand */
+            border-top-width: 2px;
+            border-top-style: solid;
+            border-top-color: red;
+
+            /* shorthand */
+            border-top: 2px solid red;
+            ```
+        </section>
+
+        <section class="slide">
+            <h2>Box Model Review</h2>
+
+            <p>This diagram represents how all these different properties work together to change the size of an element.</p>
+
+            <img src="framework/img/workshop/box-model.gif" alt="" title="">
+
+            <p>The original element started with a width and height of <strong>400 x 100</strong>. After including the padding, border &amp; margin, the <em>size</em> of the box is actually <strong>452 x 152</strong>! The margin takes up space but since it's <em>outside</em> of the element, it doesn't increase the size of the element itself.</p>
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Box Model Fix!
+
+            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw! (Updated Aug 2014)
+
+            It is recommended to add this snippet to all your projects.
+
+            ```
+            /* apply a natural box layout model to all elements, but allowing components to change */
+            html {
+                box-sizing: border-box;
+            }
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+            ```
+        </section>
+
+         <section class="slide title" data-markdown>
+            #Inline & Block
+            #Elements
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Inline vs Block Elements
+            By default, some HTML elements are displayed as block or inline elements.
+
+            ###Block Elements
+
+            * takes up 100% width of its container, no matter how long the actual content is
+            * will be the same height as its content
+            * always starts on a new line
+            * can wrap other block level elements or inline elements
+            * can apply sizing related CSS to it (margin, padding, height, width)
+
+            ###Inline Elements
+
+            * will be the height and width of its content
+            * always appears "in a line" with other inline level elements
+            * can wrap other inline elements but cannot wrap block level elements *except* `&lt;a&gt;` tags.  This is only valid with an HTML5 doctype.
+            * does not render CSS height and width at all, will apply margin and padding but with unexpected results
+
+            ###Inline-block
+
+            * best of both worlds
+            * floats left and is the size & height of its content, like inline elements
+            * accepts height and width values like block elements
+
+            **Extra Resource**: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
+        </section>
+
+        <section class="slide">
+            <h2>Block & Inline Example</h2>
+            <p>Suppose we had this HTML below. See how the same property and values give different results based on the element.</p>
+
+            <pre><code class="xml">&lt;div&gt;I'm a div so that makes a me a block element.&lt;/div&gt;
+&lt;span&gt;I'm a span so that makes me an inline element.&lt;/span&gt;</code></pre>
+    
+            <textarea class="snippet" data-subject="#block">background: lightblue;
+padding: 25px;
+margin: 25px;</textarea>
+            <div id="block">I'm a div so that makes a me a block element.</div>
+
+            <textarea class="snippet" data-subject="#inline">background: orange;
+padding: 25px;
+margin: 25px;</textarea>
+            <span id="inline">I'm a span so that makes me an inline element.</span> 
+        </section>
+
+        <section class="slide" data-markdown>
+            ##CSS Display property
+
+            These default display styles can be changed using the CSS `display` property.
+
+            `display: inline` can be used to get block level elements to line up side by side, in a line.
+
+            `display: block` can be used to make inline elements behave like a block level element
+
+            `display: inline-block` is the best of both worlds. Elements will line up side by side, like inline elements and also render sizing properties like block elements.
+            
+            `display: none;` will hide the element.
+
+            Let's go back to our previous example and try using the `display` property.
+        </section>
+
+        <section class="slide" data-markdown>
+            ##CSS Float Property
+
+            Remember, block-style HTML elements like `&lt;p>`, `&lt;div>` and `&lt;section>` automatically start on a new line and stack on top of each other. To get two block elements to align side-by-side, the `float` property can also be used. 
+
+            CSS floats can float elements left or right.
+
+            **However**, we have to break the natural stacking flow when an element is floated. This will cause any element *after* the floated element to try to move up beside it or just not display properly because we've disrupted the natural stacking flow. The parent container will also collapse.
+
+            **Also**, if there is no width set, the element will float but the width will automatically be the width of its content.
+        </section>
+
+        <section class="slide centered" data-markdown>
+            ##Huh?
+            ![](framework/img/workshop/huh.gif)
+        </section>
+            
+
 
         
 
@@ -970,49 +1175,6 @@ text-transform: lowercase;</textarea>
                 /llc-html-css/index.html#slide-118
 
                 --> 
-
-        <section class="slide">
-            <h2>CSS Snippets demo</h2>
-            <p>The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
-            <textarea class="snippet">background-color: lightblue;
-    font-family: "Times New Roman", serif;
-            </textarea>
-        </section>
-
-        <section class="slide">
-            <h2>CSS Snippets demo</h2>
-            <p>You can also target specific elements</p>
-            <textarea class="snippet" data-subject="#test">background-color: lightblue;
-    font-family: "Times New Roman", serif;
-    padding: 20px;
-            </textarea>
-            <div id="test">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-            </div>
-        </section>
-
-        <section class="slide">
-            <h2>Presentation mode</h2>
-
-            <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the notes using the <code>.presenter-notes</code> class like so:</p>
-
-    <pre><code>&lt;p&gt;Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta
-        sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus
-        officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
-    &lt;/p&gt;
-
-    p {
-        font-size: 16px;
-    }
-    </code></pre>
-
-            <p>Check out the notes in this slide!</p>
-
-            <p class="presenter-notes">
-            Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
-            </p>
-
-        </section>
 
         <!-- Last slide -->
         <section class="slide">
