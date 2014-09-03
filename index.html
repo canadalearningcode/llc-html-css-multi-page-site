@@ -1255,7 +1255,137 @@ margin: 25px;</textarea>
                     text-transform: uppercase;
                 }
                 ```
+        </section>
+        <section class="slide" data-markdown>
+            ##Positioning in CSS
+            
+            Sometimes floats and display just doesn't cut it. 
 
+            The `position` property can be used to place elements in specific spots on the page without affecting the elements around it the way floats do.  There are three options: `relative`, `absolute` and `fixed`. Elements are all `static` by default.
+
+            `position` is used in conjunction with **offset properties**: `top`, `right`, `bottom`, and `left`. These are use to identify where an element will be positioned.
+        </section>
+        <section class="slide">
+            <h2>Position: relative</h2>
+            
+            <p>When setting the position to <code>relative</code>, elements will still appear within the <strong>normal flow</strong> a page but will unlock the additional offset properties (top, right, bottom, left).  You can use these values to nudge the element in different directions. Try adding a top value (or any offset property).</p>
+
+            <textarea class="snippet" data-subject="#relative">.box { 
+    width: 100px;
+    height: 100px; 
+    background: blue;
+    position: relative;
+    top:;
+}
+            </textarea>
+            <div id="#relative">
+                <div class="box"></div>
+            </div>  
+        </section>
+
+        <section class="slide">
+            <h2>Position: absolute</h2>
+            
+            <p>When positioning an element as <code>absolute</code>, it needs to also be paired with <code>relative</code> positioning. <code>relative</code> on it's own doesn't affect other elements but it is used to <em>contain</em> an <code>absolute</code> position element to a particular spot. Otherwise, it will position itself to the <em>viewport</em>, or browser window.</p>
+            <pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <textarea class="snippet" data-subject="#absolute">.container {
+    position: relative;
+}
+.box { 
+    width: 100px;
+    height: 100px; 
+    background: blue;
+    position: absolute;
+    top:;
+}</textarea>
+
+            <div id="absolute">
+                <div class="container">
+                    <div class="box"></div>
+                </div>
+            </div>  
+        </section>
+
+        <section class="slide">
+            <h2>Position: fixed</h2>
+            
+            <p>When positioning an element as <code>fixed</code>, it will <em>always</em> be positioned to the viewport. <code>relative</code> won't have any effect on this property. Also, it will always stay fixed on the page, even on page scroll.</p>
+            <pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <textarea class="snippet" data-subject="#fixed">.container {
+    position:;
+}
+.box { 
+    width: 100px;
+    height: 100px; 
+    background: blue;
+    position: fixed;
+    top:;
+}</textarea>
+
+            <div id="fixed">
+                <div class="container">
+                    <div class="box"></div>
+                </div>
+            </div>  
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Class Selectors
+
+            HTML gives us a couple ways to attach extra identifying information to target elements in a way that is more specific. Two *attributes* called `class` and `id` can be used.
+
+            A `class` *attribute* can be added to any element but the value is defined by you.  The class can then be used as a selector to apply styles to any element that references the class attribute.  
+
+            Classes can be used multiple times on the same page. In CSS, classes are denoted by a leading period.
+
+            ```xml
+            &lt;p&gt;Regular text&lt;/p&gt;
+            &lt;p class=&quot;special&quot;&gt;Special text here.&lt;/p&gt;
+            ```
+            ```
+            p {
+                color: red;
+                font-family: Georgia, "Times New Roman", serif;
+            }
+            .special {
+                text-transform: uppercase;
+            }
+            ```
+        </section>
+        <section class="slide" data-markdown>
+            ##id Selectors
+
+            `id` *attributes* are similar to `class` *attributes* because it can also be added to any element and given any value.
+
+            However, it can be used only **once** per page.  IDs should be reserved for significant style rules. Some developers prefer not to use IDs at all for CSS styling because of the specificity rules and because classes can be used once or multiple times, making it more flexible.
+
+            In CSS, IDs are denoted by a leading hash symbol (`#`).
+            ```
+            #header {
+                width: 800px;
+            }
+            ```
+        </section>
+        <section class="slide" data-markdown>
+            ##class and id Names
+
+            When choosing a class or id name, choose a descriptive name and do not use spaces. Hyphens (-), underscores (_) and camel case are acceptable. CSS is also case sensitive, so while these three examples look similar, CSS will read these as three different classes so it's important (for you own sanity) to pick one style and be consistent.
+            
+            ```
+            class="content-wrapper"
+            class="content_wrapper"
+            class="contentWrapper"
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Exercise #6 - Header & Nav again
         </section>
 
 
