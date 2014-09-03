@@ -115,8 +115,11 @@ footer .license img {
 /* Base styles for slides
 --------------------------*/
 .slide {
-  padding: 45px 3%;
+  padding: 45px 5%;
   height: 96%;
+}
+.slide img {
+  max-width: 100%;
 }
 .slide:target {
   overflow: scroll;
@@ -129,6 +132,9 @@ footer .license img {
 .slide.centered {
   text-align: center;
 }
+.slide.centered img {
+  width: 60%;
+}
 
 /* vertical align heading */
 .slide.title {
@@ -137,13 +143,14 @@ footer .license img {
 .slide.title h1, .slide.title h2 {
   position: relative;
   text-align: center;
-  top: 42%;
-  transform: translateY(-42%);
+  top: 40%;
+  transform: translateY(-40%);
 }
 .slide.title h2 {
   color: #444444;
 }
 
+/* Progress Bar */
 #timer {
   height: 4px;
   line-height: 4px;
@@ -153,6 +160,7 @@ footer .license img {
   content: "";
 }
 
+/* textarea for dynamic CSS demos */
 textarea.snippet {
   width: 100%;
   border: 1px solid #222;
@@ -161,11 +169,27 @@ textarea.snippet {
   font-family: Monaco, Andale Mono, monospace;
 }
 
+/* table styles */
 table th {
   font-weight: 400;
 }
 table img {
   width: 100%;
+}
+
+/* Creates border for slide examples */
+.example {
+  border: 1px solid #bdc3c7;
+  padding: 0 15px;
+}
+.example p {
+  margin: 10px 0;
+}
+
+/* Incremental slides */
+.delayed.displayed,
+.delayed-children > .displayed {
+  opacity: 1;
 }
 
 /* First/Intro slide

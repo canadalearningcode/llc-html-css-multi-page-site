@@ -101,8 +101,22 @@ nav a {
   font-size: 40px;
 }
 
+
+/* ABOUT PAGE
+-----------------------------------------*/
+.profile-image {
+  float: left;
+  width: 50%;
+  margin-right: 20px;
+}
+
+
 /* FOOTER
 -----------------------------------------*/
+footer {
+  clear: both;
+}
+
 /* sticky footer */
 html, body {
   height: 100%;

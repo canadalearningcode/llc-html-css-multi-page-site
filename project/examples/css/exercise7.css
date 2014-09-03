@@ -102,5 +102,19 @@ nav a {
 }
 
 
+/* ABOUT PAGE
+-----------------------------------------*/
+.profile-image {
+  float: left;
+  width: 50%;
+  margin-right: 20px;
+}
+
+
+/* FOOTER
+-----------------------------------------*/
+footer {
+  clear: both;
+}
 
 

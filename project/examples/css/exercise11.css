@@ -106,6 +106,15 @@ nav a {
 }
 
 
+/* ABOUT PAGE
+-----------------------------------------*/
+.profile-image {
+  float: left;
+  width: 50%;
+  margin-right: 20px;
+}
+
+
 /* CONTACT PAGE
 -----------------------------------------*/
 .contact {
@@ -144,6 +153,9 @@ textarea:focus {
 
 /* FOOTER
 -----------------------------------------*/
+footer {
+  clear: both;
+}
 /* sticky footer */
 html, body {
   height: 100%;

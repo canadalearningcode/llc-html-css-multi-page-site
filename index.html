@@ -1412,7 +1412,7 @@ margin: 25px;</textarea>
         </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #6 - Header & Nav, pt 2
+            ##Exercise #6 - About, Header & Nav, pt 2
 
             1. Position the nav to the top right of the header element.
             
@@ -1424,7 +1424,7 @@ margin: 25px;</textarea>
                 }
                 ```
 
-            2. The entire header itself should be set to fixed positioning so when you scroll the page, it stays fixed at the top.
+            1. The entire header itself should be set to fixed positioning so when you scroll the page, it stays fixed at the top.
                 ```
                 header {
                     position: fixed;
@@ -1441,12 +1441,36 @@ margin: 25px;</textarea>
                     background: white;
                 }
                 ```
-            3. Positioning takes the element out of the natural stacking order.  See how the profile picture "jumped" underneath the header when position: fixed was applied? It's because it doesn't "see" that there's an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the section element to push the content down below the fixed header.
+            1. Positioning takes the element out of the natural stacking order.  See how the profile picture "jumped" underneath the header when position: fixed was applied? It's because it doesn't "see" that there's an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the section element to push the content down below the fixed header.
                 ```
                 section {
                     padding-top: 125px;
                 }
                 ```
+            1. Add a class of "profile-image" to the image tag in your about page.  Add a left float to get the text to wrap around it.
+
+                ```
+                .profile-image {
+                  float: left;
+                }
+                ```
+            1. The text floats now, but it's a little squishy. Try setting the image widht to be 50% off the page and add some margin on the right to create space.
+
+                ```
+                .profile-image {
+                    float: left;
+                    width: 50%;
+                    margin-right: 20px;
+                }
+                ```
+            1. That looks much better but look what happened to the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to it's natural stacking order by clearing the float on the footer because that's where we want things to go back to normal.
+
+                ```
+                footer {
+                    clear: both;
+                }
+                ```
+
 
             Your page should look like [example 6](project/examples/exercise6-about.html).  Note how the header looks the same on all three pages now... except the home page!  Where did the navigation disappear off to?
         </section>
@@ -1773,7 +1797,7 @@ margin: 0 auto;</textarea>
                 ```
             1. To get the label to sit on top of the input, we can just set the width to 100% so it takes up the entire width of the form.
 
-            
+
         </section>
 
 
