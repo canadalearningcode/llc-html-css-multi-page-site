@@ -6,7 +6,7 @@
 /* Slide specific styles */
 
 /* Today's Project */
-.project img {
+.slide.project img {
 	width: 32%;
 }
 
@@ -25,9 +25,10 @@
 }
 
 /* gif wall */
-.gif-wall {
+.slide.gif-wall {
 	img {
 		height: 250px;
+		width: auto;
 	}
 }
 

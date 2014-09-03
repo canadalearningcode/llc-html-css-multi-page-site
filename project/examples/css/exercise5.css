@@ -1,0 +1,51 @@
+/* GLOBAL STYLES
+-----------------------------------------*/
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+}
+header,
+section {
+  padding: 20px 30px;
+}
+h1 {
+  font-family: "Nixie One", serif;
+}
+h1, h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+a {
+  color: #bf6d50;
+  text-decoration: none;
+}
+
+
+/* HEADER
+-----------------------------------------*/
+header h1 {
+  font-size: 36px;
+}
+header h2 {
+  font-size: 18px;
+}
+
+
+/* NAVIGATION MENU
+-----------------------------------------*/
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+}
+nav a {
+  padding: 5px 15px;
+  text-transform: uppercase;
+}

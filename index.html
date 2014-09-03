@@ -695,6 +695,27 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
         </section>
 
         <section class="slide" data-markdown>
+            ##Descendant selectors
+            
+            Matches any element that is a descendant (nested tag) of the element declared before it.
+            
+            ```css
+            p a {
+                /* targets only anchor link tags nested inside of a p tag */
+            }
+            ```
+            **Protip!** Just like Inception, never go more than three levels deep. Truth.
+
+            ```
+            nav ul li a span {
+                /* NOOOOOOOOOOO */
+            }
+            ```
+
+            Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a`. It’s generally easier to start with less specific selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
+        </section>
+
+        <section class="slide" data-markdown>
             ##Comments
             
             Comments are written within a slash & asterix (`/* */`) and closes in the opposite order. Comments can be used for the same reasons as HTML comments: leaving notes, hiding code for later and for organization.
@@ -1111,7 +1132,7 @@ margin: 0;</textarea>
 
         <section class="slide">
             <h2>Block & Inline Example</h2>
-            <p>Suppose we had this HTML below. See how the same property and values give different results based on the element.</p>
+            <p>Suppose we had this HTML below. See how the same property and values give different results based on the element. Go ahead and change some values to see how it changes.</p>
 
             <pre><code class="xml">&lt;div&gt;I'm a div so that makes a me a block element.&lt;/div&gt;
 &lt;span&gt;I'm a span so that makes me an inline element.&lt;/span&gt;</code></pre>
@@ -1140,7 +1161,7 @@ margin: 25px;</textarea>
             
             `display: none;` will hide the element.
 
-            Let's go back to our previous example and try using the `display` property.
+            Let's go back to the previous slide's example and try using the `display` property.
         </section>
 
         <section class="slide" data-markdown>
@@ -1155,11 +1176,87 @@ margin: 25px;</textarea>
             **Also**, if there is no width set, the element will float but the width will automatically be the width of its content.
         </section>
 
-        <section class="slide centered" data-markdown>
-            ##Huh?
-            ![](framework/img/workshop/huh.gif)
+        <section class="slide centered">
+            <h2>Huh?</h2>
+            <img src="framework/img/workshop/huh.gif">
+
+            <p class="delayed">Not to worry Marky Mark, we can fix it.</p>
         </section>
+
+        <section class="slide" data-markdown>
+            ##Float, Clear And Clearfix
+
+            First we have to break it, then put it back together. One of the most confusing CSS concepts is when to use `clear: both` or the `.clearfix` class. 
+
+            Rule of thumb: if there's is an element that follows the floated element, apply clear: both to that element. If all the elements need to be floated, apply the `.clearfix` class to the parent element.
+
+            Let's look at an example here: http://jsfiddle.net/unjcxses/
+
+            Want to know more about the clearfix trick and clearing floats? Here you go:   
+            http://css-tricks.com/snippets/css/clear-fix/  
+            http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Exercise #5 - Style Header and Nav (15 mins)
+
+            Follow the instructions below as far as you can. Check these changes on either the About or Contact page. The Home page will be styled after since it's different from the other two pages.
+
+            Though all the CSS is listed, try adding in one line at a time to see and understand what each property does.  Feel free to leave comments for yourself in the code to explain what each line is doing! 
+
+            There's a couple more concepts to go through to finish styling the header and nav, so your page should look like [example 5](project/examples/exercise5-about.html).
+
+            **Bonus**: If you finish early, take some time to find a background image or pick on from the images folder or add some comments to your CSS to organize it.  See [sample here](project/examples/css/exercise5.css).
+
+            1. Remove the default space from the `h1` and `h2` and set the font size.
+
+                ```
+                h1, h2 {
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    margin: 0; /* removes default space */
+                    line-height: 1; /* tightens up the space between the headings */
+                }
+                ```
+            1. Set the size for only the headings in the header.
+
+                ```
+                header h1 {
+                    font-size: 36px;
+                }
+                header h2 {
+                    font-size: 18px;
+                }
+                ```
+            1. Add padding to `header` and `section` so there's an equal amount of space around the content blocks.
             
+                ```
+                header,
+                section {
+                  padding: 20px 30px;
+                }
+                ```
+            1. Remove default list styles and get each item to line up in a line.
+                ```
+                nav ul {
+                    list-style-type: none; /* removes bullets */
+                    margin: 0;
+                    padding: 0;
+                }
+                nav ul li {
+                    display: inline-block;
+                }
+                ```
+            1. Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
+                
+                ```
+                nav a {
+                    padding: 5px 15px;
+                    text-transform: uppercase;
+                }
+                ```
+
+        </section>
 
 
         
