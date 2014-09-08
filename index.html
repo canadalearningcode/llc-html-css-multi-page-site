@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="framework/css/slideshow.css">
 
     <!-- Theme-specific styles -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Source+Sans+Pro:300,400|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="framework/css/font-awesome.css">
     <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css">
     <link rel="stylesheet" href="framework/css/theme-llc.css">
@@ -22,7 +22,9 @@
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
-<body data-duration="30">
+<body data-duration="360">
+
+    <base target="_blank">
 
     <!-- First/Intro slide -->
     <header class="intro slide">
@@ -30,7 +32,7 @@
         <div class="info">
             <h1>
                 <span class="title-bg">Title of Workshop</span><br>
-                <!-- if needed -->
+                <!-- second line if needed -->
                 <span class="title-bg">Second line</span>
             </h1>
             <h2><span>with</span> Instructor Name</h2>
@@ -38,22 +40,43 @@
             <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
             <ul>
                 <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
-                <li><i class="fa fa-desktop"></i><a href="#" target="_blank">mywebsite.com</a></li>
-                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/" target="_blank">@twitter_name</a></li>
+                <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter_name</a></li>
             </ul>
         </div>
     </header>
 
     <main>
         <section class="slide title">
+            <h1>Title Slide Example: add a title class to section tag</h1>
+        </section>
+
+        <section class="slide title">
             <h1>Title Slide Example</h1>
-            <h2>Sub-heading (add title class)</h2>
+            <h2>Sub-heading example</h2>
         </section>
 
         <section class="slide">
-            <h2>Just some text and Code</h2>
-            <p>Sample of a slide with basic text and code snippets.</p>
-            <p>For HTML, the <code><</code> needs to be escaped! As long as the code snippet is wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>, the syntax highlighting is taken care of! Though sometimes for HTML snippets, the plugin sometimes doesn't register it properly.  If that is the case, add a class of "xml" to the pre tag.</p>
+            <h2>Syntax Highlighting</h2>
+            <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a> and will be applied to any code wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>. The syntax highlighting theme files can be found in <strong>framework > css > highlightjs-themes</strong>. If you wish to change it, add the css file there and update the css link. Visit <a href="http://highlightjs.org">highlight.js</a> to see the full list of supported languages, themes and other usage information.</p>
+
+            <h3>JavaScript</h3>
+<pre><code>var greeting = "Hello!";
+
+function sayHello() {
+    console.log(greeting);
+}
+
+sayHello();
+</code></pre>
+
+            <h3>CSS</h3>
+<pre><code>body {
+    margin: 0;
+    padding: 0;
+}</code></pre>
+
+            <p>For HTML, the left tag, <code><</code>, needs to be escaped. Sometimes for HTML snippets, the plugin, may not register it properly as HTML.  If that is the case, add an <code>.xml</code> class to the <code>pre</code> tag. Here's an online escape tool: <a href="http://www.htmlescape.net/htmlescape_tool.html">http://www.htmlescape.net/htmlescape_tool.html</a></p>
 
             <h3>HTML</h3>
             <pre><code>&lt;!DOCTYPE html>
@@ -64,70 +87,18 @@
     &lt;body&gt;
     &lt;/body&gt;
 &lt;/html></code></pre>
-
-            <h3>CSS</h3>
-            <pre><code>body {
-    margin: 0;
-    padding: 0;
-}</code></pre>
-        </section>
-
-        <section class="slide">
-            <h2>JavaScript & jQuery highlight example</h2>
-            <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a>. Visit the site to see the full list of supported languages.</p>
-            <h3>JavaScript!</h3>
-            <pre><code>// Comment
-document.addEventListener('DOMAttrModified',function(e) {
-    var node = e.target, attr = e.attrName;
-    if(/^input$/i.test(node.nodeName)
-    &amp;&amp; (attr === 'placeholder' || attr === 'value')
-    || foo > 5)
-        Placeholder.update(node);
-}, false);</code></pre>
-
-            <h3>jQuery!</h3>
-            <pre><code>$(document).ready(function(){
-    $("p").hide("fast");
-});</code></pre>
-        </section>
-
-        <section class="slide">
-            <h2>Incremental display of content</h2>
-            <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
-            <ul>
-                <li class="delayed">Make sure your computer is setup</li>
-                <li class="delayed">Web development breakdown</li>
-                <li class="delayed">Dive into HTML</li>
-                <li class="delayed">CSS fundamentals</li>
-            </ul>
-        </section>
-
-        <section class="slide">
-            <h2>CSS Snippets demo</h2>
-            <p>The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
-            <textarea class="snippet">background-color: lightblue;
-font-family: "Times New Roman", serif;
-            </textarea>
-        </section>
-
-        <section class="slide">
-            <h2>CSS Snippets demo</h2>
-            <p>You can also target specific elements</p>
-            <textarea class="snippet" data-subject="#test">background-color: lightblue;
-font-family: "Times New Roman", serif;
-padding: 20px;
-            </textarea>
-            <div id="test">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-            </div>
         </section>
 
         <section class="slide" data-markdown>
 ##Markdown example
 
-You can even write in Markdown as long as the `data-markdown` attribute is included. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.  Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.
+Write in Markdown! Include the `data-markdown` attribute in the sectin tag. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.
 
-You can specify the language of the codeblock by following the three backticks immediately by the language name.  View the source to see this in action.
+Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  **Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.** 
+
+Also, if you need to use any HTML, the entire slide has to be written in HTML and the markdown syntax will no longer work.
+
+You can specify the language of the code block by following the three backticks immediately by the language name.  View the source to see this in action.
 
 #### Javascript Example
 
@@ -158,6 +129,42 @@ For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the
     code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
 
         </section>
+      
+        <section class="slide">
+            <h2>Incremental display of content</h2>
+            <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
+            <ul>
+                <li class="delayed">Make sure your computer is setup</li>
+                <li class="delayed">Web development breakdown</li>
+                <li class="delayed">Dive into HTML</li>
+                <li class="delayed">CSS fundamentals</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>CSS demos</h2>
+            <p>You can include in-slide CSS demos. In this example, The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
+
+            <textarea class="snippet">background-color: lightblue;
+font-family: "Times New Roman", serif;
+            </textarea>
+
+            <p>Just add the CSS to a <code>textarea</code> with a class of <code>.snippet</code>.</p>
+        </section>
+
+        <section class="slide">
+            <h2>More CSS demos</h2>
+            <p>You can also target specific elements rather than the whole slide.</p>
+            <textarea class="snippet" data-subject="#test">background-color: lightblue;
+font-family: "Times New Roman", serif;
+padding: 20px;
+            </textarea>
+            <div id="test">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+            </div>
+
+            <p>Just like the previous example, the CSS is added in a <code>textarea</code> element but also include a <code>data-subject</code> attribute with a value that matches with an <code>id`</code> attribute included in the element to be targeted. (view source for this slide)</p>
+        </section>
 
         <section class="slide">
             <h2>Presentation mode</h2>
@@ -169,14 +176,37 @@ For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the
             <p class="presenter-notes">
                 Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
             </p>
+        </section>
 
+        <section class="slide" data-markdown>
+            ##CSS Customizations
+
+            The CSS for this template is written in [Sass](http://sass-lang.com/).  For your forked copy of these slides, feel free to use either Sass or the compiled CSS files. Just note that if you pull in any styles updates from the repo, the CSS files will be recompiled.
+
+            If you want to change the intro slide background image (or not use an image at all), change the style using the `.intro` class.
+
+            The text in the slide can automatically scale based on window size. If you want to turn this feature "on" or off", in **framework > sass > _variables.scss** under font sizes, use the `rem` values for scalable text and `px` values for non-scalable text. (You can still zoom in with the pixel sized text.)
+            
+            Avoid changing the base styles files (`_mixins.scss`, `_variables.scss` and `theme-llc.scss`). Put all of your customizations and workshop specific styles in workshop.scss.  If you'd like to add an improvement or enhancement, please submit a pull request or email [christina@ladieslearningcode.com](mailto:christina@ladieslearningcode.com).
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Other Customizations
+
+            The progress bar at the top of the page can be defined by adding the presentation duration, in minutes, in the `data-duration` attribute on the `body` tag.  If you do not want to use it at all, leave the value empty.
+
+            The text in the slide can automatically scale based on window size. If you want to turn this feature "on" or off", in **framework > sass > _variables.scss** under font sizes, use the `rem` values for scalable text and `px` values for non-scalable text. (You can still zoom in with the pixel sized text.)
+
+            Since most, if not all, links included in the workshops are to external resources, all links open in a new window to avoid participants clicking away from the slide presentations.  Note that this feature is included using `&lt;base target="_blank"&gt;` added just after the opening `body` tag. 
+
+            (See more about the [`base`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag.)
         </section>
 
         <!-- Last slide -->
         <section class="slide">
             <h2>Thank you!</h2>
             <p>Closing remarks</p>
-            <p class="attribution">Slidedecks created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+            <p class="attribution">Slide deck created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
         </section>
 
     </main><!-- cls main section -->
