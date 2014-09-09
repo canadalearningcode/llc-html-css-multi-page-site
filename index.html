@@ -146,24 +146,24 @@ For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the
             <p>You can include in-slide CSS demos. In this example, The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
 
             <textarea class="snippet">background-color: lightblue;
-font-family: "Times New Roman", serif;
-            </textarea>
+font-family: "Times New Roman", serif;</textarea>
 
-            <p>Just add the CSS to a <code>textarea</code> with a class of <code>.snippet</code>.</p>
+            <p>Just add the CSS to a <code>textarea</code> with a class of <code>.snippet</code>. (View the source for this slide.)</p>
         </section>
 
         <section class="slide">
             <h2>More CSS demos</h2>
             <p>You can also target specific elements rather than the whole slide.</p>
-            <textarea class="snippet" data-subject="#test">background-color: lightblue;
+            <textarea class="snippet" data-subject="#test">color: slateblue;
 font-family: "Times New Roman", serif;
-padding: 20px;
-            </textarea>
-            <div id="test">
+padding: 20px;</textarea>
+            <div id="test" class="example">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
             </div>
 
-            <p>Just like the previous example, the CSS is added in a <code>textarea</code> element but also include a <code>data-subject</code> attribute with a value that matches with an <code>id`</code> attribute included in the element to be targeted. (view source for this slide)</p>
+            <p>Just like the previous example, the CSS is added in a <code>textarea</code> element but also include a <code>data-subject</code> attribute.</p>  
+
+            <p>In the element to be targeted, add an <code>id</code> with a value that matches the <code>data-subject</code> of the  <code>textarea</code> and add a class of <code>.example</code> to add the border style. (View the source for this slide.)</p>
         </section>
 
         <section class="slide">

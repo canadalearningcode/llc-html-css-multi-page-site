@@ -148,6 +148,8 @@ footer {
 /* vertical align heading */
 .slide.title {
 	transform-style: preserve-3d;
+	padding-left: 8%;
+	padding-right: 8%;
 
 	h1, h2 {
 		position: relative;
@@ -184,6 +186,7 @@ textarea.snippet {
 	font-family: Monaco, Andale Mono, monospace;
 }
 
+
 /* table styles */
 table {
 	th {
@@ -193,6 +196,7 @@ table {
 		width: 100%;
 	}
 }
+
 
 /* Creates border for slide examples */
 .example {
