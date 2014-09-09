@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="framework/css/slideshow.css">
 
     <!-- Theme-specific styles -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Source+Sans+Pro:300,400|Open+Sans:400,300' rel='stylesheet' type='text/css'>
-
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="framework/css/font-awesome.css">
     <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css">
     <link rel="stylesheet" href="framework/css/theme-llc.css">
@@ -24,6 +23,8 @@
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="360">
+    
+    <base target="_blank">
 
     <!-- First/Intro slide -->
     <header class="intro slide">
@@ -31,7 +32,6 @@
     <div class="info">
         <h1>
         <span class="title-bg">Intro to HTML & CSS</span><br>
-        <!-- if needed -->
         <span class="title-bg">Building a Multi-page website</span>
         </h1>
         <h2><span>with</span> Instructor Name</h2>
@@ -463,7 +463,7 @@ Follow the instructions below to complete the exercise. We are still just adding
 1. Create an About page and name it **about.html**
     * Save it in the same folder as **index.html** (project folder)
     * Be sure to include all the basic HTML tags
-    * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide22)
+    * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide23)
     * Use **relative** links to navigate between pages
     * Add the footer content created in **index.html** in the previous exercise.
 1. Create a Contact page and name it **contact.html**
@@ -704,7 +704,7 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
                 /* targets only anchor link tags nested inside of a p tag */
             }
             ```
-            **Protip!** Just like Inception, never go more than three levels deep. Truth.
+            **Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), never go more than three levels deep. Truth.
 
             ```
             nav ul li a span {
@@ -712,7 +712,9 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
             }
             ```
 
-            Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a`. It’s generally easier to start with less specific selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
+            Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. 
+
+            It’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
         </section>
 
         <section class="slide" data-markdown>
@@ -791,7 +793,7 @@ Though it is not required, css files are often saved in a css folder for organiz
         <section class="slide" data-markdown>
 ##Mini-exercise
 
-Create a new CSS file by selecting **File > New File** in Sublime Text or use a shortcut, **CMND/CNTRL + N**. Name the file with a .css extension.  Some commonly used names are global.css, main.css or style.css.
+Create a new CSS file by selecting **File > New File** in Sublime Text or use a shortcut, **CMND/CNTRL + N**. Name the file with a **.css** extension.  Some commonly used names are **global.css**, **main.css** or **style.css**.
 
 Remember, external stylesheets are added using the `&lt;link>` tag.
 
@@ -842,9 +844,9 @@ body {
         </section>
 
         <section class="slide" data-markdown>
-            ##Custom fonts
+            ##Web fonts
 
-            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their hosted stylesheet and fonts and no file downloads are necessary. To use these fonts:
+            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* stylesheet and fonts and no file downloads are necessary. To use these fonts:
 
             * Select the fonts you want to use and **Add to Collection**.  
             * You can **Review** them to take a closer look, then choose **Use** when ready.
@@ -1132,7 +1134,7 @@ margin: 0;</textarea>
 
         <section class="slide">
             <h2>Block & Inline Example</h2>
-            <p>Suppose we had this HTML below. See how the same property and values give different results based on the element. Go ahead and change some values to see how it changes.</p>
+            <p>Suppose we had this HTML below. See how the same property and values give different results based on the element. Go ahead and update the CSS values to see how it changes.</p>
 
             <pre><code class="xml">&lt;div&gt;I'm a div so that makes a me a block element.&lt;/div&gt;
 &lt;span&gt;I'm a span so that makes me an inline element.&lt;/span&gt;</code></pre>
@@ -1937,7 +1939,7 @@ margin: 0 auto;</textarea>
             * [Codecademy](http://www.codecademy.com/)
             * [Smashing Magazine](http://mobile.smashingmagazine.com/)
 
-            And if you like books, here's a good one: [HTML and CSS: Design and Build Websites](http://htmlandcssbook.com/) by Jon Duckett
+            And if you like books, here's a good one: [HTML and CSS: Design and Build Websites](http://htmlandcssbook.com/) by Jon Duckett.
         </section>
 
         <section class="slide" data-markdown>
@@ -1958,7 +1960,7 @@ margin: 0 auto;</textarea>
 
             Here's a nice tutorial getting your files online: [FTP For Beginners: How to Upload Your Files](http://webdesign.com/ftp-for-beginners-how-to-upload-your-files/)
 
-            Feeling adventurous? Try [Hosting Static Sites on Github for Beginners](http://thephuse.com/development/hosting-static-sites-on-github-for-beginners/)
+            Feeling adventurous? Try [Hosting Static Sites on Github for Beginners](http://thephuse.com/development/hosting-static-sites-on-github-for-beginners/).
 
         </section>
 

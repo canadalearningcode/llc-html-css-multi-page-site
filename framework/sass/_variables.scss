@@ -16,7 +16,6 @@ $white: 			#ffffff;
 //---------------
 
 // Font families
-$source-sans-pro: 		'Source Sans Pro', sans-serif;
 $quicksand: 					'Quicksand', sans-serif;
 $pacifico: 						'Pacifico', cursive;
 $open-sans: 					'Open Sans', sans-serif;
@@ -34,7 +33,7 @@ $cursive: 						$pacifico;
 // $font-size-code:			2rem;
 
 // fixed font sizes
-// overrides the slide scaling based on window size
+// No slide scaling based on window size
 $font-size-default:		35px;
 $font-size-h1: 				75px;
 $font-size-h2: 				40px;
