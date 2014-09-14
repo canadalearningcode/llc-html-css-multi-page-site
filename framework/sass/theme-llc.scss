@@ -126,9 +126,8 @@ footer {
 	img {
 		max-width: 100%;
 	}
-
 	&:target {
-		overflow: scroll;
+		overflow: auto;
 	}
 	&.js-fiddle > iframe:only-of-type {
 		position: static;

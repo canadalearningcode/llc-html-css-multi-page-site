@@ -122,7 +122,7 @@ footer .license img {
   max-width: 100%;
 }
 .slide:target {
-  overflow: scroll;
+  overflow: auto;
 }
 .slide.js-fiddle > iframe:only-of-type {
   position: static;
