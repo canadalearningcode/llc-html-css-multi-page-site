@@ -655,7 +655,7 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
         <section class="slide" data-markdown>
             ##CSS Terminology & Syntax
     
-            **Selectors:** used to determine which element(s) to apply the styles to. Can target an HTML tag, class or ID.  
+            **Selectors:** used to determine which element(s) to apply the styles to. Can target an HTML tag (`&lt;h2>`), class (`&lt;div class="someClass">`) or ID (`&lt;div id="someId">`).  
             **Declaration block:** consists of a list of declarations (rules to follow) wrapped in curly braces `{}`.  
             **Declarations** or rules to follow, are written using `property:value` pairs.
 
@@ -1084,7 +1084,7 @@ margin: 0;</textarea>
         <section class="slide" data-markdown>
             ##Box Model Fix!
 
-            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw! (Updated Aug 2014)
+            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw!
 
             It is recommended to add this snippet to all your projects.
 
@@ -1173,16 +1173,12 @@ margin: 25px;</textarea>
 
             CSS floats can float elements left or right.
 
+            Let's look at an example here: http://jsfiddle.net/unjcxses/
+
             **However**, we have to break the natural stacking flow when an element is floated. This will cause any element *after* the floated element to try to move up beside it or just not display properly because we've disrupted the natural stacking flow. The parent container will also collapse.
 
             **Also**, if there is no width set, the element will float but the width will automatically be the width of its content.
-        </section>
 
-        <section class="slide centered">
-            <h2>Huh?</h2>
-            <img src="framework/img/workshop/huh.gif">
-
-            <p class="delayed">Not to worry Marky Mark, we can fix it.</p>
         </section>
 
         <section class="slide" data-markdown>
@@ -1193,8 +1189,6 @@ margin: 25px;</textarea>
             One of the most confusing CSS concepts is when to use the different techniques, `clear: both` or the `.clearfix` class. 
 
             Rule of thumb: if there's is an element that *follows* the floated element, apply `clear: both` to that element. This will clear the float. If all the elements need to be floated, apply the `clearfix` to the parent element to force clear the children.
-
-            Let's look at an example here: http://jsfiddle.net/unjcxses/
 
             Want to know more about the clearfix trick and clearing floats? Here you go:   
             http://css-tricks.com/snippets/css/clear-fix/  
