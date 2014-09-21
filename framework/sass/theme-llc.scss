@@ -184,6 +184,15 @@ textarea.snippet {
 	margin-bottom: 15px;
 	font-family: Monaco, Andale Mono, monospace;
 }
+.edit {
+	float: right;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	padding: 2px 7px;
+	position: relative;
+	bottom: -33px;
+	right: 8px;
+}
 
 
 /* table styles */

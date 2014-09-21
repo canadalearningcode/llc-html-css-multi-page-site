@@ -28,21 +28,25 @@
 
     <!-- First/Intro slide -->
     <header class="intro slide">
-    <img class="logo" src="framework/img/logo-llc-white.png">
-    <div class="info">
-        <h1>
-        <span class="title-bg">Intro to HTML & CSS</span><br>
-        <span class="title-bg">Building a Multi-page website</span>
-        </h1>
-        <h2><span>with</span> Instructor Name</h2>
+        <img class="logo" src="framework/img/logo-llc-white.png">
+        <div class="info">
+            <h1>
+            <span class="title-bg">Intro to HTML & CSS</span><br>
+            <span class="title-bg">Building a Multi-page website</span>
+            </h1>
+            <h2><span>with</span> Instructor Name</h2>
 
-        <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
-        <ul>
-        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
-        <li><i class="fa fa-desktop"></i><a href="#" target="_blank">mywebsite.com</a></li>
-        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/" target="_blank">@twitter_name</a></li>
-        </ul>
-    </div>
+            <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
+            <ul>
+            <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
+            <li><i class="fa fa-desktop"></i><a href="#" target="_blank">mywebsite.com</a></li>
+            <li><i class="fa fa-twitter"></i><a href="http://twitter.com/" target="_blank">@twitter_name</a></li>
+            </ul>
+        </div>
+        <div class="presenter-notes">
+            <p>It's important to note at the beginning that a lot of material will be covered and their page will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have most of the project done by the end of the day and  "homework" and additional resources are provided at the end to help them complete their project.</p>
+            <p>All code blocks in white are editable and CSS changes will be reflected in the slide.  For exercises, all instructions listed under <strong>bonus</strong> are for those who complete the exercises early to make sure learners at all different levels have something to work on.</p>
+        </div>
     </header>
 
     <main>
@@ -77,7 +81,7 @@ Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-s
 
 **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
 
-You can view the source of any web page by right-clicking (or two-finger tap) on any web page! Try visiting http://ladieslearningcode.com and view the source. That's HTML.
+You can view the source of any web page by right-clicking (or two-finger tap) on *any* web page! Let's go to http://ladieslearningcode.com and view the source. That's HTML.
 
 **Developer tools** take it a step further and allows us to *inspect* any web page making it easier to test and debug code. The tools can be accessed in 3 ways:
 
@@ -112,68 +116,83 @@ A website is basically a collection of web pages, aka **HTML documents**, that c
 | ![project home page](framework/img/workshop/project1.jpg) | ![project home page](framework/img/workshop/project2.jpg) | ![project home page](framework/img/workshop/project3.jpg) |
         </section>
 
-        <section class="slide" data-markdown>
-##What exactly *is* a website?
-
-To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
-
-To move web files from your computer to a server, an FTP program must be used (more on this later).
-
-![web request process](framework/img/workshop/web-server.png)
-        </section>
-
         <section class="slide basic-web-page">
             <h2>A Basic Web Page</h2>
 
             <p>Web pages are generally built using 3 web languages:</p>
 
-            <p><strong>HTML (Hypertext Markup Language)</strong> is a <em>markup</em> language and is is used to define the content.</p>
+            <p><strong>HTML (Hypertext Markup Language)</strong> is a <em>markup</em> language used to define the content.</p>
             
             <div class="example">
             <p>I'm just a paragraph.</p>
             </div>
             
-            <p><strong>CSS (Cascading Style Sheets)</strong> is a <em>stylesheet</em> language and is used to create the presentation and look of a site.</p>
+            <p><strong>CSS (Cascading Style Sheets)</strong> is a <em>style sheet</em> language used to create the presentation and look of a site.</p>
 
             <div class="example css">
             <p>I'm a paragraph with <span>style</span>.</p>
             </div>
 
-            <p><strong>JavaScript</strong> is a <em>programming</em> language and is used to define the behavior and to add functionality to a website.</p>
+            <p><strong>JavaScript</strong> is a <em>programming</em> language used to define the behavior and add functionality to a website.</p>
 
             <div class="example">
             <p onclick="alert('clicked!');">I'm a paragraph that can be clicked. Try it!</p>
             </div>
         </section>
 
+        <section class="slide">
+            <h2>Setting Up Our Work Flow</h2>
+
+            <p>Inside of the folder you downloaded today (<strong>llc-html-css-multi-page-site-master</strong>), there are many folders and files that contain different content.</p>
+
+    <pre><code>llc-html-css-multi-page-site-master
+    |-- framework // Contains files needed for slide presentation. Do not edit!
+    |-- project // Contains files for today's workshop.
+        |-- css // Only CSS files here.
+        |-- examples // Example HTML/CSS files for each exercise.
+        |-- final // Finished example for you to refer to.
+        |-- images // Images for your project. You can also add your images here.
+        |-- index.html // The first page / homepage of your site.
+    |-- index.html // This is the file you're viewing right now (slides)!</code></pre>
+        </section>
+
+        <section class="slide" data-markdown>
+##Setting Up Our Work Flow
+
+Let's open the project files in the browser and text editor.
+
+1. Open Sublime Text and go to **File > Open**.
+1. Navigate to the **Project** folder (inside the folder you downloaded with today's slides).  
+With the entire folder selected, select **Open**.
+1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it. The basic HTML tags for all web pages have been included in this file.
+1. Right click or two finger tap in Sublime and select **Open in Browser**. This will open the HTML file in your *default* browser. 
+    
+What do you see? Your page should look like [exercise 1](project/examples/exercise1.html).
+
+![example 1](framework/img/workshop/example-1.png)     
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Making changes
+
+            Let's update the content. Replace the "your name here" content, save the file, and refresh your browser.
+
+            This will be your work flow for the day.
+
+            1. update the code
+            2. save the file in Sublime
+            3. refresh the browser
+        </section>
+
         <section class="slide title" data-markdown>
-            #Dive into HTML
+            #What is HTML?
             ##The content layer
         </section>
 
-        <section class="slide">
-            <h2>Writing HTML</h2>
-
-            <p>HTML was created for web browsers to read. To display content properly in the browser, use <strong>tags</strong>. Below are the basic HTML tags required for all web pages. This makes perfect sense to a web browser:</p>
-
-            <pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
-
-            <p>However, for us humans, whitespace through indentation will make your HTML easier to read.</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-        </section>
-        
         <section class="slide" data-markdown>
 ##HTML tags
 
-The structure of a web page is defined by HTML tags. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
+HTML was created for web browsers to read. To display content properly in the browser, use <strong>tags</strong>. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
 
 ```xml
 &lt;tagname>&lt;/tagname>
@@ -183,16 +202,13 @@ The are many different HTML tags used to create structure and add semantics (mea
 ```xml
 &lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
 ```
-Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules to make sense to the browser. This is referred to as **syntax**.
-
-Tags describe the content that is inside of them, **not** what they look like.  That's what CSS is for.
+Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules. This is referred to as **syntax**.Tags are used to describe the content, **not** what they look like.  That's what CSS is for.
         </section>
 
         <section class="slide">
             <h2>Nesting HTML tags</h2>
 
-            <p>Tags are often nested within other tags. Nested elements make up the <em>document tree</em> &amp; the relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc.</p>
-            
+            <p>Tags are often nested within other tags and make up the <em>document tree</em>. The relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc. Also, whitespace through indentation of nested elements makes HTML easier to read.</p>
             <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;&lt;!-- child of html tag, parent of title tag --&gt;
@@ -218,63 +234,30 @@ Tags describe the content that is inside of them, **not** what they look like.  
             </ul>
         </section>
 
-        <section class="slide">
-            <h2>Basic HTML Document</h2>
+        <section class="slide" data-markdown>
+##BASIC HTML DOCUMENT
 
-            <p>These tags are needed for every webpage. Let's talk about what each tag means.</p>
+These are the basic HTML tags needed for every webpage. 
 
-    <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
 
-            <p><code>doctype</code> - Always the first line though not an HTML tag. It tells the browser what <em>version</em> of HTML the document is written in.</p>
-
-            <p><code>&lt;html&gt;</code> - It is always first, making it the ancestor of all other elements. It identifies the document as HTML.</p>
-
-            <p><code>&lt;head</code>&gt;  - Contains information about the web page but doesn’t display on the web page itself.  Examples include the page title (<code>&lt;title&gt;&lt;/title&gt;</code>) and links to external CSS files.</p>
-
-            <p><code>&lt;body&gt;</code> - All content to be displayed in the browser window, also known as the viewport, goes between the body tags.</p>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+    
+* `doctype` - Though not an HTML tag, it is always the first line. It tells the browser what version of HTML the document is written in.
+* `&lt;html>` - Always first, making it the ancestor of all other elements. It identifies the document as HTML.
+* `&lt;head>` - Contains information about the web page but doesn’t display on the web page itself. Examples include the page title (&lt;title>&lt/title>) and links to external CSS files.
+* `&lt;body>` - All content to be displayed in the browser window, also known as the viewport, goes between the `body` tags.
         </section>
         
         <section class="slide title" data-markdown>
             #Organizing your files
             ##Creating web pages and file structures
-        </section>
-        
-        <section class="slide">
-            <h2>Setting Up Our Work Flow</h2>
-
-            <p>Inside of the folder you downloaded today (<strong>llc-html-css-multi-page-site-master</strong>), there are many more folders and files that contain different content.</p>
-
-    <pre><code>llc-html-css-multi-page-site-master
-    |-- framework // Contains files needed for slide presentation. Do not edit!
-    |-- project // Contains files for today's workshop.
-        |-- css // Only CSS files here.
-        |-- examples // Example HTML/CSS files for each exercise.
-        |-- final // Finished example for you to refer to.
-        |-- images // Images for your project. You can also add your images here.
-        |-- index.html // The first page / homepage of your site.
-    |-- index.html // This is the file you're viewing right now (slides)!</code></pre>
-        </section>
-
-        <section class="slide" data-markdown>
-##Setting Up Our Work Flow
-
-To open the project files in the browser and text editor, follow these instructions:
-
-1. Open Sublime Text and go to **File > Open**.
-1. Navigate to the **Project** folder (inside the folder you downloaded with today's slides).  
-With the entire folder selected, select **Open**.
-1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it.  
-Basic HTML tags have already been included in this file.
-1. Right click or two finger tap and select **Open in Browser**. This will open the HTML file in your *default* browser. 
-
-What do you see? Your page should look like [exercise 1](project/examples/exercise1.html).
         </section>
 
         <section class="slide" data-markdown>
@@ -305,15 +288,16 @@ Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
         <section class="slide" data-markdown>
 ##Exercise #1 - Making & Saving Changes (10 mins)
 
-1. In your text editor (Sublime Text), update your name and tagline
-    * change the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags
-1. Save your file using keyboard shortcuts, **COMMAND** + **S** or **CONTROL** + **S**, or **File > Save**.
+1. In your text editor (Sublime Text), update your name and tagline by changing the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags.
+1. Save your file using keyboard shortcuts, **Cmnd/Ctrl** + **S**, or **File > Save**.
 1. Go back to your browser and refresh it to see the changes.  
-    * Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **COMMAND/CONTROL** + **R**.
+    * Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **Cmnd/Ctrl** + **R**.
 1. Change the content in the `&lt;title>&lt;/title>` tag. Where do you see this change?
 1. Update the footer content in the `&lt;p>&lt;/p>` to include a copyright message.
-    * Try using an HTML code for the copyright symbol. Here are some resources:  
-    http://character-code.com/ascii-table.php, http://unicode-table.com/en/#00A9
+
+**Bonus:** Try using an HTML code for the copyright *symbol*. Here are some resources:    
+http://character-code.com/ascii-table.php  
+http://unicode-table.com/en/#00A9
 
 Your page should now look similar to [exercise1-updated.html](project/examples/exercise1-updated.html)
 
@@ -323,13 +307,11 @@ Your page should now look similar to [exercise1-updated.html](project/examples/e
         <section class="slide project" data-markdown>
 ##Adding content
 
-Let's take another look at the final version of the site to determine what content and HTML tags to add. 
+All three pages have the same headings, navigation links and footer information.  Though the home page header and navigation look different from the other two pages, don't worry about that just yet. Right now we are just concentrating on adding the HTML. 
 
 ![project home page](framework/img/workshop/project1.jpg)
 ![project about page](framework/img/workshop/project2.jpg)
 ![project contact page](framework/img/workshop/project3.jpg)
-
-All three pages have the same headings, navigation links and footer information.  Though the homepage's header and navigation is styled differently than the other two pages, don't worry about that just yet. Right now we are just concentrating on adding the HTML. 
 
 It's best to write as much HTML as possible before adding CSS to ensure that the proper tags are being used and to help keep your code organized and semantic.
         </section>
@@ -390,7 +372,7 @@ Remember, a website is basically a collection of pages linking to other HTML pag
         <section class="slide" data-markdown>
 ##HTML5 Sectioning Tags
 
-Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. For example, the heading contains multiple elements inside of them (name and tagline) as well as the navigation on the about and contact page.
+Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. For example, the heading contains multiple elements (name and tagline) as well as the navigation on the about and contact page.
 
 Prior to HTML5, the `&lt;div&gt;` tag was used for grouping elements together to create page layouts. The header and footer of the page might look something like this:
 
@@ -432,50 +414,60 @@ More about HTML5 here: http://html5doctor.com
         <section class="slide" data-markdown>
 ##Good file naming habits
 
-To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files).  
-
-Before we start another exercise, lets go over some best practices.
+To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files). Before we start another exercise, let's go over some best practices.
 
 * Use lowercase letters.
     * **about.html** instead of **About.html** or **ABOUT.html**
-* Avoid s p a c e s. Use underscores (_) or dashes (-). 
-    * Dashes are generally preferred for SEO (search engine optimization).
-    * **business_hours.html** or **business-hours.html** instead of **business hours.html**
-    * The browser will interpret it as **business%20hours.html**
-* Avoid symbols like # & * in your file name.
+* Avoid s p a c e s. Use underscores (`_`) or dashes (`-`). 
+    * Note that [dashes are preferred for SEO](http://searchengineland.com/9-seo-quirks-you-should-be-aware-of-146465) (search engine optimization).
+    * **business-hours.html** instead of **business hours.html**
+    * The browser will interpret spaces as **business%20hours.html**
+* Avoid symbols like `#` `&` `*` in your file name.
 * Keep your file names concise, yet meaningful.
     * **about.html**, **contact.html** instead of **page1.html**, **page2.html**
 
 **Protip!** These file naming tips can be applied to any files such as images, folders, CSS, etc.
         </section>
 
-        <section class="slide" data-markdown>
-##Exercise #2 - Adding pages and content (20mins)
+        <section class="slide">
+            <h2>Exercise #2 - Adding pages and content (20mins)</h2>
 
-Follow the instructions below to complete the exercise. We are still just adding HTML content so don't worry about how to style the page elements just yet. If you get stuck, you can take a peek in the examples folder: [exercise2-home.html](project/examples/exercise2-home.html), [exercise2-about.html](project/examples/exercise2-about.html), [exercise2-contact.html](project/examples/exercise2-contact.html)
+            <p>Follow the instructions below to complete the exercise. We are just adding HTML content so don’t worry about how to style the page just yet. If you get stuck, you can take a peek in the <strong>examples</strong> folder: <a href="project/examples/exercise2-home.html">exercise2-home.html</a>, <a href="project/examples/exercise2-about.html">exercise2-about.html</a>, <a href="project/examples/exercise2-contact.html">exercise2-contact.html</a></p>
 
-**Protip!** Copy and paste repeated content using keyboard shortcuts to speed up your work flow.  
-`ctrl/cmnd + c` to copy  
-`ctrl/cmnd + x` to copy and cut    
-`ctrl/cmnd + v` to paste  
-`ctrl/cmnd + s` to save
+            <p><strong>Protip!</strong> Using keyboard shortcuts is important for speeding up your work flow. Writing code requires a lot of copying, pasting and saving.</p>
 
-1. Create an About page and name it **about.html**
-    * Save it in the same folder as **index.html** (project folder)
-    * Be sure to include all the basic HTML tags
-    * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide23)
-    * Use **relative** links to navigate between pages
-    * Add the footer content created in **index.html** in the previous exercise.
-1. Create a Contact page and name it **contact.html**
-    * Follow the same instructions as the About page
-1. Add the same navigation markup and relative links to **index.html** *BUT* since the structure and style is different, put the nav HTML **above** the header tag, not inside like About and Contact. The order of the HTML will matter when we add CSS to it later.
+            <p>
+                <code>ctrl/cmnd + c</code> to copy <br>
+                <code>ctrl/cmnd + x</code> to copy and cut <br>
+                <code>ctrl/cmnd + v</code> to paste <br>
+                <code>ctrl/cmnd + s</code> to save <br>
+                <code>ctrl/cmnd + r</code> to refresh browser
+            </p>
 
-```xml
-&lt;nav&gt;
+            <ol>
+                <li>Create an new page (cmnd/ctrl + n) and name it <strong>about.html</strong>
+                    <ul>
+                        <li>Save it in the same folder as <strong>index.html</strong> (project folder)</li>
+                        <li>Be sure to include all the <a href="/#slide11">basic HTML tags</a></li>
+                        <li>Update the <code>title</code> tag content to update the page title</li>
+                        <li>Add the header and nav markup referenced in <a href="index.html#slide22">HTML5 Sectioning Tags</a></li>
+                        <li>Use <strong>relative</strong> links to navigate between pages</li>
+                        <li>Add the footer content created in <strong>index.html</strong></li>
+                    </ul>
+                </li>
+                <li>Create a new page and name it <strong>contact.html</strong>
+                    <ul>
+                        <li>Follow the same instructions as the About page</li>
+                    </ul>
+                </li>
+                <li>
+                    Add the same navigation markup and relative links to <strong>index.html</strong> <em>BUT</em> since the structure and style is different, put the nav HTML <strong>above</strong> the header tag, not inside like About and Contact. The order of the HTML will matter when we add CSS to it later. Here is the code sample for reference for the home page (index.html).
+                </li>
+<pre><code>&lt;nav&gt;
     &lt;ul&gt;
-        &lt;li&gt;&lt;a href="">Home&lt;/a>&lt;/li&gt;
-        &lt;li&gt;&lt;a href="">About&lt;/a>&lt;/li&gt;
-        &lt;li&gt;&lt;a href="">Contact&lt;/a>&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;Contact&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/nav&gt;
 
@@ -483,7 +475,11 @@ Follow the instructions below to complete the exercise. We are still just adding
     &lt;h1&gt;Jane Smith&lt;/h1&gt;
     &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;  
 &lt;/header&gt;
-```
+</code></pre>
+            </ol>
+            <div class="presenter-notes">
+                <p>Check in with learners after 20mins. If majority of people have not started step 3, give them 5-10 more minutes.  If they are still not done after that, let them know they'll have some time in the next exercise to finish up.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
@@ -505,9 +501,9 @@ The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
         <section class="slide">
             <h2>Void / Self-closing Element</h2>
 
-            <p>Void tags don’t format content — instead, they render or embed objects in the page. These tags <strong>do not</strong> come in pairs since they do not wrap content like the other tags we’ve been using so far. They are the content!</p>
+            <p>Void tags don’t format content — instead, they embed objects in the page. These tags <strong>do not</strong> come in pairs since they do not wrap content like the other tags we’ve been using so far. They <em>are</em> the content!</p>
 
-            <p>The syntax is slightly different in the latest version of HTML so you may see it written in two ways. Prior to HTML5, these tags were self-closed with a forward slash (/) immediately before the right angled bracket (&gt;). In HTML5, void tags are not required to self close.</p>
+            <p>The syntax is slightly different in the latest version of HTML so you may see it written in two ways. Prior to HTML5, these tags were self-closed with a forward slash (<code>/</code>) immediately before the right angled bracket (<code>&gt;</code>). In HTML5, void tags are not required to self close.</p>
 
             <p>A common void tag is the <code>&lt;br /&gt;</code> or <code>&lt;br&gt;</code> tag used to create a line break.</p>
 
@@ -522,10 +518,37 @@ The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
             <hr>
         </section>
 
+        <section class="slide" data-markdown>
+##Image Types
+There are many different file types that can be used for the web. Each type is best suited for specific kinds of images. Use the format that maintains the best quality while reducing the file size.
+
+**jpg** - used for photographs with lots of rich colours or gradients
+
+**png** - used for images with transparent or opaque backgrounds
+
+**gif** - used for images with minimal colour variation and of course, for animated gifs!
+
+**svg** - used for 2D graphics and is very scaleable. Based on XML and can be used as a image file or in the HTML document. When included as HTML, CSS can be used to style the svg!
+
+**More about SVG:** http://css-tricks.com/using-svg
+        </section>
+
+        <section class="slide centered gif-wall" data-markdown>
+##Bonus: gif wall
+
+![](framework/img/workshop/mind-blown.gif)
+![](framework/img/workshop/kid.gif)
+![](framework/img/workshop/raccoon.gif)
+![](framework/img/workshop/bday-cake.gif)
+![](framework/img/workshop/otter.gif)
+
+[image source]()
+        </section>
+
         <section class="slide">
             <h2>Adding images</h2>
 
-            <p>Images are another example of a void element.  Just like links, image tags also requires an attribute to define the file path of the image file. However, it uses the <code>src</code> attribute (not <code>href</code>).  The value can be an absolute or relative path. The below is an example of an absolute path.</p>
+            <p>Images are another example of a void element.  Just like links, the image tag also requires an <em>attribute</em> to define the file path of the image file. However, it uses the <code>src</code> attribute (not <code>href</code>).  The value can be an absolute or relative path. The below is an example of an absolute path.</p>
 
             <pre><code>&lt;img src="http://fillmurray.com/200/300"&gt;</code></pre>
 
@@ -534,10 +557,11 @@ The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
             <p>If you don’t have a picture to use at the moment and need a placeholder, there are many services available such as:</p>
 
             <ul>
-            <li><a href="http://p-hold.com">http://p-hold.com</a></li>
+            <li><a href="http://placehold.it">http://placehold.it</a></li>
             <li><a href="http://placesheen.com/">http://placesheen.com/</a></li>
             <li><a href="http://placebear.com">http://placebear.com</a></li>
             <li><a href="http://fillmurray.com/">http://fillmurray.com/</a></li>
+            <li><a href="http://placekitten.com/">http://placekitten.com/</a></li>
             <li>and <a href="http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx">many more</a>!</li>
             </ul>
         </section>
@@ -571,36 +595,11 @@ Remember, relative paths are based on the folder structure.  Since the HTML page
         </section>
 
         <section class="slide" data-markdown>
-##Image Types
-There are many different file types that can be used for the web. Each type is best suited for specific kinds of images. Use the format that maintains the best quality while reducing the file size.
-
-**jpg** - used for photographs with lots of rich colours or gradients
-
-**png** - used for images with transparent or opaque backgrounds
-
-**gif** - used for images with minimal colour variation and of course, for animated gifs!
-
-**svg** - used for 2D graphics and is very scaleable. Based on XML and can be used as a image file or in the HTML document. When included as HTML, CSS can be used to style the svg!
-
-**More about SVG:** http://css-tricks.com/using-svg
-        </section>
-
-        <section class="slide centered gif-wall" data-markdown>
-##Bonus: gif wall
-
-![](framework/img/workshop/mind-blown.gif)
-![](framework/img/workshop/kid.gif)
-![](framework/img/workshop/raccoon.gif)
-![](framework/img/workshop/bday-cake.gif)
-![](framework/img/workshop/otter.gif)
-
-[image source]()
-        </section>
-
-        <section class="slide" data-markdown>
 ##Exercise #3 - Update the About page (15 mins)
 
-Let's add some more content to your About page. Use the `&lt;section>` tag to create a new sectioning block for the page content and add it under the `&lt;header>` tag and before the `&lt;footer>` like this:
+Add some more content to your About page. If you need to reference what you page should look like before adding these updates, take a look at [exercise2-about.html](project/examples/exercise2-about.html) in the **examples** folder.
+
+Use the `&lt;section>` tag to create a new sectioning block for the page content. Add it *between* the `&lt;header>` tag and the `&lt;footer>` like this:
 
 ```xml
 &lt;header&gt;
@@ -623,7 +622,9 @@ Let's add some more content to your About page. Use the `&lt;section>` tag to cr
 
 1. Inside of the `section` tag, add a profile picture.
 1. After the image tag, add an `h2` for the page title.
-1. After the `h2`, add a couple of paragraphs about you, or use placholder text.
+1. After the `h2`, add a couple of paragraphs about you, or use placeholder text.
+
+**Bonus:** Try adding a couple links. Ask a mentor how to get a link to open in a new tab/window.
 
 Just like images, there are many services available for placeholder text.
 
@@ -704,7 +705,7 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
                 /* targets only anchor link tags nested inside of a p tag */
             }
             ```
-            **Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), never go more than three levels deep. Truth.
+            **Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
 
             ```
             nav ul li a span {
@@ -714,13 +715,13 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
 
             Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. 
 
-            It’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
+            However, it’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
         </section>
 
         <section class="slide" data-markdown>
             ##Comments
             
-            Comments are written within a slash & asterix (`/* */`) and closes in the opposite order. Comments can be used for the same reasons as HTML comments: leaving notes, hiding code for later and for organization.
+            Comments in CSS are written within a slash & asterix (`/* */`) and closes in the opposite order. Comments can be used for the same reasons as HTML comments: leaving notes, hiding code for later and for organization.
             
             ```
             p {
@@ -752,7 +753,7 @@ There are three ways to include (otherwise known as *referencing*) CSS in an HTM
 &lt;p style=&quot;color: blue;&quot;&gt;I'm writing CSS!&lt;/p&gt;
 ```
 
-This technique should be avoided but it's good to know how it works in case you encounter it "in the wild."
+This technique should be avoided but it's good to know how it works in case you encounter it.
 
 **INTERNAL** - uses `&lt;style&gt;` and is included in the `&lt;head&gt;` element.
 
@@ -770,7 +771,7 @@ This technique should be avoided but it's good to know how it works in case you 
 &lt;/body&gt;
 ```
 
-This method is preferred over *inline* css, however it is still inefficient because if you had multiple web pages, the style block and any revision would have to be replicated on every single page.
+This method is preferred over *inline* css, however it is still inefficient because if you had multiple web pages, the style block and any revisions would have to be replicated on every single page.
         </section>
 
         <section class="slide" data-markdown>
@@ -800,7 +801,7 @@ Remember, external stylesheets are added using the `&lt;link>` tag.
 ```
 &lt;link rel="stylesheet" href="css/style.css">
 ```
-**Protip!** Can't remember the syntax?  Sublime Text has a shortcut.  Simply type "link" with no angled brackets and press tab. Voila!
+**Protip!** Can't remember the syntax?  Sublime Text has a shortcut.  Simply type "link" with no brackets and press tab. Voila!
 
 Let's do a quick check to see if it works and is linked properly by adding a background color on the entire viewport as a test.
 
@@ -859,14 +860,22 @@ body {
         </section>
             
         <section class="slide" data-markdown>
-            ##CSS color property
-            There are a few different ways to declare a colour value.
+            ##CSS colour values
 
-            **colour keywords** - you can use the actual name of the colour for most basic colours (red, green, blue, pink) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".
-
-            **RGB (red-green-blue) / hex value** - the most common way to specify a colour. A hex code is made up of the number sign, #, followed by six hexadecimal characters (0-9, A-F) or three hexadecimal characters (0-9, A-F).
-
-            Not sure how to find these colours? As usual, the internet provides a plethora of resources.  
+            **keywords** - use the actual name for most basic colours (red, green, blue, pink, etc) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".  
+            
+            **RGB (red-green-blue)** - Uses *three* numerical values from 0-255. 0 represents black, 255 represents white. See below for syntax.  
+            
+            **hex code** - Made up of the number sign (`#`) followed by six hexadecimal characters (0-9, A-F).
+            
+            ```
+            /* These are all the same colour */
+            p {
+                background: firebrick;
+                background: #B22222;
+                background: rgb(178,34,34);
+            }
+            ```
 
             **Colour resources:**  
             http://colours.neilorangepeel.com  
@@ -895,7 +904,7 @@ text-transform: lowercase;</textarea>
         </section>
 
         <section class="slide" data-markdown>
-            ##Cascading, Inheritance and Specificity
+            ##Cascading
 
             CSS executes from top to bottom (hence "cascading"), so be careful of the the order of your CSS declarations. The declaration that comes *after* will override the one that came before.
 
@@ -911,7 +920,7 @@ text-transform: lowercase;</textarea>
             ```
         </section>
         <section class="slide" data-markdown>
-            ##Cascading, Inheritance and Specificity
+            ##Inheritance and Specificity
 
             One of the strengths of CSS is styles can be inherited from parent to child elements using the family tree relationship between the elements.
 
@@ -934,57 +943,61 @@ text-transform: lowercase;</textarea>
             In the above example, the CSS properties in the body selector is inherited by the children and descendants so all the text would be blue and display the Helvetica font. However, when a more specific selector is used (`h1`), it overrides the inherited values because it's more *specific*.
         </section>
     
-        <section class="slide" data-markdown>
-##Exercise #4 - Typography
+        <section class="slide">
+            <h2>Exercise #4 - Typography (20 MINS)</h2>
+            <ol>
+                <li>
+                    <p>Practice using <a href="https://www.google.com/fonts">Google Fonts</a>. Find 2-3 fonts to be used for the body text, header and highlighted text.</p>
 
-1. Practice using [Google Fonts](https://www.google.com/fonts).  Find 2-3 fonts to be used for the body text, header and highlighted text.  
+                    <p>Picking fonts is hard. Need some help? Try Source Sans Pro, Quicksand, Merriweather or Codystar. The example project uses Open Sans (light), Nixie One and Pacifico.</p>
+                </li>
+                <li>
+                    <p>Add the Google font stylesheet to the  of all three documents so the font files will load and can be accessed. Put it before your CSS file.</p>
+<pre><code>&lt;title&gt;Jane Smith | About Me&lt;/title&gt;
+&lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
+&lt;link rel="stylesheet" href="css/styles.css"&gt;
+</code></pre>
+                </li>
+                <li>
+                    <p>In the sample project, most of site uses the same font and color except for the h1 and a couple of accented blocks of text. Add the main font styles using the body selector.</p>
+<pre><code>body {
+    font-family: "Open Sans", sans-serif;
+    color: #333;
+}
+</code></pre>
+                    <p>Remember the family tree? Since body is the ancestor of all the elements nested within, these styles are inherited by the child &amp; descendant elements.</p>
+                </li>
+                <li>
+                    <p>Let’s make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use h1 as the selector.</p>
 
-    Picking fonts is hard. Need some help?  Try Source Sans Pro, Quicksand, Merriweather or Codystar.  The example project uses Open Sans (light), Nixie One and Pacifico. 
+<pre><code>h1 {
+    font-family: "Nixie One", serif;
+}
+</code></pre>
+                </li>
+                <li>
+                    <p>Both h1 and h2 share similar styles. They both are styled with uppercase letters and don’t use the default bold styles of headings. When multiple elements share the same styles, we can combine selectors to apply the styles in one declaration block. Combine selectors by separating them with a comma.</p>
 
-1. Add the Google font stylesheet to the `&lt;head>` of all three documents so the font files will load and can be accessed.  Put it *before* your CSS file.
+<pre><code>h1, h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+</code></pre>
+                </li>
+                <li>
+                    <p>Links by default are blue in colour so it does not inherit the color property declared in the body. To change the colour of the link, use the specific element selector.</p>
 
-    ```
-    &lt;title&gt;Jane Smith | About Me&lt;/title&gt;
-    &lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
-    ```
+                    <p>Make the color different from the rest of the text to indicate it’s a link. You can also remove the default underline with CSS as well!</p>
 
-1. In the sample project, most of site uses the same font and color except for the `h1` and a couple of accented blocks of text.  Let's put the main font styles using the `body` selector.
+<pre><code>a {
+    color: #bf6d50;
+    text-decoration: none;
+}
+</code></pre>
+                </li>
+            </ol>
 
-    ```
-    body {
-        font-family: "Open Sans", sans-serif;
-        color: #333;
-    }
-    ```
-    Remember the family tree?  Since `body` is the ancestor of all the elements nested within, these styles are *inherited* by the child & descendant elements.
-
-1. Let's make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use `h1` as the selector.
-
-    ```
-    h1 {
-        font-family: "Nixie One", serif;
-    }
-    ```
-1. Both `h1` and `h2` share similar styles. They both are styled with uppercase letters and don't use the default bold styles of headings.  When multiple elements share the same styles, we can **combine** selectors to apply the styles in one declaration block.  Combine selectors by separating them with a comma.
-
-    ```
-    h1, h2 {
-        font-weight: 300;
-        text-transform: uppercase;
-    }
-    ```
-1. Links by default are blue in colour so it does not inherit the color property declared in the body.  To change the colour of the link, use the specific element selector.  
-
-    Make the color different from the rest of the text to indicate it's a link.  You can also remove the default underline with CSS as well!
-    ```
-    a {
-      color: #bf6d50;
-      text-decoration: none;
-    }
-    ```
-
-Your page should look like [example 4](project/examples/exercise4-about.html).  As long as your CSS file is linked on three pages, notice how the styles are now shared across all three pages.
+            <p>Your page should look like <a href="project/examples/exercise4-about.html">example 4</a>. As long as your CSS file is linked on three pages, notice how the styles are now shared across all three pages.</p>
         </section>
 
         <section class="slide title" data-markdown>
@@ -1955,6 +1968,16 @@ margin: 0 auto;</textarea>
         <section class="slide" data-markdown>
             ##Getting your site online
 
+            To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
+
+            To move web files from your computer to a server, an FTP program like [Filezilla](https://filezilla-project.org) or [CyberDuck](https://cyberduck.io) must be used.
+
+            ![web request process](framework/img/workshop/web-server.png)
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Getting your site online
+
             You will need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting options:
             
             * [hover.com](https://www.hover.com/?ircid=2799&irmpname=Ladies+Learning+Code)
@@ -1989,13 +2012,14 @@ margin: 0 auto;</textarea>
         <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
         <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
     </footer>
-
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="framework/scripts/slideshow.js"></script>
 
     <!-- Uncomment the plugins you need -->
     <script src="framework/scripts/plugins/css-edit.js"></script>
     <script src="framework/scripts/plugins/css-snippets.js"></script>
-    <script src="framework/scripts/plugins/css-controls.js"></script>
+    <script src="framework/scripts/plugins/css-Ctrls.js"></script>
     <!-- <script src="plugins/code-highlight.js"></script>-->
 
     <script src="framework/scripts/plugins/markdown/marked.js"></script>
@@ -2009,13 +2033,26 @@ margin: 0 auto;</textarea>
     <script src="framework/scripts/plugins/prism.js"></script>
 
     <script>
-    var slideshow = new SlideShow();
+        var slideshow = new SlideShow();
 
-    // Grabs all the .snippet elements
-    var snippets = document.querySelectorAll('.snippet');
-    for(var i=0; i<snippets.length; i++) {
-        new CSSSnippet(snippets[i]);
-    }
+        // Grabs all the .snippet elements
+        var snippets = document.querySelectorAll('.snippet');
+        for(var i=0; i<snippets.length; i++) {
+            new CSSSnippet(snippets[i]);
+        }
+
+        // Opens all links in a new window
+        var links = document.getElementsByTagName("a");
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener(function() {
+                window.open(this.href);
+            });
+        }
+
+        jQuery(document).ready(function(){
+            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+        });
     </script>
 </body>
 </html>
