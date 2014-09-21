@@ -126,9 +126,8 @@ footer {
 	img {
 		max-width: 100%;
 	}
-
 	&:target {
-		overflow: scroll;
+		overflow: auto;
 	}
 	&.js-fiddle > iframe:only-of-type {
 		position: static;
@@ -184,6 +183,15 @@ textarea.snippet {
 	padding: 15px 20px;
 	margin-bottom: 15px;
 	font-family: Monaco, Andale Mono, monospace;
+}
+.edit {
+	float: right;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	padding: 2px 7px;
+	position: relative;
+	bottom: -33px;
+	right: 8px;
 }
 
 

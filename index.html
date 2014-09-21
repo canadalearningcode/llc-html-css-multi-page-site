@@ -216,7 +216,8 @@ padding: 20px;</textarea>
         <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
         <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
     </footer>
-
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="framework/scripts/slideshow.js"></script>
 
     <!-- Uncomment the plugins you need -->
@@ -243,6 +244,19 @@ padding: 20px;</textarea>
         for(var i=0; i<snippets.length; i++) {
             new CSSSnippet(snippets[i]);
         }
+
+        // Opens all links in a new window
+        var links = document.getElementsByTagName("a");
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener(function() {
+                window.open(this.href);
+            });
+        }
+
+        jQuery(document).ready(function(){
+            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+        });
     </script>
 </body>
 </html>
