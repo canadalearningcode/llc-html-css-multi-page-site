@@ -44,7 +44,7 @@
             </ul>
         </div>
         <div class="presenter-notes">
-            <p>It's important to note at the beginning that a lot of material will be covered and their page will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have most of the project done by the end of the day and  "homework" and additional resources are provided at the end to help them complete their project.</p>
+            <p>It's important to note at the beginning that a lot of material will be covered and their site will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have most of the project done by the end of the day and  "homework" and additional resources are provided at the end to help them complete their project.</p>
             <p>All code blocks in white are editable and CSS changes will be reflected in the slide.  For exercises, all instructions listed under <strong>bonus</strong> are for those who complete the exercises early to make sure learners at all different levels have something to work on.</p>
         </div>
     </header>
@@ -168,20 +168,28 @@ With the entire folder selected, select **Open**.
 1. Right click or two finger tap in Sublime and select **Open in Browser**. This will open the HTML file in your *default* browser. 
     
 What do you see? Your page should look like [exercise 1](project/examples/exercise1.html).
-
-![example 1](framework/img/workshop/example-1.png)     
+     
         </section>
 
-        <section class="slide" data-markdown>
-            ##Making changes
+        <section class="slide">
+            <h2 id="making-changes">Making changes</h2>
 
-            Let's update the content. Replace the "your name here" content, save the file, and refresh your browser.
+            <p>Let's make a change. Replace the “your name here” content, save the file, and refresh your browser.</p>
 
-            This will be your work flow for the day.
+            <p>This will be your work flow for the day.</p>
 
-            1. update the code
-            2. save the file in Sublime
-            3. refresh the browser
+            <ol>
+                <li>update the code</li>
+                <li>save the file in Sublime</li>
+                <li>refresh the browser</li>
+            </ol>
+
+            <p><strong>Protip!</strong> Use keyboard shortcuts to improve your work flow.<br>
+            <code>ctrl/cmnd + s</code> to save<br>
+            <code>ctrl/cmnd + r</code> to refresh the browser</p>
+            <div class="presenter-notes">
+                <p>Let the learners know that there is an exercise coming up very soon to update the rest of the page. This is just to introduce them to the update/save/refresh flow and to break up the lecture a bit more.</p>
+            </div>
         </section>
 
         <section class="slide title" data-markdown>
@@ -192,17 +200,18 @@ What do you see? Your page should look like [exercise 1](project/examples/exerci
         <section class="slide" data-markdown>
 ##HTML tags
 
-HTML was created for web browsers to read. To display content properly in the browser, use <strong>tags</strong>. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
+HTML was created for web browsers to read. To display content properly in the browser, use **tags**. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
 
 ```xml
 &lt;tagname>&lt;/tagname>
 ```
+Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules. This is referred to as **syntax**. Tags are used to describe the content, **not** what they look like.  That's what CSS is for.
+
 The are many different HTML tags used to create structure and add semantics (meaning) to the content. For example, any content between the `&lt;html>&lt;/html>` tag tells the browser that it is HTML code and content between the `&lt;title>&lt;/title>` tag describes the web page title.
 
 ```xml
 &lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
 ```
-Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules. This is referred to as **syntax**.Tags are used to describe the content, **not** what they look like.  That's what CSS is for.
         </section>
 
         <section class="slide">
@@ -223,9 +232,6 @@ Just like the different languages that we speak and write, HTML has to follow pr
                     The <code>&lt;html&gt;</code> tag is always first and <strong>all</strong> other tags are nested within <code>&lt;html&gt;</code>.
                 </li>
                 <li>
-                    <code>&lt;head&gt;</code> is the child of <code>&lt;html&gt;</code> and the parent of the <code>&lt;title&gt;</code> tag.
-                </li>
-                <li>
                     What is the relationship of <code>&lt;title&gt;</code> to the <code>&lt;head&gt;</code> tag? <span class="delayed"><em>child element</em></span>
                 </li>
                 <li class="delayed">
@@ -237,8 +243,7 @@ Just like the different languages that we speak and write, HTML has to follow pr
         <section class="slide" data-markdown>
 ##BASIC HTML DOCUMENT
 
-These are the basic HTML tags needed for every webpage. 
-
+We've seen these tags in our project file. These are the basic HTML tags required for every web page. 
 
     &lt;!DOCTYPE html&gt;
     &lt;html&gt;
@@ -256,12 +261,11 @@ These are the basic HTML tags needed for every webpage.
         </section>
         
         <section class="slide title" data-markdown>
-            #Organizing your files
-            ##Creating web pages and file structures
+            #Adding content
         </section>
 
         <section class="slide" data-markdown>
-##HTML content: adding text
+##Adding text
 
 Heading tags are used for headings / page titles. There are six headings tags ranging from `&lt;h1>` to `&lt;h6>` and follow a hierarchy. `&lt;h1>` is the most significant heading on the page.
 
@@ -286,22 +290,20 @@ Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
         </section>
 
         <section class="slide" data-markdown>
-##Exercise #1 - Making & Saving Changes (10 mins)
+##Exercise #1 - Updating your home page (10 mins)
 
-1. In your text editor (Sublime Text), update your name and tagline by changing the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags.
-1. Save your file using keyboard shortcuts, **Cmnd/Ctrl** + **S**, or **File > Save**.
-1. Go back to your browser and refresh it to see the changes.  
-    * Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **Cmnd/Ctrl** + **R**.
+1. In your text editor (Sublime Text), update your name.
+1. Add your tag line under your name using the appropriate heading tag.
 1. Change the content in the `&lt;title>&lt;/title>` tag. Where do you see this change?
-1. Update the footer content in the `&lt;p>&lt;/p>` to include a copyright message.
+1. Add a copyright message. Use a paragraph (`&lt;p>`) tag *inside* of the `&lt;footer>` tag.
 
 **Bonus:** Try using an HTML code for the copyright *symbol*. Here are some resources:    
 http://character-code.com/ascii-table.php  
 http://unicode-table.com/en/#00A9
 
-Your page should now look similar to [exercise1-updated.html](project/examples/exercise1-updated.html)
+Don't forget to save and refresh your browser after each change!
 
-**Protip!** Every time you make a change to your web page, don't forget to save and refresh your browser!
+Your page should now look similar to [exercise1-updated.html](project/examples/exercise1-updated.html)
         </section>
 
         <section class="slide project" data-markdown>
