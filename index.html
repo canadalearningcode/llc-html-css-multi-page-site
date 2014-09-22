@@ -44,20 +44,24 @@
             </ul>
         </div>
         <div class="presenter-notes">
-            <p>It's important to note at the beginning that a lot of material will be covered and their site will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have most of the project done by the end of the day and  "homework" and additional resources are provided at the end to help them complete their project.</p>
+            <p>It's important to note at the beginning that a lot of material will be covered and their site will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have most of the project done by the end of the day and  "homework" and additional resources are provided at the end to help them complete their project. It's a lot to cover in one day and today will be a "guided tour."</p>
             <p>All code blocks in white are editable and CSS changes will be reflected in the slide.  For exercises, all instructions listed under <strong>bonus</strong> are for those who complete the exercises early to make sure learners at all different levels have something to work on.</p>
         </div>
     </header>
 
     <main>
-        <section class="slide centered project" data-markdown>
-##Today's Project
+        <section class="slide centered project">
+            <h2>Today’s Project</h2>
 
-Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/) to see the whole project!
+            <p>Follow this <a href="http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/">link</a> to see the whole project!</p>
 
-![project home page](framework/img/workshop/project1.jpg)
-![project about page](framework/img/workshop/project2.jpg)
-![project contact page](framework/img/workshop/project3.jpg)
+            <img src="framework/img/workshop/project1.jpg" alt="project home page" title="">
+            <img src="framework/img/workshop/project2.jpg" alt="project about page" title="">
+            <img src="framework/img/workshop/project3.jpg" alt="project contact page" title="">
+
+            <div class="presenter-notes" style="text-align:left;">
+                <p>It might be helpful to leave the final project open in an extra tab to be able to refer to it throughout the day to show what each exercise is trying to work towards.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
@@ -72,7 +76,6 @@ Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-s
 ###Afternoon
 
 * More CSS & HTML
-* Final touches
 * Next steps
         </section>
 
@@ -205,7 +208,7 @@ HTML was created for web browsers to read. To display content properly in the br
 ```xml
 &lt;tagname>&lt;/tagname>
 ```
-Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules. This is referred to as **syntax**. Tags are used to describe the content, **not** what they look like.  That's what CSS is for.
+Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules too. This is referred to as **syntax**. Also, note that tags are used to describe the content, **not** what they look like.  That's what CSS is for.
 
 The are many different HTML tags used to create structure and add semantics (meaning) to the content.
 
@@ -293,10 +296,10 @@ Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
             <h2>Exercise #1 - Updating your home page (10 mins)</h2>
 
             <ol>
-                <li>In the Sublime Text editor, update your name in the <code>h1</code> if you haven’t already.</li>
+                <li>In the Sublime Text editor, update your name in the <code>h1</code> tag if you haven’t already.</li>
                 <li>Add your tag line under your name using the appropriate heading tag.</li>
-                <li>Change the content in the <code>&amp;lt;title&gt;&amp;lt;/title&gt;</code> tag. Where do you see this change?</li>
-                <li>Add a copyright message using a paragraph (<code>&amp;lt;p&gt;</code>) tag <em>inside</em> of the <code>&amp;lt;footer&gt;</code> tag.</li>
+                <li>Change the content in the <code>title</code> tag. Where do you see this change?</li>
+                <li>Add a copyright message using a paragraph (<code>p</code>) tag <em>inside</em> of the <code>footer</code> tag.</li>
             </ol>
 
             <p><strong>Bonus:</strong> Try using an HTML code for the copyright <em>symbol</em>. Here are some resources: <br>
@@ -773,11 +776,9 @@ Though it is not required, css files are often saved in a css folder for organiz
         <section class="slide" data-markdown>
 ##Mini-exercise
 
-Create a new CSS file by selecting **File > New File** in Sublime Text or use a shortcut, **CMND/CNTRL + N**. Name the file with a **.css** extension.  Some commonly used names are **global.css**, **main.css** or **style.css**.
+In Sublime Text, create a new CSS file by selecting **File > New File** or use shortcut, **CMND/CNTRL + N**. Name the file with a **.css** extension.  Some commonly used names are global.css, main.css or style.css. Let's use **style.css** and add it to **about.html**.
 
-Let's add it to **about.html**.
-
-**Protip!** Can't remember the syntax?  Sublime Text has a shortcut.  Simply type "link" with no brackets and press tab. Voila!
+**Protip!** Sublime Text has a shortcut.  Type "link" with no brackets, then the tab key. Voila!
 
 ```
 &lt;link rel="stylesheet" href="css/style.css">
@@ -838,7 +839,7 @@ body {
         <section class="slide" data-markdown>
             ##Web safe fonts
 
-            Fonts can be changed with the `font-family` **property**. However, not all fonts are installed on all computers so it's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly included on most computers.
+            Fonts can be changed with the `font-family` property. However, not all fonts are installed on all computers so it's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly included on most computers.
 
             It's best practice to list at least two or three font options to provide a fall-back if the user doesn't have the preferred fonts installed.
 
@@ -931,15 +932,15 @@ text-transform: lowercase;</textarea>
             <h2>Lunchtime exercise!</h2>
 
             <p>Picking fonts is hard. Prepare for the post-lunch exercise by picking 2-3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a> for the body text, header and highlighted text. Here’s a <a href="/project/final/">the final project</a> for reference.</p>
+            
+            <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
 
             <p>Need some help? Try Source Sans Pro, Quicksand, Merriweather or Codystar. The example project uses Open Sans (light), Nixie One and Pacifico.</p>
-
-            <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
 
             <p>Feel free to peek at the next exercise ;)</p>
 
             <div class="presenter-notes">
-                <p>Aim to get to lunch by 12:30-1:00pm. A 45min lunch is recommended. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time.</p>
+                <p>Aim to get to lunch around 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time.</p>
             </div>
         </section>
         <section class="slide">
@@ -992,6 +993,8 @@ text-transform: lowercase;</textarea>
 </code></pre>
                 </li>
             </ol>
+
+            <p><strong>Bonus:</strong> If you have extra time, find an accent colour to use throughout your site and update the above <code>color</code> value with your accent colour. Here are the <a href="index.html#slide42">links to the color resources</a> again.</p>
 
             <p>Your page should look like <a href="project/examples/exercise4-about.html">example 4</a>. As long as your CSS file is linked on three pages, notice how the styles are now shared across all three pages.</p>
         </section>
@@ -1095,7 +1098,7 @@ margin: 0;</textarea>
 
             Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw!
 
-            It is recommended to add this snippet to all your projects. Let's add it to our CSS file now to the very top of the file since it's a global style.
+            It is recommended to add this snippet to all your projects. Let's add it to our CSS file now, to the very top of the file, since it's a global style.
 
             ```
             /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1110,7 +1113,7 @@ margin: 0;</textarea>
         <section class="slide" data-markdown>
 ##Class Exercise - headings and padding
 
-Let's focus on checking these updates on your **About** page for this exercise. Remove the default space from the `h1` and `h2` and set the line-height.
+Let's focus on checking these updates on your **About** page for this exercise. Remove the default space from the `h1` and `h2` and set the line-height. Add it to the the existing `h1,h2` declaration block.
 
 ```
 h1, h2 {
@@ -1205,7 +1208,7 @@ display: ;</textarea>
             <span id="inline">I'm a span so that makes me an inline element.</span> 
 
             <div class="presenter-notes">
-                <p>Update the span example to inline-block and block to demonstrate the differences</p>
+                <p>Update the span example's display property to inline-block and block to demonstrate the differences.</p>
             </div>
         </section>
 
@@ -1341,10 +1344,10 @@ If you have some extra time, find a background image for later or choose one fro
             <p>First we have to break it, then put it back together. We need to “reset” the float to get the rest of the page to go back to normal.  There are a couple ways to do it.</p>
 
             <p>One of the most confusing CSS concepts is when to use the different techniques, <code>clear: both</code> or the <code>.clearfix</code> class.</p>
+            
+            <p>Let’s look at an example: <a href="http://jsfiddle.net/unjcxses/">http://jsfiddle.net/unjcxses/</a></p>
 
             <p>Rule of thumb: if there’s is an element that <em>follows</em> the floated element, apply <code>clear: both</code> to that element. This will clear the float. If all the elements need to be floated, apply the <code>clearfix</code> to the parent element to force clear the children.</p>
-
-            <p>Let’s look at an example: <a href="http://jsfiddle.net/unjcxses/">http://jsfiddle.net/unjcxses/</a></p>
 
             <p>Want to know more about the clearfix trick and clearing floats? Here you go: <br>
             <a href="http://css-tricks.com/snippets/css/clear-fix/">http://css-tricks.com/snippets/css/clear-fix/</a> <br>
@@ -1356,7 +1359,7 @@ If you have some extra time, find a background image for later or choose one fro
         </section>
 
         <section class="slide" data-markdown>
-##Update CSS file
+##Update the CSS file
 
 Before moving onto the next exercise, let's add the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file, after the box model fix.
 
@@ -1399,7 +1402,7 @@ html {
         <section class="slide" data-markdown>
 ##Class Exercise - classes and floats
 
-Add a "profile-image" class to the image tag in your **About** page.  Then in your css file, add a new comment block at the bottom of the page for your **About** styles.  Then `float` to get the text to wrap around the image.
+Add a "profile-image" class to the image tag in your **About** page.  Then in your css file, add a new comment block at the bottom of the page for your **About** styles, to help organize your style sheet.  Then add `float` to get the text to wrap around the image.
 
 ```css  
 /* ABOUT PAGE
@@ -1463,8 +1466,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
     background: blue;
     position: relative;
     top:;
-}
-            </textarea>
+}</textarea>
             <div id="#relative">
                 <div class="box"></div>
             </div>  
@@ -1538,7 +1540,8 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
 }
 </code></pre>
 
-            <p>Positioning takes the element out of the natural stacking order.  See how the profile picture “jumped” underneath the header when <code>position: fixed</code> was applied? It’s because it doesn’t “see” that there’s an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the <code>section</code> element to push the content down below the fixed header. Now try scrolling the page.</p>
+            <p>Let's check these changes on our <strong>About</strong> page.</p>
+            <p>Positioning takes the element out of the natural stacking order.  See how the profile picture “jumped” underneath the header when <code>position: fixed</code> was applied? It’s because it doesn’t “see” that there’s an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the <code>section</code> element to push the content down below the fixed header. Then try scrolling down the page.</p>
 
 <pre><code>section {
     padding-top: 125px;
@@ -1585,7 +1588,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
 
             The final design for the home page is different from the other two pages including the order of the HTML. On **index.html**, the nav HTML comes *before* the header.  The nav didn't disappear, it's just *under* the header.  
 
-            For the Home page, we can add a **class** attribute to override the styles that are shared between the About and Contact page. This class will allow us to use a more specific selector to apply specific styles just for the home page.
+            For the Home page, we can add a `class` attribute to create a specific selector to override the styles that are shared between the About and Contact page. This class will allow us to apply specific styles just for the home page.
 
             Let's add a class to the `body` tag so we can override any styles for any element contained within the page.
 
@@ -1644,75 +1647,9 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
 
             To ensure that your footer is always at the bottom of the page, no matter how long the page content is or how big the browser window is, use a "sticky footer".
 
-            We'll be following these instructions: http://css-tricks.com/snippets/css/sticky-footer/
-        </section>
+            For "homework", [follow these instructions](framework/extras-sticky-footer.html) to create a sticky footer.
 
-        <section class="slide" data-markdown>
-##Exercise #8 - Sticky Footer
-
-First, we need to create a page wrapper around the page content only, not the footer content.  The home page HTML will look like similar to this: 
-
-```
-&lt;div class=&quot;page-wrap&quot;&gt;
-    &lt;nav&gt;
-        ...
-    &lt;/nav&gt;
-
-    &lt;header&gt;
-        &lt;h1&gt;Jane Smith&lt;/h1&gt;
-        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-    &lt;/header&gt;    
-&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-&lt;footer&gt;
-  ...
-&lt;/footer&gt;
-```
-
-The about and contact pages will look like this:
-
-```
-&lt;div class=&quot;page-wrap&quot;&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Jane Smith&lt;/h1&gt;
-        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-
-        &lt;nav&gt;
-            ...
-        &lt;/nav&gt;
-    &lt;/header&gt;
-&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-&lt;footer&gt;
-    ...
-&lt;/footer&gt;
-```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Sticky Footer CSS
-
-            ```
-            /* sticky footer */
-            html, body {
-              height: 100%;
-            }
-            .page-wrap {
-              min-height: 100%;
-              margin-bottom: -35px; /* equal to footer height */
-            }
-            .page-wrap:after {
-              content: "";
-              display: block;
-            }
-            footer, .page-wrap:after {
-              height: 35px; /* must be the same height as footer */
-            }
-            footer {
-              background: #222;
-              color: #ccc;
-            }
-            ```
-
-            Compare your page with [example 8](project/examples/exercise8-home.html).
+            Let's finish the day with background images and forms!
         </section>
 
         <section class="slide" data-markdown>

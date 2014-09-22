@@ -26,39 +26,91 @@
     <base target="_blank">
 
     <main>
-    	<section class="slide" data-markdown>
-##Referencing CSS - Inline & Internal
+        <section class="slide" data-markdown>
+##Create a Sticky Footer
 
-There are three ways to include (otherwise known as *referencing*) CSS in an HTML page.
+We'll be following these instructions: http://css-tricks.com/snippets/css/sticky-footer/
 
-**INLINE** - can be added to any HTML element using the `style` *attribute*.
+First, we need to create a page wrapper around the page content only, not the footer content.  The home page HTML will look like similar to this: 
 
 ```
-&lt;p style=&quot;color: blue;&quot;&gt;I'm writing CSS!&lt;/p&gt;
+&lt;div class=&quot;page-wrap&quot;&gt;
+    &lt;nav&gt;
+        ...
+    &lt;/nav&gt;
+
+    &lt;header&gt;
+        &lt;h1&gt;Jane Smith&lt;/h1&gt;
+        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
+    &lt;/header&gt;    
+&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
+&lt;footer&gt;
+  ...
+&lt;/footer&gt;
 ```
 
-This technique should be avoided but it's good to know how it works in case you encounter it.
+The about and contact pages will look like this:
 
-**INTERNAL** - uses `&lt;style&gt;` and is included in the `&lt;head&gt;` element.
-
-```    
-&lt;head&gt;
-    &lt;title&gt;Page Title&lt;/title&gt;
-    &lt;style&gt;
-        h1 {
-            font-size: 16px;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;I'm still writing CSS!&lt;/p&gt;
-&lt;/body&gt;
 ```
+&lt;div class=&quot;page-wrap&quot;&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Jane Smith&lt;/h1&gt;
+        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
 
-This method is preferred over *inline* css, however it is still inefficient because if you had multiple web pages, the style block and any revisions would have to be replicated on every single page.
+        &lt;nav&gt;
+            ...
+        &lt;/nav&gt;
+    &lt;/header&gt;
+&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
+&lt;footer&gt;
+    ...
+&lt;/footer&gt;
+```
+        </section>
 
-The **external** method is most widely used. Refer back to the original presentation [here](../index.html#slide40).
-      </section>
+        <section class="slide" data-markdown>
+            ##Sticky Footer CSS
+
+            ```
+            /* sticky footer */
+            html, body {
+                height: 100%;
+            }
+            .page-wrap {
+                min-height: 100%;
+                margin-bottom: -35px; /* must be the same height as footer */
+            }
+            .page-wrap:after {
+                content: "";
+                display: block;
+            }
+            footer, .page-wrap:after {
+                height: 35px; /* wowever tall you want the footer to be */
+            }
+            footer {
+                background: #222;
+                color: #ccc;
+            }
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##One more update
+
+            Let's revise the CSS for the paragraph in the footer.
+            
+            ```
+            footer {
+                clear: both;
+                padding: 5px; /* adds space inside the footer */
+            }
+            footer p {
+                margin: 0; /* removes default margin from paragraph */
+            }
+            ```
+            Compare your page with this [example](../project/examples/sticky-footer-home.html).
+        </section>
+
     </main><!-- cls main section -->
 
     <footer>
