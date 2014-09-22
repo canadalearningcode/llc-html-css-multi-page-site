@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Ladies Learning Code: Intro to HTML & CSS</title>
+    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
+    <link rel="stylesheet" href="css/slideshow.css">
+
+    <!-- Theme-specific styles -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/highlightjs-themes/monokai.css">
+    <link rel="stylesheet" href="css/theme-llc.css">
+    <link rel="shortcut icon" href="img/favicon.ico"> 
+
+    <!-- Workshop-specific styles -->
+    <link rel="stylesheet" href="css/workshop.css">
+</head>
+
+<body>
+    
+    <base target="_blank">
+    <main>
+        <section class="slide" data-markdown>
+            ##Home page styles
+
+            Before creating the home page drop down menu, we'll need to talk about icon fonts and pseudo class selectors first.
+            
+            ###Icon fonts
+            Icon fonts are an easy way to add imagery to your web page but still have the flexibility of styling properties like size and colour using CSS since they *are* fonts!
+
+            There's many to choose from but this example uses Font Awesome:  
+            [http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/)
+
+            Under **Getting Started**, there are different options for adding the font files.  If using the CDN, remember to add the "http" to make it work when you run your page "locally" (on your computer).
+            
+            Simple to use, pick an icon you'd like to use and copy the supplied markup and class and that's it!
+
+            ###Pseudo Class  
+            A CSS pseudo-class is a selector that specifies a specific *state* of the selected element. This lesson uses `:hover` to apply a style only when the user hovers over the element specified by the selector.
+            
+            More about pseudo classes: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+        </section>
+        <section class="slide" data-markdown>
+            ##Home Page Drop down menu
+
+            1. Add [Font Awesome's CSS file](http://fortawesome.github.io/Font-Awesome/get-started/) to the `head` of your document and the markup for the [three-bar icon](http://fortawesome.github.io/Font-Awesome/icon/bars/) to the navigation.
+            ```
+            &lt;link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+            ```
+            ```xml
+            &lt;nav&gt;
+                &lt;i class=&quot;fa fa-bars&quot; title=&quot;menu&quot;&gt;&lt;/i&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;about.html&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;contact.html&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            ```
+            It should look like this:  
+            ![](img/workshop/menu-with-icon.png)
+        </section>
+        <section class="slide" data-markdown>
+            ##Home Page Drop down menu
+            
+            The next step is to override the horizontal navigation styles that are shared among the other pages and make it specific to the home page.  There is already a class of `home` in the body so we can use that to make our selector more specific.
+
+            1. Set the list items to display block so they line up on top of each other.
+
+                ```
+                .home nav li {
+                    display: block;
+                }
+                ```
+
+            1. Right align the icon and the list items.  This can be added to the `nav` selector so icon and list items will inherit the styles.  Change the font size to make it bigger too.  The icon will also need a little bit of padding to make the hover target a little bigger and for alignment.
+                ```
+                .home nav {
+                    text-align: right;
+                    font-size: 25px;
+                }
+                .fa-bars {
+                    padding: 15px;
+                }
+                ```
+            
+            1. Now hide the navigation list and show it when you hover over the icon.  Hide the list first.
+                ```
+                .home nav ul {
+                    display: none;
+                }
+                ```
+
+            1. With CSS, you can apply a hover on a parent element and use the descendant selector to change the style of its child elements!
+
+                ```
+                .home nav:hover ul {
+                    display: block;
+                }
+                .home a:hover {
+                    color: black;
+                }
+                ```
+            
+            Your home page should now look similar to the [homepage-dropdown.html](../project/examples/homepage-dropdown.html) example.
+        </section>
+    </main><!-- cls main section -->
+
+    <footer>
+        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+    </footer>
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="scripts/slideshow.js"></script>
+
+    <!-- Uncomment the plugins you need -->
+    <script src="scripts/plugins/css-edit.js"></script>
+    <script src="scripts/plugins/css-snippets.js"></script>
+    <script src="scripts/plugins/css-Ctrls.js"></script>
+    <!-- <script src="plugins/code-highlight.js"></script>-->
+
+    <script src="scripts/plugins/markdown/marked.js"></script>
+    <script src="scripts/plugins/markdown/markdown.js"></script>
+    <script src="scripts/plugins/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify -->
+    <script src="scripts/plugins/prettify.js"></script>
+    <script src="scripts/plugins/lang-css.js"></script>
+    <script src="scripts/plugins/prism.js"></script>
+
+    <script>
+        var slideshow = new SlideShow();
+
+        // Grabs all the .snippet elements
+        var snippets = document.querySelectorAll('.snippet');
+        for(var i=0; i<snippets.length; i++) {
+            new CSSSnippet(snippets[i]);
+        }
+
+        // Opens all links in a new window
+        var links = document.getElementsByTagName("a");
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener(function() {
+                window.open(this.href);
+            });
+        }
+
+        jQuery(document).ready(function(){
+            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+        });
+    </script>
+</body>
+</html>
