@@ -1212,6 +1212,142 @@ margin: 25px;</textarea>
 
             Let's go back to the previous slide's example and try using the `display` property.
         </section>
+            
+        <section class="slide" data-markdown>
+            ##Update CSS file
+
+            Before moving onto the next exercise, let's add the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file after the box model fix.
+            
+            ```
+            /* apply a natural box layout model to all elements, but allowing components to change */
+            html {
+              box-sizing: border-box;
+            }
+            *, *:before, *:after {
+              box-sizing: inherit;
+            }
+            
+            /* clears floated child elements */
+            .clearfix:before,
+            .clearfix:after {
+              content: " ";
+              display: table;
+            }
+            .clearfix:after {
+              clear: both;
+            }
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Exercise #5 - Nav Updates (15 mins)
+
+            Follow the instructions below. Check these changes on either the About or Contact page. The Home page will be styled later since it's different.
+
+            Though all the CSS is listed, try adding in one line at a time to see and understand what each property does.  Feel free to leave comments for yourself in the code to explain what each line is doing.
+
+            1. Remove default list styles and get each item to line up in a line.
+                ```
+                nav ul {
+                    list-style-type: none; /* removes bullets */
+                    margin: 0; /* removes default margin */
+                    padding: 0; /* removes default padding */
+                }
+                nav ul li {
+                    display: inline-block; /* gets the list items to line up side by side */
+                }
+                ```
+            1. Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
+                
+                ```
+                nav a {
+                    display: block; /* changes the element to block */
+                    padding: 5px 15px;
+                    text-transform: uppercase; 
+                }
+                ```
+
+            There's a few more concepts to go through to finish styling the header and nav. This is what your page should look like so far: [example 5 about](project/examples/exercise5-about.html) and [example 5 contact](project/examples/exercise5-contact.html).
+
+            **Bonus**:  
+            If you have some extra time, try adding some comments to your CSS to organize it.  See [sample here](project/examples/css/exercise5.css).  
+            Find a background image for later or choose one from the **images** folder. Here are some resources:
+
+            * http://superfamous.com/
+            * http://www.gratisography.com/
+            * http://littlevisuals.co/
+            * http://nos.twnsnd.co/
+            * http://unsplash.com/
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Class Selectors
+
+            HTML provides ways to attach extra identifying information to target elements in a more specific way.
+
+            A `class` *attribute* can be added to any element but the value is defined by you.  The class can then be used as a selector to apply styles to any element that references the class attribute.  Classes can be used multiple times on the same page. In CSS, classes are denoted by a leading period.
+
+            ```xml
+            &lt;p&gt;Regular text&lt;/p&gt;
+            &lt;p class=&quot;special&quot;&gt;Special text here.&lt;/p&gt;
+            ```
+            ```
+            p {
+                color: red;
+                font-family: Georgia, "Times New Roman", serif;
+            }
+            .special {
+                text-transform: uppercase;
+            }
+            ```
+        </section>
+        <section class="slide" data-markdown>
+            ##Mini-Exercise
+
+            Let's create a class called `highlight` and assign it an accent colour. Add this class to any element and it will apply this style.
+
+            ```
+            .highlight {
+                color: #bf6d50;
+            }
+            ```
+
+            Using a span tag, wrap it around your first name on the homepage and apply this class.
+
+            ```xml
+            &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
+            ```
+
+            Now it looks like this!  Add this anywhere you want some highlighted text!
+
+            ![](framework/img/workshop/highlighted-text.png)
+        </section>
+        <section class="slide" data-markdown>
+            ##id Selectors
+
+            `id` *attributes* are similar to `class` *attributes* because it can also be added to any element.
+
+            However, it can be used only **once** per page.  IDs should be reserved for significant style rules. Some developers prefer not to use IDs at all for CSS styling because of the specificity rules and because classes can be used once or multiple times, making it more flexible.
+
+            In CSS, IDs are denoted by a leading hash symbol (`#`).
+            ```
+            #header {
+                width: 800px;
+            }
+            ```
+            ids can also be used to link within the same page. [Read more about this technique here](http://www.webweaver.nu/html-tips/link-within-a-page.shtml).
+        </section>
+        <section class="slide" data-markdown>
+            ##class and id Names
+
+            When choosing a class or id name, choose a descriptive name and do not use spaces. Hyphens (-), underscores (_) and camel case are acceptable. CSS is also case sensitive, so while these three examples look similar, CSS will read these as three different classes so it's important (for you own sanity) to pick one style and be consistent.
+            
+            ```
+            class="content-wrapper"
+            class="content_wrapper"
+            class="contentWrapper"
+            ```
+        </section>
 
         <section class="slide" data-markdown>
             ##CSS Float Property
@@ -1247,73 +1383,37 @@ margin: 25px;</textarea>
             http://css-tricks.com/snippets/css/clear-fix/  
             http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/
         </section>
-            
-        <section class="slide" data-markdown>
-            ##Update CSS file
-
-            Before moving onto the next exercise, let's add the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file after the box model fix.
-            
-            ```
-            /* apply a natural box layout model to all elements, but allowing components to change */
-            html {
-              box-sizing: border-box;
-            }
-            *, *:before, *:after {
-              box-sizing: inherit;
-            }
-            
-            /* clears floated child elements */
-            .clearfix:before,
-            .clearfix:after {
-              content: " ";
-              display: table;
-            }
-            .clearfix:after {
-              clear: both;
-            }
-            ```
-        </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #5 - Nav Updates (15 mins)
+            ##Class Exercise - classes and floats
 
-            Follow the instructions below. Check these changes on either the About or Contact page. The Home page will be styled later since it's different.
+            1. Add a class of "profile-image" to the image tag in your **About** page.  Add a left float to get the text to wrap around it.
 
-            Though all the CSS is listed, try adding in one line at a time to see and understand what each property does.  Feel free to leave comments for yourself in the code to explain what each line is doing! 
-
-            There's a couple more concepts to go through to finish styling the header and nav, so your page should look like [example 5](project/examples/exercise5-about.html).
-
-            1. Remove default list styles and get each item to line up in a line.
                 ```
-                nav ul {
-                    list-style-type: none; /* removes bullets */
-                    margin: 0; /* removes default margin */
-                    padding: 0; /* removes default padding */
-                }
-                nav ul li {
-                    display: inline-block; /* gets the list items to line up side by side */
+                .profile-image {
+                    float: left;
                 }
                 ```
-            1. Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
-                
+            1. The text floats now, but it's a little squishy. Try setting the image width to be 50% of the page and add some margin on the right to create space.
+
                 ```
-                nav a {
-                    display: block; /* changes the element to block */
-                    padding: 5px 15px;
-                    text-transform: uppercase; 
+                .profile-image {
+                    float: left;
+                    width: 50%;
+                    margin-right: 20px;
                 }
                 ```
-            
-            **Bonus**:  
-            If you have some extra time, try adding some comments to your CSS to organize it.  See [sample here](project/examples/css/exercise5.css).  
-            Find a background image for later or choose one from the **images** folder. Here are some resources:
+            1. That looks much better but look what happened to the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to its natural stacking order by clearing the float.  We put the `clear` on the footer because that's where we want things to go back to normal.
 
-            * http://superfamous.com/
-            * http://www.gratisography.com/
-            * http://littlevisuals.co/
-            * http://nos.twnsnd.co/
-            * http://unsplash.com/
+                ```
+                footer {
+                    clear: both;
+                }
+                ```
+
+            Your page should now look similar to [exercise6a-about.html](project/examples/exercise6a-about.html).
         </section>
+
         <section class="slide" data-markdown>
             ##Positioning in CSS
             
@@ -1394,77 +1494,7 @@ margin: 25px;</textarea>
         </section>
 
         <section class="slide" data-markdown>
-            ##Class Selectors
-
-            HTML gives us a couple ways to attach extra identifying information to target elements in a way that is more specific. Two *attributes* called `class` and `id` can be used.
-
-            A `class` *attribute* can be added to any element but the value is defined by you.  The class can then be used as a selector to apply styles to any element that references the class attribute.  
-
-            Classes can be used multiple times on the same page. In CSS, classes are denoted by a leading period.
-
-            ```xml
-            &lt;p&gt;Regular text&lt;/p&gt;
-            &lt;p class=&quot;special&quot;&gt;Special text here.&lt;/p&gt;
-            ```
-            ```
-            p {
-                color: red;
-                font-family: Georgia, "Times New Roman", serif;
-            }
-            .special {
-                text-transform: uppercase;
-            }
-            ```
-        </section>
-        <section class="slide" data-markdown>
-            ##Mini-Exercise
-
-            Let's create a class called `highlight` and assign it an accent colour. I can now add this class to any element and it will apply this style.
-
-            ```
-            .highlight {
-                color: #bf6d50;
-            }
-            ```
-
-            Using a span tag, wrap it around your first name on the homepage and apply this class.
-
-            ```xml
-            &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
-            ```
-
-            Now it looks like this!  Add this anywhere you want some highlighted text!
-
-            ![](framework/img/workshop/highlighted-text.png)
-        </section>
-        <section class="slide" data-markdown>
-            ##id Selectors
-
-            `id` *attributes* are similar to `class` *attributes* because it can also be added to any element and given any value.
-
-            However, it can be used only **once** per page.  IDs should be reserved for significant style rules. Some developers prefer not to use IDs at all for CSS styling because of the specificity rules and because classes can be used once or multiple times, making it more flexible.
-
-            In CSS, IDs are denoted by a leading hash symbol (`#`).
-            ```
-            #header {
-                width: 800px;
-            }
-            ```
-        </section>
-        <section class="slide" data-markdown>
-            ##class and id Names
-
-            When choosing a class or id name, choose a descriptive name and do not use spaces. Hyphens (-), underscores (_) and camel case are acceptable. CSS is also case sensitive, so while these three examples look similar, CSS will read these as three different classes so it's important (for you own sanity) to pick one style and be consistent.
-            
-            ```
-            class="content-wrapper"
-            class="content_wrapper"
-            class="contentWrapper"
-            ```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Exercise #6 - About, Header & Nav, pt 2
+            ##Exercise #6 - Positioning the Header & Nav
 
             1. Position the nav to the top right of the header element.
             
@@ -1499,30 +1529,6 @@ margin: 25px;</textarea>
                     padding-top: 125px;
                 }
                 ```
-            1. Add a class of "profile-image" to the image tag in your about page.  Add a left float to get the text to wrap around it.
-
-                ```
-                .profile-image {
-                  float: left;
-                }
-                ```
-            1. The text floats now, but it's a little squishy. Try setting the image width to be 50% off the page and add some margin on the right to create space.
-
-                ```
-                .profile-image {
-                    float: left;
-                    width: 50%;
-                    margin-right: 20px;
-                }
-                ```
-            1. That looks much better but look what happened to the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to it's natural stacking order by clearing the float on the footer because that's where we want things to go back to normal.
-
-                ```
-                footer {
-                    clear: both;
-                }
-                ```
-
 
             Your page should look like [example 6](project/examples/exercise6-about.html).  Note how the header looks the same on all three pages now... except the home page!  Where did the navigation disappear off to?
         </section>
