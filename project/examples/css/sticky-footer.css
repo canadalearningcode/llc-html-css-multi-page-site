@@ -118,22 +118,25 @@ nav a {
 -----------------------------------------*/
 footer {
   clear: both;
+  padding: 5px;
 }
-
+footer p {
+  margin: 0; /* removes default margin */
+}
 /* sticky footer */
 html, body {
   height: 100%;
 }
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -35px; /* equal to footer height */
+  margin-bottom: -35px; /* must be the same height as footer */
 }
 .page-wrap:after {
   content: "";
   display: block;
 }
 footer, .page-wrap:after {
-  height: 35px; /* must be the same height as footer */
+  height: 35px; /* However tall you want the footer to be. */
 }
 footer {
   background: #222;
