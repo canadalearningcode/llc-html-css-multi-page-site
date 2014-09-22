@@ -1032,7 +1032,7 @@ text-transform: lowercase;</textarea>
                 <li>1 value means the same amount of padding on all sides</li>
             </ul>
             
-            <p>Change some of the margin & padding settings below using 1-4 values and see what happens!</p>
+            Let's try changing some of the margin & padding settings below using 1-4 values and see what happens!
 
             <textarea class="snippet" data-subject="#padding">background: lightblue;
 width: 500px; 
@@ -1099,9 +1099,9 @@ margin: 0;</textarea>
         <section class="slide" data-markdown>
             ##Box Model Fix!
 
-            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw! (Updated Aug 2014)
+            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw!
 
-            It is recommended to add this snippet to all your projects.
+            It is recommended to add this snippet to all your projects. Let's add it to our CSS file now.  Add it at the very top of the file since it's a global style.
 
             ```
             /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1112,6 +1112,38 @@ margin: 0;</textarea>
                 box-sizing: inherit;
             }
             ```
+        </section>
+        <section class="slide" data-markdown>
+            ##Class Exercise - Update the Header
+
+            1. Remove the default space from the `h1` and `h2` and set the line-height.
+
+                ```
+                h1, h2 {
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    margin: 0; /* removes default space */
+                    line-height: 1; /* tightens up the space between the headings */
+                }
+                ```
+            1. Set the size for only the headings in the header.
+
+                ```
+                header h1 {
+                    font-size: 36px;
+                }
+                header h2 {
+                    font-size: 18px;
+                }
+                ```
+            1. Add padding to `header` and `section` so there's an equal amount of space around the content blocks.
+            
+                ```
+                header,
+                section {
+                  padding: 20px 30px;
+                }
+                ```
         </section>
 
          <section class="slide title" data-markdown>
@@ -1190,14 +1222,14 @@ margin: 25px;</textarea>
 
             **However**, we have to break the natural stacking flow when an element is floated. This will cause any element *after* the floated element to try to move up beside it or just not display properly because we've disrupted the natural stacking flow. The parent container will also collapse.
 
-            **Also**, if there is no width set, the element will float but the width will automatically be the width of its content.
+            **Also**, if no width is set, the element will float but the width will automatically be the width of its content.
         </section>
 
         <section class="slide centered">
             <h2>Huh?</h2>
             <img src="framework/img/workshop/huh.gif">
 
-            <p class="delayed">Not to worry Marky Mark, we can fix it.</p>
+            <p class="delayed">Not to worry, we can fix it.</p>
         </section>
 
         <section class="slide" data-markdown>
@@ -1218,7 +1250,8 @@ margin: 25px;</textarea>
             
         <section class="slide" data-markdown>
             ##Update CSS file
-            Before moving onto the next exercise, let's add that [box-sizing fix](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) as well as the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file. Put this at the very top since they are global styles.
+
+            Before moving onto the next exercise, let's add the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file after the box model fix.
             
             ```
             /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1242,63 +1275,44 @@ margin: 25px;</textarea>
         </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #5 - Header & Nav (15 mins)
+            ##Exercise #5 - Nav Updates (15 mins)
 
-            Follow the instructions below as far as you can. Check these changes on either the About or Contact page. The Home page will be styled after since it's different from the other two pages.
+            Follow the instructions below. Check these changes on either the About or Contact page. The Home page will be styled later since it's different.
 
             Though all the CSS is listed, try adding in one line at a time to see and understand what each property does.  Feel free to leave comments for yourself in the code to explain what each line is doing! 
 
             There's a couple more concepts to go through to finish styling the header and nav, so your page should look like [example 5](project/examples/exercise5-about.html).
 
-            **Bonus**: If you finish early, take some time to find a background image or pick on from the images folder or add some comments to your CSS to organize it.  See [sample here](project/examples/css/exercise5.css).
-
-            1. Remove the default space from the `h1` and `h2` and set the font size.
-
-                ```
-                h1, h2 {
-                    font-weight: 300;
-                    text-transform: uppercase;
-                    margin: 0; /* removes default space */
-                    line-height: 1; /* tightens up the space between the headings */
-                }
-                ```
-            1. Set the size for only the headings in the header.
-
-                ```
-                header h1 {
-                    font-size: 36px;
-                }
-                header h2 {
-                    font-size: 18px;
-                }
-                ```
-            1. Add padding to `header` and `section` so there's an equal amount of space around the content blocks.
-            
-                ```
-                header,
-                section {
-                  padding: 20px 30px;
-                }
-                ```
             1. Remove default list styles and get each item to line up in a line.
                 ```
                 nav ul {
                     list-style-type: none; /* removes bullets */
-                    margin: 0;
-                    padding: 0;
+                    margin: 0; /* removes default margin */
+                    padding: 0; /* removes default padding */
                 }
                 nav ul li {
-                    display: inline-block;
+                    display: inline-block; /* gets the list items to line up side by side */
                 }
                 ```
             1. Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
                 
                 ```
                 nav a {
+                    display: block; /* changes the element to block */
                     padding: 5px 15px;
-                    text-transform: uppercase;
+                    text-transform: uppercase; 
                 }
                 ```
+            
+            **Bonus**:  
+            If you have some extra time, try adding some comments to your CSS to organize it.  See [sample here](project/examples/css/exercise5.css).  
+            Find a background image for later or choose one from the **images** folder. Here are some resources:
+
+            * http://superfamous.com/
+            * http://www.gratisography.com/
+            * http://littlevisuals.co/
+            * http://nos.twnsnd.co/
+            * http://unsplash.com/
         </section>
         <section class="slide" data-markdown>
             ##Positioning in CSS
