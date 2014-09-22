@@ -44,7 +44,7 @@
             </ul>
         </div>
         <div class="presenter-notes">
-            <p>It's important to note at the beginning that a lot of material will be covered and their site will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have most of the project done by the end of the day and  "homework" and additional resources are provided at the end to help them complete their project. It's a lot to cover in one day and today will be a "guided tour."</p>
+            <p>It's important to note at the beginning that a lot of material will be covered and their site will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have about 75% of the project done by end of the day and  "homework" and additional resources are provided at the end to help them complete their project. It's a lot to cover in one day and today will just be a "guided tour."</p>
             <p>All code blocks in white are editable and CSS changes will be reflected in the slide.  For exercises, all instructions listed under <strong>bonus</strong> are for those who complete the exercises early to make sure learners at all different levels have something to work on.</p>
         </div>
     </header>
@@ -1653,7 +1653,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
         </section>
 
         <section class="slide" data-markdown>
-            ##Class Exercise: Background Images
+            ##Class Exercise #8: Background Images
 
             So far, we've used `background` to add colours. We can also use it to add images. We've added images in the HTML using `img` but we can also set images as a background style using CSS.
             
@@ -1693,7 +1693,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
         </section>
 
         <section class="slide">
-            <h2>Class exercise: Background-size</h2>
+            <h2>Class exercise #8: Background-size</h2>
 
             <p>Thanks to CSS3, we can now change the size of a background image. </p>
             <p><code>background-size</code> is the longhand property.  To include it in the shorthand <code>background</code> property, it <em>must</em> be included after <code>background-position</code>, separated with the <code>/</code> character.  </p>
@@ -1741,11 +1741,64 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
         </section>
 
         <section class="slide" data-markdown>
-            ##Forms: organizing the interface
+            ##Forms
             
             Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
 
-            Today we're going to use http://forms.brace.io/ to submit our form info and the information will be forwarded to your email. Simple!
+            Let's look at the markup first.
+
+            All forms begin with the `form` element and requires 
+            two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
+
+            ```xml
+            &lt;form method="POST" action="path/to/form/script/processing">
+                ...
+            &lt;/form>
+            ```
+        </section>
+
+        <section class="slide">
+            <h2>Class Exercise #9 - Contact Form</h2>
+
+            <p>On your contact page, under the header, create a new <code>&lt;section&gt;</code> tag.  Add the below markup <em>in between</em> the <code>section</code> element.</p>
+
+<pre><code class="xml">&lt;section&gt;
+    &lt;form class="contact-form" method="POST" action="" &gt;
+        &lt;h2&gt;Let's meet for coffee!&lt;/h2&gt;
+
+        &lt;p&gt;Send me a message at &lt;a href="mailto:hello@your-email.com"&gt;hello@your-email.com&lt;/a&gt;, 
+        use the form below or say "hi!" on one of my social networks.&lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="name"&gt;Name&lt;/label&gt;
+            &lt;input id="name" type="text" name="name"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="email"&gt;Email&lt;/label&gt;
+            &lt;input id="email" type="email" name="replyto"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="message"&gt;Message&lt;/label&gt;
+            &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+        &lt;/p&gt;
+        &lt;input type="submit" value="SEND"&gt;
+    &lt;/form&gt;
+&lt;/section&gt;
+</code></pre>
+            <p>Your contact page and form should look similar to <a href="project/examples/exercise9-contact.html">Example 9</a>.</p>
+
+            <div class="presenter-notes">
+                <p>Give an general overview of what each from control is used for as you are adding in the code. There's further resources available in the next slide.</p>
+
+                <p>This will be the official last exercise for the day. Though there are plenty of other lessons in the next steps/homework section. If you find yourself with extra time, congratulate the class on picking up the concepts so well and either give them free time to tweak their projects, pick one of the homework assignments to go through together. Save some time to briefly cover the next steps.</p>
+            </div>
+        </section>
+
+        <!-- <section class="slide" data-markdown>
+            ##Forms
+            
+            Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
+
+            Today we're going to use http://forms.brace.io/ to submit our form info.  Through this service, the information will be forwarded to your email. Simple!
 
             All forms begin with the `form` element and requires 
             two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
@@ -1757,57 +1810,43 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
                 ...
             &lt;/form>
             ```
-        </section>
+        </section> -->
 
-        <section class="slide" data-markdown>
-            ##Forms (continued)
+        <!-- <section class="slide">
+            <h2>Class Exercise #9 - Contact Form</h2>
 
-            `input` elements are used to allow the user to type in their information and is used with a `type` attribute to determine the kind of information it is.
+            <p>On your contact page, under the header, create a new <code>&lt;section&gt;</code> tag.  Add the below markup <em>in between</em> the <code>section</code> element.</p>
+            <p>Brace.io requires that you verify your email first. The verification email will be sent on the <strong>first</strong> form submit so make sure you test your form first!</p>
 
-            The `label` tags are used to label the input.
+<pre><code class="xml">&lt;section&gt;
+    &lt;form class="contact-form" action="http://forms.brace.io/hello@your-email.com" method="POST"&gt;
+        &lt;h2&gt;Let's meet for coffee!&lt;/h2&gt;
 
-            The `name` attribute is used to label the fields when sending the form data to the server. 
-            
-            The `for` and `id` attributes are used to associate the label to the input and should have matching values.
+        &lt;p&gt;Send me a message at &lt;a href="mailto:hello@your-email.com"&gt;hello@your-email.com&lt;/a&gt;, 
+        use the form below or say "hi!" on one of my social networks.&lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="name"&gt;Name&lt;/label&gt;
+            &lt;input id="name" type="text" name="name"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="email"&gt;Email&lt;/label&gt;
+            &lt;input id="email" type="email" name="replyto"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="message"&gt;Message&lt;/label&gt;
+            &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+        &lt;/p&gt;
+        &lt;input type="submit" value="SEND"&gt;
+    &lt;/form&gt;
+&lt;/section&gt;
+</code></pre>
+            <p>Your contact page and form should look similar to <a href="project/examples/exercise9-contact.html">Example 9</a>.</p>
+            <p>For more information about forms, <a href="framework/extras-form-controls.html">go here</a>.</p>
 
-            A form can contain any HTML markup (paragraphs, lists, etc.) in addition to form specific HTML tags.
-
-            [Each part of a form is considered a paragraph](http://dev.w3.org/html5/spec-LC/forms.html#forms) and can be separated using `&lt;p>` elements. 
-
-            **Example:** [MDN form example](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_structure_an_HTML_form/Example)
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Exercise #9 - Contact Form
-
-            On your contact page, under the header, create a `&lt;section>` tag.  Add the below markup *in between* the `section` element.
-
-            Brace.io requires that you verify your email. The verification email will be sent on the first form submit so make sure you test your form first!
-
-            ```xml
-            &lt;form class="contact-form" action=&quot;http://forms.brace.io/hello@your-email.com&quot; method=&quot;POST&quot;&gt;
-                &lt;h2&gt;Let's meet for coffee!&lt;/h2&gt;
-
-                &lt;p&gt;Send me a message at &lt;a href=&quot;mailto:hello@your-email.com&quot;&gt;hello@your-email.com&lt;/a&gt;, 
-                use the form below or say &quot;hi!&quot; on one of my social networks.&lt;/p&gt;
-                &lt;p&gt;
-                    &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-                    &lt;input id=&quot;name&quot; type=&quot;text&quot; name=&quot;name&quot;&gt;
-                &lt;/p&gt;
-                &lt;p&gt;
-                    &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
-                    &lt;input id=&quot;email&quot; type=&quot;email&quot; name=&quot;replyto&quot;&gt;
-                &lt;/p&gt;
-                &lt;p&gt;
-                    &lt;label for=&quot;message&quot;&gt;Message&lt;/label&gt;
-                    &lt;textarea id=&quot;message&quot; name=&quot;message&quot;&gt;&lt;/textarea&gt;
-                &lt;/p&gt;
-                &lt;input type=&quot;submit&quot; value=&quot;SEND&quot;&gt;
-            &lt;/form&gt;
-            ```
-
-            Your contact page and form should look similar to [Example 9](project/examples/exercise9-contact.html).
-        </section>
+            <div class="presenter-notes">
+                <p>Give an general overview of what each from control is used for as you are adding in the code. There's further resources available in the link provided in this slide.</p>
+            </div>
+        </section> -->
         
         <section class="slide">
             <h2>Center aligning with margin</h2>
@@ -1985,7 +2024,7 @@ margin: 0 auto;</textarea>
 
             You will need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting options:
             
-            * [hover.com](https://www.hover.com/?ircid=2799&irmpname=Ladies+Learning+Code)
+            * [hover.com](hover.com/ladiescode)
             * [dreamhost.com](http://www.dreamhost.com/r.cgi?205190)  
             * [bluehost.com](http://www.bluehost.com/)
 
