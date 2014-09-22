@@ -646,7 +646,7 @@ Just like images, there are many services available for placeholder text.
 * http://slipsum.com/
 * and [many more](http://meettheipsums.com/)!
 
-For your reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in your **examples** folder but only look if you get stuck! Try asking a mentor first!
+For reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in the **examples** folder but look only if you're stuck!
         </section>
     
         <section class="slide title" data-markdown>
@@ -657,9 +657,9 @@ For your reference, [exercise3-about.html](project/examples/exercise3-about.html
         <section class="slide" data-markdown>
 ##CSS & HTML
 
-CSS is its own language and has different syntax rules than HTML but it the two are closely paired. CSS is made up of rules that refer to HTML elements and define what those elements should look like.
+CSS is a different language from HTMl and has its own syntax rules though the two are closely paired. CSS is made up of rules that refer to HTML elements and define what those elements should look like.
 
-CSS separates content (i.e. text) from presentation (i.e. text colour) and helps to reduce redundancy and save time.  
+CSS separates content (i.e. text) from presentation (i.e. text colour) and helps to reduce redundancy.  
 
 Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no longer be used because CSS takes care of presentation and styles.
         </section>
@@ -684,7 +684,7 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
         </section>
 
         <section class="slide">
-            <h2>CSS Syntax</h2>
+            <h2>CSS Terminology & Syntax</h2>
 
             <pre><code>h1 {
     color: blue;
@@ -706,6 +706,18 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
             </ul>        
         </section>
 
+        <section class="slide">
+            <h2>Write some CSS</h2>
+            <p>Let's change the  styles of the paragraphs on this slide using <code>font-size</code>.</p>
+
+            <textarea class="snippet">p {
+    
+}</textarea>
+            <div class="example">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+            </div>
+        </section>
+
         <section class="slide" data-markdown>
             ##Descendant selectors
             
@@ -724,9 +736,7 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
             }
             ```
 
-            Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. 
-
-            However, it’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
+            Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. It’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
         </section>
 
         <section class="slide" data-markdown>
@@ -754,43 +764,13 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
         </section>
 
         <section class="slide" data-markdown>
-##Referencing CSS - Inline & Internal
+##Referencing CSS
 
-There are three ways to include (otherwise known as *referencing*) CSS in an HTML page.
+There are three ways to include (otherwise known as *referencing*) CSS in an HTML page. Today we'll be using the **external** method. To read more about **inline** and **internal**, view [this extra resource](framework/extras-referencing-css.html).
 
-**INLINE** - can be added to any HTML element using the `style` *attribute*.
+The external method links to a separate style sheet file and is recommended because it separates the CSS from the HTML document. Only the CSS file needs to be updated.
 
-```
-&lt;p style=&quot;color: blue;&quot;&gt;I'm writing CSS!&lt;/p&gt;
-```
-
-This technique should be avoided but it's good to know how it works in case you encounter it.
-
-**INTERNAL** - uses `&lt;style&gt;` and is included in the `&lt;head&gt;` element.
-
-```    
-&lt;head&gt;
-    &lt;title&gt;Page Title&lt;/title&gt;
-    &lt;style&gt;
-        h1 {
-            font-size: 16px;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;I'm still writing CSS!&lt;/p&gt;
-&lt;/body&gt;
-```
-
-This method is preferred over *inline* css, however it is still inefficient because if you had multiple web pages, the style block and any revisions would have to be replicated on every single page.
-        </section>
-
-        <section class="slide" data-markdown>
-##Referencing CSS - External
-
-The external method links to a separate style sheet file and is recommended because it separates the CSS from the HTML document. The style sheet is referenced in the `&lt;head&gt;` of the document. Only the CSS file needs to be updated rather than the CSS block on every single page.
-
-Referenced in the head element with a `&lt;link&gt;` tag and two **attributes**, `rel` (relationship) and `href`. Just like creating links, the value of the `href` points to the location of the style sheet. 
+The style sheet is referenced in the `&lt;head&gt;` of the document with a `&lt;link&gt;` tag and two **attributes**, `rel` (relationship) and `href`. Just like links, the value of `href` points to the location of the style sheet. 
 
 Though it is not required, css files are often saved in a css folder for organization, so make sure the file path points to the appropriate directory.
 
