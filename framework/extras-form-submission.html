@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Ladies Learning Code: Intro to HTML & CSS</title>
+    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
+    <link rel="stylesheet" href="css/slideshow.css">
+
+    <!-- Theme-specific styles -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/highlightjs-themes/monokai.css">
+    <link rel="stylesheet" href="css/theme-llc.css">
+    <link rel="shortcut icon" href="img/favicon.ico"> 
+
+    <!-- Workshop-specific styles -->
+    <link rel="stylesheet" href="css/workshop.css">
+</head>
+
+<body>
+    
+    <base target="_blank">
+    <main>
+    	<section class="slide" data-markdown>
+            ##Submitting a form
+            
+            Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages.
+
+            Let's first look at what each of these form controls do.
+            
+            * `input` tag are used to allow the user to type in their information and is used with a `type` attribute to determine the kind of information it is.
+            * The `label` tags are used to label the input or else the user would not know what information to enter.
+            * The `name` attribute is used to label the fields when sending the form data to the server. 
+            * The `for` and `id` attributes associate the label to the input and should have matching values.
+
+            A form can contain any HTML markup (paragraphs, lists, etc.) in addition to form specific HTML tags. [Each part of a form is considered a paragraph](http://dev.w3.org/html5/spec-LC/forms.html#forms) and can be separated using `&lt;p>` elements. 
+
+            **Further reading: ** [MDN forms](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
+        </section>
+
+        <section class="slide" data-markdown>
+            ##3rd Party services
+            
+            There are many services that help with form submission. Let's look at [FORMS by Brace](http://forms.brace.io/).Through this service, the information will be forwarded to your email. Simple!
+
+            Remember, all forms begin with the `form` element and requires two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
+
+            Since we're using a 3rd party service, the `action` value is *their* url *and* the email you want the form to be submitted to.
+
+            ```xml
+            &lt;form method="POST" action="http://forms.brace.io/myemail@hello.com">
+                ...
+            &lt;/form>
+            ```
+        </section>
+        <section class="slide" data-markdown>
+            ##3rd Party services
+
+            Brace.io requires that you verify your email first. The verification email will be sent on the first form submit so make sure you test your form first!
+
+            Also note, this service only works on a *server* so you can't test it *locally*, meaning, just from your computer. You'll need to upload it to a server or run a local server to test it.
+
+            See [getting your site online](../index.html#slide89) or [how to run a local server](http://mac.appstorm.net/reviews/internet-reviews/running-a-local-server-with-mamp/).  
+            See further documentation here: [http://forms.brace.io/](http://forms.brace.io/)
+
+            Another services to check is [Wufoo](http://www.wufoo.com/).
+
+            You can even use Google Docs to create a form that will add the form submissions into a spreadsheet.  View these sources here:
+
+            * https://www.youtube.com/watch?v=wwf72lwPLVY
+            * http://morning.am/tutorials/how-to-style-google-forms/
+        </section>
+    </main><!-- cls main section -->
+
+    <footer>
+        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+    </footer>
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="scripts/slideshow.js"></script>
+
+    <!-- Uncomment the plugins you need -->
+    <script src="scripts/plugins/css-edit.js"></script>
+    <script src="scripts/plugins/css-snippets.js"></script>
+    <script src="scripts/plugins/css-Ctrls.js"></script>
+    <!-- <script src="plugins/code-highlight.js"></script>-->
+
+    <script src="scripts/plugins/markdown/marked.js"></script>
+    <script src="scripts/plugins/markdown/markdown.js"></script>
+    <script src="scripts/plugins/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify -->
+    <script src="scripts/plugins/prettify.js"></script>
+    <script src="scripts/plugins/lang-css.js"></script>
+    <script src="scripts/plugins/prism.js"></script>
+
+    <script>
+        var slideshow = new SlideShow();
+
+        // Grabs all the .snippet elements
+        var snippets = document.querySelectorAll('.snippet');
+        for(var i=0; i<snippets.length; i++) {
+            new CSSSnippet(snippets[i]);
+        }
+
+        // Opens all links in a new window
+        var links = document.getElementsByTagName("a");
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener(function() {
+                window.open(this.href);
+            });
+        }
+
+        jQuery(document).ready(function(){
+            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+        });
+    </script>
+</body>
+</html>
