@@ -289,21 +289,27 @@ Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
 ```
         </section>
 
-        <section class="slide" data-markdown>
-##Exercise #1 - Updating your home page (10 mins)
+        <section class="slide">
+            <h2>Exercise #1 - Updating your home page (10 mins)</h2>
 
-1. In the Sublime Text editor, update your name in the `h1` if you haven't already.
-1. Add your tag line under your name using the appropriate heading tag.
-1. Change the content in the `&lt;title>&lt;/title>` tag. Where do you see this change?
-1. Add a copyright message using a paragraph (`&lt;p>`) tag *inside* of the `&lt;footer>` tag.
+            <ol>
+                <li>In the Sublime Text editor, update your name in the <code>h1</code> if you haven’t already.</li>
+                <li>Add your tag line under your name using the appropriate heading tag.</li>
+                <li>Change the content in the <code>&amp;lt;title&gt;&amp;lt;/title&gt;</code> tag. Where do you see this change?</li>
+                <li>Add a copyright message using a paragraph (<code>&amp;lt;p&gt;</code>) tag <em>inside</em> of the <code>&amp;lt;footer&gt;</code> tag.</li>
+            </ol>
 
-**Bonus:** Try using an HTML code for the copyright *symbol*. Here are some resources:    
-http://character-code.com/ascii-table.php  
-http://unicode-table.com/en/#00A9
+            <p><strong>Bonus:</strong> Try using an HTML code for the copyright <em>symbol</em>. Here are some resources: <br>
+            <a href="http://character-code.com/ascii-table.php">http://character-code.com/ascii-table.php</a> <br>
+            <a href="http://unicode-table.com/en/#00A9">http://unicode-table.com/en/#00A9</a></p>
 
-Don't forget to save and refresh your browser after each change!
+            <p>Don’t forget to save and refresh your browser after each change!</p>
 
-Your page should now look similar to [exercise1-updated.html](project/examples/exercise1-updated.html)
+            <p>Your page should now look similar to <a href="project/examples/exercise1-updated.html">exercise1-updated.html</a></p>
+
+            <div class="presenter-notes">
+                <p>Use the exercise time to follow along with the current exercise. Since the exercises switch between code-alongs and independent exercises throughout the day, it will be easier to demonstrate the code-alongs if your version is at the same state as the learners.</p>
+            </div>
         </section>
 
         <section class="slide project" data-markdown>
@@ -933,7 +939,7 @@ text-transform: lowercase;</textarea>
             <p>Feel free to peek at the next exercise ;)</p>
 
             <div class="presenter-notes">
-                <p>Aim to get to lunch by 12:30-1:00pm. A 45min lunch is recommended. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise.</p>
+                <p>Aim to get to lunch by 12:30-1:00pm. A 45min lunch is recommended. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time.</p>
             </div>
         </section>
         <section class="slide">
@@ -943,7 +949,7 @@ text-transform: lowercase;</textarea>
                     Pick 3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a>.
                 </li>
                 <li>
-                    Add the Google font stylesheet to the  of all three documents so the font files will load and can be accessed. Put it before your CSS file.
+                    Add the Google font style sheet link to all three documents to access and use the font files. Put it before your CSS file.
 
 <pre><code>&lt;title&gt;Jane Smith | About Me&lt;/title&gt;
 &lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
@@ -951,7 +957,7 @@ text-transform: lowercase;</textarea>
 </code></pre>
                 </li>
                 <li>
-                    In the sample project, most of site uses the same font and color except for the <code>h1</code> and a couple of accented blocks of text. Add the main font styles using the body selector.
+                    In the sample project, most of site uses the same font and color except for the <code>h1</code> and a couple of accented blocks of text. Add the main font styles to the existing <code>body</code> declaration block.
 <pre><code>body {
     font-family: "Open Sans", sans-serif;
     color: #333;
@@ -960,7 +966,7 @@ text-transform: lowercase;</textarea>
                     Remember the family tree? Since <code>body</code> is the ancestor of all the elements nested within, these styles are inherited by the child &amp; descendant elements.
                 </li>
                 <li>
-                    <p>Let’s make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use <code>h1</code> as the selector.</p>
+                    <p>Make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use <code>h1</code> as the selector.</p>
 <pre><code>h1 {
     font-family: "Nixie One", serif;
 }
@@ -1089,7 +1095,7 @@ margin: 0;</textarea>
 
             Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw!
 
-            It is recommended to add this snippet to all your projects. Let's add it to our CSS file now.  Add it at the very top of the file since it's a global style.
+            It is recommended to add this snippet to all your projects. Let's add it to our CSS file now to the very top of the file since it's a global style.
 
             ```
             /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1102,36 +1108,40 @@ margin: 0;</textarea>
             ```
         </section>
         <section class="slide" data-markdown>
-            ##Class Exercise - Update the Header
+##Class Exercise - headings and padding
 
-            1. Remove the default space from the `h1` and `h2` and set the line-height.
+Let's focus on checking these updates on your **About** page for this exercise. Remove the default space from the `h1` and `h2` and set the line-height.
 
-                ```
-                h1, h2 {
-                    font-weight: 300;
-                    text-transform: uppercase;
-                    margin: 0; /* removes default space */
-                    line-height: 1; /* tightens up the space between the headings */
-                }
-                ```
-            1. Set the size for only the headings in the header.
+```
+h1, h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0; /* removes default space */
+    line-height: 1; /* tightens up the space between the headings */
+}
+```
+Set the size for only the headings in the header.
 
-                ```
-                header h1 {
-                    font-size: 36px;
-                }
-                header h2 {
-                    font-size: 18px;
-                }
-                ```
-            1. Add padding to `header` and `section` so there's an equal amount of space around the content blocks.
-            
-                ```
-                header,
-                section {
-                  padding: 20px 30px;
-                }
-                ```
+```
+header h1 {
+    font-size: 36px;
+}
+header h2 {
+    font-size: 18px;
+}
+```
+
+Add padding to `header` and `section` so there's an equal amount of space around the content blocks.
+
+```
+header,
+section {
+    padding: 20px 30px;
+}
+```
+Your page should look similar to this:
+
+![exercise 4 update](framework/img/workshop/exercise4-update.png)
         </section>
 
          <section class="slide title" data-markdown>
@@ -1200,72 +1210,43 @@ margin: 25px;</textarea>
 
             Let's go back to the previous slide's example and try using the `display` property.
         </section>
-            
-        <section class="slide" data-markdown>
-            ##Update CSS file
-
-            Before moving onto the next exercise, let's add the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file after the box model fix.
-            
-            ```
-            /* apply a natural box layout model to all elements, but allowing components to change */
-            html {
-              box-sizing: border-box;
-            }
-            *, *:before, *:after {
-              box-sizing: inherit;
-            }
-            
-            /* clears floated child elements */
-            .clearfix:before,
-            .clearfix:after {
-              content: " ";
-              display: table;
-            }
-            .clearfix:after {
-              clear: both;
-            }
-            ```
-        </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #5 - Nav Updates (15 mins)
+##Exercise #5 - Nav Updates (15 mins)
 
-            Follow the instructions below. Check these changes on either the About or Contact page. The Home page will be styled later since it's different.
+Follow the instructions below. Check these changes on either the About or Contact page. The Home page will be styled later since it has a different style from these two pages.
 
-            Though all the CSS is listed, try adding in one line at a time to see and understand what each property does.  Feel free to leave comments for yourself in the code to explain what each line is doing.
+Though all the CSS is listed below, try adding in one line at a time to see and understand what each property does.  Leave comments for yourself in the code to explain what each line is doing if needed and use comments to organize your code. See [sample here](project/examples/css/exercise5.css).
 
-            1. Remove default list styles and get each item to line up in a line.
-                ```
-                nav ul {
-                    list-style-type: none; /* removes bullets */
-                    margin: 0; /* removes default margin */
-                    padding: 0; /* removes default padding */
-                }
-                nav ul li {
-                    display: inline-block; /* gets the list items to line up side by side */
-                }
-                ```
-            1. Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
-                
-                ```
-                nav a {
-                    display: block; /* changes the element to block */
-                    padding: 5px 15px;
-                    text-transform: uppercase; 
-                }
-                ```
+Remove default list styles and get each item to line up in a line.
 
-            There's a few more concepts to go through to finish styling the header and nav. This is what your page should look like so far: [example 5 about](project/examples/exercise5-about.html) and [example 5 contact](project/examples/exercise5-contact.html).
+    nav ul {
+        list-style-type: none; /* removes bullets */
+        margin: 0; /* removes default margin */
+        padding: 0; /* removes default padding */
+    }
+    nav ul li {
+        display: inline-block; /* gets the list items to line up side by side */
+    }
 
-            **Bonus**:  
-            If you have some extra time, try adding some comments to your CSS to organize it.  See [sample here](project/examples/css/exercise5.css).  
-            Find a background image for later or choose one from the **images** folder. Here are some resources:
+Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
+    
+    nav a {
+        display: block; /* changes the element to block */
+        padding: 5px 15px;
+        text-transform: uppercase; 
+    }
 
-            * http://superfamous.com/
-            * http://www.gratisography.com/
-            * http://littlevisuals.co/
-            * http://nos.twnsnd.co/
-            * http://unsplash.com/
+There's a few more concepts to go through to finish styling the header and nav. This is what your page should look like so far: [example 5 about](project/examples/exercise5-about.html) and [example 5 contact](project/examples/exercise5-contact.html).
+
+**Bonus**:  
+If you have some extra time, find a background image for later or choose one from the **images** folder. Here are some resources:
+
+* http://superfamous.com/
+* http://www.gratisography.com/
+* http://littlevisuals.co/
+* http://nos.twnsnd.co/
+* http://unsplash.com/
         </section>
 
         <section class="slide" data-markdown>
@@ -1292,7 +1273,7 @@ margin: 25px;</textarea>
         <section class="slide" data-markdown>
             ##Mini-Exercise
 
-            Let's create a class called `highlight` and assign it an accent colour. Add this class to any element and it will apply this style.
+            Let's create a class called `highlight` and assign it an accent colour. Now this class can be added to any element and it will apply this particular style.
 
             ```
             .highlight {
@@ -1300,7 +1281,7 @@ margin: 25px;</textarea>
             }
             ```
 
-            Using a span tag, wrap it around your first name on the homepage and apply this class.
+            Using a span tag, wrap it around your first name on the homepage and apply this class. You can remove the space if you want the first & last name to appear closer together.
 
             ```xml
             &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
@@ -1323,8 +1304,9 @@ margin: 25px;</textarea>
                 width: 800px;
             }
             ```
-            ids can also be used to link within the same page. [Read more about this technique here](http://www.webweaver.nu/html-tips/link-within-a-page.shtml).
+            IDs can also be used to link within the same page. [Read more about this technique here](http://www.webweaver.nu/html-tips/link-within-a-page.shtml).
         </section>
+
         <section class="slide" data-markdown>
             ##class and id Names
 
@@ -1340,9 +1322,7 @@ margin: 25px;</textarea>
         <section class="slide" data-markdown>
             ##CSS Float Property
 
-            Remember, block-style HTML elements like `&lt;p>`, `&lt;div>` and `&lt;section>` automatically start on a new line and stack on top of each other. To get two block elements to align side-by-side, the `float` property can also be used. 
-
-            CSS floats can float elements left or right.
+            Remember, block-style HTML elements like `&lt;p>`, `&lt;div>` and `&lt;section>` automatically start on a new line and stack on top of each other. To get two block elements to align side-by-side, the `float` property can also be used to float elements left or right.
 
             **However**, we have to break the natural stacking flow when an element is floated. This will cause any element *after* the floated element to try to move up beside it or just not display properly because we've disrupted the natural stacking flow. The parent container will also collapse.
 
@@ -1356,50 +1336,84 @@ margin: 25px;</textarea>
             <p class="delayed">Not to worry, we can fix it.</p>
         </section>
 
-        <section class="slide" data-markdown>
-            ##Float, Clear And Clearfix
+        <section class="slide">
+            <h2>Float, Clear And Clearfix</h2>
 
-            First we have to break it, then put it back together. We need to "reset" the float to get the rest of the page to go back to normal.  There are a couple ways to do it.
+            <p>First we have to break it, then put it back together. We need to “reset” the float to get the rest of the page to go back to normal.  There are a couple ways to do it.</p>
 
-            One of the most confusing CSS concepts is when to use the different techniques, `clear: both` or the `.clearfix` class. 
+            <p>One of the most confusing CSS concepts is when to use the different techniques, <code>clear: both</code> or the <code>.clearfix</code> class.</p>
 
-            Rule of thumb: if there's is an element that *follows* the floated element, apply `clear: both` to that element. This will clear the float. If all the elements need to be floated, apply the `clearfix` to the parent element to force clear the children.
+            <p>Rule of thumb: if there’s is an element that <em>follows</em> the floated element, apply <code>clear: both</code> to that element. This will clear the float. If all the elements need to be floated, apply the <code>clearfix</code> to the parent element to force clear the children.</p>
 
-            Let's look at an example here: http://jsfiddle.net/unjcxses/
+            <p>Let’s look at an example: <a href="http://jsfiddle.net/unjcxses/">http://jsfiddle.net/unjcxses/</a></p>
 
-            Want to know more about the clearfix trick and clearing floats? Here you go:   
-            http://css-tricks.com/snippets/css/clear-fix/  
-            http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/
+            <p>Want to know more about the clearfix trick and clearing floats? Here you go: <br>
+            <a href="http://css-tricks.com/snippets/css/clear-fix/">http://css-tricks.com/snippets/css/clear-fix/</a> <br>
+            <a href="http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/">http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/</a></p>
+
+            <div class="presenter-notes">
+                <p>Explain that you can fork or update the jsfiddle to create your own copy and it won't "mess up" the example. It will create a new URL and no account is required.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
-            ##Class Exercise - classes and floats
+##Update CSS file
 
-            1. Add a class of "profile-image" to the image tag in your **About** page.  Add a left float to get the text to wrap around it.
+Before moving onto the next exercise, let's add the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file, after the box model fix.
 
-                ```
-                .profile-image {
-                    float: left;
-                }
-                ```
-            1. The text floats now, but it's a little squishy. Try setting the image width to be 50% of the page and add some margin on the right to create space.
+```
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
-                ```
-                .profile-image {
-                    float: left;
-                    width: 50%;
-                    margin-right: 20px;
-                }
-                ```
-            1. That looks much better but look what happened to the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to its natural stacking order by clearing the float.  We put the `clear` on the footer because that's where we want things to go back to normal.
+/* clears floated child elements */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+```
+        </section>
 
-                ```
-                footer {
-                    clear: both;
-                }
-                ```
+        <section class="slide" data-markdown>
+##Class Exercise - classes and floats
 
-            Your page should now look similar to [exercise6a-about.html](project/examples/exercise6a-about.html).
+Add a class of "profile-image" to the image tag in your **About** page.  Then in your css file, add a new comment block at the bottom of the page for your **About** page styles.  Then add a float to get the text to wrap around the image.
+
+```css  
+/* ABOUT PAGE
+-----------------------------------------*/
+.profile-image {
+    float: left;
+}
+```
+
+The text floats now, but it's a little squishy. Try setting the image width to be 50% of the page and add some margin on the right to create space.
+
+    .profile-image {
+        float: left;
+        width: 50%;
+        margin-right: 20px;
+    }
+
+That looks much better but look what happened to the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear` on the footer element because that's where we want things to go back to normal.
+
+```css
+/* FOOTER
+-----------------------------------------*/
+footer {
+    clear: both;
+}
+```
+
+Your page should now look similar to [exercise6a-about.html](project/examples/exercise6a-about.html).
         </section>
 
         <section class="slide" data-markdown>
