@@ -1144,11 +1144,6 @@ Your page should look similar to this:
 ![exercise 4 update](framework/img/workshop/exercise4-update.png)
         </section>
 
-         <section class="slide title" data-markdown>
-            #Inline & Block
-            #Elements
-        </section>
-
         <section class="slide" data-markdown>
             ##Inline vs Block Elements
             By default, some HTML elements are displayed as block or inline elements.
@@ -1177,6 +1172,20 @@ Your page should look similar to this:
             **Extra Resource**: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
         </section>
 
+        <section class="slide" data-markdown>
+            ##CSS Display property
+
+            These default display styles can be changed using the CSS `display` property.
+
+            `display: inline` can be used to get block level elements to line up side by side, in a line.
+
+            `display: block` can be used to make inline elements behave like a block level element
+
+            `display: inline-block` is the best of both worlds. Elements will line up side by side, like inline elements and also render sizing properties like block elements.
+            
+            `display: none;` will hide the element.
+        </section>
+
         <section class="slide">
             <h2>Block & Inline Example</h2>
             <p>Suppose we had this HTML below. See how the same property and values give different results based on the element. Go ahead and update the CSS values to see how it changes.</p>
@@ -1191,26 +1200,16 @@ margin: 25px;</textarea>
 
             <textarea class="snippet" data-subject="#inline">background: orange;
 padding: 25px;
-margin: 25px;</textarea>
+margin: 25px;
+display: ;</textarea>
             <span id="inline">I'm a span so that makes me an inline element.</span> 
+
+            <div class="presenter-notes">
+                <p>Update the span example to inline-block and block to demonstrate the differences</p>
+            </div>
         </section>
 
-        <section class="slide" data-markdown>
-            ##CSS Display property
-
-            These default display styles can be changed using the CSS `display` property.
-
-            `display: inline` can be used to get block level elements to line up side by side, in a line.
-
-            `display: block` can be used to make inline elements behave like a block level element
-
-            `display: inline-block` is the best of both worlds. Elements will line up side by side, like inline elements and also render sizing properties like block elements.
-            
-            `display: none;` will hide the element.
-
-            Let's go back to the previous slide's example and try using the `display` property.
-        </section>
-
+        
         <section class="slide" data-markdown>
 ##Exercise #5 - Nav Updates (15 mins)
 
@@ -1383,9 +1382,24 @@ html {
         </section>
 
         <section class="slide" data-markdown>
+            ##Add a quote
+
+            Before we practice using classes and floats, let's just add a bit more content to our **About** page.  In the final example, a quote has been added for some extra personalization.  Also, adding more content to the page will make it longer, therefore scrollable, which we'll need for a later exercise.
+
+            Let's add a quote using the `blockquote` and `cite` tag. Feel free to use the example below, your own or one of the lorem ipsums. Add it under the paragraphs and below the closing `section` tag.
+
+```xml
+&lt;blockquote&gt;
+    &lt;p&gt;The more that you read, the more things you will know. The more that you learn, the more places you'll go.&lt;/p&gt;
+    &lt;cite&gt;&#x2015; Dr. Seuss, I Can Read With My Eyes Shut!&lt;/cite&gt;
+&lt;/blockquote&gt;
+```
+        </section>
+
+        <section class="slide" data-markdown>
 ##Class Exercise - classes and floats
 
-Add a class of "profile-image" to the image tag in your **About** page.  Then in your css file, add a new comment block at the bottom of the page for your **About** page styles.  Then add a float to get the text to wrap around the image.
+Add a "profile-image" class to the image tag in your **About** page.  Then in your css file, add a new comment block at the bottom of the page for your **About** styles.  Then `float` to get the text to wrap around the image.
 
 ```css  
 /* ABOUT PAGE
@@ -1403,19 +1417,32 @@ The text floats now, but it's a little squishy. Try setting the image width to b
         margin-right: 20px;
     }
 
-That looks much better but look what happened to the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear` on the footer element because that's where we want things to go back to normal.
+That looks much better but look what happened to the quote and the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear` on the `blockquote` element because that's where we want things to go back to normal. Let's add a class to it as well, in the HTML.
 
-```css
-/* FOOTER
------------------------------------------*/
-footer {
+```xml
+&lt;blockquote class=&quot;quote&quot;&gt;
+    ...
+&lt;/blockquote&gt; 
+```
+```
+.quote {
     clear: both;
+}
+```
+
+While we're here, let's update it by center aligning the quote and add some spacing.
+
+```
+.quote {
+    clear: both;
+    text-align: center;
+    padding-top: 20px;
 }
 ```
 
 Your page should now look similar to [exercise6a-about.html](project/examples/exercise6a-about.html).
         </section>
-
+            
         <section class="slide" data-markdown>
             ##Positioning in CSS
             
@@ -1478,14 +1505,14 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
 &lt;/div&gt;</code></pre>
 
             <textarea class="snippet" data-subject="#fixed">.container {
-    position:;
+    position: relative; /* has no effect on fixed */
 }
 .box { 
     width: 100px;
     height: 100px; 
     background: blue;
     position: fixed;
-    top:;
+    bottom: 0;
 }</textarea>
 
             <div id="fixed">
@@ -1496,43 +1523,46 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
         </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #6 - Positioning the Header & Nav
+##Class Exercise - Positioning the Header & Nav
 
-            1. Position the nav to the top right of the header element.
-            
-                ```
-                nav {
-                  position: absolute;
-                  right: 20px;
-                  top: 20px;
-                }
-                ```
+Position the nav to the top right of the header element.
 
-            1. The entire header itself should be set to fixed positioning so when you scroll the page, it stays fixed at the top.
-                ```
-                header {
-                    position: fixed;
-                }
-                ```
-                Notice that adding this property changes the page. When you position an element, it automatically becomes the width of its content. Set the width to 100% so it becomes as wide as the browser. 
+    header {
+        position: relative;
+    }
+    nav {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
 
-                Also, set the background to white so the content underneath doesn't show through when you scroll the page. Add a border on the bottom to create a separation of the header from the page content.
 
-                ```
-                header {
-                    position: fixed;
-                    width: 100%;
-                    background: white;
-                }
-                ```
-            1. Positioning takes the element out of the natural stacking order.  See how the profile picture "jumped" underneath the header when position: fixed was applied? It's because it doesn't "see" that there's an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the section element to push the content down below the fixed header.
-                ```
-                section {
-                    padding-top: 125px;
-                }
-                ```
+The *entire* header itself should be set to fixed positioning so when you scroll the page, it stays fixed at the top.
 
-            Your page should look like [example 6](project/examples/exercise6-about.html).  Note how the header looks the same on all three pages now... except the home page!  Where did the navigation disappear off to?
+    header {
+        position: fixed;
+    }
+
+Notice that adding this property changes the page. When you position an element, it automatically becomes the width of its content. Set the width to 100% so it becomes as wide as the browser. 
+
+Also, set the background to white so the content underneath doesn't show through when you scroll the page. Add a border on the bottom to create a separation of the header from the page content.
+
+
+    header {
+        position: fixed;
+        width: 100%;
+        background: white;
+        border-bottom: 1px solid #eee;
+    }
+
+Positioning takes the element out of the natural stacking order.  See how the profile picture "jumped" underneath the header when position: fixed was applied? It's because it doesn't "see" that there's an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the section element to push the content down below the fixed header.
+
+    section {
+        padding-top: 125px;
+    }
+
+
+Your page should look like [example 6](project/examples/exercise6-about.html).  Note how the header looks the same on all three pages now... except the home page!  Where did the navigation disappear off to?
         </section>
         
         <section class="slide" data-markdown>
