@@ -815,6 +815,32 @@ body {
 ```
         </section>
 
+        <section class="slide" data-markdown>
+            ##CSS colour values
+
+            **keywords** - use the actual name for most basic colours (red, green, blue, pink, etc) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".  
+            
+            **RGB (red-green-blue)** - Uses *three* numerical values from 0-255. 0 represents black, 255 represents white. See below for syntax.  
+            
+            **hex code** - Made up of the number sign (`#`) followed by six hexadecimal characters (0-9, A-F).
+            
+            ```
+            /* These are all the same colour */
+            p {
+                background: firebrick;
+                background: #B22222;
+                background: rgb(178,34,34);
+            }
+            ```
+
+            **Colour resources:**  
+            http://colours.neilorangepeel.com  
+            http://www.colorpicker.com  
+            http://www.colourlovers.com  
+            http://flatuicolors.com   
+            http://color.hailpixel.com
+        </section>
+
         <section class="slide title" data-markdown>
             #CSS & TYPOGRAPHY
         </section>
@@ -849,33 +875,6 @@ body {
 
             That's it!
         </section>
-            
-        <section class="slide" data-markdown>
-            ##CSS colour values
-
-            **keywords** - use the actual name for most basic colours (red, green, blue, pink, etc) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".  
-            
-            **RGB (red-green-blue)** - Uses *three* numerical values from 0-255. 0 represents black, 255 represents white. See below for syntax.  
-            
-            **hex code** - Made up of the number sign (`#`) followed by six hexadecimal characters (0-9, A-F).
-            
-            ```
-            /* These are all the same colour */
-            p {
-                background: firebrick;
-                background: #B22222;
-                background: rgb(178,34,34);
-            }
-            ```
-
-            **Colour resources:**  
-            http://colours.neilorangepeel.com  
-            http://www.colorpicker.com  
-            http://www.colourlovers.com  
-            http://flatuicolors.com   
-            http://color.hailpixel.com
-        </section>
-
 
         <section class="slide">
             <h2>CSS Font Styles</h2>
@@ -933,42 +932,54 @@ text-transform: lowercase;</textarea>
 
             In the above example, the CSS properties in the body selector is inherited by the children and descendants so all the text would be blue and display the Helvetica font. However, when a more specific selector is used (`h1`), it overrides the inherited values because it's more *specific*.
         </section>
-    
+        
+        <section class="slide">
+            <h2>Lunchtime exercise!</h2>
+
+            <p>Picking fonts is hard. Prepare for the post-lunch exercise by picking 2-3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a> for the body text, header and highlighted text. Here’s a <a href="/project/final/">the final project</a> for reference.</p>
+
+            <p>Need some help? Try Source Sans Pro, Quicksand, Merriweather or Codystar. The example project uses Open Sans (light), Nixie One and Pacifico.</p>
+
+            <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
+
+            <p>Feel free to peek at the next exercise ;)</p>
+
+            <div class="presenter-notes">
+                <p>Aim to get to lunch by 12:30-1:00pm. A 45min lunch is recommended. Let the learners know this is optional but most people tend to enjoy continuing with a bit of exercises over the break and this will help speed up the next exercise.</p>
+            </div>
+        </section>
         <section class="slide">
             <h2>Exercise #4 - Typography (20 MINS)</h2>
             <ol>
                 <li>
-                    <p>Practice using <a href="https://www.google.com/fonts">Google Fonts</a>. Find 2-3 fonts to be used for the body text, header and highlighted text.</p>
-
-                    <p>Picking fonts is hard. Need some help? Try Source Sans Pro, Quicksand, Merriweather or Codystar. The example project uses Open Sans (light), Nixie One and Pacifico.</p>
+                    Pick 3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a>.
                 </li>
                 <li>
-                    <p>Add the Google font stylesheet to the  of all three documents so the font files will load and can be accessed. Put it before your CSS file.</p>
+                    Add the Google font stylesheet to the  of all three documents so the font files will load and can be accessed. Put it before your CSS file.
+
 <pre><code>&lt;title&gt;Jane Smith | About Me&lt;/title&gt;
 &lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
 &lt;link rel="stylesheet" href="css/styles.css"&gt;
 </code></pre>
                 </li>
                 <li>
-                    <p>In the sample project, most of site uses the same font and color except for the h1 and a couple of accented blocks of text. Add the main font styles using the body selector.</p>
+                    In the sample project, most of site uses the same font and color except for the <code>h1</code> and a couple of accented blocks of text. Add the main font styles using the body selector.
 <pre><code>body {
     font-family: "Open Sans", sans-serif;
     color: #333;
 }
 </code></pre>
-                    <p>Remember the family tree? Since body is the ancestor of all the elements nested within, these styles are inherited by the child &amp; descendant elements.</p>
+                    Remember the family tree? Since <code>body</code> is the ancestor of all the elements nested within, these styles are inherited by the child &amp; descendant elements.
                 </li>
                 <li>
-                    <p>Let’s make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use h1 as the selector.</p>
-
+                    <p>Let’s make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use <code>h1</code> as the selector.</p>
 <pre><code>h1 {
     font-family: "Nixie One", serif;
 }
 </code></pre>
                 </li>
                 <li>
-                    <p>Both h1 and h2 share similar styles. They both are styled with uppercase letters and don’t use the default bold styles of headings. When multiple elements share the same styles, we can combine selectors to apply the styles in one declaration block. Combine selectors by separating them with a comma.</p>
-
+                    Both <code>h1</code> and <code>h2</code> share similar styles. They both have uppercase letters and don’t use the default bold styles of headings. When multiple elements share the same styles, we can <strong>combine selectors</strong> to apply the styles in one declaration block. Combine selectors by separating them with a comma.
 <pre><code>h1, h2 {
     font-weight: 300;
     text-transform: uppercase;
