@@ -295,4 +295,9 @@ table {
 	background: rgba(255, 255, 255, .9);
 	font-size: 18px;
 	margin: 0;
+	max-height: inherit;
+
+	p {
+		margin-top: 0;
+	}
 }
