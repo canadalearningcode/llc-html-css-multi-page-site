@@ -1473,11 +1473,14 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
         <section class="slide">
             <h2>Position: absolute</h2>
             
-            <p>When positioning an element as <code>absolute</code>, it needs to also be paired with <code>relative</code> positioning. <code>relative</code> on it's own doesn't affect other elements but it is used to <em>contain</em> an <code>absolute</code> position element to a particular spot. Otherwise, it will position itself to the <em>viewport</em>, or browser window.</p>
+            <p>When positioning an element as <code>absolute</code>, it can be tricky. It needs to also be paired with another positioning property, added to a parent element, to <em>contain</em> it to a particular spot.</p>
+
+            <p>Usually <code>relative</code> positioning is used because it doesn't affect other elements around it. However, the absolute values will be <em>relative</em> to the next parent element with relative, absolute or fixed positioning. If there is no such parent, it will default to the browser window.</p>
             <pre><code>&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-
+            
+            Try removing <code>position: relative;</code> in the example below and see what happens.<br>
             <textarea class="snippet" data-subject="#absolute">.container {
     position: relative;
 }
@@ -1486,7 +1489,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
     height: 100px; 
     background: blue;
     position: absolute;
-    top:;
+    top: 0;
 }</textarea>
 
             <div id="absolute">
@@ -1494,12 +1497,15 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
                     <div class="box"></div>
                 </div>
             </div>  
+            <div class="presenter-notes">
+                <p>Assure learners that this is a confusing concept and it will be demonstrated again in the upcoming exercise.</p>
+            </div>
         </section>
 
         <section class="slide">
             <h2>Position: fixed</h2>
             
-            <p>When positioning an element as <code>fixed</code>, it will <em>always</em> be positioned to the viewport. <code>relative</code> won't have any effect on this property. Also, it will always stay fixed on the page, even on page scroll.</p>
+            <p>When positioning an element as <code>fixed</code>, it will <em>always</em> be positioned to the viewport. <code>relative</code> or <code>absolute</code> won't have any effect on this property. Also, it will always stay fixed on the page, even on page scroll.</p>
             <pre><code>&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -1522,47 +1528,56 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
             </div>  
         </section>
 
-        <section class="slide" data-markdown>
-##Class Exercise - Positioning the Header & Nav
+        <section class="slide">
+            <h2>Class Exercise - Positioning the Header &amp; Nav</h2>
 
-Position the nav to the top right of the header element.
+            <p>Set the <em>entire</em> header itself to a fixed position so it stays in place at the top of the page on scroll.</p>
 
-    header {
-        position: relative;
-    }
-    nav {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
+<pre><code>header {
+    position: fixed;
+}
+</code></pre>
 
+            <p>Positioning takes the element out of the natural stacking order.  See how the profile picture “jumped” underneath the header when <code>position: fixed</code> was applied? It’s because it doesn’t “see” that there’s an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the <code>section</code> element to push the content down below the fixed header. Now try scrolling the page.</p>
 
-The *entire* header itself should be set to fixed positioning so when you scroll the page, it stays fixed at the top.
+<pre><code>section {
+    padding-top: 125px;
+}
+</code></pre>
 
-    header {
-        position: fixed;
-    }
+            <p>Update the <code>header</code> css by setting the background to white so the content underneath doesn’t show through when you scroll the page. Also, add a border on the bottom to create a separation of the header from the page content.</p>
 
-Notice that adding this property changes the page. When you position an element, it automatically becomes the width of its content. Set the width to 100% so it becomes as wide as the browser. 
+<pre><code>header {
+    position: fixed;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+</code></pre>
 
-Also, set the background to white so the content underneath doesn't show through when you scroll the page. Add a border on the bottom to create a separation of the header from the page content.
+            <p>Why doesn’t the header go all the way across? When you position an element, it automatically becomes the width of its content. Set the width to 100% so it becomes as wide as the browser. </p>
 
+<pre><code>header {
+    position: fixed;
+    background: white;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+</code></pre>
 
-    header {
-        position: fixed;
-        width: 100%;
-        background: white;
-        border-bottom: 1px solid #eee;
-    }
+            <p>Next up, position the nav to the top right of the header element. Since the header already has positioning applied to it, the nav will be relative to it.</p>
 
-Positioning takes the element out of the natural stacking order.  See how the profile picture "jumped" underneath the header when position: fixed was applied? It's because it doesn't "see" that there's an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the section element to push the content down below the fixed header.
+<pre><code>nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+</code></pre>
 
-    section {
-        padding-top: 125px;
-    }
-
-
-Your page should look like [example 6](project/examples/exercise6-about.html).  Note how the header looks the same on all three pages now... except the home page!  Where did the navigation disappear off to?
+            <p>Your page should look like <a href="project/examples/exercise6-about.html">example 6</a>.  Note how the header looks the same on all three pages now… except the home page!  Where did the navigation disappear off to?</p>
+            
+            <div class="presenter-notes">
+                <p>Reinforce the ordering of CSS styles for organization during this exercise and stress the importance of keeping the styles in related groupings to keep from possibly duplicating styles or creating specificity issues.</p>
+            </div>
         </section>
         
         <section class="slide" data-markdown>
