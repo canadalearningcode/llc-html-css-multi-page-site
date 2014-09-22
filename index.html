@@ -1653,6 +1653,94 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
         </section>
 
         <section class="slide" data-markdown>
+            ##Class Exercise: Background Images
+
+            So far, we've used `background` to add colours. We can also use it to add images. We've added images in the HTML using `img` but we can also set images as a background style using CSS.
+            
+            ```
+            background-image: url(path/to/file.jpg); /* longhand */
+            background: url(path/to/file.jpg);/* shorthand */
+            ```
+            Since our CSS file is *inside* a folder, use `../` to go *up and out* of the folder to get to the image files. Let's add it to **index.html**. Create a `.home` declaration block so this image only displays on the homepage and spans the entire page. (There are a few to choose from in your images folder.)
+
+            ```
+            .home {
+                background: url(../images/background-6.jpg);
+            }
+            ```
+            
+            Notice how the images repeat (unless you have a really large image). We can change that with another property, `background-repeat` or just add it to the shorthand `background` property.
+            
+            ```
+            /* shorthand */
+            .home {
+                background: url(../images/background-6.jpg) no-repeat; 
+            }
+
+            /* longhand */
+            .home {
+                background-image: url(../images/background-6.jpg); 
+                background-repeat: no-repeat;
+            }
+            ```
+        </section>
+        <section class="slide" data-markdown>
+            ##Background images (continued)
+            
+            The image is no longer repeating but it doesn't fit the space either. Your page should look similar to the below (unless your image is larger than your resolution). We'll need to add one more property to fix this.
+
+            ![homepage background](framework/img/workshop/homepage-norepeat.png)
+        </section>
+
+        <section class="slide">
+            <h2>Class exercise: Background-size</h2>
+
+            <p>Thanks to CSS3, we can now change the size of a background image. </p>
+            <p><code>background-size</code> is the longhand property.  To include it in the shorthand <code>background</code> property, it <em>must</em> be included after <code>background-position</code>, separated with the <code>/</code> character.  </p>
+<pre><code>.home {
+    background-image: url(../images/background-6.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}</code></pre>
+
+<pre><code>.home {
+    background: url(../images/background-6.jpg) no-repeat 50% / cover;
+}</code></pre>
+            <p>If no background position value is being used, background-size won’t work in the shorthand property so in this case, it may be less error prone to add it via the longhand property.</p>
+<pre><code>.home {
+    background: url(../images/background-6.jpg) no-repeat 50%;
+    background-size: cover;
+}
+</code></pre>
+            
+            <p>For good measure, since this image is a background image of the <code>body</code>, let's add one more rule to ensure the image covers the whole viewport and not just the height of the page content.</p>
+<pre><code>html, body {
+    height: 100%;
+}
+</code></pre>
+            <p><strong>Extra resources about background:</strong> <br>
+            <a href="http://jsfiddle.net/zyjtde73/1/">http://jsfiddle.net/zyjtde73/1/</a><br>
+            <a href="http://www.css3.info/preview/background-size/">More about background-size</a></p>
+
+            <p>Here are some resources for free images:</p>
+            
+            <ul>
+                <li><a href="http://superfamous.com/">http://superfamous.com/</a></li>
+                <li><a href="http://www.gratisography.com/">http://www.gratisography.com/</a></li>
+                <li><a href="http://littlevisuals.co/">http://littlevisuals.co/</a></li>
+                <li><a href="http://nos.twnsnd.co/">http://nos.twnsnd.co/</a></li>
+                <li><a href="http://unsplash.com/">http://unsplash.com/</a></li>
+            </ul>
+
+            <p>Your page should now look similar to <a href="project/examples/exercise8-home.html">example 8</a>.</p>
+
+            <div class="presenter-notes">
+                <p>You will probably be pressed for time at this point. Just explain what "cover" does and let them know there are other options available and there are additional resources at the bottom of this slide.</p>
+            </div>
+        </section>
+
+        <section class="slide" data-markdown>
             ##Forms: organizing the interface
             
             Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
@@ -1720,100 +1808,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
 
             Your contact page and form should look similar to [Example 9](project/examples/exercise9-contact.html).
         </section>
-        <section class="slide" data-markdown>
-            ##Exercise #10 - Background Images
-
-            Before we style the contact form, let's go over how background images work.  We've added images in the HTML using `img` but we can also set images as a background style using CSS.
-            
-            ```
-            background-image: url(path/to/file.jpg); /* longhand */
-            background: url(path/to/file.jpg);/* shorthand */
-            ```
-            Since our CSS file is *inside* a folder, use `../` to go *up and out* of the folder to get to the image files. Let's add it to our Contact page. Just like the home page, add a class to the `body` tag to override or customize any styles for any element contained within the contact page.
-
-            ```
-            &lt;body class=&quot;contact&quot;&gt;
-            ```
-
-            ```
-            .contact {
-                background: url(../images/your-image.jpg);
-            }
-            ```
-            
-            Note how the images repeat (unless you have a really large image). We can override that with another property, `background-repeat` or just add it to the shorthand `background` property.
-            
-            ```
-            /* shorthand */
-            .contact {
-                background: url(../images/background-1.jpg) no-repeat; 
-            }
-
-            /* longhand */
-            .contact {
-                background-image: url(../images/background-1.jpg); 
-                background-repeat: no-repeat;
-            }
-            ```
-        </section>
-        <section class="slide" data-markdown>
-            ##CSS3 Background-size
-
-            The image is no longer repeating but it doesn't fit the space either.  Thanks to CSS3, we can now change the size of a background image! 
-
-            Let's take a look at an example of the different options: http://jsfiddle.net/zyjtde73/1/
-
-            `background-size` is the longhand property.  To include it in the shorthand `background` property, it *must* be included after `background-position`, separated with the `/` character.  
-            
-            ```
-            .contact {
-                background-image: url(../images/background-1.jpg);
-                background-repeat: no-repeat;
-                background-position: 50%;
-                background-size: 100%;
-            }
-            ```
-            ```
-            .contact {
-                background: url(../images/background-1.jpg) no-repeat 50% / 100%;
-            }
-            ```
-            If no background position value is being used, background-size won't work in the shorthand property so in this case, it may be less error prone to add it via the longhand property.
-            
-            ```
-            .contact {
-                background: url(../images/background-1.jpg) no-repeat 50%;
-                background-size: 100%;
-            }
-            ```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Exercise #10 - Background Images (continued)
-
-            1. Go back to the `.contact` CSS and add the background-size option.
-            
-                ```
-                .contact {
-                    background: url(../images/background-8.jpg) no-repeat;
-                    background-size: cover;
-                }
-                ```
-
-            2. Add a different background image for the home page.
-
-            There are a few background images in your project folder to choose from or check out these resources for free images:
-
-            * http://superfamous.com/
-            * http://www.gratisography.com/
-            * http://littlevisuals.co/
-            * http://nos.twnsnd.co/
-            * http://unsplash.com/
-
-
-            Your pages should now look similar to [example 10](project/examples/exercise10-home.html).
-        </section>
-
+        
         <section class="slide">
             <h2>Center aligning with margin</h2>
             <p>The margin property can also be used to center align block level elements. First, a width needs to be set. Then, setting the left &amp; right values to <code>auto</code> will find the center of the page. The <code>0</code> just refers to the top and bottom value.</p>
