@@ -1585,9 +1585,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
 
             The final design for the home page is different from the other two pages including the order of the HTML. On **index.html**, the nav HTML comes *before* the header.  The nav didn't disappear, it's just *under* the header.  
 
-            If the header wasn't set to be fixed to the top of the page, it would stack underneath the nav.
-
-            For the home page, we can use a **class** attribute to override the styles that are shared between the About and Contact page and apply specific styles needed for the home page.
+            For the Home page, we can add a **class** attribute to override the styles that are shared between the About and Contact page. This class will allow us to use a more specific selector to apply specific styles just for the home page.
 
             Let's add a class to the `body` tag so we can override any styles for any element contained within the page.
 
@@ -1596,9 +1594,9 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
             ```
         </section>
         <section class="slide" data-markdown>
-            ##Exercise #7 - Homepage Header & Nav
+            ##Class Exercise #7 - Homepage Header & Nav
 
-            Override the header styles not needed for the home page.
+            These are the styles we are going to change to update the home page.
 
             * remove the fixed positioning
             * remove the white background colour
@@ -1606,7 +1604,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
             * center align the text
             * push the heading down from the top of the page
 
-            We'll use the new `home` class we created to override the styles by using a more specific selector.
+            We'll use the new `home` class we created to override the styles by using a more *specific* selector.
 
             ```
             .home header {
@@ -1626,6 +1624,12 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
             .home header h2 {
               font-size: 40px;
             }
+            ```
+            
+            Add the `.highlight` class to your first name again, to match the styles on the other pages.
+            
+            ```xml
+            &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
             ```
 
             Your page should now look something like [example 7](project/examples/exercise7-home.html), located in your examples folder.

@@ -112,12 +112,13 @@ nav a {
   width: 50%;
   margin-right: 20px;
 }
-
-
-/* FOOTER
------------------------------------------*/
-footer {
+.quote {
   clear: both;
+  text-align: center;
+  padding-top: 20px;
 }
+
+
+
 
 
