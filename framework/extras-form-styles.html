@@ -16,33 +16,98 @@
 
     <!-- Workshop-specific styles -->
     <link rel="stylesheet" href="css/workshop.css">
-
-    <!-- Takes care of CSS3 prefixes! -->
-    <script src="scripts/prefixfree.min.js"></script>
 </head>
 
 <body>
     
     <base target="_blank">
-
     <main>
-    	<section class="slide" data-markdown>
-            ##Form controls: putting it all together
-            
-            `input` elements are used to allow the user to type in their information and is used with a `type` attribute to determine the kind of information it is.
+        <section class="slide" data-markdown>
+##Contact Page: Add a background image
 
-            The `label` tags are used to label the input.
+Add a class of `contact` to the `body` tag in the HTML. Just like for the home page, we'll use this to apply a background image to the `body` only for the **Contact** page.
 
-            The `name` attribute is used to label the fields when sending the form data to the server. 
-            
-            The `for` and `id` attributes are used to associate the label to the input and should have matching values.
+```
+&lt;body class="contact">
+```
 
-            A form can contain any HTML markup (paragraphs, lists, etc.) in addition to form specific HTML tags.
+Add a new comment block to organize your page specific styles.
 
-            [Each part of a form is considered a paragraph](http://dev.w3.org/html5/spec-LC/forms.html#forms) and can be separated using `&lt;p>` elements. 
+```css
+/* CONTACT PAGE
+-----------------------------------------*/
+.contact {
+  background: url(../images/background-8.jpg) no-repeat;
+  background-size: cover;
+}
+```
+Your page should now look similar to this:
 
-            **Further reading: ** [MDN forms](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
+![contact page bg](img/workshop/contact-bg.png)
         </section>
+
+        <section class="slide">
+            <h2>Center aligning with margin</h2>
+            <p>The margin property can also be used to center align block level elements. First, a width needs to be set. Then, setting the left &amp; right values to <code>auto</code> will find the center of the page. The <code>0</code> just refers to the top and bottom value.</p>
+
+            <p>If the css looked like this:</p>
+
+            <pre><code>.box {
+    background-color: lightblue;
+    height: 100px;
+    width: 600px;
+    margin: 0 auto;
+}</code></pre>
+
+            <p>The element would render like this example below.  Notice how it always stays in the middle of the page, even if you minimize or maximize the browser.</p>
+
+            <div style="background-color: lightblue; height: 100px; width: 600px; margin: 0 auto;">box</div>
+        </section>
+
+        <section class="slide" data-markdown>
+##Styling the form
+
+In the markup for the form, a class of `contact-form` was included in the `form` tag to be used for styling since all the form elements are contained within it.
+
+Set a width for the form and center align it on the page. Also add a background colour to see the text more clearly over the image.
+
+```
+.contact-form {
+    width: 600px;
+    margin: 10px auto;
+    background: white;
+}
+```
+
+Add some padding to `contact-form` to keep the text from going right up to the edge. Also try adding the CSS property `border-radius` to add some rounded corners.
+
+```
+.contact-form {
+    width: 600px;
+    margin: 10px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+```
+
+To get the input and textarea to span all the way across the form, we can set the width to 100% so it takes up the entire width of the form. It's also possible to override the default border styles too.  Add height to the textarea just to give more room for the user to type a message.
+
+```
+input, 
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+textarea {
+  height: 100px;
+}
+```
+Your form should look similar to the [contact-page-styles.html](../project/examples/contact-page-styles.html) example.
+
+There's so much more you can do with forms. Check out this project's final css file to see what other changes you can add or take a look at this resource: http://code.tiffbits.com/css3-form-styling-cheat-sheet/
+        </section>       
     </main><!-- cls main section -->
 
     <footer>

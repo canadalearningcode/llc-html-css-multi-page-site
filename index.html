@@ -1787,122 +1787,34 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
             <p>Your contact page and form should look similar to <a href="project/examples/exercise9-contact.html">Example 9</a>.</p>
 
             <div class="presenter-notes">
-                <p>Give an general overview of what each from control is used for as you are adding in the code. There's further resources available in the next slide.</p>
+                <p>Give a general overview of what each from control is used for as you are adding in the code. There's further resources available in the homework/next steps section.</p>
 
-                <p>This will be the official last exercise for the day. Though there are plenty of other lessons in the next steps/homework section. If you find yourself with extra time, congratulate the class on picking up the concepts so well and either give them free time to tweak their projects, pick one of the homework assignments to go through together. Save some time to briefly cover the next steps.</p>
+                <p>This will be the official last exercise for the day. If you find yourself with extra time, congratulate the class on picking up the concepts so well and either give them free time to tweak their projects or pick one of the homework assignments to go through together. Save some time to briefly cover the next steps.</p>
             </div>
         </section>
 
-        <!-- <section class="slide" data-markdown>
-            ##Forms
+        <div class="slide centered" data-markdown>
+            ##And we're done!
+
+            ![what?](http://i.imgur.com/RpCC4.gif)
+
+            Ok, not quite done. Let's talk about some next steps.
+        </div>
+                
+        <div class="slide" data-markdown>
+            ##Next Steps & "Homework"
             
-            Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
+            Though we've covered a lot of material today, there are still lots of things to add to give your web page that extra personalization, finalize some styles and add some polish.
 
-            Today we're going to use http://forms.brace.io/ to submit our form info.  Through this service, the information will be forwarded to your email. Simple!
-
-            All forms begin with the `form` element and requires 
-            two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
-
-            Since we're using a 3rd party service, the `action` value is their url *and* the email you want the form to be submitted to.
-
-            ```xml
-            &lt;form method="POST" action="http://forms.brace.io/hello@email.com">
-                ...
-            &lt;/form>
-            ```
-        </section> -->
-
-        <!-- <section class="slide">
-            <h2>Class Exercise #9 - Contact Form</h2>
-
-            <p>On your contact page, under the header, create a new <code>&lt;section&gt;</code> tag.  Add the below markup <em>in between</em> the <code>section</code> element.</p>
-            <p>Brace.io requires that you verify your email first. The verification email will be sent on the <strong>first</strong> form submit so make sure you test your form first!</p>
-
-<pre><code class="xml">&lt;section&gt;
-    &lt;form class="contact-form" action="http://forms.brace.io/hello@your-email.com" method="POST"&gt;
-        &lt;h2&gt;Let's meet for coffee!&lt;/h2&gt;
-
-        &lt;p&gt;Send me a message at &lt;a href="mailto:hello@your-email.com"&gt;hello@your-email.com&lt;/a&gt;, 
-        use the form below or say "hi!" on one of my social networks.&lt;/p&gt;
-        &lt;p&gt;
-            &lt;label for="name"&gt;Name&lt;/label&gt;
-            &lt;input id="name" type="text" name="name"&gt;
-        &lt;/p&gt;
-        &lt;p&gt;
-            &lt;label for="email"&gt;Email&lt;/label&gt;
-            &lt;input id="email" type="email" name="replyto"&gt;
-        &lt;/p&gt;
-        &lt;p&gt;
-            &lt;label for="message"&gt;Message&lt;/label&gt;
-            &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
-        &lt;/p&gt;
-        &lt;input type="submit" value="SEND"&gt;
-    &lt;/form&gt;
-&lt;/section&gt;
-</code></pre>
-            <p>Your contact page and form should look similar to <a href="project/examples/exercise9-contact.html">Example 9</a>.</p>
-            <p>For more information about forms, <a href="framework/extras-form-controls.html">go here</a>.</p>
-
-            <div class="presenter-notes">
-                <p>Give an general overview of what each from control is used for as you are adding in the code. There's further resources available in the link provided in this slide.</p>
-            </div>
-        </section> -->
+            Here are some additional lessons you can try:
+            
+            * [Sticky Footer]()
+            * [Contact page](framework/extras-form-styles.html) - adding background images & form styling
+            * [Forms, pt 2]() - how to submit a form
+            * [Home page: additional styles]() - this includes using icon fonts.
+            * [Add a favicon]()
+        </div>
         
-        <section class="slide">
-            <h2>Center aligning with margin</h2>
-            <p>The margin property can also be used to center align block level elements. First, a width needs to be set. Then, setting the left &amp; right values to <code>auto</code> will find the center of the page. The <code>0</code> just refers to the top and bottom value.</p>
-
-            <textarea class="snippet" data-subject="#margin-auto">background-color: lightblue;
-height: 100px;
-width: 600px;
-margin: 0 auto;</textarea>
-            <div id="margin-auto">box</div>
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Exercise #11 - Contact Form (continued)
-
-            In the markup for the form, a class of `contact-form` was included in the `form` tag to be used for styling since all the form elements are contained within it.
-
-            1. Set a width for the form and center align it on the page. Also add a background colour to see the text more clearly over the image.
-
-                ```
-                .contact-form {
-                    width: 600px;
-                    margin: 10px auto;
-                    background: white;
-                }
-                ```
-            
-            1. Add some padding to `contact-form` to keep the text from going right up to the edge. Also try adding the CSS property `border-radius` to add some rounded corners.
-
-                ```
-                .contact-form {
-                    width: 600px;
-                    margin: 10px auto;
-                    background: white;
-                    padding: 20px;
-                    border-radius: 4px;
-                }
-                ```
-            1. To get the input and textarea to span all the way across the form, we can set the width to 100% so it takes up the entire width of the form. It's also possible to override the default border styles too.  Add height to the textarea just to give more room for the user to type a message.
-
-                ```
-                input, 
-                textarea {
-                  width: 100%;
-                  border: 1px solid #ccc;
-                  padding: 5px;
-                }
-                textarea {
-                  height: 100px;
-                }
-                ```
-            Your form should look similar to [example 11](project/examples/exercise11-contact.html).
-
-            There's so much more you can do with forms. Check out this project's final css file to see what other changes you can add or take a look at this resource: http://code.tiffbits.com/css3-form-styling-cheat-sheet/
-        </section>
-
         <section class="slide" data-markdown>
             ##Getting ready Final Exercise #12
 
