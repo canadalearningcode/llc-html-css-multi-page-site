@@ -1886,19 +1886,10 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
     <!-- Uncomment the plugins you need -->
     <script src="framework/scripts/plugins/css-edit.js"></script>
     <script src="framework/scripts/plugins/css-snippets.js"></script>
-    <script src="framework/scripts/plugins/css-Ctrls.js"></script>
-    <!-- <script src="plugins/code-highlight.js"></script>-->
-
     <script src="framework/scripts/plugins/markdown/marked.js"></script>
     <script src="framework/scripts/plugins/markdown/markdown.js"></script>
     <script src="framework/scripts/plugins/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-
-    <!-- Prettify -->
-    <script src="framework/scripts/plugins/prettify.js"></script>
-    <script src="framework/scripts/plugins/lang-css.js"></script>
-    <script src="framework/scripts/plugins/prism.js"></script>
-
     <script>
         var slideshow = new SlideShow();
 
@@ -1908,15 +1899,7 @@ Your page should now look similar to [exercise6a-about.html](project/examples/ex
             new CSSSnippet(snippets[i]);
         }
 
-        // Opens all links in a new window
-        var links = document.getElementsByTagName("a");
-        for (var i = 0; i < links.length; i++) {
-            var link = links[i];
-            link.addEventListener(function() {
-                window.open(this.href);
-            });
-        }
-
+        // Add "edit me" to editable code blocks
         jQuery(document).ready(function(){
             jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
         });
