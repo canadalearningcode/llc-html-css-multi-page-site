@@ -23,7 +23,8 @@
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="360">
-
+    
+    <!-- opens all links in a new window -->
     <base target="_blank">
 
     <!-- First/Intro slide -->
@@ -231,11 +232,6 @@ padding: 20px;</textarea>
     <script src="framework/scripts/plugins/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
-    <!-- Prettify -->
-    <script src="framework/scripts/plugins/prettify.js"></script>
-    <script src="framework/scripts/plugins/lang-css.js"></script>
-    <script src="framework/scripts/plugins/prism.js"></script>
-
     <script>
         var slideshow = new SlideShow();
 
@@ -245,15 +241,7 @@ padding: 20px;</textarea>
             new CSSSnippet(snippets[i]);
         }
 
-        // Opens all links in a new window
-        var links = document.getElementsByTagName("a");
-        for (var i = 0; i < links.length; i++) {
-            var link = links[i];
-            link.addEventListener(function() {
-                window.open(this.href);
-            });
-        }
-
+        // Adds "edit me" note to editable code areas
         jQuery(document).ready(function(){
             jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
         });

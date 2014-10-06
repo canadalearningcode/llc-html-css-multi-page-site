@@ -66,6 +66,14 @@ h3 + p {
   margin-top: 0;
 }
 
+h4 {
+  margin-bottom: 6px;
+  letter-spacing: 0;
+}
+h4 + pre {
+  margin-top: 6px;
+}
+
 a {
   color: #444444;
 }
@@ -74,6 +82,9 @@ a:hover {
   color: #b109aa;
 }
 
+pre {
+  margin: 8px 0;
+}
 pre code {
   overflow-y: auto;
 }
@@ -117,6 +128,11 @@ footer .license img {
 .slide {
   padding: 45px 5%;
   height: 96%;
+}
+.slide:after {
+  content: " ";
+  display: block;
+  height: 200px;
 }
 .slide img {
   max-width: 100%;
@@ -177,8 +193,9 @@ textarea.snippet {
   font-size: 14px;
   padding: 2px 7px;
   position: relative;
-  bottom: -33px;
+  bottom: -10px;
   right: 8px;
+  margin-bottom: -25px;
 }
 
 /* table styles */
@@ -196,6 +213,9 @@ table img {
 }
 .example p {
   margin: 10px 0;
+}
+.example:last-child {
+  margin-bottom: 50px;
 }
 
 /* Incremental slides */
