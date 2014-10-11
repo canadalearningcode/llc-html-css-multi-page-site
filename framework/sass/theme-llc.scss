@@ -58,6 +58,15 @@ h1, h2 {
 }
 h2 {
 	font-size: $font-size-h2;
+
+	+ pre {
+		margin-top: 25px;
+	}
+	code {
+		font-size: inherit;
+		text-transform: lowercase;
+		font-weight: normal;
+	}
 }
 h3 {
 	margin-bottom: 5px;
@@ -65,6 +74,14 @@ h3 {
 
 	+ p {
 		margin-top: 0;
+	}
+}
+h4 {
+	margin-bottom: 6px;
+	letter-spacing: 0;
+
+	+ pre {
+		margin-top: 6px;
 	}
 }
 
@@ -77,8 +94,12 @@ a {
 	}
 }
 
-pre code {
-	overflow-y: auto;
+pre {
+	margin: 8px 0;
+
+	code {
+		overflow-y: auto;
+	}
 }
 code {
 	font-family: Monaco, Andale Mono, monospace;
@@ -122,7 +143,15 @@ footer {
 .slide {
 	padding: 45px 5%;
 	height: 96%;
-
+	
+	// Adds extra space to the bottom of the slides to allow 
+	// presenters to scroll the page up so people in the back
+	// of the room can see the bottom of the slides.
+	&:after {
+		content: " ";
+		display: block;
+		height: 200px;
+	}
 	img {
 		max-width: 100%;
 	}
@@ -190,8 +219,9 @@ textarea.snippet {
 	font-size: 14px;
 	padding: 2px 7px;
 	position: relative;
-	bottom: -33px;
-	right: 8px;
+	bottom: -10px;
+	right: 8px; 
+	margin-bottom: -25px;
 }
 
 
@@ -213,6 +243,10 @@ table {
 
 	p {
 		margin: 10px 0;
+	}
+
+	&:last-child {
+		margin-bottom: 50px;
 	}
 }
 
