@@ -220,7 +220,9 @@ The are many different HTML tags used to create structure and add semantics (mea
         <section class="slide">
             <h2>Nesting HTML tags</h2>
 
-            <p>Tags are often nested within other tags and make up the <em>document tree</em>. The relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc. Also, whitespace through indentation of nested elements makes HTML easier to read.</p>
+            <p>Tags are often nested within other tags and make up the <em>document tree</em>. The relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc. Understanding this relationship will come in handy for writing CSS.</p>
+
+            <p>Also, whitespace through indentation of nested elements makes HTML easier to read.</p>
             <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;&lt;!-- child of html tag, parent of title tag --&gt;
@@ -388,7 +390,7 @@ Remember, a website is basically a collection of pages linking to other HTML pag
 
 Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. Prior to HTML5, the `&lt;div&gt;` tag was used for grouping elements. While it is still valid, HTML5 introduced a number of semantic tags that better describe blocks of content.  You've already seen two of them: `&lt;header&gt;` and `&lt;footer&gt;`. We'll be using two more today: `&lt;nav&gt;` and `&lt;section&gt;`.
 
-For the navigation, adding a `&lt;nav&gt;` tag around the list will make it more semantic.  It can also be grouped with the headings by adding it *inside* of the `&lt;header&gt;` tag.
+For the navigation, adding a `&lt;nav&gt;` tag around the list will make it more semantic.  It can also be grouped with the headings by adding it *inside* of the `&lt;header&gt;` tag. Let's add it to our project now.
 
 ```xml
 &lt;header&gt;
@@ -410,8 +412,8 @@ For the navigation, adding a `&lt;nav&gt;` tag around the list will make it more
         <section class="slide">
             <h2>Class exercise: Add a navigation</h2>
 
-            <p>Let’s go back to <strong>index.html</strong> and add the navigation for the three pages: <strong>Home</strong>, <strong>About</strong>, <strong>Contact</strong>.</p> 
-            <p>Eventually we’ll have 3 HTML pages to link to as well, <strong>index.html</strong>, <strong>about.html</strong> and <strong>contact.html</strong>. Let's also add <em>relative</em> links to these pages in the navigation list. It should look like this:</p>
+            <p>Go back to <strong>index.html</strong> and add the navigation for the three pages: <strong>Home</strong>, <strong>About</strong>, <strong>Contact</strong>.</p> 
+            <p>Eventually we’ll have 3 HTML pages, <strong>index.html</strong>, <strong>about.html</strong> and <strong>contact.html</strong> so add <em>relative</em> links to these pages in the navigation list. It should look like this:</p>
 
             <p><img src="framework/img/workshop/nav-list.png" alt="nav list" title=""></p>
  
@@ -619,7 +621,7 @@ For reference, [exercise3-about.html](project/examples/exercise3-about.html) can
         <section class="slide" data-markdown>
 ##CSS & HTML
 
-Though CSS and HTML are closely paired, CSS is a different language and has its own syntax rules. CSS is made up of *declarations* that refer to HTML elements and define what those elements should look like.
+Though CSS and HTML are closely paired, CSS is a different language and has its own syntax rules. 
 
 CSS separates content (i.e. text) from presentation (i.e. text colour) and helps to reduce redundancy.  
 
@@ -629,233 +631,35 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
         <section class="slide" data-markdown>
             ##CSS Terminology & Syntax
     
-            **Selectors:** used to determine which element(s) to apply the styles to. Can target an HTML tag, class or ID.  
-            **Declaration block:** consists of a list of declarations (rules to follow) wrapped in curly braces `{}`.  
-            **Declarations** or rules to follow, are written using `property:value` pairs.
+            **Selectors:** used to determine which element(s) to apply the styles to.  
+            **Declarations:** the rules to follow & are written using `property:value` pairs. Each rule must end with a semi-colon (`;`) to indicate that the instruction is complete and are contained within a pair of curly brackets `{}`.
 
             ```css
             selector {
                 property: value;
             }
             ```
-            **Properties** determine the type of style to be applied to
-            the element (e.g. color).  
-            **Values** are specific to the property. Declarations must end with a semi-colon (`;`) to indicate that the instruction is complete.
+            **Properties** determine the type of style to be applied to the element.  **Values** are specific to the property. 
+
+            ```css
+            h1 {
+                color: blue;
+                font-size: 12px;
+            }
+            ```
             
             ![](framework/img/workshop/css-declaration.png)
         </section>
 
         <section class="slide">
-            <h2>CSS Terminology & Syntax</h2>
-
-            <pre><code>h1 {
-    color: blue;
-    font-size: 12px;
-}</code></pre>
-
-            <p>In the above example:</p>
-
-            <ul>
-                <li>Which one is the selector? <br>
-                    <span class="delayed">h1</span>
-                </li>
-                <li class="delayed">Which one is the property? <br>
-                    <span class="delayed">color &amp; font-size</span>
-                </li>
-                <li class="delayed">Which one is the value? <br>
-                    <span class="delayed">blue &amp; 12px</span>
-                </li>
-            </ul>        
-        </section>
-
-        <section class="slide">
             <h2>Write some CSS</h2>
-            <p>Let's change the  styles of the paragraphs on this slide using <code>font-size</code>.</p>
+            <p>Let's try changing the font-size of the paragraphs on this slide using the <code>font-size</code> property.</p>
 
             <textarea class="snippet">p {
     
 }</textarea>
             <div class="example">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-            </div>
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Descendant selectors
-            
-            Matches any element that is a descendant (nested tag) of the element declared before it.
-            
-            ```css
-            p a {
-                /* targets only anchor link tags nested inside of a p tag */
-            }
-            ```
-            **Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
-
-            ```
-            nav ul li a span {
-                /* NOOOOOOOOOOO */
-            }
-            ```
-
-            Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. It’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Comments
-            
-            Comments in CSS are written within a slash & asterix (`/* */`) and closes in the opposite order. Comments can be used for the same reasons as HTML comments: leaving notes, hiding code for later and for organization.
-            
-            ```
-            p {
-                color: #cc0066; /* magenta */
-            }
-
-            /* HEADER STYLES */
-            header {
-                width: 80%;
-            }
-
-            /*  Saving this for later
-            .slider {
-                width: 100px;
-                background: red;
-            }
-            */ 
-            ``` 
-        </section>
-
-        <section class="slide" data-markdown>
-##Referencing CSS
-
-There are three ways to include (otherwise known as *referencing*) CSS in an HTML page. Today we'll be using the **external** method. To read more about **inline** and **internal**, view [this extra resource](framework/extras-referencing-css.html).
-
-The external method links to a separate style sheet file and is recommended because it separates the CSS from the HTML document. Only the CSS file needs to be updated.
-
-The style sheet is referenced in the `&lt;head&gt;` of the document with a `&lt;link&gt;` tag and two **attributes**, `rel` (relationship) and `href`. Just like links, the value of `href` points to the location of the style sheet. 
-
-Though it is not required, css files are often saved in a css folder for organization, so make sure the file path points to the appropriate directory.
-
-```
-&lt;head&gt;
-    &lt;title&gt;Page Title&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
-&lt;/head&gt;
-```
-        </section>
-        
-        <section class="slide" data-markdown>
-##Mini-exercise
-
-In Sublime Text, create a new CSS file by selecting **File > New File** or use shortcut, **CMND/CNTRL + N**. Name the file with a **.css** extension.  Some commonly used names are global.css, main.css or style.css. Let's use **style.css** and add it to **about.html**.
-
-**Protip!** Sublime Text has a shortcut.  Type "link" with no brackets, then the tab key. Voila!
-
-```
-&lt;link rel="stylesheet" href="css/style.css">
-```
-
-
-Let's do a quick check to see if it works and is linked properly by adding a background color on the entire viewport as a test.
-
-```
-body {
-    background: lightblue;
-}
-```
-Notice that the content doesn't quite go to the edge of the page? That's because there's default spacing in the body element. 
-
-![](framework/img/workshop/body-margin.png)
-
-Remove the test background color and replace it with `padding` and `margin` to reset the value. (more on these later)
-
-```
-body {
-    padding: 0;
-    margin: 0;
-}
-```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##CSS colour values
-
-            **keywords** - use the actual name for most basic colours (red, green, blue, pink, etc) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".  
-            
-            **RGB (red-green-blue)** - Uses *three* numerical values from 0-255. 0 represents black, 255 represents white. See below for syntax.  
-            
-            **hex code** - Made up of the number sign (`#`) followed by six hexadecimal characters (0-9, A-F).
-            
-            ```
-            /* These are all the same colour */
-            p {
-                background: firebrick;
-                background: #B22222;
-                background: rgb(178,34,34);
-            }
-            ```
-
-            **Colour resources:**  
-            http://colours.neilorangepeel.com  
-            http://www.colorpicker.com  
-            http://www.colourlovers.com  
-            http://flatuicolors.com   
-            http://color.hailpixel.com
-        </section>
-
-        <section class="slide title" data-markdown>
-            #CSS & TYPOGRAPHY
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Web safe fonts
-
-            Fonts can be changed with the `font-family` property. However, not all fonts are installed on all computers so it's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly included on most computers.
-
-            It's best practice to list at least two or three font options to provide a fall-back if the user doesn't have the preferred fonts installed.
-
-            ```
-            body {
-                font-family: Helvetica, Arial, sans-serif;
-            }
-            ```
-
-            Here's a handy resource for referencing web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Web fonts
-
-            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* stylesheet and fonts and no file downloads are necessary. To use these fonts:
-
-            * Select the fonts you want to use and **Add to Collection**.  
-            * You can **Review** them to take a closer look, then choose **Use** when ready.
-            * Select font weights. The more you choose, the more it will slow down page load time.
-            * The default character set should contain what you need. Only select an option if you need to add additional language support.
-            * Grab the `&lt;link&gt;` code snippet and add it the `&lt;head&gt;` part of your page.
-            * Use the new fonts with the `font-family` property as listed in the example on the Google Fonts page.
-
-            That's it!
-        </section>
-
-        <section class="slide">
-            <h2>CSS Font Styles</h2>
-            <p>Let's look at a few CSS properties for styling text together and change some values below and see what happens!</p>
-            <textarea class="snippet" data-subject="#css-type">color: slateblue;
-line-height: 1.25;
-font-family: Helvetica, Arial, serif;
-font-size: 16px;
-font-weight: normal;
-text-transform: lowercase;</textarea>
-
-            <div id="css-type" class="example">
-                <p>Just some text to test out the above styles. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni repellat sunt quae fugit illum in aut sed, quis nesciunt totam veritatis, dolores alias modi fuga commodi dicta facilis, consequatur temporibus.</p>
-            </div>
-
-            <p>Resource: <a href="http://reference.sitepoint.com/css/typography">Sitepoint Typographical Properties</a></p>
-
-            <div class="presenter-notes">
-                <p>Explain what each property does while updating each example in the code editor.</p>
             </div>
         </section>
 
@@ -898,24 +702,182 @@ text-transform: lowercase;</textarea>
 
             In the above example, the CSS properties in the body selector is inherited by the children and descendants so all the text would be blue and display the Helvetica font. However, when a more specific selector is used (`h1`), it overrides the inherited values because it's more *specific*.
         </section>
+
+        <section class="slide" data-markdown>
+            ##Comments
+            
+            Comments in CSS are written within a slash & asterix (`/* */`) and closes in the opposite order. Comments can be used for the same reasons as HTML comments: leaving notes, hiding code for later and for organization.
+            
+            ```
+            p {
+                color: #cc0066; /* magenta */
+            }
+
+            /* HEADER STYLES */
+            header {
+                width: 80%;
+            }
+
+            /*  Saving this for later
+            .slider {
+                width: 100px;
+                background: red;
+            }
+            */ 
+            ``` 
+        </section>
+
+        <section class="slide" data-markdown>
+##Referencing CSS
+
+There are three ways to include (otherwise known as *referencing*) CSS in an HTML page. Today we'll be using the **external** method. To read more about **inline** and **internal**, view [this extra resource](framework/extras-referencing-css.html).
+
+The external method links to a separate style sheet file and is recommended because it separates the CSS from the HTML document. Only the CSS file needs to be updated.
+
+The style sheet is referenced in the `&lt;head&gt;` of the document with a `&lt;link&gt;` tag and two **attributes**, `rel` (relationship) and `href`. Just like links, the value of `href` points to the location of the style sheet. 
+
+Though it is not required, css files are often saved in a separate css folder for organization, so make sure the file path points to the appropriate directory.
+
+```
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;/head&gt;
+```
+        </section>
+        
+        <section class="slide" data-markdown>
+##Class Exercise
+
+In Sublime Text, create a new CSS file by selecting **File > New File** or use shortcut, **CMND/CNTRL + N**. Name the file with a **.css** extension.  Some commonly used names are global.css, main.css or style.css. Let's use **style.css** and add it to **about.html**.
+
+**Protip!** Sublime Text has a shortcut.  Type "link" with no brackets, then the tab key. Voila!
+
+```
+&lt;link rel="stylesheet" href="css/style.css">
+```
+
+
+Let's do a quick check to see if it works and is linked properly by adding a background color on the entire viewport as a test.
+
+```
+body {
+    background: lightblue;
+}
+```
+Notice that the content doesn't quite go to the edge of the page? That's because there's default spacing in the body element. 
+
+![](framework/img/workshop/body-margin.png)
+
+Remove the test background color and replace it with `padding` and `margin` to reset the value. (more on these later)
+
+```
+body {
+    padding: 0;
+    margin: 0;
+}
+```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##CSS colour values
+
+            **keywords** - use the actual name for most basic colours (red, green, blue, pink, etc) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".    
+            **RGB (red-green-blue)** - Uses *three* numerical values from 0-255. 0 represents black, 255 represents white. See below for syntax.    
+            **hex code** - Made up of the number sign (`#`) followed by six hexadecimal characters (0-9, A-F).
+            
+            ```
+            /* These are all the same colour */
+            p {
+                background: firebrick;
+                background: #B22222;
+                background: rgb(178,34,34);
+            }
+            ```
+
+            **Colour resources:**  
+            http://colours.neilorangepeel.com  
+            http://www.colorpicker.com  
+            http://www.colourlovers.com  
+            http://flatuicolors.com   
+            http://color.hailpixel.com
+        </section>
+
+        <section class="slide title" data-markdown>
+            #CSS & TYPOGRAPHY
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Web safe fonts & Web Fonts
+
+            Fonts can be changed with the `font-family` property. However, not all fonts are installed on all computers so it's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly included on most computers.
+
+            It's best practice to list at least two or three font options to provide a fall-back if the user doesn't have the preferred fonts installed.
+
+            ```
+            body {
+                font-family: Helvetica, Arial, sans-serif;
+            }
+            ```
+
+            Here's a handy resource for referencing web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
+
+            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* stylesheet and fonts and no file downloads are necessary.
+        </section>
+
+        <section class="slide">
+            <h2>CSS Font Styles</h2>
+            <p>Let's look at a few CSS properties for styling text together and change some values below and see what happens!</p>
+            <textarea class="snippet" data-subject="#css-type">color: slateblue;
+line-height: 1.25;
+font-family: Helvetica, Arial, serif;
+font-size: 16px;
+font-weight: normal;
+text-transform: lowercase;</textarea>
+
+            <div id="css-type" class="example">
+                <p>Just some text to test out the above styles. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni repellat sunt quae fugit illum in aut sed, quis nesciunt totam veritatis, dolores alias modi fuga commodi dicta facilis, consequatur temporibus.</p>
+            </div>
+
+            <p>Resource: <a href="http://reference.sitepoint.com/css/typography">Sitepoint Typographical Properties</a></p>
+
+            <div class="presenter-notes">
+                <p>Explain what each property does while updating each example in the code editor.</p>
+            </div>
+        </section>
         
         <section class="slide">
-            <h2>Lunchtime exercise!</h2>
+            <h2>Lunchtime! (Optional Exercise)</h2>
 
-            <p>Picking fonts is hard. Prepare for the post-lunch exercise by picking 2-3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a> for the body text, header and highlighted text. Here’s a <a href="/project/final/">the final project</a> for reference.</p>
+            <p>Picking fonts is hard. For this project, we'll be using web fonts from Google fonts. Prepare for the post-lunch exercise by picking 2-3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a> for the body text, header and highlighted text. Here’s a <a href="/project/final/">the final project</a> for reference.</p>
             
             <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
 
-            <p>Need some help? Try Source Sans Pro, Quicksand, Merriweather or Codystar. The example project uses Open Sans (light), Nixie One and Pacifico.</p>
-
-            <p>Feel free to peek at the next exercise ;)</p>
+            <p>Need some help?<p>
+            <p>Try Source Sans Pro, Quicksand, Merriweather or Codystar. The example project uses Open Sans (light), Nixie One and Pacifico.</p>
 
             <div class="presenter-notes">
-                <p>Aim to get to lunch around 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time.</p>
+                <p>Aim to get to lunch around 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time. If not, they can just used the suggested fonts.</p>
             </div>
         </section>
+        <section class="slide" data-markdown>
+                ##Using Google Web fonts
+
+                For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* stylesheet and fonts and no file downloads are necessary. To use these fonts:
+
+                * Select the fonts you want to use and **Add to Collection**.  
+                * You can **Review** them to take a closer look, then choose **Use** when ready.
+                * Select font weights. The more you choose, the more it will slow down page load time.
+                * The default character set should contain what you need. Only select an option if you need to add additional language support.
+                * Grab the `&lt;link&gt;` code snippet and add it the `&lt;head&gt;` part of your page.
+                * Use the new fonts with the `font-family` property as listed in the example on the Google Fonts page.
+
+                That's it!
+            </section>
         <section class="slide">
-            <h2>Exercise #4 - Typography (20 MINS)</h2>
+            <h2>Exercise #4 - Typography, pt 1 (10 MINS)</h2>
+            <p>In this exercise, focus on just updating the fonts. Your pages will look similar to this:</p>
+            <img src="framework/img/workshop/exercise4-fonts.png">
             <ol>
                 <li>
                     Pick 3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a>.
@@ -929,45 +891,83 @@ text-transform: lowercase;</textarea>
 </code></pre>
                 </li>
                 <li>
-                    In the sample project, most of site uses the same font and color except for the <code>h1</code> and a couple of accented blocks of text. Add the main font styles to the existing <code>body</code> declaration block.
+                    In the sample project, most of site uses the same font throughout the page. So we can add the main font family to the <code>body</code> declaration block.
 <pre><code>body {
     font-family: "Open Sans", sans-serif;
-    color: #333;
 }
 </code></pre>
                     Remember the family tree? Since <code>body</code> is the ancestor of all the elements nested within, these styles are inherited by the child &amp; descendant elements.
                 </li>
                 <li>
-                    <p>Make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use <code>h1</code> as the selector.</p>
+                    Make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use <code>h1</code> as the selector.
 <pre><code>h1 {
     font-family: "Nixie One", serif;
 }
 </code></pre>
                 </li>
+            </ol>
+
+            <p><strong>Bonus:</strong> If you have extra time, find an accent colour to use throughout your site. Here are the <a href="index.html#slide42">links to the color resources</a> again.</p>
+
+            <p>As long as your CSS file is linked on three pages, you will see how the styles are now shared across all three pages.</p>
+        </section>
+            
+        <section class="slide" data-markdown>
+##Combining selectors
+
+Sometimes you'll have more than one HTML element that share the same styles.  We can target multiple elements at the same time by *combining* selectors on one declaration block. Note the syntax, combined selectors need to be separated by a comma.
+
+```css
+h1, h2 {
+    /* selects both the h1 and h2 */
+}
+```
+Same as the below example but with less lines of code!
+```
+h1 {
+    /* styles here */
+}
+h2 {
+    /* styles here */
+}
+```
+        </section>
+        <section class="slide">
+            <h2>Exercise #4 - Typography, pt 2 (10 MINS)</h2>
+            <p>Add some more font styles. Take a look at <a href="project/examples/exercise4-home.html">example 4</a> for reference.</p>
+            <ol>
                 <li>
-                    Both <code>h1</code> and <code>h2</code> share similar styles. They both have uppercase letters and don’t use the default bold styles of headings. When multiple elements share the same styles, we can <strong>combine selectors</strong> to apply the styles in one declaration block. Combine selectors by separating them with a comma.
+                    In the sample project, most of site uses the same font color throughout the page. Add the main font colour to the <code>body</code>.
+<pre><code>body {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    color: #333; /* dark, almost black, gray colour */
+}
+</code></pre>
+                </li>
+                <li>
+                    Both <code>h1</code> and <code>h2</code> share similar styles. They both have uppercase letters and don’t use the default bold styles of headings. <strong>Combine</strong> the selectors to apply the styles in one declaration block.
 <pre><code>h1, h2 {
-    font-weight: 300;
+    font-weight: 300; /* removes default bold styles */
     text-transform: uppercase;
 }
 </code></pre>
                 </li>
                 <li>
-                    <p>Links by default are blue in colour so it does not inherit the color property declared in the body. To change the colour of the link, use the specific element selector.</p>
+                    <p>Links by default are blue in colour so it does not inherit the color property declared in the body. To change the colour of the link, use the specific element selector (<code>a</code>).</p>
 
                     <p>Make the color different from the rest of the text to indicate it’s a link. You can also remove the default underline with CSS as well!</p>
 
 <pre><code>a {
     color: #bf6d50;
-    text-decoration: none;
+    text-decoration: none; /* removes default underline */
 }
 </code></pre>
                 </li>
             </ol>
 
             <p><strong>Bonus:</strong> If you have extra time, find an accent colour to use throughout your site and update the above <code>color</code> value with your accent colour. Here are the <a href="index.html#slide42">links to the color resources</a> again.</p>
-
-            <p>Your page should look like <a href="project/examples/exercise4-about.html">example 4</a>. As long as your CSS file is linked on three pages, notice how the styles are now shared across all three pages.</p>
         </section>
 
         <section class="slide title" data-markdown>
