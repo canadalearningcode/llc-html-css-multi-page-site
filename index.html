@@ -1000,7 +1000,7 @@ h2 {
                 <li>1 value means the same amount of padding on all sides</li>
             </ul>
             
-            Let's try changing some of the margin & padding settings below using 1-4 values and see what happens!
+            <p>Let's try changing some of the margin & padding settings below using 1-4 values and see what happens!</p>
 
             <textarea class="snippet" data-subject="#padding">background: lightblue;
 width: 500px; 
@@ -1069,7 +1069,9 @@ margin: 0;</textarea>
 
             Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw!
 
-            It is recommended to add this snippet to all your projects. Let's add it to our CSS file now, to the very top of the file, since it's a global style.
+            It is recommended to add this snippet to all your projects. By adding this fix, you won't have to worry about `padding` and `border` increasing the size of your elements. 
+
+            Let's add it to our CSS file now, to the very top of the file, since it's a global style.
 
             ```
             /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1082,9 +1084,29 @@ margin: 0;</textarea>
             ```
         </section>
         <section class="slide" data-markdown>
-##Class Exercise - headings and padding
+##Class Exercise - headings and spacing
 
-Let's focus on checking these updates on your **About** page for this exercise. Remove the default space from the `h1` and `h2` and set the line-height. Add it to the the existing `h1,h2` declaration block.
+For this next exercise, we are going to use `margin`, `padding`, `line-height` and `font-size` to update the heading styles and spacing of the content.
+
+These changes will make the page go from the example on the left, to the one on the right.
+
+![exercise 5](framework/img/workshop/exercise-heading-spacing.jpg)
+        </section>
+        <section class="slide" data-markdown>
+##Class Exercise - headings and spacing
+
+Let's focus on checking these updates on your **About** page for this exercise. 
+
+Add padding to the `header` and `section` so there's an equal amount of space around the content blocks.
+
+```
+header,
+section {
+    padding: 20px 30px;
+}
+```
+
+Remove the default space from the `h1` and `h2` and set the line-height. Add it to the the existing `h1,h2` declaration block.
 
 ```
 h1, h2 {
@@ -1094,9 +1116,11 @@ h1, h2 {
     line-height: 1; /* tightens up the space between the headings */
 }
 ```
-Set the size for only the headings in the header.
+Set the size of the headings **in the header**. We will use a **descendant selector** for this (more on this soon). We can also add a comment block for this section to organize the css.
 
-```
+```css
+/* HEADER
+-----------------------------------------*/
 header h1 {
     font-size: 36px;
 }
@@ -1104,46 +1128,65 @@ header h2 {
     font-size: 18px;
 }
 ```
+        </section>
+        
+        <section class="slide" data-markdown>
+##Descendant selectors
+    
+Matches any element that is a descendant (nested tag) of the element declared before it.
 
-Add padding to `header` and `section` so there's an equal amount of space around the content blocks.
-
-```
-header,
-section {
-    padding: 20px 30px;
+```css
+p a {
+    /* targets only anchor link tags nested inside of a p tag */
 }
 ```
-Your page should look similar to this:
+**Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
 
-![exercise 4 update](framework/img/workshop/exercise4-update.png)
+```
+nav ul li a span {
+    /* NOOOOOOOOOOO */
+}
+```
+
+Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. It’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
+</section>
+
+        <section class="slide">
+            <h2>Block vs Inline Elements</h2>
+
+            <p>Right now, our navigation list stacks on top of each other.  That’s because they are <strong>block</strong> elements.<br>
+            By default, some HTML elements are displayed as block or inline elements.</p>
+
+            <h3>Block Elements</h3>
+            <ul>
+                <li>takes up 100% width of its container, no matter how long the actual content is</li>
+                <li>will be the same height as its content</li>
+                <li>always starts on a new line</li>
+                <li>can wrap other block level elements or inline elements</li>
+                <li>can apply sizing related CSS to it (margin, padding, height, width)</li>
+            </ul>
+
+            <textarea class="snippet" data-subject="#block">background: lightblue;
+padding: 0px;
+margin: 0px;</textarea>
+            <div id="block">I'm a div so that makes a me a block element.</div>
         </section>
+        
+        <section class="slide">
+            <h2>Block vs Inline Elements</h2>
+            <h3>Inline Elements</h3>
 
-        <section class="slide" data-markdown>
-            ##Inline vs Block Elements
-            By default, some HTML elements are displayed as block or inline elements.
+            <ul>
+                <li>will be the height and width of its content</li>
+                <li>always appears “in a line” with other inline level elements</li>
+                <li>can wrap other inline elements but cannot wrap block level elements <em>except</em> <code>&amp;lt;a&amp;gt;</code> tags.  This is only valid with an HTML5 doctype.</li>
+                <li>does not render CSS height and width at all, will apply margin and padding but with unexpected results</li>
+            </ul>
 
-            ###Block Elements
-
-            * takes up 100% width of its container, no matter how long the actual content is
-            * will be the same height as its content
-            * always starts on a new line
-            * can wrap other block level elements or inline elements
-            * can apply sizing related CSS to it (margin, padding, height, width)
-
-            ###Inline Elements
-
-            * will be the height and width of its content
-            * always appears "in a line" with other inline level elements
-            * can wrap other inline elements but cannot wrap block level elements *except* `&lt;a&gt;` tags.  This is only valid with an HTML5 doctype.
-            * does not render CSS height and width at all, will apply margin and padding but with unexpected results
-
-            ###Inline-block
-
-            * best of both worlds
-            * floats left and is the size & height of its content, like inline elements
-            * accepts height and width values like block elements
-
-            **Extra Resource**: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
+            <textarea class="snippet" data-subject="#inline">background: orange;
+padding: 0px;
+margin: 0px;</textarea>
+            <span id="inline">I'm a span. I'm an inline element.</span> 
         </section>
 
         <section class="slide" data-markdown>
@@ -1159,37 +1202,10 @@ Your page should look similar to this:
             
             `display: none;` will hide the element.
         </section>
-
-        <section class="slide">
-            <h2>Block & Inline Example</h2>
-            <p>Suppose we had this HTML below. See how the same property and values give different results based on the element. Go ahead and update the CSS values to see how it changes.</p>
-
-            <pre><code class="xml">&lt;div&gt;I'm a div so that makes a me a block element.&lt;/div&gt;
-&lt;span&gt;I'm a span so that makes me an inline element.&lt;/span&gt;</code></pre>
-    
-            <textarea class="snippet" data-subject="#block">background: lightblue;
-padding: 25px;
-margin: 25px;</textarea>
-            <div id="block">I'm a div so that makes a me a block element.</div>
-
-            <textarea class="snippet" data-subject="#inline">background: orange;
-padding: 25px;
-margin: 25px;
-display: ;</textarea>
-            <span id="inline">I'm a span so that makes me an inline element.</span> 
-
-            <div class="presenter-notes">
-                <p>Update the span example's display property to inline-block and block to demonstrate the differences.</p>
-            </div>
-        </section>
-
-        
         <section class="slide" data-markdown>
-##Exercise #5 - Nav Updates (15 mins)
+##Exercise #5 - Nav Updates (10 mins)
 
-Follow the instructions below. Check these changes on either the About or Contact page. The Home page will be styled later since it has a different style from these two pages.
-
-Though all the CSS is listed below, try adding in one line at a time to see and understand what each property does.  Leave comments for yourself in the code to explain what each line is doing if needed and use comments to organize your code. See [sample here](project/examples/css/exercise5.css).
+Try adding in one line of the below CSS at a time to see and understand what each property does.  Leave comments for yourself in the code to explain what each line is doing if needed and use comments to organize your code. See [sample here](project/examples/css/exercise5.css).
 
 Remove default list styles and get each item to line up in a line.
 
@@ -1201,17 +1217,6 @@ Remove default list styles and get each item to line up in a line.
     nav ul li {
         display: inline-block; /* gets the list items to line up side by side */
     }
-
-Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
-    
-    nav a {
-        display: block; /* changes the element to block */
-        padding: 5px 15px;
-        text-transform: uppercase; 
-    }
-
-There's a few more concepts to go through to finish styling the header and nav. This is what your page should look like so far: [example 5 about](project/examples/exercise5-about.html) and [example 5 contact](project/examples/exercise5-contact.html).
-
 **Bonus**:  
 If you have some extra time, find a background image for later or choose one from the **images** folder. Here are some resources:
 
@@ -1220,6 +1225,18 @@ If you have some extra time, find a background image for later or choose one fro
 * http://littlevisuals.co/
 * http://nos.twnsnd.co/
 * http://unsplash.com/
+        </section>
+
+        <section class="slide" data-markdown>
+            Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
+    
+    nav a {
+        display: block; /* changes the element to block */
+        padding: 5px 15px;
+        text-transform: uppercase; 
+    }
+
+There's a few more concepts to go through to finish styling the header and nav. This is what your page should look like so far: [example 5 about](project/examples/exercise5-about.html) and [example 5 contact](project/examples/exercise5-contact.html).
         </section>
 
         <section class="slide" data-markdown>
