@@ -1539,15 +1539,16 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         </section>
 
         <section class="slide" data-markdown>
-            ##Class Exercise #8: Background Images
+            ##Class Exercise #9: Background Images
 
-            So far, we've used `background` to add colours. We can also use it to add images. We've added images in the HTML using `img` but we can also set images as a background style using CSS.
+            So far, we've used `background` to add colours but it can also be used it to add images for presentation, not content.
             
             ```
             background-image: url(path/to/file.jpg); /* longhand */
             background: url(path/to/file.jpg);/* shorthand */
             ```
-            Since our CSS file is *inside* a folder, use `../` to go *up and out* of the folder to get to the image files. Let's add it to **index.html**. Create a `.home` declaration block so this image only displays on the homepage and spans the entire page. (There are a few to choose from in your images folder.)
+
+            Since our CSS file is *inside* of a **css** folder, use `../` to go *up and out* of the folder to link to the image files. Let's add it to **index.html**. Create a `.home` declaration block so this image only displays on the homepage and spans the entire page. (There are a few to choose from in your images folder.)
 
             ```
             .home {
@@ -1571,7 +1572,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
             ```
         </section>
         <section class="slide" data-markdown>
-            ##Background images (continued)
+            ##Class Exercise #9: Background Images (continued)
             
             The image is no longer repeating but it doesn't fit the space either. Your page should look similar to the below (unless your image is larger than your resolution). We'll need to add one more property to fix this.
 
@@ -1579,7 +1580,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         </section>
 
         <section class="slide">
-            <h2>Class exercise #8: Background-size</h2>
+            <h2>Class Exercise #9: Background Images (continued)</h2>
 
             <p>Thanks to CSS3, we can now change the size of a background image. </p>
             <p><code>background-size</code> is the longhand property.  To include it in the shorthand <code>background</code> property, it <em>must</em> be included after <code>background-position</code>, separated with the <code>/</code> character.  </p>
@@ -1619,7 +1620,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
                 <li><a href="http://unsplash.com/">http://unsplash.com/</a></li>
             </ul>
 
-            <p>Your page should now look similar to <a href="project/examples/exercise8-home.html">example 8</a>.</p>
+            <p>Your page should now look similar to <a href="project/examples/exercise9-home.html">example 9</a>.</p>
 
             <div class="presenter-notes">
                 <p>You will probably be pressed for time at this point. Just explain what "cover" does and let them know there are other options available and there are additional resources at the bottom of this slide.</p>
@@ -1627,7 +1628,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         </section>
 
         <section class="slide" data-markdown>
-            ##Forms
+            ##Final Exercise: Forms!
             
             Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
 
@@ -1644,9 +1645,10 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         </section>
 
         <section class="slide">
-            <h2>Class Exercise #9 - Contact Form</h2>
+            <h2>Class Exercise #10 - Contact Form</h2>
 
-            <p>On your contact page, under the header, create a new <code>&lt;section&gt;</code> tag.  Add the below markup <em>in between</em> the <code>section</code> element.</p>
+            <p>In <strong>contact.html</strong> under the header, a new <code>&lt;section&gt;</code> tag is required for the form content.</p>
+            <p>Add the below markup after the <code>&lt;header&gt;</code>.</p>
 
 <pre><code class="xml">&lt;section&gt;
     &lt;form class="contact-form" method="POST" action="" &gt;
@@ -1670,7 +1672,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
     &lt;/form&gt;
 &lt;/section&gt;
 </code></pre>
-            <p>Your contact page and form should look similar to <a href="project/examples/exercise9-contact.html">Example 9</a>.</p>
+            <p>Your contact page and form should look similar to <a href="project/examples/exercise10-contact.html">exercise10-contact.html</a>.</p>
 
             <div class="presenter-notes">
                 <p>Give a general overview of what each from control is used for as you are adding in the code. There's further resources available in the homework/next steps section.</p>
