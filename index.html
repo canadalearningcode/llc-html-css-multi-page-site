@@ -170,16 +170,16 @@ With the entire folder selected, select **Open**.
 1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it. The basic HTML tags for all web pages have been included in this file.
 1. Right click or two finger tap in Sublime and select **Open in Browser**. This will open the HTML file in your *default* browser. 
     
-What do you see? Your page should look like [exercise 1](project/examples/exercise1.html).
+You should see this:
+
+![project start example](framework/img/workshop/project-start.jpg)
      
         </section>
 
         <section class="slide">
             <h2 id="making-changes">Making changes</h2>
 
-            <p>Let's make a change. Replace the “your name here” content, save the file, then refresh your browser.</p>
-
-            <p>This will be your work flow for the day.</p>
+            <p>Let's make a change. Replace the “your name here” content, save the file, then refresh your browser. This will be your work flow for the day.</p>
 
             <ol>
                 <li>update the code</li>
@@ -310,7 +310,7 @@ Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
 
             <p>Don’t forget to save and refresh your browser after each change!</p>
 
-            <p>Your page should now look similar to <a href="project/examples/exercise1-updated.html">exercise1-updated.html</a></p>
+            <p>Your page should now look similar to <a href="project/examples/exercise1.html">exercise1.html</a></p>
 
             <div class="presenter-notes">
                 <p>Use the exercise time to follow along with the current exercise. Since the exercises switch between code-alongs and independent exercises throughout the day, it will be easier to demonstrate the code-alongs if your version is at the same state as the learners.</p>
@@ -888,15 +888,13 @@ text-transform: lowercase;</textarea>
         <section class="slide">
             <h2>Lunchtime! (Optional Exercise)</h2>
 
-            <p>Picking fonts is hard. For this project, we'll be using web fonts from Google fonts. Prepare for the post-lunch exercise by picking 2-3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a> for the body text, header and highlighted text. Here’s a <a href="/project/final/">the final project</a> for reference.</p>
+            <p>Picking fonts is hard. For this project, we'll be using web fonts from Google fonts. Prepare for the post-lunch exercise by picking 2-3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a> for the body text, header and cursive text. Here’s a <a href="/project/final/about.html">the final project</a> for reference.</p>
             
-            
-
             <p><strong>Need some help choosing?</strong><p>
             <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
             <p>Or try Source Sans Pro, Quicksand, Merriweather or Codystar.</p>
 
-            <p>If you can't decide which fonts to use, just use the example project fonts: Open Sans (light), Nixie One and Pacifico.  The font file links will be provided in the post-lunch exercise.</p>
+            <p>If you can't decide which fonts to use, just use the example project fonts: Open Sans (light), Nixie One and Pacifico.  The font file links are provided in the post-lunch exercise.</p>
 
             <div class="presenter-notes">
                 <p>Aim to get to lunch around 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time. If not, they can just use the suggested fonts.</p>
@@ -1125,7 +1123,7 @@ These changes will make the page go from the example on the left, to the one on 
         <section class="slide" data-markdown>
 ##Class Exercise - headings and spacing
 
-Now that **styles.css** is linked to all three pages, these next updates will apply to all of them. 
+Now that **styles.css** is linked to all three pages, these next updates will apply to all of the pages. 
 
 Add padding to the `header` and `section` so there's an equal amount of space around the content blocks.
 
@@ -1234,9 +1232,9 @@ margin: 0px;</textarea>
         </section>
 
         <section class="slide">
-            <h2>Class Exercise - Horizontal navigation</h2>
+            <h2>Class Exercise #5 - Horizontal navigation</h2>
 
-            <p>In this step, we're focusing on changing the default list styles to a horizontal layout. It will look like this sample below (also found in your examples folder, <a href="project/examples/exercise5-home.html">exercise 5</a>).</p>
+            <p>In this step, we're focusing on changing the default list styles to a horizontal layout. It will look like this sample below (also found in your examples folder, <a href="project/examples/exercise5-about.html">exercise 5</a>).</p>
             <img src="framework/img/workshop/exercise5-nav.png" alt="">
             <p>First, remove the default list spacing and bullets.</p>
 <pre><code>nav ul {
@@ -1323,19 +1321,23 @@ margin: 0px;</textarea>
             &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
             ```
 
-            Now it looks like this!  Add this anywhere you want some highlighted text!
+            Now it looks like this!
 
             ![](framework/img/workshop/highlighted-text.png)
+
+            Add this anywhere you want some highlighted text!  Your name is also in the footer. That would be another good place to add this style.
         </section>
         
         <section class="slide" data-markdown>
             ##CSS Float Property
 
-            Remember, block-style HTML elements like `&lt;p>`, `&lt;div>` and `&lt;section>` automatically start on a new line and stack on top of each other. To get two block elements to align side-by-side, the `float` property can also be used to float elements left or right.
+            Remember, block-style HTML elements like `&lt;p>`, `&lt;div>` and `&lt;section>` automatically start on a new line and stack on top of each other. That's why our content is currently just stacking on top of each other.
+
+            ![](framework/img/workshop/about-not-floated.png)
+
+            To get two block elements to align side-by-side, we've used `display: inline-block` but the `float` property is often used for creating page layouts.
 
             **However**, we have to break the natural stacking flow when an element is floated. This will cause any element *after* the floated element to try to move up beside it or just not display properly because we've disrupted the natural stacking flow. The parent container will also collapse.
-
-            **Also**, if no width is set, the element will float but the width will automatically be the width of its content.
         </section>
 
         <section class="slide centered">
@@ -1345,20 +1347,28 @@ margin: 0px;</textarea>
             <p class="delayed">Not to worry, we can fix it.</p>
         </section>
 
+        <section class="slide" data-markdown>
+            ##Floating content
+
+            For the next exercise, we'll use `float` to align the profile image and the text beside each other to make it look like this:
+
+            ![](framework/img/workshop/about-floated.png)
+        </section>
         <section class="slide">
-            <h2>Float, Clear And Clearfix</h2>
+            <h2>Float & Clear</h2>
 
             <p>First we have to break it, then put it back together. We need to “reset” the float to get the rest of the page to go back to normal.  There are a couple ways to do it.</p>
 
-            <p>One of the most confusing CSS concepts is when to use the different techniques, <code>clear: both</code> or the <code>.clearfix</code> class.</p>
+            <p>One of the most confusing CSS concepts is when to use the different techniques.</p>
             
-            <p>Let’s look at an example: <a href="http://jsfiddle.net/unjcxses/">http://jsfiddle.net/unjcxses/</a></p>
+            <p>Let’s look at an example: <a href="http://jsfiddle.net/e1nd3q89/">http://jsfiddle.net/e1nd3q89/</a></p>
 
-            <p>Rule of thumb: if there’s is an element that <em>follows</em> the floated element, apply <code>clear: both</code> to that element. This will clear the float. If all the elements need to be floated, apply the <code>clearfix</code> to the parent element to force clear the children.</p>
+            <p><strong>Rule of thumb:</strong><br>
+             If there is an element that <em>follows</em> the floated elements, apply <code>clear: both</code> to that element. If all the elements need to be floated, apply the <code>overflow:hidden</code> to the <em>parent element</em> to force clear the children.</p>
 
-            <p>Want to know more about the clearfix trick and clearing floats? Here you go: <br>
-            <a href="http://css-tricks.com/snippets/css/clear-fix/">http://css-tricks.com/snippets/css/clear-fix/</a> <br>
-            <a href="http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/">http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/</a></p>
+            <p>Want to know more about clearing floats? Here you go: <br>
+            <a href="http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/">http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/</a><br>
+            <a href="http://css-tricks.com/snippets/css/clear-fix/">http://css-tricks.com/snippets/css/clear-fix/</a></p>
 
             <div class="presenter-notes">
                 <p>Explain that you can fork or update the jsfiddle to create your own copy and it won't "mess up" the example. It will create a new URL and no account is required.</p>
@@ -1366,76 +1376,41 @@ margin: 0px;</textarea>
         </section>
 
         <section class="slide" data-markdown>
-##Update the CSS file
+##Class Exercise #6 - Update About page with Floats
 
-Before moving onto the next exercise, let's add the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file, after the box model fix.
+Add a `profile-img` class to the image tag in your **About** page.
 
+```xml
+&lt;img class="profile-img" src="images/profile.jpg" alt="description of image">
 ```
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-/* clears floated child elements */
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-.clearfix:after {
-    clear: both;
-}
-```
-        </section>
-
-        <section class="slide" data-markdown>
-##Class Exercise - classes and floats
-
-Add a "profile-image" class to the image tag in your **About** page.  Then in your css file, add a new comment block at the bottom of the page for your **About** styles, to help organize your style sheet.  Then add `float` to get the text to wrap around the image.
+In **styles.css**, add a new comment block at the bottom of the page for your **About** styles, to help organize your style sheet.  Then add `float` to get the text to wrap around the image. Also, add some margin to the right side of the image so there is some space between the image and the text.
 
 ```css  
 /* ABOUT PAGE
 -----------------------------------------*/
-.profile-image {
+.profile-img {
     float: left;
+    margin-right: 20px;
 }
 ```
 
-The text floats now, but it's a little squishy. Try setting the image width to be 50% of the page and add some margin on the right to create space.
+That looks much better but look what happened to the quote and the footer?! Remember, all elements that come *after* floated elements will want to float too, as long as there is space for them.  
 
-    .profile-image {
-        float: left;
-        width: 50%;
-        margin-right: 20px;
-    }
+Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear:both` on the `blockquote` element because that's where we want things to go back to normal. While we're here, let's also style the text in the quote and add some spacing.
 
-That looks much better but look what happened to the quote and the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear` on the `blockquote` element because that's where we want things to go back to normal. Let's add a class to it as well, in the HTML.
-
-```xml
-&lt;blockquote class=&quot;quote&quot;&gt;
-    ...
-&lt;/blockquote&gt; 
 ```
-```
-.quote {
-    clear: both;
+blockquote {
+    clear: both; /* clears the float and returns page back to normal stacking order */
+    text-align: center; /* center aligns the text */
+    padding-top: 20px; /* adds space between the blockquote & content before it */
+}
+blockquote p {
+  font-family: "Pacifico", cursive;
+  font-size: 25px;
 }
 ```
 
-While we're here, let's update it by center aligning the quote and add some spacing.
-
-```
-.quote {
-    clear: both;
-    text-align: center;
-    padding-top: 20px;
-}
-```
-
-Your page should now look similar to [exercise6a-about.html](project/examples/exercise6a-about.html).
+Your page should now look similar to [exercise6-about.html](project/examples/exercise6-about.html).
         </section>
             
         <section class="slide" data-markdown>
