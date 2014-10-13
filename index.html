@@ -44,7 +44,7 @@
             </ul>
         </div>
         <div class="presenter-notes">
-            <p>It's important to note at the beginning that a lot of material will be covered and their site will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have about 75% of the project done by end of the day and  "homework" and additional resources are provided at the end to help them complete their project. It's a lot to cover in one day and today will just be a "guided tour."</p>
+            <p>It's important to note at the beginning that a lot of material will be covered and their site will not be 100% perfect by the end of the day. But the goal of the day is to learn about the concepts and be able to have a project that they can continue to work on. Additional resources are provided at the end to help them add more enhancements their project. It's a lot to cover in one day and today will just be a "guided tour." Also, reinforce throughout the day each concept introduced is to help build the site, bit by bit and to focus on the task at hand.</p>
             <p>All code blocks in white are editable and CSS changes will be reflected in the slide.  For exercises, all instructions listed under <strong>bonus</strong> are for those who complete the exercises early to make sure learners at all different levels have something to work on.</p>
         </div>
     </header>
@@ -388,9 +388,9 @@ Remember, a website is basically a collection of pages linking to other HTML pag
         <section class="slide" data-markdown>
 ##HTML5 Sectioning Tags
 
-Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. Prior to HTML5, the `&lt;div&gt;` tag was used for grouping elements. While it is still valid, HTML5 introduced a number of semantic tags that better describe blocks of content.  You've already seen two of them: `&lt;header&gt;` and `&lt;footer&gt;`. We'll be using two more today: `&lt;nav&gt;` and `&lt;section&gt;`.
+Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. Prior to HTML5, the `&lt;div&gt;` tag was used for grouping elements. While it is still valid, HTML5 introduced a number of semantic tags that better describe blocks of content.  You've already seen two of them: `&lt;header&gt;` and `&lt;footer&gt;`. We'll be using a few more later on today.
 
-For the navigation, adding a `&lt;nav&gt;` tag around the list will make it more semantic.  It can also be grouped with the headings by adding it *inside* of the `&lt;header&gt;` tag. Let's add it to our project now.
+For the navigation, adding a `&lt;nav&gt;` tag around the list will make it more semantic.  It can also be grouped with the headings by adding it *inside* of the `&lt;header&gt;` tag.
 
 ```xml
 &lt;header&gt;
@@ -399,9 +399,9 @@ For the navigation, adding a `&lt;nav&gt;` tag around the list will make it more
 
     &lt;nav&gt;
         &lt;ul&gt;
-            &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=""&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=""&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=""&gt;Contact&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/nav&gt;
 &lt;/header&gt;
@@ -412,8 +412,21 @@ For the navigation, adding a `&lt;nav&gt;` tag around the list will make it more
         <section class="slide">
             <h2>Class exercise: Add a navigation</h2>
 
-            <p>Go back to <strong>index.html</strong> and add the navigation for the three pages: <strong>Home</strong>, <strong>About</strong>, <strong>Contact</strong>.</p> 
-            <p>Eventually we’ll have 3 HTML pages, <strong>index.html</strong>, <strong>about.html</strong> and <strong>contact.html</strong> so add <em>relative</em> links to these pages in the navigation list. It should look like this:</p>
+            <p>Go back to <strong>index.html</strong> and create a navigation list for the three pages: <strong>Home</strong>, <strong>About</strong>, <strong>Contact</strong>.</p> 
+            <p>Eventually we’ll have 3 HTML pages, <strong>index.html</strong>, <strong>about.html</strong> and <strong>contact.html</strong> so make sure to use <em>relative</em> links to these pages in the navigation list.</p>
+<pre><code><header>
+    <h1>Jane Smith</h1>
+    <h2>Web Developer + City Girl</h2>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header></code></pre>
+            <p> Your page should now look like this:</p>
 
             <p><img src="framework/img/workshop/nav-list.png" alt="nav list" title=""></p>
  
@@ -571,8 +584,9 @@ Remember, relative paths are based on the folder structure.  Since the HTML page
         <section class="slide" data-markdown>
 ##Exercise #3 - Update the About page (15 mins)
 
-Add a profile picture, heading and some information to your About page to make it look like this:   
-[exercise3-about.html](project/examples/exercise3-about.html).
+Add a profile picture, heading and some information to your About page to make it look like this:
+
+![example 3](framework/img/workshop/exercise3-about.png)
 
 Use the `&lt;section>` tag to create a new sectioning block for the page content. Add it *between* the `&lt;header>` tag and the `&lt;footer>` like this:
 
@@ -596,13 +610,21 @@ Use the `&lt;section>` tag to create a new sectioning block for the page content
 ```
 
 1. Inside of the `section` tag, add a profile picture using the `img` tag.
-1. After your profile picture, add an `h2` for the About page title.
-1. After the `h2`, add a couple of paragraphs about you, or use placeholder text.
+1. *After* your profile picture, add an `h2` for the About page title.
+1. *After* the `h2`, add a couple of paragraphs about you, or use placeholder text.
+1. We're going to need to work with some additional content in the afternoon so *after* the paragraphs, add a quote.  You can use this sample below, or add your own. Just keep the content within the `&lt;blockquote>` tag.
 
+```xml
+&lt;blockquote>
+    &lt;p>The more that you read, the more things you will know. The more that you learn, the more places you'll go.&lt;/p>
+    &lt;cite>― Dr. Seuss, I Can Read With My Eyes Shut!&lt;/cite>
+&lt;/blockquote>
+```
 **Bonus:** Try adding a couple links. Ask a mentor how to get a link to open in a new tab/window.
 
 Just like images, there are many services available for placeholder text.
 
+* [Dr. Suess quotes](http://www.goodreads.com/author/quotes/61105.Dr_Seuss)
 * http://www.lipsum.com
 * http://www.rygo-ipsum.com/
 * http://coffeeipsum.com
@@ -631,8 +653,10 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
         <section class="slide" data-markdown>
             ##CSS Terminology & Syntax
     
-            **Selectors:** used to determine which element(s) to apply the styles to.  
-            **Declarations:** the rules to follow & are written using `property:value` pairs. Each rule must end with a semi-colon (`;`) to indicate that the instruction is complete and are contained within a pair of curly brackets `{}`.
+            **Selectors:** Used to determine which element(s) to apply the styles to.  
+            **Declarations:** Rules to follow & are written using `property:value` pairs.   
+            Each rule must end with a semi-colon (`;`) to indicate the instruction.  
+            All the rules for the selector must be contained within a pair of curly brackets `{}`.
 
             ```css
             selector {
@@ -812,7 +836,7 @@ body {
 
             Fonts can be changed with the `font-family` property. However, not all fonts are installed on all computers so it's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly included on most computers.
 
-            It's best practice to list at least two or three font options to provide a fall-back if the user doesn't have the preferred fonts installed.
+            It's best practice to list at least two or three font options to provide a fall-back option in case the user doesn't have the preferred fonts installed.
 
             ```
             body {
@@ -822,7 +846,7 @@ body {
 
             Here's a handy resource for referencing web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
 
-            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* stylesheet and fonts and no file downloads are necessary.
+            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* style heet and fonts and no file downloads are necessary. We'll be using this service in today's project. 
         </section>
 
         <section class="slide">
@@ -845,45 +869,51 @@ text-transform: lowercase;</textarea>
                 <p>Explain what each property does while updating each example in the code editor.</p>
             </div>
         </section>
+
+        <section class="slide" data-markdown>
+            ##Using Google Web fonts
+
+            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* stylesheet and fonts and no file downloads are necessary. To use these fonts:
+
+            * Select the fonts you want to use and **Add to Collection**.  
+            * You can **Review** them to take a closer look, then choose **Use** when ready.
+            * Select font weights. The more you choose, the more it will slow down page load time.
+            * The default character set should contain what you need. Only select an option if you need to add additional language support.
+            * Grab the `&lt;link&gt;` code snippet and add it the `&lt;head&gt;` part of your page.
+            * Use the new fonts with the `font-family` property as listed in the example on the Google Fonts page.
+
+            That's it!
+        </section>
         
         <section class="slide">
             <h2>Lunchtime! (Optional Exercise)</h2>
 
             <p>Picking fonts is hard. For this project, we'll be using web fonts from Google fonts. Prepare for the post-lunch exercise by picking 2-3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a> for the body text, header and highlighted text. Here’s a <a href="/project/final/">the final project</a> for reference.</p>
             
-            <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
+            
 
-            <p>Need some help?<p>
-            <p>Try Source Sans Pro, Quicksand, Merriweather or Codystar. The example project uses Open Sans (light), Nixie One and Pacifico.</p>
+            <p><strong>Need some help choosing?</strong><p>
+            <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
+            <p>Or try Source Sans Pro, Quicksand, Merriweather or Codystar.</p>
+
+            <p>If you can't decide which fonts to use, just use the example project fonts: Open Sans (light), Nixie One and Pacifico.  The font file links will be provided in the post-lunch exercise.</p>
 
             <div class="presenter-notes">
-                <p>Aim to get to lunch around 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time. If not, they can just used the suggested fonts.</p>
+                <p>Aim to get to lunch around 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time. If not, they can just use the suggested fonts.</p>
             </div>
         </section>
-        <section class="slide" data-markdown>
-                ##Using Google Web fonts
-
-                For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* stylesheet and fonts and no file downloads are necessary. To use these fonts:
-
-                * Select the fonts you want to use and **Add to Collection**.  
-                * You can **Review** them to take a closer look, then choose **Use** when ready.
-                * Select font weights. The more you choose, the more it will slow down page load time.
-                * The default character set should contain what you need. Only select an option if you need to add additional language support.
-                * Grab the `&lt;link&gt;` code snippet and add it the `&lt;head&gt;` part of your page.
-                * Use the new fonts with the `font-family` property as listed in the example on the Google Fonts page.
-
-                That's it!
-            </section>
+        
         <section class="slide">
-            <h2>Exercise #4 - Typography, pt 1 (10 MINS)</h2>
-            <p>In this exercise, focus on just updating the fonts. Your pages will look similar to this:</p>
+            <h2>Class Exercise - Typography</h2>
+            <p>In this exercise, we'll focus on just updating the fonts. Your pages will look similar to this:</p>
             <img src="framework/img/workshop/exercise4-fonts.png">
+            <p>Right now, we've only linked the css file to <strong>about.html</strong>. Continue to check the updates on that page.</p>
             <ol>
                 <li>
                     Pick 3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a>.
                 </li>
                 <li>
-                    Add the Google font style sheet link to all three documents to access and use the font files. Put it before your CSS file.
+                    Add the Google font style sheet before your CSS file.
 
 <pre><code>&lt;title&gt;Jane Smith | About Me&lt;/title&gt;
 &lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
@@ -906,23 +936,14 @@ text-transform: lowercase;</textarea>
 </code></pre>
                 </li>
             </ol>
-
-            <p><strong>Bonus:</strong> If you have extra time, find an accent colour to use throughout your site. Here are the <a href="index.html#slide42">links to the color resources</a> again.</p>
-
-            <p>As long as your CSS file is linked on three pages, you will see how the styles are now shared across all three pages.</p>
         </section>
             
         <section class="slide" data-markdown>
 ##Combining selectors
 
-Sometimes you'll have more than one HTML element that share the same styles.  We can target multiple elements at the same time by *combining* selectors on one declaration block. Note the syntax, combined selectors need to be separated by a comma.
+Sometimes you'll have more than one HTML element that share the same styles.  Target multiple elements at the same time by *combining* selectors in one declaration block. Note the syntax, combined selectors need to be separated by a comma.
 
-```css
-h1, h2 {
-    /* selects both the h1 and h2 */
-}
-```
-Same as the below example but with less lines of code!
+Instead of this: 
 ```
 h1 {
     /* styles here */
@@ -931,43 +952,48 @@ h2 {
     /* styles here */
 }
 ```
+Do this!
+```css
+h1, h2 {
+    /* selects both the h1 and h2 */
+}
+```
+This does the same thing as the first example but with less lines of code and makes it easier to make changes to both elements.
+
         </section>
-        <section class="slide">
-            <h2>Exercise #4 - Typography, pt 2 (10 MINS)</h2>
-            <p>Add some more font styles. Take a look at <a href="project/examples/exercise4-home.html">example 4</a> for reference.</p>
-            <ol>
-                <li>
-                    In the sample project, most of site uses the same font color throughout the page. Add the main font colour to the <code>body</code>.
-<pre><code>body {
+        <section class="slide" data-markdown>
+##Exercise #4 - Typography (10 MINS)
+
+Add some more font styles. Take a look at [example 4](project/examples/exercise4-home.html) for reference.
+
+1. Link your Google Font style sheet & your **styles.css** file to **index.html** and **contact.html**. You will now be able to see the styles across all three pages.
+1. In the sample project, most of site uses the same font color throughout the page. Add the `color` property to the `body`.
+``` 
+body {
     padding: 0;
     margin: 0;
     font-family: "Open Sans", sans-serif;
     color: #333; /* dark, almost black, gray colour */
 }
-</code></pre>
-                </li>
-                <li>
-                    Both <code>h1</code> and <code>h2</code> share similar styles. They both have uppercase letters and don’t use the default bold styles of headings. <strong>Combine</strong> the selectors to apply the styles in one declaration block.
-<pre><code>h1, h2 {
+```
+1. Both `h1` and `h2` share similar styles. They both have uppercase letters and don’t use the default bold styles of headings. Combine the selectors to apply the styles in one declaration block. 
+```
+h1, h2 {
     font-weight: 300; /* removes default bold styles */
     text-transform: uppercase;
 }
-</code></pre>
-                </li>
-                <li>
-                    <p>Links by default are blue in colour so it does not inherit the color property declared in the body. To change the colour of the link, use the specific element selector (<code>a</code>).</p>
+```
+1. Links by default are blue in colour so it does not inherit the `color` property declared in the `body`. To change the colour of the link, use the specific element selector (a).
 
-                    <p>Make the color different from the rest of the text to indicate it’s a link. You can also remove the default underline with CSS as well!</p>
-
-<pre><code>a {
+    Make the color different from the rest of the text to indicate it’s a link. You can also remove the default underline with CSS as well!
+```
+a {
     color: #bf6d50;
     text-decoration: none; /* removes default underline */
 }
-</code></pre>
-                </li>
-            </ol>
+```
 
-            <p><strong>Bonus:</strong> If you have extra time, find an accent colour to use throughout your site and update the above <code>color</code> value with your accent colour. Here are the <a href="index.html#slide42">links to the color resources</a> again.</p>
+**Bonus:** If you have extra time, find an accent colour to use throughout your site and update the above color value with your accent colour. Here are the links to the color resources again.
         </section>
 
         <section class="slide title" data-markdown>
@@ -977,7 +1003,9 @@ h2 {
         <section class="slide" data-markdown>
             ##What is The Box Model?
 
-            The browser looks at every HTML element on the page as a rectangular box. The CSS Box Model describes the way CSS styles the size and spacing of HTML elements. Understanding the box model is crucial for understanding how to position elements with CSS to create the desired page layout. This is one of the trickiest part of CSS, so don't worry if it seems confusing!
+            The browser looks at every HTML element on the page as a box. 
+
+            The CSS Box Model describes the way CSS styles the size and spacing of HTML elements. Understanding the box model is crucial for understanding how to position elements with CSS to create the desired page layout. This is one of the trickiest part of CSS, so don't worry if it seems confusing!
 
             CSS uses 5 properties to determine the size and spacing of these boxes:
 
@@ -1061,17 +1089,19 @@ margin: 0;</textarea>
 
             <img src="framework/img/workshop/box-model.gif" alt="" title="">
 
-            <p>The original element started with a width and height of <strong>400 x 100</strong>. After including the padding, border &amp; margin, the <em>size</em> of the box is actually <strong>452 x 152</strong>! The margin takes up space but since it's <em>outside</em> of the element, it doesn't increase the size of the element itself.</p>
+            <p>The original element started with a width and height of <strong>400 x 100</strong>. After including the padding and border, the <em>size</em> of the box is <em>actually</em> <strong>452 x 152</strong>! That's because these properties add space inside the element by pushing the content outward.</p>
+
+            <p>Margin takes up space but since it's <em>outside</em> of the element, it doesn't increase the size of the element itself.</p>
         </section>
 
         <section class="slide" data-markdown>
             ##Box Model Fix!
 
-            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw!
+            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw! This fix will allow you to add padding & border, without increasing the size of the box.  It pushes the content inward instead.
 
             It is recommended to add this snippet to all your projects. By adding this fix, you won't have to worry about `padding` and `border` increasing the size of your elements. 
 
-            Let's add it to our CSS file now, to the very top of the file, since it's a global style.
+            **Let's add it to our CSS file now**, to the very top of the file, since it's a global style.
 
             ```
             /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1086,7 +1116,7 @@ margin: 0;</textarea>
         <section class="slide" data-markdown>
 ##Class Exercise - headings and spacing
 
-For this next exercise, we are going to use `margin`, `padding`, `line-height` and `font-size` to update the heading styles and spacing of the content.
+For next exercise, we are going to use `margin`, `padding`, `line-height` and `font-size` to update the heading styles and spacing of the content.
 
 These changes will make the page go from the example on the left, to the one on the right.
 
@@ -1095,7 +1125,7 @@ These changes will make the page go from the example on the left, to the one on 
         <section class="slide" data-markdown>
 ##Class Exercise - headings and spacing
 
-Let's focus on checking these updates on your **About** page for this exercise. 
+Now that **styles.css** is linked to all three pages, these next updates will apply to all of them. 
 
 Add padding to the `header` and `section` so there's an equal amount of space around the content blocks.
 
@@ -1116,7 +1146,7 @@ h1, h2 {
     line-height: 1; /* tightens up the space between the headings */
 }
 ```
-Set the size of the headings **in the header**. We will use a **descendant selector** for this (more on this soon). We can also add a comment block for this section to organize the css.
+Set the size of the headings **in the header**. We will use a **descendant selector** for this (more about this soon). We can also add a comment block for this section to organize the css.
 
 ```css
 /* HEADER
@@ -1202,49 +1232,50 @@ margin: 0px;</textarea>
             
             `display: none;` will hide the element.
         </section>
-        <section class="slide" data-markdown>
-##Exercise #5 - Nav Updates (10 mins)
 
-Try adding in one line of the below CSS at a time to see and understand what each property does.  Leave comments for yourself in the code to explain what each line is doing if needed and use comments to organize your code. See [sample here](project/examples/css/exercise5.css).
+        <section class="slide">
+            <h2>Class Exercise - Horizontal navigation</h2>
 
-Remove default list styles and get each item to line up in a line.
+            <p>In this step, we're focusing on changing the default list styles to a horizontal layout. It will look like this sample below (also found in your examples folder, <a href="project/examples/exercise5-home.html">exercise 5</a>).</p>
+            <img src="framework/img/workshop/exercise5-nav.png" alt="">
+            <p>First, remove the default list spacing and bullets.</p>
+<pre><code>nav ul {
+    list-style-type: none; /* removes bullets */
+    margin: 0; /* removes default margin */
+    padding: 0; /* removes default padding */
+}
+</code></pre>
 
-    nav ul {
-        list-style-type: none; /* removes bullets */
-        margin: 0; /* removes default margin */
-        padding: 0; /* removes default padding */
-    }
-    nav ul li {
-        display: inline-block; /* gets the list items to line up side by side */
-    }
-**Bonus**:  
-If you have some extra time, find a background image for later or choose one from the **images** folder. Here are some resources:
+            <p>Now we’ll want to target each <em>list item</em> to get the elements to line up side by side, in a line.</p>
+<pre><code>nav ul li {
+    display: inline-block; /* gets the list items to line up side by side */
+}
+</code></pre>
 
-* http://superfamous.com/
-* http://www.gratisography.com/
-* http://littlevisuals.co/
-* http://nos.twnsnd.co/
-* http://unsplash.com/
+            <p>Add some space around the links. It’s better to put padding on the anchor link rather the the list item because padding adds space on the <em>inside</em>.  Putting it on the link with make the click area bigger.</p>
+
+<pre><code>nav a {
+    display: block; /* changes the element to block */
+    padding: 5px 15px;
+    text-transform: uppercase; 
+}
+</code></pre>
+            <div class="presenter-notes">
+                <p>Show learners the difference between putting padding in the list item vs anchor.  Just demonstrate it with your own code, don't get them to type along so they can just focus on the demo.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
-            Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
-    
-    nav a {
-        display: block; /* changes the element to block */
-        padding: 5px 15px;
-        text-transform: uppercase; 
-    }
+            ##Being more specific - Using a Class
 
-There's a few more concepts to go through to finish styling the header and nav. This is what your page should look like so far: [example 5 about](project/examples/exercise5-about.html) and [example 5 contact](project/examples/exercise5-contact.html).
-        </section>
+            HTML provides ways to attach extra identifying information to target elements in a more specific way. Classes are **attributes** than can be added to any tag and the value is define by you.
+            ```
+            &lt;p class="classname">&lt;/p>
+            ```
+            
+            The class can then be used as a selector to apply styles to *any* element that references the class attribute and can be used multiple times on the same page. 
 
-        <section class="slide" data-markdown>
-            ##Class Selectors
-
-            HTML provides ways to attach extra identifying information to target elements in a more specific way.
-
-            A `class` *attribute* can be added to any element but the value is defined by you.  The class can then be used as a selector to apply styles to any element that references the class attribute.  Classes can be used multiple times on the same page. In CSS, classes are denoted by a leading period.
+            In CSS, classes are denoted by a leading period.
 
             ```xml
             &lt;p&gt;Regular text&lt;/p&gt;
@@ -1259,11 +1290,26 @@ There's a few more concepts to go through to finish styling the header and nav. 
                 text-transform: uppercase;
             }
             ```
-        </section>
-        <section class="slide" data-markdown>
-            ##Mini-Exercise
 
-            Let's create a class called `highlight` and assign it an accent colour. Now this class can be added to any element and it will apply this particular style.
+            Another attribute, `id`, can also be used as a more specific CSS selector and for linking within the same page. We won't be using `id` today but read more about its CSS usage [here](http://htmldog.com/guides/css/intermediate/classid/) and in-page linking [here](http://www.webweaver.nu/html-tips/link-within-a-page.shtml).
+        </section>
+
+        <section class="slide" data-markdown>
+            ##class and id Names
+
+            When choosing a class or id name, choose a descriptive name and do not use spaces. Hyphens (`-`), underscores (`_`) and camel case are acceptable. CSS is also case sensitive, so while these three examples look similar, CSS will read these as three different classes so it's important (for you own sanity) to pick one style and be consistent.
+            
+            ```
+            class="content-wrapper"
+            class="content_wrapper"
+            class="contentWrapper"
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Class Exercise - Special text styles
+
+            Let's create a `class` called `highlight` and assign it an accent colour. Try using the same colour as your links. Now, this class can be added to any element and it will apply this particular style.
 
             ```
             .highlight {
@@ -1271,7 +1317,7 @@ There's a few more concepts to go through to finish styling the header and nav. 
             }
             ```
 
-            Using a span tag, wrap it around your first name on the homepage and apply this class. You can remove the space if you want the first & last name to appear closer together.
+            Using a `&lt;span>` tag, wrap it around your first name on the homepage and apply this class. You can remove the space between the first & last name, to appear closer together. We use the span tag to wrap the content we want to apply this style to, without affecting the content around it. 
 
             ```xml
             &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
@@ -1281,34 +1327,7 @@ There's a few more concepts to go through to finish styling the header and nav. 
 
             ![](framework/img/workshop/highlighted-text.png)
         </section>
-        <section class="slide" data-markdown>
-            ##id Selectors
-
-            `id` *attributes* are similar to `class` *attributes* because it can also be added to any element.
-
-            However, it can be used only **once** per page.  IDs should be reserved for significant style rules. Some developers prefer not to use IDs at all for CSS styling because of the specificity rules and because classes can be used once or multiple times, making it more flexible.
-
-            In CSS, IDs are denoted by a leading hash symbol (`#`).
-            ```
-            #header {
-                width: 800px;
-            }
-            ```
-            IDs can also be used to link within the same page. [Read more about this technique here](http://www.webweaver.nu/html-tips/link-within-a-page.shtml).
-        </section>
-
-        <section class="slide" data-markdown>
-            ##class and id Names
-
-            When choosing a class or id name, choose a descriptive name and do not use spaces. Hyphens (-), underscores (_) and camel case are acceptable. CSS is also case sensitive, so while these three examples look similar, CSS will read these as three different classes so it's important (for you own sanity) to pick one style and be consistent.
-            
-            ```
-            class="content-wrapper"
-            class="content_wrapper"
-            class="contentWrapper"
-            ```
-        </section>
-
+        
         <section class="slide" data-markdown>
             ##CSS Float Property
 
@@ -1369,21 +1388,6 @@ html {
 .clearfix:after {
     clear: both;
 }
-```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Add a quote
-
-            Before we practice using classes and floats, let's just add a bit more content to our **About** page.  In the final example, a quote has been added for some extra personalization.  Also, adding more content to the page will make it longer, therefore scrollable, which we'll need for a later exercise.
-
-            Let's add a quote using the `blockquote` and `cite` tag. Feel free to use the example below, your own or one of the lorem ipsums. Add it under the paragraphs and below the closing `section` tag.
-
-```xml
-&lt;blockquote&gt;
-    &lt;p&gt;The more that you read, the more things you will know. The more that you learn, the more places you'll go.&lt;/p&gt;
-    &lt;cite&gt;&#x2015; Dr. Seuss, I Can Read With My Eyes Shut!&lt;/cite&gt;
-&lt;/blockquote&gt;
 ```
         </section>
 
