@@ -1416,99 +1416,29 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         <section class="slide" data-markdown>
             ##Positioning in CSS
             
-            Sometimes floats and display just doesn't cut it. 
+            Sometimes floats and display just doesn't cut it for laying out page elements. 
 
             The `position` property can be used to place elements in specific spots on the page without affecting the elements around it the way floats do.  There are three options: `relative`, `absolute` and `fixed`. Elements are all `static` by default.
 
             `position` is used in conjunction with **offset properties**: `top`, `right`, `bottom`, and `left`. These are use to identify where an element will be positioned.
-        </section>
-        <section class="slide">
-            <h2>Position: relative</h2>
-            
-            <p>When setting the position to <code>relative</code>, elements will still appear within the <strong>normal flow</strong> a page but will unlock the additional offset properties (top, right, bottom, left).  You can use these values to nudge the element in different directions. Try adding a top value (or any offset property).</p>
 
-            <textarea class="snippet" data-subject="#relative">.box { 
-    width: 100px;
-    height: 100px; 
-    background: blue;
-    position: relative;
-    top:;
-}</textarea>
-            <div id="#relative">
-                <div class="box"></div>
-            </div>  
+            To view more about positioning, check out this extra resource: [position relative, absolute & fixed](framework/extras-positioning.html).
         </section>
 
         <section class="slide">
-            <h2>Position: absolute</h2>
-            
-            <p>When positioning an element as <code>absolute</code>, it can be tricky. It needs to also be paired with another positioning property, added to a parent element, to <em>contain</em> it to a particular spot.</p>
+            <h2>Class Exercise #7 - Positioning the Header &amp; Nav</h2>
 
-            <p>Usually <code>relative</code> positioning is used because it doesn't affect other elements around it. However, the absolute values will be <em>relative</em> to the next parent element with relative, absolute or fixed positioning. If there is no such parent, it will default to the browser window.</p>
-            <pre><code>&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            
-            Try removing <code>position: relative;</code> in the example below and see what happens.<br>
-            <textarea class="snippet" data-subject="#absolute">.container {
-    position: relative;
-}
-.box { 
-    width: 100px;
-    height: 100px; 
-    background: blue;
-    position: absolute;
-    top: 0;
-}</textarea>
-
-            <div id="absolute">
-                <div class="container">
-                    <div class="box"></div>
-                </div>
-            </div>  
-            <div class="presenter-notes">
-                <p>Assure learners that this is a confusing concept and it will be demonstrated again in the upcoming exercise.</p>
-            </div>
-        </section>
-
-        <section class="slide">
-            <h2>Position: fixed</h2>
-            
-            <p>When positioning an element as <code>fixed</code>, it will <em>always</em> be positioned to the viewport. <code>relative</code> or <code>absolute</code> won't have any effect on this property. Also, it will always stay fixed on the page, even on page scroll.</p>
-            <pre><code>&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-            <textarea class="snippet" data-subject="#fixed">.container {
-    position: relative; /* has no effect on fixed */
-}
-.box { 
-    width: 100px;
-    height: 100px; 
-    background: blue;
-    position: fixed;
-    bottom: 0;
-}</textarea>
-
-            <div id="fixed">
-                <div class="container">
-                    <div class="box"></div>
-                </div>
-            </div>  
-        </section>
-
-        <section class="slide">
-            <h2>Class Exercise - Positioning the Header &amp; Nav</h2>
-
-            <p>Set the <em>entire</em> header itself to a fixed position so it stays in place at the top of the page on scroll.</p>
+            <p>Set the <em>entire</em> header to a fixed position so it stays in place at the top of the page on scroll.</p>
 
 <pre><code>header {
     position: fixed;
+    top: 0;
 }
 </code></pre>
 
             <p>Let's check these changes on our <strong>About</strong> page.</p>
-            <p>Positioning takes the element out of the natural stacking order.  See how the profile picture “jumped” underneath the header when <code>position: fixed</code> was applied? It’s because it doesn’t “see” that there’s an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the <code>section</code> element to push the content down below the fixed header. Then try scrolling down the page.</p>
+            <p>Positioning also takes the element out of the natural stacking order.  See how the profile picture “jumped” underneath the header when <code>position: fixed</code> was applied? It’s because it doesn’t “see” that there’s an element before it, so it wants to slide up to the next available slot.</p>
+            <p>Add some padding on the top of the <code>section</code> element to push the content down below the fixed header. Then try scrolling down the page.</p>
 
 <pre><code>section {
     padding-top: 125px;
@@ -1534,7 +1464,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
 }
 </code></pre>
 
-            <p>Next up, position the nav to the top right of the header element. Since the header already has positioning applied to it, the nav will be relative to it.</p>
+            <p>Next up, position the <code>nav</code> to the top right of the header element. Since the header already has positioning applied to it, the nav will be relative to it.</p>
 
 <pre><code>nav {
     position: absolute;
@@ -1543,7 +1473,8 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
 }
 </code></pre>
 
-            <p>Your page should look like <a href="project/examples/exercise6-about.html">example 6</a>.  Note how the header looks the same on all three pages now… except the home page!  Where did the navigation disappear off to?</p>
+            <p>Your page should look like <a href="project/examples/exercise7-about.html">example 7</a>.  Note how the header looks the same on all three pages now.</p>
+            <p>Wait! Where did the footer content disappear off to on the home and contact pages!?</p>
             
             <div class="presenter-notes">
                 <p>Reinforce the ordering of CSS styles for organization during this exercise and stress the importance of keeping the styles in related groupings to keep from possibly duplicating styles or creating specificity issues.</p>
@@ -1551,20 +1482,22 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         </section>
         
         <section class="slide" data-markdown>
-            ##Class attribute & the Home page styles
+            ##Home page styles
+            
+            The home page and contact page currently doesn't have any content in it so the footer is just "underneath" the header.
 
-            The final design for the home page is different from the other two pages including the order of the HTML. On **index.html**, the nav HTML comes *before* the header.  The nav didn't disappear, it's just *under* the header.  
+            However, the final design for the home page is different from the other two pages so we'll need to create special styles for the home page. 
 
-            For the Home page, we can add a `class` attribute to create a specific selector to override the styles that are shared between the About and Contact page. This class will allow us to apply specific styles just for the home page.
+            Let's use the `class` attribute to create a selector to allow us to apply specific styles just to the home page.
 
-            Let's add a class to the `body` tag so we can override any styles for any element contained within the page.
+            Add the class to the `body` tag so we can override any styles for any element contained within the entire page.
 
             ```
             &lt;body class=&quot;home&quot;&gt;
             ```
         </section>
         <section class="slide" data-markdown>
-            ##Class Exercise #7 - Homepage Header & Nav
+            ##Class Exercise #8 - Homepage Header & Nav
 
             These are the styles we are going to change to update the home page.
 
@@ -1596,27 +1529,13 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
             }
             ```
             
-            Add the `.highlight` class to your first name again, to match the styles on the other pages.
+            If you haven't already, add the `.highlight` class to your first name, to match the styles on the other pages.
             
             ```xml
             &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
             ```
 
-            Your page should now look something like [example 7](project/examples/exercise7-home.html), located in your examples folder.
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Sticky Footer
-
-            Remember the natural stacking order? HTML elements stack on top of each other in the order that they appear in the HTML.  Each element is as tall as their content (unless otherwise specified).  
-
-            On the home page, the footer appears right below the headings. On the about page, it appears on the bottom because the content is long enough to scroll.  And on the contact page, you can't even see it because it's hidden underneath the positioned header!
-
-            To ensure that your footer is always at the bottom of the page, no matter how long the page content is or how big the browser window is, use a "sticky footer".
-
-            For "homework", [follow these instructions](framework/extras-sticky-footer.html) to create a sticky footer.
-
-            Let's finish the day with background images and forms!
+            Your page should now look something like [exercise8-home](project/examples/exercise8-home.html), located in your examples folder.
         </section>
 
         <section class="slide" data-markdown>
@@ -1769,7 +1688,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         </div>
                 
         <div class="slide" data-markdown>
-            ##Next Steps & "Homework"
+            ##Next Steps
             
             Though we've covered a lot of material today, there are still lots of things to add to give your web page that extra personalization, finalize some styles and add some polish.
 

@@ -28,6 +28,10 @@ header,
 section {
   padding: 20px 30px;
 }
+section {
+  padding-top: 125px;
+}
+
 h1 {
   font-family: "Nixie One", serif;
 }
@@ -41,10 +45,19 @@ a {
   color: #bf6d50;
   text-decoration: none;
 }
-
+.highlight {
+  color: #bf6d50;
+}
 
 /* HEADER
 -----------------------------------------*/
+header {
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 header h1 {
   font-size: 36px;
 }
@@ -55,6 +68,11 @@ header h2 {
 
 /* NAVIGATION MENU
 -----------------------------------------*/
+nav {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -64,8 +82,8 @@ nav ul li {
   display: inline-block;
 }
 nav a {
-  display: block;
   padding: 5px 15px;
+  display: block;
   text-transform: uppercase;
 }
 
@@ -81,4 +99,5 @@ nav a {
   text-align: center;
   padding-top: 20px;
 }
+
 

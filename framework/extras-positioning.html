@@ -26,100 +26,77 @@
     <base target="_blank">
 
     <main>
-        <section class="slide" data-markdown>
-            ##Sticky Footer
-
-            Remember the natural stacking order? HTML elements stack on top of each other in the order that they appear in the HTML.  Each element is as tall as their content (unless otherwise specified).  
-
-            On the home page, the footer appears right below the headings. On the about page, it appears on the bottom because the content is long enough to scroll.
-
-            To ensure that your footer is always at the bottom of the page, no matter how long the page content is or how big the browser window is, use a "sticky footer".
-        </section>
-        <section class="slide" data-markdown>
-##Create a Sticky Footer
-
-We'll be following these instructions: http://css-tricks.com/snippets/css/sticky-footer/
-
-First, we need to create a page wrapper around the page content only, not the footer content.  The home page HTML will look like similar to this: 
-
-```
-&lt;div class=&quot;page-wrap&quot;&gt;
-    &lt;nav&gt;
-        ...
-    &lt;/nav&gt;
-
-    &lt;header&gt;
-        &lt;h1&gt;Jane Smith&lt;/h1&gt;
-        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-    &lt;/header&gt;    
-&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-&lt;footer&gt;
-  ...
-&lt;/footer&gt;
-```
-
-The about and contact pages will look like this:
-
-```
-&lt;div class=&quot;page-wrap&quot;&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Jane Smith&lt;/h1&gt;
-        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-
-        &lt;nav&gt;
-            ...
-        &lt;/nav&gt;
-    &lt;/header&gt;
-&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-&lt;footer&gt;
-    ...
-&lt;/footer&gt;
-```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Sticky Footer CSS
-
-            ```
-            /* sticky footer */
-            html, body {
-                height: 100%;
-            }
-            .page-wrap {
-                min-height: 100%;
-                margin-bottom: -35px; /* must be the same height as footer */
-            }
-            .page-wrap:after {
-                content: "";
-                display: block;
-            }
-            footer, .page-wrap:after {
-                height: 35px; /* wowever tall you want the footer to be */
-            }
-            footer {
-                background: #222;
-                color: #ccc;
-            }
-            ```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##One more update
-
-            Let's revise the CSS for the paragraph in the footer.
+        <section class="slide">
+            <h2>Position: relative</h2>
             
-            ```
-            footer {
-                clear: both;
-                padding: 5px; /* adds space inside the footer */
-            }
-            footer p {
-                margin: 0; /* removes default margin from paragraph */
-            }
-            ```
-            Compare your page with this [example](../project/examples/sticky-footer-home.html).
+            <p>When setting the position to <code>relative</code>, elements will still appear within the <strong>normal flow</strong> a page but will unlock the additional offset properties (top, right, bottom, left).  You can use these values to nudge the element in different directions. Try adding a top value (or any offset property).</p>
+
+            <textarea class="snippet" data-subject="#relative">.box { 
+    width: 100px;
+    height: 100px; 
+    background: blue;
+    position: relative;
+    top:;
+}</textarea>
+            <div id="#relative">
+                <div class="box"></div>
+            </div>  
         </section>
 
+        <section class="slide">
+            <h2>Position: absolute</h2>
+            
+            <p>When positioning an element as <code>absolute</code>, it can be tricky. It needs to also be paired with another positioning property, added to a parent element, to <em>contain</em> it to a particular spot.</p>
+
+            <p>Usually <code>relative</code> positioning is used because it doesn't affect other elements around it. However, the absolute values will be <em>relative</em> to the next parent element with relative, absolute or fixed positioning. If there is no such parent, it will default to the browser window.</p>
+            <pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+            Try removing <code>position: relative;</code> in the example below and see what happens.<br>
+            <textarea class="snippet" data-subject="#absolute">.container {
+    position: relative;
+}
+.box { 
+    width: 100px;
+    height: 100px; 
+    background: blue;
+    position: absolute;
+    top: 0;
+}</textarea>
+
+            <div id="absolute">
+                <div class="container">
+                    <div class="box"></div>
+                </div>
+            </div>  
+        </section>
+
+        <section class="slide">
+            <h2>Position: fixed</h2>
+            
+            <p>When positioning an element as <code>fixed</code>, it will <em>always</em> be positioned to the viewport. <code>relative</code> or <code>absolute</code> won't have any effect on this property. Also, it will always stay fixed on the page, even on page scroll.</p>
+            <pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <textarea class="snippet" data-subject="#fixed">.container {
+    position: relative; /* has no effect on fixed */
+}
+.box { 
+    width: 100px;
+    height: 100px; 
+    background: blue;
+    position: fixed;
+    bottom: 0;
+}</textarea>
+
+            <div id="fixed">
+                <div class="container">
+                    <div class="box"></div>
+                </div>
+            </div>  
+        </section>
     </main><!-- cls main section -->
 
     <footer>
