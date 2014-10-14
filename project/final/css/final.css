@@ -1,82 +1,65 @@
+/* --------------------------------------
+    Created by Ladies Learning Code
+    http://ladieslearningcode.com
+-----------------------------------------*/
+
 /* GLOBAL STYLES
 -----------------------------------------*/
-/* border-box fix */
+html, body {
+  height: 100%;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* Clear fix */
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
-
-.cf:after {
-  clear: both;
-}
-
-html,
 body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
   padding: 0;
+  margin: 0;
   font-family: "Open Sans", sans-serif;
   color: #333;
 }
-
-header,
-section {
-  padding: 20px 30px;
-}
-
-section {
-  padding-top: 125px;
-}
-
-h1, h2 {
-  margin: 0;
-  font-weight: 300;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
 h1 {
   font-family: "Nixie One", serif;
 }
-
+h1, h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0; /* removes default space */
+  line-height: 1; /* tightens up the space between the headings */
+}
 a {
   color: #bf6d50;
   text-decoration: none;
   transition: all 0.5s ease;
 }
-a:hover {
-  color: black;
+header,
+section {
+  padding: 20px 30px;
 }
-
-.cursive {
-  font-family: "Pacifico", cursive;
-  margin: 0 3px 0 1px;
+section {
+  padding-top: 125px;
 }
-
 .highlight {
   color: #bf6d50;
 }
+.cursive {
+  font-family: "Pacifico", cursive;
+}
 
-/* HEADER */
+
+/* HEADER
+-----------------------------------------*/
 header {
-  background: white;
-  border-bottom: 1px solid #eee;
   position: fixed;
   top: 0;
-  width: 100%;
+  background: white;
+  border-bottom: 1px solid #eee;
+  width: 100%; 
 }
 header h1 {
   font-size: 36px;
@@ -85,116 +68,39 @@ header h2 {
   font-size: 18px;
 }
 
-/* NAVIGATION MENU */
+/* Navigation */
 nav {
   position: absolute;
   right: 20px;
   top: 20px;
 }
 nav ul {
-  margin: 0;
-  padding: 0;
+  list-style-type: none; /* removes bullets */
+  margin: 0; /* removes default margin */
+  padding: 0; /* removes default padding */
 }
-nav li {
-  display: inline-block;
+nav ul li {
+  display: inline-block; /* gets the list items to line up side by side */
 }
 nav a {
+  display: block; /* changes the element to block */
   padding: 5px 15px;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
-nav a:hover {
-  background: rgba(0, 0, 0, 0.1);
+  text-transform: uppercase; 
 }
 nav .current {
   color: black;
 }
 
-/* FOOTER */
-/* sticky footer */
-.wrapper {
-  min-height: 100%;
-  margin-bottom: -35px;
-  /* equal to footer height */
-}
-
-.wrapper:after {
-  content: "";
-  display: block;
-}
-
-footer,
-.wrapper:after {
-  /* must be the same height as footer */
-  height: 35px;
-}
-
-/* General footer styles */
-footer {
-  background: #222;
-  color: #ccc;
-  line-height: 35px;
-  padding: 0 15px;
-}
-footer .copyright {
-  margin: 0;
-  float: left;
-}
-footer .social {
-  float: right;
-}
-footer .social a {
-  display: inline-block;
-  padding: 0 6px;
-}
-footer .social a:hover {
-  color: white;
-}
-
-/* PAGE STYLES
+/* HOME PAGE
 -----------------------------------------*/
-/* HOMEPAGE */
 .home {
-  background: url(../images/background-6.jpg) no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(../images/background-6.jpg) no-repeat 50%;
   background-size: cover;
 }
 .home header {
-  background: transparent;
   position: static;
+  background: transparent;
   border-bottom: none;
-}
-.home nav {
-  top: 0;
-  text-align: right;
-  font-size: 20px;
-}
-.home nav:hover + .wrapper {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-}
-.home nav:hover ul {
-  display: block;
-}
-.home nav i {
-  cursor: pointer;
-  padding: 20px;
-  font-size: 40px;
-  color: #bf6d50;
-}
-.home nav ul {
-  display: none;
-}
-.home nav li {
-  display: block;
-}
-.home nav a {
-  display: inline-block;
-  padding: 10px 20px;
-}
-.home nav a:hover {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-}
-.home header {
   text-align: center;
   padding-top: 100px;
 }
@@ -204,51 +110,74 @@ footer .social a:hover {
 .home header h2 {
   font-size: 40px;
 }
+.home nav {
+  text-align: right;
+  font-size: 25px;
+}
+.home nav ul {
+  display: none;
+}
+.home nav:hover ul {
+  display: block;
+}
+.home li {
+  display: block;
+}
+.home a:hover {
+  color: black;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.fa-bars {
+  padding: 15px;
+  cursor: pointer;
+  font-size: 40px;
+  color: #bf6d50;
+}
 
-/* ABOUT */
-.about .profile-image {
-  width: 50%;
+/* ABOUT PAGE
+-----------------------------------------*/
+.profile-img {
   float: left;
   margin-right: 20px;
 }
-.about blockquote {
-  clear: both;
+blockquote {
+  clear: both; /* clears the float and returns page back to normal stacking order */
   text-align: center;
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 30px 0;
+  padding-top: 20px;
 }
-.about blockquote p {
+blockquote p {
   font-family: "Pacifico", cursive;
-  font-size: 32px;
+  font-size: 25px;
 }
 
-/* CONTACT */
+
+/* CONTACT PAGE
+-----------------------------------------*/
 .contact {
-  background: url(../images/background-8.jpg) no-repeat fixed;
+  background: url(../images/background-8.jpg) no-repeat;
   background-size: cover;
 }
-.contact form {
-  background: white;
-  width: 600px;
-  margin: 10px auto;
-  border-radius: 4px;
-  padding: 20px;
+.contact-form {
+    width: 600px;
+    margin: 10px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
 }
-.contact form h2 {
-  text-align: center;
-}
-.contact form input, .contact form textarea {
+.contact-form input, 
+.contact-form textarea {
   width: 100%;
-  border: 1px solid #d8d8d8;
+  border: 1px solid #ccc;
   padding: 5px;
 }
-.contact form input:focus, .contact form textarea:focus {
+.contact-form textarea {
+  height: 100px;
+}
+.contact form input:focus, 
+.contact form textarea:focus {
   outline: none;
   border: 1px solid #bf6d50;
-}
-.contact form textarea {
-  height: 100px;
 }
 .contact form input[type="submit"] {
   width: auto;
@@ -256,4 +185,31 @@ footer .social a:hover {
   background: #bf6d50;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
+/* FOOTER
+-----------------------------------------*/
+/* sticky footer */
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -35px; /* must be the same height as footer */
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+footer, .page-wrap:after {
+  height: 35px; /* wowever tall you want the footer to be */
+}
+footer {
+  background: #222;
+  color: #ccc;
+  clear: both;
+  padding: 5px; /* adds space inside the footer */
+}
+footer p {
+    margin: 0; /* removes default margin from paragraph */
 }
