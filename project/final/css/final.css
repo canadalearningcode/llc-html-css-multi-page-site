@@ -94,7 +94,7 @@ nav .current {
 /* HOME PAGE
 -----------------------------------------*/
 .home {
-  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url(../images/background-6.jpg) no-repeat 50%;
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)), url(../images/background-6.jpg) no-repeat 50%;
   background-size: cover;
 }
 .home header {
@@ -123,13 +123,18 @@ nav .current {
 .home li {
   display: block;
 }
-.home a:hover {
+.home nav a {
+  display: inline-block;
+  font-size: 22px;
+  padding: 10px 15px;
+}
+.home nav a:hover {
   color: black;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 5px;
 }
 .fa-bars {
-  padding: 15px;
+  padding: 0 15px 15px 15px;
   cursor: pointer;
   font-size: 40px;
   color: #bf6d50;
@@ -160,9 +165,9 @@ blockquote p {
 }
 .contact-form {
     width: 600px;
-    margin: 10px auto;
+    margin: 0 auto;
     background: white;
-    padding: 20px;
+    padding: 18px;
     border-radius: 4px;
 }
 .contact-form input, 
@@ -208,8 +213,21 @@ footer {
   background: #222;
   color: #ccc;
   clear: both;
-  padding: 5px; /* adds space inside the footer */
+  padding: 0 5px; /* adds space inside the footer */
+  line-height: 35px;
 }
-footer p {
-    margin: 0; /* removes default margin from paragraph */
+footer .copyright {
+  margin: 0; /* removes default margin from paragraph */
+  float: left;
 }
+footer .social {
+  float: right;
+}
+footer .social a {
+  display: inline-block;
+  padding: 0 6px;
+}
+footer .social a:hover {
+  color: white;
+}
+

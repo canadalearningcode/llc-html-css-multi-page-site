@@ -315,6 +315,50 @@ table {
 	}
 }
 
+
+/* Last slide
+-------------------------------*/
+.last {
+	.title {
+		color: $white;
+		margin-top: 40px;
+	}
+	ul {
+		@include list-reset();
+		font-size: 2.2rem;
+	}
+	.fa {
+		padding-right: 10px;
+	}
+	.title-bg {
+		background: rgba($llc-pink, 0.8);
+		border-radius: 5px;
+		padding: 0 10px 0 6px;
+	}
+	.instructor-img {
+		border-radius: 50%;
+		width: 100px;
+		float: left;
+		margin-right: 20px;
+	}
+	h3 {
+		margin-bottom: 20px;
+		span {
+			color: $llc-pink;
+			font-family: $cursive;
+			margin-right: 4px;
+			font-size: 3rem;
+			text-transform: lowercase;
+			font-weight: $normal;
+		}
+	}
+	.attribution {
+		position: absolute;
+		bottom: 20px;
+	}
+}
+
+
 /* highlight.js customizations
 -------------------------------*/
 .hljs {
