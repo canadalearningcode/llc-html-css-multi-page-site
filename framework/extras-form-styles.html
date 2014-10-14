@@ -94,14 +94,14 @@ Add some padding to `contact-form` to keep the text from going right up to the e
 To get the input and textarea to span all the way across the form, we can set the width to 100% so it takes up the entire width of the form. It's also possible to override the default border styles too.  Add height to the textarea just to give more room for the user to type a message.
 
 ```
-input, 
-textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 5px;
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 5px;
 }
-textarea {
-  height: 100px;
+.contact-form textarea {
+    height: 100px;
 }
 ```
 Your form should look similar to the [contact-page-styles.html](../project/examples/contact-page-styles.html) example.

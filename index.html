@@ -144,7 +144,7 @@ A website is basically a collection of web pages, aka **HTML documents**, that c
         </section>
 
         <section class="slide">
-            <h2>Setting Up Our Work Flow</h2>
+            <h2>Setting Up Your Work Flow</h2>
 
             <p>Inside of the folder you downloaded today (<strong>llc-html-css-multi-page-site-master</strong>), there are many folders and files that contain different content.</p>
 
@@ -160,7 +160,7 @@ A website is basically a collection of web pages, aka **HTML documents**, that c
         </section>
 
         <section class="slide" data-markdown>
-##Setting Up Our Work Flow
+##Setting Up Your Work Flow
 
 Let's open the project files in the browser and text editor.
 
@@ -220,9 +220,7 @@ The are many different HTML tags used to create structure and add semantics (mea
         <section class="slide">
             <h2>Nesting HTML tags</h2>
 
-            <p>Tags are often nested within other tags and make up the <em>document tree</em>. The relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc. Understanding this relationship will come in handy for writing CSS.</p>
-
-            <p>Also, whitespace through indentation of nested elements makes HTML easier to read.</p>
+            <p>Tags are often nested within other tags and make up the <em>document tree</em>. The relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc. Understanding this relationship will come in handy for writing CSS. Also, whitespace through indentation of nested elements makes HTML easier to read.</p>
             <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;&lt;!-- child of html tag, parent of title tag --&gt;
@@ -261,7 +259,7 @@ We've seen these tags in our project file. These are the basic HTML tags require
     
 * `doctype` - Though not an HTML tag, it is always the first line. It tells the browser what version of HTML the document is written in.
 * `&lt;html>` - Always first, making it the ancestor of all other elements. It identifies the document as HTML.
-* `&lt;head>` - Contains information about the web page but doesn’t display on the web page itself. Examples include the page title (&lt;title>&lt/title>) and links to external CSS files.
+* `&lt;head>` - Contains information about the web page but doesn’t display on the web page itself. Examples include the page title (`&lt;title>&lt;/title>`) and links to external CSS files.
 * `&lt;body>` - All content to be displayed in the browser window, also known as the viewport, goes between the `body` tags.
         </section>
         
@@ -272,7 +270,7 @@ We've seen these tags in our project file. These are the basic HTML tags require
         <section class="slide" data-markdown>
 ##Adding text
 
-Heading tags are used for headings / page titles. There are six headings tags ranging from `&lt;h1>` to `&lt;h6>` and follow a hierarchy. `&lt;h1>` is the most significant heading on the page.
+Heading tags are used for page headings. There are six headings tags ranging from `&lt;h1>` to `&lt;h6>` and follow a hierarchy. `&lt;h1>` is the most significant heading on the page.
 
 ```xml
 &lt;h1>Name of blog&lt;/h1>
@@ -991,7 +989,15 @@ a {
 }
 ```
 
-**Bonus:** If you have extra time, find an accent colour to use throughout your site and update the above color value with your accent colour. Here are the links to the color resources again.
+**Bonus:** If you have extra time, find an accent colour to use throughout your site and update the above color value with your accent colour. Here is the link to the [color resources slide](#slide42).
+
+Or, find a background image for an upcoming afternoon exercise using one of the links below or choose one contained in your **images** folder. Here are some resources:
+
+* http://superfamous.com/
+* http://www.gratisography.com/
+* http://littlevisuals.co/
+* http://nos.twnsnd.co/
+* http://unsplash.com/
         </section>
 
         <section class="slide title" data-markdown>
@@ -1234,7 +1240,7 @@ margin: 0px;</textarea>
         <section class="slide">
             <h2>Class Exercise #5 - Horizontal navigation</h2>
 
-            <p>In this step, we're focusing on changing the default list styles to a horizontal layout. It will look like this sample below (also found in your examples folder, <a href="project/examples/exercise5-about.html">exercise 5</a>).</p>
+            <p>In this step, we're focusing on changing the default list styles to a horizontal layout. It will look like this sample below (also found in your examples folder, <a href="project/examples/exercise5-about.html">exercise5-about.html</a>).</p>
             <img src="framework/img/workshop/exercise5-nav.png" alt="">
             <p>First, remove the default list spacing and bullets.</p>
 <pre><code>nav ul {
@@ -1335,7 +1341,7 @@ margin: 0px;</textarea>
 
             ![](framework/img/workshop/about-not-floated.png)
 
-            To get two block elements to align side-by-side, we've used `display: inline-block` but the `float` property is often used for creating page layouts.
+            To get two block elements to align side-by-side, we've used `display: inline-block` for our navigation list, but the `float` property is often used for creating page layouts.
 
             **However**, we have to break the natural stacking flow when an element is floated. This will cause any element *after* the floated element to try to move up beside it or just not display properly because we've disrupted the natural stacking flow. The parent container will also collapse.
         </section>
@@ -1474,7 +1480,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
 </code></pre>
 
             <p>Your page should look like <a href="project/examples/exercise7-about.html">example 7</a>.  Note how the header looks the same on all three pages now.</p>
-            <p>Wait! Where did the footer content disappear off to on the home and contact pages!?</p>
+            <p>Wait! The footer content disappeared on the home and contact pages!?</p>
             
             <div class="presenter-notes">
                 <p>Reinforce the ordering of CSS styles for organization during this exercise and stress the importance of keeping the styles in related groupings to keep from possibly duplicating styles or creating specificity issues.</p>
@@ -1484,13 +1490,13 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         <section class="slide" data-markdown>
             ##Home page styles
             
-            The home page and contact page currently doesn't have any content in it so the footer is just "underneath" the header.
+            The home page and contact page currently doesn't have any content in it so the footer is just "underneath" the header. Once content has been added, it will push the footer down the page.
 
             However, the final design for the home page is different from the other two pages so we'll need to create special styles for the home page. 
 
             Let's use the `class` attribute to create a selector to allow us to apply specific styles just to the home page.
 
-            Add the class to the `body` tag so we can override any styles for any element contained within the entire page.
+            Add the `class` to the `body` tag to override any styles, for any element, contained within the entire page.
 
             ```
             &lt;body class=&quot;home&quot;&gt;
@@ -1535,7 +1541,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
             &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
             ```
 
-            Your page should now look something like [exercise8-home](project/examples/exercise8-home.html), located in your examples folder.
+            Your page should now look something like [exercise8-home.html](project/examples/exercise8-home.html), located in your examples folder.
         </section>
 
         <section class="slide" data-markdown>
@@ -1692,13 +1698,13 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
         <div class="slide" data-markdown>
             ##Next Steps
             
-            Though we've covered a lot of material today, there are still lots of things to add to give your web page that extra personalization, finalize some styles and add some polish.
+            Phew! We've covered A LOT of material today.
 
-            Here are some additional lessons you can try:
-            
-            * [Sticky Footer](framework/extras-sticky-footer.html)
+            Here are some extra challenges and take-home lessons for you to tackle another day. These lessons will cover some more options to give your web page extra personalization, finalize some styles and add some polish. Here are the links to the additional lessons:
+
             * [Contact page](framework/extras-form-styles.html) - adding background images & form styling
             * [Forms, pt 2](framework/extras-form-submission.html) - how to submit a form
+            * [Sticky Footer](framework/extras-sticky-footer.html)
             * [Home page: additional styles](framework/extras-homepage.html) - includes using icon fonts and creating a drop down menu.
             * [Add a favicon](http://blog.teamtreehouse.com/how-to-make-a-favicon)
             * Use the [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) to add your social icons to the footer. 

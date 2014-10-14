@@ -40,19 +40,20 @@
 
 We'll be following these instructions: http://css-tricks.com/snippets/css/sticky-footer/
 
-First, we need to create a page wrapper around the page content only, not the footer content.  The home page HTML will look like similar to this: 
+First, we need to create a page wrapper around the page content only, **not** the footer content.  The home page HTML will look like similar to this: 
 
 ```
 &lt;div class=&quot;page-wrap&quot;&gt;
-    &lt;nav&gt;
-        ...
-    &lt;/nav&gt;
-
     &lt;header&gt;
         &lt;h1&gt;Jane Smith&lt;/h1&gt;
         &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-    &lt;/header&gt;    
+    
+        &lt;nav&gt;
+            ...
+        &lt;/nav&gt; 
+    &lt;/header&gt;   
 &lt;/div&gt;&lt;!-- close .page-wrap --&gt;
+
 &lt;footer&gt;
   ...
 &lt;/footer&gt;
@@ -60,7 +61,7 @@ First, we need to create a page wrapper around the page content only, not the fo
 
 The about and contact pages will look like this:
 
-```
+```xml
 &lt;div class=&quot;page-wrap&quot;&gt;
     &lt;header&gt;
         &lt;h1&gt;Jane Smith&lt;/h1&gt;
@@ -70,6 +71,10 @@ The about and contact pages will look like this:
             ...
         &lt;/nav&gt;
     &lt;/header&gt;
+
+    &lt;section>
+        ...
+    &lt;/section>
 &lt;/div&gt;&lt;!-- close .page-wrap --&gt;
 &lt;footer&gt;
     ...
@@ -80,11 +85,9 @@ The about and contact pages will look like this:
         <section class="slide" data-markdown>
             ##Sticky Footer CSS
 
+
             ```
             /* sticky footer */
-            html, body {
-                height: 100%;
-            }
             .page-wrap {
                 min-height: 100%;
                 margin-bottom: -35px; /* must be the same height as footer */
@@ -101,6 +104,14 @@ The about and contact pages will look like this:
                 color: #ccc;
             }
             ```
+
+            **NOTE**: In the tutorial this lesson is based on, you will see the following CSS included but we've already added it to the CSS when creating the home page background image.
+
+            ```
+            html, body {
+                height: 100%;
+            }
+            ```
         </section>
 
         <section class="slide" data-markdown>
@@ -110,6 +121,7 @@ The about and contact pages will look like this:
             
             ```
             footer {
+                /* add this to the existing declaration block */
                 clear: both;
                 padding: 5px; /* adds space inside the footer */
             }

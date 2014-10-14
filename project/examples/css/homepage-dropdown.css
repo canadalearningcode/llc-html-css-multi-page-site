@@ -1,5 +1,9 @@
 /* GLOBAL STYLES
 -----------------------------------------*/
+html, body {
+  height: 100%;
+}
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
@@ -8,21 +12,24 @@ html {
   box-sizing: inherit;
 }
 
-/* clears floated child elements */
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-
 body {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
   color: #333;
+}
+h1 {
+  font-family: "Nixie One", serif;
+}
+h1, h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0; /* removes default space */
+  line-height: 1; /* tightens up the space between the headings */
+}
+a {
+  color: #bf6d50;
+  text-decoration: none;
 }
 header,
 section {
@@ -31,32 +38,19 @@ section {
 section {
   padding-top: 125px;
 }
-
-h1 {
-  font-family: "Nixie One", serif;
-}
-h1, h2 {
-  font-weight: 300;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1;
-}
-a {
-  color: #bf6d50;
-  text-decoration: none;
-}
 .highlight {
   color: #bf6d50;
 }
 
+
 /* HEADER
 -----------------------------------------*/
 header {
-  background: white;
-  border-bottom: 1px solid #eee;
   position: fixed;
   top: 0;
-  width: 100%;
+  background: white;
+  border-bottom: 1px solid #eee;
+  width: 100%; 
 }
 header h1 {
   font-size: 36px;
@@ -65,32 +59,30 @@ header h2 {
   font-size: 18px;
 }
 
-
-/* NAVIGATION MENU
------------------------------------------*/
+/* Navigation */
 nav {
   position: absolute;
   right: 20px;
   top: 20px;
 }
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  list-style-type: none; /* removes bullets */
+  margin: 0; /* removes default margin */
+  padding: 0; /* removes default padding */
 }
 nav ul li {
-  display: inline-block;
+  display: inline-block; /* gets the list items to line up side by side */
 }
 nav a {
+  display: block; /* changes the element to block */
   padding: 5px 15px;
-  text-transform: uppercase;
+  text-transform: uppercase; 
 }
-
 
 /* HOME PAGE
 -----------------------------------------*/
 .home {
-  background: url(../images/background-6.jpg) no-repeat;
+  background: url(../images/background-6.jpg) no-repeat 50%;
   background-size: cover;
 }
 .home header {
@@ -116,24 +108,31 @@ nav a {
 .home nav:hover ul {
   display: block;
 }
+.home li {
+  display: block;
+}
 .home a:hover {
   color: black;
 }
-.home nav li {
-  display: block;
-}
 .fa-bars {
   padding: 15px;
-
 }
 
 
 /* ABOUT PAGE
 -----------------------------------------*/
-.profile-image {
+.profile-img {
   float: left;
-  width: 50%;
   margin-right: 20px;
+}
+blockquote {
+  clear: both; /* clears the float and returns page back to normal stacking order */
+  text-align: center;
+  padding-top: 20px;
+}
+blockquote p {
+  font-family: "Pacifico", cursive;
+  font-size: 25px;
 }
 
 
@@ -144,48 +143,43 @@ nav a {
   background-size: cover;
 }
 .contact-form {
-  width: 600px;
-  margin: 10px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 4px;
+    width: 600px;
+    margin: 10px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
 }
-input, 
-textarea {
+.contact-form input, 
+.contact-form textarea {
   width: 100%;
   border: 1px solid #ccc;
   padding: 5px;
 }
-textarea {
+.contact-form textarea {
   height: 100px;
 }
 
 
 /* FOOTER
 -----------------------------------------*/
-footer {
-  clear: both;
-}
 /* sticky footer */
-html, body {
-  height: 100%;
-}
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -35px; /* equal to footer height */
+  margin-bottom: -35px; /* must be the same height as footer */
 }
 .page-wrap:after {
   content: "";
   display: block;
 }
 footer, .page-wrap:after {
-  height: 35px; /* must be the same height as footer */
+  height: 35px; /* wowever tall you want the footer to be */
 }
 footer {
   background: #222;
   color: #ccc;
+  clear: both;
+  padding: 5px; /* adds space inside the footer */
 }
-
-
-
-
+footer p {
+    margin: 0; /* removes default margin from paragraph */
+}
