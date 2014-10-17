@@ -60,7 +60,7 @@
             <img src="framework/img/workshop/project3.jpg" alt="project contact page" title="">
 
             <div class="presenter-notes" style="text-align:left;">
-                <p>It might be helpful to leave the final project open in an extra tab to be able to refer to it throughout the day to show what each exercise is trying to work towards.</p>
+                <p>It might be helpful to leave the final project open in an extra tab to be able to refer to it throughout the day to show what each exercise is trying to work towards. Though each exercise also has its own example as well.</p>
             </div>
         </section>
 
@@ -89,7 +89,7 @@ You can view the source of any web page by right-clicking (or two-finger tap) on
 **Developer tools** take it a step further and allows us to *inspect* any web page making it easier to test and debug code. The tools can be accessed in 3 ways:
 
 * right-click / two-finger tap on a web page and select **Inspect Element**
-* select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools**
+* select the menu icon ![](framework/img/workshop/menu-icon-chrome.png) in the top right hand corner and select **Tools > Developer Tools**
 * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
 
 Extra resource: http://discover-devtools.codeschool.com
@@ -167,8 +167,9 @@ Let's open the project files in the browser and text editor.
 1. Open Sublime Text and go to **File > Open**.
 1. Navigate to the **Project** folder (inside the folder you downloaded with today's slides).  
 With the entire folder selected, select **Open**.
-1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it. The basic HTML tags for all web pages have been included in this file.
-1. Right click or two finger tap in Sublime and select **Open in Browser**. This will open the HTML file in your *default* browser. 
+1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it.
+1. Right click or two-finger tap in Sublime and select **Open in Browser**. This will open the HTML file in your *default* browser. 
+    * If Chrome is not your default browser, go to your Window/Finder and navigate to the **project** folder, right-click/two-finger tap on **index.html** and choose **Open With > Chrome**
     
 You should see this:
 
@@ -244,7 +245,22 @@ The are many different HTML tags used to create structure and add semantics (mea
         </section>
 
         <section class="slide" data-markdown>
-##BASIC HTML DOCUMENT
+            ##Writing HTML
+
+            To ensure that your tags are closed properly, write the open tag and close tag **first**, then move the cursor between the tags to add your content.
+
+            ![opening & closing tags](framework/img/workshop/writing-html.gif)
+        </section>
+        <section class="slide" data-markdown>
+            ##Writing HTML
+
+            When nesting tags, make sure to indent by pressing the **tab** key once to clearly show which elements are nested.
+
+            ![nesting tags](framework/img/workshop/writing-nested-tags.gif)
+        </section>
+
+        <section class="slide" data-markdown>
+##Basic HTML document
 
 We've seen these tags in our project file. These are the basic HTML tags required for every web page. 
 
@@ -429,7 +445,7 @@ For the navigation, adding a `&lt;nav&gt;` tag around the list will make it more
             <p><img src="framework/img/workshop/nav-list.png" alt="nav list" title=""></p>
  
             <div class="presenter-notes">
-                <p>Anything titled “class exercise” is meant to be a type along exercise. The code is there as reference. </p>
+                <p>Anything titled “class exercise” is meant to be a type along exercise. For type along exercises, try to type out each code block rather than copy and paste from the slides to get learners to think about what they're typing about and get practice actually typing it. The code is there just as reference and for learners to have something to compare to outside of the workshop.</p>
             </div>
         </section>
     
@@ -479,6 +495,9 @@ To create an HTML page, name your file using an `.html` extension and it will op
                 <li>Test the navigation. Are all the links going to the proper page?</li>
             </ol>
             <p>If you get stuck, you can take a peek in the <strong>examples</strong> folder: <a href="project/examples/exercise2-home.html">exercise2-home.html</a>, <a href="project/examples/exercise2-about.html">exercise2-about.html</a>, <a href="project/examples/exercise2-contact.html">exercise2-contact.html</a></p>
+
+            <p><strong>Bonus:</strong><br> 
+            Find an image to use as a profile picture for your <strong>About</strong> page.  The image should ideally be around 600 x 400px.  Here's a link to a free online tool for cropping images: <a href="http://apps.pixlr.com/editor/">http://pixlr.com</a></p>
 
             <div class="presenter-notes">
                 <p>Check in with learners after 10mins. If majority of people have not finished, give them 5-10 more minutes.  If they are still not done after that, let them know they'll have some time in the next exercise to finish up.</p>
@@ -610,7 +629,7 @@ Use the `&lt;section>` tag to create a new sectioning block for the page content
 1. Inside of the `section` tag, add a profile picture using the `img` tag.
 1. *After* your profile picture, add an `h2` for the About page title.
 1. *After* the `h2`, add a couple of paragraphs about you, or use placeholder text.
-1. We're going to need to work with some additional content in the afternoon so *after* the paragraphs, add a quote.  You can use this sample below, or add your own. Just keep the content within the `&lt;blockquote>` tag.
+1. We're going to need to work with some additional content in the afternoon so *after* the paragraphs, add a quote using another HTML5 tag. You can use this sample below, or add your own. Just make sure to keep the content within the `&lt;blockquote>` tag.
 
 ```xml
 &lt;blockquote>
@@ -844,7 +863,7 @@ body {
 
             Here's a handy resource for referencing web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
 
-            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* style heet and fonts and no file downloads are necessary. We'll be using this service in today's project. 
+            For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. Google Fonts allows you to link directly to their *hosted* style sheet and fonts and no file downloads are necessary. We'll be using this service in today's project. 
         </section>
 
         <section class="slide">
@@ -864,7 +883,7 @@ text-transform: lowercase;</textarea>
             <p>Resource: <a href="http://reference.sitepoint.com/css/typography">Sitepoint Typographical Properties</a></p>
 
             <div class="presenter-notes">
-                <p>Explain what each property does while updating each example in the code editor.</p>
+                <p>Explain what each property does while updating each example in the code editor. Talk about the difference between using line-height with and without a measurement unit.</p>
             </div>
         </section>
 
@@ -892,10 +911,10 @@ text-transform: lowercase;</textarea>
             <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
             <p>Or try Source Sans Pro, Quicksand, Merriweather or Codystar.</p>
 
-            <p>If you can't decide which fonts to use, just use the example project fonts: Open Sans (light), Nixie One and Pacifico.  The font file links are provided in the post-lunch exercise.</p>
+            <p>If you can't decide which fonts to use, use the example project fonts: Open Sans (light), Nixie One and Pacifico.  The font file links are provided in the post-lunch exercise.</p>
 
             <div class="presenter-notes">
-                <p>Aim to get to lunch around 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time. If not, they can just use the suggested fonts.</p>
+                <p>Aim to get to lunch around 12:15 - 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time. If not, they can just use the suggested fonts.</p>
             </div>
         </section>
         
@@ -1681,9 +1700,8 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
             <p>Your contact page and form should look similar to <a href="project/examples/exercise10-contact.html">exercise10-contact.html</a>.</p>
 
             <div class="presenter-notes">
-                <p>Give a general overview of what each from control is used for as you are adding in the code. There's further resources available in the homework/next steps section.</p>
-
-                <p>This will be the official last exercise for the day. If you find yourself with extra time, congratulate the class on picking up the concepts so well and either give them free time to tweak their projects or pick one of the homework assignments to go through together. Save some time to briefly cover the next steps.</p>
+                <p>Give a general overview of what each from control is used for as you are adding in the code. There's further resources available in the next steps section.</p>
+                <p>This will be the official last exercise for the day. If you find yourself with extra time, congratulate the class on picking up the concepts and either give them free time to tweak their projects or pick one of the extra lessons to go through together. Save some time to briefly cover the next steps.</p>
             </div>
         </section>
 
@@ -1723,7 +1741,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
             * [Codecademy](http://www.codecademy.com/)
             * [Smashing Magazine](http://mobile.smashingmagazine.com/)
 
-            And if you like books, here's a good one: [HTML and CSS: Design and Build Websites](http://htmlandcssbook.com/) by Jon Duckett.
+            And if you want something offline, here's a good book: [HTML and CSS: Design and Build Websites](http://htmlandcssbook.com/) by Jon Duckett.
         </section>
 
         <section class="slide" data-markdown>
