@@ -9,8 +9,8 @@
 
     <!-- Theme-specific styles -->
     <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="framework/css/font-awesome.css">
-    <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="framework/css/highlightjs-themes/vs.css">
     <link rel="stylesheet" href="framework/css/theme-llc.css">
     <link rel="shortcut icon" href="framework/img/favicon.ico"> 
 
@@ -26,15 +26,35 @@
     
     <!-- opens all links in a new window -->
     <base target="_blank">
-
-    <!-- First/Intro slide -->
-    <header class="intro slide">
+    
+    <!-- Intro slide -->
+    <header class="slide intro first">
         <img class="logo" src="framework/img/logo-llc-white.png">
         <div class="info">
-            <h1>
-                <span class="title-bg">Title of Workshop</span><br>
-                <!-- second line if needed -->
-                <span class="title-bg">Second line</span>
+            <h1 class="heading-bg">
+                <span class="dark">Welcome to</span><br>
+                <span>Ladies Learning Code!</span>
+            </h1>
+            <div class="heading-bg connected">
+                <span class="dark">GET CONNECTED:</span>
+                <span class="light">NETWORK: The Lab</span><br>
+                <span class="light">PASSWORD: Thisisthelab</span>
+            </div>
+        </div>
+
+        <div class="sponsor">
+            <p>In partnership with:</p>
+            <img src="framework/img/telus.png" height="150" alt="">
+        </div>
+    </header>
+
+    <!-- Instructor info -->
+    <header class="slide intro">
+        <img class="logo" src="framework/img/logo-llc-white.png">
+        <div class="info">
+            <h1 class="heading-bg">
+                <span>Title of Workshop</span><br>
+                <span>Second line</span>
             </h1>
             <h2><span>with</span> Instructor Name</h2>
 
@@ -42,12 +62,13 @@
             <ul>
                 <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
                 <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
-                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter_name</a></li>
+                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
             </ul>
         </div>
     </header>
 
     <main>
+        <section class="slide">Styling intro slides</section>
         <section class="slide title">
             <h1>Title Slide Example: add a title class to section tag</h1>
         </section>
@@ -204,10 +225,23 @@ padding: 20px;</textarea>
         </section>
 
         <!-- Last slide -->
-        <section class="slide">
+        <section class="slide last">
             <h2>Thank you!</h2>
-            <p>Closing remarks</p>
-            <p class="attribution">Slide deck created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+
+            <h2 class="heading-bg">
+                <span>Title of Workshop</span><br>
+                <span>Second line</span>
+            </h2>
+            <h3><span>with</span> Instructor Name</h3>
+
+             <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
+            <ul>
+                <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
+                <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+            </ul>
+
+            <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
         </section>
 
     </main><!-- cls main section -->
@@ -229,7 +263,8 @@ padding: 20px;</textarea>
 
     <script src="framework/scripts/plugins/markdown/marked.js"></script>
     <script src="framework/scripts/plugins/markdown/markdown.js"></script>
-    <script src="framework/scripts/plugins/highlight/highlight.js"></script>
+    <!-- <script src="framework/scripts/plugins/highlight/highlight.js"></script> -->
+    <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     <script>
