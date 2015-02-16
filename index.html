@@ -69,16 +69,20 @@
         </section>
 
         <section class="slide" data-markdown>
-            ##Styling slides
+            ##Customizing slides
             For slide #1, if you do not know the wi-fi info in advance, just delete/comment out the `&lt;header&gt;` slide.
 
             Put all workshop specific images in **framework/img/workshop**.
             
-            All CSS is written in Sass.  Avoid editing the core files (theme-llc.scss, _mixins.scss, _variable.scss).  Put all personal customizations in **framework/sass/workshop.scss**.
+            All CSS for this template is written in Sass.  Avoid editing the core files (theme-llc.scss, _mixins.scss, _variable.scss).  Put all personal customizations in **framework/sass/workshop.scss**.  If you'd like to add an improvement or enhancement, please submit a pull request, open an issue or email [christina@ladieslearningcode.com](mailto:christina@ladieslearningcode.com).
 
             To change the background image in slide #1 and slide #2, there are several images to choose from in **framework/img**. See **theme-llc.scss**, line 269 for more info.
 
-            View the rest of the presentation for examples of styles included in the theme.  Many styles can be accomplished by adding a specific class.
+            The progress bar at the top of the page can be defined by adding the presentation duration, in minutes, in the `data-duration` attribute on the `body` tag.  If you do not want to use it at all, leave the value empty.
+
+            Since most of the links included in the workshops are to external resources, all links open in a new window by default to allow learners to always have access to the slides.  Note that this feature is included using `&lt;base target="_blank"&gt;` added just after the opening `body` tag. (See more about the [`base`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag.)
+
+            View the rest of the presentation for examples of styles included in the theme.  Many styles can be accomplished by adding a specific classes.
         </section>
 
         <section class="slide title">
@@ -142,11 +146,11 @@ sayHello();
             <section class="slide" data-markdown>
 ##Markdown example
 
-Write in Markdown! Include the `data-markdown` attribute in the section tag. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.
+Write in Markdown! Include the `data-markdown` attribute in the section tag. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).
 
-Code blocks need to be denoted either by three backticks (```) or by tabbing the content in one tab indent/4 spaces.
+**If you need to use any HTML tags in the slide or add a class/id to an element, the entire slide has to be written in HTML and the markdown syntax will no longer work.**
 
-Also, if you need to use any HTML, the entire slide has to be written in HTML and the markdown syntax will no longer work.
+Code blocks can be denoted either by three backticks (```) or by tabbing the content in one tab indent/4 spaces. However, using backticks is better for this slide presentation so you can specify a language for syntax highlighting.
 
 You can specify the language of the code block by following the three backticks immediately by the language name.  View the source to see this in action.
 
@@ -165,7 +169,7 @@ var myJSVariable = "Syntax Highlighting for JavaScript";
 ```
 
 #### HTML Example
-For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the left angled bracket of the HTML tag needs to be escaped. Here's a handy tool for creating escaped result with HTML entities: http://www.htmlescape.net/htmlescape_tool.html
+For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, just like the `&lt;code&gt;` in the previous example, the left angled bracket of the HTML tag needs to be escaped. View source to see example.
 
 ```xml
 &lt;header>
@@ -176,62 +180,51 @@ For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the
 ```
 #### indented example
 
-    code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
-
+    code block that has to guess at the language and likely gets it wrong.
         </section>
-
-
-        <!-- Works most of the time but code blocks sometimes doesn't indent or
-        show the proper syntax highlighting.  -->
-        <section class="slide" data-markdown>
-            ##Slide Title
-
-            Blah blah some text here.
-            
-                var myJSVariable = "Syntax Highlighting for JavaScript";
-        </section>
-
-        <!-- Works much better than above example. -->
-        <section class="slide" data-markdown>
-            ##Slide Title
-
-            Blah blah some text here.
-
-            ```javascript
-            var myJSVariable = "Syntax Highlighting for JavaScript";
-            ```
-
-            ```xml
-            &lt;header>
-                &lt;h1>I'm an H1!&lt;/h1>
-                &lt;p>This is a paragraph&lt;/p>
-            &lt;/header>
-
-            ```
-        </section>
-
 
         <section class="slide" data-markdown>
             ##Some useful tools
             
-            Replace special characters with HTML Entities - Online tool
+            Here are some tools that may come in handy for creating content and adding code snippets.
+
+            Replace special characters with HTML Entities  
             http://www.htmlescape.net/htmlescape_tool.html
 
-            Converts markdown to HTML
+            Converts markdown to HTML  
             https://stackedit.io/editor
 
-            Converts HTML to markdown
+            Converts HTML to markdown  
             http://domchristie.github.io/to-markdown/
         </section>
         <section class="slide">
             <h2>Incremental display of content</h2>
             <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
+
             <ul>
                 <li class="delayed">Make sure your computer is setup</li>
                 <li class="delayed">Web development breakdown</li>
                 <li class="delayed">Dive into HTML</li>
                 <li class="delayed">CSS fundamentals</li>
             </ul>
+        </section>
+
+        <section class="slide centered" data-markdown>
+      ##Centered content
+
+      Add a class of `centered` to `&lt;section>`.
+
+      ![](http://cl.ly/image/14193Y1x1f2c/mic-drop.gif)  
+    </section>
+        </section>
+
+        <section class="slide side-by-side" data-markdown>
+			##Two images
+
+Add a class of `side-by-side` to `&lt;section>` to align two images.
+
+![](http://cl.ly/image/3c2y1v2A2o1q/Image%202015-01-29%20at%2011.55.36%20PM.png)
+![](http://cl.ly/image/3Z3U023P361J/Image%202015-01-30%20at%2012.37.27%20AM.png)
         </section>
 
         <section class="slide">
@@ -271,30 +264,6 @@ padding: 20px;</textarea>
             </p>
         </section>
 
-        <section class="slide" data-markdown>
-            ##CSS Customizations
-
-            The CSS for this template is written in [Sass](http://sass-lang.com/).  For your forked copy of these slides, feel free to use either Sass or the compiled CSS files. Just note that if you pull in any styles updates from the repo, the CSS files will be recompiled.
-
-            If you want to change the intro slide background image (or not use an image at all), change the style using the `.intro` class.
-
-            The text in the slide can automatically scale based on window size. If you want to turn this feature "on" or off", in **framework > sass > _variables.scss** under font sizes, use the `rem` values for scalable text and `px` values for non-scalable text. (You can still zoom in with the pixel sized text.)
-            
-            Avoid changing the base styles files (`_mixins.scss`, `_variables.scss` and `theme-llc.scss`). Put all of your customizations and workshop specific styles in workshop.scss.  If you'd like to add an improvement or enhancement, please submit a pull request or email [christina@ladieslearningcode.com](mailto:christina@ladieslearningcode.com).
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Other Customizations
-
-            The progress bar at the top of the page can be defined by adding the presentation duration, in minutes, in the `data-duration` attribute on the `body` tag.  If you do not want to use it at all, leave the value empty.
-
-            The text in the slide can automatically scale based on window size. If you want to turn this feature "on" or off", in **framework > sass > _variables.scss** under font sizes, use the `rem` values for scalable text and `px` values for non-scalable text. (You can still zoom in with the pixel sized text.)
-
-            Since most, if not all, links included in the workshops are to external resources, all links open in a new window to avoid participants clicking away from the slide presentations.  Note that this feature is included using `&lt;base target="_blank"&gt;` added just after the opening `body` tag. 
-
-            (See more about the [`base`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag.)
-        </section>
-
         <!-- Last slide -->
         <section class="slide last">
             <h2>Thank you!</h2>
@@ -305,7 +274,7 @@ padding: 20px;</textarea>
             </h2>
             <h3><span>with</span> Instructor Name</h3>
 
-             <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
+             <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
             <ul>
                 <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
                 <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>

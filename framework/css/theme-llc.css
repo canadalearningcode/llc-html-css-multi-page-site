@@ -159,6 +159,10 @@ code {
 }
 
 /* textarea for dynamic CSS demos */
+h2 + .edit {
+  margin-top: 30px;
+}
+
 textarea.snippet {
   width: 100%;
   border: 1px solid #222;

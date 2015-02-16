@@ -176,6 +176,9 @@ code {
 
 
 /* textarea for dynamic CSS demos */
+h2 + .edit {
+	margin-top: 30px;
+}
 textarea.snippet {
 	width: 100%;
 	border: 1px solid #222;
@@ -324,10 +327,6 @@ e.g.
 /* Last/ Instructor info slide
 -------------------------------*/
 .last {
-	// .title {
-	// 	color: $white;
-	// 	margin-top: 40px;
-	// }
 	ul {
 		@include list-reset();
 		font-size: 2.2rem;
