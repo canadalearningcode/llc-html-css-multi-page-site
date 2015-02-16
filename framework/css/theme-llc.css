@@ -94,6 +94,9 @@ code {
   color: #444;
   padding: 1px 4px;
   font-size: 20px;
+  background: white;
+  border-radius: 4px;
+  padding: 0 6px;
 }
 
 /* Base styles for slides
