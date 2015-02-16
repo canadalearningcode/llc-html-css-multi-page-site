@@ -27,7 +27,7 @@
     <!-- opens all links in a new window -->
     <base target="_blank">
     
-    <!-- Intro slide -->
+    <!-- Welcome slide -->
     <header class="slide intro first">
         <img class="logo" src="framework/img/logo-llc-white.png">
         <div class="info">
@@ -42,35 +42,47 @@
             </div>
         </div>
 
-        <div class="sponsor">
+        <!-- <div class="sponsor">
             <p>In partnership with:</p>
             <img src="framework/img/telus.png" height="150" alt="">
-        </div>
-    </header>
-
-    <!-- Instructor info -->
-    <header class="slide intro">
-        <img class="logo" src="framework/img/logo-llc-white.png">
-        <div class="info">
-            <h1 class="heading-bg">
-                <span>Title of Workshop</span><br>
-                <span>Second line</span>
-            </h1>
-            <h2><span>with</span> Instructor Name</h2>
-
-            <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
-            <ul>
-                <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
-                <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
-                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-            </ul>
-        </div>
+        </div> -->
     </header>
 
     <main>
-        <section class="slide">Styling intro slides</section>
+        <!-- Instructor info -->
+        <section class="slide intro">
+            <img class="logo" src="framework/img/logo-llc-white.png">
+            <div class="info">
+                <h1 class="heading-bg">
+                    <span>Title of Workshop</span><br>
+                    <span>Second line if title is long</span>
+                </h1>
+                <h2><span>with</span> Instructor Name</h2>
+
+                <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+                <ul>
+                    <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
+                    <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+                    <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Styling slides
+            For slide #1, if you do not know the wi-fi info in advance, just delete/comment out the `&lt;header&gt;` slide.
+
+            Put all workshop specific images in **framework/img/workshop**.
+            
+            All CSS is written in Sass.  Avoid editing the core files (theme-llc.scss, _mixins.scss, _variable.scss).  Put all personal customizations in **framework/sass/workshop.scss**.
+
+            To change the background image in slide #1 and slide #2, there are several images to choose from in **framework/img**. See **theme-llc.scss**, line 269 for more info.
+
+            View the rest of the presentation for examples of styles included in the theme.  Many styles can be accomplished by adding a specific class.
+        </section>
+
         <section class="slide title">
-            <h1>Title Slide Example: add a title class to section tag</h1>
+            <h1>Title Slide Example</h1>
         </section>
 
         <section class="slide title">
@@ -78,9 +90,37 @@
             <h2>Sub-heading example</h2>
         </section>
 
+        <section class="slide" data-markdown>
+            ##Title slides
+
+            For the previous two examples of Title slides, add a `title` class to `&lt;section&gt;` and use an `h1` tag for the main heading and `h2` for a subheading.
+            
+            ```xml
+            &lt;section class=&quot;slide title&quot;&gt;
+                &lt;h1&gt;Title Slide Example&lt;/h1&gt;
+                &lt;h2&gt;Sub-heading example&lt;/h2&gt;
+            &lt;/section&gt;
+            ```
+        </section>
+
         <section class="slide">
             <h2>Syntax Highlighting</h2>
-            <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a> and will be applied to any code wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>. The syntax highlighting theme files can be found in <strong>framework > css > highlightjs-themes</strong>. If you wish to change it, add the css file there and update the css link. Visit <a href="http://highlightjs.org">highlight.js</a> to see the full list of supported languages, themes and other usage information.</p>
+            <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a> and will be applied to any code wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>. The syntax highlighting theme files can be found in <strong>framework > css > highlightjs-themes</strong>. If you wish to change it, update the css link in the <code>&lt;head&gt;</code>. Visit <a href="http://highlightjs.org">highlight.js</a> to see the full list of supported languages, themes and other usage information.</p>
+
+            <p>The default theme for this slide presentation uses a light background because some workshop settings don't allow for the dimming of classroom lights or the projector does not show syntax highlighting on dark backgrounds very well.</p>
+
+            <p>For HTML, the left angled bracket, <code><</code>, needs to be escaped to show. Sometimes, for HTML snippets, the plugin may not register it properly as HTML.  If that is the case, add an <code>xml</code> class to the <code>&lt;pre&gt;</code> tag.</p>
+            <p>Here's a tool to help with the conversion: <a href="http://www.htmlescape.net/htmlescape_tool.html">http://www.htmlescape.net/htmlescape_tool.html</a></p>
+
+            <h3>HTML</h3>
+            <pre><code>&lt;!DOCTYPE html>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html></code></pre>
 
             <h3>JavaScript</h3>
 <pre><code>var greeting = "Hello!";
@@ -97,26 +137,14 @@ sayHello();
     margin: 0;
     padding: 0;
 }</code></pre>
-
-            <p>For HTML, the left tag, <code><</code>, needs to be escaped. Sometimes for HTML snippets, the plugin, may not register it properly as HTML.  If that is the case, add an <code>.xml</code> class to the <code>pre</code> tag. Here's an online escape tool: <a href="http://www.htmlescape.net/htmlescape_tool.html">http://www.htmlescape.net/htmlescape_tool.html</a></p>
-
-            <h3>HTML</h3>
-            <pre><code>&lt;!DOCTYPE html>
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html></code></pre>
         </section>
 
-        <section class="slide" data-markdown>
+            <section class="slide" data-markdown>
 ##Markdown example
 
-Write in Markdown! Include the `data-markdown` attribute in the sectin tag. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.
+Write in Markdown! Include the `data-markdown` attribute in the section tag. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.
 
-Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  **Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.** 
+Code blocks need to be denoted either by three backticks (```) or by tabbing the content in one tab indent/4 spaces.
 
 Also, if you need to use any HTML, the entire slide has to be written in HTML and the markdown syntax will no longer work.
 
@@ -125,14 +153,14 @@ You can specify the language of the code block by following the three backticks 
 #### Javascript Example
 
 ```javascript
-var myJSVariable = "Syntax Highting for Javascript";
+var myJSVariable = "Syntax Highlighting for JavaScript";
 ```
 
 #### CSS Example
 
 ```css
-.css-selector{
-    highlight : syntax;
+.css-selector {
+    property: value;
 }
 ```
 
@@ -151,7 +179,50 @@ For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the
     code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
 
         </section>
-      
+
+
+        <!-- Works most of the time but code blocks sometimes doesn't indent or
+        show the proper syntax highlighting.  -->
+        <section class="slide" data-markdown>
+            ##Slide Title
+
+            Blah blah some text here.
+            
+                var myJSVariable = "Syntax Highlighting for JavaScript";
+        </section>
+
+        <!-- Works much better than above example. -->
+        <section class="slide" data-markdown>
+            ##Slide Title
+
+            Blah blah some text here.
+
+            ```javascript
+            var myJSVariable = "Syntax Highlighting for JavaScript";
+            ```
+
+            ```xml
+            &lt;header>
+                &lt;h1>I'm an H1!&lt;/h1>
+                &lt;p>This is a paragraph&lt;/p>
+            &lt;/header>
+
+            ```
+        </section>
+
+
+        <section class="slide" data-markdown>
+            ##Some useful tools
+            
+            Replace special characters with HTML Entities - Online tool
+            http://www.htmlescape.net/htmlescape_tool.html
+
+            Converts markdown to HTML
+            https://stackedit.io/editor
+
+            Converts HTML to markdown
+            http://domchristie.github.io/to-markdown/
+        </section>
         <section class="slide">
             <h2>Incremental display of content</h2>
             <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
@@ -245,7 +316,6 @@ padding: 20px;</textarea>
         </section>
 
     </main><!-- cls main section -->
-
 
     <footer>
         <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
