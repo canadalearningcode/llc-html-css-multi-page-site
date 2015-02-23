@@ -5,31 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Ladies Learning Code</title>
     <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
-    <link rel="stylesheet" href="framework/css/slideshow.css">
+    <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
 
     <!-- Theme-specific styles -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400italic,400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="framework/css/highlightjs-themes/vs.css">
-    <link rel="stylesheet" href="framework/css/theme-llc.css">
+    <link rel="stylesheet" href="framework/css/highlightjs-themes/vs.css" data-noprefix>
+    <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
     <link rel="shortcut icon" href="framework/img/favicon.ico"> 
 
     <!-- Workshop-specific styles -->
-    <link rel="stylesheet" href="framework/css/workshop.css">
+    <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix>
 
     <!-- Takes care of CSS3 prefixes! -->
     <script src="framework/scripts/prefixfree.min.js"></script>
+
+    <!-- opens all links in a new window -->
+    <base target="_blank">
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body data-duration="360">
     
-    <!-- opens all links in a new window -->
-    <base target="_blank">
-    
     <!-- Welcome slide -->
     <header class="slide intro first">
-        <img class="logo" src="framework/img/logo-llc-white.png">
+        <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
         <div class="info">
             <h1 class="heading-bg">
                 <span class="dark">Welcome to</span><br>
@@ -51,7 +51,7 @@
     <main>
         <!-- Instructor info -->
         <section class="slide intro">
-            <img class="logo" src="framework/img/logo-llc-white.png">
+            <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
             <div class="info">
                 <h1 class="heading-bg">
                     <span>Title of Workshop</span><br>
@@ -61,7 +61,7 @@
 
                 <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
                 <ul>
-                    <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
+                    <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
                     <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
                     <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
                 </ul>
@@ -113,7 +113,7 @@
 
             <p>The default theme for this slide presentation uses a light background because some workshop settings don't allow for the dimming of classroom lights or the projector does not show syntax highlighting on dark backgrounds very well.</p>
 
-            <p>For HTML, the left angled bracket, <code><</code>, needs to be escaped to show. Sometimes, for HTML snippets, the plugin may not register it properly as HTML.  If that is the case, add an <code>xml</code> class to the <code>&lt;pre&gt;</code> tag.</p>
+            <p>For HTML, the left angled bracket, <code>&lt;</code>, needs to be escaped to show. Sometimes, for HTML snippets, the plugin may not register it properly as HTML.  If that is the case, add an <code>xml</code> class to the <code>&lt;pre&gt;</code> tag.</p>
             <p>Here's a tool to help with the conversion: <a href="http://www.htmlescape.net/htmlescape_tool.html">http://www.htmlescape.net/htmlescape_tool.html</a></p>
 
             <h3>HTML</h3>
@@ -213,12 +213,11 @@ For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, jus
         </section>
 
         <section class="slide centered" data-markdown>
-      ##Centered content
+          ##Centered content
 
-      Add a class of `centered` to `&lt;section>`.
+          Add a class of `centered` to `&lt;section>`.
 
-      ![](http://cl.ly/image/14193Y1x1f2c/mic-drop.gif)  
-    </section>
+          ![](http://cl.ly/image/14193Y1x1f2c/mic-drop.gif)
         </section>
 
         <section class="slide side-by-side" data-markdown>
@@ -279,7 +278,7 @@ padding: 20px;</textarea>
 
              <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
             <ul>
-                <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
+                <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
                 <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
                 <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
             </ul>
@@ -290,7 +289,7 @@ padding: 20px;</textarea>
     </main><!-- cls main section -->
 
     <footer>
-        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
         <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
     </footer>
     
