@@ -31,15 +31,17 @@
 
 There are three ways to include (otherwise known as *referencing*) CSS in an HTML page.
 
-**INLINE** - can be added to any HTML element using the `style` *attribute*.
+###**INLINE**
+Can be added to any HTML element using the `style` *attribute*.
 
 ```
 &lt;p style=&quot;color: blue;&quot;&gt;I'm writing CSS!&lt;/p&gt;
 ```
 
-This technique should be avoided but it's good to know how it works in case you encounter it.
+This technique is not as common because it's harder to maintain but it's good to know how it works, just in case.
 
-**INTERNAL** - uses `&lt;style&gt;` and is included in the `&lt;head&gt;` element.
+###INTERNAL
+Uses `&lt;style&gt;` and is included in the `&lt;head&gt;` element.
 
 ```    
 &lt;head&gt;
@@ -57,7 +59,26 @@ This technique should be avoided but it's good to know how it works in case you 
 
 This method is preferred over *inline* css, however it is still inefficient because if you had multiple web pages, the style block and any revisions would have to be replicated on every single page.
 
-The **external** method is most widely used. Refer back to the original presentation [here](../index.html#slide40).
+###EXTERNAL
+CSS is written in a separate stylesheet file.
+
+The **external** method is most widely used. A separate file with a `.css` extension is linked to the HTML file. This method is recommended in most cases because it separates the CSS from the HTML document. The link to the stylesheet is referenced in the `&lt;head&gt;` on any page where these styles need to be included. Only the CSS file needs to be updated rather than the CSS block on every single page.
+
+Referenced in the head element with a `&lt;link&gt;` tag and two **attributes**, `rel` and `href`. Just like creating links, the value of the `href` points to the location of the stylesheet. 
+
+Though it is not required, css files are often saved in a css folder for organization, so make sure the file path points to the appropriate directory.
+
+The `rel` attribute describes the relationship.
+
+```
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+&lt;/head&gt;
+```
+
+**Pro tip!**  Sublime Text shortcut: type "link" + tab key. Ta da!
       </section>
     </main><!-- cls main section -->
 
