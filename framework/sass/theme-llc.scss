@@ -59,13 +59,10 @@ h1, h2 {
 h2 {
 	font-size: $font-size-h2;
 
-	+ pre {
-		margin-top: 25px;
-	}
 	code {
 		font-size: inherit;
-		text-transform: lowercase;
 		font-weight: normal;
+		background: none;
 	}
 }
 h3 {
@@ -106,35 +103,9 @@ code {
 	color: #444;
 	padding: 1px 4px;
 	font-size: $font-size-code;
-}
-
-footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	z-index: 100;
-	text-align: center;
-	background: rgba(white, 0.6);
-	font-size: 14px;
-
-	i {
-		color: $llc-pink;
-	}
-	p {
-		margin: 4px 0;
-	}
-	.instructions {
-		float: right;
-		margin-right: 20px;
-	}
-	.license {
-		float: left;
-		margin-left: 20px;
-
-		img {
-			vertical-align: middle;
-		}
-	}
+	background: white;
+	border-radius: 4px;
+	padding: 0 6px;
 }
 
 
@@ -172,6 +143,14 @@ footer {
 	}
 }
 
+/* For two column screenshots */
+.side-by-side {
+	img {
+		width: 49%;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
 
 /* vertical align heading */
 .slide.title {
@@ -206,6 +185,9 @@ footer {
 
 
 /* textarea for dynamic CSS demos */
+h2 + .edit {
+	margin-top: 30px;
+}
 textarea.snippet {
 	width: 100%;
 	border: 1px solid #222;
@@ -256,18 +238,52 @@ table {
     opacity: 1;
 }
 
+/* 
+Background color style for headings
+Use spans wrap inside of a heading for div. 
+e.g.
+<h1 class="title-bg">
+  <span>Welcome to </span><br>
+  <span>Ladies Learning Code!</span>
+</h1>
+*/
+.heading-bg {
+	span {
+		background: rgba($llc-pink, 0.8);
+		border-radius: 5px;
+		padding: 0 10px 0 6px;
+		// text-transform: uppercase;
 
-/* First/Intro slide
----------------------*/
+		&.light {
+			background: rgba($white, 0.3);
+		}
+		&.dark {
+			color: $gray-dark;
+		}
+	}
+	&.connected {
+		span { 
+			display: inline-block;
+			padding: 6px 15px;
+		}
+		.light:last-child {
+			margin-left: 244px;
+			margin-top: 4px;
+		}
+	}
+}
+
+/* Title & Intro slides
+------------------------*/
 .intro {
 	/*uncomment this if you don't want to use a background image */
-	/* background: $gray-dark; */ 
-
-	/* There are 4 images to choose from: banner-home1.jpg, banner-home2.jpg, banner-home3.jpg, banner-home4.jpg */
-	background: linear-gradient(rgba($black, 0.1),rgba($black, 0.8)), url(../img/banner-home3.jpg) no-repeat;
+	// background: $gray-dark; 
+	background: linear-gradient(rgba($black, 0.1),
+		          rgba($black, 0.8)), 
+	            url(../img/banner-home3.jpg) no-repeat;
 	background-size: cover;
 	color: $white;
-	position: relative;
+	// position: relative;
 
 	.logo {
 		height: 65px;
@@ -289,11 +305,6 @@ table {
 			color: $white;
 		}
 	}
-	.title-bg {
-		background: rgba($llc-pink, 0.8);
-		border-radius: 5px;
-		padding: 0 10px 0 6px;
-	}
 	.instructor-img {
 		border-radius: 50%;
 		width: 100px;
@@ -313,16 +324,22 @@ table {
 			font-weight: $normal;
 		}
 	}
+	.sponsor {
+		position: fixed;
+		bottom: 40px;
+		right: 20px;
+		text-align: right;
+
+		img {
+			width: 300px;
+		}
+	}
 }
 
 
-/* Last slide
+/* Last/ Instructor info slide
 -------------------------------*/
 .last {
-	.title {
-		color: $white;
-		margin-top: 40px;
-	}
 	ul {
 		@include list-reset();
 		font-size: 2.2rem;
@@ -330,10 +347,15 @@ table {
 	.fa {
 		padding-right: 10px;
 	}
-	.title-bg {
-		background: rgba($llc-pink, 0.8);
-		border-radius: 5px;
-		padding: 0 10px 0 6px;
+	.heading-bg {
+		margin-top: 40px;
+
+		span {
+			background: rgba($llc-pink, 0.8);
+			color: $white;
+			border-radius: 5px;
+			padding: 0 10px 0 6px;
+		}
 	}
 	.instructor-img {
 		border-radius: 50%;
@@ -343,6 +365,7 @@ table {
 	}
 	h3 {
 		margin-bottom: 20px;
+
 		span {
 			color: $llc-pink;
 			font-family: $cursive;
@@ -367,6 +390,7 @@ table {
 	border-radius: 2px;
 }
 
+
 /* presenter notes overrides
 -------------------------------*/
 .presenter-notes {
@@ -379,5 +403,35 @@ table {
 
 	p {
 		margin-top: 0;
+	}
+}
+
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+	text-align: center;
+	background: rgba(white, 0.6);
+	font-size: 14px;
+
+	i {
+		color: $llc-pink;
+	}
+	p {
+		margin: 4px 0;
+	}
+	.instructions {
+		float: right;
+		margin-right: 20px;
+	}
+	.license {
+		float: left;
+		margin-left: 20px;
+
+		img {
+			vertical-align: middle;
+		}
 	}
 }

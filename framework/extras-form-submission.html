@@ -42,29 +42,7 @@
         <section class="slide" data-markdown>
             ##3rd Party services
             
-            There are many services that help with form submission. Let's look at [FORMS by Brace](http://forms.brace.io/).Through this service, the information will be forwarded to your email. Simple!
-
-            Remember, all forms begin with the `form` element and requires two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
-
-            Since we're using a 3rd party service, the `action` value is *their* url *and* the email you want the form to be submitted to.
-
-            ```xml
-            &lt;form method="POST" action="http://forms.brace.io/myemail@hello.com">
-                ...
-            &lt;/form>
-            ```
-        </section>
-        <section class="slide" data-markdown>
-            ##3rd Party services
-
-            Brace.io requires that you verify your email first. The verification email will be sent on the first form submit so make sure you test your form first!
-
-            Also note, this service only works on a *server* so you can't test it *locally*, meaning, just from your computer. You'll need to upload it to a server or run a local server to test it.
-
-            See [getting your site online](../index.html#slide89) or [how to run a local server](http://mac.appstorm.net/reviews/internet-reviews/running-a-local-server-with-mamp/).  
-            See further documentation here: [http://forms.brace.io/](http://forms.brace.io/)
-
-            Another services to check is [Wufoo](http://www.wufoo.com/).
+            There are many services that help with form submission such as [Wufoo](http://www.wufoo.com/).
 
             You can even use Google Docs to create a form that will add the form submissions into a spreadsheet.  View these sources here:
 
