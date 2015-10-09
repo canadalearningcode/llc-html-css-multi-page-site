@@ -594,14 +594,15 @@ There are many different file types that can be used for the web. Each type is b
         <section class="slide" data-markdown>
 ##The alt attribute
 
-`alt` is an optional image **attribute** and refers to *alternative text*. Alt text is read by screen reading software used by visually impaired users.
+`alt` is an mandatory image **attribute** and refers to *alternative text*. Alt text is read by screen reading software used by visually impaired users or used by search engines to understand the image content.
 
-It also displays when there's a broken or missing image due to typos or moved files. It should be a short description of the image.
+It also displays when there's a broken or missing image due to typos or moved files. It should be a short description of the image or be empty if the image is used for decoration.
 
 HTML tags can contain more than one attribute. Here's how you would use the `alt` attribute with the `src` attribute.
 
 ```
 &lt;img src="images/profile.jpg" alt="Jane Smith">
+&lt;img src="images/decoration.jpg" alt=""> &lt;!-- this image will be ignored by screen reading software -->
 ```
         </section>
     
