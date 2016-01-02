@@ -1,0 +1,8 @@
+/* Styles specific to this workshop
+------------------------------------*/
+.slide.intro {
+  background: linear-gradient(rgba($black, 0.7),
+              rgba($black, 0.7)), 
+              url(../img/banner-home2.jpg) no-repeat;
+  background-size: cover;
+}

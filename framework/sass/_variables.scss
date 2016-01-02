@@ -4,43 +4,34 @@
 
 // Colours
 //---------------
-$llc-pink:		#b109aa;
-$black: 			#000000;
-$gray-dark:		#222222;
-$gray:				#444444;
-$gray-light:	#bdc3c7;
-$white: 			#ffffff;
+$llc-pink:              #b109aa;
+$black:                 #000;
+$gray-dark:             #222;
+$gray:                  #444;
+$gray-light:            #bdc3c7;
+$white:                 #fff;
 
 
 // Typography
 //---------------
-
 // Font families
-$quicksand: 					'Quicksand', sans-serif;
-$pacifico: 						'Pacifico', cursive;
-$open-sans: 					'Open Sans', sans-serif;
+$quicksand:             'Quicksand', sans-serif;
+$pacifico:              'Pacifico', cursive;
+$open-sans:             'Open Sans', sans-serif;
+$monserrat:             'Montserrat', sans-serif;
+$heading-font:          $quicksand;
+$base-font:             $monserrat;
+$cursive:               $pacifico;
 
-$heading-font: 				$quicksand;
-$base-font:						$open-sans;
-$cursive: 						$pacifico;
+// Fixed font sizes
+// No slide scaling based on window size as in reveal.js
+$font-size-base:        32px;
+$font-size-sm:          $font-size-base - 4;
+$font-size-xsm:         $font-size-base - 10;
+$font-size-footnote:    $font-size-base - 16;
+$font-size-heading:     40px;
+$font-size-heading-lg:  75px;
+$font-size-heading-sm:  28px;
+$font-size-code:        20px;
+$line-height:           1.4;
 
-// Font sizes
-// Scales based on window size
-// $font-size-default:		3.5rem;
-// $font-size-h1: 				7.5rem;
-// $font-size-h2: 				4rem;
-// $font-size-h3: 				2.8rem;
-// $font-size-code:			2rem;
-
-// fixed font sizes
-// No slide scaling based on window size
-$font-size-default:		35px;
-$font-size-h1: 				75px;
-$font-size-h2: 				40px;
-$font-size-h3: 				28px;
-$font-size-code:			20px;
-
-// Font weights
-$light: 	300;
-$normal:	400;
-$bold:		700;

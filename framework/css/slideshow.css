@@ -2,6 +2,9 @@
 	Basic CSS so that the slideshow script functions as a slideshow
 	@author Lea Verou
 	@version 1.0
+
+	Don't alter - CSSS slide deck needs it to work 
+	https://github.com/LeaVerou/csss
  */
 
 /**
@@ -177,7 +180,7 @@
 			text-shadow: 0 -.05em .05em black;
 		}
 
-	.slide > iframe:only-of-type,
+	/* .slide > iframe:only-of-type, */
 	iframe.csss-import {
 		position: absolute;
 		top: 0;
