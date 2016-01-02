@@ -218,17 +218,21 @@ table {
     border: none;
     background: transparent;
   }
+	img {
+		width: 100%; 
+	}
 }
 th, td {
   border: 1px solid $gray-light;
-  padding-left: 10px;
+  padding: 10px;
 }
 th {
   text-align: left;
+  font-weight: normal;
 }
 td {
-  padding-right: 60px;
-  padding-left: 10px;
+  // padding-right: 60px;
+  // padding-left: 10px;
   
   .two-col-table & {
     width: 50%;

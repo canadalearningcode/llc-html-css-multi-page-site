@@ -6,3 +6,48 @@
               url(../img/banner-home2.jpg) no-repeat;
   background-size: cover;
 }
+
+.slide.intro h1 {
+  font-size: 70px;
+}
+
+/* Today's Project */
+.slide.project img {
+	width: 32%;
+}
+
+// What exactly *is* a website?
+.website-table {
+  th {
+    font-size: 20px;
+  }
+}
+
+/* A Basic Web Page */
+.basic-web-page {
+	.css {
+		color: #27ae60;
+		font-weight: bold;
+
+		span {
+			font-style: italic;
+		}
+	}
+}
+
+.basic-tags {
+  .hljs span {
+    line-height: 1.75;
+  } 
+  .hljs-comment {
+    color: green;
+  }
+}
+
+/* gif wall */
+.slide.gif-wall {
+	img {
+		height: 250px;
+		width: auto;
+	}
+}

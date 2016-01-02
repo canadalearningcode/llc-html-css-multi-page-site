@@ -3,7 +3,7 @@ jQuery(document).ready(function(){
   jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
   
   // Add class to resource section
-  jQuery( "h3:contains('Resources'), h3:contains('Resource')" ).addClass("resources");
+  jQuery( "h3:contains('Resources'), h3:contains('Resource'), h3:contains('Pro tip!')" ).addClass("resources");
   
   // Generate the Table of Contents
   var ToC = "<ul>";
