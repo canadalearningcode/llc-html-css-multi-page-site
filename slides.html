@@ -108,6 +108,38 @@
         ![project home page](framework/img/workshop/project1.jpg) ![project about page](framework/img/workshop/project2.jpg) ![project contact page](framework/img/workshop/project3.jpg)
       </script>
     </section>
+    
+    <section class="slide website-table" data-markdown>
+      <script type="text/template">
+        #What exactly *is* a website?
+
+        A website is basically a collection of web pages (**HTML documents**), that closely match a file folder structure.
+
+        ![folder structure](framework/img/workshop/folder-structure.jpg)
+
+        | mysite.com (index.html) | mysite.com/about.html | mysite.com/contact.html |
+        |------------|------------|--------------|
+        | ![project home page](framework/img/workshop/project1.jpg) | ![project home page](framework/img/workshop/project2.jpg) | ![project home page](framework/img/workshop/project3.jpg) |
+      </script>
+    </section> 
+
+    <section class="slide basic-web-page" data-markdown>
+      <script type="text/template">
+        #A Basic Web Page: HTML, CSS, JavaScript
+
+        **HTML (Hypertext Markup Language)** is a _markup_ language used to define the content.
+
+        <p class="example">I'm just a paragraph.</p>
+
+        **CSS (Cascading Style Sheets)** is a _style sheet_ language used to create the presentation and look of a site.
+
+        <p class="example css">I'm a paragraph with <span>style</span>.</p>
+
+        **JavaScript** is a _programming_ language used to define the behavior and add functionality to a website.
+
+        <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
+      </script>
+    </section> 
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -151,45 +183,43 @@
         * some great options: [Notepad++](http://notepad-plus-plus.org/), [Sublime Text](http://www.sublimetext.com/) (untimed free trial), [Brackets](http://brackets.io) and [TextWrangler](http://www.barebones.com/products/textwrangler/).
 
         **[Atom](https://atom.io/)** is totally free and is the editor we'll be using today.  
-        <span class="note">(If you have another editor installed, it will work as well but some features may be different.)</span>
+        <span class="note">(If you have another editor, it will work as well but some features may be slightly different.)</span>
         
         ---
         ###Pro tip!
         Improve your work flow with [keyboard shortcuts](http://ladieslearningcode.com/downloads/keyboard-shortcuts.pdf).
       </script>
     </section>
-
-    <section class="slide website-table" data-markdown>
+    
+    <section class="slide" data-markdown>
       <script type="text/template">
-        #What exactly *is* a website?
+        #Getting to know Atom
+        
+        Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
+        
+        Open Atom and go to **Preferences** to open the customization options.
 
-        A website is basically a collection of web pages (**HTML documents**), that closely match a file folder structure.
+        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
 
-        ![folder structure](framework/img/workshop/folder-structure.jpg)
+        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
 
-        | mysite.com (index.html) | mysite.com/about.html | mysite.com/contact.html |
-        |------------|------------|--------------|
-        | ![project home page](framework/img/workshop/project1.jpg) | ![project home page](framework/img/workshop/project2.jpg) | ![project home page](framework/img/workshop/project3.jpg) |
+        ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
+          
+        Make sure the **Soft Wrap** option is checked.
+        
+        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
+        
+        ---
+        ###Resources
+        
+        *   [Atom documentation](https://atom.io/docs)
+        *   [Atom Shortcuts cheat sheet](https://bugsnag.com/blog/atom-editor-cheat-sheet)
+        *   [Customizing Atom](https://atom.io/docs/v0.61.0/customizing-atom)
+        *   [Themes](https://atom.io/themes) for Atom
+        *   [Snippets](https://github.com/atom/snippets) - create your own code snippet shortcuts
       </script>
-    </section> 
+    </section>
 
-    <section class="slide basic-web-page" data-markdown>
-      <script type="text/template">
-        #A Basic Web Page: HTML, CSS, JavaScript
-
-        **HTML (Hypertext Markup Language)** is a _markup_ language used to define the content.
-
-        <p class="example">I'm just a paragraph.</p>
-
-        **CSS (Cascading Style Sheets)** is a _style sheet_ language used to create the presentation and look of a site.
-
-        <p class="example css">I'm a paragraph with <span>style</span>.</p>
-
-        **JavaScript** is a _programming_ language used to define the behavior and add functionality to a website.
-
-        <p class="example" onclick="alert('Clicked!');">I'm a paragraph that can be clicked. Try it!</p>
-      </script>
-    </section> 
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -204,7 +234,7 @@
           |-- slides.html // This is the file you are viewing right now!
         ```
 
-        Let's open the **project** folder in the text editor to edit your project.  
+        Open the **project** folder in the text editor to edit your project.  
         Go to **File** > ** Add Project Folder**. A popup will appear.
         
         ![](framework/img/workshop/editor-add-project-1.jpg)
@@ -235,7 +265,7 @@
         The **examples** folder contains the solutions for each exercise. Try not to peek unless you're *really* stuck.
       </script>
     </section>
-
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         #Setting up your work flow
@@ -245,7 +275,7 @@
         * go to Windows Explorer or Finder
         * navigate to the **llc-html-css-multi-page-site-master > project** folder
         * double click on **index.html** to open it in your default browser<br>
-        <span class="note">(If Chrome is not your default, right-click/two-finger tap on index.html and choose Open With > Chrome)</note>
+        <span class="note">(If Chrome is not your default, right-click/two-finger tap on **index.html** and choose <br>**Open With > Chrome**)</note>
 
         You should see this in the browser:
 
@@ -253,16 +283,21 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
         #Making changes
-
-        Replace the “your name here” content (only the text), save the file, then refresh your browser. This will be your work flow for the day.
-
-        1.  in the editor, update the code
-        2.  then, save the file
-        3.  refresh the browser
-
+        
+        * This is your editing work flow:
+          * in the editor, update the code
+          * save the changes / file
+          * refresh the browser
+          
+            
+        Replace only the “your name here” text with *your* name!
+        
+        ```
+        <h1>Your Name Here</h1>
+        ```
         ---
         ###Pro tip! Use keyboard shortcuts to improve your work flow.  
         `ctrl/cmnd + s` to save  
@@ -287,7 +322,7 @@
         
         Just like languages that we speak and write, HTML follows proper "grammar" rules too. HTML *tags* are written with a left & right angled bracket `< >` and the forward slash `/`. Get to know these keys!
         
-        ![keyboard keys](framework/img/workshop/keyboard-html.png)<!-- .element: width="80%" -->
+        ![keyboard keys](framework/img/workshop/keyboard-html.png)<!-- .element: width="75%" -->
       </script>
     </section>
     
@@ -313,7 +348,9 @@
       <script type="text/template">
         #Writing HTML
 
-        To ensure that your tags are closed properly, write the open tag and close tag **first**, then move the cursor between the tags to add your content.
+        To ensure that your tags are closed properly and help reduce errors, write the open tag and close tag **first**.
+        
+        Then move the cursor between the tags to add the text content.
 
         ![opening & closing tags](framework/img/workshop/writing-html.gif)
       </script>
@@ -323,7 +360,7 @@
       <script type="text/template">
       #Nesting HTML tags
 
-      Tags are often nested within other tags and make up the _document tree_. 
+      HTML Tags are often nested within other tags and make up the _document tree_. 
       
       The relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc. 
       
@@ -369,7 +406,9 @@
       <script type="text/template">
         #Basic HTML document
 
-        We've seen these tags in our project file. They are the basic HTML tags required for every web page. 
+        We've seen these tags in our project's **index.html** file. 
+        
+        They are the basic HTML tags required for every web page. 
         
         ```xml
         <!DOCTYPE html><!-- tells the browser what version of HTML the document is written in -->
@@ -383,193 +422,319 @@
         ```
       </script>
     </section> 
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Adding HTML content
+        ##Headings, paragraphs, links, oh my!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Adding text: Headings & paragraphs (10:30)
 
-<section class="slide title" data-markdown>
-  #Adding content
-</script>
-</section> 
+        There are six headings tags ranging from `<h1>` to `<h6>` and follow a hierarchy. HTML is used to assigne *meaning* to the content in a way that the browser can read it.
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Adding text
+        ```xml
+        <h1>Name of blog</h1>
+        <h2>Title of blog post</h2>
+        <h3>Sub headings within blog post</h3>
+        ```
 
-    Heading tags are used for page headings. There are six headings tags ranging from `<h1>` to `<h6>` and follow a hierarchy. `<h1>` is the most significant heading on the page.
+        Paragraphs are represented by the `<p>` tag.
 
-    ```xml
-    <h1>Name of blog</h1>
-    <h2>Title of blog post</h2>
-    <h3>Sub headings within blog post</h3>
-    ```
+        ```xml
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+        ```
+      </script>
+    </section> 
 
-    Paragraphs are represented by the `<p>` tag.
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Exercise #1 - Update **index.html** (10 mins)
 
-    ```xml
-    <p>This is a paragraph.</p>
-    <p>This is another paragraph.</p>
-    ```
+        1.  In the text editor, update your name in the `h1` tag if you haven’t already. (We'll talk about what `<header>` means soon.)
+        2.  Add a tagline under your name using the appropriate heading tag.
+        3.  Change the content in the `<title>` tag. Where do you see this change?
+        4.  Add a copyright message using a paragraph (`p`) tag _inside_ of the `<footer>` tag.
 
-    Links are represented by the `<a>` (anchor) tag. The `href` *attribute* is needed to specify the link location (more on this later).
+        <!-- .element: class="note" -->**Bonus:** Try using an HTML code for the copyright _symbol_. Here are some resources:  
+        [http://character-code.com/ascii-table.php](http://character-code.com/ascii-table.php)  
+        [http://unicode-table.com/en/#00A9](http://unicode-table.com/en/#00A9)
 
-    ```xml
-    Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
-    ```
-  </script>
-</section> 
+        Don’t forget to save and refresh your browser after each change!  
+        Your page should now look similar to  <!-- .element: class="note" --> [exercise1.html](project/examples/exercise1.html) in the **examples** folder.
+      </script>
+    </section> 
 
-<section class="slide">
-  <h2>Exercise #1 - Updating your home page (5 mins)</h2>
+    <section class="slide project" data-markdown>
+      <script type="text/template">
+        #Website Navigation
 
-  <ol>
-    <li>In the Sublime Text editor, update your name in the <code>h1</code> tag if you haven’t already.</li>
-    <li>Add your tag line under your name using the appropriate heading tag.</li>
-    <li>Change the content in the <code>title</code> tag. Where do you see this change?</li>
-    <li>Add a copyright message using a paragraph (<code>p</code>) tag <em>inside</em> of the <code>footer</code> tag.</li>
-  </ol>
+        In the sample project, all the pages have the same headings (name & tagline), nav links and footer information.  
+        
+        The home page *looks* different but don't worry about that just yet. Right now we are just adding the HTML. 
 
-  <p><strong>Bonus:</strong> Try using an HTML code for the copyright <em>symbol</em>. Here are some resources: <br>
-    <a href="http://character-code.com/ascii-table.php">http://character-code.com/ascii-table.php</a> <br>
-    <a href="http://unicode-table.com/en/#00A9">http://unicode-table.com/en/#00A9</a></p>
+        ![project home page](framework/img/workshop/project1.jpg)
+        ![project about page](framework/img/workshop/project2.jpg)
+        ![project contact page](framework/img/workshop/project3.jpg)
+        
+        ---
+        ###Pro tip!
+        
+        It's best to write as much HTML & content as possible *before* adding CSS to ensure that the proper tags are being used. This will help keep your code organized and [semantic](http://en.wikipedia.org/wiki/Semantic_HTML).
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Links & Attributes
 
-    <p>Don’t forget to save and refresh your browser after each change!</p>
+        The navigation, in today's project, will link to the other HTML pages within the project files.
 
-    <p>Your page should now look similar to <a href="project/examples/exercise1.html">exercise1.html</a></p>
+        Links are represented by the `<a>` (anchor) tag and an **attribute** to provide additional information. 
+          
+        The `href` **attribute** provides information about where the link is located and is added inside the *opening* tag. 
 
-    <div class="presenter-notes">
-      <p>Use the exercise time to follow along with the current exercise. Since the exercises switch between code-alongs and independent exercises throughout the day, it will be easier to demonstrate the code-alongs if your version is at the same state as the learners.</p>
-    </div>
-  </script>
-</section> 
+        ```xml
+        Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
+        ```
 
-<section class="slide project" data-markdown>
-  ##Adding more HTML & content
+        <!-- .element: class="note" -->**Note**: The clickable text goes in between the opening and closing a tags. 
+      </script>
+    </section> 
 
-  All three pages have the same headings, navigation links and footer information.  Though the home page header and navigation *look* different from the other two pages, don't worry about that just yet. Right now we are just concentrating on adding the HTML. 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Links: Absolute vs Relative
 
-  ![project home page](framework/img/workshop/project1.jpg)
-  ![project about page](framework/img/workshop/project2.jpg)
-  ![project contact page](framework/img/workshop/project3.jpg)
-  
-  ---
-  ###Pro tip
-  
-  It's best to write as much HTML & content as possible before adding CSS to ensure that the proper tags are being used. This will help keep your code organized and [semantic](http://en.wikipedia.org/wiki/Semantic_HTML).
-</script>
-</section> 
+        This previous example used an **absolute** link. Much like typing a URL into the browser, it's "fully resolved" and starts with `http://`.
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Navigation menu & Lists
+        ```xml
+        Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
+        ``` 
+        Hyperlinks can also link to pages within your own folder structure, referred to as a **relative** link. 
+        
+        <!-- The path is relative to its place within the folder structure. If your HTML pages are within the same folder, they can be linked by using just the file name.
 
-    Navigational elements are commonly created using lists. 
+        ```xml
+        <a href="about.html">About Me</a>
+        ``` -->
+        
+        Understanding how to use relative paths is important for creating web sites. It's used to link between any files in addition to HTML files, such as css or image files.
+      </script>
+    </section> 
 
-    There are two kinds of lists in HTML: ordered (`ol`) for numbered lists & unordered (`ul`) for lists with bullets. Content must be included **only within the list item** (`li`).
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Relative path
+        
+        Your project folder directory will eventually look something like this:
+        
+        ```xml
+        |-- project (folder)
+          |-- css (folder)
+          |-- examples (folder)
+          |-- final (folder)
+          |-- images (folder)
+          |-- index.html
+          |-- about.html
+          |-- contact.html
+        ```
+        
+        To link *to* `about.html` *from* `index.html` (starting point), the `href` would be:
+        
+        ```xml
+        <a href="about.html">About Me</a>
+        ```
+        
+        To reference an image file, in the **images** folder, on `index.html` (starting point) the `src` would include the folder name like so: 
+        
+        ```xml
+        <img src="images/filename.jpg">
+        ```
+        
+        (More on images soon.)<!-- .element: class="note" -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Navigation menu & Lists
 
-    Since the order of the list items doesn't matter for creating nav items, an unordered list can be used. 
+        Navigational elements are commonly created using lists. There are two kinds of lists: ordered (`ol`) & unordered (`ul`).
+        
+        ```xml
+        <ol>
+          <li>Ordered list item</li>
+          <li>Ordered list item</li>
+        </ol>
+        ```
+        ```xml
+        <ul>
+          <li>Unordered list item</li>
+          <li>Unordered list item</li>
+        </ul>
+        ```
+        
+        Since the order of the list items in a navigation doesn't matter, an unordered list can be used.
+        
+        ---
+        ###Resource 
+        
+        http://learn.shayhowe.com/html-css/creating-lists/
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Navigation menu & Lists
+        
+        The navigation is used to link to other pages within your website.  
+        To do that, add the links within the list item.
+        
+        ##Link to another HTML page
+        ```xml
+        <a href="about.html">About Me</a>
+        ```
+        
+        ##Unordered list
+        ```xml
+        <ul>
+          <li>Unordered list item</li>
+          <li>Unordered list item</li>
+        </ul>
+        ```
+        
+        ##List & Links
+        
+        ```xml
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+        </ul>
+        ```
+      </script>
+    </section>
 
-    ```xml
-    <ul>
-    <li>Unordered list item</li>
-    <li>Unordered list item</li>
-    </ul>
-    ```
-    ```xml
-    <ol>
-    <li>Ordered list item</li>
-    <li>Ordered list item</li>
-    </ol>
-    ```
-  </script>
-</section> 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #List content
+        
+        Content and/or HTML tags can only be added *within* the `<li>` tag.
+        
+        ##Yes!
+        ```
+        <ul>
+          <li><a href="#">Link in a list item</a></li>
+          <li>List item 2</li>
+        </ul>
+        ```
+        
+        ##No :(
+        ```
+        <ul>
+          <a href="#">link</a>
+          <li>List item 1</li>
+          <li>List item 2</li>
+        </ul>
+        ```
+        
+        <!-- .element: class="note" -->**Note**: The number symbol (`#`) is often used as a placeholder for the href value.
+      </script>
+    </section>
+        
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML5 Sectioning Tags
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Links & Attributes
+        Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. 
+        
+        Prior to HTML5, the `<div>` tag was used for grouping elements. 
+          
+        While it is still valid, HTML5 introduced a number of semantic tags that better describe blocks of content.  
+          
+        You've already seen two of them in **index.html**: `<header>` and `<footer>`.
+          
+        ---
+        ###Resource
+        
+        More about HTML5 here: http://html5doctor.com
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML5 Sectioning Tags: `<nav>`
 
-    The purpose for creating page navigation is to link to other pages.  In addition to creating a list, we'll also need to add links to navigate between the three pages.
+        For the navigation, wrap the list in a `<nav>` tag.  It can also be grouped with the headings by adding it *inside* of the `<header>` tag.
 
-    Links are represented by the `<a>` (anchor) tag. Unlike the tags we've looked at so far, anchor tags need additional information to specify where to link *to*. An **attribute** can provide additional information and is *added inside the opening tag*. 
+        ```xml
+        <header>
+          <h1>Jane Smith</h1>
+          <h2>Web Developer + City Girl</h2>
 
-    ```xml
-    Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
-    ```
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+        ```
+        <!-- .element: class="note" -->**Note**: `<head>` and `<header>` are different tags!
+      </script>
+    </section> 
 
-    In the above example, `href` is the *attribute*, `http://ladieslearningcode.com` is the *value*. 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class exercise: Add a navigation
 
-    Also, note that the clickable text goes in between the opening and closing a tags. 
-  </script>
-</section> 
+        Back in **index.html**, let's add the navigation list for the three pages: **Home**, **About**, **Contact**. It will look like this:
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Links: Absolute vs Relative
+        ![nav list](framework/img/workshop/nav-list.png)
+      </script>
+    </section> 
 
-This is an example of an **absolute hyperlink**. Much like typing a URL into the browser, it's "fully resolved" and starts with `http://`.
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Class exercise: Add a navigation
 
-```xml
-Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
-``` 
-Hyperlinks can also link to other pages within your own folder structure. The below is an example of a **relative path**. The path is relative to its place within the folder structure. If your HTML pages are within the same folder, they can be linked by using just the file name.
+        In the next exercise, we'll create the About and Contact page but eventually we’ll have 3 HTML pages: 
+        
+        * **index.html**
+        * **about.html**
+        * **contact.html**
+        
+        We'll need the `<nav>` tag, an unordered list and _relative_ links in the navigation list. Let's go back to **index.html** and add it in.
+      </script>
+    </section> 
 
-```xml
-<a href="about.html">About Me</a>
-```
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Navigation
+          
+        Your navigation and header should now look similar to this:
+        
+        ```
+        <header>
+          <h1>Jane Smith</h1>
+          <h2>Web Developer + City Girl</h2>
 
-Remember, a website is basically a collection of pages linking to other HTML pages and files such as images and css files.
-</script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##HTML5 Sectioning Tags
-
-    Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. Prior to HTML5, the `<div>` tag was used for grouping elements. While it is still valid, HTML5 introduced a number of semantic tags that better describe blocks of content.  You've already seen two of them: `<header>` and `<footer>`. We'll be using a few more later on today.
-
-    For the navigation, adding a `<nav>` tag around the list will make it more semantic.  It can also be grouped with the headings by adding it *inside* of the `<header>` tag.
-
-    ```xml
-    <header>
-    <h1>Jane Smith</h1>
-    <h2>Web Developer + City Girl</h2>
-
-    <nav>
-    <ul>
-    <li><a href="">Home</a></li>
-    <li><a href="">About</a></li>
-    <li><a href="">Contact</a></li>
-    </ul>
-    </nav>
-    </header>
-    ```
-**Extra resource:** More about HTML5 here: http://html5doctor.com
-</script>
-</section> 
-
-<section class="slide">
-  <h2>Class exercise: Add a navigation</h2>
-
-  <p>Go back to <strong>index.html</strong> and create a navigation list for the three pages: <strong>Home</strong>, <strong>About</strong>, <strong>Contact</strong>.</p> 
-  <p>Eventually we’ll have 3 HTML pages, <strong>index.html</strong>, <strong>about.html</strong> and <strong>contact.html</strong> so make sure to use <em>relative</em> links to these pages in the navigation list.</p>
-  <pre><code><header>
-    <h1>Jane Smith</h1>
-    <h2>Web Developer + City Girl</h2>
-
-    <nav>
-    <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    </ul>
-    </nav>
-    </header></code></pre>
-    <p> Your page should now look like this:</p>
-
-    <p><img src="framework/img/workshop/nav-list.png" alt="nav list" title=""></p>
-
-    <div class="presenter-notes">
-      <p>Anything titled “class exercise” is meant to be a type along exercise. For type along exercises, try to type out each code block rather than copy and paste from the slides to get learners to think about what they're typing about and get practice actually typing it. The code is there just as reference and for learners to have something to compare to outside of the workshop.</p>
-    </div>
-  </script>
-</section> 
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav> 
+        </header> 
+        ```
+      </script>
+    </section> 
 
 <section class="slide" data-markdown>
   <script type="text/template">
