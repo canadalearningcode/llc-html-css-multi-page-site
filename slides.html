@@ -788,156 +788,203 @@
         e.g. `<title>Your Name | About Me</title>`
         1. Test the navigation. Are all the links going to the proper page?
         
-        **Bonus:**  
+        **Bonus exercise:**  
         Find an image to use as a profile picture for your **About** page. The image should ideally be 600px x 400px. Here's a link to a free online tool for cropping images: [http://pixlr.com](http://apps.pixlr.com/editor/)
         
         For reference, check out the <!-- .element: class="note" --> **ex2** files in the **examples** folder:  ex2-index.html, ex2-about.html, ex2-contact.html
       </script>
     </section> 
-
-
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Image Types
-    There are many different file types that can be used for the web. Each type is best suited for specific kinds of images. Use the format that maintains the best quality while reducing the file size.
-
-    **jpg** - used for photographs with lots of rich colours or gradients
-
-    **png** - used for images with transparent or opaque backgrounds
-
-    **gif** - used for images with minimal colour variation and of course, for animated gifs!
-
-    **svg** - used for 2D graphics and is very scaleable. Based on XML and can be used as a image file or in the HTML document. When included as HTML, CSS can be used to style the svg!
-
-**More about SVG:** http://css-tricks.com/using-svg
-</script>
-</section> 
-
-<section class="slide centered gif-wall" data-markdown>
-  ##Bonus: gif wall
-
-  ![](framework/img/workshop/mind-blown.gif)
-  ![](framework/img/workshop/kid.gif)
-  ![](framework/img/workshop/raccoon.gif)
-  ![](framework/img/workshop/bday-cake.gif)
-  ![](framework/img/workshop/otter.gif)
-
-  [image source]()
-</script>
-</section> 
-
-<section class="slide">
-  <h2>Adding images</h2>
-
-  <p>Images are an example of a void element/self-closing tag. It doesn't need a closing tag because it <em>is</em> the content. Read more about void elements <a href="framework/extras-void-elements.html">here</a>.</p>
-
-  <p>Just like links, the image tag also requires an <em>attribute</em> to define the file path of the image file. However, it uses the <code>src</code> attribute (not <code>href</code>).  The value can be an absolute or relative path. The below is an example of an absolute path.</p>
-
-  <pre><code><img src="http://fillmurray.com/200/300"></code></pre>
-
-  <p><img src="http://fillmurray.com/200/300"></p>
-
-  <p>If you don’t have a picture to use at the moment and need a placeholder, there are many services available such as:</p>
-
-  <ul>
-    <li><a href="http://placehold.it">http://placehold.it</a></li>
-    <li><a href="http://placesheen.com/">http://placesheen.com/</a></li>
-    <li><a href="http://placebear.com">http://placebear.com</a></li>
-    <li><a href="http://fillmurray.com/">http://fillmurray.com/</a></li>
-    <li><a href="http://placekitten.com/">http://placekitten.com/</a></li>
-    <li>and <a href="http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx">many more</a>!</li>
-  </ul>
-</script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##The alt attribute
-
-    `alt` is an optional image **attribute** and refers to *alternative text*. Alt text is read by screen reading software used by visually impaired users.
-
-    It also displays when there's a broken or missing image due to typos or moved files. It should be a short description of the image.
-
-    HTML tags can contain more than one attribute. Here's how you would use the `alt` attribute with the `src` attribute.
-
-    ```
-    <img src="images/profile.jpg" alt="Jane Smith">
-    ```
-  </script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Adding your own images
-
-    Just like links, you can use a **relative** path to link to your own images.  It's common practice to create a folder to organize images separate from HTML files. 
-
-    In your **project** folder, there is already an **images** folder included in your download.  Use the default **profile.jpg** image contained inside or add your own to this folder.
-
-    Remember, relative paths are based on the folder structure.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
-
-    ```xml
-    <img src="images/profile.jpg" alt="description of image">
-    ```
-  </script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Exercise #3 - Update the About page (15 mins)
-
-    Add a profile picture, heading and some information to your About page to make it look like this:
-
-    ![example 3](framework/img/workshop/exercise3-about.png)
-
-    Use the `<section>` tag to create a new sectioning block for the page content. Add it *between* the `<header>` tag and the `<footer>` like this:
-
-    ```xml
-    <header>
-    <h1>Jane Smith</h1>
-    <h2>Web Developer + City Girl</h2>
-
-    <nav>
-    ...
-    </nav>
-    </header>
-
-    <section>
-    page content here
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Images & content
+        
+        In the next few slides, we'll cover how to use the `<img>`, `<main>` and `<blockquote>` tags to add images and content to the **About** page.
+        
+        ![](framework/img/workshop/exercise3-about.png)
+      </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Image Types
+        
+        There are few different image file types for the web. Use the format that maintains the best quality while reducing the file size.
 
-    <footer>
-    ...
-    </footer>
-    ```
+        **jpg** - used for photographs with lots of rich colours or gradients
 
-    1. Inside of the `section` tag, add a profile picture using the `img` tag.
-    1. *After* your profile picture, add an `h2` for the About page title.
-    1. *After* the `h2`, add a couple of paragraphs about you, or use placeholder text.
-    1. We're going to need to work with some additional content in the afternoon so *after* the paragraphs, add a quote using another HTML5 tag. You can use this sample below, or add your own. Just make sure to keep the content within the `<blockquote>` tag.
+        **png** - used for images with transparent or opaque backgrounds
+        
+        **svg** - used for 2D graphics and is very scaleable. Based on XML and can be used as a image file or in the HTML document. When included as HTML, CSS can be used to style the svg!
 
-    ```xml
-    <blockquote>
-    <p>The more that you read, the more things you will know. The more that you learn, the more places you'll go.</p>
-    <cite>― Dr. Seuss, I Can Read With My Eyes Shut!</cite>
-    </blockquote>
-    ```
-    **Bonus:** Try adding a couple links. Ask a mentor how to get a link to open in a new tab/window.
+        **gif** - used for images with minimal colour variation and of course, for animated gifs!
 
-    Just like images, there are many services available for placeholder text.
+        ![](framework/img/workshop/mind-blown.gif) <!-- .element: height="325" -->
+        ![](framework/img/workshop/raccoon.gif)<!-- .element: height="325" -->
+        
+        ---
+        ###Resource 
+        More about SVG: http://css-tricks.com/using-svg
+      </script>
+    </section> 
 
-    * [Dr. Suess quotes](http://www.goodreads.com/author/quotes/61105.Dr_Seuss)
-    * http://www.lipsum.com
-    * http://www.rygo-ipsum.com/
-    * http://coffeeipsum.com
-    * http://thewireipsum.com
-    * http://slipsum.com/
-    * and [many more](http://meettheipsums.com/)!
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Adding images
 
-    For reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in the **examples** folder but look only if you're stuck!
-  </script>
-</section> 
+        Images are an example of a void element/self-closing tag. It doesn't need a closing tag because it _is_ the content.
+
+        The image tag also requires an _attribute_ to define the file path of the image file. The value can be an absolute path:
+        
+        ```
+        <img src="http://fillmurray.com/200/300">
+        ```
+        
+        Or a relative path:
+        
+        ```
+        <img src="images/profile.jpg">
+        ```
+        
+        ---
+        ###Resource 
+        Read more about void elements [here](framework/extras-void-elements.html).
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #The alt attribute
+
+        `alt` is an optional **attribute** and refers to *alternative text*. Though it's optional, it is **strongly recommended** to include it for accessibility.
+        
+        The alt text is read by screen reading software used by visually impaired users and also displays if the image is missing. 
+        
+        It should be a short description of the image.
+
+        ```
+        <img src="images/profile.jpg" alt="Jane Smith">
+        ```
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Adding your own images
+
+        It's common practice to create a folder to organize images separate from HTML files. In your **project** folder, there is already an **images** folder included in your download.  
+        
+        Use the default **profile.jpg** image contained inside or add your own to this folder.  Or use a placeholder image.  See below for resources.
+        
+        ---
+        ###Resources
+        
+        *   [http://placehold.it](http://placehold.it)
+        *   [http://placesheen.com/](http://placesheen.com/)
+        *   [http://placebear.com](http://placebear.com)
+        *   [http://fillmurray.com/](http://fillmurray.com/)
+        *   [http://placekitten.com/](http://placekitten.com/)
+        *   and [many more](http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx)!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Adding your own images
+
+        Remember, relative paths are based on the folder directory.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
+        
+        ```xml
+        |-- project (folder)
+          |-- css (folder)
+          |-- examples (folder)
+          |-- final (folder)
+          |-- images (folder)
+          |-- index.html
+          |-- about.html
+          |-- contact.html
+        ```
+
+        ```xml
+        <img src="images/profile.jpg" alt="description of image">
+        ```
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML5 tag: `<main>`
+      
+        The `<main>` tag can be used to represent the central content of the document. Also, a `role="main"` attribute can be added to help screen readers understand where the main content begins.  
+          
+        It can only be used once per page and will be needed for the upcoming exercise.
+        
+        ```
+        <header>
+        ...content
+        </header>
+
+        <main role="main">
+        ...content
+        </main>
+
+        <footer>
+        ...content
+        </footer>
+        ```
+        
+        ---
+        ###Resources
+        * [html5Doctor.com - main element](http://html5doctor.com/the-main-element/)
+        * More about `role` [here](http://www.w3.org/TR/wai-aria/roles#landmark_roles)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #HTML5 tag: `<blockquote>`
+          
+        The `<blockquote>` element represents quoted content. 
+          
+        Also, use the `<cite>` tag to include the source of the quote.
+        
+        ```
+        <blockquote>
+          <p>The more that you read, the more things you will know. The more that you learn, the more places you'll go.</p>
+          <cite>― Dr. Seuss, I Can Read With My Eyes Shut!</cite>
+        </blockquote>
+        ```
+        
+        ---
+        ###Resource 
+        http://html5doctor.com/cite-and-blockquote-reloaded/
+      </script>
+    </section> 
+
+    <section class="slide small-type" data-markdown>
+      <script type="text/template">
+        #Exercise #3 - About page (20 mins)
+
+        Add some content to your **About** page to make it look like [this](project/examples/ex3-about.html).
+        
+        1. Add `<main role="main"></main>` for the About page content not included in the header or footer.
+        1. Inside of `<main>`, add a profile picture using the `<img>` tag.
+        1. *After* your profile picture, add an `h1` for the content heading.
+        1. *After* the `h1`, add a couple of paragraphs about you, or use placeholder text (see resources below).
+        1. We're going to need to work with some additional content in the second half of this workshop, so *after* the paragraphs, add a quote using `<blockquote>`.
+        1. Optional: Add a few links within the paragraphs.
+
+
+        For reference, <!-- .element: class="note" -->[ex3-about.html](project/examples/ex3-about.html) can be found in the **examples** folder but look only if you're stuck!
+        
+        ---
+        ###Resources
+
+        * [Dr. Suess quotes](http://www.goodreads.com/author/quotes/61105.Dr_Seuss)
+        * http://meettheipsums.com/
+        * http://thewireipsum.com
+      </script>
+    </section> 
 
 <section class="slide title" data-markdown>
   #Intro to CSS
