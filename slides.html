@@ -453,7 +453,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise #1 - Update **index.html** (10 mins)
+        # Exercise #1 - Update **index.html** (5-10 mins)
 
         1.  In the text editor, update your name in the `h1` tag if you haven’t already. (We'll talk about what `<header>` means soon.)
         2.  Add a tagline under your name using the appropriate heading tag.
@@ -465,17 +465,64 @@
         [http://unicode-table.com/en/#00A9](http://unicode-table.com/en/#00A9)
 
         Don’t forget to save and refresh your browser after each change!  
-        Your page should now look similar to  <!-- .element: class="note" --> [exercise1.html](project/examples/exercise1.html) in the **examples** folder.
+        Your page should now look similar to  <!-- .element: class="note" --> [ex1.html](project/examples/ex1.html) in the **examples** folder.
+      </script>
+    </section> 
+    
+    <section class="slide no-bullet-list" data-markdown>
+      <script type="text/template">
+        #Creating HTML pages
+
+        To create an HTML page, name the file with an `.html` extension.  
+        Here are some best practices for file naming:
+
+        * Use lowercase letters.
+          * **about.html** instead of **About.html** or **ABOUT.html**
+        * Avoid s p a c e s or symbols. Use underscores (`_`) or dashes (`-`). 
+          * Note that [dashes are better for SEO](http://searchengineland.com/9-seo-quirks-you-should-be-aware-of-146465) (search engine optimization).
+          * **business-hours.html** instead of **business hours.html**
+          * The browser will interpret spaces as **business%20hours.html**
+        * Keep your file names concise, yet meaningful.
+          * **about.html**, **contact.html** instead of **page1.html**, **page2.html**
+
+        ---
+        ###Pro tip!
+        
+        These file naming tips can be applied to any files such as images, folders, CSS, etc.
       </script>
     </section> 
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Create HTML pages
+        
+        Let's create an HTML file for the About and Contact pages.  Leave the file itself blank for now.  We'll be adding content in a later exercise.
+        
+        The **index.html** already exists so let's make an **about.html** and **contact.html**.  Make sure to save these pages into the **project** folder. 
+        
+        Your directory will now look like this:
+        
+        
+        ```xml
+        |-- project (folder)
+          |-- css (folder)
+          |-- examples (folder)
+          |-- final (folder)
+          |-- images (folder)
+          |-- index.html
+          |-- about.html
+          |-- contact.html
+        ```
+      </script>
+    </section>
+    
     <section class="slide project" data-markdown>
       <script type="text/template">
         #Website Navigation
 
         In the sample project, all the pages have the same headings (name & tagline), nav links and footer information.  
         
-        The home page *looks* different but don't worry about that just yet. Right now we are just adding the HTML. 
+        The home page *looks* different but don't worry about that just yet. Right now we are still focusing on setting up the the HTML. 
 
         ![project home page](framework/img/workshop/project1.jpg)
         ![project about page](framework/img/workshop/project2.jpg)
@@ -517,12 +564,6 @@
         ``` 
         Hyperlinks can also link to pages within your own folder structure, referred to as a **relative** link. 
         
-        <!-- The path is relative to its place within the folder structure. If your HTML pages are within the same folder, they can be linked by using just the file name.
-
-        ```xml
-        <a href="about.html">About Me</a>
-        ``` -->
-        
         Understanding how to use relative paths is important for creating web sites. It's used to link between any files in addition to HTML files, such as css or image files.
       </script>
     </section> 
@@ -531,7 +572,7 @@
       <script type="text/template">
         #Relative path
         
-        Your project folder directory will eventually look something like this:
+        A relative path is relative to its place within the folder structure. Your project folder directory currently looks like this:
         
         ```xml
         |-- project (folder)
@@ -608,7 +649,7 @@
         </ul>
         ```
         
-        ##List & Links
+        ##Unordered List & Links
         
         ```xml
         <ul>
@@ -652,9 +693,7 @@
 
         Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. 
         
-        Prior to HTML5, the `<div>` tag was used for grouping elements. 
-          
-        While it is still valid, HTML5 introduced a number of semantic tags that better describe blocks of content.  
+        Prior to HTML5, the `<div>` tag was used for grouping elements. The `div` is still valid and used but HTML5 introduced a number of semantic tags that better describe blocks of content.  
           
         You've already seen two of them in **index.html**: `<header>` and `<footer>`.
           
@@ -693,25 +732,13 @@
       <script type="text/template">
         # Class exercise: Add a navigation
 
-        Back in **index.html**, let's add the navigation list for the three pages: **Home**, **About**, **Contact**. It will look like this:
+        Back in **index.html**, let's add the navigation list for the three pages: **Home**, **About**, **Contact**. It will look like this in the browser:
 
         ![nav list](framework/img/workshop/nav-list.png)
-      </script>
-    </section> 
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Class exercise: Add a navigation
-
-        In the next exercise, we'll create the About and Contact page but eventually we’ll have 3 HTML pages: 
-        
-        * **index.html**
-        * **about.html**
-        * **contact.html**
         
         We'll need the `<nav>` tag, an unordered list and _relative_ links in the navigation list. Let's go back to **index.html** and add it in.
       </script>
-    </section> 
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -735,64 +762,38 @@
         ```
       </script>
     </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Keyboard shortcuts
+        
+        Writing code often requires a lot of repetition of content. Right now, the HTML in index.html contains content that will be required on all three pages (base HTML tags, header, navigation & footer info) and should be copied over. 
+        
+        Here are some shortcuts that will help improve your work flow.
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Creating HTML pages
-
-    To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files). Here are some best practices and good file naming tips.
-
-    * Use lowercase letters.
-    * **about.html** instead of **About.html** or **ABOUT.html**
-    * Avoid s p a c e s. Use underscores (`_`) or dashes (`-`). 
-* Note that [dashes are preferred for SEO](http://searchengineland.com/9-seo-quirks-you-should-be-aware-of-146465) (search engine optimization).
-* **business-hours.html** instead of **business hours.html**
-* The browser will interpret spaces as **business%20hours.html**
-* Avoid symbols like `#` `&` `*` in your file name.
-* Keep your file names concise, yet meaningful.
-* **about.html**, **contact.html** instead of **page1.html**, **page2.html**
-
-**Protip!** These file naming tips can be applied to any files such as images, folders, CSS, etc.
-</script>
-</section> 
-
-<section class="slide">
-  <h2>Exercise #2 - Adding pages and content (10mins)</h2>
-
-  <p>We are just adding HTML content so don’t worry about how to style the page just yet. Writing code often requires a lot moving, deleting and adding content. Here are some more shortcuts that will come in handy to speed up your work flow.</p>
-  <p>
-    <code>ctrl/cmnd + c</code> to copy <br>
-    <code>ctrl/cmnd + x</code> to copy and cut <br>
-    <code>ctrl/cmnd + v</code> to paste <br>
-    <code>ctrl/cmnd + s</code> to save <br>
-    <code>ctrl/cmnd + r</code> to refresh browser
-  </p>
-
-  <ol>
-    <li>Create an new page (cmnd/ctrl + n) and name it <strong>about.html</strong>
-      <ul>
-        <li>Save it in the same folder as <strong>index.html</strong> (project folder)</li>
-        <li>Copy all the contents from <strong>index.html</strong> into your new page. It's is all the same content right now.</li>
-        <li>Update the <code>title</code> tag to reflect the contents of the page. (e.g. Your Name | About Me )</li>
-      </ul>
-    </li>
-    <li>Create a new page and name it <strong>contact.html</strong>
-      <ul>
-        <li>Follow the same instructions as the About page.</li>
-      </ul>
-    </li>
-    <li>Test the navigation. Are all the links going to the proper page?</li>
-  </ol>
-  <p>If you get stuck, you can take a peek in the <strong>examples</strong> folder: <a href="project/examples/exercise2-home.html">exercise2-home.html</a>, <a href="project/examples/exercise2-about.html">exercise2-about.html</a>, <a href="project/examples/exercise2-contact.html">exercise2-contact.html</a></p>
-
-  <p><strong>Bonus:</strong><br> 
-    Find an image to use as a profile picture for your <strong>About</strong> page.  The image should ideally be around 600 x 400px.  Here's a link to a free online tool for cropping images: <a href="http://apps.pixlr.com/editor/">http://pixlr.com</a></p>
-
-    <div class="presenter-notes">
-      <p>Check in with learners after 10mins. If majority of people have not finished, give them 5-10 more minutes.  If they are still not done after that, let them know they'll have some time in the next exercise to finish up.</p>
-    </div>
-  </script>
-</section> 
+        `ctrl/cmnd + c` to copy  
+        `ctrl/cmnd + x` to copy and cut  
+        `ctrl/cmnd + v` to paste  
+        `ctrl/cmnd + s` to save  
+        `ctrl/cmnd + r` to refresh browser
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise #2 - About & Contact pages (5-10mins) 
+        
+        1. Copy all of the HTML from **index.html** to **about.html** and **contact.html**
+        1. Update the `<title>` tag to reflect the contents of the page.  
+        e.g. `<title>Your Name | About Me</title>`
+        1. Test the navigation. Are all the links going to the proper page?
+        
+        **Bonus:**  
+        Find an image to use as a profile picture for your **About** page. The image should ideally be 600px x 400px. Here's a link to a free online tool for cropping images: [http://pixlr.com](http://apps.pixlr.com/editor/)
+        
+        For reference, check out the <!-- .element: class="note" --> **ex2** files in the **examples** folder:  ex2-index.html, ex2-about.html, ex2-contact.html
+      </script>
+    </section> 
 
 
 
@@ -1294,7 +1295,7 @@ Remember the family tree? Since <code>body</code> is the ancestor of all the ele
   <script type="text/template">
     ##Exercise #4 - Typography (10 MINS)
 
-    Add some more font styles. Take a look at [example 4](project/examples/exercise4-home.html) for reference.
+    Add some more font styles. Take a look at [example 4](project/examples/exercise4-index.html) for reference.
 
     1. Link your Google Font style sheet & your **styles.css** file to **index.html** and **contact.html**. You will now be able to see the styles across all three pages.
     1. In the sample project, most of site uses the same font color throughout the page. Add the `color` property to the `body`.
@@ -1918,7 +1919,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
     <h1><span class=&quot;highlight&quot;>Jane</span>Smith</h1>
     ```
 
-    Your page should now look something like [exercise8-home.html](project/examples/exercise8-home.html), located in your examples folder.
+    Your page should now look something like [exercise8-index.html](project/examples/exercise8-index.html), located in your examples folder.
   </script>
 </section> 
 
@@ -2008,7 +2009,7 @@ Your page should now look similar to [exercise6-about.html](project/examples/exe
     <li><a href="http://unsplash.com/">http://unsplash.com/</a></li>
   </ul>
 
-  <p>Your page should now look similar to <a href="project/examples/exercise9-home.html">example 9</a>.</p>
+  <p>Your page should now look similar to <a href="project/examples/exercise9-index.html">example 9</a>.</p>
 
   <div class="presenter-notes">
     <p>You will probably be pressed for time at this point. Just explain what "cover" does and let them know there are other options available and there are additional resources at the bottom of this slide.</p>
