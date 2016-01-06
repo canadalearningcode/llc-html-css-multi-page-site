@@ -1130,7 +1130,7 @@
       </script>
     </section> 
 
-    <section class="slide" data-markdown>
+    <section id="colours" class="slide" data-markdown>
       <script type="text/template">
         #CSS colour values
 
@@ -1229,7 +1229,7 @@ text-transform: lowercase;</textarea>
         1. Select font weights. <span class="note">The more you choose, the more it will slow down page load time.</span>
           * The LLC project uses normal 400 for all three fonts.
           * The default character set should contain what you need.
-        1. Copy the `<link>` code snippet and add it to the `<head>` of all your HTML pages, before your **styles.css**, to reference the Google Font CSS.
+        1. Copy the `<link>` code snippet and add it to the `<head>` of **all** your HTML pages, before **styles.css**, to reference the Google Font CSS.
           ```
           <head>
               <meta charset="UTF-8">
@@ -1250,7 +1250,7 @@ text-transform: lowercase;</textarea>
 
     <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
-        #Break time! (Optional Exercise)
+        #Break time! (Optional Exercise) (12:30)
 
         * Pick new fonts (Google Fonts or web safe fonts) 
           * Here’s a [the final project](project/final/about.html) for reference. 
@@ -1271,112 +1271,209 @@ text-transform: lowercase;</textarea>
       </script>
     </section>
     
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Fundamentals: Cascading (1:15)
+        
+        CSS executes from top to bottom (hence "cascading"), so be careful of the order of the CSS declarations. The declaration that comes *after* will override the one that came before.
 
-<section class="slide">
-  <h2>Class Exercise - Typography</h2>
-  <p>In this exercise, we'll focus on just updating the fonts. Your pages will look similar to this:</p>
-  <img src="framework/img/workshop/exercise4-fonts.png">
-  <p>Right now, we've only linked the css file to <strong>about.html</strong>. Continue to check the updates on that page.</p>
-  <ol>
-    <li>
-      Pick 3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a>.
-    </li>
-    <li>
-      Add the Google font style sheet before your CSS file.
+        In this example, what colour will the `<h1>` be?
 
-      <pre><code><title>Jane Smith | About Me</title>
-<link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/styles.css">
-</code></pre>
-</li>
-<li>
-  In the sample project, most of site uses the same font throughout the page. So we can add the main font family to the <code>body</code> declaration block.
-  <pre><code>body {
-    font-family: "Open Sans", sans-serif;
-  }
-</code></pre>
-Remember the family tree? Since <code>body</code> is the ancestor of all the elements nested within, these styles are inherited by the child &amp; descendant elements.
-</li>
-<li>
-  Make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use <code>h1</code> as the selector.
-  <pre><code>h1 {
-    font-family: "Nixie One", serif;
-  }
-</code></pre>
-</li>
-</ol>
-</script>
-</section> 
+        ```
+        h1 {
+          color: black;
+        }
+        h1 {
+          color: blue;
+        }
+        ```
+        Keep your code organized to help reduce these types of errors.
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Inheritance and Specificity
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Combining selectors
+        One of the strengths of CSS is styles can be inherited from parent to child elements. (Remember the family tree?)
 
-    Sometimes you'll have more than one HTML element that share the same styles.  Target multiple elements at the same time by *combining* selectors in one declaration block. Note the syntax, combined selectors need to be separated by a comma.
+        ```
+        <body>
+          <h1>My Website</h1><!-- child of body -->
+          <p>This is a paragraph.</p><!-- sibling of h1 -->
+        </body>
+        ```
+        ```
+        body {
+          color: blue;
+        }
+        h1 {
+          color: black;
+        }
+        ```
+        > what colour do you think the paragraph will be? What about the h1?
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Inheritance and Specificity
 
-    Instead of this: 
-    ```
-    h1 {
-      /* styles here */
-    }
-    h2 {
-      /* styles here */
-    }
-    ```
-    Do this!
-    ```css
-    h1, h2 {
-      /* selects both the h1 and h2 */
-    }
-    ```
-    This does the same thing as the first example but with less lines of code and makes it easier to make changes to both elements.
+        ```
+        body {
+          color: blue;
+        }
+        h1 {
+          color: black;
+        }
+        ```
+        The children and descendent elements of `body` will inherit most of the styles (not all css properties can be inherited*).
+        
+        The `h1` will override the inherited styles because the selector is more *specific*.
+        
+        ---
+        ###Resources 
+        * *[Full Table of CSS properties](http://www.w3.org/TR/CSS21/propidx.html)
+        * Mozilla Developer Network: [Cascading and inheritance](https://developer.mozilla.org/en/docs/Web/Guide/CSS/Getting_started/Cascading_and_inheritance)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Combining selectors
 
-  </script>
-</section> 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Exercise #4 - Typography (10 MINS)
+        Sometimes you'll have more than one element that share the same styles.  Target multiple elements by *combining* selectors.
 
-    Add some more font styles. Take a look at [example 4](project/examples/exercise4-index.html) for reference.
+        Instead of this: 
+        ```
+        h1 {
+          /* styles here */
+        }
+        h2 {
+          /* styles here */
+        }
+        ```
+        Do this! (Note the comma)
+        ```css
+        h1, h2 {
+          /* selects both the h1 and h2 */
+        }
+        ```
+        This does the same thing as the first example but with less lines of code and makes it easier to make changes to both elements.
 
-    1. Link your Google Font style sheet & your **styles.css** file to **index.html** and **contact.html**. You will now be able to see the styles across all three pages.
-    1. In the sample project, most of site uses the same font color throughout the page. Add the `color` property to the `body`.
-    ``` 
-    body {
-      padding: 0;
-      margin: 0;
-      font-family: "Open Sans", sans-serif;
-      color: #333; /* dark, almost black, gray colour */
-    }
-    ```
-    1. Both `h1` and `h2` share similar styles. They both have uppercase letters and don’t use the default bold styles of headings. Combine the selectors to apply the styles in one declaration block. 
-    ```
-    h1, h2 {
-      font-weight: 300; /* removes default bold styles */
-      text-transform: uppercase;
-    }
-    ```
-    1. Links by default are blue in colour so it does not inherit the `color` property declared in the `body`. To change the colour of the link, use the specific element selector (a).
+      </script>
+    </section> 
 
-    Make the color different from the rest of the text to indicate it’s a link. You can also remove the default underline with CSS as well!
-    ```
-    a {
-      color: #bf6d50;
-      text-decoration: none; /* removes default underline */
-    }
-    ```
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Comments
 
-    **Bonus:** If you have extra time, find an accent colour to use throughout your site and update the above color value with your accent colour. Here is the link to the [color resources slide](#slide42).
+        Comments are written with a slash & asterisk and closes in the opposite order (`/* */`). 
+        
+        Comments can be used for the same reasons as HTML comments.
 
-    Or, find a background image for an upcoming afternoon exercise using one of the links below or choose one contained in your **images** folder. Here are some resources:
+        ```
+        p {
+          color: #cc0066; /* magenta - leaving notes */
+        }
 
-    * http://superfamous.com/
-    * http://www.gratisography.com/
-    * http://littlevisuals.co/
-    * http://nos.twnsnd.co/
-    * http://unsplash.com/
-  </script>
-</section> 
+        /* HEADER STYLES - organizing code */
+        header {
+          width: 80%;
+        }
+
+        /*  Saving this for later
+        .slider {
+          width: 100px;
+          background: red;
+        }
+        */ 
+        ``` 
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Typography
+
+        In the next exercise, we'll focus on updating the fonts. Your pages will look similar to this:
+
+        ![](framework/img/workshop/exercise-fonts.png)
+        
+        Make sure the **styles.css** and the Google Fonts CSS file has been included on all three HTML pages to see these changes throughout your web site.
+        
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise - Typography
+        
+        In the sample project, most of site content uses the same font.  
+        Add the main font family to the `body` declaration block, to make use of CSS inheritance.
+        
+        ```
+        body {
+          font-family: "Open Sans", sans-serif;
+        }
+        ```
+
+        Make the headings a different font to set it apart from the body text. Use a more specific selector to override the inherited style.
+        
+        ```
+        h1, h2 {
+          font-family: "Nixie One", serif;
+        }
+        ```
+        
+        In the LLC project, both `h1` and `h2` also use uppercase letters and don’t use the default bold styles of headings. You can set that using the properties in the example below.
+        ```
+        h1, h2 {
+          font-family: "Nixie One", serif;
+          font-weight: 300; /* removes default bold styles */
+          text-transform: uppercase;
+        }
+        ```
+        ---
+        ###Pro tip!
+        Add one or two CSS declarations, then save & refresh the browser! This will help reduce errors if you check one or two additions at a time.
+      </script>
+    </section> 
+
+
+    <section class="slide small-type" data-markdown>
+      <script type="text/template">
+        #Exercise #4 - Typography (10 mins)
+
+        These instructions are based on the LLC sample project but feel free to pick your own fonts, sizes, colours and typography styles. (We'll be tackling spacing and layout in the upcoming exercises.) 
+        
+        Take a look at any of the <!-- .element: class="note" -->[ex4](project/examples/ex4-about.html) examples for reference.  
+        
+        1.&nbsp;Add a `color` property to the `body` to override the default black.  
+        The LLC project uses hex code `#333333` (almost black, gray colour).
+        
+        2.&nbsp;Links by default are blue so it doesn't inherit the `color` property in `body`.
+        
+        * Use the specific element selector (a) to change the colour. 
+        * Choose a colour different from the body colour.
+        * You can also remove the default underline with CSS as well!
+          ```
+          a {
+            color: #bf6d50;
+            text-decoration: none; /* removes default underline */
+          }
+          ```
+
+        Reference the [CSS colors slide](#colours) (syntax & colour resources).
+
+        **Bonus**  
+        Select a background image for your homepage.
+        
+        * Choose from the **images** folder or use your own.
+        * Background images should be around 1000-1400px wide.
+        * Royalty free images can be downloaded [here](https://medium.com/@dustin/stock-photos-that-dont-suck-62ae4bcbe01b#.kl0cpopcn).
+      </script>
+    </section> 
 
 <section class="slide title" data-markdown>
   #The Box Model
