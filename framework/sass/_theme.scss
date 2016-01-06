@@ -107,7 +107,6 @@ ul, ol {
 }
 
 ol > li {
-  margin-bottom: 15px;
   margin-left: 40px;
 }
 ul {
@@ -191,6 +190,9 @@ pre {
   }
   + h2 {
     margin-top: 25px;
+  }
+  + hr {
+    margin-top: 35px;
   }
 }
 code {

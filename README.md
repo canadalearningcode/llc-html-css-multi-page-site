@@ -6,7 +6,7 @@ A full day introductory HTML & CSS workshop.
 
 This workshop covers HTML and CSS basics and is intended for complete beginners.
 
-Created by [Christina Truong](http:christinatruong.com) for Ladies Learning Code.
+Created by [Christina Truong](http://christinatruong.com) for Ladies Learning Code.
 
 ### Contributing
 

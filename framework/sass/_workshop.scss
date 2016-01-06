@@ -19,7 +19,10 @@
 // What exactly *is* a website?
 .website-table {
   th {
-    font-size: 20px;
+    font-size: 24px;
+  }
+  table img {
+    max-width: 350px;
   }
 }
 
@@ -37,10 +40,11 @@
 
 .basic-tags {
   .hljs span {
-    line-height: 1.75;
+    // line-height: 1.5;
+    font-size: 23px;
   } 
   .hljs-comment {
-    color: green;
+    color: #777;
   }
 }
 

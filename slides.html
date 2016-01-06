@@ -255,7 +255,7 @@
         
         ```
         |-- project // Files for today's workshop.
-          |-- css // Only CSS files here.
+          |-- css // CSS files here.
           |-- examples // Example files for each exercise.
           |-- final // Finished example.
           |-- images // Sample images for your project. You can also add your own here.
@@ -283,25 +283,26 @@
       </script>
     </section>
 
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         #Making changes (10:30)
         
-        * This is your editing work flow:
-          * in the editor, update the code
-          * save the changes / file
-          * refresh the browser
-          
-            
-        Replace only the “your name here” text with *your* name!
+        This is your editing work flow:
         
+        1. in the editor, update the code  
+        1. save the changes / file
+        1. refresh the browser
+        1. repeat.  
+        
+        Try replacing the “your name here” text with *your* name!
         ```
         <h1>Your Name Here</h1>
         ```
         ---
-        ###Pro tip! Use keyboard shortcuts to improve your work flow.  
-        `ctrl/cmnd + s` to save  
-        `ctrl/cmnd + r` to refresh the browser
+        
+        ###Pro tip! Use keyboard shortcuts. 
+        * **ctrl/cmnd + s** to save  
+        * **ctrl/cmnd + r** to refresh the browser
 
         <div class="presenter-notes">
         Let the learners know that there is an exercise coming up very soon to update the rest of the page. This is just to introduce them to the update/save/refresh flow and to break up the lecture a bit more.
@@ -406,17 +407,18 @@
       <script type="text/template">
         #Basic HTML document
 
-        We've seen these tags in our project's **index.html** file. 
-        
-        They are the basic HTML tags required for every web page. 
+        We've seen these tags in the project's **index.html** file. They are the base HTML tags required for every web page. 
         
         ```xml
-        <!DOCTYPE html><!-- tells the browser what version of HTML the document is written in -->
-        <html><!-- identifies the document as HTML -->
-          <head><!-- contains info about the web page but not used for displaying content -->
-            <title></title><!-- page title, displays in browser tab, bookmarks and search results -->
+        <!DOCTYPE html><!-- tells browser the HTML version the document is written in -->
+        <html><!-- identifies document as HTML -->
+          <head><!-- contains info about web page, not used for displaying content -->
+            <title>
+            <!-- page title, displays in browser tab, bookmarks & search results -->  
+            </title>
           </head>
-          <body><!-- All content to be displayed in the browser window goes here -->
+          <body>
+          <!-- All content to be displayed in the browser window goes here -->
           </body>
         </html>
         ```
@@ -434,7 +436,7 @@
       <script type="text/template">
         #Adding text: Headings & paragraphs (10:45)
 
-        There are six headings tags ranging from `<h1>` to `<h6>` and follow a hierarchy. HTML is used to assigne *meaning* to the content in a way that the browser can read it.
+        There are six headings tags ranging from `<h1>` to `<h6>` and follow a hierarchy. HTML is used to assign *meaning* to the content in a way that the browser can read it.
 
         ```xml
         <h1>Name of blog</h1>
@@ -455,17 +457,18 @@
       <script type="text/template">
         # Exercise #1 - Update **index.html** (5-10 mins)
 
-        1.  In the text editor, update your name in the `h1` tag if you haven’t already. (We'll talk about what `<header>` means soon.)
+        1.  Update your name in the `h1` tag if you haven’t already.
         2.  Add a tagline under your name using the appropriate heading tag.
         3.  Change the content in the `<title>` tag. Where do you see this change?
         4.  Add a copyright message using a paragraph (`p`) tag _inside_ of the `<footer>` tag.
+          
+        Don’t forget to save and refresh your browser after each change!
 
         <!-- .element: class="note" -->**Bonus:** Try using an HTML code for the copyright _symbol_. Here are some resources:  
         [http://character-code.com/ascii-table.php](http://character-code.com/ascii-table.php)  
         [http://unicode-table.com/en/#00A9](http://unicode-table.com/en/#00A9)
 
-        Don’t forget to save and refresh your browser after each change!  
-        Your page should now look similar to  <!-- .element: class="note" --> [ex1.html](project/examples/ex1.html) in the **examples** folder.
+        Check <!-- .element: class="note" --> [ex1.html](project/examples/ex1.html) in the **examples** folder for reference. We'll talk about `<header>` & `<footer>` soon.
       </script>
     </section> 
     
@@ -474,7 +477,6 @@
         #Creating HTML pages
 
         To create an HTML page, name the file with an `.html` extension.  
-        Here are some best practices for file naming:
 
         * Use lowercase letters.
           * **about.html** instead of **About.html** or **ABOUT.html**
@@ -496,12 +498,13 @@
       <script type="text/template">
         #Class Exercise: Create HTML pages
         
-        Let's create an HTML file for the About and Contact pages.  Leave the file itself blank for now.  We'll be adding content in a later exercise.
+        Let's create HTML files for the About and Contact pages.  Leave the file itself blank for now.  We'll be adding content in a later exercise.
         
         The **index.html** already exists so let's make an **about.html** and **contact.html**.  Make sure to save these pages into the **project** folder. 
         
-        Your directory will now look like this:
+        **File > New file ** and **File > Save**
         
+        Your directory will now look like this:
         
         ```xml
         |-- project (folder)
@@ -539,8 +542,6 @@
       <script type="text/template">
         #Links & Attributes
 
-        The navigation, in today's project, will link to the other HTML pages within the project files.
-
         Links are represented by the `<a>` (anchor) tag and an **attribute** to provide additional information. 
           
         The `href` **attribute** provides information about where the link is located and is added inside the *opening* tag. 
@@ -548,6 +549,8 @@
         ```xml
         Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
         ```
+        
+        This above example uses an **absolute** link. Much like typing a URL into the browser, it's "fully resolved" and starts with `http://`.
 
         <!-- .element: class="note" -->**Note**: The clickable text goes in between the opening and closing a tags. 
       </script>
@@ -555,16 +558,15 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Links: Absolute vs Relative
+        #Links: Relative
 
-        This previous example used an **absolute** link. Much like typing a URL into the browser, it's "fully resolved" and starts with `http://`.
-
-        ```xml
-        Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
-        ``` 
-        Hyperlinks can also link to pages within your own folder structure, referred to as a **relative** link. 
+        The navigation in today's project, will link to the other HTML pages within the project files, your folder structure.
         
-        Understanding how to use relative paths is important for creating web sites. It's used to link between any files in addition to HTML files, such as css or image files.
+        This is referred to as a **relative** link. 
+        
+        Understanding how to use relative paths is important for creating web sites. It's used to link not only between HTML files, but other files such as css or images.
+        
+        A relative path is relative to its place within the folder structure. 
       </script>
     </section> 
 
@@ -572,7 +574,7 @@
       <script type="text/template">
         #Relative path
         
-        A relative path is relative to its place within the folder structure. Your project folder directory currently looks like this:
+        Your project folder directory currently looks like this:
         
         ```xml
         |-- project (folder)
@@ -693,7 +695,9 @@
 
         Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. 
         
-        Prior to HTML5, the `<div>` tag was used for grouping elements. The `div` is still valid and used but HTML5 introduced a number of semantic tags that better describe blocks of content.  
+        Prior to HTML5, the `<div>` tag was used for grouping elements. 
+          
+        The `div` is still valid and used but HTML5 introduced a number of semantic tags that better describe blocks of content.  
           
         You've already seen two of them in **index.html**: `<header>` and `<footer>`.
           
@@ -744,7 +748,7 @@
       <script type="text/template">
         #Navigation
           
-        Your navigation and header should now look similar to this:
+        The nav and header in **index.html** should now look similar to this:
         
         ```
         <header>
@@ -767,15 +771,15 @@
       <script type="text/template">
         #Keyboard shortcuts
         
-        Writing code often requires a lot of repetition of content. Right now, the HTML in index.html contains content that will be required on all three pages (base HTML tags, header, navigation & footer info) and should be copied over. 
+        Right now, the HTML in **index.html** contains content that will be required on all three pages (base HTML tags, header, navigation & footer info) and should be copied over. 
         
-        Here are some shortcuts that will help improve your work flow.
+        Writing code often requires a lot of repetition. Here are some shortcuts to help improve your work flow.
 
-        `ctrl/cmnd + c` to copy  
-        `ctrl/cmnd + x` to copy and cut  
-        `ctrl/cmnd + v` to paste  
-        `ctrl/cmnd + s` to save  
-        `ctrl/cmnd + r` to refresh browser
+        `ctrl/cmnd + c` copy  
+        `ctrl/cmnd + x` copy and cut  
+        `ctrl/cmnd + v` paste  
+        `ctrl/cmnd + s` save  
+        `ctrl/cmnd + r` refresh browser
       </script>
     </section>
     
@@ -783,7 +787,7 @@
       <script type="text/template">
         #Exercise #2 - About & Contact pages (5-10mins) 
         
-        1. Copy all of the HTML from **index.html** to **about.html** and **contact.html**
+        1. Copy all of the HTML from **index.html** *to* **about.html** and **contact.html**
         1. Update the `<title>` tag to reflect the contents of the page.  
         e.g. `<title>Your Name | About Me</title>`
         1. Test the navigation. Are all the links going to the proper page?
@@ -791,7 +795,7 @@
         **Bonus exercise:**  
         Find an image to use as a profile picture for your **About** page. The image should ideally be 600px x 400px. Here's a link to a free online tool for cropping images: [http://pixlr.com](http://apps.pixlr.com/editor/)
         
-        For reference, check out the <!-- .element: class="note" --> **ex2** files in the **examples** folder:  ex2-index.html, ex2-about.html, ex2-contact.html
+        For reference, in the <!-- .element: class="note" --> **examples** folder:  ex2-index.html, ex2-about.html, ex2-contact.html
       </script>
     </section> 
     
@@ -811,13 +815,10 @@
         
         There are few different image file types for the web. Use the format that maintains the best quality while reducing the file size.
 
-        **jpg** - used for photographs with lots of rich colours or gradients
-
-        **png** - used for images with transparent or opaque backgrounds
-        
-        **svg** - used for 2D graphics and is very scaleable. Based on XML and can be used as a image file or in the HTML document. When included as HTML, CSS can be used to style the svg!
-
-        **gif** - used for images with minimal colour variation and of course, for animated gifs!
+        * **jpg** - used for photographs with lots of rich colours or gradients
+        * **png** - used for images with transparent or opaque backgrounds
+        * **svg** - used for 2D graphics and is scaleable. Based on XML and can be used as a image file or in the HTML document
+        * **gif** - used for images with minimal colour variation and of course, for animated gifs!
 
         ![](framework/img/workshop/mind-blown.gif) <!-- .element: height="325" -->
         ![](framework/img/workshop/raccoon.gif)<!-- .element: height="325" -->
@@ -872,9 +873,11 @@
       <script type="text/template">
         #Adding your own images
 
-        It's common practice to create a folder to organize images separate from HTML files. In your **project** folder, there is already an **images** folder included in your download.  
+        It's common practice to create a folder to organize images separate from HTML files. Your **project** folder already contains an **images** folder.  
         
-        Use the default **profile.jpg** image contained inside or add your own to this folder.  Or use a placeholder image.  See below for resources.
+        Use the default **profile.jpg** image provided or use your own and add it to this folder.  
+        
+        Or use a placeholder image! See below for resources.
         
         ---
         ###Resources
@@ -917,7 +920,7 @@
       
         The `<main>` tag can be used to represent the central content of the document. Also, a `role="main"` attribute can be added to help screen readers understand where the main content begins.  
           
-        It can only be used once per page and will be needed for the upcoming exercise.
+        It is used only once per page and is needed for the upcoming exercise.
         
         ```
         <header>
@@ -969,7 +972,7 @@
         
         1. Add `<main role="main"></main>` for the About page content not included in the header or footer.
         1. Inside of `<main>`, add a profile picture using the `<img>` tag.
-        1. *After* your profile picture, add an `h1` for the content heading.
+        1. *After* your profile picture, add an `h1` heading. 
         1. *After* the `h1`, add a couple of paragraphs about you, or use placeholder text (see resources below).
         1. We're going to need to work with some additional content in the second half of this workshop, so *after* the paragraphs, add a quote using `<blockquote>`.
         1. Optional: Add a few links within the paragraphs.
@@ -1014,7 +1017,7 @@
         * **Selectors:** determines which element(s) to apply the styles to  
         * **Declarations:** style rules & are written using `property:value` pairs  
           * each rule must end with a semi-colon (`;`)  
-          * all the rules for the selector must be within a pair of curly brackets `{}`
+          * all the rules for the selector must be within a pair of curly brackets `{ }`
         * **Properties**: determine the type of style to be applied to the element 
         * **Values**: specific to the property
       </script>
@@ -1024,7 +1027,7 @@
       <script type="text/template">
         #Writing CSS
         
-        Use whitespace to make it easier to read.
+        Use whitespace and indentation to make it easier to read.
         
         ```css
         selector {
@@ -1063,9 +1066,10 @@
 
         There are several ways to include CSS in an HTML page. Today we'll be using the **external** method which separates the HTML from the CSS. 
 
-        The style sheet (.css file) is referenced within the `<head>` of the HTML document (different tag from `<header>`).  
+        The style sheet (.css file) is referenced within the `<head>`.  
+        <span class="note">Reminder, `<head>` is different from `<header>`!</span>
           
-        Use `<link>` tag and two attributes, `rel` and `href`.
+        Use `<link>` and two attributes, `rel` and `href` to link to the css file.
 
         ```
         <head>
@@ -1083,15 +1087,16 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise: Adding CSS
+        #Class Exercise: Create a CSS file
 
         Create a new CSS file by selecting **File > New File**.  
-        
         Some commonly used names are global.css, main.css, styles.css, etc.  
-        Let's use **styles.css** and add it to **about.html**.
+        Let's use **styles.css** and make sure to save it into the **css** folder.
+        
+        Add it to all three html files (**index.html**, **about.html**, **contact.html**)
 
         ```
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/styles.css">
         ```
         <!-- .element: class="note" -->**Pro tip!** For a shortcut, type `link` with no brackets, then the **tab** key. Voila!
         
@@ -1102,6 +1107,7 @@
           background: lightblue;
         }
         ```
+        If you see this background colour on all three of your pages, then you're good to go!
       </script>
     </section> 
 
@@ -1109,7 +1115,7 @@
       <script type="text/template">
         #Class Exercise: Adding CSS
         
-        Notice that the content doesn't quite go to the edge of the page? That's because there's default spacing in the body element. 
+        Notice that the content doesn't quite go to the edge of the page? That's because there's default spacing in the `<body>` element. 
 
         ![](framework/img/workshop/body-margin.png)
 
@@ -1171,7 +1177,7 @@
         }
         ```
 
-        Here's a listiing of web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
+        Here's a listing of web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
       </script>
     </section> 
 
@@ -1181,16 +1187,16 @@
         
         For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. 
         
-        Google Fonts allows you to link directly to their *hosted* style sheet and fonts and no file downloads are necessary and the user does not have to have the font installed.
+        Google Fonts allows you to link directly to their style sheet so as long as the user is connected to the internet, they do not need to have the font installed. 
         
-        We'll be using this service in today's project. 
+        We'll be using Google Fonts in today's project. 
       </script>
     </section> 
 
     <section class="slide">
       <h1>CSS Font Styles</h1>
       
-      <p>Let's look at a few CSS properties for styling text together and change some values below and see what happens!</p>
+      <p>Let's look at a few CSS properties for styling text together. Change some values below and see what happens!</p>
       
 <textarea class="snippet" data-subject="#css-type">color: slateblue;
 line-height: 1.25;
@@ -1212,7 +1218,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Using Google Fonts
+        #How to Use Google Fonts
         
         1. Go to [Google Fonts](http://www.google.com/fonts).
         1. **Add to Collection** to select a font. 
@@ -1223,7 +1229,7 @@ text-transform: lowercase;</textarea>
         1. Select font weights. <span class="note">The more you choose, the more it will slow down page load time.</span>
           * The LLC project uses normal 400 for all three fonts.
           * The default character set should contain what you need.
-        1. Copy the `<link>` code snippet and add it the `<head>` of your page, before your **styles.css**, to reference the Google Font CSS.
+        1. Copy the `<link>` code snippet and add it to the `<head>` of all your HTML pages, before your **styles.css**, to reference the Google Font CSS.
           ```
           <head>
               <meta charset="UTF-8">
@@ -1232,28 +1238,29 @@ text-transform: lowercase;</textarea>
               <link rel="stylesheet" href="css/styles.css">
           </head>
           ```
-        1. Use the font-family name listed in the Google Fonts page.
+        1. When you're ready to use it, use the font-family name listed in the Google Fonts page.
           
           ```
           font-family: 'Open Sans', sans-serif;
           ```
 
-        Now you're ready to use the new fonts!
+          Ta da!
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
         #Break time! (Optional Exercise)
 
-        Pick new fonts - the LLC project uses 3 Google fonts.  
-        Here’s a [the final project](project/final/about.html) for reference. Need some help choosing? Here’s some [inspiration](http://hellohappy.org/beautiful-web-type/) or stick with the LLC selected fonts.
-        
-        Add your own profile picture for your **About** page. The image should ideally be 600px x 400px. Here's a free online tool for cropping images. [http://pixlr.com](http://apps.pixlr.com/editor/)
-        
-        Select a background image from the **images** folder or choose your own.  Background images should be around 1000-1200px wide.
-        
-        Royalty free images can be downloaded [here](https://medium.com/@dustin/stock-photos-that-dont-suck-62ae4bcbe01b#.kl0cpopcn).
+        * Pick new fonts (Google Fonts or web safe fonts) 
+          * Here’s a [the final project](project/final/about.html) for reference. 
+          * Need some help choosing? Here’s some [inspiration](http://hellohappy.org/beautiful-web-type/) or stick with the LLC selected fonts.
+        * Add your own profile picture on the **About** page. 
+          * The image should ideally be around 600px x 400px. 
+          * Free online tool for cropping images: [http://pixlr.com](http://apps.pixlr.com/editor/)
+        * Select a background image from the **images** folder or use your own.  
+          * Background images should be around 1000-1400px wide.
+          * Royalty free images can be downloaded [here](https://medium.com/@dustin/stock-photos-that-dont-suck-62ae4bcbe01b#.kl0cpopcn).
       </script>
     </section> 
     
