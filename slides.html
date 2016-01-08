@@ -113,7 +113,7 @@
       <script type="text/template">
         #What exactly *is* a website?
 
-        A website is basically a collection of web pages (**HTML documents**), that closely match a file folder structure.
+        A website is basically a collection of web pages or *HTML documents*, that closely match a file folder structure.
 
         ![folder structure](framework/img/workshop/folder-structure.jpg)
 
@@ -147,9 +147,9 @@
         
         The main functionality of the [browser](http://browsehappy.com) is to present a *web resource* in the browser window. 
         
-        Choose a modern web browser that supports current web standards and dev tools for a better experience.
+        Choose a modern web browser like Chrome or Firefox, that support current web standards and included dev tools for a better experience.
 
-        In [Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/) (and in other browsers), you can view the source of *any* web page. Right-click / two-finger tap anywhere on the browser and select **View Web Source**. That&rsquo;s HTML!
+        You can view the source of *any* web page. Right-click / two-finger tap anywhere on the browser and select **View Page Source**. That&rsquo;s HTML!
         
         ---
         ###Resource 
@@ -161,7 +161,9 @@
       <script type="text/template">
         #Developer Tools
         
-        **Chrome Developer tools** take it a step further and allows you to *inspect* any web page, making it easier to test & debug code. The tools can be accessed in a couple ways:
+        Most modern web browser include developer tools. These tools allows you to *inspect* any web page, making it easier to test & debug code. 
+        
+        Today we'll be using the Chrome browser. The dev tools can be accessed in a couple ways:
 
         * Option 1: right-click / two-finger tap on a web page and select **Inspect Element**   
         * Option 2: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
@@ -169,7 +171,7 @@
         ---
         ###Resources
         * To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en).  
-        * More about dev tools: http://discover-devtools.codeschool.com
+        * More about dev tools: http://discover-devtools.school.com
       </script>
     </section>
 
@@ -234,14 +236,13 @@
           |-- slides.html // This is the file you are viewing right now!
         ```
 
-        Open the **project** folder in the text editor to edit your project.  
+        Open the `project` folder in the text editor to edit your project.  
         Go to **File** > ** Add Project Folder**. A popup will appear.
         
         ![](framework/img/workshop/editor-add-project-1.jpg)
         
-        * navigate to the `llc-html-css-multi-page-site-master` folder
-        * select `project`
-        * click `Open`
+        * navigate to the **llc-html-css-multi-page-site-master** folder
+        * select the **project** folder & click **Open**
         
         The files will now appear in the sidebar.
       </script>
@@ -331,7 +332,7 @@
       <script type="text/template">
         #HTML Syntax
         
-        Tags usually come in pairs &mdash; an opening tag and a closing tag &mdash; to *wrap* the content.  Note the closing tag has a forward slash (`/`).
+        Tags usually come in pairs &mdash; an opening tag and a closing tag &mdash; to *wrap* the content.  Note the closing tag has a forward slash `/`.
 
         ```
         <tag> opening tag --- closing tag </tag>
@@ -349,11 +350,15 @@
       <script type="text/template">
         #Writing HTML
 
-        To ensure that your tags are closed properly and help reduce errors, write the open tag and close tag **first**.
+        To ensure that your tags are closed properly and help reduce errors, write both the opening and closing tags **first**.
         
         Then move the cursor between the tags to add the text content.
 
         ![opening & closing tags](framework/img/workshop/writing-html.gif)
+        
+        ---
+        ###Pro tip!
+        In many text editors, you can type just the tag **name** and tab.  Try typing just `p` and tab!
       </script>
     </section> 
 
@@ -379,7 +384,9 @@
       <script type="text/template">
         #Writing HTML
 
-        When nesting tags, make sure to indent by pressing the **tab** key once to clearly show which elements are nested.
+        When nesting tags, make sure to indent by pressing the **tab** key once to clearly show which elements are nested. 
+        
+        This will help to keep your code organized and easier to read.
 
         ![nesting tags](framework/img/workshop/writing-nested-tags.gif)
       </script>
@@ -455,7 +462,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise #1 - Update **index.html** (5-10 mins)
+        # Exercise #1 - Update index.html (5-10 mins)
 
         1.  Update your name in the `h1` tag if you haven’t already.
         2.  Add a tagline under your name using the appropriate heading tag.
@@ -488,9 +495,7 @@
           * **about.html**, **contact.html** instead of **page1.html**, **page2.html**
 
         ---
-        ###Pro tip!
-        
-        These file naming tips can be applied to any files such as images, folders, CSS, etc.
+        ###Pro tip! These file naming tips can be applied to any files such as images, folders, CSS, etc.
       </script>
     </section> 
 
@@ -498,11 +503,11 @@
       <script type="text/template">
         #Class Exercise: Create HTML pages
         
-        Let's create HTML files for the About and Contact pages.  Leave the file itself blank for now.  We'll be adding content in a later exercise.
+        Let's create HTML files for the **About** and **Contact** pages.  Leave the file itself blank for now.  We'll be adding content in a later exercise.
         
         The **index.html** already exists so let's make an **about.html** and **contact.html**.  Make sure to save these pages into the **project** folder. 
         
-        **File > New file ** and **File > Save**
+        In the editor: **File > New file ** and **File > Save**
         
         Your directory will now look like this:
         
@@ -542,9 +547,11 @@
       <script type="text/template">
         #Links & Attributes
 
-        Links are represented by the `<a>` (anchor) tag and an **attribute** to provide additional information. 
+        Links are represented by the `<a>` (anchor) tag and an *attribute* to provide additional information. 
           
-        The `href` **attribute** provides information about where the link is located and is added inside the *opening* tag. 
+        *Attributes* use the following the syntax, `atrribute="value"` and are added inside the *opening* tag.
+          
+        The `href` provides information about where the link is located.
 
         ```xml
         Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
@@ -562,11 +569,9 @@
 
         The navigation in today's project, will link to the other HTML pages within the project files, your folder structure.
         
-        This is referred to as a **relative** link. 
+        This is referred to as a **relative** link/path.
         
-        Understanding how to use relative paths is important for creating web sites. It's used to link not only between HTML files, but other files such as css or images.
-        
-        A relative path is relative to its place within the folder structure. 
+        Understanding how to use relative paths is important for creating web sites. Relative paths are used to link not only between HTML files, but other files such as css or images.
       </script>
     </section> 
 
@@ -587,13 +592,13 @@
           |-- contact.html
         ```
         
-        To link *to* `about.html` *from* `index.html` (starting point), the `href` would be:
+        To link *to* the **about.html** file *from* **index.html** (starting point), the `href` would be:
         
         ```xml
         <a href="about.html">About Me</a>
         ```
         
-        To reference an image file, in the **images** folder, on `index.html` (starting point) the `src` would include the folder name like so: 
+        To reference an image file, in the **images** folder, on **index.html** (starting point) the `src` would include the folder name like so: 
         
         ```xml
         <img src="images/filename.jpg">
@@ -607,7 +612,7 @@
       <script type="text/template">
         #Navigation menu & Lists
 
-        Navigational elements are commonly created using lists. There are two kinds of lists: ordered (`ol`) & unordered (`ul`).
+        Navigational elements are commonly created using lists. There are two kinds of lists: ordered, `<ol>` and unordered, `<ul>`.
         
         ```xml
         <ol>
@@ -740,7 +745,7 @@
 
         ![nav list](framework/img/workshop/nav-list.png)
         
-        We'll need the `<nav>` tag, an unordered list and _relative_ links in the navigation list. Let's go back to **index.html** and add it in.
+        We'll need the `<nav>` tag, an unordered list and _relative_ links. Let's go back to **index.html** and add in the navigation list.
       </script>
     </section>
 
@@ -813,11 +818,12 @@
       <script type="text/template">
         #Image Types
         
-        There are few different image file types for the web. Use the format that maintains the best quality while reducing the file size.
+        There are a few different image file types for the web. Use the format that maintains the best quality while reducing the file size.
 
         * **jpg** - used for photographs with lots of rich colours or gradients
         * **png** - used for images with transparent or opaque backgrounds
-        * **svg** - used for 2D graphics and is scaleable. Based on XML and can be used as a image file or in the HTML document
+        * **svg** - used for 2D graphics and is scaleable.  
+        Based on XML and can be used as a image file or in the HTML document
         * **gif** - used for images with minimal colour variation and of course, for animated gifs!
 
         ![](framework/img/workshop/mind-blown.gif) <!-- .element: height="325" -->
@@ -857,7 +863,9 @@
       <script type="text/template">
         #The alt attribute
 
-        `alt` is an optional **attribute** and refers to *alternative text*. Though it's optional, it is **strongly recommended** to include it for accessibility.
+        The `alt` attribute is optional and refers to *alternative text*. 
+        
+        Though it's optional, it is **strongly recommended** to include it for accessibility.
         
         The alt text is read by screen reading software used by visually impaired users and also displays if the image is missing. 
         
@@ -919,8 +927,6 @@
         #HTML5 tag: `<main>`
       
         The `<main>` tag can be used to represent the central content of the document. Also, a `role="main"` attribute can be added to help screen readers understand where the main content begins.  
-          
-        It is used only once per page and is needed for the upcoming exercise.
         
         ```
         <header>
@@ -935,6 +941,8 @@
         ...content
         </footer>
         ```
+        
+        It is used only once per page and is needed for the upcoming exercise.
         
         ---
         ###Resources
@@ -1018,7 +1026,7 @@
         * **Declarations:** style rules & are written using `property:value` pairs  
           * each rule must end with a semi-colon (`;`)  
           * all the rules for the selector must be within a pair of curly brackets `{ }`
-        * **Properties**: determine the type of style to be applied to the element 
+        * **Properties**: determines the type of style to be applied to the element 
         * **Values**: specific to the property
       </script>
     </section> 
@@ -1133,7 +1141,9 @@
     <section id="colours" class="slide" data-markdown>
       <script type="text/template">
         #CSS colour values
-
+        
+        You can use one of three types of color values:
+        
         * **keywords** - most basic colours will work (red, green, blue, pink, etc) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod"    
         * **RGB (red-green-blue)** - uses three numerical values from 0 (represents black) to 255 (represents white).   
         * **hex code** - use the number sign (`#`) followed by six hexadecimal characters (0-9, A-F).
@@ -1162,37 +1172,7 @@
         #CSS TYPOGRAPHY
       </script>
     </section> 
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Web safe fonts
-
-        It's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly installed on most computers.
-
-        Using the `font-family` property, it's best practice to list at least two or three font options to provide a fall-back option in case the user doesn't have the fonts installed.
-
-        ```
-        body {
-          font-family: Helvetica, Arial, sans-serif;
-        }
-        ```
-
-        Here's a listing of web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
-      </script>
-    </section> 
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Web Fonts
-        
-        For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. 
-        
-        Google Fonts allows you to link directly to their style sheet so as long as the user is connected to the internet, they do not need to have the font installed. 
-        
-        We'll be using Google Fonts in today's project. 
-      </script>
-    </section> 
-
+    
     <section class="slide">
       <h1>CSS Font Styles</h1>
       
@@ -1200,7 +1180,6 @@
       
 <textarea class="snippet" data-subject="#css-type">color: slateblue;
 line-height: 1.25;
-font-family: Helvetica, Arial, serif;
 font-size: 16px;
 font-weight: normal;
 text-transform: lowercase;</textarea>
@@ -1215,6 +1194,36 @@ text-transform: lowercase;</textarea>
         <li><a href="http://reference.sitepoint.com/css/typography">Sitepoint Typographical Properties</a></li>
       </ul>
     </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #`font-family` and Web safe fonts
+        
+        Using the `font-family` property, it's best practice to list at least two or three font options to provide a fall-back option in case the user doesn't have the fonts installed.
+
+        ```
+        body {
+          font-family: Helvetica, Arial, sans-serif;
+        }
+        ```
+        
+        Because of this, use fonts that are considered *web safe* &mdash; fonts that are commonly installed on most computers.
+        
+        Here's a listing of web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Web Fonts
+        
+        For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. 
+        
+        Google Fonts allows you to link directly to their style sheet. As long as the user is connected to the internet, they do not need to have the font installed. 
+        
+        We'll be using Google Fonts in today's project. 
+      </script>
+    </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1238,13 +1247,12 @@ text-transform: lowercase;</textarea>
               <link rel="stylesheet" href="css/styles.css">
           </head>
           ```
-        1. When you're ready to use it, use the font-family name listed in the Google Fonts page.
+        
+        When you're ready to use it, use the font-family name listed in the Google Fonts page. Ta da!
           
-          ```
-          font-family: 'Open Sans', sans-serif;
-          ```
-
-          Ta da!
+        ```
+        font-family: 'Open Sans', sans-serif;
+        ```
       </script>
     </section>
 
@@ -1252,7 +1260,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Break time! (Optional Exercise) (12:30)
 
-        * Pick new fonts (Google Fonts or web safe fonts) 
+        * Pick 2-3 fonts (Google Fonts or web safe fonts) 
           * Here’s a [the final project](project/final/about.html) for reference. 
           * Need some help choosing? Here’s some [inspiration](http://hellohappy.org/beautiful-web-type/) or stick with the LLC selected fonts.
         * Add your own profile picture on the **About** page. 
@@ -1273,7 +1281,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #CSS Fundamentals: Cascading (1:15)
+        #Cascading (1:15)
         
         CSS executes from top to bottom (hence "cascading"), so be careful of the order of the CSS declarations. The declaration that comes *after* will override the one that came before.
 
@@ -1327,7 +1335,7 @@ text-transform: lowercase;</textarea>
           color: black;
         }
         ```
-        The children and descendent elements of `body` will inherit most of the styles (not all css properties can be inherited*).
+        The children and descendent elements of `body` will inherit most styles (not all css properties can be inherited*).
         
         The `h1` will override the inherited styles because the selector is more *specific*.
         
@@ -1396,12 +1404,11 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #CSS Typography
 
-        In the next exercise, we'll focus on updating the fonts. Your pages will look similar to this:
+        The next exercise will focus on changing the default fonts to look something like this:
 
         ![](framework/img/workshop/exercise-fonts.png)
         
-        Make sure the **styles.css** and the Google Fonts CSS file has been included on all three HTML pages to see these changes throughout your web site.
-        
+        **Important!** Make sure **styles.css** and the Google Fonts CSS file has been included on all three HTML pages to see the CSS changes throughout your web site.
       </script>
     </section> 
 
@@ -1449,22 +1456,24 @@ text-transform: lowercase;</textarea>
         
         Take a look at any of the <!-- .element: class="note" -->[ex4](project/examples/ex4-about.html) examples for reference.  
         
-        1.&nbsp;Add a `color` property to the `body` to override the default black.  
+        1. Add a `color` property to the `body` to override the default black.  
         The LLC project uses hex code `#333333` (almost black, gray colour).
+        1. Links by default are blue so it doesn't inherit the `color` property in `body`.
+          * Use the specific element selector (a) to change the colour. 
+          * Choose a colour different from the body colour.
+          * You can also remove the default underline with CSS as well!
+          * Reference the [CSS colors slide](#colours) (syntax & colour resources).
+          
+        ```
+        body {
+          color: #333333;
+        }
+        a {
+          color: #bf6d50;
+          text-decoration: none; /* removes default underline */
+        }
+        ```
         
-        2.&nbsp;Links by default are blue so it doesn't inherit the `color` property in `body`.
-        
-        * Use the specific element selector (a) to change the colour. 
-        * Choose a colour different from the body colour.
-        * You can also remove the default underline with CSS as well!
-          ```
-          a {
-            color: #bf6d50;
-            text-decoration: none; /* removes default underline */
-          }
-          ```
-
-        Reference the [CSS colors slide](#colours) (syntax & colour resources).
 
         **Bonus**  
         Select a background image for your homepage.
@@ -1475,28 +1484,42 @@ text-transform: lowercase;</textarea>
       </script>
     </section> 
 
-<section class="slide title" data-markdown>
-  #The Box Model
-</script>
-</section> 
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+      #The Box Model
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Spacing in CSS (1:45)
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##What is The Box Model?
+        For next exercise, we are going to use `margin`, `padding`, `line-height` and `font-size` to update the heading styles and spacing of the content.
 
-    The browser looks at every HTML element on the page as a box. 
+        These changes will make the page go from the example on the left, to the one on the right.
 
-    The CSS Box Model describes the way CSS styles the size and spacing of HTML elements. Understanding the box model is crucial for understanding how to position elements with CSS to create the desired page layout. This is one of the trickiest part of CSS, so don't worry if it seems confusing!
+        ![exercise 5](framework/img/workshop/exercise-heading-spacing.jpg)
+      </script>
+    </section>
+    
 
-    CSS uses 5 properties to determine the size and spacing of these boxes:
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #What is The Box Model?
 
-    * `margin` - adds/removes space *outside* of the element
-    * `padding` - adds/removes space *inside* of the element
-    * `border` - adds a border outside of the element
-    * `width` - can be set to a specific size via CSS
-    * `height` - can be set to a specific size via CSS
-  </script>
-</section> 
+        The browser looks at every HTML element on the page as a box. 
+
+        The CSS Box Model describes the way CSS styles the size and spacing of HTML elements. Understanding the box model is crucial for understanding how to position elements with CSS to create the desired page layout. This is one of the trickiest part of CSS, so don't worry if it seems confusing!
+
+        CSS uses 5 properties to determine the size and spacing of these boxes:
+
+        * `margin` - adds/removes space *outside* of the element
+        * `padding` - adds/removes space *inside* of the element
+        * `border` - adds a border outside of the element
+        * `width` - can be set to a specific size via CSS
+        * `height` - can be set to a specific size via CSS
+      </script>
+    </section> 
 
 <section class="slide">
   <h2>Padding and Margin</h2>
@@ -1603,17 +1626,7 @@ html {
 ```
 </script>
 </section> 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Class Exercise - headings and spacing
 
-    For next exercise, we are going to use `margin`, `padding`, `line-height` and `font-size` to update the heading styles and spacing of the content.
-
-    These changes will make the page go from the example on the left, to the one on the right.
-
-    ![exercise 5](framework/img/workshop/exercise-heading-spacing.jpg)
-  </script>
-</section> 
 <section class="slide" data-markdown>
   <script type="text/template">
     ##Class Exercise - headings and spacing

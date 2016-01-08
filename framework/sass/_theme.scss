@@ -43,9 +43,8 @@ h1 {
   }
   code {
     font-size: inherit;
-    font-weight: normal;
-    background: none;
-    text-transform: lowercase;
+    color: inherit;
+    font-family: inherit;
   }
 }
 h2 {
@@ -72,12 +71,14 @@ h6 {
   margin: 5px 0;
 }
 a {
-  color: $llc-pink;
+  // color: $llc-pink;
   // text-decoration: none;
   outline: none;
+  color: inherit;
+  // border-bottom: 2px solid $llc-pink;
 
   &:hover {
-    color: $gray;
+    color: $llc-pink;
     text-decoration: none;
   }
 }
@@ -178,32 +179,6 @@ p {
 iframe {
   margin-bottom: 20px;
 }
-pre {
-  margin: 10px 0;
-  white-space: pre-wrap;
-
-  code {
-    overflow-y: auto;
-  }
-  + pre {
-    margin-top: 15px;
-  }
-  + h2 {
-    margin-top: 25px;
-  }
-  + hr {
-    margin-top: 35px;
-  }
-}
-code {
-  font-family: Monaco, Andale Mono, monospace;
-  color: #444;
-  font-size: $font-size-code;
-  background: white;
-  border-radius: 4px;
-  padding: 3px 6px;
-}
-
 strong {
   font-weight: 700;
   color: black;
@@ -251,6 +226,10 @@ td {
 .resources + * {
   line-height: 1.3;
   font-size: $font-size-xsm!important;
+  
+  code {
+    font-size: inherit;
+  }
 }
 .resources,
 .resources + * {
@@ -323,19 +302,7 @@ a.highlight {
   width: 60%;
 }
 
-//code samples
-.highlighted-tags strong {
-  background: #ddd;
-  padding: 5px;
-  color: black;
-  display: inline-block;
-  font-weight: bold;
 
-  [class^="hljs-"]{
-    color: black;
-    font-weight: bold;
-  }
-}
 
 
 /* Base styles for slides
@@ -372,6 +339,17 @@ a.highlight {
   .logo-stacked {
     width: 150px;
   }
+}
+
+//slide number
+#indicator {
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  text-shadow: none;
+  color: $llc-pink;
+  background: white;
+  padding: 2px 8px;
 }
 
 /* For two column screenshots */
@@ -441,7 +419,7 @@ textarea.snippet {
   border: 1px solid #222;
   padding: 35px 12px 12px;;
   margin-top: 15px;
-  font-size: $font-size-code!important;
+  font-size: 20px!important;
   font-family: Andale Mono, Monaco, monospace;
   line-height: 1.4;
 }
@@ -647,10 +625,50 @@ footer {
   }
 }
 
-/* highlight.js customizations
--------------------------------*/
+
+/* code blocks
+-----------------------------*/
+pre {
+  margin: 10px 0;
+  white-space: pre-wrap;
+
+  code {
+    overflow-y: auto;
+    font-size: 20px;
+    font-family: Andale Mono, Monaco, monospace;
+  }
+  + pre {
+    margin-top: 15px;
+  }
+  + h2 {
+    margin-top: 25px;
+  }
+  + hr {
+    margin-top: 35px;
+  }
+}
+code {
+  color: #555;
+  font-size: $font-size-base - 2;
+  padding: 0 4px;
+}
+
+//code samples
+.highlighted-tags strong {
+  background: #ddd;
+  padding: 5px;
+  color: black;
+  display: inline-block;
+  font-weight: bold;
+
+  [class^="hljs-"]{
+    color: black;
+    font-weight: bold;
+  }
+}
+
+/* highlight.js customizations */
 .hljs {
-  font-family: Andale Mono, Monaco, monospace;
   padding: 12px;
   border-radius: 2px;
   border: 1px solid $gray-light;

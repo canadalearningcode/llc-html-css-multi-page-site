@@ -1,97 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Ladies Learning Code: Intro to HTML & CSS</title>
-    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
-    <link rel="stylesheet" href="css/slideshow.css">
+    <title>Ladies Learning Code</title>
+    <link rel="stylesheet" href="css/slideshow.css" data-noprefix>
+    <link rel="stylesheet" href="css/fonts.css" data-noprefix>
+    <link rel="stylesheet" href="css/highlightjs/github.css" data-noprefix>
+    <link rel="stylesheet" href="css/styles.css" data-noprefix>
+    <link rel="shortcut icon" href="img/favicon.ico">
 
-    <!-- Theme-specific styles -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/highlightjs-themes/monokai.css">
-    <link rel="stylesheet" href="css/theme-llc.css">
-    <link rel="shortcut icon" href="img/favicon.ico"> 
-
-    <!-- Workshop-specific styles -->
-    <link rel="stylesheet" href="css/workshop.css">
-
-    <!-- Takes care of CSS3 prefixes! -->
+    <!-- Takes care of CSS3 prefixes -->
     <script src="scripts/prefixfree.min.js"></script>
-</head>
-
-<body>
     
+    <!-- opens all links in a new window -->
     <base target="_blank">
-
+  </head>
+  <body>
     <main>
     	<section class="slide">
-            <h2>Void / Self-closing Element</h2>
+        <h1>Void / Self-closing Element</h1>
 
-            <p>Void tags don’t format content — instead, they embed objects in the page. These tags <strong>do not</strong> come in pairs since they do not wrap content like the other tags we’ve been using so far. They <em>are</em> the content!</p>
+        <p>Void tags don’t format content — instead, they embed objects in the page. These tags <strong>do not</strong> come in pairs since they do not wrap content like the other tags we’ve been using so far. They <em>are</em> the content!</p>
 
-            <p>The syntax is slightly different in the latest version of HTML so you may see it written in two ways. Prior to HTML5, these tags were self-closed with a forward slash immediately before the right angled bracket (<code>/&gt;</code>). In HTML5, void tags are not required to self close.</p>
+        <p>The syntax is slightly different in the latest version of HTML so you may see it written in two ways.</p>
+        
+        <p>Prior to HTML5, these tags were self-closed with a forward slash immediately before the right angled bracket (<code>/&gt;</code>). In HTML5, void tags are not required to self close.</p>
 
-            <p>A common void tag is the <code>&lt;br /&gt;</code> or <code>&lt;br&gt;</code> tag used to create a line break.</p>
+        <p>A common void tag is the break tag, <code>&lt;br /&gt;</code> or <code>&lt;br&gt;</code> tag used to create a line break.</p>
 
-<pre><code class="xml">&lt;p&gt;This text&lt;br&gt;goes over&lt;br&gt;several&lt;br&gt;lines.&lt;/p&gt;</code></pre>
-            
-            <!-- example -->
-            <p>This text<br>goes over<br>several<br>lines.</p>
+  <pre><code class="xml">&lt;p&gt;This text&lt;br&gt;goes over&lt;br&gt;several&lt;br&gt;lines.&lt;/p&gt;</code></pre>
+        
+        <!-- example -->
+        <p class="example">This text<br>goes over<br>several<br>lines.</p>
 
-            <p>Another example of a void element is the horizontal rule, <code>&lt;hr&gt;</code> or <code>&lt;hr /&gt;</code>.</p>
-
-            <!-- example -->
-            <hr>
-        </section>
+        <p>Another void element is the horizontal rule, <code>&lt;hr&gt;</code> or <code>&lt;hr /&gt;</code>.</p>
+        
+        <h2>Example of a horizontal rule</h2>
+        <!-- example -->
+        <hr>
+      </section>
     </main><!-- cls main section -->
-
-    <footer>
-        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
-        <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
-    </footer>
-    
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+          
+    <script src="scripts/jquery-1.11.0.min.js"></script>
     <script src="scripts/slideshow.js"></script>
 
     <!-- Uncomment the plugins you need -->
     <script src="scripts/plugins/css-edit.js"></script>
     <script src="scripts/plugins/css-snippets.js"></script>
-    <script src="scripts/plugins/css-Ctrls.js"></script>
+    <script src="scripts/plugins/css-controls.js"></script>
     <!-- <script src="plugins/code-highlight.js"></script>-->
 
     <script src="scripts/plugins/markdown/marked.js"></script>
     <script src="scripts/plugins/markdown/markdown.js"></script>
-    <script src="scripts/plugins/highlight/highlight.js"></script>
+    <script src="scripts/plugins/highlight/highlight-8.4.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-
-    <!-- Prettify -->
-    <script src="scripts/plugins/prettify.js"></script>
-    <script src="scripts/plugins/lang-css.js"></script>
-    <script src="scripts/plugins/prism.js"></script>
-
+    <script src="scripts/llc.js"></script>
     <script>
-        var slideshow = new SlideShow();
+      var slideshow = new SlideShow();
 
-        // Grabs all the .snippet elements
-        var snippets = document.querySelectorAll('.snippet');
-        for(var i=0; i<snippets.length; i++) {
-            new CSSSnippet(snippets[i]);
-        }
-
-        // Opens all links in a new window
-        var links = document.getElementsByTagName("a");
-        for (var i = 0; i < links.length; i++) {
-            var link = links[i];
-            link.addEventListener(function() {
-                window.open(this.href);
-            });
-        }
-
-        jQuery(document).ready(function(){
-            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
-        });
+      // Grabs all the .snippet elements
+      var snippets = document.querySelectorAll('.snippet');
+      for(var i=0; i<snippets.length; i++) {
+        new CSSSnippet(snippets[i]);
+      }
     </script>
-</body>
+  </body>
 </html>
