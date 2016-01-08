@@ -1473,8 +1473,6 @@ text-transform: lowercase;</textarea>
           text-decoration: none; /* removes default underline */
         }
         ```
-        
-
         **Bonus**  
         Select a background image for your homepage.
         
@@ -1487,6 +1485,7 @@ text-transform: lowercase;</textarea>
     <section class="slide title" data-markdown>
       <script type="text/template">
       #The Box Model
+      ##Spacing and sizing in CSS
       </script>
     </section> 
     
@@ -1494,7 +1493,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Spacing in CSS (1:45)
 
-        For next exercise, we are going to use `margin`, `padding`, `line-height` and `font-size` to update the heading styles and spacing of the content.
+        For next exercise, we'll use `margin`, `padding`, `line-height` and `font-size` to update the heading styles and spacing of the content.
 
         These changes will make the page go from the example on the left, to the one on the right.
 
@@ -1502,170 +1501,171 @@ text-transform: lowercase;</textarea>
       </script>
     </section>
     
-
     <section class="slide" data-markdown>
       <script type="text/template">
         #What is The Box Model?
 
-        The browser looks at every HTML element on the page as a box. 
+        The browser looks at HTML elements as a square/rectangular box.  
+        The CSS Box Model describes how the size of these blocks are determined uisng `width`, `height`, `margin`, `padding` and `border`.
+        
+        <!-- ![](framework/img/workshop/box-model.gif) -->
+        ![](framework/img/workshop/box-model-outline.jpg)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #width & height
+        
+        The `width` & `height` can be set to a specific size via CSS.
+        
+        <textarea class="snippet" data-subject="#padding">background: lightblue;
+        width: 500px; 
+        height: 200px;</textarea>
+        
+        <div id="padding"></div>
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Padding
+        
+        Padding adds/removes space **inside** of the box using 1 to 4 values. Setting the value to 0 removes default padding.
+        
+        ```css
+        padding: 2px 2px 2px 2px; /*  top, right, bottom, left */
+        padding: 2px 2px 2px; /*  top, right & left, bottom */
+        padding: 2px 2px; /* top & bottom, right & left */
+        padding: 2px; /* same amount of padding on all sides */
+        ```
+        <textarea class="snippet" data-subject="#padding">background: lightblue;
+        padding: 20px;</textarea>
+        <div id="padding">padding test</div>
+        
+        <!-- .element: class="note" -->**Note**: Values can be declared using many different units. Read more about it [here](https://developer.mozilla.org/en/docs/Web/CSS/length). 
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Margin
+        
+        Margin is used to add/remove space **around** the element.  Just like padding, it also uses 1-4 values.
+        
+        <textarea class="snippet" data-subject="#margin">background: lightblue;
+        margin: 20px;</textarea>
+        <div id="margin">margin test</div>
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Padding & Margin: longhand
+        
+        Both `margin` & `padding` can also be declared by specifying a particular side using the longhand syntax.
 
-        The CSS Box Model describes the way CSS styles the size and spacing of HTML elements. Understanding the box model is crucial for understanding how to position elements with CSS to create the desired page layout. This is one of the trickiest part of CSS, so don't worry if it seems confusing!
-
-        CSS uses 5 properties to determine the size and spacing of these boxes:
-
-        * `margin` - adds/removes space *outside* of the element
-        * `padding` - adds/removes space *inside* of the element
-        * `border` - adds a border outside of the element
-        * `width` - can be set to a specific size via CSS
-        * `height` - can be set to a specific size via CSS
+        ```
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        ```
+        ```
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        ```
+        
+        One more thing! `margin` accepts negative values, `padding` does not.
       </script>
     </section> 
 
-<section class="slide">
-  <h2>Padding and Margin</h2>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Border
 
-  <p>The <code>padding</code> and <code>margin</code> can both be declared using similar syntax of 1 to 4 values. Values can be declared using different measurement units but pixels or percentages are most commonly used. Setting the value to "0" will <strong>remove</strong> any default space on an HTML element. Any positive value will <strong>add</strong> space.</p>
+        The `border` property resides between the `margin` and `padding` and creates an outline around the element. It, too, has longhand and shorthand syntax.
 
-  <ul>
-    <li>4 values means top, right, bottom, left</li>
-    <li>3 values means top, right/left, bottom</li>
-    <li>2 values means top/bottom, right/left</li>
-    <li>1 value means the same amount of padding on all sides</li>
-  </ul>
+        ```
+        /* longhand */
+        border-width: 2px;
+        border-style: solid;
+        border-color: red;
 
-  <p>Let's try changing some of the margin & padding settings below using 1-4 values and see what happens!</p>
+        /* shorthand */
+        border: 2px solid red;
+        ```
+        
+        <textarea class="snippet" data-subject="#border">background: lightblue;
+        margin: 10px 40px;
+        padding: 20px;
+        border: 2px solid red;</textarea>
+        <div id="border">border test</div>
+      </script>
+    </section> 
 
-  <textarea class="snippet" data-subject="#padding">background: lightblue;
-    width: 500px; 
-    padding: 0;
-    margin: 0;</textarea>
-    <div id="padding">padding and margin test</div>
-  </script>
-</section> 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Border
+        Like padding and margin, a specific side of the element can be specified.
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Padding and Margin (continued)
-    Both properties can also be declared by specifying a particular side.
+        ```
+        /* longhand */
+        border-top-width: 2px;
+        border-top-style: solid;
+        border-top-color: red;
 
-    ```
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    ```
-    ```
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    ```
-  </script>
-</section> 
+        /* shorthand */
+        border-top: 2px solid red;
+        ```
+        
+        <textarea class="snippet" data-subject="#border">border-top: 2px solid red;</textarea>
+        <div id="border">border test</div>
+      </script>
+    </section> 
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Border
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Class Exercise - headings and spacing
 
-    The `border` property resides between the `margin` and `padding` and creates an outline around the element. It, too, has longhand and shorthand syntax.
+        Now that **styles.css** is linked to all three pages, these next updates will apply to all of the pages. 
 
-    ```
-    /* longhand */
-    border-width: 2px;
-    border-style: solid;
-    border-color: red;
+        Add padding to the `header` and `section` so there's an equal amount of space around the content blocks.
 
-    /* shorthand */
-    border: 2px solid red;
-    ```
-    Like padding and margin, a specific side of the element can be specified.
+        ```
+        header,
+        section {
+          padding: 20px 30px;
+        }
+        ```
 
-    ```
-    /* longhand */
-    border-top-width: 2px;
-    border-top-style: solid;
-    border-top-color: red;
+        Remove the default space from the `h1` and `h2` and set the line-height. Add it to the the existing `h1,h2` declaration block.
 
-    /* shorthand */
-    border-top: 2px solid red;
-    ```
-  </script>
-</section> 
+        ```
+        h1, h2 {
+          font-weight: 300;
+          text-transform: uppercase;
+          margin: 0; /* removes default space */
+          line-height: 1; /* tightens up the space between the headings */
+        }
+        ```
+        Set the size of the headings **in the header**. We will use a **descendant selector** for this (more about this soon). We can also add a comment block for this section to organize the css.
 
-<section class="slide">
-  <h2>Box Model Review</h2>
-
-  <p>This diagram represents how all these different properties work together to change the size of an element.</p>
-
-  <img src="framework/img/workshop/box-model.gif" alt="" title="">
-
-  <p>The original element started with a width and height of <strong>400 x 100</strong>. After including the padding and border, the <em>size</em> of the box is <em>actually</em> <strong>452 x 152</strong>! That's because these properties add space inside the element by pushing the content outward.</p>
-
-  <p>Margin takes up space but since it's <em>outside</em> of the element, it doesn't increase the size of the element itself.</p>
-</script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Box Model Fix!
-
-Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw! This fix will allow you to add padding & border, without increasing the size of the box.  It pushes the content inward instead.
-
-It is recommended to add this snippet to all your projects. By adding this fix, you won't have to worry about `padding` and `border` increasing the size of your elements. 
-
-**Let's add it to our CSS file now**, to the very top of the file, since it's a global style.
-
-```
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-```
-</script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Class Exercise - headings and spacing
-
-    Now that **styles.css** is linked to all three pages, these next updates will apply to all of the pages. 
-
-    Add padding to the `header` and `section` so there's an equal amount of space around the content blocks.
-
-    ```
-    header,
-    section {
-      padding: 20px 30px;
-    }
-    ```
-
-    Remove the default space from the `h1` and `h2` and set the line-height. Add it to the the existing `h1,h2` declaration block.
-
-    ```
-    h1, h2 {
-      font-weight: 300;
-      text-transform: uppercase;
-      margin: 0; /* removes default space */
-      line-height: 1; /* tightens up the space between the headings */
-    }
-    ```
-    Set the size of the headings **in the header**. We will use a **descendant selector** for this (more about this soon). We can also add a comment block for this section to organize the css.
-
-    ```css
-/* HEADER
------------------------------------------*/
-header h1 {
-  font-size: 36px;
-}
-header h2 {
-  font-size: 18px;
-}
-```
-</script>
-</section> 
+        ```css
+        
+        /* HEADER
+        -----------------------------------------*/
+        header h1 {
+          font-size: 36px;
+        }
+        header h2 {
+          font-size: 18px;
+        }
+        ```
+      </script>
+    </section> 
 
 <section class="slide" data-markdown>
   <script type="text/template">
