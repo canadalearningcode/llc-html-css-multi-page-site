@@ -293,7 +293,7 @@
         1. in the editor, update the code  
         1. save the changes / file
         1. refresh the browser
-        1. repeat.  
+        1. repeat
         
         Try replacing the “your name here” text with *your* name!
         ```
@@ -716,7 +716,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Images & content (11:30)
+        #Images & content
         
         In the next few slides, we'll cover how to use the `<img>`, `<main>` and `<blockquote>` tags to add images and content to the **About** page.
         
@@ -774,7 +774,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #The alt attribute
+        #The alt attribute (11:30)
 
         The `alt` attribute is optional and refers to *alternative text*. 
         
@@ -923,7 +923,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #CSS & HTML (12:05)
+        #CSS & HTML
 
         Though CSS and HTML are closely paired, CSS is a different language and has its own syntax rules. 
 
@@ -984,10 +984,38 @@
         }</textarea>
       </script>
     </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Comments
+
+        Comments are written with a slash & asterisk and closes in the opposite order (`/* */`). 
+        
+        Comments can be used for the same reasons as HTML comments.
+
+        ```
+        p {
+          color: #cc0066; /* magenta - leaving notes */
+        }
+
+        /* HEADER STYLES - organizing code */
+        header {
+          width: 80%;
+        }
+
+        /*  Saving this for later
+        .slider {
+          width: 100px;
+          background: red;
+        }
+        */ 
+        ``` 
+      </script>
+    </section> 
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Referencing CSS
+        #Referencing CSS (12:00)
 
         There are several ways to include CSS in an HTML page. Today we'll be using the **external** method which separates the HTML from the CSS. 
 
@@ -1175,7 +1203,7 @@ text-transform: lowercase;</textarea>
 
     <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
-        #Break time! (Optional Exercise) (12:40)
+        #Break time! (Optional Exercise) (12:25)
 
         * Pick 2-3 fonts (Google Fonts or web safe fonts) 
           * Here’s a [the final project](project/final/about.html) for reference. 
@@ -1198,7 +1226,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Cascading (1:15)
+        #Cascading (1:10)
         
         CSS executes from top to bottom (hence "cascading"), so be careful of the order of the CSS declarations. The declaration that comes *after* will override the one that came before.
 
@@ -1304,7 +1332,7 @@ text-transform: lowercase;</textarea>
         }
         ```
         
-        **Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
+        **Pro tip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
 
         ```
         nav ul li a span {
@@ -1315,35 +1343,6 @@ text-transform: lowercase;</textarea>
         <!-- .element: class="note" -->**Note**: You can skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. It’s better to start with generic selectors and make them more specific, as needed.
     </script>
     </section>
-    
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #CSS Comments
-
-        Comments are written with a slash & asterisk and closes in the opposite order (`/* */`). 
-        
-        Comments can be used for the same reasons as HTML comments.
-
-        ```
-        p {
-          color: #cc0066; /* magenta - leaving notes */
-        }
-
-        /* HEADER STYLES - organizing code */
-        header {
-          width: 80%;
-        }
-
-        /*  Saving this for later
-        .slider {
-          width: 100px;
-          background: red;
-        }
-        */ 
-        ``` 
-      </script>
-    </section> 
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1353,7 +1352,7 @@ text-transform: lowercase;</textarea>
 
         ![](framework/img/workshop/exercise-fonts.png)
         
-        <!-- .element: class="note" -->**Important!** Make sure **styles.css** and the Google Fonts CSS file has been included on all three HTML pages to see the CSS changes throughout your web site.
+        **Important!** Make sure **styles.css** and the Google Fonts CSS file has been included on all three HTML pages to see the CSS changes throughout your web site.
       </script>
     </section> 
 
@@ -1462,7 +1461,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Spacing in CSS (1:45)
 
-        For next exercise, we'll use `margin`, `padding` to update the heading styles and spacing of the content.
+        For next exercise, we'll use `margin`, `padding` to update the heading styles and spacing of the content. (We'll be adding some additional styling the nav a little later.)
 
         These changes will make the page go from the example on the left, to the one on the right.
 
@@ -1600,10 +1599,11 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Class Exercise - spacing
 
-        Add padding to the `header` and `main` so there's an equal amount of space around the content blocks.
+        Add padding to the `header`, `nav` and `main` there's an equal amount of space around the content blocks.
 
         ```
         header,
+        nav,
         main {
           padding: 20px 30px;
         }
@@ -1624,13 +1624,13 @@ text-transform: lowercase;</textarea>
     <section class="slide title" data-markdown>
       <script type="text/template">
         #CSS Page Layout
-        ##Block, Inline, Float & Display
+        ##Block, Inline, Float
       </script>
     </section>
     
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #About page layout
+        #About page layout (2:05)
         
         Let's talk about why the About page currently looks like the example on the left and how to get it to look like the example on the right.
         
@@ -1681,14 +1681,35 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Back to the About page
         
-        Images actually display as inline-block, which has characteristics of both (more on this soon). But the paragraphs are *block* elements. 
+        The header, nav and paragraphs are all *block* elements. 
         
-        That's why it displays beneath it because, by default, it takes up 100% of the container width and therefore, will display on its own line.
+        That's why they display stacked on top of eachother because, by default, it takes up 100% of the container width and therefore, will display on its own line.
         
         ![](framework/img/workshop/about-not-floated.png) <!-- .element: width="60%" -->
       </script>
     </section>
-      
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Page layout: Floats vs Display vs Flexbox
+        
+        There are a few different techniques for creating page layouts.  
+        
+        The `display` and `float` methods are most commonly used.  Both can be used to change the position of the elements but they both have their own quirks and solutions as well.
+        
+        The newest option is `flexbox` but only has partial support in Internet Explorer 10+ and no support in Internet Explorer 9 and older.
+        
+        Today we'll use `float` but check out the resources below for more info.
+        
+        ---
+        ###Resources
+        
+        * http://caniuse.com/#search=flexbox
+        * [Floats, Inline Block or Display Table? Or Flexbox?](http://blog.karenmenezes.com/2014/apr/13/floats-inline-block-or-display-table-or-flexbox/)
+        * [Float vs Inline-block](http://www.ternstyle.us/blog/float-vs-inline-block)
+      </script>
+    </section>
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         #CSS Float
@@ -1755,7 +1776,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Floats and stacking flow
+        #Floats and stacking flow (2:30)
         
         So... the image and text is now displaying side by side but there's one problem. The red box in the example below is highlighting the `blockquote` and `footer` content.
         
@@ -1796,7 +1817,71 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #More about Floats
+        #Float the Header and Nav
+        
+        We're going to do the same thing with the `header` and `nav` except the header will float to the left and the nav will float to the right.
+        
+        Let's revisit the HTML for a second and plan out which elements should be floated and where it should be cleared.
+        
+        ```
+        <!-- float to the left -->
+        <header>
+          <h1>Jane Smith</h1>
+          <h2>Web Developer + City Girl</h2>	
+        </header>
+        
+        <!-- float to the right -->
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        
+        <!-- clear the float here -->
+        <main role="main">
+        </main>
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise #5: Floats (20mins)
+        
+        Using the plan from the previous slide, apply the floats to the header and nav.  Your page will look like this: 
+        
+        ![](framework/img/workshop/about-header-float.jpg) <!-- .element: width="700px" -->
+        
+        Clear the float to make it look like this:
+        
+        ![](framework/img/workshop/about-header-cleared.jpg) <!-- .element: width="700px" -->
+        
+        Reference the ex5-about.html and ex5.css files to check your code.
+        
+        **Advance to the next slide for bonus exercises.**
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise #5 Bonus - Style the About page
+          
+        1. Add some margin to the right side of the profile image to put some space between the image and the paragraphs.
+        
+        1. Add some padding to the links in the navigation.
+        
+        1. Try adding some padding to the blockquote to improve the spacing and/or try adding `text-align: center;` and see if you like it.
+        
+        1. Change the font & font-size of just the paragraph in the blockquote to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of 35px.  
+        <span class="note">(Hint! Try using a descendant selector to apply the style to the paragraph inside of the blockquote.)</span>
+        
+        Your page should now look similar to [ex5-about-bonus.html](project/examples/ex5-about-bonus.html) & ex5-bonus.css.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #More about Floats (3:00)
         
         This is only one scenario and solution for floats and clearing floats.  
         
@@ -1807,75 +1892,8 @@ text-transform: lowercase;</textarea>
         * [Force Element To Self-Clear its Children](http://css-tricks.com/snippets/css/clear-fix/)
       </script>
     </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Exercise #5 - Style the About page (15mins)
-        
-        Now that the image is floated, take some time to adjust the spacing and style the `blockquote.` 
-        
-        The solution is provided on the next slide or look at ex5.css & ex5.html in the **example** folder.
-        
-        1. Add some margin to the right side of the profile image to put some space between the image and the paragraphs.
-        
-        1. Try adding some padding to the blockquote to improve the spacing or try adding `text-align: center;` and see if you like it.
-        
-        1. Change the font & font-size of just the paragraph in the blockquote to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of 25px.  
-        <span class="note">(Hint! Try using a descendant selector to apply the style to the paragraph inside of the blockquote.)</span>
-        
-        Your page should now look similar to [exercise6-about.html](project/examples/exercise6-about.html).
-      </script>
-    </section>
 
 
-  <section class="slide" data-markdown>
-    <script type="text/template">
-      ##CSS Display property
-
-      These default display styles can be changed using the CSS `display` property.
-
-      `display: inline` can be used to get block level elements to line up side by side, in a line.
-
-      `display: block` can be used to make inline elements behave like a block level element
-
-      `display: inline-block` is the best of both worlds. Elements will line up side by side, like inline elements and also render sizing properties like block elements.
-
-      `display: none;` will hide the element.
-    </script>
-  </section> 
-
-  <section class="slide">
-    <h2>Class Exercise #5 - Horizontal navigation</h2>
-
-    <p>In this step, we're focusing on changing the default list styles to a horizontal layout. It will look like this sample below (also found in your examples folder, <a href="project/examples/exercise5-about.html">exercise5-about.html</a>).</p>
-    <img src="framework/img/workshop/exercise5-nav.png" alt="">
-    <p>First, remove the default list spacing and bullets.</p>
-    <pre><code>nav ul {
-      list-style-type: none; /* removes bullets */
-      margin: 0; /* removes default margin */
-      padding: 0; /* removes default padding */
-    }
-  </code></pre>
-
-  <p>Now we’ll want to target each <em>list item</em> to get the elements to line up side by side, in a line.</p>
-  <pre><code>nav ul li {
-    display: inline-block; /* gets the list items to line up side by side */
-  }
-</code></pre>
-
-<p>Add some space around the links. It’s better to put padding on the anchor link rather the the list item because padding adds space on the <em>inside</em>.  Putting it on the link with make the click area bigger.</p>
-
-<pre><code>nav a {
-  display: block; /* changes the element to block */
-  padding: 5px 15px;
-  text-transform: uppercase; 
-}
-</code></pre>
-<div class="presenter-notes">
-  <p>Show learners the difference between putting padding in the list item vs anchor.  Just demonstrate it with your own code, don't get them to type along so they can just focus on the demo.</p>
-</div>
-</script>
-</section> 
 
 <section class="slide" data-markdown>
   <script type="text/template">
@@ -1948,78 +1966,6 @@ text-transform: lowercase;</textarea>
   </script>
 </section> 
 
- 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Positioning in CSS
-
-    Sometimes floats and display just doesn't cut it for laying out page elements. 
-
-    The `position` property can be used to place elements in specific spots on the page without affecting the elements around it the way floats do.  There are three options: `relative`, `absolute` and `fixed`. Elements are all `static` by default.
-
-    `position` is used in conjunction with **offset properties**: `top`, `right`, `bottom`, and `left`. These are use to identify where an element will be positioned.
-
-    To view more about positioning, check out this extra resource: [position relative, absolute & fixed](framework/extras-positioning.html).
-  </script>
-</section> 
-
-<section class="slide">
-  <h2>Class Exercise #7 - Positioning the Header &amp; Nav</h2>
-
-  <p>Set the <em>entire</em> header to a fixed position so it stays in place at the top of the page on scroll.</p>
-
-  <pre><code>header {
-    position: fixed;
-    top: 0;
-  }
-</code></pre>
-
-<p>Let's check these changes on our <strong>About</strong> page.</p>
-<p>Positioning also takes the element out of the natural stacking order.  See how the profile picture “jumped” underneath the header when <code>position: fixed</code> was applied? It’s because it doesn’t “see” that there’s an element before it, so it wants to slide up to the next available slot.</p>
-<p>Add some padding on the top of the <code>section</code> element to push the content down below the fixed header. Then try scrolling down the page.</p>
-
-<pre><code>section {
-  padding-top: 125px;
-}
-</code></pre>
-
-<p>Update the <code>header</code> css by setting the background to white so the content underneath doesn’t show through when you scroll the page. Also, add a border on the bottom to create a separation of the header from the page content.</p>
-
-<pre><code>header {
-  position: fixed;
-  background: white;
-  border-bottom: 1px solid #eee;
-}
-</code></pre>
-
-<p>Why doesn’t the header go all the way across? When you position an element, it automatically becomes the width of its content. Set the width to 100% so it becomes as wide as the browser. </p>
-
-<pre><code>header {
-  position: fixed;
-  background: white;
-  border-bottom: 1px solid #eee;
-  width: 100%;
-}
-</code></pre>
-
-<p>Next up, position the <code>nav</code> to the top right of the header element. Since the header already has positioning applied to it, the nav will be relative to it.</p>
-
-<pre><code>nav {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-</code></pre>
-
-<p>Your page should look like <a href="project/examples/exercise7-about.html">example 7</a>.  Note how the header looks the same on all three pages now.</p>
-<p>Wait! The footer content disappeared on the home and contact pages!?</p>
-
-<div class="presenter-notes">
-  <p>Reinforce the ordering of CSS styles for organization during this exercise and stress the importance of keeping the styles in related groupings to keep from possibly duplicating styles or creating specificity issues.</p>
-</div>
-</script>
-</section> 
 
 <section class="slide" data-markdown>
   <script type="text/template">

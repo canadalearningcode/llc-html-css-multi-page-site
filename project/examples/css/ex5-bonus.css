@@ -33,7 +33,6 @@ main {
   clear: both;
 }
 
-
 /* HEADER STYLES
 -----------------------------------------*/
 header h1 {
@@ -48,13 +47,23 @@ header {
 nav {
   float: right;
 }
+nav a {
+  padding: 20px;
+}
 
 
 /* ABOUT STYLES
 -----------------------------------------*/
 .profile-img {
   float: left;
+  margin-right: 20px;
 }
 blockquote {
   clear: both;
+  padding: 5px 150px;
+  text-align: center;
+}
+blockquote p {
+  font-family: "Pacifico", cursive;
+  font-size: 35px;
 }
