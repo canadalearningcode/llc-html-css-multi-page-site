@@ -16,3 +16,12 @@ a {
   color: #bf6d50;
   text-decoration: none; /* removes default underline */
 }
+
+/* HEADER STYLES
+-----------------------------------------*/
+header h1 {
+  font-size: 48px;
+}
+header h2 {
+  font-size: 24px;
+}

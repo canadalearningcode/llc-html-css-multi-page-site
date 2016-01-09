@@ -980,8 +980,7 @@
         
         1. Add `<main role="main"></main>` for the About page content not included in the header or footer.
         1. Inside of `<main>`, add a profile picture using the `<img>` tag.
-        1. *After* your profile picture, add an `h1` heading. 
-        1. *After* the `h1`, add a couple of paragraphs about you, or use placeholder text (see resources below).
+        1. *After* profile image, add a couple of paragraphs about you, or use placeholder text (see resources below).
         1. We're going to need to work with some additional content in the second half of this workshop, so *after* the paragraphs, add a quote using `<blockquote>`.
         1. Optional: Add a few links within the paragraphs.
 
@@ -992,7 +991,8 @@
         ###Resources
 
         * [Dr. Suess quotes](http://www.goodreads.com/author/quotes/61105.Dr_Seuss)
-        * http://meettheipsums.com/
+        * http://www.brainyquote.com
+        * http://meettheipsums.com
         * http://thewireipsum.com
       </script>
     </section> 
@@ -1371,6 +1371,34 @@ text-transform: lowercase;</textarea>
 
       </script>
     </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Descendant selectors
+
+        Matches any element that is a descendant (nested tag) of as specific element. Note the space *between* the selectors. It's required!
+
+        ```css
+        parent child {
+          /* applies only to the child when nested inside of the parent tag */
+        }
+        p a {
+          /* targets only anchor link tags nested inside of a p tag */
+        }
+        ```
+        
+        **Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
+
+        ```
+        nav ul li a span {
+          /* NOOOOOOOOOOO!!!! */
+        }
+        ```
+
+        <!-- .element: class="note" -->**Note**: You can skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. It’s better to start with generic selectors and make them more specific, as needed.
+    </script>
+    </section>
+    
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1408,7 +1436,7 @@ text-transform: lowercase;</textarea>
 
         ![](framework/img/workshop/exercise-fonts.png)
         
-        **Important!** Make sure **styles.css** and the Google Fonts CSS file has been included on all three HTML pages to see the CSS changes throughout your web site.
+        <!-- .element: class="note" -->**Important!** Make sure **styles.css** and the Google Fonts CSS file has been included on all three HTML pages to see the CSS changes throughout your web site.
       </script>
     </section> 
 
@@ -1447,40 +1475,64 @@ text-transform: lowercase;</textarea>
       </script>
     </section> 
 
-
     <section class="slide small-type" data-markdown>
       <script type="text/template">
-        #Exercise #4 - Typography (10 mins)
+        #Exercise #4 - Typography (10-15 mins)
 
         These instructions are based on the LLC sample project but feel free to pick your own fonts, sizes, colours and typography styles. (We'll be tackling spacing and layout in the upcoming exercises.) 
         
-        Take a look at any of the <!-- .element: class="note" -->[ex4](project/examples/ex4-about.html) examples for reference.  
+        Take a look at the <!-- .element: class="note" -->[ex4](project/examples/ex4-about.html) examples for reference.  
         
         1. Add a `color` property to the `body` to override the default black.  
         The LLC project uses hex code `#333333` (almost black, gray colour).
+        
         1. Links by default are blue so it doesn't inherit the `color` property in `body`.
           * Use the specific element selector (a) to change the colour. 
           * Choose a colour different from the body colour.
           * You can also remove the default underline with CSS as well!
           * Reference the [CSS colors slide](#colours) (syntax & colour resources).
           
-        ```
-        body {
-          color: #333333;
-        }
-        a {
-          color: #bf6d50;
-          text-decoration: none; /* removes default underline */
-        }
-        ```
-        **Bonus**  
-        Select a background image for your homepage.
+        1. Use a *descendant selector* to change the `font-size` of the `h1` and `h2` in the `header`. (The LLC project uses 48px and 24px respectively.)
+        
+        **Bonus**: Select a background image for your homepage.
         
         * Choose from the **images** folder or use your own.
         * Background images should be around 1000-1400px wide.
         * Royalty free images can be downloaded [here](https://medium.com/@dustin/stock-photos-that-dont-suck-62ae4bcbe01b#.kl0cpopcn).
       </script>
     </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Solution/review 
+        
+        **Pro tip!** Use comments to organize your CSS blocks!
+        
+        Here's what was added:
+        ```
+        /* GLOBAL STYLES
+        -----------------------------------------*/
+        body {
+          color: #333333; /* change default text colour */
+        }
+        a {
+          color: #bf6d50; /* change default link colour */
+          text-decoration: none; /* removes default underline */
+        }
+        
+        /* HEADER STYLES
+        -----------------------------------------*/
+        header h1 {
+          font-size: 48px;
+        }
+        header h2 {
+          font-size: 24px;
+        }
+        ```
+        
+        Take a look at the <!-- .element: class="note" -->[ex4](project/examples/ex4-about.html) examples for reference.  
+      </script>
+    </section>
 
     <section class="slide title" data-markdown>
       <script type="text/template">
@@ -1489,15 +1541,16 @@ text-transform: lowercase;</textarea>
       </script>
     </section> 
     
-    <section class="slide" data-markdown>
+    <section class="slide side-by-side" data-markdown>
       <script type="text/template">
         #Spacing in CSS (1:45)
 
-        For next exercise, we'll use `margin`, `padding`, `line-height` and `font-size` to update the heading styles and spacing of the content.
+        For next exercise, we'll use `margin`, `padding` to update the heading styles and spacing of the content.
 
         These changes will make the page go from the example on the left, to the one on the right.
 
-        ![exercise 5](framework/img/workshop/exercise-heading-spacing.jpg)
+        ![exercise 5](framework/img/workshop/ex-spacing1.jpg)
+        ![exercise 5](framework/img/workshop/ex-spacing2.jpg)
       </script>
     </section>
     
@@ -1628,107 +1681,258 @@ text-transform: lowercase;</textarea>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Class Exercise - headings and spacing
+        #Class Exercise - spacing
 
-        Now that **styles.css** is linked to all three pages, these next updates will apply to all of the pages. 
-
-        Add padding to the `header` and `section` so there's an equal amount of space around the content blocks.
+        Add padding to the `header` and `main` so there's an equal amount of space around the content blocks.
 
         ```
         header,
-        section {
+        main {
           padding: 20px 30px;
         }
         ```
 
-        Remove the default space from the `h1` and `h2` and set the line-height. Add it to the the existing `h1,h2` declaration block.
+        Remove the default space from the `h1` and `h2`. (Add it to the the existing `h1, h2` declaration block.)
 
         ```
         h1, h2 {
-          font-weight: 300;
-          text-transform: uppercase;
           margin: 0; /* removes default space */
-          line-height: 1; /* tightens up the space between the headings */
         }
         ```
-        Set the size of the headings **in the header**. We will use a **descendant selector** for this (more about this soon). We can also add a comment block for this section to organize the css.
-
-        ```css
         
-        /* HEADER
-        -----------------------------------------*/
-        header h1 {
-          font-size: 36px;
-        }
-        header h2 {
-          font-size: 18px;
-        }
-        ```
+        <!-- .element: class="note" -->**Note**: These changes will display the best in the **About** page since currently, it's the only page that has `<main>` content but you should see the changes in the header on all the pages.
+      </script>
+    </section>  
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #CSS Page Layout
+        ##Block, Inline, Float & Display
+      </script>
+    </section>
+    
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #About page layout
+        
+        Let's talk about why the About page currently looks like the example on the left and how to get it to look like the example on the right.
+        
+        ![](framework/img/workshop/about-not-floated.png)
+        ![](framework/img/workshop/about-floated.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Block and Inline Elements
+
+        By default, some HTML elements are **block** or **inline** elements.
+
+        ##Block Elements
+        *   takes up 100% width of its container
+        *   can apply sizing related CSS to it (margin, padding, height, width)
+
+        <textarea class="snippet" data-subject="#block">background: lightblue;
+        padding: ;
+        margin: ;
+        width: ;
+        height: ;</textarea>
+        <div id="block">I'm a block element.</div>
       </script>
     </section> 
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Descendant selectors
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Block and Inline Elements
 
-    Matches any element that is a descendant (nested tag) of the element declared before it.
+        ##Inline Elements
+        *   will be width of its content
+        *   always appears “in a line” with other inline level elements
+        *   does not render CSS height and width at all
+        *   will apply margin and padding but with unexpected results
 
-    ```css
-    p a {
-      /* targets only anchor link tags nested inside of a p tag */
-    }
-    ```
-**Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
+        <textarea class="snippet" data-subject="#inline">background: orange;
+        padding: ;
+        margin: ;
+        width: ;
+        height: ;</textarea>
+        <span id="inline">I'm an inline element.</span> 
+      </script>
+    </section> 
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Back to the About page
+        
+        Images actually display as inline-block, which has characteristics of both (more on this soon). But the paragraphs are *block* elements. 
+        
+        That's why it displays beneath it because, by default, it takes up 100% of the container width and therefore, will display on its own line.
+        
+        ![](framework/img/workshop/about-not-floated.png) <!-- .element: width="60%" -->
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Float
 
-```
-nav ul li a span {
-  /* NOOOOOOOOOOO */
-}
-```
+        The `float` property is one way to get block elements to line up side by side. However, to use `float`, the natural page flow has to be *broken*.
+        
+        <img class="delayed" src="framework/img/workshop/huh.gif">
 
-Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. It’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
-</script>
-</section> 
+        <p class="delayed">Not to worry, we can fix it.</p>
+      </script>
+    </section>
 
-<section class="slide">
-  <h2>Block vs Inline Elements</h2>
+    <section class="slide">
+      <h1>CSS Float</h1>
 
-  <p>Right now, our navigation list stacks on top of each other.  That’s because they are <strong>block</strong> elements.<br>
-    By default, some HTML elements are displayed as block or inline elements.</p>
+      <p> Use the <code>float</code> property with a value of <code>left</code> or <code>right</code> to align the element to either side. Any element <em>after</em> the floated element will move up beside it. Try it!</p>
+      
+      <textarea class="snippet" data-subject="#float">img { 
+  float: ;
+}</textarea>
+      <div id="float">
+        <img src="http://placehold.it/150x150" alt="placeholder image">
+        <p style="margin-top:0;">Paragraph tag - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea id quasi iusto, ex cumque omnis iste eveniet mollitia.</p>
+      </div>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Being more specific - Using a Class
+        
+        To make sure we apply this float *only* to the profile image and not all images, we can't use `img` as the selector.
+        
+        Instead, use a `class` attribute.  The value of the class is defined by you!  And it can be added to any tag to attach extra identifying information.
+        
+        ```xml
+        <img class="profile-img" src="images/profile.jpg" alt="Your Name">
+        ```
+        ```css
+        img {
+          /* all images */
+        }
+        .profile-img {
+          /* any element with the class of 'profile-img' */
+        }
+        ```
+        
+        Note that to use the `class` as a selector, it must start with a period, followed by class name with no spaces.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Float the image!
+        
+        Back in **about.html**, add a `class` attribute to your profile image tag.  
+        
+        Though you can name classes anything, choose a functional & descriptive class name.  Something like "profile", "profile-image" or "profile-img" would work.
+        
+        Then, back in **styles.css**, float the image using the class name
+        
+        (This is just the breaking part. In the next slide, we'll talk about how to put it back to normal.)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Floats and stacking flow
+        
+        So... the image and text is now displaying side by side but there's one problem. The red box in the example below is highlighting the `blockquote` and `footer` content.
+        
+        ![](framework/img/workshop/about-floated-notcleared.png)
+        
+        When an element is floated, *everything* after it will float, as long as there is room for it.  In this project, only the paragraphs need to float next to the image.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Clearing floats
+        
+        First, `float` breaks the stacking flow to get block elements to line up side by side. Then, *clear* the float, to make the rest of the page to go back to the normal stacking order.
+        
+        Decide *where* the page should go back to the normal. In this project, it's the `<blockquote>` element.
+          
+        ![](framework/img/workshop/about-floated-clear-element.png)
+      </script>
+    </section>
 
-    <h3>Block Elements</h3>
-    <ul>
-      <li>takes up 100% width of its container, no matter how long the actual content is</li>
-      <li>will be the same height as its content</li>
-      <li>always starts on a new line</li>
-      <li>can wrap other block level elements or inline elements</li>
-      <li>can apply sizing related CSS to it (margin, padding, height, width)</li>
-    </ul>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Clearing floats
+        
+        Select the element to be cleared (where it should go back to a normal page flow) and apply the `clear` property.  The value `both` will clear either a `left` or `right` float.
+        
+        ```
+        blockquote {
+          clear: both;
+        }
+        ```
+        ![](framework/img/workshop/about-floated-cleared.png)
+          
+        Let's add it into our project.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #More about Floats
+        
+        This is only one scenario and solution for floats and clearing floats.  
+        
+        This is a concept that requires much more discussion outside of the scope for today. For more information, check out these extra resources:
+        
+        * [CSS Fundamentals: Containing Children](http://code.tutsplus.com/tutorials/css-fudamentals-containing-children--net-5664)
+        * [Clearing Floats: An Overview of Different clearfix Methods](http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/)
+        * [Force Element To Self-Clear its Children](http://css-tricks.com/snippets/css/clear-fix/)
+      </script>
+    </section>
+    
+    
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Class Exercise #6 - Update About page with Floats
 
-    <textarea class="snippet" data-subject="#block">background: lightblue;
-      padding: 0px;
-      margin: 0px;</textarea>
-      <div id="block">I'm a div so that makes a me a block element.</div>
-    </script>
-  </section> 
+        Add a `profile-img` class to the image tag in your **About** page.
 
-  <section class="slide">
-    <h2>Block vs Inline Elements</h2>
-    <h3>Inline Elements</h3>
+        ```xml
+        <img class="profile-img" src="images/profile.jpg" alt="description of image">
+        ```
+        In **styles.css**, add a new comment block at the bottom of the page for your **About** styles, to help organize your style sheet.  Then add `float` to get the text to wrap around the image. Also, add some margin to the right side of the image so there is some space between the image and the text.
 
-    <ul>
-      <li>will be the height and width of its content</li>
-      <li>always appears “in a line” with other inline level elements</li>
-      <li>can wrap other inline elements but cannot wrap block level elements <em>except</em> <code>&amp;lt;a&amp;gt;</code> tags.  This is only valid with an HTML5 doctype.</li>
-      <li>does not render CSS height and width at all, will apply margin and padding but with unexpected results</li>
-    </ul>
+          ```css  
+        /* ABOUT PAGE
+        -----------------------------------------*/
+        .profile-img {
+          float: left;
+          margin-right: 20px;
+        }
+        ```
 
-    <textarea class="snippet" data-subject="#inline">background: orange;
-      padding: 0px;
-      margin: 0px;</textarea>
-      <span id="inline">I'm a span. I'm an inline element.</span> 
-    </script>
-  </section> 
+        That looks much better but look what happened to the quote and the footer?! Remember, all elements that come *after* floated elements will want to float too, as long as there is space for them.  
+
+        Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear:both` on the `blockquote` element because that's where we want things to go back to normal. While we're here, let's also style the text in the quote and add some spacing.
+
+        ```
+        blockquote {
+          clear: both; /* clears the float and returns page back to normal stacking order */
+          text-align: center; /* center aligns the text */
+          padding-top: 20px; /* adds space between the blockquote & content before it */
+        }
+        blockquote p {
+          font-family: "Pacifico", cursive;
+          font-size: 25px;
+        }
+        ```
+
+        Your page should now look similar to [exercise6-about.html](project/examples/exercise6-about.html).
+      </script>
+    </section>
+
 
   <section class="slide" data-markdown>
     <script type="text/template">
@@ -1850,98 +2054,7 @@ Feel free to skip a level but be mindful of specificity rules. For example, `nav
   </script>
 </section> 
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##CSS Float Property
-
-    Remember, block-style HTML elements like `<p>`, `<div>` and `<section>` automatically start on a new line and stack on top of each other. That's why our content is currently just stacking on top of each other.
-
-    ![](framework/img/workshop/about-not-floated.png)
-
-    To get two block elements to align side-by-side, we've used `display: inline-block` for our navigation list, but the `float` property is often used for creating page layouts.
-
-    **However**, we have to break the natural stacking flow when an element is floated. This will cause any element *after* the floated element to try to move up beside it or just not display properly because we've disrupted the natural stacking flow. The parent container will also collapse.
-  </script>
-</section> 
-
-<section class="slide centered">
-  <h2>Huh?</h2>
-  <img src="framework/img/workshop/huh.gif">
-
-  <p class="delayed">Not to worry, we can fix it.</p>
-</script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Floating content
-
-    For the next exercise, we'll use `float` to align the profile image and the text beside each other to make it look like this:
-
-    ![](framework/img/workshop/about-floated.png)
-  </script>
-</section> 
-<section class="slide">
-  <h2>Float & Clear</h2>
-
-  <p>First we have to break it, then put it back together. We need to “reset” the float to get the rest of the page to go back to normal.  There are a couple ways to do it.</p>
-
-  <p>One of the most confusing CSS concepts is when to use the different techniques.</p>
-
-  <p>Let’s look at an example: <a href="http://jsfiddle.net/e1nd3q89/">http://jsfiddle.net/e1nd3q89/</a></p>
-
-  <p><strong>Rule of thumb:</strong><br>
-    If there is an element that <em>follows</em> the floated elements, apply <code>clear: both</code> to that element. If all the elements need to be floated, apply the <code>overflow:hidden</code> to the <em>parent element</em> to force clear the children.</p>
-
-    <p>Want to know more about clearing floats? Here you go: <br>
-      <a href="http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/">http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/</a><br>
-      <a href="http://css-tricks.com/snippets/css/clear-fix/">http://css-tricks.com/snippets/css/clear-fix/</a></p>
-
-      <div class="presenter-notes">
-        <p>Explain that you can fork or update the jsfiddle to create your own copy and it won't "mess up" the example. It will create a new URL and no account is required.</p>
-      </div>
-    </script>
-  </section> 
-
-  <section class="slide" data-markdown>
-    <script type="text/template">
-      ##Class Exercise #6 - Update About page with Floats
-
-      Add a `profile-img` class to the image tag in your **About** page.
-
-      ```xml
-      <img class="profile-img" src="images/profile.jpg" alt="description of image">
-      ```
-      In **styles.css**, add a new comment block at the bottom of the page for your **About** styles, to help organize your style sheet.  Then add `float` to get the text to wrap around the image. Also, add some margin to the right side of the image so there is some space between the image and the text.
-
-      ```css  
-/* ABOUT PAGE
------------------------------------------*/
-.profile-img {
-  float: left;
-  margin-right: 20px;
-}
-```
-
-That looks much better but look what happened to the quote and the footer?! Remember, all elements that come *after* floated elements will want to float too, as long as there is space for them.  
-
-Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear:both` on the `blockquote` element because that's where we want things to go back to normal. While we're here, let's also style the text in the quote and add some spacing.
-
-```
-blockquote {
-  clear: both; /* clears the float and returns page back to normal stacking order */
-  text-align: center; /* center aligns the text */
-  padding-top: 20px; /* adds space between the blockquote & content before it */
-}
-blockquote p {
-  font-family: "Pacifico", cursive;
-  font-size: 25px;
-}
-```
-
-Your page should now look similar to [exercise6-about.html](project/examples/exercise6-about.html).
-</script>
-</section> 
+ 
 
 <section class="slide" data-markdown>
   <script type="text/template">
