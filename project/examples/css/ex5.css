@@ -1,0 +1,49 @@
+/* GLOBAL STYLES
+-----------------------------------------*/
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #333333; /* dark, almost black, gray colour */
+}
+h1,
+h2 {
+  font-family: "Nixie One", serif;
+  font-weight: 300; /* removes default bold styles */
+  text-transform: uppercase;
+  margin: 0;
+}
+a {
+  color: #bf6d50;
+  text-decoration: none; /* removes default underline */
+}
+header,
+main {
+  padding: 20px 30px;
+}
+
+
+/* HEADER STYLES
+-----------------------------------------*/
+header h1 {
+  font-size: 48px;
+}
+header h2 {
+  font-size: 24px;
+}
+
+/* ABOUT STYLES
+-----------------------------------------*/
+.profile-img {
+  float: left;
+  margin-right: 20px;
+}
+blockquote {
+  clear: both;
+  padding: 10px 150px;
+  text-align: center;
+}
+blockquote p {
+  font-family: "Pacifico", cursive;
+  font-size: 35px;
+}

@@ -974,7 +974,7 @@
 
     <section class="slide small-type" data-markdown>
       <script type="text/template">
-        #Exercise #3 - About page (15-20 mins)
+        #Exercise #3 - About page (15 mins)
 
         Add some content to your **About** page to make it look like [this](project/examples/ex3-about.html).
         
@@ -1197,7 +1197,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #`font-family` and Web safe fonts
+        #font-family and Web safe fonts
         
         Using the `font-family` property, it's best practice to list at least two or three font options to provide a fall-back option in case the user doesn't have the fonts installed.
 
@@ -1258,7 +1258,7 @@ text-transform: lowercase;</textarea>
 
     <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
-        #Break time! (Optional Exercise) (12:30)
+        #Break time! (Optional Exercise) (12:40)
 
         * Pick 2-3 fonts (Google Fonts or web safe fonts) 
           * Here’s a [the final project](project/final/about.html) for reference. 
@@ -1873,7 +1873,7 @@ text-transform: lowercase;</textarea>
         ```
         ![](framework/img/workshop/about-floated-cleared.png)
           
-        Let's add it into our project.
+        Now it's back the regular stacking flow. Let's add it into our project.
       </script>
     </section>
     
@@ -1891,44 +1891,21 @@ text-transform: lowercase;</textarea>
       </script>
     </section>
     
-    
-    
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Class Exercise #6 - Update About page with Floats
-
-        Add a `profile-img` class to the image tag in your **About** page.
-
-        ```xml
-        <img class="profile-img" src="images/profile.jpg" alt="description of image">
-        ```
-        In **styles.css**, add a new comment block at the bottom of the page for your **About** styles, to help organize your style sheet.  Then add `float` to get the text to wrap around the image. Also, add some margin to the right side of the image so there is some space between the image and the text.
-
-          ```css  
-        /* ABOUT PAGE
-        -----------------------------------------*/
-        .profile-img {
-          float: left;
-          margin-right: 20px;
-        }
-        ```
-
-        That looks much better but look what happened to the quote and the footer?! Remember, all elements that come *after* floated elements will want to float too, as long as there is space for them.  
-
-        Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear:both` on the `blockquote` element because that's where we want things to go back to normal. While we're here, let's also style the text in the quote and add some spacing.
-
-        ```
-        blockquote {
-          clear: both; /* clears the float and returns page back to normal stacking order */
-          text-align: center; /* center aligns the text */
-          padding-top: 20px; /* adds space between the blockquote & content before it */
-        }
-        blockquote p {
-          font-family: "Pacifico", cursive;
-          font-size: 25px;
-        }
-        ```
-
+        #Exercise #5 - Style the About page (15mins)
+        
+        Now that the image is floated, take some time to adjust the spacing and style the `blockquote.` 
+        
+        The solution is provided on the next slide or look at ex5.css & ex5.html in the **example** folder.
+        
+        1. Add some margin to the right side of the profile image to put some space between the image and the paragraphs.
+        
+        1. Try adding some padding to the blockquote to improve the spacing or try adding `text-align: center;` and see if you like it.
+        
+        1. Change the font & font-size of just the paragraph in the blockquote to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of 25px.  
+        <span class="note">(Hint! Try using a descendant selector to apply the style to the paragraph inside of the blockquote.)</span>
+        
         Your page should now look similar to [exercise6-about.html](project/examples/exercise6-about.html).
       </script>
     </section>
