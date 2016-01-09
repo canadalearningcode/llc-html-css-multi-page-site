@@ -549,7 +549,7 @@
 
         Links are represented by the `<a>` (anchor) tag and an *attribute* to provide additional information. 
           
-        *Attributes* use the following the syntax, `atrribute="value"` and are added inside the *opening* tag.
+        *Attributes* use the following the syntax, `attribute="value"` and are added inside the *opening* tag.
           
         The `href` provides information about where the link is located.
 
@@ -603,94 +603,7 @@
         ```xml
         <img src="images/filename.jpg">
         ```
-        
         (More on images soon.)<!-- .element: class="note" -->
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Navigation menu & Lists
-
-        Navigational elements are commonly created using lists. There are two kinds of lists: ordered, `<ol>` and unordered, `<ul>`.
-        
-        ```xml
-        <ol>
-          <li>Ordered list item</li>
-          <li>Ordered list item</li>
-        </ol>
-        ```
-        ```xml
-        <ul>
-          <li>Unordered list item</li>
-          <li>Unordered list item</li>
-        </ul>
-        ```
-        
-        Since the order of the list items in a navigation doesn't matter, an unordered list can be used.
-        
-        ---
-        ###Resource 
-        
-        http://learn.shayhowe.com/html-css/creating-lists/
-      </script>
-    </section> 
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Navigation menu & Lists
-        
-        The navigation is used to link to other pages within your website.  
-        To do that, add the links within the list item.
-        
-        ##Link to another HTML page
-        ```xml
-        <a href="about.html">About Me</a>
-        ```
-        
-        ##Unordered list
-        ```xml
-        <ul>
-          <li>Unordered list item</li>
-          <li>Unordered list item</li>
-        </ul>
-        ```
-        
-        ##Unordered List & Links
-        
-        ```xml
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-        </ul>
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #List content
-        
-        Content and/or HTML tags can only be added *within* the `<li>` tag.
-        
-        ##Yes!
-        ```
-        <ul>
-          <li><a href="#">Link in a list item</a></li>
-          <li>List item 2</li>
-        </ul>
-        ```
-        
-        ##No :(
-        ```
-        <ul>
-          <a href="#">link</a>
-          <li>List item 1</li>
-          <li>List item 2</li>
-        </ul>
-        ```
-        
-        <!-- .element: class="note" -->**Note**: The number symbol (`#`) is often used as a placeholder for the href value.
       </script>
     </section>
         
@@ -717,23 +630,22 @@
       <script type="text/template">
         #HTML5 Sectioning Tags: `<nav>`
 
-        For the navigation, wrap the list in a `<nav>` tag.  It can also be grouped with the headings by adding it *inside* of the `<header>` tag.
+        Navigations are often created using an HTML list and links or just with links. To learn more, check out the resources below.
 
-        ```xml
-        <header>
-          <h1>Jane Smith</h1>
-          <h2>Web Developer + City Girl</h2>
-
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
+        Today we'll be using only links. Wrap the links in a `<nav>` tag to group the links as navigation links.
+        
         ```
-        <!-- .element: class="note" -->**Note**: `<head>` and `<header>` are different tags!
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        ```
+        (The <!-- .element: class="note" --> `#` symbol is often used as a placeholder for the `href` value.)
+        
+        ---
+        ###Resource
+        Here are some extra readings about using lists vs links only [here](https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/) and [here](http://www.sitepoint.com/are-navigation-lists-necessary/).  
       </script>
     </section> 
 
@@ -741,11 +653,11 @@
       <script type="text/template">
         # Class exercise: Add a navigation
 
-        Back in **index.html**, let's add the navigation list for the three pages: **Home**, **About**, **Contact**. It will look like this in the browser:
-
-        ![nav list](framework/img/workshop/nav-list.png)
+        Back in **index.html**, let's add the navigation and link to the three pages in our project: **Home**, **About**, **Contact**. 
         
-        We'll need the `<nav>` tag, an unordered list and _relative_ links. Let's go back to **index.html** and add in the navigation list.
+        It will look like this in the browser:
+
+        ![nav list](framework/img/workshop/nav.png)
       </script>
     </section>
 
@@ -753,21 +665,19 @@
       <script type="text/template">
         #Navigation
           
-        The nav and header in **index.html** should now look similar to this:
+        The nav and header in **index.html** should now look like this:
         
         ```
         <header>
           <h1>Jane Smith</h1>
-          <h2>Web Developer + City Girl</h2>
+          <h2>Web Developer + City Girl</h2>	
+        </header>
 
-          <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav> 
-        </header> 
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav> 
         ```
       </script>
     </section> 
@@ -810,7 +720,7 @@
         
         In the next few slides, we'll cover how to use the `<img>`, `<main>` and `<blockquote>` tags to add images and content to the **About** page.
         
-        ![](framework/img/workshop/exercise3-about.png)
+        ![](framework/img/workshop/ex3-about.png)
       </script>
     </section>
     
@@ -818,13 +728,16 @@
       <script type="text/template">
         #Image Types
         
-        There are a few different image file types for the web. Use the format that maintains the best quality while reducing the file size.
+        There are a few different image file types for the web.
 
-        * **jpg** - used for photographs with lots of rich colours or gradients
-        * **png** - used for images with transparent or opaque backgrounds
-        * **svg** - used for 2D graphics and is scaleable.  
+        **jpg** - used for photographs with lots of rich colours or gradients
+        
+        **png** - used for images with transparent or opaque backgrounds
+        
+        **svg** - used for 2D graphics and is scaleable.  
         Based on XML and can be used as a image file or in the HTML document
-        * **gif** - used for images with minimal colour variation and of course, for animated gifs!
+        
+        **gif** - used for images with minimal colour variation and of course, for animated gifs!
 
         ![](framework/img/workshop/mind-blown.gif) <!-- .element: height="325" -->
         ![](framework/img/workshop/raccoon.gif)<!-- .element: height="325" -->
@@ -932,6 +845,10 @@
         <header>
         ...content
         </header>
+        
+        <nav>
+          ...content
+        </nav>
 
         <main role="main">
         ...content
