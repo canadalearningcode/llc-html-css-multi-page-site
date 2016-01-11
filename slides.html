@@ -2027,11 +2027,11 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Styling the Home page
 
-        The final design for the home page in today project is significantly different from the other two pages so we'll need to create special styles for the home page. 
+        The final design for the home page in today project is different from the other two pages so we'll need to create special styles, just for the home page. 
 
-        Let's use the `class` attribute to apply specific styles to the home page.
+        Use the `class` attribute to apply these specific styles.
 
-        In **index.html**, add the `class` to the `body` tag to override any styles, for any element, contained within the entire page.
+        In **index.html**, we'll add the `class` to the `body` tag to override any styles, for any element, contained within the entire page.
 
         ```
         <body class="home">
@@ -2049,16 +2049,67 @@ text-transform: lowercase;</textarea>
         background-image: url(path/to/file.jpg); /* longhand */
         background: url(path/to/file.jpg);/* shorthand */
         ```
-
-        Since our CSS file is *inside* of a **css** folder, use `../` to go *up and out* of the folder to link to the image files. Let's add it to **index.html**. Create a `.home` declaration block so this image only displays on the homepage and spans the entire page. (There are a few to choose from in your images folder.)
+        
+        Since **styles.css** is *inside* of a **css** folder, include `../` to go *up and out* of the folder in the *relative* path to the image files. 
+        
+        ```xml
+        |-- project
+          |-- css
+            |-- styles.css
+          |-- images
+            |-- profile.jpg
+            |-- background-1.jpg
+            |-- background-2.jpg
+            ...etc  
+        ```
+        
+        ```
+        background: url(../images/background-1.jpg);
+        ```
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Background Images
+        
+        In **index.html**, add the `class` to the `body` tag.
+        
+        ```
+        <body class="home">
+        ```
+        
+        In **styles.css**, use `.home` as the selector, so this image only displays on the homepage and spans the entire viewport. 
+        
+        (Choose from <!-- .element: class="note" -->`background-1.jpg` to `background-8.jpg` or use your own.)
 
         ```
         .home {
           background: url(../images/background-6.jpg);
         }
-        ```
+        ``` 
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Background Repeat
 
-        Notice how the images repeat (unless you have a really large image). We can change that with another property, `background-repeat` or just add it to the shorthand `background` property.
+        If the image is smaller than the width and/or height of the element the background image is being applied to, it will repeat the image.
+        
+        ![](framework/img/workshop/bg-repeat.png) <!-- .element: width="75%" -->
+        
+        <!-- .element: class="note" -->**Note**: The footer appears that the top of the home (and contact) page because there is currently no main content like on the About page.  We will address that in a later exercise.
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Background Repeat
+        
+        This can be changed with another background property, `background-repeat` or just add it to the shorthand `background` property.
+        
+        When using shorthand, be sure to include a space *between* values.
 
         ```
         /* shorthand */
@@ -2074,66 +2125,243 @@ text-transform: lowercase;</textarea>
         ```
       </script>
     </section> 
+    
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Class Exercise #9: Background Images (continued)
+        #Background: no-repeat
 
-        The image is no longer repeating but it doesn't fit the space either. Your page should look similar to the below (unless your image is larger than your resolution). We'll need to add one more property to fix this.
+        The image no longer repeats but it may not fit the space either depending on the size of the image file.
 
-        ![homepage background](framework/img/workshop/homepage-norepeat.png)
+        ![homepage background](framework/img/workshop/bg-size-nocover.png)
+        
+        This position and size of the image can be revised using`background-position` and  `background-size`.
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Full background image
+        
+        Since this background image is applied to the `body`, let's add one more rule to ensure the image always covers the *whole viewport*.
+        
+        Let's add it to the very top of the css file, in the "global" section, to continue to keep the CSS organized.
+        
+        ```
+        html, body {
+          height: 100%;
+        }
+        ```
+        You won't notice a change just yet but this will be needed when we add the `background-position` property.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Background: background-position
+        
+        The `background-position` property is used to move a background image within its container.
+        It has three different types of values: pixels, percentages or keywords. 
+        
+        The default values of `0 0` places the background image at the *top left* of the container. If only one value is used, that value will be used for both the horizontal and vertical positioning.
+        
+        ```
+        /* shorthand */
+        .home {
+          background: url(../images/background-6.jpg) no-repeat 50%; 
+        }
+
+        /* longhand */
+        .home {
+          background-image: url(../images/background-6.jpg); 
+          background-repeat: no-repeat;
+          background-position: 50%;
+        }
+        ```
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Background: background-position
+        
+        This will align the background image to the middle of the containing element, horizontally and vertically.
+        
+        ![](framework/img/workshop/bg-position.png)
+        
+        But it still doesn't cover the entire viewport.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Background-Size
+        
+        `background-size` is used to change the size of the background image with CSS rather than editing the image file itself.  It can be added using the longhand style like this:
+        
+        ```
+        .home {
+          background-image: url(../images/background-6.jpg);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+        }
+        ```
+              
+        To include it using the shorthand property, there's a quirk. It _must_ be included after `background-position`, separated with the `/` character.  
+        ```
+        .home {
+          background: url(../images/background-6.jpg) no-repeat 50% / cover;
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Background-Size
+        
+        If no background position value is included (which isn't required), `background-size` won’t work in the shorthand property. 
+        
+        In this case, it may be less error prone to add just that property using the longhand property.
+        
+        ```
+        .home {
+          background: url(../images/background-6.jpg) no-repeat;
+          background-size: cover;
+        }
+        ```
       </script>
     </section> 
 
-    <section class="slide">
-      <h2>Class Exercise #9: Background Images (continued)</h2>
-
-      <p>Thanks to CSS3, we can now change the size of a background image. </p>
-      <p><code>background-size</code> is the longhand property.  To include it in the shorthand <code>background</code> property, it <em>must</em> be included after <code>background-position</code>, separated with the <code>/</code> character.  </p>
-      <pre><code>.home {
-        background-image: url(../images/background-6.jpg);
-        background-repeat: no-repeat;
-        background-position: 50%;
-        background-size: cover;
-      }</code></pre>
-
-      <pre><code>.home {
-        background: url(../images/background-6.jpg) no-repeat 50% / cover;
-      }</code></pre>
-      <p>If no background position value is being used, background-size won’t work in the shorthand property so in this case, it may be less error prone to add it via the longhand property.</p>
-      <pre><code>.home {
-        background: url(../images/background-6.jpg) no-repeat 50%;
-        background-size: cover;
-      }
-    </code></pre>
-
-    <p>For good measure, since this image is a background image of the <code>body</code>, let's add one more rule to ensure the image covers the whole viewport and not just the height of the page content.</p>
-    <pre><code>html, body {
-      height: 100%;
-    }
-    </code></pre>
-    <p><strong>Extra resources about background:</strong> <br>
-      <a href="http://jsfiddle.net/zyjtde73/1/">http://jsfiddle.net/zyjtde73/1/</a><br>
-      <a href="http://www.css3.info/preview/background-size/">More about background-size</a></p>
-
-      <p>Here are some resources for free images:</p>
-
-      <ul>
-        <li><a href="http://superfamous.com/">http://superfamous.com/</a></li>
-        <li><a href="http://www.gratisography.com/">http://www.gratisography.com/</a></li>
-        <li><a href="http://littlevisuals.co/">http://littlevisuals.co/</a></li>
-        <li><a href="http://nos.twnsnd.co/">http://nos.twnsnd.co/</a></li>
-        <li><a href="http://unsplash.com/">http://unsplash.com/</a></li>
-      </ul>
-
-      <p>Your page should now look similar to <a href="project/examples/exercise9-index.html">example 9</a>.</p>
-
-      <div class="presenter-notes">
-        <p>You will probably be pressed for time at this point. Just explain what "cover" does and let them know there are other options available and there are additional resources at the bottom of this slide.</p>
-      </div>
-    </script>
-    </section> 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Background Size (3:25)
+        
+        Let's update the background image for the home pages using `cover`.  
+        
+        ```
+        .home {
+          background: url(../images/background-6.jpg) no-repeat;
+          background-size: cover;
+        }
+        ```
+        There are other background size values other than cover. See below resources for extra info.
+        
+        ---
+        ###Resources
+        * [More about background-size](http://www.css3.info/preview/background-size/)
+        *   [http://www.gratisography.com/](http://www.gratisography.com/) (royalty free images)
+        *   [http://nos.twnsnd.co/](http://nos.twnsnd.co/) (royalty free images)
+        *   [http://unsplash.com/](http://unsplash.com/) (royalty free images)
+      </script>
+    </section>
     
+    <section class="slide" data-markdown>
+        ##Sticky Footer
 
+        Remember the natural stacking order? HTML elements stack on top of each other in the order that they appear in the HTML.  Each element is as tall as their content (unless otherwise specified).  
+
+        On the home page, the footer appears right below the headings. On the about page, it appears on the bottom because the content is long enough to scroll.
+
+        To ensure that your footer is always at the bottom of the page, no matter how long the page content is or how big the browser window is, use a "sticky footer".
+    </section>
+    <section class="slide" data-markdown>
+##Create a Sticky Footer
+
+We'll be following these instructions: http://css-tricks.com/snippets/css/sticky-footer/
+
+First, we need to create a page wrapper around the page content only, **not** the footer content.  The home page HTML will look like similar to this: 
+
+```
+&lt;div class=&quot;page-wrap&quot;&gt;
+&lt;header&gt;
+    &lt;h1&gt;Jane Smith&lt;/h1&gt;
+    &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
+
+    &lt;nav&gt;
+        ...
+    &lt;/nav&gt; 
+&lt;/header&gt;   
+&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
+
+&lt;footer&gt;
+...
+&lt;/footer&gt;
+```
+
+The about and contact pages will look like this:
+
+```xml
+&lt;div class=&quot;page-wrap&quot;&gt;
+&lt;header&gt;
+    &lt;h1&gt;Jane Smith&lt;/h1&gt;
+    &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
+
+    &lt;nav&gt;
+        ...
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;section>
+    ...
+&lt;/section>
+&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
+&lt;footer&gt;
+...
+&lt;/footer&gt;
+```
+    </section>
+
+    <section class="slide" data-markdown>
+        ##Sticky Footer CSS
+
+
+        ```
+        /* sticky footer */
+        .page-wrap {
+            min-height: 100%;
+            margin-bottom: -35px; /* must be the same height as footer */
+        }
+        .page-wrap:after {
+            content: "";
+            display: block;
+        }
+        footer, .page-wrap:after {
+            height: 35px; /* wowever tall you want the footer to be */
+        }
+        footer {
+            background: #222;
+            color: #ccc;
+        }
+        ```
+
+        **NOTE**: In the tutorial this lesson is based on, you will see the following CSS included but we've already added it to the CSS when creating the home page background image.
+
+        ```
+        html, body {
+            height: 100%;
+        }
+        ```
+    </section>
+
+    <section class="slide" data-markdown>
+        ##One more update
+
+        Let's revise the CSS for the paragraph in the footer.
+        
+        ```
+        footer {
+            /* add this to the existing declaration block */
+            clear: both;
+            padding: 5px; /* adds space inside the footer */
+        }
+        footer p {
+            margin: 0; /* removes default margin from paragraph */
+        }
+        ```
+        Compare your page with this [example](../project/examples/sticky-footer-home.html).
+    </section>
 
 <section class="slide" data-markdown>
   <script type="text/template">
