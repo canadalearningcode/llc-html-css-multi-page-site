@@ -2248,6 +2248,8 @@ text-transform: lowercase;</textarea>
         ```
         There are other background size values other than cover. See below resources for extra info.
         
+        For reference, you can also look at<!-- .element: class="note" --> **ex6-index.html** and **ex6.css** to review these background styles.
+        
         ---
         ###Resources
         * [More about background-size](http://www.css3.info/preview/background-size/)
@@ -2257,111 +2259,161 @@ text-transform: lowercase;</textarea>
       </script>
     </section>
     
-    <section class="slide" data-markdown>
-        ##Sticky Footer
-
-        Remember the natural stacking order? HTML elements stack on top of each other in the order that they appear in the HTML.  Each element is as tall as their content (unless otherwise specified).  
-
-        On the home page, the footer appears right below the headings. On the about page, it appears on the bottom because the content is long enough to scroll.
-
-        To ensure that your footer is always at the bottom of the page, no matter how long the page content is or how big the browser window is, use a "sticky footer".
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #"Sticky" Footer
+        
+        Currently, the About page is the only page that has content, so the footer appears at the bottom of the page. Eventually the Contact page will have content as well but that's it for the home page!
+        
+        ![](framework/img/workshop/footer-home.png)
+        ![](framework/img/workshop/footer-about.png)
+        
+        We can use a "sticky" footer to make sure it stays at the bottom, regardless of the amount of page content.
+      </script>
     </section>
+    
     <section class="slide" data-markdown>
-##Create a Sticky Footer
-
-We'll be following these instructions: http://css-tricks.com/snippets/css/sticky-footer/
-
-First, we need to create a page wrapper around the page content only, **not** the footer content.  The home page HTML will look like similar to this: 
-
-```
-&lt;div class=&quot;page-wrap&quot;&gt;
-&lt;header&gt;
-    &lt;h1&gt;Jane Smith&lt;/h1&gt;
-    &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-
-    &lt;nav&gt;
-        ...
-    &lt;/nav&gt; 
-&lt;/header&gt;   
-&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-
-&lt;footer&gt;
-...
-&lt;/footer&gt;
-```
-
-The about and contact pages will look like this:
-
-```xml
-&lt;div class=&quot;page-wrap&quot;&gt;
-&lt;header&gt;
-    &lt;h1&gt;Jane Smith&lt;/h1&gt;
-    &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-
-    &lt;nav&gt;
-        ...
-    &lt;/nav&gt;
-&lt;/header&gt;
-
-&lt;section>
-    ...
-&lt;/section>
-&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-&lt;footer&gt;
-...
-&lt;/footer&gt;
-```
-    </section>
-
-    <section class="slide" data-markdown>
-        ##Sticky Footer CSS
-
-
+      <script type="text/template">
+        #Class Exercise: Add a sticky footer
+        
+        The following instructions are from <!-- .element: class="note" -->[this tutorial](http://css-tricks.com/snippets/css/sticky-footer/).
+        
+        First, create a "wrapper" to separate the page content from the footer.  We'll use a `<div>` and `class="page-wrap"`. Do not include the footer.  
+          
+        For organization, you can also add a comment to indicate where the closing `<div>` tag is.
+        
         ```
-        /* sticky footer */
+        <div class="page-wrap">
+          <header>
+            <h1>Jane Smith</h1>
+            <h2>Web Developer + City Girl</h2>
+          </header>  
+          <nav>
+            ...
+          </nav>  
+        </div><!-- close .page-wrap -->
+
+        <footer>
+        ...
+        </footer>
+        ```
+        Let's, add this "wrapper" to all three HTML pages. For the About page, don't forget to include the `<main>` content block. Everything except the footer!
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Sticky Footer CSS
+        
+        Let's just go ahead and add this entire CSS block into **styles.css**.  Make sure that the class `page-wrap` is spelled exactly the same in the HTML and CSS files.
+        
+        ```
+        /* FOOTER STYLES
+        -----------------------------------------*/
+        /* Sticky Footer - http://css-tricks.com/snippets/css/sticky-footer */
         .page-wrap {
-            min-height: 100%;
-            margin-bottom: -35px; /* must be the same height as footer */
+          min-height: 100%;
+          margin-bottom: -55px; /* must be the same height as footer */
         }
         .page-wrap:after {
-            content: "";
-            display: block;
+          content: "";
+          display: block;
         }
-        footer, .page-wrap:after {
-            height: 35px; /* wowever tall you want the footer to be */
-        }
-        footer {
-            background: #222;
-            color: #ccc;
+        footer, 
+        .page-wrap:after {
+          height: 55px; /* however tall you want the footer to be */
         }
         ```
 
-        **NOTE**: In the tutorial this lesson is based on, you will see the following CSS included but we've already added it to the CSS when creating the home page background image.
+        **NOTE**: In the tutorial link, you will see the following CSS included but we've already added it to our CSS when adding the homepage background image.
 
         ```
         html, body {
-            height: 100%;
+          height: 100%;
         }
         ```
+      </script>
     </section>
 
     <section class="slide" data-markdown>
-        ##One more update
-
-        Let's revise the CSS for the paragraph in the footer.
+      <script type="text/template">
+        #Sticky Footer CSS (3:45)
+        
+        Yay! It's at the bottom of the page now.  Problem is, it's hard to see on the homepage. Let's add a bit of padding and a background colour to the footer to fix that.
         
         ```
         footer {
-            /* add this to the existing declaration block */
-            clear: both;
-            padding: 5px; /* adds space inside the footer */
-        }
-        footer p {
-            margin: 0; /* removes default margin from paragraph */
+          background: white;
+          padding: 2px 10px;
         }
         ```
-        Compare your page with this [example](../project/examples/sticky-footer-home.html).
+        Compare your page with any of the **ex7** HTML files and **ex7.css** in the **examples** folder.
+      </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Final Exercise: Forms!
+
+        Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
+
+        Let's look at the markup first.
+
+        All forms begin with the `form` element and requires 
+        two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
+
+        ```xml
+        <form method="POST" action="path/to/form/script/processing">
+        ...
+        </form>
+        ```
+      </script>
+    </section> 
+
+  <section class="slide">
+    <h2>Class Exercise #10 - Contact Form</h2>
+
+    <p>In <strong>contact.html</strong> under the header, a new <code><section></code> tag is required for the form content.</p>
+    <p>Add the below markup after the <code><header></code>.</p>
+
+    <pre><code class="xml"><section>
+      <form class="contact-form" method="POST" action="" >
+      <h2>Let's meet for coffee!</h2>
+
+      <p>Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, 
+      use the form below or say "hi!" on one of my social networks.</p>
+      <p>
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name">
+      </p>
+      <p>
+      <label for="email">Email</label>
+      <input id="email" type="email" name="replyto">
+      </p>
+      <p>
+      <label for="message">Message</label>
+      <textarea id="message" name="message"></textarea>
+      </p>
+      <input type="submit" value="SEND">
+      </form>
+      </section>
+    </code></pre>
+    <p>Your contact page and form should look similar to <a href="project/examples/exercise10-contact.html">exercise10-contact.html</a>.</p>
+
+    <div class="presenter-notes">
+      <p>Give a general overview of what each from control is used for as you are adding in the code. There's further resources available in the next steps section.</p>
+      <p>This will be the official last exercise for the day. If you find yourself with extra time, congratulate the class on picking up the concepts and either give them free time to tweak their projects or pick one of the extra lessons to go through together. Save some time to briefly cover the next steps.</p>
+    </div>
+  </script>
+</section> 
+
+<div class="slide centered" data-markdown>
+  ##And we're done!
+
+![what?](http://i.imgur.com/RpCC4.gif)
+
+Ok, not quite done. Let's talk about some next steps.
+</div>
 
 <section class="slide" data-markdown>
   <script type="text/template">
@@ -2435,71 +2487,6 @@ The about and contact pages will look like this:
     Add this anywhere you want some highlighted text!  Your name is also in the footer. That would be another good place to add this style.
   </script>
 </section> 
-
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Final Exercise: Forms!
-
-    Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
-
-    Let's look at the markup first.
-
-    All forms begin with the `form` element and requires 
-    two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
-
-      ```xml
-      <form method="POST" action="path/to/form/script/processing">
-      ...
-      </form>
-      ```
-    </script>
-  </section> 
-
-  <section class="slide">
-    <h2>Class Exercise #10 - Contact Form</h2>
-
-    <p>In <strong>contact.html</strong> under the header, a new <code><section></code> tag is required for the form content.</p>
-    <p>Add the below markup after the <code><header></code>.</p>
-
-    <pre><code class="xml"><section>
-      <form class="contact-form" method="POST" action="" >
-      <h2>Let's meet for coffee!</h2>
-
-      <p>Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, 
-      use the form below or say "hi!" on one of my social networks.</p>
-      <p>
-      <label for="name">Name</label>
-      <input id="name" type="text" name="name">
-      </p>
-      <p>
-      <label for="email">Email</label>
-      <input id="email" type="email" name="replyto">
-      </p>
-      <p>
-      <label for="message">Message</label>
-      <textarea id="message" name="message"></textarea>
-      </p>
-      <input type="submit" value="SEND">
-      </form>
-      </section>
-    </code></pre>
-    <p>Your contact page and form should look similar to <a href="project/examples/exercise10-contact.html">exercise10-contact.html</a>.</p>
-
-    <div class="presenter-notes">
-      <p>Give a general overview of what each from control is used for as you are adding in the code. There's further resources available in the next steps section.</p>
-      <p>This will be the official last exercise for the day. If you find yourself with extra time, congratulate the class on picking up the concepts and either give them free time to tweak their projects or pick one of the extra lessons to go through together. Save some time to briefly cover the next steps.</p>
-    </div>
-  </script>
-</section> 
-
-<div class="slide centered" data-markdown>
-  ##And we're done!
-
-![what?](http://i.imgur.com/RpCC4.gif)
-
-Ok, not quite done. Let's talk about some next steps.
-</div>
 
 <div class="slide" data-markdown>
   ##Next Steps
