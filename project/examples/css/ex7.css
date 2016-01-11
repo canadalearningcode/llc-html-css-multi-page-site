@@ -72,6 +72,30 @@ blockquote p {
   font-size: 35px;
 }
 
+/* CONTACT STYLES
+-----------------------------------------*/
+form {
+  width: 400px;
+}
+input,
+textarea {
+  border: 1px solid #BF6D50;
+  width: 400px;
+  margin-bottom: 10px;
+}
+input {
+  height: 20px;
+} 
+textarea {
+  height: 100px;
+}
+button {
+  background: #BF6D50;
+  border: none;
+  padding: 10px 40px;
+  font-size: 16px;
+}
+
 
 /* FOOTER STYLES
 -----------------------------------------*/

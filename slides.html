@@ -2325,7 +2325,7 @@ text-transform: lowercase;</textarea>
         }
         ```
 
-        **NOTE**: In the tutorial link, you will see the following CSS included but we've already added it to our CSS when adding the homepage background image.
+        **Note**: In the tutorial link, you will see the following CSS included but we've already added it to our CSS when adding the homepage background image.
 
         ```
         html, body {
@@ -2348,19 +2348,41 @@ text-transform: lowercase;</textarea>
         }
         ```
         Compare your page with any of the **ex7** HTML files and **ex7.css** in the **examples** folder.
+        
+        ---
+        ###Resources 
+        * [Sticky Footer Tutorial](http://css-tricks.com/snippets/css/sticky-footer)
+        * More about [:after](http://tympanus.net/codrops/css_reference/after/)
+      </script>
+    </section>
+    
+    <section class="slide title final" data-markdown>
+      <script type="text/template">
+        #Final Exercise!
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Final Exercise: Forms!
+        #Crash course: Forms
 
-        Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
+        Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. 
+        
+        But there are also different services available to help do the processing for us without writing any of these languages!
 
-        Let's look at the markup first.
-
+        Let's look at the HTML markup first.
+      </script>
+    </section>
+    
+    <section class="slide forms" data-markdown>
+      <script type="text/template">
+        #Forms HTML
+        
         All forms begin with the `form` element and requires 
-        two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
+        two attributes:
+        
+        * `method` - defines how the form will communicate with the web server
+        * `action` - provides the file path to where the form script is processed after the form is submitted
 
         ```xml
         <form method="POST" action="path/to/form/script/processing">
@@ -2368,52 +2390,118 @@ text-transform: lowercase;</textarea>
         </form>
         ```
       </script>
+    </section>
+    
+    <section class="slide forms" data-markdown>
+      <script type="text/template">
+        #Forms HTML
+        
+        The `<label>` and `<input>` tags are used to capture the user content.
+        
+        ```  
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name">
+        ```
+        <div class="example">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name">
+        </div>
+        
+        The various attributes associates the label to the input (helps with accesibility), as well as determines what *type* of input to display.
+        
+        We could probably run a whole course on forms alone! See below resources for much more about forms.
+        
+        ---
+        ###Resources 
+        * [Mozilla Developer Network: HTML forms guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
+        * [Sitepoint: Form Elements](http://www.sitepoint.com/web-foundations/form-elements/)
+        * [Focus Pocus](http://www.focuspocus.io/) (Form processing service)
+        * [Wufoo](http://www.wufoo.com/) (Form processing service)
+        * [Google Forms](https://www.google.com/forms/about/) (Form processing service)
+        
+      </script>
     </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Contact Form
 
-  <section class="slide">
-    <h2>Class Exercise #10 - Contact Form</h2>
+        In **contact.html**, add this entire block *after* `<nav>` but *before* the closing `page-wrapper` `</div>`.
+        
+        ```
+        <main role="main">
+          <p>Let's meet for coffee! Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, 
+          use the form below.</p>
+          
+          <form method="POST" action="">				
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name">
+            
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email">
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+            
+            <button type="submit">Send</button>
+          </form>
+        </main>
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Form css
+        
+        Let's add some basic styling to the form. Add this block into **styles.css**.
+        
+        ```
+        /* CONTACT STYLES
+        -----------------------------------------*/
+        form {
+          width: 400px;
+        }
+        input,
+        textarea {
+          border: 1px solid #BF6D50;
+          width: 400px;
+          margin-bottom: 10px;
+        }
+        input {
+          height: 20px;
+        } 
+        textarea {
+          height: 100px;
+        }
+        button {
+          background: #BF6D50;
+          border: none;
+          padding: 10px 40px;
+          font-size: 16px;
+        }
+        ```
+        
+        See **ex7-contact.html** & **ex7.css** for reference.
+        
+        ---
+        ###Resources 
+        * [Styling HTML forms](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Styling_HTML_forms)  
+        * [Bring Your Forms Up to Date With CSS3 and HTML5 Validation](http://webdesign.tutsplus.com/tutorials/bring-your-forms-up-to-date-with-css3-and-html5-validation--webdesign-4738)
+        * [Building Forms](http://learn.shayhowe.com/html-css/building-forms/)
+      </script>
+    </section>
+    
 
-    <p>In <strong>contact.html</strong> under the header, a new <code><section></code> tag is required for the form content.</p>
-    <p>Add the below markup after the <code><header></code>.</p>
+    <div class="slide centered" data-markdown>
+      <script type="text/template">
+      #And we're done!
 
-    <pre><code class="xml"><section>
-      <form class="contact-form" method="POST" action="" >
-      <h2>Let's meet for coffee!</h2>
+      ![what?](http://i.imgur.com/RpCC4.gif)
 
-      <p>Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, 
-      use the form below or say "hi!" on one of my social networks.</p>
-      <p>
-      <label for="name">Name</label>
-      <input id="name" type="text" name="name">
-      </p>
-      <p>
-      <label for="email">Email</label>
-      <input id="email" type="email" name="replyto">
-      </p>
-      <p>
-      <label for="message">Message</label>
-      <textarea id="message" name="message"></textarea>
-      </p>
-      <input type="submit" value="SEND">
-      </form>
-      </section>
-    </code></pre>
-    <p>Your contact page and form should look similar to <a href="project/examples/exercise10-contact.html">exercise10-contact.html</a>.</p>
-
-    <div class="presenter-notes">
-      <p>Give a general overview of what each from control is used for as you are adding in the code. There's further resources available in the next steps section.</p>
-      <p>This will be the official last exercise for the day. If you find yourself with extra time, congratulate the class on picking up the concepts and either give them free time to tweak their projects or pick one of the extra lessons to go through together. Save some time to briefly cover the next steps.</p>
+      Ok, not quite done. Let's talk about some next steps.
+      </script>
     </div>
-  </script>
-</section> 
-
-<div class="slide centered" data-markdown>
-  ##And we're done!
-
-![what?](http://i.imgur.com/RpCC4.gif)
-
-Ok, not quite done. Let's talk about some next steps.
-</div>
 
 <section class="slide" data-markdown>
   <script type="text/template">

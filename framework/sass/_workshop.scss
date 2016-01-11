@@ -52,3 +52,18 @@
   background: url(../img/workshop/background-5.jpg);
   background-size: cover;
 }
+
+.slide.final {
+  background: url(../img/workshop/crazy-cat.jpg) 50%;
+   text-align: center;
+  
+  h1 {
+    background: rgba(black, 0.8);
+    display: inline-block;
+  }
+}
+
+.forms .example {
+  padding: 10px;
+}
+
