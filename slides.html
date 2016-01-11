@@ -149,7 +149,9 @@
         
         Choose a modern web browser like Chrome or Firefox, that support current web standards and included dev tools for a better experience.
 
-        You can view the source of *any* web page. Right-click / two-finger tap anywhere on the browser and select **View Page Source**. That&rsquo;s HTML!
+        You also can view the source of *any* web page. Right-click / two-finger tap anywhere on the browser and select **View Page Source**. 
+        
+        That&rsquo;s HTML!
         
         ---
         ###Resource 
@@ -263,7 +265,8 @@
           |-- index.html // The homepage of your site.
         ```
         
-        The **examples** folder contains the solutions for each exercise. Try not to peek unless you're *really* stuck.
+        The **examples** folder contains the solutions for each exercise.  
+        Try not to peek unless you're *really* stuck.
       </script>
     </section>
     
@@ -300,7 +303,6 @@
         <h1>Your Name Here</h1>
         ```
         ---
-        
         ###Pro tip! Use keyboard shortcuts. 
         * **ctrl/cmnd + s** to save  
         * **ctrl/cmnd + r** to refresh the browser
@@ -335,7 +337,7 @@
         Tags usually come in pairs &mdash; an opening tag and a closing tag &mdash; to *wrap* the content.  Note the closing tag has a forward slash `/`.
 
         ```
-        <tag> opening tag --- closing tag </tag>
+        <tag> <-- opening tag --- closing tag --> </tag>
         ```
 
         HTML *tags* describe the content inside of them to the web browser.
@@ -410,27 +412,124 @@
       </script>
     </section> 
     
-    <section class="slide basic-tags" data-markdown>
+    <section class="slide highlighted-tags" data-markdown>
       <script type="text/template">
         #Basic HTML document
 
-        We've seen these tags in the project's **index.html** file. They are the base HTML tags required for every web page. 
+        We've just seen these tags in the project's file. These tags are required for every web page. The first line, the DOCTYPE, tells the browser what HTML version the page is written in. 
+
+        <pre><code><strong>&lt;!DOCTYPE html&gt;</strong>
+        &lt;html lang=&quot;en&quot;&gt;
+          &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;title&gt;&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;!-- page content here --&gt;
+          &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+      </script>
+    </section>
+
+    <section class="slide highlighted-tags" data-markdown>
+      <script type="text/template">
+        #THE HTML ELEMENT
+
+        * identifies the document as HTML and all elements are *nested* inside
+        * the `lang` *attribute* classifies the language (more on attributes soon)
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+        <strong>&lt;html lang=&quot;en&quot;&gt;</strong>
+          &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;title&gt;&lt;/title&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;!-- page content here --&gt;
+          &lt;/body&gt;
+        <strong>&lt;/html&gt;</strong>
+        </code></pre>
+      </script>
+    </section>
+
+    <section class="slide highlighted-tags" data-markdown>
+      <script type="text/template">
+        #The HEAD ELEMENT
+
+        * includes information about the page (i.e. CSS files) 
+        * `<title>` is required and defines the title of the document
+        * `<title>` is displayed in the browser tab, bookmarks & search results
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot;&gt;
+          <strong>&lt;head&gt;</strong>
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;title&gt;My page title&lt;/title&gt;
+          <strong>&lt;/head&gt;</strong>
+          &lt;body&gt;
+            &lt;!-- page content here --&gt;
+          &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+      </script>
+    </section>
+
+    <section class="slide highlighted-tags" data-markdown>
+      <script type="text/template">
+        #THE BODY ELEMENT
+
+        All content to be displayed in the browser window goes between the `<body></body>` tags. Also known as the *viewport*.
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot;&gt;
+          &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;title&gt;My page title&lt;/title&gt;
+          &lt;/head&gt;
+          <strong>&lt;body&gt;</strong>
+            &lt;!-- page content here --&gt;
+          <strong>&lt;/body&gt;</strong>
+        &lt;/html&gt;
+        </code></pre>
+      </script>
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Attributes (10:45)
         
-        ```xml
-        <!DOCTYPE html><!-- tells browser the HTML version the document is written in -->
-        <html><!-- identifies document as HTML -->
-          <head><!-- contains info about web page, not used for displaying content -->
-            <title>
-            <!-- page title, displays in browser tab, bookmarks & search results -->  
-            </title>
-          </head>
-          <body>
-          <!-- All content to be displayed in the browser window goes here -->
-          </body>
-        </html>
+        * provides additional information or instruction for the element
+        * included *inside the opening HTML tag*
+        * follows the syntax of `attribute="value"` (note the quotes)
+        * many different attributes
+        
+        ```
+        <tag attribute="value">content</tag>
         ```
       </script>
-    </section> 
+    </section>
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Attributes
+        
+        We just saw two attributes in our basic HTML page example.
+
+        The `lang` attribute is used to classify the language.
+
+        ```
+        <html lang="en">
+        ```
+
+        The `charset` attribute sets the character encoding.
+        ```
+        <meta charset="UTF-8">
+        ```
+
+        We will be using more attributes throughout today's exercises.
+      </script>
+    </section>
     
     <section class="slide title" data-markdown>
       <script type="text/template">
@@ -441,7 +540,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Adding text: Headings & paragraphs (10:45)
+        #Adding text: Headings & paragraphs
 
         There are six headings tags ranging from `<h1>` to `<h6>` and follow a hierarchy. HTML is used to assign *meaning* to the content in a way that the browser can read it.
 
@@ -465,9 +564,9 @@
         # Exercise #1 - Update index.html (5-10 mins)
 
         1.  Update your name in the `h1` tag if you haven’t already.
-        2.  Add a tagline under your name using the appropriate heading tag.
+        2.  Add a tagline, under your name, using the appropriate heading tag.
         3.  Change the content in the `<title>` tag. Where do you see this change?
-        4.  Add a copyright message using a paragraph (`p`) tag _inside_ of the `<footer>` tag.
+        4.  Add a copyright message using a paragraph (`<p>`) tag _inside_ of the `<footer>` tag.
           
         Don’t forget to save and refresh your browser after each change!
 
@@ -503,9 +602,9 @@
       <script type="text/template">
         #Class Exercise: Create HTML pages
         
-        Let's create HTML files for the **About** and **Contact** pages.  Leave the file itself blank for now.  We'll be adding content in a later exercise.
+        Let's create HTML files for the **About** and **Contact** pages.  Leave the file itself blank. Content will be added in a later exercise.
         
-        The **index.html** already exists so let's make an **about.html** and **contact.html**.  Make sure to save these pages into the **project** folder. 
+        The **index.html** already exists so make an **about.html** and **contact.html**.  Make sure to save these pages into the **project** folder. 
         
         In the editor: **File > New file ** and **File > Save**
         
@@ -547,9 +646,9 @@
       <script type="text/template">
         #Links & Attributes
 
-        Links are represented by the `<a>` (anchor) tag and an *attribute* to provide additional information. 
+        Links are represented by the anchor tag (`<a>`) and an *attribute*. 
           
-        *Attributes* use the following the syntax, `attribute="value"` and are added inside the *opening* tag.
+        Remember, *attributes* use the following the syntax, `attribute="value"` and are added inside the *opening* tag.
           
         The `href` provides information about where the link is located.
 
@@ -567,11 +666,13 @@
       <script type="text/template">
         #Links: Relative
 
-        The navigation in today's project, will link to the other HTML pages within the project files, your folder structure.
+        The navigation in today's project will link to the other HTML pages within the project files.
         
         This is referred to as a **relative** link/path.
         
-        Understanding how to use relative paths is important for creating web sites. Relative paths are used to link not only between HTML files, but other files such as css or images.
+        Understanding how to use relative paths and folder structure is super important for creating web sites. 
+        
+        Relative paths are used to link not only between HTML files, but other files such as css or images.
       </script>
     </section> 
 
@@ -615,7 +716,7 @@
         
         Prior to HTML5, the `<div>` tag was used for grouping elements. 
           
-        The `div` is still valid and used but HTML5 introduced a number of semantic tags that better describe blocks of content.  
+        The `div` is still ok to use but HTML5 introduced a number of semantic tags that better describe blocks of content.  
           
         You've already seen two of them in **index.html**: `<header>` and `<footer>`.
           
@@ -632,7 +733,7 @@
 
         Navigations are often created using an HTML list and links or just with links. To learn more, check out the resources below.
 
-        Today we'll be using only links. Wrap the links in a `<nav>` tag to group the links as navigation links.
+        Today we'll be using only links. Wrap the links `<a>` in a `<nav>` tag to group them as navigation links.
         
         ```
         <nav>
@@ -651,9 +752,9 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Class exercise: Add a navigation
+        #Class Exercise: Creating a navigation
 
-        Back in **index.html**, let's add the navigation and link to the three pages in our project: **Home**, **About**, **Contact**. 
+        Back in **index.html**, let's add a navigation to link to the three pages in our project: **Home**, **About**, **Contact**. 
         
         It will look like this in the browser:
 
@@ -684,7 +785,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Keyboard shortcuts
+        #Keyboard shortcuts (11:15)
         
         Right now, the HTML in **index.html** contains content that will be required on all three pages (base HTML tags, header, navigation & footer info) and should be copied over. 
         
@@ -708,7 +809,7 @@
         1. Test the navigation. Are all the links going to the proper page?
         
         **Bonus exercise:**  
-        Find an image to use as a profile picture for your **About** page. The image should ideally be 600px x 400px. Here's a link to a free online tool for cropping images: [http://pixlr.com](http://apps.pixlr.com/editor/)
+        Find an image to use as a profile picture for your **About** page. The image should ideally be around 400-600px wide. Here's a link to a free online tool for cropping images: [http://pixlr.com](http://apps.pixlr.com/editor/)
         
         For reference, in the <!-- .element: class="note" --> **examples** folder:  ex2-index.html, ex2-about.html, ex2-contact.html
       </script>
@@ -774,7 +875,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #The alt attribute (11:30)
+        #The alt attribute
 
         The `alt` attribute is optional and refers to *alternative text*. 
         
@@ -814,7 +915,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Adding your own images
+        #Adding your own images (11:30)
 
         Remember, relative paths are based on the folder directory.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
         
@@ -872,7 +973,7 @@
       <script type="text/template">
         #HTML5 tag: `<blockquote>`
           
-        The `<blockquote>` element represents quoted content. 
+        The `<blockquote>` element represents quoted content and wraps the content, including paragraph tags for the actual quote.
           
         Also, use the `<cite>` tag to include the source of the quote.
         
@@ -893,12 +994,12 @@
       <script type="text/template">
         #Exercise #3 - About page (15 mins)
 
-        Add some content to your **About** page to make it look like [this](project/examples/ex3-about.html).
+        Add some content to your **About** page to make it look like [this](project/examples/ex3-about.html). You can use your own or use the resources below for placeholder text.
         
         1. Add `<main role="main"></main>` for the About page content not included in the header or footer.
         1. Inside of `<main>`, add a profile picture using the `<img>` tag.
         1. *After* profile image, add a couple of paragraphs about you, or use placeholder text (see resources below).
-        1. We're going to need to work with some additional content in the second half of this workshop, so *after* the paragraphs, add a quote using `<blockquote>`.
+        1. Today's project will include specific styles for a quote, so *after* the paragraphs, add a quote using `<blockquote>`.
         1. Optional: Add a few links within the paragraphs.
 
 
@@ -989,9 +1090,7 @@
       <script type="text/template">
         #CSS Comments
 
-        Comments are written with a slash & asterisk and closes in the opposite order (`/* */`). 
-        
-        Comments can be used for the same reasons as HTML comments.
+        Comments are written with a slash & asterisk and closes in the opposite order (`/* */`) and is used for the same reasons as HTML comments.
 
         ```
         p {
@@ -1012,6 +1111,27 @@
         ``` 
       </script>
     </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Comments
+        
+        Comments must start with `/*` and end with `*/` but can contain any characters in between. Use whichever comment style works for you but here's a few common conventions: 
+        
+        ```
+        /* CSS Comments */
+        ```
+        ```
+        /* 
+        CSS Comments
+        */
+        ```
+        ```
+        /* CSS Comments
+        ----------------*/
+        ```
+      </script>
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1019,7 +1139,7 @@
 
         There are several ways to include CSS in an HTML page. Today we'll be using the **external** method which separates the HTML from the CSS. 
 
-        The style sheet (.css file) is referenced within the `<head>`.  
+        The style sheet file (.css file extension) is referenced within the `<head>`.  
         <span class="note">Reminder, `<head>` is different from `<header>`!</span>
           
         Use `<link>` and two attributes, `rel` and `href` to link to the css file.
@@ -1068,11 +1188,13 @@
       <script type="text/template">
         #Class Exercise: Adding CSS
         
-        Notice that the content doesn't quite go to the edge of the page? That's because there's default spacing in the `<body>` element. 
+        Notice that the content doesn't quite go to the edge of the page? 
 
         ![](framework/img/workshop/body-margin.png)
+        
+        That's because there's default spacing in the `<body>` element. 
 
-        Remove the test background color and replace it with `padding` and `margin` to reset the value. (More on these properties later.)
+        Let's remove the test background color and replace it with `padding` and `margin` to reset the value. (More on these properties later.)
 
         ```
         body {
@@ -1142,7 +1264,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #font-family and Web safe fonts
+        #font-family and Web safe fonts (12:15)
         
         Using the `font-family` property, it's best practice to list at least two or three font options to provide a fall-back option in case the user doesn't have the fonts installed.
 
@@ -1152,7 +1274,7 @@ text-transform: lowercase;</textarea>
         }
         ```
         
-        Because of this, use fonts that are considered *web safe* &mdash; fonts that are commonly installed on most computers.
+        Fonts that are considered *web safe* are fonts that are commonly installed on most computers.
         
         Here's a listing of web safe fonts: [CSS Font Stack](http://cssfontstack.com/).
       </script>
@@ -1162,7 +1284,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Web Fonts
         
-        For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) make it easier to add variety. 
+        For more options beyond web safe fonts, services like [Google Fonts](http://www.google.com/fonts/) (free) and [Typekit](https://typekit.com/) (free & paid) make it easier to add variety. 
         
         Google Fonts allows you to link directly to their style sheet. As long as the user is connected to the internet, they do not need to have the font installed. 
         
@@ -1172,7 +1294,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #How to Use Google Fonts
+        #Class Exercise: How to Use Google Fonts
         
         1. Go to [Google Fonts](http://www.google.com/fonts).
         1. **Add to Collection** to select a font. 
@@ -1207,9 +1329,9 @@ text-transform: lowercase;</textarea>
 
         * Pick 2-3 fonts (Google Fonts or web safe fonts) 
           * Here’s a [the final project](project/final/about.html) for reference. 
-          * Need some help choosing? Here’s some [inspiration](http://hellohappy.org/beautiful-web-type/) or stick with the LLC selected fonts.
+          * Need some help choosing? Here’s some [inspiration](http://hellohappy.org/beautiful-web-type/) or stick with the LLC selected fonts from the previous slide.
         * Add your own profile picture on the **About** page. 
-          * The image should ideally be around 600px x 400px. 
+          * The image should ideally be around 400-600px width. 
           * Free online tool for cropping images: [http://pixlr.com](http://apps.pixlr.com/editor/)
         * Select a background image from the **images** folder or use your own.  
           * Background images should be around 1000-1400px wide.
@@ -1230,7 +1352,7 @@ text-transform: lowercase;</textarea>
         
         CSS executes from top to bottom (hence "cascading"), so be careful of the order of the CSS declarations. The declaration that comes *after* will override the one that came before.
 
-        In this example, what colour will the `<h1>` be?
+        > In this example, what colour will the `<h1>` be?
 
         ```
         h1 {
@@ -1282,7 +1404,7 @@ text-transform: lowercase;</textarea>
         ```
         The children and descendent elements of `body` will inherit most styles (not all css properties can be inherited*).
         
-        The `h1` will override the inherited styles because the selector is more *specific*.
+        The `h1` is a more specific selector and will override the inherited styles.
         
         ---
         ###Resources 
@@ -1395,9 +1517,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Exercise #4 - Typography (10-15 mins)
 
-        These instructions are based on the LLC sample project but feel free to pick your own fonts, sizes, colours and typography styles. (We'll be tackling spacing and layout in the upcoming exercises.) 
-        
-        Take a look at the <!-- .element: class="note" -->[ex4](project/examples/ex4-about.html) examples for reference.  
+        These instructions are based on the LLC sample project but feel free to pick your own fonts, sizes, colours and typography styles. (We'll be tackling spacing and layout in the upcoming exercises.)   
         
         1. Add a `color` property to the `body` to override the default black.  
         The LLC project uses hex code `#333333` (almost black, gray colour).
@@ -1415,12 +1535,14 @@ text-transform: lowercase;</textarea>
         * Choose from the **images** folder or use your own.
         * Background images should be around 1000-1400px wide.
         * Royalty free images can be downloaded [here](https://medium.com/@dustin/stock-photos-that-dont-suck-62ae4bcbe01b#.kl0cpopcn).
+        
+        The next slide contains the solution.
       </script>
     </section> 
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Solution/review 
+        #Solution/review (1:40)
         
         **Pro tip!** Use comments to organize your CSS blocks!
         
@@ -1446,7 +1568,7 @@ text-transform: lowercase;</textarea>
         }
         ```
         
-        Take a look at the <!-- .element: class="note" -->[ex4](project/examples/ex4-about.html) examples for reference.  
+        Also found in the <!-- .element: class="note" -->[ex4](project/examples/ex4-about.html) examples for reference.  
       </script>
     </section>
 
@@ -1459,7 +1581,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #Spacing in CSS (1:45)
+        #Spacing in CSS
 
         For next exercise, we'll use `margin`, `padding` to update the heading styles and spacing of the content. (We'll be adding some additional styling the nav a little later.)
 
@@ -1484,7 +1606,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #width & height
+        #width & height (1:45)
         
         The `width` & `height` can be set to a specific size via CSS.
         
@@ -1597,9 +1719,9 @@ text-transform: lowercase;</textarea>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise - spacing
+        #Class Exercise - Spacing
 
-        Add padding to the `header`, `nav` and `main` there's an equal amount of space around the content blocks.
+        Add padding to the `header`, `nav` and `main` to add an equal amount of space around the content blocks.
 
         ```
         header,
@@ -1630,7 +1752,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #About page layout (2:05)
+        #About page layout (2:00)
         
         Let's talk about why the About page currently looks like the example on the left and how to get it to look like the example on the right.
         
@@ -1738,11 +1860,11 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Being more specific - Using a Class
+        #Being more specific - Using a Class (2:15)
         
-        To make sure we apply this float *only* to the profile image and not all images, we can't use `img` as the selector.
+        To apply the float *only* to the profile image, we can't use `img` as the selector. Instead, use a `class` attribute.  
         
-        Instead, use a `class` attribute.  The value of the class is defined by you!  And it can be added to any tag to attach extra identifying information.
+        The value of the `class` is defined by you!  And it can be added to any tag to attach extra identifying information.
         
         ```xml
         <img class="profile-img" src="images/profile.jpg" alt="Your Name">
@@ -1768,15 +1890,15 @@ text-transform: lowercase;</textarea>
         
         Though you can name classes anything, choose a functional & descriptive class name.  Something like "profile", "profile-image" or "profile-img" would work.
         
-        Then, back in **styles.css**, float the image using the class name
+        Then, back in **styles.css**, float the image using the class name as the selector. 
         
-        (This is just the breaking part. In the next slide, we'll talk about how to put it back to normal.)
+        (This is just the breaking part. In the next slide, we'll talk about how to put it back to the default stacking order.)
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Floats and stacking flow (2:30)
+        #Floats and stacking flow
         
         So... the image and text is now displaying side by side but there's one problem. The red box in the example below is highlighting the `blockquote` and `footer` content.
         
@@ -1809,15 +1931,17 @@ text-transform: lowercase;</textarea>
           clear: both;
         }
         ```
+        That will put it back to the regular stacking flow.
+        
         ![](framework/img/workshop/about-floated-cleared.png)
-          
-        Now it's back the regular stacking flow. Let's add it into our project.
+        
+        Let's add it into our project.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Float the Header and Nav
+        #Float the Header and Nav (2:30)
         
         We're going to do the same thing with the `header` and `nav` except the header will float to the left and the nav will float to the right.
         
@@ -1868,31 +1992,147 @@ text-transform: lowercase;</textarea>
           
         1. Add some margin to the right side of the profile image to put some space between the image and the paragraphs.
         
-        1. Add some padding to the links in the navigation.
+        1. Add some padding to the links in the navigation. <span class="note">(Hint! Use a *descendant* selector to apply the style to only the links in the nav.)</span>
         
-        1. Try adding some padding to the blockquote to improve the spacing and/or try adding `text-align: center;` and see if you like it.
+        1. Adding some padding to the `blockquote` to improve the spacing and/or try adding `text-align: center;` and see if you like it.
         
-        1. Change the font & font-size of just the paragraph in the blockquote to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of 35px.  
-        <span class="note">(Hint! Try using a descendant selector to apply the style to the paragraph inside of the blockquote.)</span>
+        1. Change the `font-family` & `font-size` of just the paragraph in the `blockquote` to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of 35px.  
+        <span class="note">(Hint! Use a descendant selector to apply the style to the paragraph inside of the blockquote.)</span>
         
-        Your page should now look similar to [ex5-about-bonus.html](project/examples/ex5-about-bonus.html) & ex5-bonus.css.
+        Your page should now look similar to [ex5-about-bonus.html](project/examples/ex5-about-bonus.html) & ex5-bonus.css in the **examples** folder.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #More about Floats (3:00)
+        #More about Floats
         
-        This is only one scenario and solution for floats and clearing floats.  
+        There are some other scenarios for floating elements that may require other solutions.
         
-        This is a concept that requires much more discussion outside of the scope for today. For more information, check out these extra resources:
+        This is a concept that requires more discussion outside of the scope for today. For more information, check out these extra resources:
         
         * [CSS Fundamentals: Containing Children](http://code.tutsplus.com/tutorials/css-fudamentals-containing-children--net-5664)
         * [Clearing Floats: An Overview of Different clearfix Methods](http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/)
         * [Force Element To Self-Clear its Children](http://css-tricks.com/snippets/css/clear-fix/)
       </script>
     </section>
+    
+    <section class="slide title background" data-markdown>
+      <script type="text/template">
+        #Background Images! (3:00)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Styling the Home page
 
+        The final design for the home page in today project is significantly different from the other two pages so we'll need to create special styles for the home page. 
+
+        Let's use the `class` attribute to apply specific styles to the home page.
+
+        In **index.html**, add the `class` to the `body` tag to override any styles, for any element, contained within the entire page.
+
+        ```
+        <body class="home">
+        ```
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Background Images
+
+        So far, we've used `background` to add colours but it can also be used it to add images for presentation, not content.
+
+        ```
+        background-image: url(path/to/file.jpg); /* longhand */
+        background: url(path/to/file.jpg);/* shorthand */
+        ```
+
+        Since our CSS file is *inside* of a **css** folder, use `../` to go *up and out* of the folder to link to the image files. Let's add it to **index.html**. Create a `.home` declaration block so this image only displays on the homepage and spans the entire page. (There are a few to choose from in your images folder.)
+
+        ```
+        .home {
+          background: url(../images/background-6.jpg);
+        }
+        ```
+
+        Notice how the images repeat (unless you have a really large image). We can change that with another property, `background-repeat` or just add it to the shorthand `background` property.
+
+        ```
+        /* shorthand */
+        .home {
+          background: url(../images/background-6.jpg) no-repeat; 
+        }
+
+        /* longhand */
+        .home {
+          background-image: url(../images/background-6.jpg); 
+          background-repeat: no-repeat;
+        }
+        ```
+      </script>
+    </section> 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Class Exercise #9: Background Images (continued)
+
+        The image is no longer repeating but it doesn't fit the space either. Your page should look similar to the below (unless your image is larger than your resolution). We'll need to add one more property to fix this.
+
+        ![homepage background](framework/img/workshop/homepage-norepeat.png)
+      </script>
+    </section> 
+
+    <section class="slide">
+      <h2>Class Exercise #9: Background Images (continued)</h2>
+
+      <p>Thanks to CSS3, we can now change the size of a background image. </p>
+      <p><code>background-size</code> is the longhand property.  To include it in the shorthand <code>background</code> property, it <em>must</em> be included after <code>background-position</code>, separated with the <code>/</code> character.  </p>
+      <pre><code>.home {
+        background-image: url(../images/background-6.jpg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: cover;
+      }</code></pre>
+
+      <pre><code>.home {
+        background: url(../images/background-6.jpg) no-repeat 50% / cover;
+      }</code></pre>
+      <p>If no background position value is being used, background-size won’t work in the shorthand property so in this case, it may be less error prone to add it via the longhand property.</p>
+      <pre><code>.home {
+        background: url(../images/background-6.jpg) no-repeat 50%;
+        background-size: cover;
+      }
+    </code></pre>
+
+    <p>For good measure, since this image is a background image of the <code>body</code>, let's add one more rule to ensure the image covers the whole viewport and not just the height of the page content.</p>
+    <pre><code>html, body {
+      height: 100%;
+    }
+    </code></pre>
+    <p><strong>Extra resources about background:</strong> <br>
+      <a href="http://jsfiddle.net/zyjtde73/1/">http://jsfiddle.net/zyjtde73/1/</a><br>
+      <a href="http://www.css3.info/preview/background-size/">More about background-size</a></p>
+
+      <p>Here are some resources for free images:</p>
+
+      <ul>
+        <li><a href="http://superfamous.com/">http://superfamous.com/</a></li>
+        <li><a href="http://www.gratisography.com/">http://www.gratisography.com/</a></li>
+        <li><a href="http://littlevisuals.co/">http://littlevisuals.co/</a></li>
+        <li><a href="http://nos.twnsnd.co/">http://nos.twnsnd.co/</a></li>
+        <li><a href="http://unsplash.com/">http://unsplash.com/</a></li>
+      </ul>
+
+      <p>Your page should now look similar to <a href="project/examples/exercise9-index.html">example 9</a>.</p>
+
+      <div class="presenter-notes">
+        <p>You will probably be pressed for time at this point. Just explain what "cover" does and let them know there are other options available and there are additional resources at the bottom of this slide.</p>
+      </div>
+    </script>
+    </section> 
+    
 
 
 <section class="slide" data-markdown>
@@ -1925,6 +2165,8 @@ text-transform: lowercase;</textarea>
     Another attribute, `id`, can also be used as a more specific CSS selector and for linking within the same page. We won't be using `id` today but read more about its CSS usage [here](http://htmldog.com/guides/css/intermediate/classid/) and in-page linking [here](http://www.webweaver.nu/html-tips/link-within-a-page.shtml).
   </script>
 </section> 
+
+
 
 <section class="slide" data-markdown>
   <script type="text/template">
@@ -1966,161 +2208,6 @@ text-transform: lowercase;</textarea>
   </script>
 </section> 
 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Home page styles
-
-    The home page and contact page currently doesn't have any content in it so the footer is just "underneath" the header. Once content has been added, it will push the footer down the page.
-
-    However, the final design for the home page is different from the other two pages so we'll need to create special styles for the home page. 
-
-    Let's use the `class` attribute to create a selector to allow us to apply specific styles just to the home page.
-
-    Add the `class` to the `body` tag to override any styles, for any element, contained within the entire page.
-
-    ```
-    <body class=&quot;home&quot;>
-    ```
-  </script>
-</section> 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Class Exercise #8 - Homepage Header & Nav
-
-    These are the styles we are going to change to update the home page.
-
-    * remove the fixed positioning
-    * remove the white background colour
-    * remove the border bottom
-    * center align the text
-    * push the heading down from the top of the page
-
-    We'll use the new `home` class we created to override the styles by using a more *specific* selector.
-
-    ```
-    .home header {
-      position: static;
-      background: transparent;
-      border-bottom: none;
-      text-align: center;
-      padding-top: 100px;
-    }
-    ```
-    Now let's update the heading sizes.  Feel free to use what looks good to you. These are just guidelines.
-
-    ```
-    .home header h1 {
-      font-size: 120px;
-    }
-    .home header h2 {
-      font-size: 40px;
-    }
-    ```
-
-    If you haven't already, add the `.highlight` class to your first name, to match the styles on the other pages.
-
-    ```xml
-    <h1><span class=&quot;highlight&quot;>Jane</span>Smith</h1>
-    ```
-
-    Your page should now look something like [exercise8-index.html](project/examples/exercise8-index.html), located in your examples folder.
-  </script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Class Exercise #9: Background Images
-
-    So far, we've used `background` to add colours but it can also be used it to add images for presentation, not content.
-
-    ```
-    background-image: url(path/to/file.jpg); /* longhand */
-    background: url(path/to/file.jpg);/* shorthand */
-    ```
-
-    Since our CSS file is *inside* of a **css** folder, use `../` to go *up and out* of the folder to link to the image files. Let's add it to **index.html**. Create a `.home` declaration block so this image only displays on the homepage and spans the entire page. (There are a few to choose from in your images folder.)
-
-    ```
-    .home {
-      background: url(../images/background-6.jpg);
-    }
-    ```
-
-    Notice how the images repeat (unless you have a really large image). We can change that with another property, `background-repeat` or just add it to the shorthand `background` property.
-
-    ```
-    /* shorthand */
-    .home {
-      background: url(../images/background-6.jpg) no-repeat; 
-    }
-
-    /* longhand */
-    .home {
-      background-image: url(../images/background-6.jpg); 
-      background-repeat: no-repeat;
-    }
-    ```
-  </script>
-</section> 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Class Exercise #9: Background Images (continued)
-
-    The image is no longer repeating but it doesn't fit the space either. Your page should look similar to the below (unless your image is larger than your resolution). We'll need to add one more property to fix this.
-
-    ![homepage background](framework/img/workshop/homepage-norepeat.png)
-  </script>
-</section> 
-
-<section class="slide">
-  <h2>Class Exercise #9: Background Images (continued)</h2>
-
-  <p>Thanks to CSS3, we can now change the size of a background image. </p>
-  <p><code>background-size</code> is the longhand property.  To include it in the shorthand <code>background</code> property, it <em>must</em> be included after <code>background-position</code>, separated with the <code>/</code> character.  </p>
-  <pre><code>.home {
-    background-image: url(../images/background-6.jpg);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: cover;
-  }</code></pre>
-
-  <pre><code>.home {
-    background: url(../images/background-6.jpg) no-repeat 50% / cover;
-  }</code></pre>
-  <p>If no background position value is being used, background-size won’t work in the shorthand property so in this case, it may be less error prone to add it via the longhand property.</p>
-  <pre><code>.home {
-    background: url(../images/background-6.jpg) no-repeat 50%;
-    background-size: cover;
-  }
-</code></pre>
-
-<p>For good measure, since this image is a background image of the <code>body</code>, let's add one more rule to ensure the image covers the whole viewport and not just the height of the page content.</p>
-<pre><code>html, body {
-  height: 100%;
-}
-</code></pre>
-<p><strong>Extra resources about background:</strong> <br>
-  <a href="http://jsfiddle.net/zyjtde73/1/">http://jsfiddle.net/zyjtde73/1/</a><br>
-  <a href="http://www.css3.info/preview/background-size/">More about background-size</a></p>
-
-  <p>Here are some resources for free images:</p>
-
-  <ul>
-    <li><a href="http://superfamous.com/">http://superfamous.com/</a></li>
-    <li><a href="http://www.gratisography.com/">http://www.gratisography.com/</a></li>
-    <li><a href="http://littlevisuals.co/">http://littlevisuals.co/</a></li>
-    <li><a href="http://nos.twnsnd.co/">http://nos.twnsnd.co/</a></li>
-    <li><a href="http://unsplash.com/">http://unsplash.com/</a></li>
-  </ul>
-
-  <p>Your page should now look similar to <a href="project/examples/exercise9-index.html">example 9</a>.</p>
-
-  <div class="presenter-notes">
-    <p>You will probably be pressed for time at this point. Just explain what "cover" does and let them know there are other options available and there are additional resources at the bottom of this slide.</p>
-  </div>
-</script>
-</section> 
 
 <section class="slide" data-markdown>
   <script type="text/template">
