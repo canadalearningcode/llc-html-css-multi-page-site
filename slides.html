@@ -103,7 +103,7 @@
       <script type="text/template">
         #Today’s Project
 
-        Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/) to see the whole project!
+        Follow this [link](project/final/) to see the whole project!
 
         ![project home page](framework/img/workshop/project1.jpg) ![project about page](framework/img/workshop/project2.jpg) ![project contact page](framework/img/workshop/project3.jpg)
       </script>
@@ -352,7 +352,7 @@
       <script type="text/template">
         #Writing HTML
 
-        To ensure that your tags are closed properly and help reduce errors, write both the opening and closing tags **first**.
+        To ensure that your tags are closed properly and help reduce errors, write both the opening and closing tags *first*.
         
         Then move the cursor between the tags to add the text content.
 
@@ -366,29 +366,16 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-      #Nesting HTML tags
+        #Nesting HTML tags
 
-      HTML Tags are often nested within other tags and make up the _document tree_. 
-      
-      The relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc. 
-      
-      ```
-      <parent>
-        <child></child>
-      </parent>
-      ```
-      
-      Understanding this relationship will come in handy for writing CSS. 
-      </script>
-    </section> 
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Writing HTML
-
-        When nesting tags, make sure to indent by pressing the **tab** key once to clearly show which elements are nested. 
+        When HTML Tags are nested, it creates a family tree-like structure of nodes that are ancestors, parents, children, siblings, etc. 
         
-        This will help to keep your code organized and easier to read.
+        ```
+        <parent>
+          <child></child>
+        </parent>
+        ```    
+        When nesting tags, indent once to make the code easier to read.
 
         ![nesting tags](framework/img/workshop/writing-nested-tags.gif)
       </script>
@@ -416,7 +403,7 @@
       <script type="text/template">
         #Basic HTML document
 
-        We've just seen these tags in the project's file. These tags are required for every web page. The first line, the DOCTYPE, tells the browser what HTML version the page is written in. 
+        We've just seen these tags in the project's **index.html** file. These tags are required for every web page. The first line, the `DOCTYPE`, tells the browser what HTML version the page is written in. 
 
         <pre><code><strong>&lt;!DOCTYPE html&gt;</strong>
         &lt;html lang=&quot;en&quot;&gt;
@@ -480,7 +467,7 @@
         #THE BODY ELEMENT
 
         All content to be displayed in the browser window goes between the `<body></body>` tags. Also known as the *viewport*.
-
+        
         <pre><code>&lt;!DOCTYPE html&gt;
         &lt;html lang=&quot;en&quot;&gt;
           &lt;head&gt;
@@ -629,7 +616,7 @@
 
         In the sample project, all the pages have the same headings (name & tagline), nav links and footer information.  
         
-        The home page *looks* different but don't worry about that just yet. Right now we are still focusing on setting up the the HTML. 
+        Some of the styles on each page is difference but don't worry about that yet. Right now we are focusing on setting up the the HTML. 
 
         ![project home page](framework/img/workshop/project1.jpg)
         ![project about page](framework/img/workshop/project2.jpg)
@@ -785,7 +772,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Keyboard shortcuts (11:15)
+        #Keyboard shortcuts
         
         Right now, the HTML in **index.html** contains content that will be required on all three pages (base HTML tags, header, navigation & footer info) and should be copied over. 
         
@@ -915,7 +902,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Adding your own images (11:30)
+        #Adding your own images
 
         Remember, relative paths are based on the folder directory.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
         
@@ -983,7 +970,7 @@
           <cite>― Dr. Seuss, I Can Read With My Eyes Shut!</cite>
         </blockquote>
         ```
-        
+    
         ---
         ###Resource 
         http://html5doctor.com/cite-and-blockquote-reloaded/
@@ -1090,7 +1077,7 @@
       <script type="text/template">
         #CSS Comments
 
-        Comments are written with a slash & asterisk and closes in the opposite order (`/* */`) and is used for the same reasons as HTML comments.
+        Comments start with a slash & asterisk and closes in the opposite order (`/* */`). Use it for the same reasons as HTML comments.
 
         ```
         p {
@@ -1135,7 +1122,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Referencing CSS (12:00)
+        #Referencing CSS
 
         There are several ways to include CSS in an HTML page. Today we'll be using the **external** method which separates the HTML from the CSS. 
 
@@ -1188,12 +1175,10 @@
       <script type="text/template">
         #Class Exercise: Adding CSS
         
-        Notice that the content doesn't quite go to the edge of the page? 
+        Notice that the content doesn't quite go to the edge of the page? That's because there's default spacing in the `<body>` element. 
 
         ![](framework/img/workshop/body-margin.png)
         
-        That's because there's default spacing in the `<body>` element. 
-
         Let's remove the test background color and replace it with `padding` and `margin` to reset the value. (More on these properties later.)
 
         ```
@@ -1264,7 +1249,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #font-family and Web safe fonts (12:15)
+        #font-family and Web safe fonts
         
         Using the `font-family` property, it's best practice to list at least two or three font options to provide a fall-back option in case the user doesn't have the fonts installed.
 
@@ -1325,7 +1310,7 @@ text-transform: lowercase;</textarea>
 
     <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
-        #Break time! (Optional Exercise) (12:25)
+        #Break time! (Optional Exercise)
 
         * Pick 2-3 fonts (Google Fonts or web safe fonts) 
           * Here’s a [the final project](project/final/about.html) for reference. 
@@ -1348,7 +1333,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Cascading (1:10)
+        #Cascading
         
         CSS executes from top to bottom (hence "cascading"), so be careful of the order of the CSS declarations. The declaration that comes *after* will override the one that came before.
 
@@ -1542,7 +1527,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Solution/review (1:40)
+        #Solution / Review
         
         **Pro tip!** Use comments to organize your CSS blocks!
         
@@ -1645,7 +1630,7 @@ text-transform: lowercase;</textarea>
         Margin is used to add/remove space **around** the element.  Just like padding, it also uses 1-4 values.
         
         <textarea class="snippet" data-subject="#margin">background: lightblue;
-        margin: 20px;</textarea>
+        margin: 20px 40px;</textarea>
         <div id="margin">margin test</div>
       </script>
     </section>
@@ -1752,7 +1737,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #About page layout (2:00)
+        #About page layout
         
         Let's talk about why the About page currently looks like the example on the left and how to get it to look like the example on the right.
         
@@ -1821,7 +1806,7 @@ text-transform: lowercase;</textarea>
         
         The newest option is `flexbox` but only has partial support in Internet Explorer 10+ and no support in Internet Explorer 9 and older.
         
-        Today we'll use `float` but check out the resources below for more info.
+        Today we'll use `float`. Check out the resources below for more info.
         
         ---
         ###Resources
@@ -1860,7 +1845,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Being more specific - Using a Class (2:15)
+        #Being more specific - Using a Class
         
         To apply the float *only* to the profile image, we can't use `img` as the selector. Instead, use a `class` attribute.  
         
@@ -1941,7 +1926,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Float the Header and Nav (2:30)
+        #Float the Header and Nav
         
         We're going to do the same thing with the `header` and `nav` except the header will float to the left and the nav will float to the right.
         
@@ -1970,7 +1955,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise #5: Floats (20mins)
+        #Exercise #5: Floats & Bonus Exercises (20mins)
         
         Using the plan from the previous slide, apply the floats to the header and nav.  Your page will look like this: 
         
@@ -1996,7 +1981,7 @@ text-transform: lowercase;</textarea>
         
         1. Adding some padding to the `blockquote` to improve the spacing and/or try adding `text-align: center;` and see if you like it.
         
-        1. Change the `font-family` & `font-size` of just the paragraph in the `blockquote` to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of 35px.  
+        1. Change the `font-family` & `font-size` of just the paragraph in the `blockquote` to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of 30px.  
         <span class="note">(Hint! Use a descendant selector to apply the style to the paragraph inside of the blockquote.)</span>
         
         Your page should now look similar to [ex5-about-bonus.html](project/examples/ex5-about-bonus.html) & ex5-bonus.css in the **examples** folder.
@@ -2019,7 +2004,7 @@ text-transform: lowercase;</textarea>
     
     <section id="background" class="slide title background" data-markdown>
       <script type="text/template">
-        #Background Images! (3:00)
+        #Background Images!
       </script>
     </section>
     
@@ -2142,7 +2127,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Class Exercise: Full background image
         
-        Since this background image is applied to the `body`, let's add one more rule to ensure the image always covers the *whole viewport*.
+        Since this background image is applied to the `body`, let's add one more rule to ensure the styles added will cover the whole viewport.
         
         Let's add it to the very top of the css file, in the "global" section, to continue to keep the CSS organized.
         
@@ -2236,7 +2221,7 @@ text-transform: lowercase;</textarea>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise: Background Size (3:25)
+        #Class Exercise: Background Size
         
         Let's update the background image for the home pages using `cover`.  
         
@@ -2337,14 +2322,15 @@ text-transform: lowercase;</textarea>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Sticky Footer CSS (3:45)
+        #Sticky Footer CSS
         
         Yay! It's at the bottom of the page now.  Problem is, it's hard to see on the homepage. Let's add a bit of padding and a background colour to the footer to fix that.
         
         ```
         footer {
           background: white;
-          padding: 2px 10px;
+          text-align: center;
+          padding: 1px;
         }
         ```
         Compare your page with any of the **ex7** HTML files and **ex7.css** in the **examples** folder.
@@ -2506,7 +2492,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Bonus Exercises
 
-        Phew! We've covered A LOT of material today. But there's still more things to add, to further customize your page. 
+        Phew! We've covered A LOT of material today. But there's still a few more things you can add, to further customize your page. 
         
         * Like the home page, add a [background image](slides.html#background) to the Contact page.
         * Add a [favicon](http://blog.teamtreehouse.com/how-to-make-a-favicon).
