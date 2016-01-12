@@ -1,233 +1,144 @@
-/* --------------------------------------
-    Created by Ladies Learning Code
-    http://ladieslearningcode.com
------------------------------------------*/
+/* ----------------------------------------------------
+  Created by Christina Truong for Ladies Learning Code
+  http://ladieslearningcode.com
+  http://christinatruong.com
+-------------------------------------------------------*/
+
 
 /* GLOBAL STYLES
 -----------------------------------------*/
-html, body {
+html,
+body {
   height: 100%;
 }
-
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 body {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  color: #333;
+  color: #333333; /* dark, almost black, gray colour */
 }
-h1 {
+h1,
+h2 {
   font-family: "Nixie One", serif;
-}
-h1, h2 {
-  font-weight: 300;
+  font-weight: 300; /* removes default bold styles */
   text-transform: uppercase;
   margin: 0; /* removes default space */
-  line-height: 1; /* tightens up the space between the headings */
 }
 a {
   color: #bf6d50;
-  text-decoration: none;
-  transition: all 0.5s ease;
+  text-decoration: none; /* removes default underline */
+}
+a:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 header,
-section {
+main,
+nav {
   padding: 20px 30px;
 }
-section {
-  padding-top: 125px;
+main {
+  clear: both;
 }
 .highlight {
   color: #bf6d50;
 }
-.cursive {
-  font-family: "Pacifico", cursive;
-}
 
 
-/* HEADER
+/* HEADER STYLES
 -----------------------------------------*/
-header {
-  position: fixed;
-  top: 0;
-  background: white;
-  border-bottom: 1px solid #eee;
-  width: 100%; 
-}
 header h1 {
-  font-size: 36px;
+  font-size: 48px;
 }
 header h2 {
-  font-size: 18px;
+  font-size: 24px;
 }
-
-/* Navigation */
+header {
+  float: left;
+}
 nav {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-nav ul {
-  list-style-type: none; /* removes bullets */
-  margin: 0; /* removes default margin */
-  padding: 0; /* removes default padding */
-}
-nav ul li {
-  display: inline-block; /* gets the list items to line up side by side */
+  float: right;
 }
 nav a {
-  display: block; /* changes the element to block */
-  padding: 5px 15px;
-  text-transform: uppercase; 
-}
-nav .current {
-  color: black;
+  padding: 20px;
 }
 
-/* HOME PAGE
------------------------------------------*/
+/* HOME PAGE STYLES
+-----------------------------------------*/ 
 .home {
-  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)), url(../images/background-6.jpg) no-repeat 50%;
+  background: url(../images/background-6.jpg) no-repeat 50%;
   background-size: cover;
 }
-.home header {
-  position: static;
-  background: transparent;
-  border-bottom: none;
-  text-align: center;
-  padding-top: 100px;
-}
-.home header h1 {
-  font-size: 120px;
-}
-.home header h2 {
-  font-size: 40px;
-}
-.home nav {
-  text-align: right;
-  font-size: 25px;
-}
-.home nav ul {
-  display: none;
-}
-.home nav:hover ul {
-  display: block;
-}
-.home li {
-  display: block;
-}
-.home nav a {
-  display: inline-block;
-  font-size: 22px;
-  padding: 10px 15px;
-}
-.home nav a:hover {
-  color: black;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 5px;
-}
-.fa-bars {
-  padding: 0 15px 15px 15px;
-  cursor: pointer;
-  font-size: 40px;
-  color: #bf6d50;
-}
 
-/* ABOUT PAGE
+/* ABOUT STYLES
 -----------------------------------------*/
 .profile-img {
   float: left;
   margin-right: 20px;
+  width: 50%;
 }
 blockquote {
-  clear: both; /* clears the float and returns page back to normal stacking order */
+  clear: both;
+  padding: 5px 150px;
   text-align: center;
-  padding-top: 20px;
 }
 blockquote p {
   font-family: "Pacifico", cursive;
-  font-size: 25px;
+  font-size: 35px;
 }
 
-
-/* CONTACT PAGE
+/* CONTACT STYLES
 -----------------------------------------*/
 .contact {
-  background: url(../images/background-8.jpg) no-repeat;
+  background: url(../images/background-8.jpg) no-repeat 50%;
   background-size: cover;
 }
-.contact-form {
-    width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 18px;
-    border-radius: 4px;
+.contact main {
+  background: rgba(255, 255, 255, 0.7);
 }
-.contact-form input, 
-.contact-form textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 5px;
+form {
+  width: 400px;
 }
-.contact-form textarea {
+input,
+textarea {
+  border: 1px solid #BF6D50;
+  width: 400px;
+  margin-bottom: 10px;
+}
+input {
+  height: 20px;
+} 
+textarea {
   height: 100px;
 }
-.contact form input:focus, 
-.contact form textarea:focus {
-  outline: none;
-  border: 1px solid #bf6d50;
-}
-.contact form input[type="submit"] {
-  width: auto;
-  padding: 10px 20px;
-  background: #bf6d50;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
+button {
+  background: #BF6D50;
+  border: none;
+  padding: 10px 40px;
+  font-size: 16px;
 }
 
 
-
-/* FOOTER
+/* FOOTER STYLES
 -----------------------------------------*/
-/* sticky footer */
+/* Sticky Footer - http://css-tricks.com/snippets/css/sticky-footer */
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -35px; /* must be the same height as footer */
+  margin-bottom: -55px; /* must be the same height as footer */
 }
 .page-wrap:after {
   content: "";
   display: block;
 }
-footer, .page-wrap:after {
-  height: 35px; /* wowever tall you want the footer to be */
+footer, 
+.page-wrap:after {
+  height: 55px; /* however tall you want the footer to be */
 }
 footer {
-  background: #222;
-  color: #ccc;
-  clear: both;
-  padding: 0 5px; /* adds space inside the footer */
-  line-height: 35px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 10px;
+  text-transform: lowercase;
 }
-footer .copyright {
-  margin: 0; /* removes default margin from paragraph */
-  float: left;
-}
-footer .social {
-  float: right;
-}
-footer .social a {
-  display: inline-block;
-  padding: 0 6px;
-}
-footer .social a:hover {
-  color: white;
-}
+
+
+
 

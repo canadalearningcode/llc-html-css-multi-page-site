@@ -61,6 +61,7 @@ nav a {
 .profile-img {
   float: left;
   margin-right: 20px;
+  width: 50%;
 }
 blockquote {
   clear: both;

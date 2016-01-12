@@ -9,44 +9,42 @@
 	</head>
 	<body class="contact">
 		<div class="page-wrap">
+			<!-- Header & Nav -->	
 			<header>
 				<h1><span class="highlight">Jane</span>Smith</h1>
-				<h2>Web Developer + City Girl</h2>
-
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a class="current" href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
+				<h2>Web Developer + City Girl</h2>	
 			</header>
+			
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="about.html">About</a>
+				<a href="contact.html">Contact</a>
+			</nav>
 
-			<section>
-				<form class="contact-form" method="POST" action="" >
-					<h2>Let's meet for coffee!</h2>
-
-					<p>Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, 
-					use the form below or say "hi!" on one of my social networks.</p>
-					<p>
-						<label for="name">Name</label>
-						<input id="name" type="text" name="name">
-					</p>
-					<p>
-						<label for="email">Email</label>
-						<input id="email" type="email" name="replyto">
-					</p>
-					<p>
-						<label for="message">Message</label>
-						<textarea id="message" name="message"></textarea>
-					</p>
-					<input type="submit" value="SEND">
+			<main role="main">
+				<p>Let's meet for coffee!</p>
+				<p>Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, 
+				use the form below.</p>
+				
+				<form method="POST" action="">				
+					<label for="name">Name</label>
+					<input id="name" type="text" name="name">
+					
+					<label for="email">Email</label>
+					<input id="email" type="email" name="email">
+					
+					<label for="message">Message</label>
+					<textarea id="message" name="message"></textarea>
+					
+					<button type="submit">Send</button>
 				</form>
-			</section>
-		</div><!-- close .page-wrap -->
+			</main>
 		
+		</div><!-- close "page-wrap" -->
+
+		<!-- page footer -->
 		<footer>
-			<p>&#169; 2016 <span class="cursive">by</span> <span class="highlight">jane</span>smith</p>
+			<p>&#169; 2016 by <span class="highlight">Jane</span>Smith</p>
 		</footer>
 	</body>
 </html>

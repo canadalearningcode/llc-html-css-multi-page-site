@@ -147,7 +147,7 @@
         
         The main functionality of the [browser](http://browsehappy.com) is to present a *web resource* in the browser window. 
         
-        Choose a modern web browser like Chrome or Firefox, that support current web standards and included dev tools for a better experience.
+        Choose a modern web browser, like Chrome or Firefox, that support current web standards and include dev tools for a better experience.
 
         You also can view the source of *any* web page. Right-click / two-finger tap anywhere on the browser and select **View Page Source**. 
         
@@ -257,7 +257,7 @@
         Your project folder structure will look like this:
         
         ```
-        |-- project // Files for today's workshop.
+        |-- project
           |-- css // CSS files here.
           |-- examples // Example files for each exercise.
           |-- final // Finished example.
@@ -289,7 +289,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Making changes (10:30)
+        #Making changes
         
         This is your editing work flow:
         
@@ -324,7 +324,7 @@
       <script type="text/template">
         #HTML Syntax
         
-        Just like languages that we speak and write, HTML follows proper "grammar" rules too. HTML *tags* are written with a left & right angled bracket `< >` and the forward slash `/`. Get to know these keys!
+        Just like languages that we speak and write, HTML follows proper "grammar" rules too. HTML *tags* are written with a left & right angled brackets `< >` and the forward slash `/`. Get to know these keys!
         
         ![keyboard keys](framework/img/workshop/keyboard-html.png)<!-- .element: width="75%" -->
       </script>
@@ -336,12 +336,12 @@
         
         Tags usually come in pairs &mdash; an opening tag and a closing tag &mdash; to *wrap* the content.  Note the closing tag has a forward slash `/`.
 
-        ```
+        ```xml
         <tag> <-- opening tag --- closing tag --> </tag>
         ```
 
         HTML *tags* describe the content inside of them to the web browser.
-        ```
+        ```xml
         <h1>This tag describes a heading</h1>
         <p>This tag is for paragraphs.</p>
         ```
@@ -497,7 +497,7 @@
   
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Attributes (10:45)
+        # Attributes
         
         * provides additional information or instruction for the element
         * included *inside the opening HTML tag*
@@ -514,7 +514,7 @@
       <script type="text/template">
         # Attributes
         
-        We just saw two attributes in our basic HTML page example.
+        We just saw two attributes in our basic HTML document example.
 
         The `lang` attribute is used to classify the language.
 
@@ -625,7 +625,7 @@
     
     <section class="slide project" data-markdown>
       <script type="text/template">
-        #Website Navigation (11:00)
+        #Website Navigation
 
         In the sample project, all the pages have the same headings (name & tagline), nav links and footer information.  
         
@@ -658,7 +658,7 @@
         
         This above example uses an **absolute** link. Much like typing a URL into the browser, it's "fully resolved" and starts with `http://`.
 
-        <!-- .element: class="note" -->**Note**: The clickable text goes in between the opening and closing a tags. 
+        <!-- .element: class="note" -->**Note**: The clickable text goes in between the opening and closing `<a>` tags. 
       </script>
     </section> 
 
@@ -2017,7 +2017,7 @@ text-transform: lowercase;</textarea>
       </script>
     </section>
     
-    <section class="slide title background" data-markdown>
+    <section id="background" class="slide title background" data-markdown>
       <script type="text/template">
         #Background Images! (3:00)
       </script>
@@ -2492,8 +2492,7 @@ text-transform: lowercase;</textarea>
       </script>
     </section>
     
-
-    <div class="slide centered" data-markdown>
+    <section class="slide centered" data-markdown>
       <script type="text/template">
       #And we're done!
 
@@ -2501,182 +2500,109 @@ text-transform: lowercase;</textarea>
 
       Ok, not quite done. Let's talk about some next steps.
       </script>
-    </div>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Bonus Exercises
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Being more specific - Using a Class
+        Phew! We've covered A LOT of material today. But there's still more things to add, to further customize your page. 
+        
+        * Like the home page, add a [background image](slides.html#background) to the Contact page.
+        * Add a [favicon](http://blog.teamtreehouse.com/how-to-make-a-favicon).
+        * Use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) to add social icons to the footer. 
+        * The next slide contains instructions for adding special text styles.
 
-    HTML provides ways to attach extra identifying information to target elements in a more specific way. Classes are **attributes** than can be added to any tag and the value is define by you.
-    ```
-    <p class="classname"></p>
-    ```
+        See the [final](project/final/) version for some inspiration (included in **project > final**).
+      </script>
+    </section>
+    
+    <section id="extra" class="slide" data-markdown>
+      <script type="text/template">
+        #Extra Exercise - Special text styles
+        
+        Using `class`, create a special style to highlight blocks of text like this:
+        
+        ![](framework/img/workshop/highlighted-text.png)
+        
+        Create a `class` and name it something like `highlight`.  
+        Add a CSS property to it like `color`. 
 
-    The class can then be used as a selector to apply styles to *any* element that references the class attribute and can be used multiple times on the same page. 
+        ```
+        .highlight {
+          color: #bf6d50;
+        }
+        ```
+        Now, this class can be added to any element and it will apply this particular style.
 
-    In CSS, classes are denoted by a leading period.
+        Use a `<span>` tag to wrap it around the text to apply the style to.
 
-    ```xml
-    <p>Regular text</p>
-    <p class=&quot;special&quot;>Special text here.</p>
-    ```
-    ```
-    p {
-      color: red;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-    .special {
-      text-transform: uppercase;
-    }
-    ```
+        ```xml
+        <h1><span class="highlight">Jane</span>Smith</h1>
+        ```
 
-    Another attribute, `id`, can also be used as a more specific CSS selector and for linking within the same page. We won't be using `id` today but read more about its CSS usage [here](http://htmldog.com/guides/css/intermediate/classid/) and in-page linking [here](http://www.webweaver.nu/html-tips/link-within-a-page.shtml).
-  </script>
-</section> 
+        Add this anywhere you want some highlighted text!
+      </script>
+    </section> 
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #More resources
 
+        * [Code School](https://www.codeschool.com)  
+        * [http://css-tricks.com/](http://css-tricks.com/)
+        * [SitePoint CSS Reference](http://reference.sitepoint.com/css)
+        * [Codecademy](http://www.codecademy.com/)
+        * [Smashing Magazine](http://mobile.smashingmagazine.com/)
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##class and id Names
+        For something offline, here's a good book by Jon Duckett:  
+        [HTML and CSS: Design and Build Websites](http://htmlandcssbook.com/).
+      </script>
+    </section>  
 
-    When choosing a class or id name, choose a descriptive name and do not use spaces. Hyphens (`-`), underscores (`_`) and camel case are acceptable. CSS is also case sensitive, so while these three examples look similar, CSS will read these as three different classes so it's important (for you own sanity) to pick one style and be consistent.
+    <section class="slide small-type" data-markdown>
+      <script type="text/template">
+        #Next Steps
 
-    ```
-    class="content-wrapper"
-    class="content_wrapper"
-    class="contentWrapper"
-    ```
-  </script>
-</section> 
+        Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
 
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Class Exercise - Special text styles
+        ##Getting your site online
 
-    Let's create a `class` called `highlight` and assign it an accent colour. Try using the same colour as your links. Now, this class can be added to any element and it will apply this particular style.
+        You will need to register a domain name and purchase hosting. Here are some suggestions:
 
-    ```
-    .highlight {
-      color: #bf6d50;
-    }
-    ```
+        * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - domains and hosting - use promo code **LLC40** to get $40 off your registration!
+        * [hover.com](http://hover.com/ladiescode) - domains - save 10% with the promo code "learningcode"
 
-    Using a `<span>` tag, wrap it around your first name on the homepage and apply this class. You can remove the space between the first & last name, to appear closer together. We use the span tag to wrap the content we want to apply this style to, without affecting the content around it. 
+        Why keep your domains and hosting separate?<!-- .element: class="note" --> [Learn more about Hover](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
 
-    ```xml
-    <h1><span class=&quot;highlight&quot;>Jane</span>Smith</h1>
-    ```
+        You will also need to upload your files to your hosting server. You will need some info usually provided by your hosting service provider: FTP Address, Username, Password.
 
-    Now it looks like this!
+        Here's a tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
+      </script>
+    </section> 
 
-    ![](framework/img/workshop/highlighted-text.png)
+    <!-- Last slide -->
+    <section class="slide last">
+      <h1>Thank you!</h1>
+      <h2 class="heading-bg">
+        <span>
+          Intro to HTML & CSS:<br>
+          Building a Multi-page website 
+        </span>
+      </h2>  
 
-    Add this anywhere you want some highlighted text!  Your name is also in the footer. That would be another good place to add this style.
-  </script>
-</section> 
+      <!-- <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
 
-<div class="slide" data-markdown>
-  ##Next Steps
+      <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section> 
 
-  Phew! We've covered A LOT of material today. Here are some extra challenges and take-home lessons for you to tackle another day. These lessons will cover some more options to give your web page extra personalization, finalize some styles and add some polish. Here are the links to the additional lessons:
-
-  * [Contact page](framework/extras-form-styles.html) - adding background images & form styling
-  * [Forms](framework/extras-form-submission.html) - how to submit a form
-  * [Sticky Footer](framework/extras-sticky-footer.html)
-  * [Home page: additional styles](framework/extras-homepage.html) - includes using icon fonts and creating a drop down menu.
-* [Add a favicon](http://blog.teamtreehouse.com/how-to-make-a-favicon)
-* Use the [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) to add your social icons to the footer. 
-* Try a few more Ladies Learning Code workshops. Check our roadmap for suggestions at [http://ladieslearningcode.com/roadmap](http://ladieslearningcode.com/roadmap)
-
-Take a look at the HTML & CSS files in the **final** folder and see what other tricks you can add to your project.
-</div>
-<section class="slide" data-markdown>
-  <script type="text/template">
-    ##Online resources
-
-* [A Beginners Guide to HTML & CSS](http://learn.shayhowe.com/html-css/)  
-* [Code School](https://www.codeschool.com)  
-* [The 30 CSS Selectors you Must Memorize](http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)  
-* [http://dochub.io](http://dochub.io/#css/)  
-* [http://css-tricks.com/](http://css-tricks.com/)
-* [SitePoint CSS Reference](http://reference.sitepoint.com/css)
-* [Codecademy](http://www.codecademy.com/)
-* [Smashing Magazine](http://mobile.smashingmagazine.com/)
-
-And if you want something offline, here's a good book: [HTML and CSS: Design and Build Websites](http://htmlandcssbook.com/) by Jon Duckett.
-</script>
-</section> 
-
-<section class="slide" data-markdown>
-  <script type="text/template">
-    <script type="text/template">
-      ##Getting your site online
-
-      To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
-
-      To move web files from your computer to a server, an FTP program like [Filezilla](https://filezilla-project.org) or [CyberDuck](https://cyberduck.io) must be used. You will also need to register a domain name (www.mysite.com) and get hosting. Here are some suggestions:
-
-      * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - Domain and hosting - Use coupon code **LLC40** to get $40 off your registration!
-      * [hover.com](http://hover.com/ladiescode) - Domain registration
-
-      Why keep your domains and hosting separate? Learn more about Hover [here](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
-
-      To get your files online, you will need upload your files to your newly purchased hosting server. There are a few pieces of information you will need and are usually provided to you by your hosting service provider.
-
-      * FTP address (usually **ftp.yourdomain.com** or just **yourdomain.com**)
-      * FTP Username & password
-
-Here's a nice tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)  
-Feeling adventurous? Try [Hosting Static Sites on Github for Beginners](http://thephuse.com/development/hosting-static-sites-on-github-for-beginners/).
-</script>
-</script>
-</section> 
-
-<section class="slide small-type" data-markdown>
-  <script type="text/template">
-    #Next Steps
-
-    [Affiliate info to be included in all presentations. Revise as required.]
-
-Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
-
-##Getting your site online
-
-You will need to register a domain name and purchase hosting. Here are some suggestions:
-
-* [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - domains and hosting - use promo code **LLC40** to get $40 off your registration!
-* [hover.com](http://hover.com/ladiescode) - domains - save 10% with the promo code "learningcode"
-
-Why keep your domains and hosting separate?<!-- .element: class="note" --> [Learn more about Hover](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
-
-You will also need to upload your files to your hosting server. You will need some info usually provided by your hosting service provider: FTP Address, Username, Password.
-
-Here's a tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
-</script>
-</script>
-</section> 
-
-<!-- Last slide -->
-<section class="slide last">
-  <h1>Thank you!</h1>
-  <h2 class="heading-bg">
-    <span>Title of Workshop<br>Second line</span>
-  </h2>  
-
-  <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
-  <h2><span class="cursive">with</span> Instructor Name</h2>
-  <ul>
-    <li><a href="mailto:">hello@email.com</a></li>
-    <li><a href="#">mywebsite.com</a></li>
-    <li><a href="http://twitter.com/">@twitter</a></li>
-  </ul>
-
-  <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
-</script>
-</section> 
-
-</main><!-- cls main section -->
+  </main><!-- cls main section -->
 
 <script src="framework/scripts/jquery-1.11.0.min.js"></script>
 <script src="framework/scripts/slideshow.js"></script>
