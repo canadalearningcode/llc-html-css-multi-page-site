@@ -10,6 +10,13 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+  
+  @media (min-width: 1401px) {
+    font-size: 70%;
+  }
+}
 body {
   padding: 0;
   margin: 0;
@@ -20,15 +27,13 @@ body {
   border-top: 4px solid $llc-pink;
   -webkit-font-smoothing: antialiased;
   background: #ecf0f1;
-  
-  @media (min-width: 1401px) {
-    font-size: $font-size-base + 6;
-  }
 }
 
-h2 {
-  margin: 0;
+strong {
+  font-weight: 700;
+  color: black;
 }
+
 h1 {
   font-family: $heading-font;
   letter-spacing: -0.05em;
@@ -45,10 +50,11 @@ h1 {
     font-size: inherit;
     color: inherit;
     font-family: inherit;
+    background: transparent;
   }
 }
-h2 {
-  font-size: $font-size-heading-sm;
+h2, h3 {
+  margin: 0;
   
   + p,
   + ul,
@@ -56,71 +62,36 @@ h2 {
     margin-top: 6px;
   }
 }
-h3, h4 {
-  margin: 32px 0 10px;
-  
-  + p, + pre {
-    margin-top: 4px;
-  }
+h2 {
+  font-size: $font-size-heading-sm;
 }
-h5 {
-  margin-bottom: 10px;
+h3 {
+  font-size: $font-size-heading-sm * .9;
 }
-h6 {
-  text-transform: none;
-  margin: 5px 0;
-}
+
 a {
-  // color: $llc-pink;
-  // text-decoration: none;
   outline: none;
   color: inherit;
-  // border-bottom: 2px solid $llc-pink;
 
   &:hover {
     color: $llc-pink;
     text-decoration: none;
   }
 }
+
 hr {
   border: none;
   border-top: 1px solid $gray-light;
   clear: both;
-}
-ul, ol {
-  padding: 0;
-    
-  li {
-    margin-bottom: 6px;
-    margin-left: 24px;
-  }
-  ol, ul {
-    font-size: $font-size-sm;
-    width: 90%;
-    margin: 5px 0 20px;
-  }
+  margin: 30px 0 0;
+  display: inline-block;
+  width: 100%;
   
-  .list-sm & {
-    font-size: $font-size-sm;
-    
-    li { margin-bottom: 4px; }
+  + p {
+    margin-top: 16px;
   }
 }
 
-ol > li {
-  margin-left: 40px;
-}
-ul {
-  list-style-type: none;
-  
-  li:before {
-    content: "\203A"; // › symbol
-    font-family: $quicksand;
-    font-weight: bold;
-    margin-left: -18px;
-    padding-right: 10px;
-  }
-}
 p {
   margin-bottom: 0;
   
@@ -128,60 +99,96 @@ p {
     margin-top: 30px;
   }
 }
-.cursive {
-  font-family: $cursive;
-  color: $llc-pink;
+
+iframe {
+  margin-top: 15px;
 }
+
+
+// List styles
+//----------------
+ol, ul {
+  > li {
+    margin-bottom: 6px;
+  }
+  ol, ul {
+    margin-top: 6px;
+    font-size: $font-size-sm;
+  }
+}
+ul {
+  padding: 0;
+    
+  > li {
+    margin-left: 24px;
+    list-style-type: none;
+    
+    &:before {
+      content: "\203A"; // › symbol
+      font-family: $quicksand;
+      font-weight: bold;
+      margin-left: -19px;
+      padding-right: 10px;
+    }
+  }
+}
+p + ul,
+p + ol {
+  margin-top: 20px;
+}
+
+.nested-list {
+  > ul {
+    margin-left: -24px;
+    
+    > li:before {
+      content: "";
+      margin-left: -10px;
+    }
+    ol, ul {
+      width: 90%;
+      margin-bottom: 25px;
+    }
+  }
+  .resources + ul {
+    > li {
+      margin-left: 35px;
+      
+      &:before {
+        content: "\203A";
+      }
+    }
+  }
+}
+
 .two-col-list > {
   ul, ol {
     overflow: hidden;
-    padding-left: 8px;
     
     > li {
-      width: 50%;
+      width: 45%;
       float: left;
-      margin-left: 0;
+      margin-left: 4px;
       
+      &:first-child {
+        margin-right: 5%;
+      }
       &:before {
         content: "";
+        margin-left: -12px;
       }
-    }
-    ul, ol {
-      margin-top: 10px;
     }
   }
   .resources + ul {
     > li {
       width: 100%;
-      margin-left: 20px;
+      margin-left: 12px;
       
       &:before {
         content: "\203A";
-        padding-right: 8px;
       }
     }
   }
-}
-.no-bullet-list {
-  > ul > li {
-    margin-left: 0;
-    
-    &:before {
-      content: "";
-      margin-left: -9px;
-    }
-    ul {
-      margin-left: 15px; 
-    }
-  }
-}
-
-iframe {
-  margin-bottom: 20px;
-}
-strong {
-  font-weight: 700;
-  color: black;
 }
 
 table {
@@ -210,10 +217,7 @@ th {
   text-align: left;
   font-weight: normal;
 }
-td {
-  // padding-right: 60px;
-  // padding-left: 10px;
-  
+td {  
   .two-col-table & {
     width: 50%;
   }
@@ -242,16 +246,23 @@ td {
     margin-bottom: 0;
   }
 }
+
 .left {
   float: left; 
   
   + ul {
     padding-left: 10px;
-  }  
+  }
 }
-img.left {
+img.left,
+iframe.left {
   margin-right: 30px;
 }
+img.right,
+iframe.right {
+  margin-left: 30px;
+}
+
 .right {
   float: right;
 }
@@ -265,13 +276,15 @@ img.left {
     display: block;
   }
 }
-.highlight,
+.cursive {
+  font-family: $cursive;
+  color: $llc-pink;
+}
+.highlight em,
 a.highlight {
-  color: red;
-
-  a {
-    color: red;
-  }
+  color: $llc-pink;
+  font-size: 106%;
+  padding-right: 2px;
 }
 .small-type {
   p, ul, ol {
@@ -312,7 +325,7 @@ a.highlight {
   background-size: cover;
   height: 100%;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   
   // Adds extra space to the bottom of the slides to allow 
@@ -383,7 +396,6 @@ a.highlight {
     letter-spacing: 0.05rem;
     font-size: $font-size-heading;
     font-family: "Quicksand",sans-serif;
-    // letter-spacing: -0.05em;
     text-transform: uppercase;
   }
 }
@@ -414,6 +426,15 @@ a.highlight {
   text-transform: uppercase;
   font-weight: bold;
 }
+p {
+  textarea.snippet {
+    margin-top: -15px;
+    margin-bottom: -10px;
+  }
+  .edit {
+    margin-top: -34px;
+  }
+}
 textarea.snippet {
   width: 100%;
   border: 1px solid #222;
@@ -422,27 +443,27 @@ textarea.snippet {
   font-size: 20px!important;
   font-family: Andale Mono, Monaco, monospace;
   line-height: 1.4;
+  
+  + .example {
+    margin-top: 0;
+  }
 }
 
 /* Creates border for slide examples */
 .example,
 blockquote {
-  padding: 0 15px;
-  font-size: $font-size-xsm;
+  font-size: $font-size-sm;
+  margin: 15px 0;
   
   p {
-    margin: 10px 0;
-  }
-  &:last-child {
-    margin-bottom: 50px;
+    margin: 10px;
   }
 }
 .example {
   border: 1px solid $gray-light;
-  margin: 20px 0;
+  padding: 5px 10px;
 }
 blockquote {
-  margin: 25px 0 20px;
   background: #fff;
   border: 3px solid rgba(177, 9, 170, 0.2)
 }
@@ -458,8 +479,10 @@ Background color style for headings
 Use spans wrap inside of a heading for div. 
 e.g.
 <h1 class="title-bg">
-  <span>Welcome to </span><br>
-  <span>Ladies Learning Code!</span>
+  <span>
+    Welcome to<br>
+    Ladies Learning Code!
+  </span>
 </h1>
 */
 .heading-bg {
@@ -485,9 +508,16 @@ e.g.
   &.slide {
     padding: 0;
   }
-  h1, 
+  .logo-stacked {
+    margin-right: 50px;
+  }
+  h1,
   .instructions {
     padding: 30px 64px;
+  }
+  .instructions p {
+    margin: 0;
+    line-height: 1.32;
   }
   h1 {
     background: #111;
@@ -495,23 +525,33 @@ e.g.
     margin: 0;
     font-size: 55px;
   }
-  .logo-stacked {
-    margin: 0px 105px 0 -20px;
-  }
   h2 {
-    font-size: 26px;
     float: left;
-  } 
-  .instructions > ul {
-    margin: 0 0 0 235px;
+    color: black;
+    width: 21%;
+    font-family: $quicksand;
+    color: $llc-pink;
+    text-transform: uppercase;
+    font-size: 30px;
   }
-  ul.connected li {
-    margin-bottom: 0;
-  }
-  ul.downloads > li {
-    margin-bottom: 20px;
+  ol, ul {
+    float: left;
+    width: 79%;
+    margin: 0;
+    
+    ul, ol {
+      float: none;
+      width: 100%;
+    }
+    &.connected li:before {
+      content: "";
+    }
+    &.downloads > li {
+      margin-bottom: 15px;
+    }
   }
 }
+
 /* Instructor Info */
 .slide.intro, 
 .slide.last {
@@ -525,7 +565,7 @@ e.g.
     font-size: $font-size-heading;
   }
   .instructor {
-    border-radius: 5px;
+    border-radius: 50%;
     max-width: 225px;
     float: left;
     margin-right: 30px;
@@ -613,7 +653,7 @@ footer {
   font-size: $font-size-sm;
   
   li {
-    margin-bottom: 0;
+    margin-bottom: 2px;
   }
   a {
     color: $gray-dark;
@@ -628,13 +668,13 @@ footer {
 /* code blocks
 -----------------------------*/
 pre {
-  margin: 10px 0;
+  margin: 18px 0 12px;
   white-space: pre-wrap;
 
   code {
     overflow-y: auto;
-    font-size: 20px;
-    font-family: Andale Mono, Monaco, monospace;
+    font-size: $font-size-xsm;
+    // font-family: Andale Mono, Monaco, monospace;
   }
   + pre {
     margin-top: 15px;
@@ -648,8 +688,19 @@ pre {
 }
 code {
   color: #555;
-  font-size: $font-size-base - 2;
-  padding: 0 4px;
+  padding: 0 8px;
+  display: inline-block;
+  background: white;
+  font-size: $font-size-base * 1.1;
+  border-radius: 4px;
+  position: relative;
+  top: -2px;
+}
+/* Targets only firefox */
+@-moz-document url-prefix() {
+  code {
+    font-size: $font-size-base - 0.2;
+  }
 }
 
 //code samples
@@ -676,6 +727,9 @@ code {
 .hljs-doctype,
 .hljs-comment {
   color: #990;
+}
+.php .hljs-preprocessor {
+  color: green;
 }
 
 

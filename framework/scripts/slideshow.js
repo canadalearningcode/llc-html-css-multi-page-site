@@ -134,7 +134,7 @@ var _ = window.SlideShow = function(slide) {
 
                 if(slide) {
                     me.goto(slide.id);
-                    setTimeout(function() { me.adjustFontSize(); }, 1000); // for Opera
+                    //setTimeout(function() { me.adjustFontSize(); }, 1000); // for Opera
                 }
 
                 body.classList.remove('show-thumbnails');
@@ -387,9 +387,9 @@ _.prototype = {
 				}
 				break;
 			case 'load':
-			case 'resize':
-				this.adjustFontSize();
-				break;
+			// case 'resize':
+			// 	this.adjustFontSize();
+			// 	break;
 			case 'hashchange':
 				this.goto(location.hash.substr(1) || 0);
 		}
@@ -515,7 +515,7 @@ _.prototype = {
 				}
 			}
 			else {
-				this.adjustFontSize();
+				//this.adjustFontSize();
 			}
 			
 			$('#onscreen-nav').style.display = this.isIpad || slide.classList.contains('onscreen-nav')? '' : 'none';

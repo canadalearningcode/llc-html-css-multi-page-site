@@ -23,14 +23,30 @@ $heading-font:          $quicksand;
 $base-font:             $monserrat;
 $cursive:               $pacifico;
 
-// Fixed font sizes
-// No slide scaling based on window size as in reveal.js
-$font-size-base:        32px;
-$font-size-sm:          $font-size-base - 4;
-$font-size-xsm:         $font-size-base - 10;
-$font-size-footnote:    $font-size-base - 16;
-$font-size-heading:     40px;
-$font-size-heading-lg:  75px;
-$font-size-heading-sm:  28px;
+$font-size-base:        3.2rem;
+$font-size-sm:          $font-size-base * 0.9; // 90%
+$font-size-xsm:         $font-size-base * 0.75;
+$font-size-footnote:    $font-size-base * 0.5;
+$font-size-heading:     4.0rem;
+$font-size-heading-lg:  7.5rem;
+$font-size-heading-sm:  $font-size-base;
 $line-height:           1.4;
 
+
+//---------------
+// MIXINS
+//---------------
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* http://css-tricks.com/snippets/css/clear-fix/ */
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }  
+}

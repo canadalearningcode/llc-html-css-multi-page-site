@@ -20,23 +20,19 @@
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body class="en" data-duration="360">
   <main>
-    <section class="slide welcome">
+    <section class="slide welcome highlight">
       <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
-
-      <div class="instructions no-bullet-list">
+      
+      <div class="instructions">
         <!-- ADD WIFI INFO HERE -->
-        <!-- 
-        <h2>Get Connected</h2>
-        <ul class="connected">
-        <li>Network: wifi network</li>
-        <li>Password: wifi password</li>
-        </ul>
-        <hr> 
-        -->
-
+        <!-- <h2>Get <br> Connected</h2>
+        <p><strong>Wifi:</strong> wifi network</p>
+        <p><strong>Password:</strong> wifi password</p>
+        <hr> -->
+        
         <h2>Download<br> & Install</h2>
-        <ul class="downloads">
-          <li>Learner files (zip file): <a href="http://bit.ly/llc-multipage">http://bit.ly/llc-multipage</a>
+        <ol class="downloads">
+          <li>Learner files (zip file): <a href="https://github.com/ladieslearningcode/llc-html-css-multi-page-site/archive/master.zip">http://bit.ly/llc-multipage</a>
             <ul>
               <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
               <li>open <strong>slides.html</strong> in the browser to view the slides</li>
@@ -45,7 +41,7 @@
           <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
           <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
           </li>
-        </ul>
+        </ol>
       </div>
       <footer>
         <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
@@ -53,7 +49,7 @@
         <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
       </footer>
     </section> 
-
+    
     <section class="slide intro">
       <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
       <h1 class="heading-bg">
@@ -82,30 +78,27 @@
       </footer>
     </section> 
 
-    <!-- <section class="slide" data-markdown>
-      <script type="text/template">
-        ##Course Outline
-
-        ###Morning
-
-        * Intro to HTML
-        * Write the HTML for your project
-        * Intro to CSS
-
-        ###Afternoon
-
-        * More CSS & HTML
-        * Next steps
-      </script>
-    </section>  -->
-    
     <section class="slide centered project" data-markdown>
       <script type="text/template">
         #Today’s Project
 
-        Follow this [link](project/final/) to see the whole project!
+        Follow this [link](project/final/index.html) to see the whole project!
 
         ![project home page](framework/img/workshop/project1.jpg) ![project about page](framework/img/workshop/project2.jpg) ![project contact page](framework/img/workshop/project3.jpg)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Course Outline
+        
+        <div class="table-of-contents"></div> 
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown data-toc>
+      <script type="text/template">
+        #Getting Started
       </script>
     </section>
     
@@ -313,7 +306,7 @@
       </script>
     </section> 
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
       #What is HTML?
       ##The content layer
@@ -518,7 +511,7 @@
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Adding HTML content
         ##Headings, paragraphs, links, oh my!
@@ -548,7 +541,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise #1 - Update index.html (5-10 mins)
+        # Exercise #1 - Update index.html (~5-10 mins)
 
         1.  Update your name in the `h1` tag if you haven’t already.
         2.  Add a tagline, under your name, using the appropriate heading tag.
@@ -565,7 +558,7 @@
       </script>
     </section> 
     
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
         #Creating HTML pages
 
@@ -788,7 +781,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise #2 - About & Contact pages (5-10mins) 
+        #Exercise #2 - About & Contact pages (~10mins) 
         
         1. Copy all of the HTML from **index.html** *to* **about.html** and **contact.html**
         1. Update the `<title>` tag to reflect the contents of the page.  
@@ -979,7 +972,7 @@
 
     <section class="slide small-type" data-markdown>
       <script type="text/template">
-        #Exercise #3 - About page (15 mins)
+        #Exercise #3 - About page (~15 mins)
 
         Add some content to your **About** page to make it look like [this](project/examples/ex3-about.html). You can use your own or use the resources below for placeholder text.
         
@@ -1002,7 +995,7 @@
       </script>
     </section> 
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Cascading Style Sheets
         ##CSS: The presentation layer
@@ -1021,7 +1014,7 @@
       </script>
     </section> 
 
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
         #CSS Terminology & Syntax
         
@@ -1030,13 +1023,13 @@
         * **Selectors:** determines which element(s) to apply the styles to  
         * **Declarations:** style rules & are written using `property:value` pairs  
           * each rule must end with a semi-colon (`;`)  
-          * all the rules for the selector must be within a pair of curly brackets `{ }`
+          * all the rules must be within a pair of curly brackets `{ }`
         * **Properties**: determines the type of style to be applied to the element 
         * **Values**: specific to the property
       </script>
     </section> 
 
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
         #Writing CSS
         
@@ -1219,9 +1212,9 @@
       </script>
     </section> 
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
-        #CSS TYPOGRAPHY
+        #CSS Typography
       </script>
     </section> 
     
@@ -1308,7 +1301,7 @@ text-transform: lowercase;</textarea>
       </script>
     </section>
 
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
         #Break time! (Optional Exercise)
 
@@ -1324,10 +1317,10 @@ text-transform: lowercase;</textarea>
       </script>
     </section> 
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
-        #Part Two
-        ##CSS Fundamentals
+        #CSS Fundamentals
+        ##Part Two
       </script>
     </section>
     
@@ -1500,7 +1493,7 @@ text-transform: lowercase;</textarea>
 
     <section class="slide small-type" data-markdown>
       <script type="text/template">
-        #Exercise #4 - Typography (10-15 mins)
+        #Exercise #4 - Typography (~10-15 mins)
 
         These instructions are based on the LLC sample project but feel free to pick your own fonts, sizes, colours and typography styles. (We'll be tackling spacing and layout in the upcoming exercises.)   
         
@@ -1728,7 +1721,7 @@ text-transform: lowercase;</textarea>
       </script>
     </section>  
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #CSS Page Layout
         ##Block, Inline, Float
@@ -1790,7 +1783,7 @@ text-transform: lowercase;</textarea>
         
         The header, nav and paragraphs are all *block* elements. 
         
-        That's why they display stacked on top of eachother because, by default, it takes up 100% of the container width and therefore, will display on its own line.
+        That's why they display stacked on top of each other because, by default, it takes up 100% of the container width and therefore, will display on its own line.
         
         ![](framework/img/workshop/about-not-floated.png) <!-- .element: width="60%" -->
       </script>
@@ -1955,7 +1948,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise #5: Floats & Bonus Exercises (20mins)
+        #Exercise #5: Floats & Bonus Exercises (~20mins)
         
         Using the plan from the previous slide, apply the floats to the header and nav.  Your page will look like this: 
         
@@ -2024,7 +2017,7 @@ text-transform: lowercase;</textarea>
       </script>
     </section> 
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Background Images
 
@@ -2348,7 +2341,7 @@ text-transform: lowercase;</textarea>
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Crash course: Forms
 
@@ -2393,7 +2386,7 @@ text-transform: lowercase;</textarea>
           <input id="name" type="text" name="name">
         </div>
         
-        The various attributes associates the label to the input (helps with accesibility), as well as determines what *type* of input to display.
+        The various attributes associates the label to the input (helps with accessibility), as well as determines what *type* of input to display.
         
         We could probably run a whole course on forms alone! See below resources for much more about forms.
         
