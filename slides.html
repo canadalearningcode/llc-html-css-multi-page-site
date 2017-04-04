@@ -191,12 +191,16 @@
         #Getting to know Atom
         
         Having a good text editor and learning how to use it to its full potential will help your work flow. Today, let's update the text wrapping option to make it easier to read long blocks of code and text.
-        
-        Open Atom and go to **Preferences** to open the customization options.
+
+        To open the customization options:
+
+        *On a Mac:* Open the **Atom** menu and go to **Preferences**.
+
+        *On Windows:* Open the **File** menu and go to **Settings**.
 
         ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
 
-        The **Settings** tab will show by default. Scroll down to **Soft Wrap** option.
+        Choose the **Editor** tab and scroll down to the **Soft Wrap** option.
 
         ![](framework/img/workshop/atom-settings.jpg)<!-- .element: width="70%" -->
           
@@ -315,7 +319,7 @@
       <script type="text/template">
         #HTML Syntax
         
-        Just like languages that we speak and write, HTML follows proper "grammar" rules too. HTML *tags* are written with a left & right angled brackets `< >` and the forward slash `/`. Get to know these keys!
+        Just like languages that we speak and write, HTML follows proper "grammar" rules, too. HTML *tags* are written with left & right angled brackets `< >` and the forward slash `/`. Get to know these keys!
         
         ![keyboard keys](framework/img/workshop/keyboard-html.png)<!-- .element: width="75%" -->
       </script>
@@ -336,6 +340,10 @@
         <h1>This tag describes a heading</h1>
         <p>This tag is for paragraphs.</p>
         ```
+
+        ---
+        ###Pro tip!
+        HTML *tags* are also often referred to as "elements". You will see these words used synonymously throughout this course.
       </script>
     </section>
     
@@ -1045,6 +1053,10 @@
           font-size: 12px;
         }
         ```
+
+        ---
+        ###Pro tip!
+        The spelling of properties and values follows American standards. i.e. We use `color`, not `colour`.
       </script>
     </section> 
 
@@ -1396,16 +1408,19 @@ text-transform: lowercase;</textarea>
         Instead of this: 
         ```
         h1 {
-          /* styles here */
+          /* set font colour to blue */
+          color:blue;
         }
         h2 {
-          /* styles here */
+          /* set font colour to blue */
+          color:blue;
         }
         ```
         Do this! (Note the comma)
         ```css
         h1, h2 {
           /* selects both the h1 and h2 */
+          color:blue;
         }
         ```
         This does the same thing as the first example but with fewer lines of code and makes it easier to make changes to both elements.
@@ -1417,7 +1432,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Descendant selectors
 
-        Matches any element that is a descendant (nested tag) of as specific element. Note the space *between* the selectors. It's required!
+        Matches any element that is a descendant (nested tag) of a specific element. Note the space *between* the selectors. It's required!
 
         ```css
         parent child {
@@ -1779,7 +1794,7 @@ text-transform: lowercase;</textarea>
         
         The header, nav and paragraphs are all *block* elements. 
         
-        That's why they display stacked on top of each other because, by default, it takes up 100% of the container width and therefore, will display on its own line.
+        That's why they display stacked on top of each other because, by default, they take up 100% of the container width and therefore, will display on their own lines.
         
         ![](framework/img/workshop/about-not-floated.png) <!-- .element: width="60%" -->
       </script>
@@ -2017,6 +2032,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Background Images
 
+
         So far, we've used `background` to add colours but it can also be used it to add images for presentation (as opposed to content).
 
         ```
@@ -2073,7 +2089,7 @@ text-transform: lowercase;</textarea>
         
         ![](framework/img/workshop/bg-repeat.png) <!-- .element: width="75%" -->
         
-        <!-- .element: class="note" -->**Note**: The footer appears that the top of the home (and contact) page because there is currently no main content like on the About page.  We will address that in a later exercise.
+        <!-- .element: class="note" -->**Note**: The footer appears at the top of the home (and contact) page because there is currently no main content like on the About page.  We will address that in a later exercise.
       </script>
     </section> 
     
@@ -2108,7 +2124,7 @@ text-transform: lowercase;</textarea>
 
         ![homepage background](framework/img/workshop/bg-size-nocover.png)
         
-        This position and size of the image can be revised using`background-position` and  `background-size`.
+        This position and size of the image can be revised using `background-position` and  `background-size`.
       </script>
     </section> 
     
@@ -2136,7 +2152,7 @@ text-transform: lowercase;</textarea>
         The `background-position` property is used to move a background image within its container.
         It has three different types of values: pixels, percentages or keywords. 
         
-        The default values of `0 0` places the background image at the *top left* of the container. If only one value is used, that value will be used for both the horizontal and vertical positioning.
+        The default values of `0 0` place the background image at the *top left* of the container. If only one value is used, that value will be used for both the horizontal and vertical positioning.
         
         ```
         /* shorthand */
