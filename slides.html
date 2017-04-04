@@ -40,7 +40,6 @@
           </li>
           <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
           <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
-          </li>
         </ol>
       </div>
       <footer>
@@ -156,7 +155,7 @@
       <script type="text/template">
         #Developer Tools
         
-        Most modern web browser include developer tools. These tools allows you to *inspect* any web page, making it easier to test & debug code. 
+        Most modern web browsers include developer tools. These tools allows you to *inspect* any web page, making it easier to test & debug code. 
         
         Today we'll be using the Chrome browser. The dev tools can be accessed in a couple ways:
 
@@ -166,7 +165,6 @@
         ---
         ###Resources
         * To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en).  
-        * More about dev tools: http://discover-devtools.school.com
       </script>
     </section>
 
@@ -353,7 +351,7 @@
       <script type="text/template">
         #Writing HTML
 
-        To ensure that your tags are closed properly and help reduce errors, write both the opening and closing tags *first*.
+        To ensure that your tags are closed properly and to help reduce errors, write both the opening and closing tags *first*.
         
         Then move the cursor between the tags to add the text content.
 
@@ -467,7 +465,7 @@
       <script type="text/template">
         #THE BODY ELEMENT
 
-        All content to be displayed in the browser window goes between the `<body></body>` tags. Also known as the *viewport*.
+        All content to be displayed in the browser goes between the `<body></body>` tags.
         
         <pre><code>&lt;!DOCTYPE html&gt;
         &lt;html lang=&quot;en&quot;&gt;
@@ -521,7 +519,7 @@
     
     <section class="slide title" data-markdown data-toc>
       <script type="text/template">
-        #Adding HTML content
+        #Adding HTML Content
         ##Headings, paragraphs, links, oh my!
       </script>
     </section>
@@ -530,7 +528,7 @@
       <script type="text/template">
         #Adding text: Headings & paragraphs
 
-        There are six headings tags ranging from `<h1>` to `<h6>` and follow a hierarchy. HTML is used to assign *meaning* to the content in a way that the browser can read it.
+        There are six heading tags ranging from `<h1>` to `<h6>` and follow a hierarchy. HTML is used to assign *meaning* to the content in a way that the browser can read it.
 
         ```xml
         <h1>Name of blog</h1>
@@ -552,7 +550,7 @@
         # Exercise #1 - Update index.html (~5-10 mins)
 
         1.  Update your name in the `h1` tag if you haven’t already.
-        2.  Add a tagline, under your name, using the appropriate heading tag.
+        2.  Add a tagline under your name, using the appropriate heading tag.
         3.  Change the content in the `<title>` tag. Where do you see this change?
         4.  Add a copyright message using a paragraph (`<p>`) tag _inside_ of the `<footer>` tag.
           
@@ -592,7 +590,7 @@
         
         Let's create HTML files for the **About** and **Contact** pages.  Leave the file itself blank. Content will be added in a later exercise.
         
-        The **index.html** already exists so make an **about.html** and **contact.html**.  Make sure to save these pages into the **project** folder. 
+        **index.html** already exists, so make **about.html** and **contact.html**.  Make sure to save these pages into the **project** folder. 
         
         In the editor: **File > New file ** and **File > Save**
         
@@ -617,7 +615,7 @@
 
         In the sample project, all the pages have the same headings (name & tagline), nav links and footer information.  
         
-        Some of the styles on each page is different but don't worry about that yet. Right now we are focusing on setting up the HTML. 
+        Some of the styles on each page are different, but don't worry about that yet. Right now we are focusing on setting up the HTML. 
 
         ![project home page](framework/img/workshop/project1.jpg)
         ![project about page](framework/img/workshop/project2.jpg)
@@ -636,9 +634,9 @@
 
         Links are represented by the anchor tag (`<a>`) and an *attribute*. 
           
-        Remember, *attributes* use the following the syntax, `attribute="value"` and are added inside the *opening* tag.
+        Remember, *attributes* follow the syntax `attribute="value"` and are added inside the *opening* tag.
           
-        The `href` provides information about where the link is located.
+        The `href` attribute provides information about where the link is located.
 
         ```xml
         Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
@@ -654,13 +652,13 @@
       <script type="text/template">
         #Links: Relative
 
-        The navigation in today's project will link to the other HTML pages within the project files.
+        The navigation in today's project will link to other HTML pages within the project files.
         
         This is referred to as a **relative** link/path.
         
-        Understanding how to use relative paths and folder structure is super important for creating web sites. 
+        Understanding how to use relative paths and folder structure is super important for creating websites. 
         
-        Relative paths are used to link not only between HTML files, but other files such as css or images.
+        Relative paths are used to link not only between HTML files, but other files such as CSS or images.
       </script>
     </section> 
 
@@ -687,10 +685,10 @@
         <a href="about.html">About Me</a>
         ```
         
-        To reference an image file, in the **images** folder, on **index.html** (starting point) the `src` would include the folder name like so: 
+        To reference an image file in the **images** folder *from* **index.html** (starting point) the `src` would include the folder name like so: 
         
         ```xml
-        <img src="images/filename.jpg">
+        <img src="images/filename.jpg" alt="">
         ```
         (More on images soon.)<!-- .element: class="note" -->
       </script>
@@ -700,11 +698,11 @@
       <script type="text/template">
         #HTML5 Sectioning Tags
 
-        Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. 
+        Sometimes, multiple HTML elements need to be grouped together for organization and/or styling. 
         
         Prior to HTML5, the `<div>` tag was used for grouping elements. 
           
-        The `div` is still ok to use but HTML5 introduced a number of semantic tags that better describe blocks of content.  
+        `div` is still ok to use, but HTML5 introduced a number of semantic tags that better describe blocks of content.  
           
         You've already seen two of them in **index.html**: `<header>` and `<footer>`.
           
@@ -734,7 +732,7 @@
         
         ---
         ###Resource
-        Here are some extra readings about using lists vs links only [here](https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/) and [here](http://www.sitepoint.com/are-navigation-lists-necessary/).  
+        Here is some extra reading about using lists vs links only [here](https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/) and [here](http://www.sitepoint.com/are-navigation-lists-necessary/).  
       </script>
     </section> 
 
@@ -846,13 +844,13 @@
         The image tag also requires an _attribute_ to define the file path of the image file. The value can be an absolute path:
         
         ```
-        <img src="http://fillmurray.com/200/300">
+        <img src="http://fillmurray.com/200/300" alt="">
         ```
         
         Or a relative path:
         
         ```
-        <img src="images/profile.jpg">
+        <img src="images/profile.jpg" alt="">
         ```
         
         ---
@@ -893,10 +891,8 @@
         ###Resources
         
         *   [http://placehold.it](http://placehold.it)
-        *   [http://placesheen.com/](http://placesheen.com/)
         *   [http://placebear.com](http://placebear.com)
         *   [http://fillmurray.com/](http://fillmurray.com/)
-        *   [http://placekitten.com/](http://placekitten.com/)
         *   and [many more](http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx)!
       </script>
     </section>
@@ -986,7 +982,7 @@
         
         1. Add `<main role="main"></main>` for the About page content not included in the header or footer.
         1. Inside of `<main>`, add a profile picture using the `<img>` tag.
-        1. *After* profile image, add a couple of paragraphs about you, or use placeholder text (see resources below).
+        1. *After* the profile image, add a couple of paragraphs about you, or use placeholder text (see resources below).
         1. Today's project will include specific styles for a quote, so *after* the paragraphs, add a quote using `<blockquote>`.
         1. Optional: Add a few links within the paragraphs.
 
@@ -1068,7 +1064,7 @@
       <script type="text/template">
         #Writing CSS
         
-        Let's try changing the background color of this entire slide.  We'll use `body` as the selector. 
+        Let's try changing the background colour of this entire slide.  We'll use `body` as the selector. 
         
         Pick any keyword to change the background colour. (red, green, lightblue, papayawhip, etc)
 
@@ -1134,7 +1130,7 @@
         The style sheet file (.css file extension) is referenced within the `<head>`.  
         <span class="note">Reminder, `<head>` is different from `<header>`!</span>
           
-        Use `<link>` and two attributes, `rel` and `href` to link to the css file.
+        Use `<link>` and two attributes, `rel` and `href` to link to the CSS file.
 
         ```
         <head>
@@ -1142,7 +1138,7 @@
         </head>
         ```
         
-        Though it is not required, css files are often saved in a separate css folder for organization, so make sure the file path points to the appropriate directory.<!-- .element: class="note" -->
+        Though it is not required, CSS files are often saved in a separate CSS folder for organization, so make sure the file path points to the appropriate directory.<!-- .element: class="note" -->
 
         ---
         ###Resource
@@ -1165,7 +1161,7 @@
         ```
         <!-- .element: class="note" -->**Pro tip!** For a shortcut, type `link` with no brackets, then the **tab** key. Voila!
         
-        Let's do a quick check to see if it works and is linked properly by adding a background color on the entire viewport as a test.
+        Let's do a quick check to see if it works and is linked properly by adding a background colour on the entire body as a test.
 
         ```
         body {
@@ -1184,7 +1180,7 @@
 
         ![](framework/img/workshop/body-margin.png)
         
-        Let's remove the test background color and replace it with `padding` and `margin` to reset the value. (More on these properties later.)
+        Let's remove the test background colour and replace it with `padding` and `margin` to reset the value. (More on these properties later.)
 
         ```
         body {
@@ -1199,7 +1195,7 @@
       <script type="text/template">
         #CSS colour values
         
-        You can use one of three types of color values:
+        You can use one of three types of colour values:
         
         * **keywords** - most basic colours will work (red, green, blue, pink, etc) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod"    
         * **RGB (red-green-blue)** - uses three numerical values from 0 (represents black) to 255 (represents white).   
@@ -1392,7 +1388,7 @@ text-transform: lowercase;</textarea>
           color: black;
         }
         ```
-        The children and descendent elements of `body` will inherit most styles (not all css properties can be inherited*).
+        The children and descendent elements of `body` will inherit most styles (not all CSS properties can be inherited*).
         
         The `h1` is a more specific selector and will override the inherited styles.
         
@@ -1427,7 +1423,7 @@ text-transform: lowercase;</textarea>
           color:blue;
         }
         ```
-        This does the same thing as the first example but with less lines of code and makes it easier to make changes to both elements.
+        This does the same thing as the first example but with fewer lines of code and makes it easier to make changes to both elements.
 
       </script>
     </section> 
@@ -1590,7 +1586,7 @@ text-transform: lowercase;</textarea>
         #What is The Box Model?
 
         The browser looks at HTML elements as a square/rectangular box.  
-        The CSS Box Model describes how the size of these blocks are determined uisng `width`, `height`, `margin`, `padding` and `border`.
+        The CSS Box Model describes how the size of these blocks are determined using `width`, `height`, `margin`, `padding` and `border`.
         
         <!-- ![](framework/img/workshop/box-model.gif) -->
         ![](framework/img/workshop/box-model-outline.jpg)
@@ -1812,7 +1808,7 @@ text-transform: lowercase;</textarea>
         
         The `display` and `float` methods are most commonly used.  Both can be used to change the position of the elements but they both have their own quirks and solutions as well.
         
-        The newest option is `flexbox` but only has partial support in Internet Explorer 10+ and no support in Internet Explorer 9 and older.
+        The newest option is `flexbox`.
         
         Today we'll use `float`. Check out the resources below for more info.
         
@@ -1831,7 +1827,7 @@ text-transform: lowercase;</textarea>
 
         The `float` property is one way to get block elements to line up side by side. However, to use `float`, the natural page flow has to be *broken*.
         
-        <img class="delayed" src="framework/img/workshop/huh.gif">
+        <img class="delayed" src="framework/img/workshop/huh.gif" alt="">
 
         <p class="delayed">Not to worry, we can fix it.</p>
       </script>
@@ -2036,7 +2032,8 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Background Images
 
-        So far, we've used `background` to add colours but it can also be used to add images for presentation, not content.
+
+        So far, we've used `background` to add colours but it can also be used it to add images for presentation (as opposed to content).
 
         ```
         background-image: url(path/to/file.jpg); /* longhand */
@@ -2072,7 +2069,7 @@ text-transform: lowercase;</textarea>
         <body class="home">
         ```
         
-        In **styles.css**, use `.home` as the selector, so this image only displays on the homepage and spans the entire viewport. 
+        In **styles.css**, use `.home` as the selector, so this image only displays on the homepage and spans the entire body. 
         
         (Choose from <!-- .element: class="note" -->`background-1.jpg` to `background-8.jpg` or use your own.)
 
@@ -2137,7 +2134,7 @@ text-transform: lowercase;</textarea>
         
         Since this background image is applied to the `body`, let's add one more rule to ensure the styles added will cover the whole viewport.
         
-        Let's add it to the very top of the css file, in the "global" section, to continue to keep the CSS organized.
+        Let's add it to the very top of the CSS file, in the "global" section, to continue to keep the CSS organized.
         
         ```
         html, body {
@@ -2231,7 +2228,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Class Exercise: Background Size
         
-        Let's update the background image for the home pages using `cover`.  
+        Let's update the background image for the homepage using `cover`.  
         
         ```
         .home {
@@ -2288,7 +2285,7 @@ text-transform: lowercase;</textarea>
         ...
         </footer>
         ```
-        Let's, add this "wrapper" to all three HTML pages. For the About page, don't forget to include the `<main>` content block. Everything except the footer!
+        Let's add this "wrapper" to all three HTML pages.
         
         For reference: The following instructions are from <!-- .element: class="note" -->[this tutorial](http://css-tricks.com/snippets/css/sticky-footer/).
       </script>
@@ -2358,7 +2355,7 @@ text-transform: lowercase;</textarea>
     
     <section class="slide" data-markdown data-toc>
       <script type="text/template">
-        #Crash course: Forms
+        #Crash Course: Forms
 
         Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. 
         
