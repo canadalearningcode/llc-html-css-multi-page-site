@@ -2287,7 +2287,7 @@ text-transform: lowercase;</textarea>
         ```
         Let's add this "wrapper" to all three HTML pages.
         
-        For reference: The following instructions are from <!-- .element: class="note" -->[this tutorial](http://css-tricks.com/snippets/css/sticky-footer/).
+        For reference: The following instructions are from <!-- .element: class="note" -->[this tutorial](https://css-tricks.com/couple-takes-sticky-footer/).
       </script>
     </section>
 
@@ -2298,28 +2298,12 @@ text-transform: lowercase;</textarea>
         Let's just go ahead and add this entire CSS block into **styles.css**.  Make sure that the class `page-wrap` is spelled exactly the same in the HTML and CSS files.
         
         ```
-        /* FOOTER STYLES
-        -----------------------------------------*/
-        /* Sticky Footer - http://css-tricks.com/snippets/css/sticky-footer */
+        body {
+          display: flex;
+          flex-direction: column;
+        }
         .page-wrap {
-          min-height: 100%;
-          margin-bottom: -55px; /* must be the same height as footer */
-        }
-        .page-wrap:after {
-          content: "";
-          display: block;
-        }
-        footer, 
-        .page-wrap:after {
-          height: 55px; /* however tall you want the footer to be */
-        }
-        ```
-
-        **Note**: In the tutorial link, you will see the following CSS included but we've already added it to our CSS when adding the homepage background image.
-
-        ```
-        html, body {
-          height: 100%;
+          flex: 1 0 auto;
         }
         ```
       </script>
@@ -2342,8 +2326,7 @@ text-transform: lowercase;</textarea>
         
         ---
         ###Resources 
-        * [Sticky Footer Tutorial](http://css-tricks.com/snippets/css/sticky-footer)
-        * More about [:after](http://tympanus.net/codrops/css_reference/after/)
+        * [Sticky Footer Tutorial](https://css-tricks.com/couple-takes-sticky-footer/)
       </script>
     </section>
     
