@@ -16,6 +16,8 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   color: #333333; /* dark, almost black, gray colour */
+  display: flex;
+  flex-direction: column;
 }
 h1,
 h2 {
@@ -127,18 +129,8 @@ button {
 
 /* FOOTER STYLES
 -----------------------------------------*/
-/* Sticky Footer - http://css-tricks.com/snippets/css/sticky-footer */
 .page-wrap {
-  min-height: 100%;
-  margin-bottom: -55px; /* must be the same height as footer */
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-footer, 
-.page-wrap:after {
-  height: 55px; /* however tall you want the footer to be */
+  flex: 1 0 auto;
 }
 footer {
   background: rgba(255, 255, 255, 0.8);
