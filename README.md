@@ -1,6 +1,6 @@
-#Ladies Learning Code
+### Ladies Learning Code
 
-##HTML & CSS for Beginners: Learn to Build a Multi Page Website From Scratch
+### HTML & CSS for Beginners: Learn to Build a Multi Page Website From Scratch
 
 A full day introductory HTML & CSS workshop.
 
