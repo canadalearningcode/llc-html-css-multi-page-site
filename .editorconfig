@@ -19,8 +19,12 @@ indent_style = space
 indent_size = 4
 
 [*.html]
+indent_style = tab
+indent_size = 2
+
+[*.css]
 indent_style = space
-indent_style = 2
+indent_size = 2
 
 [slides*.html]
 trim_trailing_whitespace = false
