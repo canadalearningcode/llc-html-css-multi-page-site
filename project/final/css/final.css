@@ -53,17 +53,16 @@ header h2 {
   font-size: 24px;
 }
 header {
-  float: left;
-}
-nav {
-  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 nav a {
   padding: 20px;
 }
 
 /* HOME PAGE STYLES
------------------------------------------*/ 
+-----------------------------------------*/
 .home {
   background: url(../images/background-6.jpg) no-repeat 50%;
   background-size: cover;
@@ -113,7 +112,7 @@ textarea {
 }
 input {
   height: 20px;
-} 
+}
 textarea {
   height: 100px;
 }
@@ -136,7 +135,7 @@ button {
   content: "";
   display: block;
 }
-footer, 
+footer,
 .page-wrap:after {
   height: 55px; /* however tall you want the footer to be */
 }
@@ -146,7 +145,3 @@ footer {
   padding: 1px;
   text-transform: lowercase;
 }
-
-
-
-
