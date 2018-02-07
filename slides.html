@@ -1802,48 +1802,66 @@ text-transform: lowercase;</textarea>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Page layout: Floats vs Display vs Flexbox
+        #Page layout: Flexbox and Float
 
-        There are a few different techniques for creating page layouts.
+        There are a few different techniques for laying out content on a webpage.
 
-        The `display` and `float` methods are most commonly used.  Both can be used to change the position of the elements but they both have their own quirks and solutions as well.
+        We're going to use two different approaches: `flexbox` and `float`.
 
-        The newest option is `flexbox`.
-
-        Today we'll use `float`. Check out the resources below for more info.
+        * `flexbox` allows us to change the position and alignment of the containers on our page.
+        * `float` allows our text and image content to share the space within their parent container.
 
         ---
         ###Resources
 
+        * /// TODO
         * http://caniuse.com/#search=flexbox
         * [Floats, Inline Block or Display Table? Or Flexbox?](http://blog.karenmenezes.com/2014/apr/13/floats-inline-block-or-display-table-or-flexbox/)
         * [Float vs Inline-block](http://www.ternstyle.us/blog/float-vs-inline-block)
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #CSS Float
+    <section class="slide">
+      <h1>Flexbox</h1>
 
-        The `float` property is one way to get block elements to line up side by side. However, to use `float`, the natural page flow has to be *broken*.
+      <p>When using flexbox, we first mark a container as a <code>flex parent</code> by adding a <code>display: flex;</code> declaration in our CSS file.
 
-        <img class="delayed" src="framework/img/workshop/huh.gif" alt="">
+      <p>Once we have a flex parent, we can easily change the orientation, alignment, and position of any child elements.
 
-        <p class="delayed">Not to worry, we can fix it.</p>
-      </script>
+      <p>We'll be using this approach to style the <code>&lt;header&gt;</code> for our site.</p>
     </section>
 
     <section class="slide">
-      <h1>CSS Float</h1>
+      <h1>Flexbox</h1>
 
-      <p> Use the <code>float</code> property with a value of <code>left</code> or <code>right</code> to align the element to either side. Any element <em>after</em> the floated element will move up beside it. Try it!</p>
+      <p>In this example, we have a <code>flex parent</code> with a single child element.</p>
 
-      <textarea class="snippet" data-subject="#float">img {
-  float: ;
+      <textarea class="snippet" data-subject="#flexbox">
+#flexbox {
+  display: ;
+  justify-content: ;
+  align-items: ;
 }</textarea>
-      <div id="float">
+      <div id="flexbox" style="min-height: 330px; background: rgba( 0, 0, 0, 0.05 ); border: solid 1px #999; padding: 15px;"><!-- /// TEMP -->
         <img src="http://placehold.it/150x150" alt="placeholder image">
-        <p style="margin-top:0;">Paragraph tag - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea id quasi iusto, ex cumque omnis iste eveniet mollitia.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h1>Flexbox</h1>
+
+      <p>Here we have a <code>flex parent</code> with multiple child elements. Lets see what we can do!</p>
+
+      <textarea class="snippet" data-subject="#flexbox_multi">
+#flexbox_multi {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}</textarea>
+      <div id="flexbox_multi" style="min-height: 330px; background: rgba( 0, 0, 0, 0.05 ); border: solid 1px #999; padding: 15px;"><!-- /// TEMP -->
+        <img src="http://placehold.it/150x150" alt="placeholder image">
+        <img src="http://placehold.it/150x150" alt="placeholder image">
+        <img src="http://placehold.it/150x150" alt="placeholder image">
       </div>
     </section>
 
