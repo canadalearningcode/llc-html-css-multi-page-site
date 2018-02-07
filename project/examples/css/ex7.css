@@ -26,10 +26,6 @@ main,
 nav {
   padding: 20px 30px;
 }
-main {
-  clear: both;
-}
-
 
 /* HEADER STYLES
 -----------------------------------------*/
@@ -40,17 +36,16 @@ header h2 {
   font-size: 24px;
 }
 header {
-  float: left;
-}
-nav {
-  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 nav a {
   padding: 20px;
 }
 
 /* HOME PAGE STYLES
------------------------------------------*/ 
+-----------------------------------------*/
 .home {
   background: url(../images/background-6.jpg) no-repeat 50%;
   background-size: cover;
@@ -86,7 +81,7 @@ textarea {
 }
 input {
   height: 20px;
-} 
+}
 textarea {
   height: 100px;
 }
@@ -100,25 +95,8 @@ button {
 
 /* FOOTER STYLES
 -----------------------------------------*/
-/* Sticky Footer - http://css-tricks.com/snippets/css/sticky-footer */
-.page-wrap {
-  min-height: 100%;
-  margin-bottom: -55px; /* must be the same height as footer */
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-footer, 
-.page-wrap:after {
-  height: 55px; /* however tall you want the footer to be */
-}
 footer {
   background: white;
   text-align: center;
   padding: 1px;
 }
-
-
-
-

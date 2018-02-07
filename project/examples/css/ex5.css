@@ -22,10 +22,6 @@ main,
 nav {
   padding: 20px 30px;
 }
-main {
-  clear: both;
-}
-
 
 /* HEADER STYLES
 -----------------------------------------*/
@@ -36,7 +32,9 @@ header h2 {
   font-size: 24px;
 }
 header {
-  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 nav {
   float: right;

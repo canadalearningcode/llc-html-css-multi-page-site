@@ -26,10 +26,6 @@ main,
 nav {
   padding: 20px 30px;
 }
-main {
-  clear: both;
-}
-
 
 /* HEADER STYLES
 -----------------------------------------*/
@@ -40,17 +36,16 @@ header h2 {
   font-size: 24px;
 }
 header {
-  float: left;
-}
-nav {
-  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 nav a {
   padding: 20px;
 }
 
 /* HOME PAGE STYLES
------------------------------------------*/ 
+-----------------------------------------*/
 .home {
   background: url(../images/background-6.jpg) no-repeat 50%;
   background-size: cover;
@@ -71,5 +66,3 @@ blockquote p {
   font-family: "Pacifico", cursive;
   font-size: 30px;
 }
-
-
