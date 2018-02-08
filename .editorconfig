@@ -27,4 +27,6 @@ indent_style = space
 indent_size = 2
 
 [slides*.html]
+indent_style = space
+indent_size = 2
 trim_trailing_whitespace = false
