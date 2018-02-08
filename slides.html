@@ -1735,7 +1735,7 @@ text-transform: lowercase;</textarea>
     <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #CSS Page Layout
-        ##Block, Inline, Float
+        ##Block, Inline, Flexbox, and Float
       </script>
     </section>
 
@@ -1867,6 +1867,84 @@ text-transform: lowercase;</textarea>
 
     <section class="slide" data-markdown>
       <script type="text/template">
+        #Styling the header
+
+        Now that we know a bit about `flexbox`, we'll use it to style our `<header>` and the content inside it.
+
+        We want the brand content (ie. the name and tagline) to remain aligned to the left, and the `nav` to move over to the right.
+
+        ```
+        <!-- We'll make this our 'flex parent'. -->
+        <header>
+          <!-- Then we'll move this content to the left... -->
+          <div>
+            <h1>Jane Smith</h1>
+            <h2>Web Developer + City Girl</h2>
+          </div>
+
+          <!-- ...and this content to the right. -->
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </header>
+
+        ```
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        # Class Exercise: Flexbox
+
+        Currently, our page looks like the example on the left. We'll use `flexbox` to make it look like the example on the right.
+
+        ![](http://via.placeholder.com/450x300?=///TODO)
+        ![](http://via.placeholder.com/450x300?=///TODO)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS Float
+
+        The `float` property is one way to get block elements to line up side by side.
+
+        By defualt, block elements take up 100% of the available horizontal space. We can use the `float` property to make them share that space!
+
+        /// TODO: Generic image comparison
+      </script>
+    </section>
+
+    <section class="slide">
+      <h1>CSS Float</h1>
+
+      <p> Use the <code>float</code> property with a value of <code>left</code> or <code>right</code> to align the element to either side. Any element <em>after</em> the floated element will move up beside it. Try it!</p>
+
+      <textarea class="snippet" data-subject="#float">
+img {
+  float: ;
+}</textarea>
+      <div id="float">
+        <img src="http://placehold.it/150x150" alt="placeholder image">
+        <p style="margin-top:0;">Paragraph tag - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea id quasi iusto, ex cumque omnis iste eveniet mollitia.</p>
+      </div>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #/// Styling the 'About' Page
+
+        Currently, our page looks like the example on the left. If we `float` the image then the text content will move up beside it, giving us the example on the right.
+
+        ![](http://via.placeholder.com/450x300?=///TODO)
+        ![](http://via.placeholder.com/450x300?=///TODO)
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
         #Being more specific - Using a Class
 
         To apply the float *only* to the profile image, we can't use `img` as the selector. Instead, use a `class` attribute.
@@ -1899,7 +1977,7 @@ text-transform: lowercase;</textarea>
 
         Then, back in **styles.css**, float the image using the class name as the selector.
 
-        (This is just the breaking part. In the next slide, we'll talk about how to put it back to the default stacking order.)
+        Lets try it out!
       </script>
     </section>
 
@@ -1907,7 +1985,9 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Floats and stacking flow
 
-        So... the image and text is now displaying side by side but there's one problem. The red box in the example below is highlighting the `blockquote` and `footer` content.
+        /// TODO: Language tweaks.
+
+        So... the image and text are now displaying side by side, but there's one problem. The red box in the example below is highlighting the `blockquote` and `footer` content.
 
         ![](framework/img/workshop/about-floated-notcleared.png)
 
@@ -1918,6 +1998,8 @@ text-transform: lowercase;</textarea>
     <section class="slide" data-markdown>
       <script type="text/template">
         #Clearing floats
+
+        /// TODO: Language tweaks.
 
         First, `float` breaks the stacking flow to get block elements to line up side by side. Then, *clear* the float, to make the rest of the page to go back to the normal stacking order.
 
@@ -1943,53 +2025,6 @@ text-transform: lowercase;</textarea>
         ![](framework/img/workshop/about-floated-cleared.png)
 
         Let's add it into our project.
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Float the Header and Nav
-
-        We're going to do the same thing with the `header` and `nav` except the header will float to the left and the nav will float to the right.
-
-        Let's revisit the HTML for a second and plan out which elements should be floated and where it should be cleared.
-
-        ```
-        <!-- float to the left -->
-        <header>
-          <h1>Jane Smith</h1>
-          <h2>Web Developer + City Girl</h2>
-        </header>
-
-        <!-- float to the right -->
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-
-        <!-- clear the float here -->
-        <main role="main">
-        </main>
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Exercise #5: Floats & Bonus Exercises (~20mins)
-
-        Using the plan from the previous slide, apply the floats to the header and nav.  Your page will look like this:
-
-        ![](framework/img/workshop/about-header-float.jpg) <!-- .element: width="700px" -->
-
-        Clear the float to make it look like this:
-
-        ![](framework/img/workshop/about-header-cleared.jpg) <!-- .element: width="700px" -->
-
-        Reference the ex5-about.html and ex5.css files to check your code.
-
-        **Advance to the next slide for bonus exercises.**
       </script>
     </section>
 
