@@ -1985,13 +1985,11 @@ img {
       <script type="text/template">
         #Floats and stacking flow
 
-        /// TODO: Language tweaks.
-
-        So... the image and text are now displaying side by side, but there's one problem. The red box in the example below is highlighting the `blockquote` and `footer` content.
+        So... the image and text are now displaying side by side, but there's one problem. The `blockquote` and `footer` content (inside the red box in the example below) have moved up beside our image.
 
         ![](framework/img/workshop/about-floated-notcleared.png)
 
-        When an element is floated, *everything* after it will float, as long as there is room for it.  In this project, only the paragraphs need to float next to the image.
+        When an element is floated, *everything* after it will move into the available space. In this project, only the paragraphs need to float next to the image.
       </script>
     </section>
 
@@ -1999,11 +1997,9 @@ img {
       <script type="text/template">
         #Clearing floats
 
-        /// TODO: Language tweaks.
+        First, we used the `float` property to break the stacking order and force the block elements to line up side by side. Now we'll use the `clear` property to restore the stacking order.
 
-        First, `float` breaks the stacking flow to get block elements to line up side by side. Then, *clear* the float, to make the rest of the page to go back to the normal stacking order.
-
-        Decide *where* the page should go back to the normal. In this project, it's the `<blockquote>` element.
+        We have to decide *where* the page should go back to the normal. In this project, it's the `<blockquote>` element.
 
         ![](framework/img/workshop/about-floated-clear-element.png)
       </script>
