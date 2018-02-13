@@ -11,6 +11,7 @@ html,
 body {
   height: 100%;
 }
+
 body {
   padding: 0;
   margin: 0;
@@ -60,9 +61,17 @@ nav a {
 
 /* HOME PAGE STYLES
 -----------------------------------------*/
-.home {
-  background: url(../images/background-6.jpg) no-repeat 50%;
-  background-size: cover;
+.hero {
+  width: 100%;
+}
+
+.hero img {
+  width: 100%;
+}
+
+.home main {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 /* ABOUT STYLES
