@@ -630,11 +630,11 @@
 
     <section class="slide project" data-markdown>
       <script type="text/template">
-        # /// TODO: Paths
+        #Paths
 
         We already know that websites are made up of multiple pages (`.html` files), and that each page can contain different types of content.
 
-        Some of that content lives directly within the page itself (ie. the text), and some of it may live elsewhere in our project folder (ie. the images).
+        Some of that content lives directly within the page itself (ie. the text), and some of it may live elsewhere (eg. in the images folder, on other websites, etc.).
 
         When we want to display some content that lives *outside* of the current page, we have to tell the browser where to find it. This information is called a `path`.
       </script>
@@ -642,22 +642,22 @@
 
     <section class="slide project" data-markdown>
       <script type="text/template">
-        # /// TODO: Types of Paths
+        #Types of Paths
 
         Paths allow the browser to find, retrieve, and display external resources such as images, CSS/JS files, and even other pages.
 
         There are two different types of paths:
 
-        * `Relative` - These are directions *from* the current page *to* the location of the external resource.
+        * `Relative` - These tell the browser how to get from the current page to the external resource.
         * `Absolute` - These tell the browser *exactly* where the external resource can be found online.
       </script>
     </section>
 
     <section class="slide project" data-markdown>
       <script type="text/template">
-        # /// TODO: Relative Paths
+        #Relative Paths
 
-        We use relative paths when we're trying to make a connection between two resource within our own website.
+        **We use relative paths when we're trying to make a connection between two resources within our own website.**
 
         Relative paths start from the location of the current page, and tell the browser which folders should be looked in to find the external resource.
 
@@ -665,7 +665,29 @@
         images/backgrounds/dark/dark-background-1.jpg
         ```
 
-        We'll be using relative paths to connect the pages of site shortly!
+        We can think of relative paths like directions.
+
+        We'll be using relative paths to connect the pages of site our shortly!
+      </script>
+    </section>
+
+    <section class="slide project" data-markdown>
+      <script type="text/template">
+        #Absolute Paths
+
+        **We use absolute paths to request resources that live *outside* of our own website (eg. elsewhere online).**
+
+        ```
+        // Image
+        http://website.com/images/image-1.jpg
+
+        // CSS
+        https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css
+        ```
+
+        Absolute paths start with a protocol (ie. `http` or `https`), followed by the location of the resource.
+
+        If relative paths are like directions, an absolute path is like a home address.
       </script>
     </section>
 
