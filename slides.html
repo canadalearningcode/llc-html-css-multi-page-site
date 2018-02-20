@@ -906,16 +906,18 @@
 
         Images are an example of a void element/self-closing tag. It doesn't need a closing tag because it _is_ the content.
 
-        The image tag also requires an _attribute_ to define the file path of the image file. The value can be an absolute path:
+        The image tag uses the `src` _attribute_ to tell the browser where to find the actual image file.
+
+        The value of the `src` attribute can be an absolute path:
 
         ```
-        <img src="http://fillmurray.com/200/300" alt="">
+        <img src="http://fillmurray.com/200/300" alt="A portrait of Bill Murray">
         ```
 
         Or a relative path:
 
         ```
-        <img src="images/profile.jpg" alt="">
+        <img src="images/profile.jpg" alt="A picture of me">
         ```
 
         ---
@@ -964,7 +966,9 @@
       <script type="text/template">
         #Adding your own images
 
-        Remember, relative paths are based on the folder directory.  Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
+        Remember, relative paths are based on folder structure of our project.
+
+        Since the HTML pages are *outside* of the **images** folder, the folder name needs to be included in the file path.
 
         ```xml
         |-- project (folder)
