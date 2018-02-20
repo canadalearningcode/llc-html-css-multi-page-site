@@ -705,7 +705,7 @@
         Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
         ```
 
-        This above example uses an **absolute** link. Much like typing a URL into the browser, it's "fully resolved" and starts with `http://`.
+        This link in the example above use an **absolute** path. Much like typing a URL into the browser, it's "fully resolved" and starts with `http://`.
 
         <!-- .element: class="note" -->**Note**: The clickable text goes in between the opening and closing `<a>` tags.
       </script>
@@ -715,19 +715,17 @@
       <script type="text/template">
         #Links: Relative
 
-        The navigation in today's project will link to other HTML pages within the project files.
-
-        This is referred to as a **relative** link/path.
+        The navigation in today's project will link to other HTML pages within the project folder, so we'll be using relative links.
 
         Understanding how to use relative paths and folder structure is super important for creating websites.
 
-        Relative paths are used to link not only between HTML files, but other files such as CSS or images.
+        We'll start by using relative paths to make connections between our HTML files, then move on pull in images and external CSS as well.
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Relative path
+        #Understanding Relative Paths
 
         Your project folder directory currently looks like this:
 
@@ -737,21 +735,23 @@
           |-- examples (folder)
           |-- final (folder)
           |-- images (folder)
+            |-- background-1.jpg
+            |-- ...
           |-- index.html
           |-- about.html
           |-- contact.html
         ```
 
-        To link *to* the **about.html** file *from* **index.html** (starting point), the `href` would be:
+        Since all of the HTML files are in the same folder, the directions *from* the `index` *to* the `about` file would look like this.
 
         ```xml
         <a href="about.html">About Me</a>
         ```
 
-        To reference an image file in the **images** folder *from* **index.html** (starting point) the `src` would include the folder name like so:
+        Since our images are **not** in the same folder as the HTML files, we have to tell the browser to look in a different location.
 
         ```xml
-        <img src="images/filename.jpg" alt="">
+        <img src="images/background-1.jpg" alt="My cool image">
         ```
         (More on images soon.)<!-- .element: class="note" -->
       </script>
