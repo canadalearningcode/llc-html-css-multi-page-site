@@ -61,17 +61,8 @@ nav a {
 
 /* HOME PAGE STYLES
 -----------------------------------------*/
-.hero {
+.hero-image {
   width: 100%;
-}
-
-.hero img {
-  width: 100%;
-}
-
-.home main {
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 /* ABOUT STYLES
