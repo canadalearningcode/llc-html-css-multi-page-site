@@ -2051,6 +2051,22 @@ text-transform: lowercase;</textarea>
 
     <section class="slide" data-markdown>
       <script type="text/template">
+        # Class Exercise: Styling the Footer
+
+        While we're at it, lets style the `<footer>` too!
+
+        Currently, our footer content is jammed up against the left-hand side of the viewport.
+
+        Together we'll:
+
+        - Horizontally center the text.
+        - Add some padding to give it a little breathing room.
+        - Add a background color (this will come into play when we start working on the **Contact** page).
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
         #CSS Float
 
         The `float` property is one way to get block elements to line up side by side.
@@ -2224,16 +2240,16 @@ img {
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Styling the Home page
+        #Styling the Contact page
 
-        The final design for the home page in today project is different from the other two pages so we'll need to create special styles, just for the home page.
+        The final design for the **Contact** page in today project is different from the other two pages so we'll need to create some special styles!
 
         Use the `class` attribute to apply these specific styles.
 
-        In **index.html**, we'll add the `class` to the `body` tag to override any styles, for any element, contained within the entire page.
+        In **contact.html**, we'll add a `class` to the `body` tag to override any styles, for any element, contained within the entire page.
 
         ```
-        <body class="home">
+        <body class="contact">
         ```
       </script>
     </section>
@@ -2273,18 +2289,18 @@ img {
       <script type="text/template">
         #Class Exercise: Background Images
 
-        In **index.html**, add the `class` to the `body` tag.
+        In **contact.html**, add the `class` to the `body` tag.
 
         ```
-        <body class="home">
+        <body class="contact">
         ```
 
-        In **styles.css**, use `.home` as the selector, so this image only displays on the homepage and spans the entire body.
+        In **styles.css**, use `.contact` as the selector, so this image only displays on the contact page and spans the entire body.
 
         (Choose from <!-- .element: class="note" -->`background-1.jpg` to `background-8.jpg` or use your own.)
 
         ```
-        .home {
+        .contact {
           background: url(../images/background-6.jpg);
         }
         ```
@@ -2297,9 +2313,11 @@ img {
 
         If the image is smaller than the width and/or height of the element the background image is being applied to, it will repeat the image.
 
+        /// TODO: Update image.
+
         ![](framework/img/workshop/bg-repeat.png) <!-- .element: width="75%" -->
 
-        <!-- .element: class="note" -->**Note**: The footer appears at the top of the home (and contact) page because there is currently no main content like on the About page.  We will address that in a later exercise.
+        <!-- .element: class="note" -->**Note**: The footer appears at the top of the contact page because there is currently no main content like on the About page. We will address that in a later exercise.
       </script>
     </section>
 
@@ -2313,12 +2331,12 @@ img {
 
         ```
         /* shorthand */
-        .home {
+        .contact {
           background: url(../images/background-6.jpg) no-repeat;
         }
 
         /* longhand */
-        .home {
+        .contact {
           background-image: url(../images/background-6.jpg);
           background-repeat: no-repeat;
         }
@@ -2331,6 +2349,8 @@ img {
         #Background: no-repeat
 
         The image no longer repeats but it may not fit the space either depending on the size of the image file.
+
+        /// TODO: Update image.
 
         ![homepage background](framework/img/workshop/bg-size-nocover.png)
 
@@ -2366,12 +2386,12 @@ img {
 
         ```
         /* shorthand */
-        .home {
+        .contact {
           background: url(../images/background-6.jpg) no-repeat 50%;
         }
 
         /* longhand */
-        .home {
+        .contact {
           background-image: url(../images/background-6.jpg);
           background-repeat: no-repeat;
           background-position: 50%;
@@ -2387,6 +2407,8 @@ img {
 
         This will align the background image to the middle of the containing element, horizontally and vertically.
 
+        /// TODO: Update image.
+
         ![](framework/img/workshop/bg-position.png)
 
         But it still doesn't cover the entire viewport.
@@ -2400,7 +2422,7 @@ img {
         `background-size` is used to change the size of the background image with CSS rather than editing the image file itself.  It can be added using the longhand style like this:
 
         ```
-        .home {
+        .contact {
           background-image: url(../images/background-6.jpg);
           background-repeat: no-repeat;
           background-position: 50%;
@@ -2410,7 +2432,7 @@ img {
 
         To include it using the shorthand property, there's a quirk. It _must_ be included after `background-position`, separated with the `/` character.
         ```
-        .home {
+        .contact {
           background: url(../images/background-6.jpg) no-repeat 50% / cover;
         }
         ```
@@ -2426,7 +2448,7 @@ img {
         In this case, it may be less error prone to add just that property using the longhand property.
 
         ```
-        .home {
+        .contact {
           background: url(../images/background-6.jpg) no-repeat;
           background-size: cover;
         }
@@ -2441,12 +2463,12 @@ img {
         Let's update the background image for the homepage using `cover`.
 
         ```
-        .home {
+        .contact {
           background: url(../images/background-6.jpg) no-repeat;
           background-size: cover;
         }
         ```
-        There are other background size values other than cover. See below resources for extra info.
+        There are other background size values besides `cover`. See below resources for extra info.
 
         For reference, you can also look at<!-- .element: class="note" --> **ex6-index.html** and **ex6.css** to review these background styles.
 
@@ -2461,99 +2483,11 @@ img {
 
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #"Sticky" Footer
+        #Contact Page Footer
 
-        Currently, the About page is the only page that has content, so the footer appears at the bottom of the page. Eventually the Contact page will have content as well but that's it for the home page!
+        The **Contact** page doesn't have any content, so the `<footer>` appears at the top of the page. We'll fix this shortly!
 
-        ![](framework/img/workshop/footer-home.png)
-        ![](framework/img/workshop/footer-about.png)
-
-        We can use a "sticky" footer to make sure it stays at the bottom, regardless of the amount of page content.
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Class Exercise: Add a sticky footer
-
-        First, create a "wrapper" to separate the page content from the footer.  We'll use a `<div>` and `class="page-wrap"`. Do not include the footer.
-
-        For organization, you can also add a comment to indicate where the closing `<div>` tag is.
-
-        ```
-        <div class="page-wrap">
-          <header>
-            <h1>Jane Smith</h1>
-            <h2>Web Developer + City Girl</h2>
-          </header>
-          <nav>
-            ...
-          </nav>
-        </div><!-- close .page-wrap -->
-
-        <footer>
-        ...
-        </footer>
-        ```
-        Let's add this "wrapper" to all three HTML pages.
-
-        For reference: The following instructions are from <!-- .element: class="note" -->[this tutorial](http://css-tricks.com/snippets/css/sticky-footer/).
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Sticky Footer CSS
-
-        Let's just go ahead and add this entire CSS block into **styles.css**.  Make sure that the class `page-wrap` is spelled exactly the same in the HTML and CSS files.
-
-        ```
-        /* FOOTER STYLES
-        -----------------------------------------*/
-        /* Sticky Footer - http://css-tricks.com/snippets/css/sticky-footer */
-        .page-wrap {
-          min-height: 100%;
-          margin-bottom: -55px; /* must be the same height as footer */
-        }
-        .page-wrap:after {
-          content: "";
-          display: block;
-        }
-        footer,
-        .page-wrap:after {
-          height: 55px; /* however tall you want the footer to be */
-        }
-        ```
-
-        **Note**: In the tutorial link, you will see the following CSS included but we've already added it to our CSS when adding the homepage background image.
-
-        ```
-        html, body {
-          height: 100%;
-        }
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Sticky Footer CSS
-
-        Yay! It's at the bottom of the page now.  Problem is, it's hard to see on the homepage. Let's add a bit of padding and a background colour to the footer to fix that.
-
-        ```
-        footer {
-          background: white;
-          text-align: center;
-          padding: 1px;
-        }
-        ```
-        Compare your page with any of the **ex7** HTML files and **ex7.css** in the **examples** folder.
-
-        ---
-        ###Resources
-        * [Sticky Footer Tutorial](http://css-tricks.com/snippets/css/sticky-footer)
-        * More about [:after](http://tympanus.net/codrops/css_reference/after/)
+        /// TODO: Update image.
       </script>
     </section>
 
