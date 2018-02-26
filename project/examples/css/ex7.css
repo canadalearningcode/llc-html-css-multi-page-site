@@ -46,9 +46,8 @@ nav a {
 
 /* HOME PAGE STYLES
 -----------------------------------------*/
-.home {
-  background: url(../images/background-6.jpg) no-repeat 50%;
-  background-size: cover;
+.hero-image {
+  width: 100%;
 }
 
 /* ABOUT STYLES
@@ -70,6 +69,10 @@ blockquote p {
 
 /* CONTACT STYLES
 -----------------------------------------*/
+.contact {
+  background: url(../images/background-8.jpg) no-repeat 50%;
+  background-size: cover;
+}
 form {
   width: 400px;
 }
@@ -91,7 +94,6 @@ button {
   padding: 10px 40px;
   font-size: 16px;
 }
-
 
 /* FOOTER STYLES
 -----------------------------------------*/

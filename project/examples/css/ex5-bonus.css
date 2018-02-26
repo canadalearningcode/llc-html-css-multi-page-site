@@ -40,7 +40,6 @@ nav a {
   padding: 20px;
 }
 
-
 /* ABOUT STYLES
 -----------------------------------------*/
 .profile-img {
@@ -55,4 +54,13 @@ blockquote {
 blockquote p {
   font-family: "Pacifico", cursive;
   font-size: 30px;
+}
+
+/* FOOTER STYLES
+-----------------------------------------*/
+footer {
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1px;
+  text-transform: lowercase;
 }
