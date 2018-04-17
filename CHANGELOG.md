@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add 'theme assets' to `project/images/`.
 
 ## Changed
+- Update exercises to include 'hero' component on 'home' page. Update slides and supporting materials.
 
 ## Fixed
 - Fix issue where `css/` folder is referenced by slides, but is not present in repo.
