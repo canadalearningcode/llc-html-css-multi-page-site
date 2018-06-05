@@ -50,9 +50,10 @@ nav a {
 }
 
 /* HOME PAGE STYLES
------------------------------------------*/ 
+-----------------------------------------*/
 .home {
-  background: url(../images/background-6.jpg) no-repeat 50%;
+  background: url(../images/background-6.jpg);
+  background-position: center center;
   background-size: cover;
 }
 

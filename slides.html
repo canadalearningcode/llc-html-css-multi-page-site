@@ -2155,14 +2155,14 @@ text-transform: lowercase;</textarea>
         ```
         /* shorthand */
         .home {
-          background: url(../images/background-6.jpg) no-repeat 50%; 
+          background: url(../images/background-6.jpg) no-repeat center center;
         }
 
         /* longhand */
         .home {
           background-image: url(../images/background-6.jpg); 
           background-repeat: no-repeat;
-          background-position: 50%;
+          background-position: center center;
         }
         ```
         
@@ -2191,7 +2191,7 @@ text-transform: lowercase;</textarea>
         .home {
           background-image: url(../images/background-6.jpg);
           background-repeat: no-repeat;
-          background-position: 50%;
+          background-position: center center;
           background-size: cover;
         }
         ```
@@ -2199,7 +2199,7 @@ text-transform: lowercase;</textarea>
         To include it using the shorthand property, there's a quirk. It _must_ be included after `background-position`, separated with the `/` character.  
         ```
         .home {
-          background: url(../images/background-6.jpg) no-repeat 50% / cover;
+          background: url(../images/background-6.jpg) no-repeat center center/ cover;
         }
         ```
       </script>
@@ -2230,7 +2230,8 @@ text-transform: lowercase;</textarea>
         
         ```
         .home {
-          background: url(../images/background-6.jpg) no-repeat;
+          background: url(../images/background-6.jpg);
+          background-size: center center;
           background-size: cover;
         }
         ```
