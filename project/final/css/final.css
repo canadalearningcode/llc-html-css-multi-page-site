@@ -11,7 +11,6 @@ html,
 body {
   height: 100%;
 }
-
 body {
   padding: 0;
   margin: 0;
@@ -41,7 +40,6 @@ nav {
   color: #bf6d50;
 }
 
-
 /* HEADER STYLES
 -----------------------------------------*/
 header h1 {
@@ -70,11 +68,11 @@ nav a {
 .profile-img {
   float: left;
   margin-right: 20px;
-  width: 50%;
+  width: 50%; /* Force the profile image to always take up 50% of available horizontal space. */
 }
 blockquote {
   clear: both;
-  padding: 5px 150px 0;
+  padding: 5px 150px;
   text-align: center;
 }
 blockquote p {
