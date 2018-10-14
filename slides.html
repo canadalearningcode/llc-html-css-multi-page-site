@@ -2497,129 +2497,234 @@ img {
       <script type="text/template">
         #Crash Course: Forms
 
-        Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python.
+        When a website wants to capture user information (such as feedback, account details, contact info, etc.), it will typically use an HTML form. HTML forms have two components:
 
-        But there are also different services available to help do the processing for us without writing any of these languages!
+        **The front-end**, (ie. the form itself, which is displayed to the user)
 
-        Let's look at the HTML markup first.
+        **The back-end** (ie. the script or application which receives and processes the contents of the form).
       </script>
     </section>
 
     <section class="slide forms" data-markdown>
       <script type="text/template">
-        #Forms HTML
+        #Crash Course: Forms (Continued)
 
-        All forms begin with the `form` element and requires
-        two attributes:
+        In terms of the front-end, HTML gives us access to a series of special tags which are used specifially for building forms, including:
+        ```xml
+        <form></form>
+        <input />
+        <label></label>
+        <textarea></textarea>
+        <select></select>
+        ```
 
-        * `method` - defines how the form will communicate with the web server
-        * `action` - provides the file path to where the form script is processed after the form is submitted
+        The back-end portion is typically written in an entirely different programming language (such as Ruby, Python, or PHP), which is outside the scope of this workshop.
+      </script>
+    </section>
+
+    <section class="slide forms" data-markdown>
+      <script type="text/template">
+        #Our Contact Form
+
+        We want the form on our site's contact page to do two things:
+
+        * *allow our visitors to contact us.*
+        * *allow us to respond to our visitors.*
+
+        Since we're interested in capturing user information, this sounds like a job for a form. However, since we can't create the back-end portion of our form we'll use the [Google Forms](https://www.google.ca/forms/about/) service to both build our contact form, and to process the information that it captures.
+
+        **Please note that the following exercise requires a Gmail acount.**
+      </script>
+    </section>
+
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        Navigate to the [Google Forms](https://www.google.ca/forms/about/) homepage and click on 'Go To Forms'. If required, log in to your Gmail account.
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        From the options located at the top of the screen, select 'Blank' form.
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        Using the field located in the left-hand corner of the viewport, give your form a title (such as 'Contact Me').
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        Delete the placeholder field by clicking on the garbage can icon.
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        Open the settings menu and check the 'Collect email addresses' option. This will insert an 'Email' field into the form.
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        Add a new 'Short Answer' field using the options on the right-hand side of the form. Give this field a name of: 'Name (Optional)'.
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        Add a 'Pararaph' field named 'Message'. Use the toggle below the field to mark it as required.
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        Select the 'Responses' tab, click the vertical ellipses, and check the 'Get email notifications for new responses' option.
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Creating The Form
+
+        Click the preview buttom located near the top right-hand corner of the viewport. Congratulations, you've created a new contact form!
+
+        ![](framework/img/workshop/NEW_contact-no-content-bg-final.png) <!-- .element: width="50%" -->
+      </script>
+    </section>
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Adding The Form
+
+        We've created a public, shareable contact form, but it's hosted by Google.
+
+        To embed the form on our *own* site, we're going to use the `<iframe>` tag, which allows us to display interactive resources that are hosted on other websites (eg. YouTube videos; Tweets; Instagram posts; etc.).
+
+        Like the `<img />` tag, the `<iframe />` is self-closing and uses the `src` attribute to specify the location of the resource.
 
         ```xml
-        <form method="POST" action="path/to/form/script/processing">
-        ...
-        </form>
+        <iframe src="path/to/external/resource" />
         ```
       </script>
     </section>
 
-    <section class="slide forms" data-markdown>
+    <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #Forms HTML
+        #Class Exercise: Embedding The Form
 
-        The `<label>` and `<input>` tags are used to capture the user content.
+        We'll start by adding the following snippet in between the `<header>` and `<footer>` tags of our `contact.html` file.
 
-        ```
-        <label for="name">Name</label>
-        <input id="name" type="text" name="name">
-        ```
-        <div class="example">
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name">
-        </div>
-
-        The various attributes associates the label to the input (helps with accessibility), as well as determines what *type* of input to display.
-
-        We could probably run a whole course on forms alone! See below resources for much more about forms.
-
-        ---
-        ###Resources
-        * [Mozilla Developer Network: HTML forms guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
-        * [Sitepoint: Form Elements](http://www.sitepoint.com/web-foundations/form-elements/)
-        * [Focus Pocus](http://www.focuspocus.io/) (Form processing service)
-        * [Wufoo](http://www.wufoo.com/) (Form processing service)
-        * [Google Forms](https://www.google.com/forms/about/) (Form processing service)
-
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Class Exercise: Contact Form
-
-        In **contact.html**, add this entire block *between* the `<header>` and `<footer>` tags.
-
-        ```
+        ```xml
         <main role="main">
-          <p>Let's meet for coffee! Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>,
-          use the form below.</p>
+          <iframe src="" />
+        </main>
+        ```
 
-          <form method="POST" action="">
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name">
+        We'll fill in the `src` attribute value shortly.
+      </script>
+    </section>
 
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email">
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Embedding The Form
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message"></textarea>
+        Next, we'll navigate back to our contact form's 'preview' page, copy the URL from the address bar, and paste it into the `src` attribute of our `<iframe />`.
 
-            <button type="submit">Send</button>
-          </form>
+        We should now have something that looks like this:
+
+        ```xml
+        <main role="main">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" />
         </main>
         ```
       </script>
     </section>
 
-    <section class="slide" data-markdown>
+    <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #Class Exercise: Form css
+        #Class Exercise: Embedding The Form
 
-        Let's add some basic styling to the form. Add this block into **styles.css**.
+        We'll make a few additional updates before previewing our form:
 
+        First, we'll add the `width="100%"` and `height="500px"` attributes to make sure the `<iframe />` takes up a certain amount of space on the page.
+
+        Then we'll add the `frameborder="0"` attribute to remove the default border styles.
+
+        When we're done, we should have something that looks like this:
+
+        ```xml
+        <main role="main">
+          <iframe width="100%" height="500px" frameborder="0" src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" />
+        </main>
         ```
-        /* CONTACT STYLES
-        -----------------------------------------*/
-        form {
-          width: 400px;
-        }
-        input,
-        textarea {
-          border: 1px solid #BF6D50;
-          width: 400px;
-          margin-bottom: 10px;
-        }
-        input {
-          height: 20px;
-        }
-        textarea {
-          height: 100px;
-        }
-        button {
-          background: #BF6D50;
-          border: none;
-          padding: 10px 40px;
-          font-size: 16px;
-        }
-        ```
+      </script>
+    </section>
 
-        See **ex7-contact.html** & **ex7.css** for reference.
+
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Embedding The Form
+
+        Congratulations, we now have a functioning, embedded contact form.
+
+        Feel free to make additional changes to the form's styles or fields. Any changes made using the Google Forms tools will automatically be reflected in the embedded form.
+      </script>
+    </section>
+
+    <section class="slide forms" data-markdown>
+      <script type="text/template">
+        #More On Forms
+
+        We used Google Forms to quickly create and embed a working contact form. However, if you peek under the hood, you'll notice that the form is made up of the same HTML tags that we mentioned earlier.
+
+        We could probably run a whole course on forms alone! If you want to learn more about building HTML forms from scratch, check out the resources below.
 
         ---
         ###Resources
+        * [Mozilla Developer Network: HTML forms guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
+        * [Sitepoint: Form Elements](http://www.sitepoint.com/web-foundations/form-elements/)
         * [Styling HTML forms](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Styling_HTML_forms)
         * [Bring Your Forms Up to Date With CSS3 and HTML5 Validation](http://webdesign.tutsplus.com/tutorials/bring-your-forms-up-to-date-with-css3-and-html5-validation--webdesign-4738)
         * [Building Forms](http://learn.shayhowe.com/html-css/building-forms/)
+        * [Focus Pocus](http://www.focuspocus.io/) (Form processing service)
+        * [Wufoo](http://www.wufoo.com/) (Form processing service)
+        * [Google Forms](https://www.google.com/forms/about/) (Form processing service)
       </script>
     </section>
 
