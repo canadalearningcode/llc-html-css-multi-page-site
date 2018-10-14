@@ -2629,7 +2629,7 @@ img {
 
         We've created a public, shareable contact form, but it's hosted by Google.
 
-        To embed the form on our *own* site, we're going to use the `<iframe>` tag, which allows us to display interactive resources that are hosted on other websites (eg. YouTube videos; Tweets; Instagram posts; etc.).
+        To embed the form on our *own* site, we're going to use the `<iframe />` tag, which allows us to display interactive resources that are hosted on other websites (eg. YouTube videos; Tweets; Instagram posts; etc.).
 
         Like the `<img />` tag, the `<iframe />` is self-closing and uses the `src` attribute to specify the location of the resource.
 
@@ -2647,11 +2647,14 @@ img {
 
         ```xml
         <main role="main">
+          <h1>Let's meet for coffee!</h1>
+          <p>Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, or use the form below.</p>
+
           <iframe src="" />
         </main>
         ```
 
-        We'll fill in the `src` attribute value shortly.
+        Note that our `<iframe />` tag has an empty `src` attribute. Don't worry, we'll fill that in shortly.
       </script>
     </section>
 
@@ -2661,12 +2664,10 @@ img {
 
         Next, we'll navigate back to our contact form's 'preview' page, copy the URL from the address bar, and paste it into the `src` attribute of our `<iframe />`.
 
-        We should now have something that looks like this:
+        Our `<iframe />` tag should now look like this:
 
         ```xml
-        <main role="main">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" />
-        </main>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" />
         ```
       </script>
     </section>
@@ -2681,12 +2682,10 @@ img {
 
         Then we'll add the `frameborder="0"` attribute to remove the default border styles.
 
-        When we're done, we should have something that looks like this:
+        When we're done, our `<iframe />` tag should look like this:
 
         ```xml
-        <main role="main">
-          <iframe width="100%" height="500px" frameborder="0" src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" />
-        </main>
+        <iframe width="100%" height="500px" frameborder="0" src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" />
         ```
       </script>
     </section>
