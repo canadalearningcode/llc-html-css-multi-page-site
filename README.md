@@ -17,7 +17,7 @@ This workshop covers HTML and CSS basics and is intended for complete beginners.
 
 ### Quick Links
 
-Preview Slides: ladieslearningcode.github.io/llc-html-css-multi-page-site/slides.html#slide1
+Preview Slides: http://ladieslearningcode.github.io/llc-html-css-multi-page-site/slides.html#slide1
 
 ### Attributions
 
