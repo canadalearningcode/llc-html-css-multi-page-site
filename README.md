@@ -1,15 +1,6 @@
-## This content is featured in a monthly theme!
+# Ladies Learning Code
 
-In 2019, we want to challenge Canadians to pause and think, learn about, share, and work towards solving issues that affect us all on a global scale – while leveraging the power of technology!  More information on monthly themes [here](https://www.canadalearningcode.ca/monthly-themes/)
-
-*March's theme is WATER.*
-
-See slide 5 for suggestions on how learners can incorporate this month’s theme into their projects - if they choose to participate.
-
-# Canada Learning Code
-## Ladies Learning Code
-
-### HTML & CSS for Beginners: Learn to Build a Multi Page Website From Scratch
+## HTML & CSS for Beginners: Learn to Build a Multi Page Website From Scratch
 
 A full day introductory HTML & CSS workshop.
 
