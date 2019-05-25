@@ -1,0 +1,77 @@
+/**
+ * CSSS Accessibility Plugin
+ *
+ * - Resets focus indicator to be visible on `Tab` key press
+ * - Removes `outline` on slide focus
+ * - Includes helper classes
+ *
+ * @author Scott Vinkle <scott.vinkle@shopify.com>
+ * @version 0.1.0
+ * @license MIT License
+ */
+
+/* Reset focus indicator styles */
+a:focus {
+  outline: 1px dotted #212121 !important;
+  outline: 5px auto -webkit-focus-ring-color !important;
+}
+
+/* Removes flash of focus indicator when slide receives focus */
+.slide[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* `.visuallyhidden` helper class definition
+   https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css#L141
+*/
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* `.focusable` helper class definition
+   https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css#L159
+*/
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/* List styles */
+.a11y-controls__list {
+  bottom: 90px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 64px;
+}
+
+/* List item styles */
+.a11y-controls__item {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Reset list item `before` styles */
+.a11y-controls__item::before {
+  content: '';
+  margin: 0;
+  padding: 0;
+}
