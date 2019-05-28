@@ -12,7 +12,7 @@
 }
 html {
   font-size: 62.5%;
-  
+
   @media (min-width: 1401px) {
     font-size: 70%;
   }
@@ -41,12 +41,13 @@ h1 {
   margin: 0 0 25px;
   color: $llc-pink;
   font-size: $font-size-heading;
-  
+
   .title & {
     font-size: $font-size-heading-lg;
     font-weight: 400;
   }
-  code {
+  code,
+  kbd {
     font-size: inherit;
     color: inherit;
     font-family: inherit;
@@ -55,7 +56,7 @@ h1 {
 }
 h2, h3 {
   margin: 0;
-  
+
   + p,
   + ul,
   + ol {
@@ -86,7 +87,7 @@ hr {
   margin: 30px 0 0;
   display: inline-block;
   width: 100%;
-  
+
   + p {
     margin-top: 16px;
   }
@@ -94,7 +95,7 @@ hr {
 
 p {
   margin-bottom: 0;
-  
+
   + h2 {
     margin-top: 30px;
   }
@@ -118,11 +119,11 @@ ol, ul {
 }
 ul {
   padding: 0;
-    
+
   > li {
     margin-left: 24px;
     list-style-type: none;
-    
+
     &:before {
       content: "\203A"; // › symbol
       font-family: $quicksand;
@@ -140,7 +141,7 @@ p + ol {
 .nested-list {
   > ul {
     margin-left: -24px;
-    
+
     > li:before {
       content: "";
       margin-left: -10px;
@@ -153,7 +154,7 @@ p + ol {
   .resources + ul {
     > li {
       margin-left: 35px;
-      
+
       &:before {
         content: "\203A";
       }
@@ -164,12 +165,12 @@ p + ol {
 .two-col-list > {
   ul, ol {
     overflow: hidden;
-    
+
     > li {
       width: 45%;
       float: left;
       margin-left: 4px;
-      
+
       &:first-child {
         margin-right: 5%;
       }
@@ -183,7 +184,7 @@ p + ol {
     > li {
       width: 100%;
       margin-left: 12px;
-      
+
       &:before {
         content: "\203A";
       }
@@ -194,11 +195,12 @@ p + ol {
 table {
   border-spacing: 0;
   border-collapse: collapse;
-  
+
   pre {
     margin: 0;
   }
-  code {
+  code,
+  kbd {
     background: transparent;
   }
   .hljs {
@@ -206,7 +208,7 @@ table {
     background: transparent;
   }
 	img {
-		width: 100%; 
+		width: 100%;
 	}
 }
 th, td {
@@ -217,7 +219,7 @@ th {
   text-align: left;
   font-weight: normal;
 }
-td {  
+td {
   .two-col-table & {
     width: 50%;
   }
@@ -230,8 +232,9 @@ td {
 .resources + * {
   line-height: 1.3;
   font-size: $font-size-xsm!important;
-  
-  code {
+
+  code,
+  kbd {
     font-size: inherit;
   }
 }
@@ -241,15 +244,15 @@ td {
 }
 .resources {
   margin-bottom: 5px;
-  
+
   + ul li {
     margin-bottom: 0;
   }
 }
 
 .left {
-  float: left; 
-  
+  float: left;
+
   + ul {
     padding-left: 10px;
   }
@@ -297,7 +300,7 @@ a.highlight {
 [class*="col-"]{
   float: left;
   margin-right: 2%;
-  
+
   &:last-child {
     margin-right: 0;
   }
@@ -327,8 +330,8 @@ a.highlight {
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
-  
-  // Adds extra space to the bottom of the slides to allow 
+
+  // Adds extra space to the bottom of the slides to allow
   // presenters to scroll the page up so people in the back
   // of the room can see the bottom of the slides.
   &:after {
@@ -443,7 +446,7 @@ textarea.snippet {
   font-size: 20px!important;
   font-family: Andale Mono, Monaco, monospace;
   line-height: 1.4;
-  
+
   + .example {
     margin-top: 0;
   }
@@ -454,7 +457,7 @@ textarea.snippet {
 blockquote {
   font-size: $font-size-sm;
   margin: 15px 0;
-  
+
   p {
     margin: 10px;
   }
@@ -469,14 +472,14 @@ blockquote {
 }
 
 /* Incremental slides */
-.delayed.displayed, 
+.delayed.displayed,
 .delayed-children > .displayed {
     opacity: 1;
 }
 
-/* 
+/*
 Background color style for headings
-Use spans wrap inside of a heading for div. 
+Use spans wrap inside of a heading for div.
 e.g.
 <h1 class="title-bg">
   <span>
@@ -538,7 +541,7 @@ e.g.
     float: left;
     width: 79%;
     margin: 0;
-    
+
     ul, ol {
       float: none;
       width: 100%;
@@ -553,7 +556,7 @@ e.g.
 }
 
 /* Instructor Info */
-.slide.intro, 
+.slide.intro,
 .slide.last {
   h1, h2 {
     font-weight: 400;
@@ -575,7 +578,7 @@ e.g.
   }
   ul li {
     margin: 0;
-    
+
     &:before { content: ""; }
   }
 }
@@ -629,7 +632,7 @@ footer {
   width: 100%;
   background: white;
   font-size: $font-size-footnote;
-    
+
   p {
     margin: 6px 10px 0 8px;
   }
@@ -651,13 +654,13 @@ footer {
 ---------------------*/
 .table-of-contents {
   font-size: $font-size-sm;
-  
+
   li {
     margin-bottom: 2px;
   }
   a {
     color: $gray-dark;
-    
+
     &:hover {
       color: $llc-pink;
     }
@@ -671,7 +674,8 @@ pre {
   margin: 18px 0 12px;
   white-space: pre-wrap;
 
-  code {
+  code,
+  kbd {
     overflow-y: auto;
     font-size: $font-size-xsm;
     // font-family: Andale Mono, Monaco, monospace;
@@ -686,7 +690,8 @@ pre {
     margin-top: 35px;
   }
 }
-code {
+code,
+kbd {
   color: #555;
   padding: 0 8px;
   display: inline-block;
@@ -698,7 +703,8 @@ code {
 }
 /* Targets only firefox */
 @-moz-document url-prefix() {
-  code {
+  code,
+  kbd {
     font-size: $font-size-base - 0.2;
   }
 }
@@ -747,6 +753,3 @@ code {
     margin-top: 0;
   }
 }
-
-
-
