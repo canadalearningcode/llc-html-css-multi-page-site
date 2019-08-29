@@ -192,6 +192,24 @@ p + ol {
   }
 }
 
+.horizontal-list {
+  display: flex;
+
+  > li {
+    > img {
+      max-width: 100%;
+      width: 100% !important;
+    }
+
+    &:first-child {
+      margin-right: 0;
+    }
+    &:before {
+      content: "";
+    }
+  }
+}
+
 table {
   border-spacing: 0;
   border-collapse: collapse;
@@ -232,7 +250,6 @@ td {
 .resources + * {
   line-height: 1.3;
   font-size: $font-size-xsm!important;
-
   code,
   kbd {
     font-size: inherit;
