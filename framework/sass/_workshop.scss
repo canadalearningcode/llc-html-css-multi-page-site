@@ -36,6 +36,27 @@
 			font-style: italic;
 		}
 	}
+  
+  button {
+    background-color: $gray;
+    border: 0;
+    border-radius: 5px;
+    color: $white;
+    cursor: pointer;
+    font-family: $base-font;
+    font-size: $font-size-base;
+    margin: 0 10px;
+    padding: 5px 15px;
+
+    &:focus,
+    &:hover {
+      background-color: $llc-pink;
+    }
+
+    &:active {
+      background-color: $black;
+    }
+  }
 }
 
 .basic-tags {
