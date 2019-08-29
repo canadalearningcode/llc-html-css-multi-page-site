@@ -1012,13 +1012,26 @@
 
         The `alt` attribute refers to *alternative text*.
 
-        The alt text is read by screen reading software used by visually impaired users and also displays if the image is missing.
+        The `alt` text is read by [screen reading software](https://en.wikipedia.org/wiki/Screen_reader) used by visually impaired users and also displays if the image is missing.
 
-        It should be a short description of the image.
+        Depending on the context, it should be a short description of the image:
 
-        ```html
-        <img src="images/profile.jpg" alt="Jane Smith">
         ```
+        <img src="images/children-in-park.jpg" alt="A group of children play in the park on a sunny day.">
+        ```
+
+        Or, contain no text if the image is purely decorative:
+
+        ```
+        <img src="images/arrow-icon.svg" alt="">
+        ```
+
+        Images with empty `alt` text attributes will be skipped over by screen readers.
+
+        ---
+        ##Resource
+
+        - [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
       </script>
     </section>
 
