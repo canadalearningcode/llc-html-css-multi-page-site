@@ -2203,7 +2203,7 @@ img {
         ```
         That will put it back to the regular stacking flow.
 
-        ![](framework/img/workshop/about-floated-cleared.png)
+        ![Project homepage with body content placed alongside the main image. The block quote is below the main image, wrapped with a red border.](framework/img/workshop/about-floated-cleared.png)
 
         Let's add it into our project.
       </script>
@@ -2213,16 +2213,16 @@ img {
       <script type="text/template">
         #Exercise #5 (Bonus) - Style the About page
 
-        1. Add some margin to the right side of the profile image to put some space between the image and the paragraphs.
+        1. Add some `margin` to the right side of the profile image to put some space between the image and the paragraphs.
 
-        1. Add some padding to the links in the navigation. <span class="note">(Hint! Use a *descendant* selector to apply the style to only the links in the nav.)</span>
+        1. Add some `padding` to the links in the navigation. <span class="note">(Hint! Use a *descendant* selector to apply the style to only the links in the `nav`.)</span>
 
-        1. Adding some padding to the `blockquote` to improve the spacing and/or try adding `text-align: center;` and see if you like it.
+        1. Adding some `padding` to the `blockquote` to improve the spacing and/or try adding `text-align: center;` and see if you like it.
 
-        1. Change the `font-family` & `font-size` of just the paragraph in the `blockquote` to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of 30px.
-        <span class="note">(Hint! Use a descendant selector to apply the style to the paragraph inside of the blockquote.)</span>
+        1. Change the `font-family` & `font-size` of just the paragraph in the `blockquote` to set it apart from the body text. The LLC project uses the Google font "Pacifico" with a `font-size` of `30px`.
+        <span class="note">(Hint! Use a descendant selector to apply the style to the paragraph inside of the `blockquote`.)</span>
 
-        Your page should now look similar to [ex5-about-bonus.html](project/examples/ex5-about-bonus.html) & ex5-bonus.css in the **examples** folder.
+        Your page should now look similar to [`ex5-about-bonus.html`](project/examples/ex5-about-bonus.html) and `ex5-bonus.css` in the `examples` folder.
       </script>
     </section>
 
@@ -2270,7 +2270,7 @@ img {
 
         Use the `class` attribute to apply these specific styles.
 
-        In **contact.html**, we'll add a `class` to the `body` tag to override any styles, for any element, contained within the entire page.
+        In `contact.html`, we'll add a `class` to the `body` tag to override any styles, for any element, contained within the entire page.
 
         ```
         <body class="contact">
@@ -2290,7 +2290,7 @@ img {
         background: url(path/to/file.jpg);/* shorthand */
         ```
 
-        Since **styles.css** is *inside* of a **css** folder, include `../` to go *up and out* of the folder in the *relative* path to the image files.
+        Since `styles.css` is *inside* of a `css` folder, include `../` to go *up and out* of the folder in the *relative* path to the image files.
 
         ```xml
         |-- project
@@ -2306,6 +2306,11 @@ img {
         ```
         background: url(../images/background-1.jpg);
         ```
+
+        ---
+        ##Pro tip!
+
+        Background images **do not** appear in Internet Explorer when [Windows High Contrast](https://support.microsoft.com/en-ca/help/13862/windows-use-high-contrast-mode) mode is enabled! Use a foreground `img` tag for critical images.
       </script>
     </section>
 
@@ -2313,13 +2318,13 @@ img {
       <script type="text/template">
         #Class Exercise: Background Images
 
-        In **contact.html**, add the `class` to the `body` tag.
+        In `contact.html`, add the `class` to the `body` tag.
 
         ```
         <body class="contact">
         ```
 
-        In **styles.css**, use `.contact` as the selector, so this image only displays on the contact page and spans the entire body.
+        In `styles.css`, use `.contact` as the selector, so this image only displays on the contact page and spans the entire body.
 
         (Choose from <!-- .element: class="note" -->`background-1.jpg` to `background-8.jpg` or use your own.)
 
@@ -2337,7 +2342,7 @@ img {
 
         If the image is smaller than the width and/or height of the element the background image is being applied to, it will repeat the image.
 
-        ![](framework/img/workshop/NEW_contact-no-content-bg-tiled.png) <!-- .element: width="50%" -->
+        ![Project homepage with repeated background image – a pile of coffee beans.](framework/img/workshop/NEW_contact-no-content-bg-tiled.png) <!-- .element: width="50%" -->
 
         <!-- .element: class="note" -->**Note**: The footer appears at the top of the contact page because there is currently no main content like on the About page. We will address that in a later exercise.
       </script>
@@ -2372,7 +2377,7 @@ img {
 
         The image no longer repeats but it may not fit the space either depending on the size of the image file.
 
-        ![homepage background](framework/img/workshop/NEW_contact-no-content-bg-not-tiled.png) <!-- .element: width="50%" -->
+        ![Project homepage, background image is no longer repeating, covering top-left portion of the screen.](framework/img/workshop/NEW_contact-no-content-bg-not-tiled.png) <!-- .element: width="50%" -->
 
         This position and size of the image can be revised using `background-position` and  `background-size`.
       </script>
@@ -2427,7 +2432,7 @@ img {
 
         This will align the background image to the middle of the containing element, horizontally and vertically.
 
-        ![](framework/img/workshop/NEW_contact-no-content-bg-centered.png) <!-- .element: width="50%" -->
+        ![Project homepage, background image centered on the page with whitespace around the image.](framework/img/workshop/NEW_contact-no-content-bg-centered.png) <!-- .element: width="50%" -->
 
         But it still doesn't cover the entire viewport.
       </script>
@@ -2488,14 +2493,13 @@ img {
         ```
         There are other background size values besides `cover`. See below resources for extra info.
 
-        For reference, you can also look at<!-- .element: class="note" --> **ex6-index.html** and **ex6.css** to review these background styles.
+        For reference, you can also look at<!-- .element: class="note" --> `ex6-index.html` and `ex6.css` to review these background styles.
 
         ---
-        ###Resources
-        * [More about background-size](http://www.css3.info/preview/background-size/)
-        *   [http://www.gratisography.com/](http://www.gratisography.com/) (royalty free images)
-        *   [http://nos.twnsnd.co/](http://nos.twnsnd.co/) (royalty free images)
-        *   [http://unsplash.com/](http://unsplash.com/) (royalty free images)
+        ##Resources
+        * [MDN: background-size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
+        * [Burst](https://burst.shopify.com/) (royalty free images)
+        * [Unsplash](https://unsplash.com/) (royalty free images)
       </script>
     </section>
 
@@ -2519,11 +2523,12 @@ img {
       <script type="text/template">
         #Crash Course: Forms
 
-        When a website wants to capture user information (such as feedback, account details, contact info, etc.), it will typically use an HTML form. HTML forms have two components:
+        When a website wants to capture user information (such as feedback, account details, contact info, etc.), it will typically use an HTML form.
 
-        **The front-end**, (ie. the form itself, which is displayed to the user)
+        HTML forms have two components:
 
-        **The back-end** (ie. the script or application which receives and processes the contents of the form).
+        - **The front-end**, (ie. the form itself, which is displayed to the user)
+        - **The back-end** (ie. the script or application which receives and processes the contents of the form).
       </script>
     </section>
 
@@ -2532,15 +2537,14 @@ img {
         #Crash Course: Forms (Continued)
 
         In terms of the front-end, HTML gives us access to a series of special tags which are used specifially for building forms, including:
-        ```xml
-        <form></form>
-        <input />
-        <label></label>
-        <textarea></textarea>
-        <select></select>
-        ```
 
-        The back-end portion is typically written in an entirely different programming language (such as Ruby, Python, or PHP), which is outside the scope of this workshop.
+        - `<form>` the form wrapper tag
+        - `<input>` which accepts data from the user
+        - `<label>` informs the user what the `input` is for
+        - `<textarea>` a large, multi-line text box
+        - `<select>` a drop-down style widget with options
+
+        The back-end portion is typically written in an entirely different programming language (such as [Ruby](https://www.ruby-lang.org/en/), [Python](https://www.python.org/), or [PHP](https://php.net/)), which is outside the scope of this workshop.
       </script>
     </section>
 
@@ -2555,7 +2559,7 @@ img {
 
         Since we're interested in capturing user information, this sounds like a job for a form. However, since we can't create the back-end portion of our form, we'll use the [Google Forms](https://www.google.ca/forms/about/) service to build our contact form and to process the information that it captures.
 
-        **Please note that the following exercise requires a Gmail acount.**
+        **Please note that the following exercise requires a [Google account](https://accounts.google.com).**
       </script>
     </section>
 
@@ -2564,7 +2568,7 @@ img {
       <script type="text/template">
         #Class Exercise: Creating The Form
 
-        Navigate to the [Google Forms](https://www.google.ca/forms/about/) homepage and click on 'Go To Forms'. If required, log in to your Gmail account.
+        Navigate to the [Google Forms](https://www.google.ca/forms/about/) homepage and click on "Go To Forms" link. If required, log in to your [Google account](https://accounts.google.com).
 
         ![](framework/img/workshop/google-forms-0.png) <!-- .element: width="50%" -->
       </script>
@@ -2574,7 +2578,7 @@ img {
       <script type="text/template">
         #Class Exercise: Creating The Form
 
-        From the options located near the top of the screen, select 'Blank' form.
+        From the options located near the top of the screen, select "Blank" form option.
 
         ![](framework/img/workshop/google-forms-1.png) <!-- .element: width="50%" -->
       </script>
@@ -2584,9 +2588,9 @@ img {
       <script type="text/template">
         #Class Exercise: Creating The Form
 
-        Using the field located in the top left-hand corner of the viewport, give your form a title (such as 'Contact Me').
+        Using the Document title field located in the top left-hand corner of the viewport, give your form a title (such as "Contact Me").
 
-        Then delete the placeholder 'Untitled' field by clicking on the garbage can icon below it.
+        Then delete the placeholder "Untitled Question" input field by activating the "Delete item" button (garbage can icon) below it.
 
         ![](framework/img/workshop/google-forms-2.png) <!-- .element: width="50%" -->
       </script>
@@ -2596,7 +2600,7 @@ img {
       <script type="text/template">
         #Class Exercise: Creating The Form
 
-        Open the settings menu and check the 'Collect email addresses' option. This will insert an 'Email' field into the form.
+        Activate the "Settings" button (cog icon) and check the "Collect email addresses" checkbox. This will insert an "Email" field into the form.
 
         ![](framework/img/workshop/google-forms-3-a.png) <!-- .element: width="50%" -->
         ![](framework/img/workshop/google-forms-3-b.png) <!-- .element: width="50%" -->
@@ -2607,7 +2611,12 @@ img {
       <script type="text/template">
         #Class Exercise: Creating The Form
 
-        Add a new 'Short Answer' field using the options on the right-hand side of the form. Give this field a name of: 'Name (Optional)'.
+        Add a new "Short Answer" field by:
+
+        1. Activating the "Add question" button (plus icon)
+        2. Changing the "Question types" drop-down option to "Short answer"
+
+        Set this field's title as: "Name (Optional)".
 
         ![](framework/img/workshop/google-forms-4.png) <!-- .element: width="50%" -->
       </script>
@@ -2617,7 +2626,12 @@ img {
       <script type="text/template">
         #Class Exercise: Creating The Form
 
-        Add a 'Paragraph' field named 'Message'. Use the toggle below the field to mark it as required.
+        Add a "Paragraph" field titled "Message" by:
+
+        1. Activating the "Add question" button (plus icon)
+        2. Changing the "Question types" drop-down option to "Paragraph"
+
+        Use the "Required" checkbox/toggle below the field to mark it as required.
 
         ![](framework/img/workshop/google-forms-5.png) <!-- .element: width="50%" -->
       </script>
@@ -2627,7 +2641,7 @@ img {
       <script type="text/template">
         #Class Exercise: Creating The Form
 
-        Select the 'Responses' tab, click the vertical ellipses, and check the 'Get email notifications for new responses' option.
+        Select the "Responses" tab, activate the "More options for responses" button (vertical ellipses icon), and check the "Get email notifications for new responses" option.
 
         ![](framework/img/workshop/google-forms-6.png) <!-- .element: width="50%" -->
       </script>
@@ -2637,7 +2651,7 @@ img {
       <script type="text/template">
         #Class Exercise: Creating The Form
 
-        Click the preview button located near the top right-hand corner of the viewport.
+        Click the "Preview" button (eye icon) located near the top right-hand corner of the viewport.
 
         Congratulations, you've created a new contact form!
 
@@ -2655,8 +2669,10 @@ img {
 
         Like the `<img />` tag, the `<iframe />` is self-closing and uses the `src` attribute to specify the location of the resource.
 
+        We also need to add the `title` attribute in order to help describe the purpose of the `<iframe />` for assistive technology.
+
         ```xml
-        <iframe src="path/to/external/resource" />
+        <iframe src="path/to/external/resource" title="Description of external resource" />
         ```
       </script>
     </section>
@@ -2672,11 +2688,11 @@ img {
           <h1>Let's meet for coffee!</h1>
           <p>Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, or use the form below.</p>
 
-          <iframe src="" />
+          <iframe src="" title="" />
         </main>
         ```
 
-        Note that our `<iframe />` tag has an empty `src` attribute. Don't worry, we'll fill that in shortly.
+        Note that our `<iframe />` tag has empty `src` and `title` attributes. Don't worry, we'll fill these in shortly.
       </script>
     </section>
 
@@ -2684,12 +2700,14 @@ img {
       <script type="text/template">
         #Class Exercise: Embedding The Form
 
-        Next, we'll navigate back to our contact form's 'preview' page, copy the URL from the address bar, and paste it into the `src` attribute of our `<iframe />`.
+        Next, we'll navigate back to our contact form's "Preview" page, copy the URL from the browser address bar, and paste it into the `src` attribute of our `<iframe />`.
+
+        Don't forget to write a short description of the `<iframe />` in the `title` attribute.
 
         Our `<iframe />` tag should now look like this:
 
         ```xml
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" />
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" title="Contact form" />
         ```
       </script>
     </section>
@@ -2707,7 +2725,7 @@ img {
         When we're done, our `<iframe />` tag should look like this:
 
         ```xml
-        <iframe width="100%" height="500px" frameborder="0" src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" />
+        <iframe width="100%" height="500px" frameborder="0" src="https://docs.google.com/forms/d/e/1FAIpQLSecBKTxLfdz5MAXaqINiTnFcOpXx-YmdRUdmDRKVcdb7OOReA/viewform" title="Contact form" />
         ```
       </script>
     </section>
@@ -2748,7 +2766,7 @@ img {
       <script type="text/template">
       #And we're done!
 
-      ![what?](http://i.imgur.com/RpCC4.gif)
+      ![Animated GIF of baby eating, smiling, then looking unsure.](http://i.imgur.com/RpCC4.gif)
 
       Ok, not quite done. Let's talk about some next steps.
       </script>
@@ -2802,13 +2820,12 @@ img {
         #More resources
 
         * [Code School](https://www.codeschool.com)
-        * [http://css-tricks.com/](http://css-tricks.com/)
-        * [SitePoint CSS Reference](http://reference.sitepoint.com/css)
+        * [CSS-Tricks](http://css-tricks.com/)
+        * [A List Apart](https://alistapart.com/)
         * [Codecademy](http://www.codecademy.com/)
         * [Smashing Magazine](http://mobile.smashingmagazine.com/)
 
-        For something offline, here's a good book by Jon Duckett:
-        [HTML and CSS: Design and Build Websites](http://htmlandcssbook.com/).
+        For offline reading, here are some great books on [HTML](https://abookapart.com/search?type=product&q=html) and [CSS](https://abookapart.com/search?type=product&q=css) from [A Book Apart](https://abookapart.com/).
       </script>
     </section>
 
@@ -2816,21 +2833,23 @@ img {
       <script type="text/template">
         #Next Steps
 
-        Explore more Ladies Learning Code workshops by following our [Roadmap](http://ladieslearningcode.com/roadmap/).
-
         ##Getting your site online
 
         You will need to register a domain name and purchase hosting. Here are some suggestions:
 
-        * Host your site for free with [github pages](https://pages.github.com/)
-        * [namecheap.com](https://www.namecheap.com/) - website hosting
-        * [hover.com](http://hover.com/ladiescode) - domain names and personal emails
-
-        Why keep your domains and hosting separate?<!-- .element: class="note" --> [Learn more about Hover](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
+        * Host your site for free with [GitHub pages](https://pages.github.com/)
+        * [NameCheap.com](https://www.namecheap.com/) - website hosting
+        * [Hover.com](http://hover.com/ladiescode) - domain names and personal emails
 
         You will also need to upload your files to your hosting server. You will need some info usually provided by your hosting service provider: FTP Address, Username, Password.
 
         Here's a tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
+
+        ---
+
+        ## Resources
+
+        - [Publish and share your own website for free with GitHub](https://medium.com/@svinkle/publish-and-share-your-own-website-for-free-with-github-2eff049a1cb5)
       </script>
     </section>
 
