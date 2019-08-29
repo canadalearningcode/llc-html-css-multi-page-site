@@ -365,7 +365,7 @@
         1. repeat
 
         Try replacing the “your name here” text with *your* name!
-        ```
+        ```html
         <h1>Your Name Here</h1>
         ```
         ---
@@ -402,12 +402,12 @@
 
         Tags usually come in pairs &mdash; an opening tag and a closing tag &mdash; to *wrap* the content.  Note the closing tag has a forward slash `/`.
 
-        ```xml
+        ```html
         <tag> <-- opening tag --- closing tag --> </tag>
         ```
 
         HTML *tags* describe the content inside of them to the web browser.
-        ```xml
+        ```html
         <h1>This tag describes a heading</h1>
         <p>This tag is for paragraphs.</p>
         ```
@@ -440,7 +440,7 @@
 
         When HTML Tags are nested, it creates a family tree-like structure of nodes that are ancestors, parents, children, siblings, etc.
 
-        ```
+        ```html
         <parent>
           <child></child>
         </parent>
@@ -463,7 +463,7 @@
 
         The syntax for comments start with `<!--` and ends with `-->`.
 
-        ```
+        ```html
         <!-- This is my comment. Comments should always be included between the dashes. -->
         ```
       </script>
@@ -561,7 +561,7 @@
         * follows the syntax of `attribute="value"` (note the quotes)
         * many different attributes
 
-        ```
+        ```html
         <tag attribute="value">content</tag>
         ```
       </script>
@@ -575,12 +575,12 @@
 
         The `lang` attribute is used to classify the language.
 
-        ```
+        ```html
         <html lang="en">
         ```
 
         The `charset` attribute sets the character encoding.
-        ```
+        ```html
         <meta charset="UTF-8">
         ```
 
@@ -601,7 +601,7 @@
 
         There are six heading tags ranging from `<h1>` to `<h6>` and follow a hierarchy. HTML is used to assign *meaning* to the content in a way that the browser can read it.
 
-        ```xml
+        ```html
         <h1>Name of blog</h1>
         <h2>Title of blog post</h2>
         <h3>Sub headings within blog post</h3>
@@ -609,7 +609,7 @@
 
         Paragraphs are represented by the `<p>` tag.
 
-        ```xml
+        ```html
         <p>This is a paragraph.</p>
         <p>This is another paragraph.</p>
         ```
@@ -772,7 +772,7 @@
 
         The `href` attribute provides information about where the link is located.
 
-        ```xml
+        ```html
         Visit <a href="http://ladieslearningcode.com">Ladies Learning Code</a>.
         ```
 
@@ -815,13 +815,13 @@
 
         Since all of the HTML files are in the same folder, the directions *from* the `index` *to* the `about` file would look like this.
 
-        ```xml
+        ```html
         <a href="about.html">About Me</a>
         ```
 
         Since our images are **not** in the same folder as the HTML files, we have to tell the browser to look in a different location.
 
-        ```xml
+        ```html
         <img src="images/background-1.jpg" alt="My cool image">
         ```
         (More on images soon.)<!-- .element: class="note" -->
@@ -855,7 +855,7 @@
 
         Today we'll be using only links. Wrap the links `<a>` in a `<nav>` tag to group them as navigation links.
 
-        ```
+        ```html
         <nav>
           <a href="#">Home</a>
           <a href="#">About</a>
@@ -888,7 +888,7 @@
 
         The nav and header in **index.html** should now look like this:
 
-        ```
+        ```html
         <header>
           <div>
             <h1>Jane Smith</h1>
@@ -981,13 +981,13 @@
 
         The value of the `src` attribute can be an absolute path:
 
-        ```
+        ```html
         <img src="http://fillmurray.com/200/300" alt="A portrait of Bill Murray">
         ```
 
         Or a relative path:
 
-        ```
+        ```html
         <img src="images/profile.jpg" alt="A picture of me">
         ```
 
@@ -1007,7 +1007,7 @@
 
         It should be a short description of the image.
 
-        ```
+        ```html
         <img src="images/profile.jpg" alt="Jane Smith">
         ```
       </script>
@@ -1052,7 +1052,7 @@
           |-- contact.html
         ```
 
-        ```xml
+        ```html
         <img src="images/profile.jpg" alt="description of image">
         ```
       </script>
@@ -1064,7 +1064,7 @@
 
         The `<main>` tag can be used to represent the central content of the document. Also, a `role="main"` attribute can be added to help screen readers understand where the main content begins.
 
-        ```
+        ```html
         <header>
           ...content
 
@@ -1099,7 +1099,7 @@
 
         Also, use the `<cite>` tag to include the source of the quote.
 
-        ```
+        ```html
         <blockquote>
           <p>The more that you read, the more things you will know. The more that you learn, the more places you'll go.</p>
           <cite>― Dr. Seuss, I Can Read With My Eyes Shut!</cite>
@@ -1145,7 +1145,7 @@
 
         Sometimes our pages may include content that isn't described by the `header`, `nav`, `main`, or `footer` tags. Luckily, we can use the `<section>` tag.
 
-        ```
+        ```html
         <main>
           <p>The really important content goes here!</p>
         </main>
@@ -1202,7 +1202,7 @@
       <script type="text/template">
         #CSS Terminology & Syntax
 
-        ![](framework/img/workshop/css-declaration.png)
+        ![](framework/img/workshop/css-syntax.png)
 
         * **Selectors:** determines which element(s) to apply the styles to
         * **Declarations:** style rules & are written using `property:value` pairs
@@ -1260,7 +1260,7 @@
 
         Comments start with a slash & asterisk and closes in the opposite order (`/* */`). Use it for the same reasons as HTML comments.
 
-        ```
+        ```css
         p {
           color: #cc0066; /* magenta - leaving notes */
         }
@@ -1286,15 +1286,15 @@
 
         Comments must start with `/*` and end with `*/` but can contain any characters in between. Use whichever comment style works for you but here's a few common conventions:
 
-        ```
+        ```css
         /* CSS Comments */
         ```
-        ```
+        ```css
         /*
         CSS Comments
         */
         ```
-        ```
+        ```css
         /* CSS Comments
         ----------------*/
         ```
@@ -1312,7 +1312,7 @@
 
         Use `<link>` and two attributes, `rel` and `href` to link to the CSS file.
 
-        ```
+        ```html
         <head>
           <link rel="stylesheet" href="css/style.css">
         </head>
@@ -1336,14 +1336,14 @@
 
         Add it to all three html files (**index.html**, **about.html**, **contact.html**)
 
-        ```
+        ```html
         <link rel="stylesheet" href="css/styles.css">
         ```
         <!-- .element: class="note" -->**Pro tip!** For a shortcut, type `link` with no brackets, then the **tab** key. Voila!
 
         Let's do a quick check to see if it works and is linked properly by adding a background colour on the entire body as a test.
 
-        ```
+        ```css
         body {
           background: lightblue;
         }
@@ -1362,7 +1362,7 @@
 
         Let's remove the test background colour and replace it with `padding` and `margin` to reset the value. (More on these properties later.)
 
-        ```
+        ```css
         body {
           padding: 0;
           margin: 0;
@@ -1381,7 +1381,7 @@
         * **RGB (red-green-blue)** - uses three numerical values from 0 (represents black) to 255 (represents white).
         * **hex code** - use the number sign (`#`) followed by six hexadecimal characters (0-9, A-F).
 
-        ```
+        ```css
         /* These are all the same colour */
         p {
           background: firebrick;
@@ -1434,7 +1434,7 @@ text-transform: lowercase;</textarea>
 
         Using the `font-family` property, it's best practice to list at least two or three font options to provide a fall-back option in case the user doesn't have the fonts installed.
 
-        ```
+        ```css
         body {
           font-family: Helvetica, Arial, sans-serif;
         }
@@ -1471,7 +1471,7 @@ text-transform: lowercase;</textarea>
         1. Choose **Embed** to get the code:
           * copy the `<link>` code snippet
           * add it to the `<head>` of **all** your HTML pages. <span class="note">(Make sure to add the link *before* your the *styles.css* file)</span>
-          ```
+          ```html
           <head>
               <meta charset="UTF-8">
               <title>Jane Smith | About Me</title>
@@ -1482,7 +1482,7 @@ text-transform: lowercase;</textarea>
 
         When you're ready to use it, use the font-family name listed in the Google Fonts page. Ta da!
 
-        ```
+        ```css
         font-family: 'Open Sans', sans-serif;
         ```
       </script>
@@ -1519,7 +1519,7 @@ text-transform: lowercase;</textarea>
 
         > In this example, what colour will the `<h1>` be?
 
-        ```
+        ```css
         h1 {
           color: black;
         }
@@ -1537,13 +1537,13 @@ text-transform: lowercase;</textarea>
 
         One of the strengths of CSS is styles can be inherited from parent to child elements. (Remember the family tree?)
 
-        ```
+        ```html
         <body>
           <h1>My Website</h1><!-- child of body -->
           <p>This is a paragraph.</p><!-- sibling of h1 -->
         </body>
         ```
-        ```
+        ```css
         body {
           color: blue;
         }
@@ -1559,7 +1559,7 @@ text-transform: lowercase;</textarea>
       <script type="text/template">
         #Inheritance and Specificity
 
-        ```
+        ```css
         body {
           color: blue;
         }
@@ -1585,7 +1585,7 @@ text-transform: lowercase;</textarea>
         Sometimes you'll have more than one element that share the same styles.  Target multiple elements by *combining* selectors.
 
         Instead of this:
-        ```
+        ```css
         h1 {
           /* set font colour to blue */
           color:blue;
@@ -1624,7 +1624,7 @@ text-transform: lowercase;</textarea>
 
         **Pro tip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
 
-        ```
+        ```css
         nav ul li a span {
           /* NOOOOOOOOOOO!!!! */
         }
@@ -1653,7 +1653,7 @@ text-transform: lowercase;</textarea>
         In the sample project, most of site content uses the same font.
         Add the main font family to the `body` declaration block, to make use of CSS inheritance.
 
-        ```
+        ```css
         body {
           font-family: "Open Sans", sans-serif;
         }
@@ -1661,14 +1661,14 @@ text-transform: lowercase;</textarea>
 
         Make the headings a different font to set it apart from the body text. Use a more specific selector to override the inherited style.
 
-        ```
+        ```css
         h1, h2 {
           font-family: "Nixie One", serif;
         }
         ```
 
         In the LLC project, both `h1` and `h2` also use uppercase letters and don’t use the default bold styles of headings. You can set that using the properties in the example below.
-        ```
+        ```css
         h1, h2 {
           font-family: "Nixie One", serif;
           font-weight: 300; /* removes default bold styles */
@@ -1715,7 +1715,7 @@ text-transform: lowercase;</textarea>
         **Pro tip!** Use comments to organize your CSS blocks!
 
         Here's what was added:
-        ```
+        ```css
         /* GLOBAL STYLES
         -----------------------------------------*/
         body {
@@ -1824,13 +1824,13 @@ text-transform: lowercase;</textarea>
 
         Both `margin` & `padding` can also be declared by specifying a particular side using the longhand syntax.
 
-        ```
+        ```css
         padding-top: 10px;
         padding-right: 10px;
         padding-bottom: 10px;
         padding-left: 10px;
         ```
-        ```
+        ```css
         margin-top: 10px;
         margin-right: 10px;
         margin-bottom: 10px;
@@ -1847,7 +1847,7 @@ text-transform: lowercase;</textarea>
 
         The `border` property resides between the `margin` and `padding` and creates an outline around the element. It, too, has longhand and shorthand syntax.
 
-        ```
+        ```css
         /* longhand */
         border-width: 2px;
         border-style: solid;
@@ -1870,7 +1870,7 @@ text-transform: lowercase;</textarea>
         #Border
         Like padding and margin, a specific side of the element can be specified.
 
-        ```
+        ```css
         /* longhand */
         border-top-width: 2px;
         border-top-style: solid;
@@ -1891,7 +1891,7 @@ text-transform: lowercase;</textarea>
 
         Add padding to the `header`, `nav` and `main` to add an equal amount of space around the content blocks.
 
-        ```
+        ```css
         header,
         nav,
         main {
@@ -1901,7 +1901,7 @@ text-transform: lowercase;</textarea>
 
         Remove the default space from the `h1` and `h2`. (Add it to the the existing `h1, h2` declaration block.)
 
-        ```
+        ```css
         h1, h2 {
           margin: 0; /* removes default space */
         }
@@ -2020,7 +2020,7 @@ text-transform: lowercase;</textarea>
   justify-content: ;
   align-items: ;
 }</textarea>
-      <div id="flexbox" style="min-height: 330px; background: rgba( 0, 0, 0, 0.05 ); border: solid 1px #999; padding: 15px;"><!-- /// TEMP -->
+      <div id="flexbox" style="min-height: 330px; padding: 15px;" class="subject"><!-- /// TEMP -->
         <img src="http://placehold.it/150x150" alt="placeholder image">
       </div>
     </section>
@@ -2036,7 +2036,7 @@ text-transform: lowercase;</textarea>
   justify-content: flex-start;
   align-items: flex-start;
 }</textarea>
-      <div id="flexbox_multi" style="min-height: 330px; background: rgba( 0, 0, 0, 0.05 ); border: solid 1px #999; padding: 15px;"><!-- /// TEMP -->
+      <div id="flexbox_multi" style="min-height: 330px; padding: 15px;" class="subject"><!-- /// TEMP -->
         <img src="http://placehold.it/150x150" alt="placeholder image">
         <img src="http://placehold.it/150x150" alt="placeholder image">
         <img src="http://placehold.it/150x150" alt="placeholder image">
@@ -2051,7 +2051,7 @@ text-transform: lowercase;</textarea>
 
         We want the brand content (ie. the name and tagline) to remain aligned to the left, and the `nav` to move over to the right.
 
-        ```
+        ```html
         <!-- We'll make this our 'flex parent'. -->
         <header>
           <!-- Then we'll move this content to the left... -->
@@ -2206,7 +2206,7 @@ img {
 
         Select the element to be cleared (where it should go back to a normal page flow) and apply the `clear` property.  The value `both` will clear either a `left` or `right` float.
 
-        ```
+        ```css
         blockquote {
           clear: both;
         }
@@ -2282,7 +2282,7 @@ img {
 
         In `contact.html`, we'll add a `class` to the `body` tag to override any styles, for any element, contained within the entire page.
 
-        ```
+        ```html
         <body class="contact">
         ```
       </script>
@@ -2295,7 +2295,7 @@ img {
 
         So far, we've used `background` to add colours but it can also be used it to add images for presentation (as opposed to content).
 
-        ```
+        ```css
         background-image: url(path/to/file.jpg); /* longhand */
         background: url(path/to/file.jpg);/* shorthand */
         ```
@@ -2313,7 +2313,7 @@ img {
             ...etc
         ```
 
-        ```
+        ```css
         background: url(../images/background-1.jpg);
         ```
 
@@ -2330,7 +2330,7 @@ img {
 
         In `contact.html`, add the `class` to the `body` tag.
 
-        ```
+        ```html
         <body class="contact">
         ```
 
@@ -2338,7 +2338,7 @@ img {
 
         (Choose from <!-- .element: class="note" -->`background-1.jpg` to `background-8.jpg` or use your own.)
 
-        ```
+        ```css
         .contact {
           background: url(../images/background-6.jpg);
         }
@@ -2366,7 +2366,7 @@ img {
 
         When using shorthand, be sure to include a space *between* values.
 
-        ```
+        ```css
         /* shorthand */
         .contact {
           background: url(../images/background-6.jpg) no-repeat;
@@ -2401,7 +2401,7 @@ img {
 
         Let's add it to the very top of the CSS file, in the "global" section, to continue to keep the CSS organized.
 
-        ```
+        ```css
         html, body {
           height: 100%;
         }
@@ -2419,7 +2419,7 @@ img {
 
         The default values of `0 0` place the background image at the *top left* of the container. If only one value is used, that value will be used for both the horizontal and vertical positioning.
 
-        ```
+        ```css
         /* shorthand */
         .contact {
           background: url(../images/background-6.jpg) no-repeat 50%;
@@ -2454,7 +2454,7 @@ img {
 
         `background-size` is used to change the size of the background image with CSS rather than editing the image file itself.  It can be added using the longhand style like this:
 
-        ```
+        ```css
         .contact {
           background-image: url(../images/background-6.jpg);
           background-repeat: no-repeat;
@@ -2464,7 +2464,7 @@ img {
         ```
 
         To include it using the shorthand property, there's a quirk. It _must_ be included after `background-position`, separated with the `/` character.
-        ```
+        ```css
         .contact {
           background: url(../images/background-6.jpg) no-repeat 50% / cover;
         }
@@ -2480,7 +2480,7 @@ img {
 
         In this case, it may be less error prone to add just that property using the longhand property.
 
-        ```
+        ```css
         .contact {
           background: url(../images/background-6.jpg) no-repeat;
           background-size: cover;
@@ -2495,7 +2495,7 @@ img {
 
         Let's update the background image for the homepage using `cover`.
 
-        ```
+        ```css
         .contact {
           background: url(../images/background-6.jpg) no-repeat;
           background-size: cover;
@@ -2693,7 +2693,7 @@ img {
 
         We'll start by adding the following snippet in between the `<header>` and `<footer>` tags of our `contact.html` file.
 
-        ```xml
+        ```html
         <main role="main">
           <h1>Let's meet for coffee!</h1>
           <p>Send me a message at <a href="mailto:hello@your-email.com">hello@your-email.com</a>, or use the form below.</p>
@@ -2808,7 +2808,7 @@ img {
         Create a `class` and name it something like `highlight`.
         Add a CSS property to it like `color`.
 
-        ```
+        ```css
         .highlight {
           color: #bf6d50;
         }
@@ -2817,7 +2817,7 @@ img {
 
         Use a `<span>` tag to wrap it around the text to apply the style to.
 
-        ```xml
+        ```html
         <h1><span class="highlight">Jane</span>Smith</h1>
         ```
 

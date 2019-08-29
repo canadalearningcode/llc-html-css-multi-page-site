@@ -69,6 +69,27 @@
   }
 }
 
+.hljs {
+    border: 1px solid $gray;
+}
+
+.hljs-comment {
+  color: green;
+}
+
+.hljs-doctype {
+  color: #000080;
+}
+
+.hljs-attribute,
+.hljs-number {
+  color: #027d7d;
+}
+
+.subject {
+  border: solid 1px $gray;
+}
+
 .slide.background {
   background: url(../img/workshop/background-5.jpg);
   background-size: cover;
