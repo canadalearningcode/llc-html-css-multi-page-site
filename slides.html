@@ -2290,7 +2290,7 @@ img {
         background: url(path/to/file.jpg);/* shorthand */
         ```
 
-        Since **styles.css** is *inside* of a **css** folder, include `../` to go *up and out* of the folder in the *relative* path to the image files.
+        Since `styles.css` is *inside* of a `css` folder, include `../` to go *up and out* of the folder in the *relative* path to the image files.
 
         ```xml
         |-- project
@@ -2306,6 +2306,11 @@ img {
         ```
         background: url(../images/background-1.jpg);
         ```
+
+        ---
+        ##Pro tip!
+
+        Background images **do not** appear in Internet Explorer when [Windows High Contrast](https://support.microsoft.com/en-ca/help/13862/windows-use-high-contrast-mode) mode is enabled! Use a foreground `img` tag for critical images.
       </script>
     </section>
 
