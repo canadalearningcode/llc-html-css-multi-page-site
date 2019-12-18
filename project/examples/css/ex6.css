@@ -26,10 +26,6 @@ main,
 nav {
   padding: 20px 30px;
 }
-main {
-  clear: both;
-}
-
 
 /* HEADER STYLES
 -----------------------------------------*/
@@ -40,20 +36,18 @@ header h2 {
   font-size: 24px;
 }
 header {
-  float: left;
-}
-nav {
-  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 nav a {
   padding: 20px;
 }
 
 /* HOME PAGE STYLES
------------------------------------------*/ 
-.home {
-  background: url(../images/background-6.jpg) no-repeat 50%;
-  background-size: cover;
+-----------------------------------------*/
+.hero-image {
+  width: 100%;
 }
 
 /* ABOUT STYLES
@@ -72,4 +66,18 @@ blockquote p {
   font-size: 30px;
 }
 
+/* CONTACT STYLES
+-----------------------------------------*/
+.contact {
+  background: url(../images/background-8.jpg) no-repeat 50%;
+  background-size: cover;
+}
 
+/* FOOTER STYLES
+-----------------------------------------*/
+footer {
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1px;
+  text-transform: lowercase;
+}
