@@ -36,13 +36,9 @@ main,
 nav {
   padding: 20px 30px;
 }
-main {
-  clear: both;
-}
 .highlight {
   color: #bf6d50;
 }
-
 
 /* HEADER STYLES
 -----------------------------------------*/
@@ -53,20 +49,18 @@ header h2 {
   font-size: 24px;
 }
 header {
-  float: left;
-}
-nav {
-  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 nav a {
   padding: 20px;
 }
 
 /* HOME PAGE STYLES
------------------------------------------*/ 
-.home {
-  background: url(../images/background-6.jpg) no-repeat 50%;
-  background-size: cover;
+-----------------------------------------*/
+.hero-image {
+  width: 100%;
 }
 
 /* ABOUT STYLES
@@ -74,11 +68,11 @@ nav a {
 .profile-img {
   float: left;
   margin-right: 20px;
-  width: 50%;
+  width: 50%; /* Force the profile image to always take up 50% of available horizontal space. */
 }
 blockquote {
   clear: both;
-  padding: 5px 150px 0;
+  padding: 5px 150px;
   text-align: center;
 }
 blockquote p {
@@ -101,52 +95,11 @@ blockquote p {
   text-transform: none;
 }
 
-/* form styles */
-form {
-  width: 400px;
-}
-input,
-textarea {
-  border: 1px solid #BF6D50;
-  width: 400px;
-  margin-bottom: 10px;
-}
-input {
-  height: 20px;
-} 
-textarea {
-  height: 100px;
-}
-button {
-  background: #BF6D50;
-  border: none;
-  padding: 10px 40px;
-  font-size: 16px;
-}
-
-
 /* FOOTER STYLES
 -----------------------------------------*/
-/* Sticky Footer - http://css-tricks.com/snippets/css/sticky-footer */
-.page-wrap {
-  min-height: 100%;
-  margin-bottom: -55px; /* must be the same height as footer */
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-footer, 
-.page-wrap:after {
-  height: 55px; /* however tall you want the footer to be */
-}
 footer {
   background: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 1px;
   text-transform: lowercase;
 }
-
-
-
-
