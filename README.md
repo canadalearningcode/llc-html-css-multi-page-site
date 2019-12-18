@@ -1,6 +1,6 @@
 # Ladies Learning Code
 
-## HTML & CSS for Beginners: Learn to Build a Multi Page Website From Scratch
+## Build a Multi-Page Website with HTML & CSS
 
 A full day introductory HTML & CSS workshop.
 
@@ -8,7 +8,9 @@ This workshop covers HTML and CSS basics and is intended for complete beginners.
 
 ### Quick Links
 
-Preview Slides: http://ladieslearningcode.github.io/llc-html-css-multi-page-site/slides.html#slide1
+Preview Slides: [http://ladieslearningcode.github.io/llc-html-css-multi-page-site/slides-en.html](http://ladieslearningcode.github.io/llc-html-css-multi-page-site/slides-en.html)
+
+<!-- Need to create instructor notes-->
 
 ### Attributions
 
